@@ -1,0 +1,16 @@
+name: vulkan
+description: Vulkan FFI bindings for Dart. Supports Windows and Linux desktops.
+version: 0.1.0
+author: root ext <root.ext@gmail.com>
+homepage: https://gitlab.com/ext/dart-vulkan
+
+environment:
+  sdk: '>=2.7.0 <3.0.0'
+
+dependencies:
+  ffi_utils: ^0.1.0
+
+dev_dependencies:
+  glfw: ^0.2.0
+  pedantic: ^1.0.0
+
