@@ -29,6 +29,12 @@ DynamicLibrary loadLibrary() {
   return lib;
 }
 
-Object tryCall(Function f) {
-  try { return f(); } catch (ex) { return null; }
+Pointer<NativeFunction<FN>> loadFunction<FN extends Function>(DynamicLibrary lib, String name) {
+  Pointer<NativeFunction<FN>>? funcPointer;
+  if (lib.providesSymbol(name)) {
+    funcPointer = lib.lookup(name);
+  } else {
+    funcPointer = Pointer<NativeFunction<FN>>.fromAddress(0);
+  }
+  return funcPointer;
 }

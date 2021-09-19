@@ -5,17 +5,17 @@ import 'package:vulkan/vulkan.dart';
 void main() {
   initVulkan();
 
-  final ai = allocate<VkApplicationInfo>();
+  final ai = calloc<VkApplicationInfo>();
   ai.ref
     ..sType = VK_STRUCTURE_TYPE_APPLICATION_INFO
     ..pNext = nullptr
-    ..pApplicationName = Utf8.toUtf8('Application')
+    ..pApplicationName = 'Application'.toNativeUtf8()
     ..applicationVersion = makeVersion(1, 0, 0)
-    ..pEngineName = Utf8.toUtf8('Engine')
+    ..pEngineName = 'Engine'.toNativeUtf8()
     ..engineVersion = 0
     ..apiVersion = makeVersion(1, 0, 0);
 
-  final ici = allocate<VkInstanceCreateInfo>();
+  final ici = calloc<VkInstanceCreateInfo>();
   ici.ref
     ..sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO
     ..pNext = nullptr
@@ -26,9 +26,14 @@ void main() {
     ..enabledLayerCount = 0
     ..ppEnabledLayerNames = nullptr;
 
-  final instance = allocate<Pointer<VkInstance>>();
+  final instance = calloc<Pointer<VkInstance>>();
   final result = vkCreateInstance(ici, nullptr, instance);
-  print(result == VK_SUCCESS ? 'Vulkan instance succesfully created' : 'Failed to create Vulkan insatnce');
+  print(result == VK_SUCCESS
+      ? 'Vulkan instance succesfully created'
+      : 'Failed to create Vulkan insatnce');
+
+  vkDestroyInstance(instance.value, nullptr);
 }
 
-int makeVersion(int major, int minor, int patch) => ((major) << 22) | ((minor) << 12) | (patch);
+int makeVersion(int major, int minor, int patch) =>
+    ((major) << 22) | ((minor) << 12) | (patch);

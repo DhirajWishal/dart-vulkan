@@ -5,9 +5,9 @@ author: root ext <root.ext@gmail.com>
 homepage: https://gitlab.com/ext/dart-vulkan
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: '>=2.14.0 <3.0.0'
 
 dev_dependencies:
-  ffi: ^0.1.3
+  ffi: ^1.1.0
   pedantic: ^1.0.0
 

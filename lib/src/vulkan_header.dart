@@ -13,7 +13,6 @@
 //  limitations under the License.
 
 import 'dart:ffi';
-import 'dart:convert';
 
 const int VK_MAX_PHYSICAL_DEVICE_NAME_SIZE = 256;
 const int VK_UUID_SIZE = 16;
@@ -2945,2194 +2944,3381 @@ class VkDebugUtilsMessengerEXT extends Opaque {
 }
 
 class VkBaseOutStructure extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
 }
 
 class VkBaseInStructure extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
 }
 
 class VkOffset2D extends Struct {
-  @Int32() int x;
-  @Int32() int y;
+  @Int32()
+  external int x;
+  @Int32()
+  external int y;
 }
 
 class VkOffset3D extends Struct {
-  @Int32() int x;
-  @Int32() int y;
-  @Int32() int z;
+  @Int32()
+  external int x;
+  @Int32()
+  external int y;
+  @Int32()
+  external int z;
 }
 
 class VkExtent2D extends Struct {
-  @Uint32() int width;
-  @Uint32() int height;
+  @Uint32()
+  external int width;
+  @Uint32()
+  external int height;
 }
 
 class VkExtent3D extends Struct {
-  @Uint32() int width;
-  @Uint32() int height;
-  @Uint32() int depth;
+  @Uint32()
+  external int width;
+  @Uint32()
+  external int height;
+  @Uint32()
+  external int depth;
 }
 
 class VkViewport extends Struct {
-  @Float() double x;
-  @Float() double y;
-  @Float() double width;
-  @Float() double height;
-  @Float() double minDepth;
-  @Float() double maxDepth;
+  @Float()
+  external double x;
+  @Float()
+  external double y;
+  @Float()
+  external double width;
+  @Float()
+  external double height;
+  @Float()
+  external double minDepth;
+  @Float()
+  external double maxDepth;
 }
 
 class VkRect2D extends Struct {
-  @Int32() int offset_x;
-  @Int32() int offset_y;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
+  @Int32()
+  external int offset_x;
+  @Int32()
+  external int offset_y;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
 }
 
 class VkClearRect extends Struct {
-  @Int32() int rect_offset_x;
-  @Int32() int rect_offset_y;
-  @Uint32() int rect_extent_width;
-  @Uint32() int rect_extent_height;
-  @Uint32() int baseArrayLayer;
-  @Uint32() int layerCount;
+  @Int32()
+  external int rect_offset_x;
+  @Int32()
+  external int rect_offset_y;
+  @Uint32()
+  external int rect_extent_width;
+  @Uint32()
+  external int rect_extent_height;
+  @Uint32()
+  external int baseArrayLayer;
+  @Uint32()
+  external int layerCount;
 }
 
 class VkComponentMapping extends Struct {
-  @Int32() int r;
-  @Int32() int g;
-  @Int32() int b;
-  @Int32() int a;
+  @Int32()
+  external int r;
+  @Int32()
+  external int g;
+  @Int32()
+  external int b;
+  @Int32()
+  external int a;
 }
 
 class VkPhysicalDeviceProperties extends Struct {
-  @Uint32() int apiVersion;
-  @Uint32() int driverVersion;
-  @Uint32() int vendorID;
-  @Uint32() int deviceID;
-  @Int32() int deviceType;
-  @Uint8() int deviceName_0; @Uint8() int deviceName_1; @Uint8() int deviceName_2; @Uint8() int deviceName_3; @Uint8() int deviceName_4; @Uint8() int deviceName_5; @Uint8() int deviceName_6; @Uint8() int deviceName_7; @Uint8() int deviceName_8; @Uint8() int deviceName_9; @Uint8() int deviceName_10; @Uint8() int deviceName_11; @Uint8() int deviceName_12; @Uint8() int deviceName_13; @Uint8() int deviceName_14; @Uint8() int deviceName_15; @Uint8() int deviceName_16; @Uint8() int deviceName_17; @Uint8() int deviceName_18; @Uint8() int deviceName_19; @Uint8() int deviceName_20; @Uint8() int deviceName_21; @Uint8() int deviceName_22; @Uint8() int deviceName_23; @Uint8() int deviceName_24; @Uint8() int deviceName_25; @Uint8() int deviceName_26; @Uint8() int deviceName_27; @Uint8() int deviceName_28; @Uint8() int deviceName_29; @Uint8() int deviceName_30; @Uint8() int deviceName_31; @Uint8() int deviceName_32; @Uint8() int deviceName_33; @Uint8() int deviceName_34; @Uint8() int deviceName_35; @Uint8() int deviceName_36; @Uint8() int deviceName_37; @Uint8() int deviceName_38; @Uint8() int deviceName_39; @Uint8() int deviceName_40; @Uint8() int deviceName_41; @Uint8() int deviceName_42; @Uint8() int deviceName_43; @Uint8() int deviceName_44; @Uint8() int deviceName_45; @Uint8() int deviceName_46; @Uint8() int deviceName_47; @Uint8() int deviceName_48; @Uint8() int deviceName_49; @Uint8() int deviceName_50; @Uint8() int deviceName_51; @Uint8() int deviceName_52; @Uint8() int deviceName_53; @Uint8() int deviceName_54; @Uint8() int deviceName_55; @Uint8() int deviceName_56; @Uint8() int deviceName_57; @Uint8() int deviceName_58; @Uint8() int deviceName_59; @Uint8() int deviceName_60; @Uint8() int deviceName_61; @Uint8() int deviceName_62; @Uint8() int deviceName_63; @Uint8() int deviceName_64; @Uint8() int deviceName_65; @Uint8() int deviceName_66; @Uint8() int deviceName_67; @Uint8() int deviceName_68; @Uint8() int deviceName_69; @Uint8() int deviceName_70; @Uint8() int deviceName_71; @Uint8() int deviceName_72; @Uint8() int deviceName_73; @Uint8() int deviceName_74; @Uint8() int deviceName_75; @Uint8() int deviceName_76; @Uint8() int deviceName_77; @Uint8() int deviceName_78; @Uint8() int deviceName_79; @Uint8() int deviceName_80; @Uint8() int deviceName_81; @Uint8() int deviceName_82; @Uint8() int deviceName_83; @Uint8() int deviceName_84; @Uint8() int deviceName_85; @Uint8() int deviceName_86; @Uint8() int deviceName_87; @Uint8() int deviceName_88; @Uint8() int deviceName_89; @Uint8() int deviceName_90; @Uint8() int deviceName_91; @Uint8() int deviceName_92; @Uint8() int deviceName_93; @Uint8() int deviceName_94; @Uint8() int deviceName_95; @Uint8() int deviceName_96; @Uint8() int deviceName_97; @Uint8() int deviceName_98; @Uint8() int deviceName_99; @Uint8() int deviceName_100; @Uint8() int deviceName_101; @Uint8() int deviceName_102; @Uint8() int deviceName_103; @Uint8() int deviceName_104; @Uint8() int deviceName_105; @Uint8() int deviceName_106; @Uint8() int deviceName_107; @Uint8() int deviceName_108; @Uint8() int deviceName_109; @Uint8() int deviceName_110; @Uint8() int deviceName_111; @Uint8() int deviceName_112; @Uint8() int deviceName_113; @Uint8() int deviceName_114; @Uint8() int deviceName_115; @Uint8() int deviceName_116; @Uint8() int deviceName_117; @Uint8() int deviceName_118; @Uint8() int deviceName_119; @Uint8() int deviceName_120; @Uint8() int deviceName_121; @Uint8() int deviceName_122; @Uint8() int deviceName_123; @Uint8() int deviceName_124; @Uint8() int deviceName_125; @Uint8() int deviceName_126; @Uint8() int deviceName_127; @Uint8() int deviceName_128; @Uint8() int deviceName_129; @Uint8() int deviceName_130; @Uint8() int deviceName_131; @Uint8() int deviceName_132; @Uint8() int deviceName_133; @Uint8() int deviceName_134; @Uint8() int deviceName_135; @Uint8() int deviceName_136; @Uint8() int deviceName_137; @Uint8() int deviceName_138; @Uint8() int deviceName_139; @Uint8() int deviceName_140; @Uint8() int deviceName_141; @Uint8() int deviceName_142; @Uint8() int deviceName_143; @Uint8() int deviceName_144; @Uint8() int deviceName_145; @Uint8() int deviceName_146; @Uint8() int deviceName_147; @Uint8() int deviceName_148; @Uint8() int deviceName_149; @Uint8() int deviceName_150; @Uint8() int deviceName_151; @Uint8() int deviceName_152; @Uint8() int deviceName_153; @Uint8() int deviceName_154; @Uint8() int deviceName_155; @Uint8() int deviceName_156; @Uint8() int deviceName_157; @Uint8() int deviceName_158; @Uint8() int deviceName_159; @Uint8() int deviceName_160; @Uint8() int deviceName_161; @Uint8() int deviceName_162; @Uint8() int deviceName_163; @Uint8() int deviceName_164; @Uint8() int deviceName_165; @Uint8() int deviceName_166; @Uint8() int deviceName_167; @Uint8() int deviceName_168; @Uint8() int deviceName_169; @Uint8() int deviceName_170; @Uint8() int deviceName_171; @Uint8() int deviceName_172; @Uint8() int deviceName_173; @Uint8() int deviceName_174; @Uint8() int deviceName_175; @Uint8() int deviceName_176; @Uint8() int deviceName_177; @Uint8() int deviceName_178; @Uint8() int deviceName_179; @Uint8() int deviceName_180; @Uint8() int deviceName_181; @Uint8() int deviceName_182; @Uint8() int deviceName_183; @Uint8() int deviceName_184; @Uint8() int deviceName_185; @Uint8() int deviceName_186; @Uint8() int deviceName_187; @Uint8() int deviceName_188; @Uint8() int deviceName_189; @Uint8() int deviceName_190; @Uint8() int deviceName_191; @Uint8() int deviceName_192; @Uint8() int deviceName_193; @Uint8() int deviceName_194; @Uint8() int deviceName_195; @Uint8() int deviceName_196; @Uint8() int deviceName_197; @Uint8() int deviceName_198; @Uint8() int deviceName_199; @Uint8() int deviceName_200; @Uint8() int deviceName_201; @Uint8() int deviceName_202; @Uint8() int deviceName_203; @Uint8() int deviceName_204; @Uint8() int deviceName_205; @Uint8() int deviceName_206; @Uint8() int deviceName_207; @Uint8() int deviceName_208; @Uint8() int deviceName_209; @Uint8() int deviceName_210; @Uint8() int deviceName_211; @Uint8() int deviceName_212; @Uint8() int deviceName_213; @Uint8() int deviceName_214; @Uint8() int deviceName_215; @Uint8() int deviceName_216; @Uint8() int deviceName_217; @Uint8() int deviceName_218; @Uint8() int deviceName_219; @Uint8() int deviceName_220; @Uint8() int deviceName_221; @Uint8() int deviceName_222; @Uint8() int deviceName_223; @Uint8() int deviceName_224; @Uint8() int deviceName_225; @Uint8() int deviceName_226; @Uint8() int deviceName_227; @Uint8() int deviceName_228; @Uint8() int deviceName_229; @Uint8() int deviceName_230; @Uint8() int deviceName_231; @Uint8() int deviceName_232; @Uint8() int deviceName_233; @Uint8() int deviceName_234; @Uint8() int deviceName_235; @Uint8() int deviceName_236; @Uint8() int deviceName_237; @Uint8() int deviceName_238; @Uint8() int deviceName_239; @Uint8() int deviceName_240; @Uint8() int deviceName_241; @Uint8() int deviceName_242; @Uint8() int deviceName_243; @Uint8() int deviceName_244; @Uint8() int deviceName_245; @Uint8() int deviceName_246; @Uint8() int deviceName_247; @Uint8() int deviceName_248; @Uint8() int deviceName_249; @Uint8() int deviceName_250; @Uint8() int deviceName_251; @Uint8() int deviceName_252; @Uint8() int deviceName_253; @Uint8() int deviceName_254; @Uint8() int deviceName_255;
-  String get deviceName {
-    var bytes = [deviceName_0, deviceName_1, deviceName_2, deviceName_3, deviceName_4, deviceName_5, deviceName_6, deviceName_7, deviceName_8, deviceName_9, deviceName_10, deviceName_11, deviceName_12, deviceName_13, deviceName_14, deviceName_15, deviceName_16, deviceName_17, deviceName_18, deviceName_19, deviceName_20, deviceName_21, deviceName_22, deviceName_23, deviceName_24, deviceName_25, deviceName_26, deviceName_27, deviceName_28, deviceName_29, deviceName_30, deviceName_31, deviceName_32, deviceName_33, deviceName_34, deviceName_35, deviceName_36, deviceName_37, deviceName_38, deviceName_39, deviceName_40, deviceName_41, deviceName_42, deviceName_43, deviceName_44, deviceName_45, deviceName_46, deviceName_47, deviceName_48, deviceName_49, deviceName_50, deviceName_51, deviceName_52, deviceName_53, deviceName_54, deviceName_55, deviceName_56, deviceName_57, deviceName_58, deviceName_59, deviceName_60, deviceName_61, deviceName_62, deviceName_63, deviceName_64, deviceName_65, deviceName_66, deviceName_67, deviceName_68, deviceName_69, deviceName_70, deviceName_71, deviceName_72, deviceName_73, deviceName_74, deviceName_75, deviceName_76, deviceName_77, deviceName_78, deviceName_79, deviceName_80, deviceName_81, deviceName_82, deviceName_83, deviceName_84, deviceName_85, deviceName_86, deviceName_87, deviceName_88, deviceName_89, deviceName_90, deviceName_91, deviceName_92, deviceName_93, deviceName_94, deviceName_95, deviceName_96, deviceName_97, deviceName_98, deviceName_99, deviceName_100, deviceName_101, deviceName_102, deviceName_103, deviceName_104, deviceName_105, deviceName_106, deviceName_107, deviceName_108, deviceName_109, deviceName_110, deviceName_111, deviceName_112, deviceName_113, deviceName_114, deviceName_115, deviceName_116, deviceName_117, deviceName_118, deviceName_119, deviceName_120, deviceName_121, deviceName_122, deviceName_123, deviceName_124, deviceName_125, deviceName_126, deviceName_127, deviceName_128, deviceName_129, deviceName_130, deviceName_131, deviceName_132, deviceName_133, deviceName_134, deviceName_135, deviceName_136, deviceName_137, deviceName_138, deviceName_139, deviceName_140, deviceName_141, deviceName_142, deviceName_143, deviceName_144, deviceName_145, deviceName_146, deviceName_147, deviceName_148, deviceName_149, deviceName_150, deviceName_151, deviceName_152, deviceName_153, deviceName_154, deviceName_155, deviceName_156, deviceName_157, deviceName_158, deviceName_159, deviceName_160, deviceName_161, deviceName_162, deviceName_163, deviceName_164, deviceName_165, deviceName_166, deviceName_167, deviceName_168, deviceName_169, deviceName_170, deviceName_171, deviceName_172, deviceName_173, deviceName_174, deviceName_175, deviceName_176, deviceName_177, deviceName_178, deviceName_179, deviceName_180, deviceName_181, deviceName_182, deviceName_183, deviceName_184, deviceName_185, deviceName_186, deviceName_187, deviceName_188, deviceName_189, deviceName_190, deviceName_191, deviceName_192, deviceName_193, deviceName_194, deviceName_195, deviceName_196, deviceName_197, deviceName_198, deviceName_199, deviceName_200, deviceName_201, deviceName_202, deviceName_203, deviceName_204, deviceName_205, deviceName_206, deviceName_207, deviceName_208, deviceName_209, deviceName_210, deviceName_211, deviceName_212, deviceName_213, deviceName_214, deviceName_215, deviceName_216, deviceName_217, deviceName_218, deviceName_219, deviceName_220, deviceName_221, deviceName_222, deviceName_223, deviceName_224, deviceName_225, deviceName_226, deviceName_227, deviceName_228, deviceName_229, deviceName_230, deviceName_231, deviceName_232, deviceName_233, deviceName_234, deviceName_235, deviceName_236, deviceName_237, deviceName_238, deviceName_239, deviceName_240, deviceName_241, deviceName_242, deviceName_243, deviceName_244, deviceName_245, deviceName_246, deviceName_247, deviceName_248, deviceName_249, deviceName_250, deviceName_251, deviceName_252, deviceName_253, deviceName_254, deviceName_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set deviceName(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    deviceName_0 = bytes[0]; deviceName_1 = bytes[1]; deviceName_2 = bytes[2]; deviceName_3 = bytes[3]; deviceName_4 = bytes[4]; deviceName_5 = bytes[5]; deviceName_6 = bytes[6]; deviceName_7 = bytes[7]; deviceName_8 = bytes[8]; deviceName_9 = bytes[9]; deviceName_10 = bytes[10]; deviceName_11 = bytes[11]; deviceName_12 = bytes[12]; deviceName_13 = bytes[13]; deviceName_14 = bytes[14]; deviceName_15 = bytes[15]; deviceName_16 = bytes[16]; deviceName_17 = bytes[17]; deviceName_18 = bytes[18]; deviceName_19 = bytes[19]; deviceName_20 = bytes[20]; deviceName_21 = bytes[21]; deviceName_22 = bytes[22]; deviceName_23 = bytes[23]; deviceName_24 = bytes[24]; deviceName_25 = bytes[25]; deviceName_26 = bytes[26]; deviceName_27 = bytes[27]; deviceName_28 = bytes[28]; deviceName_29 = bytes[29]; deviceName_30 = bytes[30]; deviceName_31 = bytes[31]; deviceName_32 = bytes[32]; deviceName_33 = bytes[33]; deviceName_34 = bytes[34]; deviceName_35 = bytes[35]; deviceName_36 = bytes[36]; deviceName_37 = bytes[37]; deviceName_38 = bytes[38]; deviceName_39 = bytes[39]; deviceName_40 = bytes[40]; deviceName_41 = bytes[41]; deviceName_42 = bytes[42]; deviceName_43 = bytes[43]; deviceName_44 = bytes[44]; deviceName_45 = bytes[45]; deviceName_46 = bytes[46]; deviceName_47 = bytes[47]; deviceName_48 = bytes[48]; deviceName_49 = bytes[49]; deviceName_50 = bytes[50]; deviceName_51 = bytes[51]; deviceName_52 = bytes[52]; deviceName_53 = bytes[53]; deviceName_54 = bytes[54]; deviceName_55 = bytes[55]; deviceName_56 = bytes[56]; deviceName_57 = bytes[57]; deviceName_58 = bytes[58]; deviceName_59 = bytes[59]; deviceName_60 = bytes[60]; deviceName_61 = bytes[61]; deviceName_62 = bytes[62]; deviceName_63 = bytes[63]; deviceName_64 = bytes[64]; deviceName_65 = bytes[65]; deviceName_66 = bytes[66]; deviceName_67 = bytes[67]; deviceName_68 = bytes[68]; deviceName_69 = bytes[69]; deviceName_70 = bytes[70]; deviceName_71 = bytes[71]; deviceName_72 = bytes[72]; deviceName_73 = bytes[73]; deviceName_74 = bytes[74]; deviceName_75 = bytes[75]; deviceName_76 = bytes[76]; deviceName_77 = bytes[77]; deviceName_78 = bytes[78]; deviceName_79 = bytes[79]; deviceName_80 = bytes[80]; deviceName_81 = bytes[81]; deviceName_82 = bytes[82]; deviceName_83 = bytes[83]; deviceName_84 = bytes[84]; deviceName_85 = bytes[85]; deviceName_86 = bytes[86]; deviceName_87 = bytes[87]; deviceName_88 = bytes[88]; deviceName_89 = bytes[89]; deviceName_90 = bytes[90]; deviceName_91 = bytes[91]; deviceName_92 = bytes[92]; deviceName_93 = bytes[93]; deviceName_94 = bytes[94]; deviceName_95 = bytes[95]; deviceName_96 = bytes[96]; deviceName_97 = bytes[97]; deviceName_98 = bytes[98]; deviceName_99 = bytes[99]; deviceName_100 = bytes[100]; deviceName_101 = bytes[101]; deviceName_102 = bytes[102]; deviceName_103 = bytes[103]; deviceName_104 = bytes[104]; deviceName_105 = bytes[105]; deviceName_106 = bytes[106]; deviceName_107 = bytes[107]; deviceName_108 = bytes[108]; deviceName_109 = bytes[109]; deviceName_110 = bytes[110]; deviceName_111 = bytes[111]; deviceName_112 = bytes[112]; deviceName_113 = bytes[113]; deviceName_114 = bytes[114]; deviceName_115 = bytes[115]; deviceName_116 = bytes[116]; deviceName_117 = bytes[117]; deviceName_118 = bytes[118]; deviceName_119 = bytes[119]; deviceName_120 = bytes[120]; deviceName_121 = bytes[121]; deviceName_122 = bytes[122]; deviceName_123 = bytes[123]; deviceName_124 = bytes[124]; deviceName_125 = bytes[125]; deviceName_126 = bytes[126]; deviceName_127 = bytes[127]; deviceName_128 = bytes[128]; deviceName_129 = bytes[129]; deviceName_130 = bytes[130]; deviceName_131 = bytes[131]; deviceName_132 = bytes[132]; deviceName_133 = bytes[133]; deviceName_134 = bytes[134]; deviceName_135 = bytes[135]; deviceName_136 = bytes[136]; deviceName_137 = bytes[137]; deviceName_138 = bytes[138]; deviceName_139 = bytes[139]; deviceName_140 = bytes[140]; deviceName_141 = bytes[141]; deviceName_142 = bytes[142]; deviceName_143 = bytes[143]; deviceName_144 = bytes[144]; deviceName_145 = bytes[145]; deviceName_146 = bytes[146]; deviceName_147 = bytes[147]; deviceName_148 = bytes[148]; deviceName_149 = bytes[149]; deviceName_150 = bytes[150]; deviceName_151 = bytes[151]; deviceName_152 = bytes[152]; deviceName_153 = bytes[153]; deviceName_154 = bytes[154]; deviceName_155 = bytes[155]; deviceName_156 = bytes[156]; deviceName_157 = bytes[157]; deviceName_158 = bytes[158]; deviceName_159 = bytes[159]; deviceName_160 = bytes[160]; deviceName_161 = bytes[161]; deviceName_162 = bytes[162]; deviceName_163 = bytes[163]; deviceName_164 = bytes[164]; deviceName_165 = bytes[165]; deviceName_166 = bytes[166]; deviceName_167 = bytes[167]; deviceName_168 = bytes[168]; deviceName_169 = bytes[169]; deviceName_170 = bytes[170]; deviceName_171 = bytes[171]; deviceName_172 = bytes[172]; deviceName_173 = bytes[173]; deviceName_174 = bytes[174]; deviceName_175 = bytes[175]; deviceName_176 = bytes[176]; deviceName_177 = bytes[177]; deviceName_178 = bytes[178]; deviceName_179 = bytes[179]; deviceName_180 = bytes[180]; deviceName_181 = bytes[181]; deviceName_182 = bytes[182]; deviceName_183 = bytes[183]; deviceName_184 = bytes[184]; deviceName_185 = bytes[185]; deviceName_186 = bytes[186]; deviceName_187 = bytes[187]; deviceName_188 = bytes[188]; deviceName_189 = bytes[189]; deviceName_190 = bytes[190]; deviceName_191 = bytes[191]; deviceName_192 = bytes[192]; deviceName_193 = bytes[193]; deviceName_194 = bytes[194]; deviceName_195 = bytes[195]; deviceName_196 = bytes[196]; deviceName_197 = bytes[197]; deviceName_198 = bytes[198]; deviceName_199 = bytes[199]; deviceName_200 = bytes[200]; deviceName_201 = bytes[201]; deviceName_202 = bytes[202]; deviceName_203 = bytes[203]; deviceName_204 = bytes[204]; deviceName_205 = bytes[205]; deviceName_206 = bytes[206]; deviceName_207 = bytes[207]; deviceName_208 = bytes[208]; deviceName_209 = bytes[209]; deviceName_210 = bytes[210]; deviceName_211 = bytes[211]; deviceName_212 = bytes[212]; deviceName_213 = bytes[213]; deviceName_214 = bytes[214]; deviceName_215 = bytes[215]; deviceName_216 = bytes[216]; deviceName_217 = bytes[217]; deviceName_218 = bytes[218]; deviceName_219 = bytes[219]; deviceName_220 = bytes[220]; deviceName_221 = bytes[221]; deviceName_222 = bytes[222]; deviceName_223 = bytes[223]; deviceName_224 = bytes[224]; deviceName_225 = bytes[225]; deviceName_226 = bytes[226]; deviceName_227 = bytes[227]; deviceName_228 = bytes[228]; deviceName_229 = bytes[229]; deviceName_230 = bytes[230]; deviceName_231 = bytes[231]; deviceName_232 = bytes[232]; deviceName_233 = bytes[233]; deviceName_234 = bytes[234]; deviceName_235 = bytes[235]; deviceName_236 = bytes[236]; deviceName_237 = bytes[237]; deviceName_238 = bytes[238]; deviceName_239 = bytes[239]; deviceName_240 = bytes[240]; deviceName_241 = bytes[241]; deviceName_242 = bytes[242]; deviceName_243 = bytes[243]; deviceName_244 = bytes[244]; deviceName_245 = bytes[245]; deviceName_246 = bytes[246]; deviceName_247 = bytes[247]; deviceName_248 = bytes[248]; deviceName_249 = bytes[249]; deviceName_250 = bytes[250]; deviceName_251 = bytes[251]; deviceName_252 = bytes[252]; deviceName_253 = bytes[253]; deviceName_254 = bytes[254]; deviceName_255 = bytes[255];
-  }
-  @Uint8() int pipelineCacheUUID_0; @Uint8() int pipelineCacheUUID_1; @Uint8() int pipelineCacheUUID_2; @Uint8() int pipelineCacheUUID_3; @Uint8() int pipelineCacheUUID_4; @Uint8() int pipelineCacheUUID_5; @Uint8() int pipelineCacheUUID_6; @Uint8() int pipelineCacheUUID_7; @Uint8() int pipelineCacheUUID_8; @Uint8() int pipelineCacheUUID_9; @Uint8() int pipelineCacheUUID_10; @Uint8() int pipelineCacheUUID_11; @Uint8() int pipelineCacheUUID_12; @Uint8() int pipelineCacheUUID_13; @Uint8() int pipelineCacheUUID_14; @Uint8() int pipelineCacheUUID_15;
-  String get pipelineCacheUUID {
-    var bytes = [pipelineCacheUUID_0, pipelineCacheUUID_1, pipelineCacheUUID_2, pipelineCacheUUID_3, pipelineCacheUUID_4, pipelineCacheUUID_5, pipelineCacheUUID_6, pipelineCacheUUID_7, pipelineCacheUUID_8, pipelineCacheUUID_9, pipelineCacheUUID_10, pipelineCacheUUID_11, pipelineCacheUUID_12, pipelineCacheUUID_13, pipelineCacheUUID_14, pipelineCacheUUID_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set pipelineCacheUUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    pipelineCacheUUID_0 = bytes[0]; pipelineCacheUUID_1 = bytes[1]; pipelineCacheUUID_2 = bytes[2]; pipelineCacheUUID_3 = bytes[3]; pipelineCacheUUID_4 = bytes[4]; pipelineCacheUUID_5 = bytes[5]; pipelineCacheUUID_6 = bytes[6]; pipelineCacheUUID_7 = bytes[7]; pipelineCacheUUID_8 = bytes[8]; pipelineCacheUUID_9 = bytes[9]; pipelineCacheUUID_10 = bytes[10]; pipelineCacheUUID_11 = bytes[11]; pipelineCacheUUID_12 = bytes[12]; pipelineCacheUUID_13 = bytes[13]; pipelineCacheUUID_14 = bytes[14]; pipelineCacheUUID_15 = bytes[15];
-  }
-  @Uint32() int pad1;
-  @Uint32() int limits_maxImageDimension1D;
-  @Uint32() int limits_maxImageDimension2D;
-  @Uint32() int limits_maxImageDimension3D;
-  @Uint32() int limits_maxImageDimensionCube;
-  @Uint32() int limits_maxImageArrayLayers;
-  @Uint32() int limits_maxTexelBufferElements;
-  @Uint32() int limits_maxUniformBufferRange;
-  @Uint32() int limits_maxStorageBufferRange;
-  @Uint32() int limits_maxPushConstantsSize;
-  @Uint32() int limits_maxMemoryAllocationCount;
-  @Uint32() int limits_maxSamplerAllocationCount;
-  @Uint64() int limits_bufferImageGranularity;
-  @Uint64() int limits_sparseAddressSpaceSize;
-  @Uint32() int limits_maxBoundDescriptorSets;
-  @Uint32() int limits_maxPerStageDescriptorSamplers;
-  @Uint32() int limits_maxPerStageDescriptorUniformBuffers;
-  @Uint32() int limits_maxPerStageDescriptorStorageBuffers;
-  @Uint32() int limits_maxPerStageDescriptorSampledImages;
-  @Uint32() int limits_maxPerStageDescriptorStorageImages;
-  @Uint32() int limits_maxPerStageDescriptorInputAttachments;
-  @Uint32() int limits_maxPerStageResources;
-  @Uint32() int limits_maxDescriptorSetSamplers;
-  @Uint32() int limits_maxDescriptorSetUniformBuffers;
-  @Uint32() int limits_maxDescriptorSetUniformBuffersDynamic;
-  @Uint32() int limits_maxDescriptorSetStorageBuffers;
-  @Uint32() int limits_maxDescriptorSetStorageBuffersDynamic;
-  @Uint32() int limits_maxDescriptorSetSampledImages;
-  @Uint32() int limits_maxDescriptorSetStorageImages;
-  @Uint32() int limits_maxDescriptorSetInputAttachments;
-  @Uint32() int limits_maxVertexInputAttributes;
-  @Uint32() int limits_maxVertexInputBindings;
-  @Uint32() int limits_maxVertexInputAttributeOffset;
-  @Uint32() int limits_maxVertexInputBindingStride;
-  @Uint32() int limits_maxVertexOutputComponents;
-  @Uint32() int limits_maxTessellationGenerationLevel;
-  @Uint32() int limits_maxTessellationPatchSize;
-  @Uint32() int limits_maxTessellationControlPerVertexInputComponents;
-  @Uint32() int limits_maxTessellationControlPerVertexOutputComponents;
-  @Uint32() int limits_maxTessellationControlPerPatchOutputComponents;
-  @Uint32() int limits_maxTessellationControlTotalOutputComponents;
-  @Uint32() int limits_maxTessellationEvaluationInputComponents;
-  @Uint32() int limits_maxTessellationEvaluationOutputComponents;
-  @Uint32() int limits_maxGeometryShaderInvocations;
-  @Uint32() int limits_maxGeometryInputComponents;
-  @Uint32() int limits_maxGeometryOutputComponents;
-  @Uint32() int limits_maxGeometryOutputVertices;
-  @Uint32() int limits_maxGeometryTotalOutputComponents;
-  @Uint32() int limits_maxFragmentInputComponents;
-  @Uint32() int limits_maxFragmentOutputAttachments;
-  @Uint32() int limits_maxFragmentDualSrcAttachments;
-  @Uint32() int limits_maxFragmentCombinedOutputResources;
-  @Uint32() int limits_maxComputeSharedMemorySize;
-  @Uint32() int limits_maxComputeWorkGroupCount_0; @Uint32() int limits_maxComputeWorkGroupCount_1; @Uint32() int limits_maxComputeWorkGroupCount_2;
-  @Uint32() int limits_maxComputeWorkGroupInvocations;
-  @Uint32() int limits_maxComputeWorkGroupSize_0; @Uint32() int limits_maxComputeWorkGroupSize_1; @Uint32() int limits_maxComputeWorkGroupSize_2;
-  @Uint32() int limits_subPixelPrecisionBits;
-  @Uint32() int limits_subTexelPrecisionBits;
-  @Uint32() int limits_mipmapPrecisionBits;
-  @Uint32() int limits_maxDrawIndexedIndexValue;
-  @Uint32() int limits_maxDrawIndirectCount;
-  @Float() double limits_maxSamplerLodBias;
-  @Float() double limits_maxSamplerAnisotropy;
-  @Uint32() int limits_maxViewports;
-  @Uint32() int limits_maxViewportDimensions_0; @Uint32() int limits_maxViewportDimensions_1;
-  @Float() double limits_viewportBoundsRange_0; @Float() double limits_viewportBoundsRange_1;
-  @Uint32() int limits_viewportSubPixelBits;
-  @Uint64() int limits_minMemoryMapAlignment;
-  @Uint64() int limits_minTexelBufferOffsetAlignment;
-  @Uint64() int limits_minUniformBufferOffsetAlignment;
-  @Uint64() int limits_minStorageBufferOffsetAlignment;
-  @Int32() int limits_minTexelOffset;
-  @Uint32() int limits_maxTexelOffset;
-  @Int32() int limits_minTexelGatherOffset;
-  @Uint32() int limits_maxTexelGatherOffset;
-  @Float() double limits_minInterpolationOffset;
-  @Float() double limits_maxInterpolationOffset;
-  @Uint32() int limits_subPixelInterpolationOffsetBits;
-  @Uint32() int limits_maxFramebufferWidth;
-  @Uint32() int limits_maxFramebufferHeight;
-  @Uint32() int limits_maxFramebufferLayers;
-  @Uint32() int limits_framebufferColorSampleCounts;
-  @Uint32() int limits_framebufferDepthSampleCounts;
-  @Uint32() int limits_framebufferStencilSampleCounts;
-  @Uint32() int limits_framebufferNoAttachmentsSampleCounts;
-  @Uint32() int limits_maxColorAttachments;
-  @Uint32() int limits_sampledImageColorSampleCounts;
-  @Uint32() int limits_sampledImageIntegerSampleCounts;
-  @Uint32() int limits_sampledImageDepthSampleCounts;
-  @Uint32() int limits_sampledImageStencilSampleCounts;
-  @Uint32() int limits_storageImageSampleCounts;
-  @Uint32() int limits_maxSampleMaskWords;
-  @Uint32() int limits_timestampComputeAndGraphics;
-  @Float() double limits_timestampPeriod;
-  @Uint32() int limits_maxClipDistances;
-  @Uint32() int limits_maxCullDistances;
-  @Uint32() int limits_maxCombinedClipAndCullDistances;
-  @Uint32() int limits_discreteQueuePriorities;
-  @Float() double limits_pointSizeRange_0; @Float() double limits_pointSizeRange_1;
-  @Float() double limits_lineWidthRange_0; @Float() double limits_lineWidthRange_1;
-  @Float() double limits_pointSizeGranularity;
-  @Float() double limits_lineWidthGranularity;
-  @Uint32() int limits_strictLines;
-  @Uint32() int limits_standardSampleLocations;
-  @Uint64() int limits_optimalBufferCopyOffsetAlignment;
-  @Uint64() int limits_optimalBufferCopyRowPitchAlignment;
-  @Uint64() int limits_nonCoherentAtomSize;
-  @Uint32() int pad2;
-  @Uint32() int sparseProperties_residencyStandard2DBlockShape;
-  @Uint32() int sparseProperties_residencyStandard2DMultisampleBlockShape;
-  @Uint32() int sparseProperties_residencyStandard3DBlockShape;
-  @Uint32() int sparseProperties_residencyAlignedMipSize;
-  @Uint32() int sparseProperties_residencyNonResidentStrict;
+  @Uint32()
+  external int apiVersion;
+  @Uint32()
+  external int driverVersion;
+  @Uint32()
+  external int vendorID;
+  @Uint32()
+  external int deviceID;
+  @Int32()
+  external int deviceType;
+  @Array(256)
+  external Array<Uint8> deviceName;
+  @Array(16)
+  external Array<Uint8> pipelineCacheUUID;
+  @Uint32()
+  external int pad1;
+  @Uint32()
+  external int limits_maxImageDimension1D;
+  @Uint32()
+  external int limits_maxImageDimension2D;
+  @Uint32()
+  external int limits_maxImageDimension3D;
+  @Uint32()
+  external int limits_maxImageDimensionCube;
+  @Uint32()
+  external int limits_maxImageArrayLayers;
+  @Uint32()
+  external int limits_maxTexelBufferElements;
+  @Uint32()
+  external int limits_maxUniformBufferRange;
+  @Uint32()
+  external int limits_maxStorageBufferRange;
+  @Uint32()
+  external int limits_maxPushConstantsSize;
+  @Uint32()
+  external int limits_maxMemoryAllocationCount;
+  @Uint32()
+  external int limits_maxSamplerAllocationCount;
+  @Uint64()
+  external int limits_bufferImageGranularity;
+  @Uint64()
+  external int limits_sparseAddressSpaceSize;
+  @Uint32()
+  external int limits_maxBoundDescriptorSets;
+  @Uint32()
+  external int limits_maxPerStageDescriptorSamplers;
+  @Uint32()
+  external int limits_maxPerStageDescriptorUniformBuffers;
+  @Uint32()
+  external int limits_maxPerStageDescriptorStorageBuffers;
+  @Uint32()
+  external int limits_maxPerStageDescriptorSampledImages;
+  @Uint32()
+  external int limits_maxPerStageDescriptorStorageImages;
+  @Uint32()
+  external int limits_maxPerStageDescriptorInputAttachments;
+  @Uint32()
+  external int limits_maxPerStageResources;
+  @Uint32()
+  external int limits_maxDescriptorSetSamplers;
+  @Uint32()
+  external int limits_maxDescriptorSetUniformBuffers;
+  @Uint32()
+  external int limits_maxDescriptorSetUniformBuffersDynamic;
+  @Uint32()
+  external int limits_maxDescriptorSetStorageBuffers;
+  @Uint32()
+  external int limits_maxDescriptorSetStorageBuffersDynamic;
+  @Uint32()
+  external int limits_maxDescriptorSetSampledImages;
+  @Uint32()
+  external int limits_maxDescriptorSetStorageImages;
+  @Uint32()
+  external int limits_maxDescriptorSetInputAttachments;
+  @Uint32()
+  external int limits_maxVertexInputAttributes;
+  @Uint32()
+  external int limits_maxVertexInputBindings;
+  @Uint32()
+  external int limits_maxVertexInputAttributeOffset;
+  @Uint32()
+  external int limits_maxVertexInputBindingStride;
+  @Uint32()
+  external int limits_maxVertexOutputComponents;
+  @Uint32()
+  external int limits_maxTessellationGenerationLevel;
+  @Uint32()
+  external int limits_maxTessellationPatchSize;
+  @Uint32()
+  external int limits_maxTessellationControlPerVertexInputComponents;
+  @Uint32()
+  external int limits_maxTessellationControlPerVertexOutputComponents;
+  @Uint32()
+  external int limits_maxTessellationControlPerPatchOutputComponents;
+  @Uint32()
+  external int limits_maxTessellationControlTotalOutputComponents;
+  @Uint32()
+  external int limits_maxTessellationEvaluationInputComponents;
+  @Uint32()
+  external int limits_maxTessellationEvaluationOutputComponents;
+  @Uint32()
+  external int limits_maxGeometryShaderInvocations;
+  @Uint32()
+  external int limits_maxGeometryInputComponents;
+  @Uint32()
+  external int limits_maxGeometryOutputComponents;
+  @Uint32()
+  external int limits_maxGeometryOutputVertices;
+  @Uint32()
+  external int limits_maxGeometryTotalOutputComponents;
+  @Uint32()
+  external int limits_maxFragmentInputComponents;
+  @Uint32()
+  external int limits_maxFragmentOutputAttachments;
+  @Uint32()
+  external int limits_maxFragmentDualSrcAttachments;
+  @Uint32()
+  external int limits_maxFragmentCombinedOutputResources;
+  @Uint32()
+  external int limits_maxComputeSharedMemorySize;
+  @Array(3)
+  external Array<Uint32> limits_maxComputeWorkGroupCount;
+  @Uint32()
+  external int limits_maxComputeWorkGroupInvocations;
+  @Array(3)
+  external Array<Uint32> limits_maxComputeWorkGroupSize;
+  @Uint32()
+  external int limits_subPixelPrecisionBits;
+  @Uint32()
+  external int limits_subTexelPrecisionBits;
+  @Uint32()
+  external int limits_mipmapPrecisionBits;
+  @Uint32()
+  external int limits_maxDrawIndexedIndexValue;
+  @Uint32()
+  external int limits_maxDrawIndirectCount;
+  @Float()
+  external double limits_maxSamplerLodBias;
+  @Float()
+  external double limits_maxSamplerAnisotropy;
+  @Uint32()
+  external int limits_maxViewports;
+  @Array(2)
+  external Array<Uint32> limits_maxViewportDimensions;
+  @Array(2)
+  external Array<Float> limits_viewportBoundsRange;
+  @Uint32()
+  external int limits_viewportSubPixelBits;
+  @Uint64()
+  external int limits_minMemoryMapAlignment;
+  @Uint64()
+  external int limits_minTexelBufferOffsetAlignment;
+  @Uint64()
+  external int limits_minUniformBufferOffsetAlignment;
+  @Uint64()
+  external int limits_minStorageBufferOffsetAlignment;
+  @Int32()
+  external int limits_minTexelOffset;
+  @Uint32()
+  external int limits_maxTexelOffset;
+  @Int32()
+  external int limits_minTexelGatherOffset;
+  @Uint32()
+  external int limits_maxTexelGatherOffset;
+  @Float()
+  external double limits_minInterpolationOffset;
+  @Float()
+  external double limits_maxInterpolationOffset;
+  @Uint32()
+  external int limits_subPixelInterpolationOffsetBits;
+  @Uint32()
+  external int limits_maxFramebufferWidth;
+  @Uint32()
+  external int limits_maxFramebufferHeight;
+  @Uint32()
+  external int limits_maxFramebufferLayers;
+  @Uint32()
+  external int limits_framebufferColorSampleCounts;
+  @Uint32()
+  external int limits_framebufferDepthSampleCounts;
+  @Uint32()
+  external int limits_framebufferStencilSampleCounts;
+  @Uint32()
+  external int limits_framebufferNoAttachmentsSampleCounts;
+  @Uint32()
+  external int limits_maxColorAttachments;
+  @Uint32()
+  external int limits_sampledImageColorSampleCounts;
+  @Uint32()
+  external int limits_sampledImageIntegerSampleCounts;
+  @Uint32()
+  external int limits_sampledImageDepthSampleCounts;
+  @Uint32()
+  external int limits_sampledImageStencilSampleCounts;
+  @Uint32()
+  external int limits_storageImageSampleCounts;
+  @Uint32()
+  external int limits_maxSampleMaskWords;
+  @Uint32()
+  external int limits_timestampComputeAndGraphics;
+  @Float()
+  external double limits_timestampPeriod;
+  @Uint32()
+  external int limits_maxClipDistances;
+  @Uint32()
+  external int limits_maxCullDistances;
+  @Uint32()
+  external int limits_maxCombinedClipAndCullDistances;
+  @Uint32()
+  external int limits_discreteQueuePriorities;
+  @Array(2)
+  external Array<Float> limits_pointSizeRange;
+  @Array(2)
+  external Array<Float> limits_lineWidthRange;
+  @Float()
+  external double limits_pointSizeGranularity;
+  @Float()
+  external double limits_lineWidthGranularity;
+  @Uint32()
+  external int limits_strictLines;
+  @Uint32()
+  external int limits_standardSampleLocations;
+  @Uint64()
+  external int limits_optimalBufferCopyOffsetAlignment;
+  @Uint64()
+  external int limits_optimalBufferCopyRowPitchAlignment;
+  @Uint64()
+  external int limits_nonCoherentAtomSize;
+  @Uint32()
+  external int pad2;
+  @Uint32()
+  external int sparseProperties_residencyStandard2DBlockShape;
+  @Uint32()
+  external int sparseProperties_residencyStandard2DMultisampleBlockShape;
+  @Uint32()
+  external int sparseProperties_residencyStandard3DBlockShape;
+  @Uint32()
+  external int sparseProperties_residencyAlignedMipSize;
+  @Uint32()
+  external int sparseProperties_residencyNonResidentStrict;
 }
 
 class VkExtensionProperties extends Struct {
-  @Uint8() int extensionName_0; @Uint8() int extensionName_1; @Uint8() int extensionName_2; @Uint8() int extensionName_3; @Uint8() int extensionName_4; @Uint8() int extensionName_5; @Uint8() int extensionName_6; @Uint8() int extensionName_7; @Uint8() int extensionName_8; @Uint8() int extensionName_9; @Uint8() int extensionName_10; @Uint8() int extensionName_11; @Uint8() int extensionName_12; @Uint8() int extensionName_13; @Uint8() int extensionName_14; @Uint8() int extensionName_15; @Uint8() int extensionName_16; @Uint8() int extensionName_17; @Uint8() int extensionName_18; @Uint8() int extensionName_19; @Uint8() int extensionName_20; @Uint8() int extensionName_21; @Uint8() int extensionName_22; @Uint8() int extensionName_23; @Uint8() int extensionName_24; @Uint8() int extensionName_25; @Uint8() int extensionName_26; @Uint8() int extensionName_27; @Uint8() int extensionName_28; @Uint8() int extensionName_29; @Uint8() int extensionName_30; @Uint8() int extensionName_31; @Uint8() int extensionName_32; @Uint8() int extensionName_33; @Uint8() int extensionName_34; @Uint8() int extensionName_35; @Uint8() int extensionName_36; @Uint8() int extensionName_37; @Uint8() int extensionName_38; @Uint8() int extensionName_39; @Uint8() int extensionName_40; @Uint8() int extensionName_41; @Uint8() int extensionName_42; @Uint8() int extensionName_43; @Uint8() int extensionName_44; @Uint8() int extensionName_45; @Uint8() int extensionName_46; @Uint8() int extensionName_47; @Uint8() int extensionName_48; @Uint8() int extensionName_49; @Uint8() int extensionName_50; @Uint8() int extensionName_51; @Uint8() int extensionName_52; @Uint8() int extensionName_53; @Uint8() int extensionName_54; @Uint8() int extensionName_55; @Uint8() int extensionName_56; @Uint8() int extensionName_57; @Uint8() int extensionName_58; @Uint8() int extensionName_59; @Uint8() int extensionName_60; @Uint8() int extensionName_61; @Uint8() int extensionName_62; @Uint8() int extensionName_63; @Uint8() int extensionName_64; @Uint8() int extensionName_65; @Uint8() int extensionName_66; @Uint8() int extensionName_67; @Uint8() int extensionName_68; @Uint8() int extensionName_69; @Uint8() int extensionName_70; @Uint8() int extensionName_71; @Uint8() int extensionName_72; @Uint8() int extensionName_73; @Uint8() int extensionName_74; @Uint8() int extensionName_75; @Uint8() int extensionName_76; @Uint8() int extensionName_77; @Uint8() int extensionName_78; @Uint8() int extensionName_79; @Uint8() int extensionName_80; @Uint8() int extensionName_81; @Uint8() int extensionName_82; @Uint8() int extensionName_83; @Uint8() int extensionName_84; @Uint8() int extensionName_85; @Uint8() int extensionName_86; @Uint8() int extensionName_87; @Uint8() int extensionName_88; @Uint8() int extensionName_89; @Uint8() int extensionName_90; @Uint8() int extensionName_91; @Uint8() int extensionName_92; @Uint8() int extensionName_93; @Uint8() int extensionName_94; @Uint8() int extensionName_95; @Uint8() int extensionName_96; @Uint8() int extensionName_97; @Uint8() int extensionName_98; @Uint8() int extensionName_99; @Uint8() int extensionName_100; @Uint8() int extensionName_101; @Uint8() int extensionName_102; @Uint8() int extensionName_103; @Uint8() int extensionName_104; @Uint8() int extensionName_105; @Uint8() int extensionName_106; @Uint8() int extensionName_107; @Uint8() int extensionName_108; @Uint8() int extensionName_109; @Uint8() int extensionName_110; @Uint8() int extensionName_111; @Uint8() int extensionName_112; @Uint8() int extensionName_113; @Uint8() int extensionName_114; @Uint8() int extensionName_115; @Uint8() int extensionName_116; @Uint8() int extensionName_117; @Uint8() int extensionName_118; @Uint8() int extensionName_119; @Uint8() int extensionName_120; @Uint8() int extensionName_121; @Uint8() int extensionName_122; @Uint8() int extensionName_123; @Uint8() int extensionName_124; @Uint8() int extensionName_125; @Uint8() int extensionName_126; @Uint8() int extensionName_127; @Uint8() int extensionName_128; @Uint8() int extensionName_129; @Uint8() int extensionName_130; @Uint8() int extensionName_131; @Uint8() int extensionName_132; @Uint8() int extensionName_133; @Uint8() int extensionName_134; @Uint8() int extensionName_135; @Uint8() int extensionName_136; @Uint8() int extensionName_137; @Uint8() int extensionName_138; @Uint8() int extensionName_139; @Uint8() int extensionName_140; @Uint8() int extensionName_141; @Uint8() int extensionName_142; @Uint8() int extensionName_143; @Uint8() int extensionName_144; @Uint8() int extensionName_145; @Uint8() int extensionName_146; @Uint8() int extensionName_147; @Uint8() int extensionName_148; @Uint8() int extensionName_149; @Uint8() int extensionName_150; @Uint8() int extensionName_151; @Uint8() int extensionName_152; @Uint8() int extensionName_153; @Uint8() int extensionName_154; @Uint8() int extensionName_155; @Uint8() int extensionName_156; @Uint8() int extensionName_157; @Uint8() int extensionName_158; @Uint8() int extensionName_159; @Uint8() int extensionName_160; @Uint8() int extensionName_161; @Uint8() int extensionName_162; @Uint8() int extensionName_163; @Uint8() int extensionName_164; @Uint8() int extensionName_165; @Uint8() int extensionName_166; @Uint8() int extensionName_167; @Uint8() int extensionName_168; @Uint8() int extensionName_169; @Uint8() int extensionName_170; @Uint8() int extensionName_171; @Uint8() int extensionName_172; @Uint8() int extensionName_173; @Uint8() int extensionName_174; @Uint8() int extensionName_175; @Uint8() int extensionName_176; @Uint8() int extensionName_177; @Uint8() int extensionName_178; @Uint8() int extensionName_179; @Uint8() int extensionName_180; @Uint8() int extensionName_181; @Uint8() int extensionName_182; @Uint8() int extensionName_183; @Uint8() int extensionName_184; @Uint8() int extensionName_185; @Uint8() int extensionName_186; @Uint8() int extensionName_187; @Uint8() int extensionName_188; @Uint8() int extensionName_189; @Uint8() int extensionName_190; @Uint8() int extensionName_191; @Uint8() int extensionName_192; @Uint8() int extensionName_193; @Uint8() int extensionName_194; @Uint8() int extensionName_195; @Uint8() int extensionName_196; @Uint8() int extensionName_197; @Uint8() int extensionName_198; @Uint8() int extensionName_199; @Uint8() int extensionName_200; @Uint8() int extensionName_201; @Uint8() int extensionName_202; @Uint8() int extensionName_203; @Uint8() int extensionName_204; @Uint8() int extensionName_205; @Uint8() int extensionName_206; @Uint8() int extensionName_207; @Uint8() int extensionName_208; @Uint8() int extensionName_209; @Uint8() int extensionName_210; @Uint8() int extensionName_211; @Uint8() int extensionName_212; @Uint8() int extensionName_213; @Uint8() int extensionName_214; @Uint8() int extensionName_215; @Uint8() int extensionName_216; @Uint8() int extensionName_217; @Uint8() int extensionName_218; @Uint8() int extensionName_219; @Uint8() int extensionName_220; @Uint8() int extensionName_221; @Uint8() int extensionName_222; @Uint8() int extensionName_223; @Uint8() int extensionName_224; @Uint8() int extensionName_225; @Uint8() int extensionName_226; @Uint8() int extensionName_227; @Uint8() int extensionName_228; @Uint8() int extensionName_229; @Uint8() int extensionName_230; @Uint8() int extensionName_231; @Uint8() int extensionName_232; @Uint8() int extensionName_233; @Uint8() int extensionName_234; @Uint8() int extensionName_235; @Uint8() int extensionName_236; @Uint8() int extensionName_237; @Uint8() int extensionName_238; @Uint8() int extensionName_239; @Uint8() int extensionName_240; @Uint8() int extensionName_241; @Uint8() int extensionName_242; @Uint8() int extensionName_243; @Uint8() int extensionName_244; @Uint8() int extensionName_245; @Uint8() int extensionName_246; @Uint8() int extensionName_247; @Uint8() int extensionName_248; @Uint8() int extensionName_249; @Uint8() int extensionName_250; @Uint8() int extensionName_251; @Uint8() int extensionName_252; @Uint8() int extensionName_253; @Uint8() int extensionName_254; @Uint8() int extensionName_255;
-  String get extensionName {
-    var bytes = [extensionName_0, extensionName_1, extensionName_2, extensionName_3, extensionName_4, extensionName_5, extensionName_6, extensionName_7, extensionName_8, extensionName_9, extensionName_10, extensionName_11, extensionName_12, extensionName_13, extensionName_14, extensionName_15, extensionName_16, extensionName_17, extensionName_18, extensionName_19, extensionName_20, extensionName_21, extensionName_22, extensionName_23, extensionName_24, extensionName_25, extensionName_26, extensionName_27, extensionName_28, extensionName_29, extensionName_30, extensionName_31, extensionName_32, extensionName_33, extensionName_34, extensionName_35, extensionName_36, extensionName_37, extensionName_38, extensionName_39, extensionName_40, extensionName_41, extensionName_42, extensionName_43, extensionName_44, extensionName_45, extensionName_46, extensionName_47, extensionName_48, extensionName_49, extensionName_50, extensionName_51, extensionName_52, extensionName_53, extensionName_54, extensionName_55, extensionName_56, extensionName_57, extensionName_58, extensionName_59, extensionName_60, extensionName_61, extensionName_62, extensionName_63, extensionName_64, extensionName_65, extensionName_66, extensionName_67, extensionName_68, extensionName_69, extensionName_70, extensionName_71, extensionName_72, extensionName_73, extensionName_74, extensionName_75, extensionName_76, extensionName_77, extensionName_78, extensionName_79, extensionName_80, extensionName_81, extensionName_82, extensionName_83, extensionName_84, extensionName_85, extensionName_86, extensionName_87, extensionName_88, extensionName_89, extensionName_90, extensionName_91, extensionName_92, extensionName_93, extensionName_94, extensionName_95, extensionName_96, extensionName_97, extensionName_98, extensionName_99, extensionName_100, extensionName_101, extensionName_102, extensionName_103, extensionName_104, extensionName_105, extensionName_106, extensionName_107, extensionName_108, extensionName_109, extensionName_110, extensionName_111, extensionName_112, extensionName_113, extensionName_114, extensionName_115, extensionName_116, extensionName_117, extensionName_118, extensionName_119, extensionName_120, extensionName_121, extensionName_122, extensionName_123, extensionName_124, extensionName_125, extensionName_126, extensionName_127, extensionName_128, extensionName_129, extensionName_130, extensionName_131, extensionName_132, extensionName_133, extensionName_134, extensionName_135, extensionName_136, extensionName_137, extensionName_138, extensionName_139, extensionName_140, extensionName_141, extensionName_142, extensionName_143, extensionName_144, extensionName_145, extensionName_146, extensionName_147, extensionName_148, extensionName_149, extensionName_150, extensionName_151, extensionName_152, extensionName_153, extensionName_154, extensionName_155, extensionName_156, extensionName_157, extensionName_158, extensionName_159, extensionName_160, extensionName_161, extensionName_162, extensionName_163, extensionName_164, extensionName_165, extensionName_166, extensionName_167, extensionName_168, extensionName_169, extensionName_170, extensionName_171, extensionName_172, extensionName_173, extensionName_174, extensionName_175, extensionName_176, extensionName_177, extensionName_178, extensionName_179, extensionName_180, extensionName_181, extensionName_182, extensionName_183, extensionName_184, extensionName_185, extensionName_186, extensionName_187, extensionName_188, extensionName_189, extensionName_190, extensionName_191, extensionName_192, extensionName_193, extensionName_194, extensionName_195, extensionName_196, extensionName_197, extensionName_198, extensionName_199, extensionName_200, extensionName_201, extensionName_202, extensionName_203, extensionName_204, extensionName_205, extensionName_206, extensionName_207, extensionName_208, extensionName_209, extensionName_210, extensionName_211, extensionName_212, extensionName_213, extensionName_214, extensionName_215, extensionName_216, extensionName_217, extensionName_218, extensionName_219, extensionName_220, extensionName_221, extensionName_222, extensionName_223, extensionName_224, extensionName_225, extensionName_226, extensionName_227, extensionName_228, extensionName_229, extensionName_230, extensionName_231, extensionName_232, extensionName_233, extensionName_234, extensionName_235, extensionName_236, extensionName_237, extensionName_238, extensionName_239, extensionName_240, extensionName_241, extensionName_242, extensionName_243, extensionName_244, extensionName_245, extensionName_246, extensionName_247, extensionName_248, extensionName_249, extensionName_250, extensionName_251, extensionName_252, extensionName_253, extensionName_254, extensionName_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set extensionName(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    extensionName_0 = bytes[0]; extensionName_1 = bytes[1]; extensionName_2 = bytes[2]; extensionName_3 = bytes[3]; extensionName_4 = bytes[4]; extensionName_5 = bytes[5]; extensionName_6 = bytes[6]; extensionName_7 = bytes[7]; extensionName_8 = bytes[8]; extensionName_9 = bytes[9]; extensionName_10 = bytes[10]; extensionName_11 = bytes[11]; extensionName_12 = bytes[12]; extensionName_13 = bytes[13]; extensionName_14 = bytes[14]; extensionName_15 = bytes[15]; extensionName_16 = bytes[16]; extensionName_17 = bytes[17]; extensionName_18 = bytes[18]; extensionName_19 = bytes[19]; extensionName_20 = bytes[20]; extensionName_21 = bytes[21]; extensionName_22 = bytes[22]; extensionName_23 = bytes[23]; extensionName_24 = bytes[24]; extensionName_25 = bytes[25]; extensionName_26 = bytes[26]; extensionName_27 = bytes[27]; extensionName_28 = bytes[28]; extensionName_29 = bytes[29]; extensionName_30 = bytes[30]; extensionName_31 = bytes[31]; extensionName_32 = bytes[32]; extensionName_33 = bytes[33]; extensionName_34 = bytes[34]; extensionName_35 = bytes[35]; extensionName_36 = bytes[36]; extensionName_37 = bytes[37]; extensionName_38 = bytes[38]; extensionName_39 = bytes[39]; extensionName_40 = bytes[40]; extensionName_41 = bytes[41]; extensionName_42 = bytes[42]; extensionName_43 = bytes[43]; extensionName_44 = bytes[44]; extensionName_45 = bytes[45]; extensionName_46 = bytes[46]; extensionName_47 = bytes[47]; extensionName_48 = bytes[48]; extensionName_49 = bytes[49]; extensionName_50 = bytes[50]; extensionName_51 = bytes[51]; extensionName_52 = bytes[52]; extensionName_53 = bytes[53]; extensionName_54 = bytes[54]; extensionName_55 = bytes[55]; extensionName_56 = bytes[56]; extensionName_57 = bytes[57]; extensionName_58 = bytes[58]; extensionName_59 = bytes[59]; extensionName_60 = bytes[60]; extensionName_61 = bytes[61]; extensionName_62 = bytes[62]; extensionName_63 = bytes[63]; extensionName_64 = bytes[64]; extensionName_65 = bytes[65]; extensionName_66 = bytes[66]; extensionName_67 = bytes[67]; extensionName_68 = bytes[68]; extensionName_69 = bytes[69]; extensionName_70 = bytes[70]; extensionName_71 = bytes[71]; extensionName_72 = bytes[72]; extensionName_73 = bytes[73]; extensionName_74 = bytes[74]; extensionName_75 = bytes[75]; extensionName_76 = bytes[76]; extensionName_77 = bytes[77]; extensionName_78 = bytes[78]; extensionName_79 = bytes[79]; extensionName_80 = bytes[80]; extensionName_81 = bytes[81]; extensionName_82 = bytes[82]; extensionName_83 = bytes[83]; extensionName_84 = bytes[84]; extensionName_85 = bytes[85]; extensionName_86 = bytes[86]; extensionName_87 = bytes[87]; extensionName_88 = bytes[88]; extensionName_89 = bytes[89]; extensionName_90 = bytes[90]; extensionName_91 = bytes[91]; extensionName_92 = bytes[92]; extensionName_93 = bytes[93]; extensionName_94 = bytes[94]; extensionName_95 = bytes[95]; extensionName_96 = bytes[96]; extensionName_97 = bytes[97]; extensionName_98 = bytes[98]; extensionName_99 = bytes[99]; extensionName_100 = bytes[100]; extensionName_101 = bytes[101]; extensionName_102 = bytes[102]; extensionName_103 = bytes[103]; extensionName_104 = bytes[104]; extensionName_105 = bytes[105]; extensionName_106 = bytes[106]; extensionName_107 = bytes[107]; extensionName_108 = bytes[108]; extensionName_109 = bytes[109]; extensionName_110 = bytes[110]; extensionName_111 = bytes[111]; extensionName_112 = bytes[112]; extensionName_113 = bytes[113]; extensionName_114 = bytes[114]; extensionName_115 = bytes[115]; extensionName_116 = bytes[116]; extensionName_117 = bytes[117]; extensionName_118 = bytes[118]; extensionName_119 = bytes[119]; extensionName_120 = bytes[120]; extensionName_121 = bytes[121]; extensionName_122 = bytes[122]; extensionName_123 = bytes[123]; extensionName_124 = bytes[124]; extensionName_125 = bytes[125]; extensionName_126 = bytes[126]; extensionName_127 = bytes[127]; extensionName_128 = bytes[128]; extensionName_129 = bytes[129]; extensionName_130 = bytes[130]; extensionName_131 = bytes[131]; extensionName_132 = bytes[132]; extensionName_133 = bytes[133]; extensionName_134 = bytes[134]; extensionName_135 = bytes[135]; extensionName_136 = bytes[136]; extensionName_137 = bytes[137]; extensionName_138 = bytes[138]; extensionName_139 = bytes[139]; extensionName_140 = bytes[140]; extensionName_141 = bytes[141]; extensionName_142 = bytes[142]; extensionName_143 = bytes[143]; extensionName_144 = bytes[144]; extensionName_145 = bytes[145]; extensionName_146 = bytes[146]; extensionName_147 = bytes[147]; extensionName_148 = bytes[148]; extensionName_149 = bytes[149]; extensionName_150 = bytes[150]; extensionName_151 = bytes[151]; extensionName_152 = bytes[152]; extensionName_153 = bytes[153]; extensionName_154 = bytes[154]; extensionName_155 = bytes[155]; extensionName_156 = bytes[156]; extensionName_157 = bytes[157]; extensionName_158 = bytes[158]; extensionName_159 = bytes[159]; extensionName_160 = bytes[160]; extensionName_161 = bytes[161]; extensionName_162 = bytes[162]; extensionName_163 = bytes[163]; extensionName_164 = bytes[164]; extensionName_165 = bytes[165]; extensionName_166 = bytes[166]; extensionName_167 = bytes[167]; extensionName_168 = bytes[168]; extensionName_169 = bytes[169]; extensionName_170 = bytes[170]; extensionName_171 = bytes[171]; extensionName_172 = bytes[172]; extensionName_173 = bytes[173]; extensionName_174 = bytes[174]; extensionName_175 = bytes[175]; extensionName_176 = bytes[176]; extensionName_177 = bytes[177]; extensionName_178 = bytes[178]; extensionName_179 = bytes[179]; extensionName_180 = bytes[180]; extensionName_181 = bytes[181]; extensionName_182 = bytes[182]; extensionName_183 = bytes[183]; extensionName_184 = bytes[184]; extensionName_185 = bytes[185]; extensionName_186 = bytes[186]; extensionName_187 = bytes[187]; extensionName_188 = bytes[188]; extensionName_189 = bytes[189]; extensionName_190 = bytes[190]; extensionName_191 = bytes[191]; extensionName_192 = bytes[192]; extensionName_193 = bytes[193]; extensionName_194 = bytes[194]; extensionName_195 = bytes[195]; extensionName_196 = bytes[196]; extensionName_197 = bytes[197]; extensionName_198 = bytes[198]; extensionName_199 = bytes[199]; extensionName_200 = bytes[200]; extensionName_201 = bytes[201]; extensionName_202 = bytes[202]; extensionName_203 = bytes[203]; extensionName_204 = bytes[204]; extensionName_205 = bytes[205]; extensionName_206 = bytes[206]; extensionName_207 = bytes[207]; extensionName_208 = bytes[208]; extensionName_209 = bytes[209]; extensionName_210 = bytes[210]; extensionName_211 = bytes[211]; extensionName_212 = bytes[212]; extensionName_213 = bytes[213]; extensionName_214 = bytes[214]; extensionName_215 = bytes[215]; extensionName_216 = bytes[216]; extensionName_217 = bytes[217]; extensionName_218 = bytes[218]; extensionName_219 = bytes[219]; extensionName_220 = bytes[220]; extensionName_221 = bytes[221]; extensionName_222 = bytes[222]; extensionName_223 = bytes[223]; extensionName_224 = bytes[224]; extensionName_225 = bytes[225]; extensionName_226 = bytes[226]; extensionName_227 = bytes[227]; extensionName_228 = bytes[228]; extensionName_229 = bytes[229]; extensionName_230 = bytes[230]; extensionName_231 = bytes[231]; extensionName_232 = bytes[232]; extensionName_233 = bytes[233]; extensionName_234 = bytes[234]; extensionName_235 = bytes[235]; extensionName_236 = bytes[236]; extensionName_237 = bytes[237]; extensionName_238 = bytes[238]; extensionName_239 = bytes[239]; extensionName_240 = bytes[240]; extensionName_241 = bytes[241]; extensionName_242 = bytes[242]; extensionName_243 = bytes[243]; extensionName_244 = bytes[244]; extensionName_245 = bytes[245]; extensionName_246 = bytes[246]; extensionName_247 = bytes[247]; extensionName_248 = bytes[248]; extensionName_249 = bytes[249]; extensionName_250 = bytes[250]; extensionName_251 = bytes[251]; extensionName_252 = bytes[252]; extensionName_253 = bytes[253]; extensionName_254 = bytes[254]; extensionName_255 = bytes[255];
-  }
-  @Uint32() int specVersion;
+  @Array(256)
+  external Array<Uint8> extensionName;
+  @Uint32()
+  external int specVersion;
 }
 
 class VkLayerProperties extends Struct {
-  @Uint8() int layerName_0; @Uint8() int layerName_1; @Uint8() int layerName_2; @Uint8() int layerName_3; @Uint8() int layerName_4; @Uint8() int layerName_5; @Uint8() int layerName_6; @Uint8() int layerName_7; @Uint8() int layerName_8; @Uint8() int layerName_9; @Uint8() int layerName_10; @Uint8() int layerName_11; @Uint8() int layerName_12; @Uint8() int layerName_13; @Uint8() int layerName_14; @Uint8() int layerName_15; @Uint8() int layerName_16; @Uint8() int layerName_17; @Uint8() int layerName_18; @Uint8() int layerName_19; @Uint8() int layerName_20; @Uint8() int layerName_21; @Uint8() int layerName_22; @Uint8() int layerName_23; @Uint8() int layerName_24; @Uint8() int layerName_25; @Uint8() int layerName_26; @Uint8() int layerName_27; @Uint8() int layerName_28; @Uint8() int layerName_29; @Uint8() int layerName_30; @Uint8() int layerName_31; @Uint8() int layerName_32; @Uint8() int layerName_33; @Uint8() int layerName_34; @Uint8() int layerName_35; @Uint8() int layerName_36; @Uint8() int layerName_37; @Uint8() int layerName_38; @Uint8() int layerName_39; @Uint8() int layerName_40; @Uint8() int layerName_41; @Uint8() int layerName_42; @Uint8() int layerName_43; @Uint8() int layerName_44; @Uint8() int layerName_45; @Uint8() int layerName_46; @Uint8() int layerName_47; @Uint8() int layerName_48; @Uint8() int layerName_49; @Uint8() int layerName_50; @Uint8() int layerName_51; @Uint8() int layerName_52; @Uint8() int layerName_53; @Uint8() int layerName_54; @Uint8() int layerName_55; @Uint8() int layerName_56; @Uint8() int layerName_57; @Uint8() int layerName_58; @Uint8() int layerName_59; @Uint8() int layerName_60; @Uint8() int layerName_61; @Uint8() int layerName_62; @Uint8() int layerName_63; @Uint8() int layerName_64; @Uint8() int layerName_65; @Uint8() int layerName_66; @Uint8() int layerName_67; @Uint8() int layerName_68; @Uint8() int layerName_69; @Uint8() int layerName_70; @Uint8() int layerName_71; @Uint8() int layerName_72; @Uint8() int layerName_73; @Uint8() int layerName_74; @Uint8() int layerName_75; @Uint8() int layerName_76; @Uint8() int layerName_77; @Uint8() int layerName_78; @Uint8() int layerName_79; @Uint8() int layerName_80; @Uint8() int layerName_81; @Uint8() int layerName_82; @Uint8() int layerName_83; @Uint8() int layerName_84; @Uint8() int layerName_85; @Uint8() int layerName_86; @Uint8() int layerName_87; @Uint8() int layerName_88; @Uint8() int layerName_89; @Uint8() int layerName_90; @Uint8() int layerName_91; @Uint8() int layerName_92; @Uint8() int layerName_93; @Uint8() int layerName_94; @Uint8() int layerName_95; @Uint8() int layerName_96; @Uint8() int layerName_97; @Uint8() int layerName_98; @Uint8() int layerName_99; @Uint8() int layerName_100; @Uint8() int layerName_101; @Uint8() int layerName_102; @Uint8() int layerName_103; @Uint8() int layerName_104; @Uint8() int layerName_105; @Uint8() int layerName_106; @Uint8() int layerName_107; @Uint8() int layerName_108; @Uint8() int layerName_109; @Uint8() int layerName_110; @Uint8() int layerName_111; @Uint8() int layerName_112; @Uint8() int layerName_113; @Uint8() int layerName_114; @Uint8() int layerName_115; @Uint8() int layerName_116; @Uint8() int layerName_117; @Uint8() int layerName_118; @Uint8() int layerName_119; @Uint8() int layerName_120; @Uint8() int layerName_121; @Uint8() int layerName_122; @Uint8() int layerName_123; @Uint8() int layerName_124; @Uint8() int layerName_125; @Uint8() int layerName_126; @Uint8() int layerName_127; @Uint8() int layerName_128; @Uint8() int layerName_129; @Uint8() int layerName_130; @Uint8() int layerName_131; @Uint8() int layerName_132; @Uint8() int layerName_133; @Uint8() int layerName_134; @Uint8() int layerName_135; @Uint8() int layerName_136; @Uint8() int layerName_137; @Uint8() int layerName_138; @Uint8() int layerName_139; @Uint8() int layerName_140; @Uint8() int layerName_141; @Uint8() int layerName_142; @Uint8() int layerName_143; @Uint8() int layerName_144; @Uint8() int layerName_145; @Uint8() int layerName_146; @Uint8() int layerName_147; @Uint8() int layerName_148; @Uint8() int layerName_149; @Uint8() int layerName_150; @Uint8() int layerName_151; @Uint8() int layerName_152; @Uint8() int layerName_153; @Uint8() int layerName_154; @Uint8() int layerName_155; @Uint8() int layerName_156; @Uint8() int layerName_157; @Uint8() int layerName_158; @Uint8() int layerName_159; @Uint8() int layerName_160; @Uint8() int layerName_161; @Uint8() int layerName_162; @Uint8() int layerName_163; @Uint8() int layerName_164; @Uint8() int layerName_165; @Uint8() int layerName_166; @Uint8() int layerName_167; @Uint8() int layerName_168; @Uint8() int layerName_169; @Uint8() int layerName_170; @Uint8() int layerName_171; @Uint8() int layerName_172; @Uint8() int layerName_173; @Uint8() int layerName_174; @Uint8() int layerName_175; @Uint8() int layerName_176; @Uint8() int layerName_177; @Uint8() int layerName_178; @Uint8() int layerName_179; @Uint8() int layerName_180; @Uint8() int layerName_181; @Uint8() int layerName_182; @Uint8() int layerName_183; @Uint8() int layerName_184; @Uint8() int layerName_185; @Uint8() int layerName_186; @Uint8() int layerName_187; @Uint8() int layerName_188; @Uint8() int layerName_189; @Uint8() int layerName_190; @Uint8() int layerName_191; @Uint8() int layerName_192; @Uint8() int layerName_193; @Uint8() int layerName_194; @Uint8() int layerName_195; @Uint8() int layerName_196; @Uint8() int layerName_197; @Uint8() int layerName_198; @Uint8() int layerName_199; @Uint8() int layerName_200; @Uint8() int layerName_201; @Uint8() int layerName_202; @Uint8() int layerName_203; @Uint8() int layerName_204; @Uint8() int layerName_205; @Uint8() int layerName_206; @Uint8() int layerName_207; @Uint8() int layerName_208; @Uint8() int layerName_209; @Uint8() int layerName_210; @Uint8() int layerName_211; @Uint8() int layerName_212; @Uint8() int layerName_213; @Uint8() int layerName_214; @Uint8() int layerName_215; @Uint8() int layerName_216; @Uint8() int layerName_217; @Uint8() int layerName_218; @Uint8() int layerName_219; @Uint8() int layerName_220; @Uint8() int layerName_221; @Uint8() int layerName_222; @Uint8() int layerName_223; @Uint8() int layerName_224; @Uint8() int layerName_225; @Uint8() int layerName_226; @Uint8() int layerName_227; @Uint8() int layerName_228; @Uint8() int layerName_229; @Uint8() int layerName_230; @Uint8() int layerName_231; @Uint8() int layerName_232; @Uint8() int layerName_233; @Uint8() int layerName_234; @Uint8() int layerName_235; @Uint8() int layerName_236; @Uint8() int layerName_237; @Uint8() int layerName_238; @Uint8() int layerName_239; @Uint8() int layerName_240; @Uint8() int layerName_241; @Uint8() int layerName_242; @Uint8() int layerName_243; @Uint8() int layerName_244; @Uint8() int layerName_245; @Uint8() int layerName_246; @Uint8() int layerName_247; @Uint8() int layerName_248; @Uint8() int layerName_249; @Uint8() int layerName_250; @Uint8() int layerName_251; @Uint8() int layerName_252; @Uint8() int layerName_253; @Uint8() int layerName_254; @Uint8() int layerName_255;
-  String get layerName {
-    var bytes = [layerName_0, layerName_1, layerName_2, layerName_3, layerName_4, layerName_5, layerName_6, layerName_7, layerName_8, layerName_9, layerName_10, layerName_11, layerName_12, layerName_13, layerName_14, layerName_15, layerName_16, layerName_17, layerName_18, layerName_19, layerName_20, layerName_21, layerName_22, layerName_23, layerName_24, layerName_25, layerName_26, layerName_27, layerName_28, layerName_29, layerName_30, layerName_31, layerName_32, layerName_33, layerName_34, layerName_35, layerName_36, layerName_37, layerName_38, layerName_39, layerName_40, layerName_41, layerName_42, layerName_43, layerName_44, layerName_45, layerName_46, layerName_47, layerName_48, layerName_49, layerName_50, layerName_51, layerName_52, layerName_53, layerName_54, layerName_55, layerName_56, layerName_57, layerName_58, layerName_59, layerName_60, layerName_61, layerName_62, layerName_63, layerName_64, layerName_65, layerName_66, layerName_67, layerName_68, layerName_69, layerName_70, layerName_71, layerName_72, layerName_73, layerName_74, layerName_75, layerName_76, layerName_77, layerName_78, layerName_79, layerName_80, layerName_81, layerName_82, layerName_83, layerName_84, layerName_85, layerName_86, layerName_87, layerName_88, layerName_89, layerName_90, layerName_91, layerName_92, layerName_93, layerName_94, layerName_95, layerName_96, layerName_97, layerName_98, layerName_99, layerName_100, layerName_101, layerName_102, layerName_103, layerName_104, layerName_105, layerName_106, layerName_107, layerName_108, layerName_109, layerName_110, layerName_111, layerName_112, layerName_113, layerName_114, layerName_115, layerName_116, layerName_117, layerName_118, layerName_119, layerName_120, layerName_121, layerName_122, layerName_123, layerName_124, layerName_125, layerName_126, layerName_127, layerName_128, layerName_129, layerName_130, layerName_131, layerName_132, layerName_133, layerName_134, layerName_135, layerName_136, layerName_137, layerName_138, layerName_139, layerName_140, layerName_141, layerName_142, layerName_143, layerName_144, layerName_145, layerName_146, layerName_147, layerName_148, layerName_149, layerName_150, layerName_151, layerName_152, layerName_153, layerName_154, layerName_155, layerName_156, layerName_157, layerName_158, layerName_159, layerName_160, layerName_161, layerName_162, layerName_163, layerName_164, layerName_165, layerName_166, layerName_167, layerName_168, layerName_169, layerName_170, layerName_171, layerName_172, layerName_173, layerName_174, layerName_175, layerName_176, layerName_177, layerName_178, layerName_179, layerName_180, layerName_181, layerName_182, layerName_183, layerName_184, layerName_185, layerName_186, layerName_187, layerName_188, layerName_189, layerName_190, layerName_191, layerName_192, layerName_193, layerName_194, layerName_195, layerName_196, layerName_197, layerName_198, layerName_199, layerName_200, layerName_201, layerName_202, layerName_203, layerName_204, layerName_205, layerName_206, layerName_207, layerName_208, layerName_209, layerName_210, layerName_211, layerName_212, layerName_213, layerName_214, layerName_215, layerName_216, layerName_217, layerName_218, layerName_219, layerName_220, layerName_221, layerName_222, layerName_223, layerName_224, layerName_225, layerName_226, layerName_227, layerName_228, layerName_229, layerName_230, layerName_231, layerName_232, layerName_233, layerName_234, layerName_235, layerName_236, layerName_237, layerName_238, layerName_239, layerName_240, layerName_241, layerName_242, layerName_243, layerName_244, layerName_245, layerName_246, layerName_247, layerName_248, layerName_249, layerName_250, layerName_251, layerName_252, layerName_253, layerName_254, layerName_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set layerName(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    layerName_0 = bytes[0]; layerName_1 = bytes[1]; layerName_2 = bytes[2]; layerName_3 = bytes[3]; layerName_4 = bytes[4]; layerName_5 = bytes[5]; layerName_6 = bytes[6]; layerName_7 = bytes[7]; layerName_8 = bytes[8]; layerName_9 = bytes[9]; layerName_10 = bytes[10]; layerName_11 = bytes[11]; layerName_12 = bytes[12]; layerName_13 = bytes[13]; layerName_14 = bytes[14]; layerName_15 = bytes[15]; layerName_16 = bytes[16]; layerName_17 = bytes[17]; layerName_18 = bytes[18]; layerName_19 = bytes[19]; layerName_20 = bytes[20]; layerName_21 = bytes[21]; layerName_22 = bytes[22]; layerName_23 = bytes[23]; layerName_24 = bytes[24]; layerName_25 = bytes[25]; layerName_26 = bytes[26]; layerName_27 = bytes[27]; layerName_28 = bytes[28]; layerName_29 = bytes[29]; layerName_30 = bytes[30]; layerName_31 = bytes[31]; layerName_32 = bytes[32]; layerName_33 = bytes[33]; layerName_34 = bytes[34]; layerName_35 = bytes[35]; layerName_36 = bytes[36]; layerName_37 = bytes[37]; layerName_38 = bytes[38]; layerName_39 = bytes[39]; layerName_40 = bytes[40]; layerName_41 = bytes[41]; layerName_42 = bytes[42]; layerName_43 = bytes[43]; layerName_44 = bytes[44]; layerName_45 = bytes[45]; layerName_46 = bytes[46]; layerName_47 = bytes[47]; layerName_48 = bytes[48]; layerName_49 = bytes[49]; layerName_50 = bytes[50]; layerName_51 = bytes[51]; layerName_52 = bytes[52]; layerName_53 = bytes[53]; layerName_54 = bytes[54]; layerName_55 = bytes[55]; layerName_56 = bytes[56]; layerName_57 = bytes[57]; layerName_58 = bytes[58]; layerName_59 = bytes[59]; layerName_60 = bytes[60]; layerName_61 = bytes[61]; layerName_62 = bytes[62]; layerName_63 = bytes[63]; layerName_64 = bytes[64]; layerName_65 = bytes[65]; layerName_66 = bytes[66]; layerName_67 = bytes[67]; layerName_68 = bytes[68]; layerName_69 = bytes[69]; layerName_70 = bytes[70]; layerName_71 = bytes[71]; layerName_72 = bytes[72]; layerName_73 = bytes[73]; layerName_74 = bytes[74]; layerName_75 = bytes[75]; layerName_76 = bytes[76]; layerName_77 = bytes[77]; layerName_78 = bytes[78]; layerName_79 = bytes[79]; layerName_80 = bytes[80]; layerName_81 = bytes[81]; layerName_82 = bytes[82]; layerName_83 = bytes[83]; layerName_84 = bytes[84]; layerName_85 = bytes[85]; layerName_86 = bytes[86]; layerName_87 = bytes[87]; layerName_88 = bytes[88]; layerName_89 = bytes[89]; layerName_90 = bytes[90]; layerName_91 = bytes[91]; layerName_92 = bytes[92]; layerName_93 = bytes[93]; layerName_94 = bytes[94]; layerName_95 = bytes[95]; layerName_96 = bytes[96]; layerName_97 = bytes[97]; layerName_98 = bytes[98]; layerName_99 = bytes[99]; layerName_100 = bytes[100]; layerName_101 = bytes[101]; layerName_102 = bytes[102]; layerName_103 = bytes[103]; layerName_104 = bytes[104]; layerName_105 = bytes[105]; layerName_106 = bytes[106]; layerName_107 = bytes[107]; layerName_108 = bytes[108]; layerName_109 = bytes[109]; layerName_110 = bytes[110]; layerName_111 = bytes[111]; layerName_112 = bytes[112]; layerName_113 = bytes[113]; layerName_114 = bytes[114]; layerName_115 = bytes[115]; layerName_116 = bytes[116]; layerName_117 = bytes[117]; layerName_118 = bytes[118]; layerName_119 = bytes[119]; layerName_120 = bytes[120]; layerName_121 = bytes[121]; layerName_122 = bytes[122]; layerName_123 = bytes[123]; layerName_124 = bytes[124]; layerName_125 = bytes[125]; layerName_126 = bytes[126]; layerName_127 = bytes[127]; layerName_128 = bytes[128]; layerName_129 = bytes[129]; layerName_130 = bytes[130]; layerName_131 = bytes[131]; layerName_132 = bytes[132]; layerName_133 = bytes[133]; layerName_134 = bytes[134]; layerName_135 = bytes[135]; layerName_136 = bytes[136]; layerName_137 = bytes[137]; layerName_138 = bytes[138]; layerName_139 = bytes[139]; layerName_140 = bytes[140]; layerName_141 = bytes[141]; layerName_142 = bytes[142]; layerName_143 = bytes[143]; layerName_144 = bytes[144]; layerName_145 = bytes[145]; layerName_146 = bytes[146]; layerName_147 = bytes[147]; layerName_148 = bytes[148]; layerName_149 = bytes[149]; layerName_150 = bytes[150]; layerName_151 = bytes[151]; layerName_152 = bytes[152]; layerName_153 = bytes[153]; layerName_154 = bytes[154]; layerName_155 = bytes[155]; layerName_156 = bytes[156]; layerName_157 = bytes[157]; layerName_158 = bytes[158]; layerName_159 = bytes[159]; layerName_160 = bytes[160]; layerName_161 = bytes[161]; layerName_162 = bytes[162]; layerName_163 = bytes[163]; layerName_164 = bytes[164]; layerName_165 = bytes[165]; layerName_166 = bytes[166]; layerName_167 = bytes[167]; layerName_168 = bytes[168]; layerName_169 = bytes[169]; layerName_170 = bytes[170]; layerName_171 = bytes[171]; layerName_172 = bytes[172]; layerName_173 = bytes[173]; layerName_174 = bytes[174]; layerName_175 = bytes[175]; layerName_176 = bytes[176]; layerName_177 = bytes[177]; layerName_178 = bytes[178]; layerName_179 = bytes[179]; layerName_180 = bytes[180]; layerName_181 = bytes[181]; layerName_182 = bytes[182]; layerName_183 = bytes[183]; layerName_184 = bytes[184]; layerName_185 = bytes[185]; layerName_186 = bytes[186]; layerName_187 = bytes[187]; layerName_188 = bytes[188]; layerName_189 = bytes[189]; layerName_190 = bytes[190]; layerName_191 = bytes[191]; layerName_192 = bytes[192]; layerName_193 = bytes[193]; layerName_194 = bytes[194]; layerName_195 = bytes[195]; layerName_196 = bytes[196]; layerName_197 = bytes[197]; layerName_198 = bytes[198]; layerName_199 = bytes[199]; layerName_200 = bytes[200]; layerName_201 = bytes[201]; layerName_202 = bytes[202]; layerName_203 = bytes[203]; layerName_204 = bytes[204]; layerName_205 = bytes[205]; layerName_206 = bytes[206]; layerName_207 = bytes[207]; layerName_208 = bytes[208]; layerName_209 = bytes[209]; layerName_210 = bytes[210]; layerName_211 = bytes[211]; layerName_212 = bytes[212]; layerName_213 = bytes[213]; layerName_214 = bytes[214]; layerName_215 = bytes[215]; layerName_216 = bytes[216]; layerName_217 = bytes[217]; layerName_218 = bytes[218]; layerName_219 = bytes[219]; layerName_220 = bytes[220]; layerName_221 = bytes[221]; layerName_222 = bytes[222]; layerName_223 = bytes[223]; layerName_224 = bytes[224]; layerName_225 = bytes[225]; layerName_226 = bytes[226]; layerName_227 = bytes[227]; layerName_228 = bytes[228]; layerName_229 = bytes[229]; layerName_230 = bytes[230]; layerName_231 = bytes[231]; layerName_232 = bytes[232]; layerName_233 = bytes[233]; layerName_234 = bytes[234]; layerName_235 = bytes[235]; layerName_236 = bytes[236]; layerName_237 = bytes[237]; layerName_238 = bytes[238]; layerName_239 = bytes[239]; layerName_240 = bytes[240]; layerName_241 = bytes[241]; layerName_242 = bytes[242]; layerName_243 = bytes[243]; layerName_244 = bytes[244]; layerName_245 = bytes[245]; layerName_246 = bytes[246]; layerName_247 = bytes[247]; layerName_248 = bytes[248]; layerName_249 = bytes[249]; layerName_250 = bytes[250]; layerName_251 = bytes[251]; layerName_252 = bytes[252]; layerName_253 = bytes[253]; layerName_254 = bytes[254]; layerName_255 = bytes[255];
-  }
-  @Uint32() int specVersion;
-  @Uint32() int implementationVersion;
-  @Uint8() int description_0; @Uint8() int description_1; @Uint8() int description_2; @Uint8() int description_3; @Uint8() int description_4; @Uint8() int description_5; @Uint8() int description_6; @Uint8() int description_7; @Uint8() int description_8; @Uint8() int description_9; @Uint8() int description_10; @Uint8() int description_11; @Uint8() int description_12; @Uint8() int description_13; @Uint8() int description_14; @Uint8() int description_15; @Uint8() int description_16; @Uint8() int description_17; @Uint8() int description_18; @Uint8() int description_19; @Uint8() int description_20; @Uint8() int description_21; @Uint8() int description_22; @Uint8() int description_23; @Uint8() int description_24; @Uint8() int description_25; @Uint8() int description_26; @Uint8() int description_27; @Uint8() int description_28; @Uint8() int description_29; @Uint8() int description_30; @Uint8() int description_31; @Uint8() int description_32; @Uint8() int description_33; @Uint8() int description_34; @Uint8() int description_35; @Uint8() int description_36; @Uint8() int description_37; @Uint8() int description_38; @Uint8() int description_39; @Uint8() int description_40; @Uint8() int description_41; @Uint8() int description_42; @Uint8() int description_43; @Uint8() int description_44; @Uint8() int description_45; @Uint8() int description_46; @Uint8() int description_47; @Uint8() int description_48; @Uint8() int description_49; @Uint8() int description_50; @Uint8() int description_51; @Uint8() int description_52; @Uint8() int description_53; @Uint8() int description_54; @Uint8() int description_55; @Uint8() int description_56; @Uint8() int description_57; @Uint8() int description_58; @Uint8() int description_59; @Uint8() int description_60; @Uint8() int description_61; @Uint8() int description_62; @Uint8() int description_63; @Uint8() int description_64; @Uint8() int description_65; @Uint8() int description_66; @Uint8() int description_67; @Uint8() int description_68; @Uint8() int description_69; @Uint8() int description_70; @Uint8() int description_71; @Uint8() int description_72; @Uint8() int description_73; @Uint8() int description_74; @Uint8() int description_75; @Uint8() int description_76; @Uint8() int description_77; @Uint8() int description_78; @Uint8() int description_79; @Uint8() int description_80; @Uint8() int description_81; @Uint8() int description_82; @Uint8() int description_83; @Uint8() int description_84; @Uint8() int description_85; @Uint8() int description_86; @Uint8() int description_87; @Uint8() int description_88; @Uint8() int description_89; @Uint8() int description_90; @Uint8() int description_91; @Uint8() int description_92; @Uint8() int description_93; @Uint8() int description_94; @Uint8() int description_95; @Uint8() int description_96; @Uint8() int description_97; @Uint8() int description_98; @Uint8() int description_99; @Uint8() int description_100; @Uint8() int description_101; @Uint8() int description_102; @Uint8() int description_103; @Uint8() int description_104; @Uint8() int description_105; @Uint8() int description_106; @Uint8() int description_107; @Uint8() int description_108; @Uint8() int description_109; @Uint8() int description_110; @Uint8() int description_111; @Uint8() int description_112; @Uint8() int description_113; @Uint8() int description_114; @Uint8() int description_115; @Uint8() int description_116; @Uint8() int description_117; @Uint8() int description_118; @Uint8() int description_119; @Uint8() int description_120; @Uint8() int description_121; @Uint8() int description_122; @Uint8() int description_123; @Uint8() int description_124; @Uint8() int description_125; @Uint8() int description_126; @Uint8() int description_127; @Uint8() int description_128; @Uint8() int description_129; @Uint8() int description_130; @Uint8() int description_131; @Uint8() int description_132; @Uint8() int description_133; @Uint8() int description_134; @Uint8() int description_135; @Uint8() int description_136; @Uint8() int description_137; @Uint8() int description_138; @Uint8() int description_139; @Uint8() int description_140; @Uint8() int description_141; @Uint8() int description_142; @Uint8() int description_143; @Uint8() int description_144; @Uint8() int description_145; @Uint8() int description_146; @Uint8() int description_147; @Uint8() int description_148; @Uint8() int description_149; @Uint8() int description_150; @Uint8() int description_151; @Uint8() int description_152; @Uint8() int description_153; @Uint8() int description_154; @Uint8() int description_155; @Uint8() int description_156; @Uint8() int description_157; @Uint8() int description_158; @Uint8() int description_159; @Uint8() int description_160; @Uint8() int description_161; @Uint8() int description_162; @Uint8() int description_163; @Uint8() int description_164; @Uint8() int description_165; @Uint8() int description_166; @Uint8() int description_167; @Uint8() int description_168; @Uint8() int description_169; @Uint8() int description_170; @Uint8() int description_171; @Uint8() int description_172; @Uint8() int description_173; @Uint8() int description_174; @Uint8() int description_175; @Uint8() int description_176; @Uint8() int description_177; @Uint8() int description_178; @Uint8() int description_179; @Uint8() int description_180; @Uint8() int description_181; @Uint8() int description_182; @Uint8() int description_183; @Uint8() int description_184; @Uint8() int description_185; @Uint8() int description_186; @Uint8() int description_187; @Uint8() int description_188; @Uint8() int description_189; @Uint8() int description_190; @Uint8() int description_191; @Uint8() int description_192; @Uint8() int description_193; @Uint8() int description_194; @Uint8() int description_195; @Uint8() int description_196; @Uint8() int description_197; @Uint8() int description_198; @Uint8() int description_199; @Uint8() int description_200; @Uint8() int description_201; @Uint8() int description_202; @Uint8() int description_203; @Uint8() int description_204; @Uint8() int description_205; @Uint8() int description_206; @Uint8() int description_207; @Uint8() int description_208; @Uint8() int description_209; @Uint8() int description_210; @Uint8() int description_211; @Uint8() int description_212; @Uint8() int description_213; @Uint8() int description_214; @Uint8() int description_215; @Uint8() int description_216; @Uint8() int description_217; @Uint8() int description_218; @Uint8() int description_219; @Uint8() int description_220; @Uint8() int description_221; @Uint8() int description_222; @Uint8() int description_223; @Uint8() int description_224; @Uint8() int description_225; @Uint8() int description_226; @Uint8() int description_227; @Uint8() int description_228; @Uint8() int description_229; @Uint8() int description_230; @Uint8() int description_231; @Uint8() int description_232; @Uint8() int description_233; @Uint8() int description_234; @Uint8() int description_235; @Uint8() int description_236; @Uint8() int description_237; @Uint8() int description_238; @Uint8() int description_239; @Uint8() int description_240; @Uint8() int description_241; @Uint8() int description_242; @Uint8() int description_243; @Uint8() int description_244; @Uint8() int description_245; @Uint8() int description_246; @Uint8() int description_247; @Uint8() int description_248; @Uint8() int description_249; @Uint8() int description_250; @Uint8() int description_251; @Uint8() int description_252; @Uint8() int description_253; @Uint8() int description_254; @Uint8() int description_255;
-  String get description {
-    var bytes = [description_0, description_1, description_2, description_3, description_4, description_5, description_6, description_7, description_8, description_9, description_10, description_11, description_12, description_13, description_14, description_15, description_16, description_17, description_18, description_19, description_20, description_21, description_22, description_23, description_24, description_25, description_26, description_27, description_28, description_29, description_30, description_31, description_32, description_33, description_34, description_35, description_36, description_37, description_38, description_39, description_40, description_41, description_42, description_43, description_44, description_45, description_46, description_47, description_48, description_49, description_50, description_51, description_52, description_53, description_54, description_55, description_56, description_57, description_58, description_59, description_60, description_61, description_62, description_63, description_64, description_65, description_66, description_67, description_68, description_69, description_70, description_71, description_72, description_73, description_74, description_75, description_76, description_77, description_78, description_79, description_80, description_81, description_82, description_83, description_84, description_85, description_86, description_87, description_88, description_89, description_90, description_91, description_92, description_93, description_94, description_95, description_96, description_97, description_98, description_99, description_100, description_101, description_102, description_103, description_104, description_105, description_106, description_107, description_108, description_109, description_110, description_111, description_112, description_113, description_114, description_115, description_116, description_117, description_118, description_119, description_120, description_121, description_122, description_123, description_124, description_125, description_126, description_127, description_128, description_129, description_130, description_131, description_132, description_133, description_134, description_135, description_136, description_137, description_138, description_139, description_140, description_141, description_142, description_143, description_144, description_145, description_146, description_147, description_148, description_149, description_150, description_151, description_152, description_153, description_154, description_155, description_156, description_157, description_158, description_159, description_160, description_161, description_162, description_163, description_164, description_165, description_166, description_167, description_168, description_169, description_170, description_171, description_172, description_173, description_174, description_175, description_176, description_177, description_178, description_179, description_180, description_181, description_182, description_183, description_184, description_185, description_186, description_187, description_188, description_189, description_190, description_191, description_192, description_193, description_194, description_195, description_196, description_197, description_198, description_199, description_200, description_201, description_202, description_203, description_204, description_205, description_206, description_207, description_208, description_209, description_210, description_211, description_212, description_213, description_214, description_215, description_216, description_217, description_218, description_219, description_220, description_221, description_222, description_223, description_224, description_225, description_226, description_227, description_228, description_229, description_230, description_231, description_232, description_233, description_234, description_235, description_236, description_237, description_238, description_239, description_240, description_241, description_242, description_243, description_244, description_245, description_246, description_247, description_248, description_249, description_250, description_251, description_252, description_253, description_254, description_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set description(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    description_0 = bytes[0]; description_1 = bytes[1]; description_2 = bytes[2]; description_3 = bytes[3]; description_4 = bytes[4]; description_5 = bytes[5]; description_6 = bytes[6]; description_7 = bytes[7]; description_8 = bytes[8]; description_9 = bytes[9]; description_10 = bytes[10]; description_11 = bytes[11]; description_12 = bytes[12]; description_13 = bytes[13]; description_14 = bytes[14]; description_15 = bytes[15]; description_16 = bytes[16]; description_17 = bytes[17]; description_18 = bytes[18]; description_19 = bytes[19]; description_20 = bytes[20]; description_21 = bytes[21]; description_22 = bytes[22]; description_23 = bytes[23]; description_24 = bytes[24]; description_25 = bytes[25]; description_26 = bytes[26]; description_27 = bytes[27]; description_28 = bytes[28]; description_29 = bytes[29]; description_30 = bytes[30]; description_31 = bytes[31]; description_32 = bytes[32]; description_33 = bytes[33]; description_34 = bytes[34]; description_35 = bytes[35]; description_36 = bytes[36]; description_37 = bytes[37]; description_38 = bytes[38]; description_39 = bytes[39]; description_40 = bytes[40]; description_41 = bytes[41]; description_42 = bytes[42]; description_43 = bytes[43]; description_44 = bytes[44]; description_45 = bytes[45]; description_46 = bytes[46]; description_47 = bytes[47]; description_48 = bytes[48]; description_49 = bytes[49]; description_50 = bytes[50]; description_51 = bytes[51]; description_52 = bytes[52]; description_53 = bytes[53]; description_54 = bytes[54]; description_55 = bytes[55]; description_56 = bytes[56]; description_57 = bytes[57]; description_58 = bytes[58]; description_59 = bytes[59]; description_60 = bytes[60]; description_61 = bytes[61]; description_62 = bytes[62]; description_63 = bytes[63]; description_64 = bytes[64]; description_65 = bytes[65]; description_66 = bytes[66]; description_67 = bytes[67]; description_68 = bytes[68]; description_69 = bytes[69]; description_70 = bytes[70]; description_71 = bytes[71]; description_72 = bytes[72]; description_73 = bytes[73]; description_74 = bytes[74]; description_75 = bytes[75]; description_76 = bytes[76]; description_77 = bytes[77]; description_78 = bytes[78]; description_79 = bytes[79]; description_80 = bytes[80]; description_81 = bytes[81]; description_82 = bytes[82]; description_83 = bytes[83]; description_84 = bytes[84]; description_85 = bytes[85]; description_86 = bytes[86]; description_87 = bytes[87]; description_88 = bytes[88]; description_89 = bytes[89]; description_90 = bytes[90]; description_91 = bytes[91]; description_92 = bytes[92]; description_93 = bytes[93]; description_94 = bytes[94]; description_95 = bytes[95]; description_96 = bytes[96]; description_97 = bytes[97]; description_98 = bytes[98]; description_99 = bytes[99]; description_100 = bytes[100]; description_101 = bytes[101]; description_102 = bytes[102]; description_103 = bytes[103]; description_104 = bytes[104]; description_105 = bytes[105]; description_106 = bytes[106]; description_107 = bytes[107]; description_108 = bytes[108]; description_109 = bytes[109]; description_110 = bytes[110]; description_111 = bytes[111]; description_112 = bytes[112]; description_113 = bytes[113]; description_114 = bytes[114]; description_115 = bytes[115]; description_116 = bytes[116]; description_117 = bytes[117]; description_118 = bytes[118]; description_119 = bytes[119]; description_120 = bytes[120]; description_121 = bytes[121]; description_122 = bytes[122]; description_123 = bytes[123]; description_124 = bytes[124]; description_125 = bytes[125]; description_126 = bytes[126]; description_127 = bytes[127]; description_128 = bytes[128]; description_129 = bytes[129]; description_130 = bytes[130]; description_131 = bytes[131]; description_132 = bytes[132]; description_133 = bytes[133]; description_134 = bytes[134]; description_135 = bytes[135]; description_136 = bytes[136]; description_137 = bytes[137]; description_138 = bytes[138]; description_139 = bytes[139]; description_140 = bytes[140]; description_141 = bytes[141]; description_142 = bytes[142]; description_143 = bytes[143]; description_144 = bytes[144]; description_145 = bytes[145]; description_146 = bytes[146]; description_147 = bytes[147]; description_148 = bytes[148]; description_149 = bytes[149]; description_150 = bytes[150]; description_151 = bytes[151]; description_152 = bytes[152]; description_153 = bytes[153]; description_154 = bytes[154]; description_155 = bytes[155]; description_156 = bytes[156]; description_157 = bytes[157]; description_158 = bytes[158]; description_159 = bytes[159]; description_160 = bytes[160]; description_161 = bytes[161]; description_162 = bytes[162]; description_163 = bytes[163]; description_164 = bytes[164]; description_165 = bytes[165]; description_166 = bytes[166]; description_167 = bytes[167]; description_168 = bytes[168]; description_169 = bytes[169]; description_170 = bytes[170]; description_171 = bytes[171]; description_172 = bytes[172]; description_173 = bytes[173]; description_174 = bytes[174]; description_175 = bytes[175]; description_176 = bytes[176]; description_177 = bytes[177]; description_178 = bytes[178]; description_179 = bytes[179]; description_180 = bytes[180]; description_181 = bytes[181]; description_182 = bytes[182]; description_183 = bytes[183]; description_184 = bytes[184]; description_185 = bytes[185]; description_186 = bytes[186]; description_187 = bytes[187]; description_188 = bytes[188]; description_189 = bytes[189]; description_190 = bytes[190]; description_191 = bytes[191]; description_192 = bytes[192]; description_193 = bytes[193]; description_194 = bytes[194]; description_195 = bytes[195]; description_196 = bytes[196]; description_197 = bytes[197]; description_198 = bytes[198]; description_199 = bytes[199]; description_200 = bytes[200]; description_201 = bytes[201]; description_202 = bytes[202]; description_203 = bytes[203]; description_204 = bytes[204]; description_205 = bytes[205]; description_206 = bytes[206]; description_207 = bytes[207]; description_208 = bytes[208]; description_209 = bytes[209]; description_210 = bytes[210]; description_211 = bytes[211]; description_212 = bytes[212]; description_213 = bytes[213]; description_214 = bytes[214]; description_215 = bytes[215]; description_216 = bytes[216]; description_217 = bytes[217]; description_218 = bytes[218]; description_219 = bytes[219]; description_220 = bytes[220]; description_221 = bytes[221]; description_222 = bytes[222]; description_223 = bytes[223]; description_224 = bytes[224]; description_225 = bytes[225]; description_226 = bytes[226]; description_227 = bytes[227]; description_228 = bytes[228]; description_229 = bytes[229]; description_230 = bytes[230]; description_231 = bytes[231]; description_232 = bytes[232]; description_233 = bytes[233]; description_234 = bytes[234]; description_235 = bytes[235]; description_236 = bytes[236]; description_237 = bytes[237]; description_238 = bytes[238]; description_239 = bytes[239]; description_240 = bytes[240]; description_241 = bytes[241]; description_242 = bytes[242]; description_243 = bytes[243]; description_244 = bytes[244]; description_245 = bytes[245]; description_246 = bytes[246]; description_247 = bytes[247]; description_248 = bytes[248]; description_249 = bytes[249]; description_250 = bytes[250]; description_251 = bytes[251]; description_252 = bytes[252]; description_253 = bytes[253]; description_254 = bytes[254]; description_255 = bytes[255];
-  }
+  @Array(256)
+  external Array<Uint8> layerName;
+  @Uint32()
+  external int specVersion;
+  @Uint32()
+  external int implementationVersion;
+  @Array(256)
+  external Array<Uint8> description;
 }
 
 class VkApplicationInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pApplicationName;
-  @Uint32() int applicationVersion;
-  Pointer pEngineName;
-  @Uint32() int engineVersion;
-  @Uint32() int apiVersion;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pApplicationName;
+  @Uint32()
+  external int applicationVersion;
+  external Pointer pEngineName;
+  @Uint32()
+  external int engineVersion;
+  @Uint32()
+  external int apiVersion;
 }
 
 class VkAllocationCallbacks extends Struct {
-  Pointer pUserData;
-  Pointer pfnAllocation;
-  Pointer pfnReallocation;
-  Pointer pfnFree;
-  Pointer pfnInternalAllocation;
-  Pointer pfnInternalFree;
+  external Pointer pUserData;
+  external Pointer pfnAllocation;
+  external Pointer pfnReallocation;
+  external Pointer pfnFree;
+  external Pointer pfnInternalAllocation;
+  external Pointer pfnInternalFree;
 }
 
 class VkDeviceQueueCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int queueFamilyIndex;
-  @Uint32() int queueCount;
-  Pointer pQueuePriorities;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int queueFamilyIndex;
+  @Uint32()
+  external int queueCount;
+  external Pointer pQueuePriorities;
 }
 
 class VkDeviceCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int queueCreateInfoCount;
-  Pointer<VkDeviceQueueCreateInfo> pQueueCreateInfos;
-  @Uint32() int enabledLayerCount;
-  Pointer ppEnabledLayerNames;
-  @Uint32() int enabledExtensionCount;
-  Pointer ppEnabledExtensionNames;
-  Pointer<VkPhysicalDeviceFeatures> pEnabledFeatures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int queueCreateInfoCount;
+  external Pointer<VkDeviceQueueCreateInfo> pQueueCreateInfos;
+  @Uint32()
+  external int enabledLayerCount;
+  external Pointer ppEnabledLayerNames;
+  @Uint32()
+  external int enabledExtensionCount;
+  external Pointer ppEnabledExtensionNames;
+  external Pointer<VkPhysicalDeviceFeatures> pEnabledFeatures;
 }
 
 class VkInstanceCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkApplicationInfo> pApplicationInfo;
-  @Uint32() int enabledLayerCount;
-  Pointer ppEnabledLayerNames;
-  @Uint32() int enabledExtensionCount;
-  Pointer ppEnabledExtensionNames;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkApplicationInfo> pApplicationInfo;
+  @Uint32()
+  external int enabledLayerCount;
+  external Pointer ppEnabledLayerNames;
+  @Uint32()
+  external int enabledExtensionCount;
+  external Pointer ppEnabledExtensionNames;
 }
 
 class VkQueueFamilyProperties extends Struct {
-  @Uint32() int queueFlags;
-  @Uint32() int queueCount;
-  @Uint32() int timestampValidBits;
-  @Uint32() int minImageTransferGranularity_width;
-  @Uint32() int minImageTransferGranularity_height;
-  @Uint32() int minImageTransferGranularity_depth;
+  @Uint32()
+  external int queueFlags;
+  @Uint32()
+  external int queueCount;
+  @Uint32()
+  external int timestampValidBits;
+  @Uint32()
+  external int minImageTransferGranularity_width;
+  @Uint32()
+  external int minImageTransferGranularity_height;
+  @Uint32()
+  external int minImageTransferGranularity_depth;
 }
 
 class VkPhysicalDeviceMemoryProperties extends Struct {
-  @Uint32() int memoryTypeCount;
-  Pointer memoryTypes_0; Pointer memoryTypes_1; Pointer memoryTypes_2; Pointer memoryTypes_3; Pointer memoryTypes_4; Pointer memoryTypes_5; Pointer memoryTypes_6; Pointer memoryTypes_7; Pointer memoryTypes_8; Pointer memoryTypes_9; Pointer memoryTypes_10; Pointer memoryTypes_11; Pointer memoryTypes_12; Pointer memoryTypes_13; Pointer memoryTypes_14; Pointer memoryTypes_15; Pointer memoryTypes_16; Pointer memoryTypes_17; Pointer memoryTypes_18; Pointer memoryTypes_19; Pointer memoryTypes_20; Pointer memoryTypes_21; Pointer memoryTypes_22; Pointer memoryTypes_23; Pointer memoryTypes_24; Pointer memoryTypes_25; Pointer memoryTypes_26; Pointer memoryTypes_27; Pointer memoryTypes_28; Pointer memoryTypes_29; Pointer memoryTypes_30; Pointer memoryTypes_31;
-  @Uint32() int memoryHeapCount;
-  Pointer memoryHeaps_0; Pointer memoryHeaps_1; Pointer memoryHeaps_2; Pointer memoryHeaps_3; Pointer memoryHeaps_4; Pointer memoryHeaps_5; Pointer memoryHeaps_6; Pointer memoryHeaps_7; Pointer memoryHeaps_8; Pointer memoryHeaps_9; Pointer memoryHeaps_10; Pointer memoryHeaps_11; Pointer memoryHeaps_12; Pointer memoryHeaps_13; Pointer memoryHeaps_14; Pointer memoryHeaps_15;
+  @Uint32()
+  external int memoryTypeCount;
+  @Array(32)
+  external Array<Pointer> memoryTypes;
+  @Uint32()
+  external int memoryHeapCount;
+  @Array(16)
+  external Array<Pointer> memoryHeaps;
 }
 
 class VkMemoryAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int allocationSize;
-  @Uint32() int memoryTypeIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int allocationSize;
+  @Uint32()
+  external int memoryTypeIndex;
 }
 
 class VkMemoryRequirements extends Struct {
-  @Uint64() int size;
-  @Uint64() int alignment;
-  @Uint32() int memoryTypeBits;
+  @Uint64()
+  external int size;
+  @Uint64()
+  external int alignment;
+  @Uint32()
+  external int memoryTypeBits;
 }
 
 class VkSparseImageFormatProperties extends Struct {
-  @Uint32() int aspectMask;
-  @Uint32() int imageGranularity_width;
-  @Uint32() int imageGranularity_height;
-  @Uint32() int imageGranularity_depth;
-  @Uint32() int flags;
+  @Uint32()
+  external int aspectMask;
+  @Uint32()
+  external int imageGranularity_width;
+  @Uint32()
+  external int imageGranularity_height;
+  @Uint32()
+  external int imageGranularity_depth;
+  @Uint32()
+  external int flags;
 }
 
 class VkSparseImageMemoryRequirements extends Struct {
-  @Uint32() int formatProperties_aspectMask;
-  @Uint32() int formatProperties_imageGranularity_width;
-  @Uint32() int formatProperties_imageGranularity_height;
-  @Uint32() int formatProperties_imageGranularity_depth;
-  @Uint32() int formatProperties_flags;
-  @Uint32() int imageMipTailFirstLod;
-  @Uint64() int imageMipTailSize;
-  @Uint64() int imageMipTailOffset;
-  @Uint64() int imageMipTailStride;
+  @Uint32()
+  external int formatProperties_aspectMask;
+  @Uint32()
+  external int formatProperties_imageGranularity_width;
+  @Uint32()
+  external int formatProperties_imageGranularity_height;
+  @Uint32()
+  external int formatProperties_imageGranularity_depth;
+  @Uint32()
+  external int formatProperties_flags;
+  @Uint32()
+  external int imageMipTailFirstLod;
+  @Uint64()
+  external int imageMipTailSize;
+  @Uint64()
+  external int imageMipTailOffset;
+  @Uint64()
+  external int imageMipTailStride;
 }
 
 class VkMemoryType extends Struct {
-  @Uint32() int propertyFlags;
-  @Uint32() int heapIndex;
+  @Uint32()
+  external int propertyFlags;
+  @Uint32()
+  external int heapIndex;
 }
 
 class VkMemoryHeap extends Struct {
-  @Uint64() int size;
-  @Uint32() int flags;
+  @Uint64()
+  external int size;
+  @Uint32()
+  external int flags;
 }
 
 class VkMappedMemoryRange extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDeviceMemory> memory;
-  @Uint64() int offset;
-  @Uint64() int size;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDeviceMemory> memory;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int size;
 }
 
 class VkFormatProperties extends Struct {
-  @Uint32() int linearTilingFeatures;
-  @Uint32() int optimalTilingFeatures;
-  @Uint32() int bufferFeatures;
+  @Uint32()
+  external int linearTilingFeatures;
+  @Uint32()
+  external int optimalTilingFeatures;
+  @Uint32()
+  external int bufferFeatures;
 }
 
 class VkImageFormatProperties extends Struct {
-  @Uint32() int maxExtent_width;
-  @Uint32() int maxExtent_height;
-  @Uint32() int maxExtent_depth;
-  @Uint32() int maxMipLevels;
-  @Uint32() int maxArrayLayers;
-  @Uint32() int sampleCounts;
-  @Uint64() int maxResourceSize;
+  @Uint32()
+  external int maxExtent_width;
+  @Uint32()
+  external int maxExtent_height;
+  @Uint32()
+  external int maxExtent_depth;
+  @Uint32()
+  external int maxMipLevels;
+  @Uint32()
+  external int maxArrayLayers;
+  @Uint32()
+  external int sampleCounts;
+  @Uint64()
+  external int maxResourceSize;
 }
 
 class VkDescriptorBufferInfo extends Struct {
-  Pointer<VkBuffer> buffer;
-  @Uint64() int offset;
-  @Uint64() int range;
+  external Pointer<VkBuffer> buffer;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int range;
 }
 
 class VkDescriptorImageInfo extends Struct {
-  Pointer<VkSampler> sampler;
-  Pointer<VkImageView> imageView;
-  @Int32() int imageLayout;
+  external Pointer<VkSampler> sampler;
+  external Pointer<VkImageView> imageView;
+  @Int32()
+  external int imageLayout;
 }
 
 class VkWriteDescriptorSet extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDescriptorSet> dstSet;
-  @Uint32() int dstBinding;
-  @Uint32() int dstArrayElement;
-  @Uint32() int descriptorCount;
-  @Int32() int descriptorType;
-  Pointer<VkDescriptorImageInfo> pImageInfo;
-  Pointer<VkDescriptorBufferInfo> pBufferInfo;
-  Pointer<Pointer<VkBufferView>> pTexelBufferView;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDescriptorSet> dstSet;
+  @Uint32()
+  external int dstBinding;
+  @Uint32()
+  external int dstArrayElement;
+  @Uint32()
+  external int descriptorCount;
+  @Int32()
+  external int descriptorType;
+  external Pointer<VkDescriptorImageInfo> pImageInfo;
+  external Pointer<VkDescriptorBufferInfo> pBufferInfo;
+  external Pointer<Pointer<VkBufferView>> pTexelBufferView;
 }
 
 class VkCopyDescriptorSet extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDescriptorSet> srcSet;
-  @Uint32() int srcBinding;
-  @Uint32() int srcArrayElement;
-  Pointer<VkDescriptorSet> dstSet;
-  @Uint32() int dstBinding;
-  @Uint32() int dstArrayElement;
-  @Uint32() int descriptorCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDescriptorSet> srcSet;
+  @Uint32()
+  external int srcBinding;
+  @Uint32()
+  external int srcArrayElement;
+  external Pointer<VkDescriptorSet> dstSet;
+  @Uint32()
+  external int dstBinding;
+  @Uint32()
+  external int dstArrayElement;
+  @Uint32()
+  external int descriptorCount;
 }
 
 class VkBufferCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint64() int size;
-  @Uint32() int usage;
-  @Int32() int sharingMode;
-  @Uint32() int queueFamilyIndexCount;
-  Pointer pQueueFamilyIndices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int size;
+  @Uint32()
+  external int usage;
+  @Int32()
+  external int sharingMode;
+  @Uint32()
+  external int queueFamilyIndexCount;
+  external Pointer pQueueFamilyIndices;
 }
 
 class VkBufferViewCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkBuffer> buffer;
-  @Int32() int format;
-  @Uint64() int offset;
-  @Uint64() int range;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkBuffer> buffer;
+  @Int32()
+  external int format;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int range;
 }
 
 class VkImageSubresource extends Struct {
-  @Uint32() int aspectMask;
-  @Uint32() int mipLevel;
-  @Uint32() int arrayLayer;
+  @Uint32()
+  external int aspectMask;
+  @Uint32()
+  external int mipLevel;
+  @Uint32()
+  external int arrayLayer;
 }
 
 class VkImageSubresourceLayers extends Struct {
-  @Uint32() int aspectMask;
-  @Uint32() int mipLevel;
-  @Uint32() int baseArrayLayer;
-  @Uint32() int layerCount;
+  @Uint32()
+  external int aspectMask;
+  @Uint32()
+  external int mipLevel;
+  @Uint32()
+  external int baseArrayLayer;
+  @Uint32()
+  external int layerCount;
 }
 
 class VkImageSubresourceRange extends Struct {
-  @Uint32() int aspectMask;
-  @Uint32() int baseMipLevel;
-  @Uint32() int levelCount;
-  @Uint32() int baseArrayLayer;
-  @Uint32() int layerCount;
+  @Uint32()
+  external int aspectMask;
+  @Uint32()
+  external int baseMipLevel;
+  @Uint32()
+  external int levelCount;
+  @Uint32()
+  external int baseArrayLayer;
+  @Uint32()
+  external int layerCount;
 }
 
 class VkMemoryBarrier extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcAccessMask;
-  @Uint32() int dstAccessMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcAccessMask;
+  @Uint32()
+  external int dstAccessMask;
 }
 
 class VkBufferMemoryBarrier extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcAccessMask;
-  @Uint32() int dstAccessMask;
-  @Uint32() int srcQueueFamilyIndex;
-  @Uint32() int dstQueueFamilyIndex;
-  Pointer<VkBuffer> buffer;
-  @Uint64() int offset;
-  @Uint64() int size;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcAccessMask;
+  @Uint32()
+  external int dstAccessMask;
+  @Uint32()
+  external int srcQueueFamilyIndex;
+  @Uint32()
+  external int dstQueueFamilyIndex;
+  external Pointer<VkBuffer> buffer;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int size;
 }
 
 class VkImageMemoryBarrier extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcAccessMask;
-  @Uint32() int dstAccessMask;
-  @Int32() int oldLayout;
-  @Int32() int newLayout;
-  @Uint32() int srcQueueFamilyIndex;
-  @Uint32() int dstQueueFamilyIndex;
-  Pointer<VkImage> image;
-  @Uint32() int subresourceRange_aspectMask;
-  @Uint32() int subresourceRange_baseMipLevel;
-  @Uint32() int subresourceRange_levelCount;
-  @Uint32() int subresourceRange_baseArrayLayer;
-  @Uint32() int subresourceRange_layerCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcAccessMask;
+  @Uint32()
+  external int dstAccessMask;
+  @Int32()
+  external int oldLayout;
+  @Int32()
+  external int newLayout;
+  @Uint32()
+  external int srcQueueFamilyIndex;
+  @Uint32()
+  external int dstQueueFamilyIndex;
+  external Pointer<VkImage> image;
+  @Uint32()
+  external int subresourceRange_aspectMask;
+  @Uint32()
+  external int subresourceRange_baseMipLevel;
+  @Uint32()
+  external int subresourceRange_levelCount;
+  @Uint32()
+  external int subresourceRange_baseArrayLayer;
+  @Uint32()
+  external int subresourceRange_layerCount;
 }
 
 class VkImageCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int imageType;
-  @Int32() int format;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int extent_depth;
-  @Uint32() int mipLevels;
-  @Uint32() int arrayLayers;
-  @Int32() int samples;
-  @Int32() int tiling;
-  @Uint32() int usage;
-  @Int32() int sharingMode;
-  @Uint32() int queueFamilyIndexCount;
-  Pointer pQueueFamilyIndices;
-  @Int32() int initialLayout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int imageType;
+  @Int32()
+  external int format;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int extent_depth;
+  @Uint32()
+  external int mipLevels;
+  @Uint32()
+  external int arrayLayers;
+  @Int32()
+  external int samples;
+  @Int32()
+  external int tiling;
+  @Uint32()
+  external int usage;
+  @Int32()
+  external int sharingMode;
+  @Uint32()
+  external int queueFamilyIndexCount;
+  external Pointer pQueueFamilyIndices;
+  @Int32()
+  external int initialLayout;
 }
 
 class VkSubresourceLayout extends Struct {
-  @Uint64() int offset;
-  @Uint64() int size;
-  @Uint64() int rowPitch;
-  @Uint64() int arrayPitch;
-  @Uint64() int depthPitch;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int size;
+  @Uint64()
+  external int rowPitch;
+  @Uint64()
+  external int arrayPitch;
+  @Uint64()
+  external int depthPitch;
 }
 
 class VkImageViewCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkImage> image;
-  @Int32() int viewType;
-  @Int32() int format;
-  @Int32() int components_r;
-  @Int32() int components_g;
-  @Int32() int components_b;
-  @Int32() int components_a;
-  @Uint32() int subresourceRange_aspectMask;
-  @Uint32() int subresourceRange_baseMipLevel;
-  @Uint32() int subresourceRange_levelCount;
-  @Uint32() int subresourceRange_baseArrayLayer;
-  @Uint32() int subresourceRange_layerCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkImage> image;
+  @Int32()
+  external int viewType;
+  @Int32()
+  external int format;
+  @Int32()
+  external int components_r;
+  @Int32()
+  external int components_g;
+  @Int32()
+  external int components_b;
+  @Int32()
+  external int components_a;
+  @Uint32()
+  external int subresourceRange_aspectMask;
+  @Uint32()
+  external int subresourceRange_baseMipLevel;
+  @Uint32()
+  external int subresourceRange_levelCount;
+  @Uint32()
+  external int subresourceRange_baseArrayLayer;
+  @Uint32()
+  external int subresourceRange_layerCount;
 }
 
 class VkBufferCopy extends Struct {
-  @Uint64() int srcOffset;
-  @Uint64() int dstOffset;
-  @Uint64() int size;
+  @Uint64()
+  external int srcOffset;
+  @Uint64()
+  external int dstOffset;
+  @Uint64()
+  external int size;
 }
 
 class VkSparseMemoryBind extends Struct {
-  @Uint64() int resourceOffset;
-  @Uint64() int size;
-  Pointer<VkDeviceMemory> memory;
-  @Uint64() int memoryOffset;
-  @Uint32() int flags;
+  @Uint64()
+  external int resourceOffset;
+  @Uint64()
+  external int size;
+  external Pointer<VkDeviceMemory> memory;
+  @Uint64()
+  external int memoryOffset;
+  @Uint32()
+  external int flags;
 }
 
 class VkSparseImageMemoryBind extends Struct {
-  @Uint32() int subresource_aspectMask;
-  @Uint32() int subresource_mipLevel;
-  @Uint32() int subresource_arrayLayer;
-  @Int32() int offset_x;
-  @Int32() int offset_y;
-  @Int32() int offset_z;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int extent_depth;
-  Pointer<VkDeviceMemory> memory;
-  @Uint64() int memoryOffset;
-  @Uint32() int flags;
+  @Uint32()
+  external int subresource_aspectMask;
+  @Uint32()
+  external int subresource_mipLevel;
+  @Uint32()
+  external int subresource_arrayLayer;
+  @Int32()
+  external int offset_x;
+  @Int32()
+  external int offset_y;
+  @Int32()
+  external int offset_z;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int extent_depth;
+  external Pointer<VkDeviceMemory> memory;
+  @Uint64()
+  external int memoryOffset;
+  @Uint32()
+  external int flags;
 }
 
 class VkSparseBufferMemoryBindInfo extends Struct {
-  Pointer<VkBuffer> buffer;
-  @Uint32() int bindCount;
-  Pointer<VkSparseMemoryBind> pBinds;
+  external Pointer<VkBuffer> buffer;
+  @Uint32()
+  external int bindCount;
+  external Pointer<VkSparseMemoryBind> pBinds;
 }
 
 class VkSparseImageOpaqueMemoryBindInfo extends Struct {
-  Pointer<VkImage> image;
-  @Uint32() int bindCount;
-  Pointer<VkSparseMemoryBind> pBinds;
+  external Pointer<VkImage> image;
+  @Uint32()
+  external int bindCount;
+  external Pointer<VkSparseMemoryBind> pBinds;
 }
 
 class VkSparseImageMemoryBindInfo extends Struct {
-  Pointer<VkImage> image;
-  @Uint32() int bindCount;
-  Pointer<VkSparseImageMemoryBind> pBinds;
+  external Pointer<VkImage> image;
+  @Uint32()
+  external int bindCount;
+  external Pointer<VkSparseImageMemoryBind> pBinds;
 }
 
 class VkBindSparseInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int waitSemaphoreCount;
-  Pointer<Pointer<VkSemaphore>> pWaitSemaphores;
-  @Uint32() int bufferBindCount;
-  Pointer<VkSparseBufferMemoryBindInfo> pBufferBinds;
-  @Uint32() int imageOpaqueBindCount;
-  Pointer<VkSparseImageOpaqueMemoryBindInfo> pImageOpaqueBinds;
-  @Uint32() int imageBindCount;
-  Pointer<VkSparseImageMemoryBindInfo> pImageBinds;
-  @Uint32() int signalSemaphoreCount;
-  Pointer<Pointer<VkSemaphore>> pSignalSemaphores;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int waitSemaphoreCount;
+  external Pointer<Pointer<VkSemaphore>> pWaitSemaphores;
+  @Uint32()
+  external int bufferBindCount;
+  external Pointer<VkSparseBufferMemoryBindInfo> pBufferBinds;
+  @Uint32()
+  external int imageOpaqueBindCount;
+  external Pointer<VkSparseImageOpaqueMemoryBindInfo> pImageOpaqueBinds;
+  @Uint32()
+  external int imageBindCount;
+  external Pointer<VkSparseImageMemoryBindInfo> pImageBinds;
+  @Uint32()
+  external int signalSemaphoreCount;
+  external Pointer<Pointer<VkSemaphore>> pSignalSemaphores;
 }
 
 class VkImageCopy extends Struct {
-  @Uint32() int srcSubresource_aspectMask;
-  @Uint32() int srcSubresource_mipLevel;
-  @Uint32() int srcSubresource_baseArrayLayer;
-  @Uint32() int srcSubresource_layerCount;
-  @Int32() int srcOffset_x;
-  @Int32() int srcOffset_y;
-  @Int32() int srcOffset_z;
-  @Uint32() int dstSubresource_aspectMask;
-  @Uint32() int dstSubresource_mipLevel;
-  @Uint32() int dstSubresource_baseArrayLayer;
-  @Uint32() int dstSubresource_layerCount;
-  @Int32() int dstOffset_x;
-  @Int32() int dstOffset_y;
-  @Int32() int dstOffset_z;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int extent_depth;
+  @Uint32()
+  external int srcSubresource_aspectMask;
+  @Uint32()
+  external int srcSubresource_mipLevel;
+  @Uint32()
+  external int srcSubresource_baseArrayLayer;
+  @Uint32()
+  external int srcSubresource_layerCount;
+  @Int32()
+  external int srcOffset_x;
+  @Int32()
+  external int srcOffset_y;
+  @Int32()
+  external int srcOffset_z;
+  @Uint32()
+  external int dstSubresource_aspectMask;
+  @Uint32()
+  external int dstSubresource_mipLevel;
+  @Uint32()
+  external int dstSubresource_baseArrayLayer;
+  @Uint32()
+  external int dstSubresource_layerCount;
+  @Int32()
+  external int dstOffset_x;
+  @Int32()
+  external int dstOffset_y;
+  @Int32()
+  external int dstOffset_z;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int extent_depth;
 }
 
 class VkImageBlit extends Struct {
-  @Uint32() int srcSubresource_aspectMask;
-  @Uint32() int srcSubresource_mipLevel;
-  @Uint32() int srcSubresource_baseArrayLayer;
-  @Uint32() int srcSubresource_layerCount;
-  Pointer srcOffsets_0; Pointer srcOffsets_1;
-  @Uint32() int dstSubresource_aspectMask;
-  @Uint32() int dstSubresource_mipLevel;
-  @Uint32() int dstSubresource_baseArrayLayer;
-  @Uint32() int dstSubresource_layerCount;
-  Pointer dstOffsets_0; Pointer dstOffsets_1;
+  @Uint32()
+  external int srcSubresource_aspectMask;
+  @Uint32()
+  external int srcSubresource_mipLevel;
+  @Uint32()
+  external int srcSubresource_baseArrayLayer;
+  @Uint32()
+  external int srcSubresource_layerCount;
+  @Array(2)
+  external Array<Pointer> srcOffsets;
+  @Uint32()
+  external int dstSubresource_aspectMask;
+  @Uint32()
+  external int dstSubresource_mipLevel;
+  @Uint32()
+  external int dstSubresource_baseArrayLayer;
+  @Uint32()
+  external int dstSubresource_layerCount;
+  @Array(2)
+  external Array<Pointer> dstOffsets;
 }
 
 class VkBufferImageCopy extends Struct {
-  @Uint64() int bufferOffset;
-  @Uint32() int bufferRowLength;
-  @Uint32() int bufferImageHeight;
-  @Uint32() int imageSubresource_aspectMask;
-  @Uint32() int imageSubresource_mipLevel;
-  @Uint32() int imageSubresource_baseArrayLayer;
-  @Uint32() int imageSubresource_layerCount;
-  @Int32() int imageOffset_x;
-  @Int32() int imageOffset_y;
-  @Int32() int imageOffset_z;
-  @Uint32() int imageExtent_width;
-  @Uint32() int imageExtent_height;
-  @Uint32() int imageExtent_depth;
+  @Uint64()
+  external int bufferOffset;
+  @Uint32()
+  external int bufferRowLength;
+  @Uint32()
+  external int bufferImageHeight;
+  @Uint32()
+  external int imageSubresource_aspectMask;
+  @Uint32()
+  external int imageSubresource_mipLevel;
+  @Uint32()
+  external int imageSubresource_baseArrayLayer;
+  @Uint32()
+  external int imageSubresource_layerCount;
+  @Int32()
+  external int imageOffset_x;
+  @Int32()
+  external int imageOffset_y;
+  @Int32()
+  external int imageOffset_z;
+  @Uint32()
+  external int imageExtent_width;
+  @Uint32()
+  external int imageExtent_height;
+  @Uint32()
+  external int imageExtent_depth;
 }
 
 class VkImageResolve extends Struct {
-  @Uint32() int srcSubresource_aspectMask;
-  @Uint32() int srcSubresource_mipLevel;
-  @Uint32() int srcSubresource_baseArrayLayer;
-  @Uint32() int srcSubresource_layerCount;
-  @Int32() int srcOffset_x;
-  @Int32() int srcOffset_y;
-  @Int32() int srcOffset_z;
-  @Uint32() int dstSubresource_aspectMask;
-  @Uint32() int dstSubresource_mipLevel;
-  @Uint32() int dstSubresource_baseArrayLayer;
-  @Uint32() int dstSubresource_layerCount;
-  @Int32() int dstOffset_x;
-  @Int32() int dstOffset_y;
-  @Int32() int dstOffset_z;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int extent_depth;
+  @Uint32()
+  external int srcSubresource_aspectMask;
+  @Uint32()
+  external int srcSubresource_mipLevel;
+  @Uint32()
+  external int srcSubresource_baseArrayLayer;
+  @Uint32()
+  external int srcSubresource_layerCount;
+  @Int32()
+  external int srcOffset_x;
+  @Int32()
+  external int srcOffset_y;
+  @Int32()
+  external int srcOffset_z;
+  @Uint32()
+  external int dstSubresource_aspectMask;
+  @Uint32()
+  external int dstSubresource_mipLevel;
+  @Uint32()
+  external int dstSubresource_baseArrayLayer;
+  @Uint32()
+  external int dstSubresource_layerCount;
+  @Int32()
+  external int dstOffset_x;
+  @Int32()
+  external int dstOffset_y;
+  @Int32()
+  external int dstOffset_z;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int extent_depth;
 }
 
 class VkShaderModuleCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint64() int codeSize;
-  Pointer pCode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int codeSize;
+  external Pointer pCode;
 }
 
 class VkDescriptorSetLayoutBinding extends Struct {
-  @Uint32() int binding;
-  @Int32() int descriptorType;
-  @Uint32() int descriptorCount;
-  @Uint32() int stageFlags;
-  Pointer<Pointer<VkSampler>> pImmutableSamplers;
+  @Uint32()
+  external int binding;
+  @Int32()
+  external int descriptorType;
+  @Uint32()
+  external int descriptorCount;
+  @Uint32()
+  external int stageFlags;
+  external Pointer<Pointer<VkSampler>> pImmutableSamplers;
 }
 
 class VkDescriptorSetLayoutCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int bindingCount;
-  Pointer<VkDescriptorSetLayoutBinding> pBindings;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int bindingCount;
+  external Pointer<VkDescriptorSetLayoutBinding> pBindings;
 }
 
 class VkDescriptorPoolSize extends Struct {
-  @Int32() int type;
-  @Uint32() int descriptorCount;
+  @Int32()
+  external int type;
+  @Uint32()
+  external int descriptorCount;
 }
 
 class VkDescriptorPoolCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int maxSets;
-  @Uint32() int poolSizeCount;
-  Pointer<VkDescriptorPoolSize> pPoolSizes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int maxSets;
+  @Uint32()
+  external int poolSizeCount;
+  external Pointer<VkDescriptorPoolSize> pPoolSizes;
 }
 
 class VkDescriptorSetAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDescriptorPool> descriptorPool;
-  @Uint32() int descriptorSetCount;
-  Pointer<Pointer<VkDescriptorSetLayout>> pSetLayouts;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDescriptorPool> descriptorPool;
+  @Uint32()
+  external int descriptorSetCount;
+  external Pointer<Pointer<VkDescriptorSetLayout>> pSetLayouts;
 }
 
 class VkSpecializationMapEntry extends Struct {
-  @Uint32() int constantID;
-  @Uint32() int offset;
-  @Uint64() int size;
+  @Uint32()
+  external int constantID;
+  @Uint32()
+  external int offset;
+  @Uint64()
+  external int size;
 }
 
 class VkSpecializationInfo extends Struct {
-  @Uint32() int mapEntryCount;
-  Pointer<VkSpecializationMapEntry> pMapEntries;
-  @Uint64() int dataSize;
-  Pointer pData;
+  @Uint32()
+  external int mapEntryCount;
+  external Pointer<VkSpecializationMapEntry> pMapEntries;
+  @Uint64()
+  external int dataSize;
+  external Pointer pData;
 }
 
 class VkPipelineShaderStageCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int stage;
-  Pointer<VkShaderModule> module;
-  Pointer pName;
-  Pointer<VkSpecializationInfo> pSpecializationInfo;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int stage;
+  external Pointer<VkShaderModule> module;
+  external Pointer pName;
+  external Pointer<VkSpecializationInfo> pSpecializationInfo;
 }
 
 class VkComputePipelineCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int stage_sType;
-  Pointer stage_pNext;
-  @Uint32() int stage_flags;
-  @Int32() int stage_stage;
-  Pointer<VkShaderModule> stage_module;
-  Pointer stage_pName;
-  Pointer<VkSpecializationInfo> stage_pSpecializationInfo;
-  Pointer<VkPipelineLayout> layout;
-  Pointer<VkPipeline> basePipelineHandle;
-  @Int32() int basePipelineIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int stage_sType;
+  external Pointer stage_pNext;
+  @Uint32()
+  external int stage_flags;
+  @Int32()
+  external int stage_stage;
+  external Pointer<VkShaderModule> stage_module;
+  external Pointer stage_pName;
+  external Pointer<VkSpecializationInfo> stage_pSpecializationInfo;
+  external Pointer<VkPipelineLayout> layout;
+  external Pointer<VkPipeline> basePipelineHandle;
+  @Int32()
+  external int basePipelineIndex;
 }
 
 class VkVertexInputBindingDescription extends Struct {
-  @Uint32() int binding;
-  @Uint32() int stride;
-  @Int32() int inputRate;
+  @Uint32()
+  external int binding;
+  @Uint32()
+  external int stride;
+  @Int32()
+  external int inputRate;
 }
 
 class VkVertexInputAttributeDescription extends Struct {
-  @Uint32() int location;
-  @Uint32() int binding;
-  @Int32() int format;
-  @Uint32() int offset;
+  @Uint32()
+  external int location;
+  @Uint32()
+  external int binding;
+  @Int32()
+  external int format;
+  @Uint32()
+  external int offset;
 }
 
 class VkPipelineVertexInputStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int vertexBindingDescriptionCount;
-  Pointer<VkVertexInputBindingDescription> pVertexBindingDescriptions;
-  @Uint32() int vertexAttributeDescriptionCount;
-  Pointer<VkVertexInputAttributeDescription> pVertexAttributeDescriptions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int vertexBindingDescriptionCount;
+  external Pointer<VkVertexInputBindingDescription> pVertexBindingDescriptions;
+  @Uint32()
+  external int vertexAttributeDescriptionCount;
+  external Pointer<VkVertexInputAttributeDescription> pVertexAttributeDescriptions;
 }
 
 class VkPipelineInputAssemblyStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int topology;
-  @Uint32() int primitiveRestartEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int topology;
+  @Uint32()
+  external int primitiveRestartEnable;
 }
 
 class VkPipelineTessellationStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int patchControlPoints;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int patchControlPoints;
 }
 
 class VkPipelineViewportStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int viewportCount;
-  Pointer<VkViewport> pViewports;
-  @Uint32() int scissorCount;
-  Pointer<VkRect2D> pScissors;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int viewportCount;
+  external Pointer<VkViewport> pViewports;
+  @Uint32()
+  external int scissorCount;
+  external Pointer<VkRect2D> pScissors;
 }
 
 class VkPipelineRasterizationStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int depthClampEnable;
-  @Uint32() int rasterizerDiscardEnable;
-  @Int32() int polygonMode;
-  @Uint32() int cullMode;
-  @Int32() int frontFace;
-  @Uint32() int depthBiasEnable;
-  @Float() double depthBiasConstantFactor;
-  @Float() double depthBiasClamp;
-  @Float() double depthBiasSlopeFactor;
-  @Float() double lineWidth;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int depthClampEnable;
+  @Uint32()
+  external int rasterizerDiscardEnable;
+  @Int32()
+  external int polygonMode;
+  @Uint32()
+  external int cullMode;
+  @Int32()
+  external int frontFace;
+  @Uint32()
+  external int depthBiasEnable;
+  @Float()
+  external double depthBiasConstantFactor;
+  @Float()
+  external double depthBiasClamp;
+  @Float()
+  external double depthBiasSlopeFactor;
+  @Float()
+  external double lineWidth;
 }
 
 class VkPipelineMultisampleStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int rasterizationSamples;
-  @Uint32() int sampleShadingEnable;
-  @Float() double minSampleShading;
-  Pointer pSampleMask;
-  @Uint32() int alphaToCoverageEnable;
-  @Uint32() int alphaToOneEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int rasterizationSamples;
+  @Uint32()
+  external int sampleShadingEnable;
+  @Float()
+  external double minSampleShading;
+  external Pointer pSampleMask;
+  @Uint32()
+  external int alphaToCoverageEnable;
+  @Uint32()
+  external int alphaToOneEnable;
 }
 
 class VkPipelineColorBlendAttachmentState extends Struct {
-  @Uint32() int blendEnable;
-  @Int32() int srcColorBlendFactor;
-  @Int32() int dstColorBlendFactor;
-  @Int32() int colorBlendOp;
-  @Int32() int srcAlphaBlendFactor;
-  @Int32() int dstAlphaBlendFactor;
-  @Int32() int alphaBlendOp;
-  @Uint32() int colorWriteMask;
+  @Uint32()
+  external int blendEnable;
+  @Int32()
+  external int srcColorBlendFactor;
+  @Int32()
+  external int dstColorBlendFactor;
+  @Int32()
+  external int colorBlendOp;
+  @Int32()
+  external int srcAlphaBlendFactor;
+  @Int32()
+  external int dstAlphaBlendFactor;
+  @Int32()
+  external int alphaBlendOp;
+  @Uint32()
+  external int colorWriteMask;
 }
 
 class VkPipelineColorBlendStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int logicOpEnable;
-  @Int32() int logicOp;
-  @Uint32() int attachmentCount;
-  Pointer<VkPipelineColorBlendAttachmentState> pAttachments;
-  @Float() double blendConstants_0; @Float() double blendConstants_1; @Float() double blendConstants_2; @Float() double blendConstants_3;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int logicOpEnable;
+  @Int32()
+  external int logicOp;
+  @Uint32()
+  external int attachmentCount;
+  external Pointer<VkPipelineColorBlendAttachmentState> pAttachments;
+  @Array(4)
+  external Array<Float> blendConstants;
 }
 
 class VkPipelineDynamicStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int dynamicStateCount;
-  Pointer<Int32> pDynamicStates;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int dynamicStateCount;
+  external Pointer<Int32> pDynamicStates;
 }
 
 class VkStencilOpState extends Struct {
-  @Int32() int failOp;
-  @Int32() int passOp;
-  @Int32() int depthFailOp;
-  @Int32() int compareOp;
-  @Uint32() int compareMask;
-  @Uint32() int writeMask;
-  @Uint32() int reference;
+  @Int32()
+  external int failOp;
+  @Int32()
+  external int passOp;
+  @Int32()
+  external int depthFailOp;
+  @Int32()
+  external int compareOp;
+  @Uint32()
+  external int compareMask;
+  @Uint32()
+  external int writeMask;
+  @Uint32()
+  external int reference;
 }
 
 class VkPipelineDepthStencilStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int depthTestEnable;
-  @Uint32() int depthWriteEnable;
-  @Int32() int depthCompareOp;
-  @Uint32() int depthBoundsTestEnable;
-  @Uint32() int stencilTestEnable;
-  @Int32() int front_failOp;
-  @Int32() int front_passOp;
-  @Int32() int front_depthFailOp;
-  @Int32() int front_compareOp;
-  @Uint32() int front_compareMask;
-  @Uint32() int front_writeMask;
-  @Uint32() int front_reference;
-  @Int32() int back_failOp;
-  @Int32() int back_passOp;
-  @Int32() int back_depthFailOp;
-  @Int32() int back_compareOp;
-  @Uint32() int back_compareMask;
-  @Uint32() int back_writeMask;
-  @Uint32() int back_reference;
-  @Float() double minDepthBounds;
-  @Float() double maxDepthBounds;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int depthTestEnable;
+  @Uint32()
+  external int depthWriteEnable;
+  @Int32()
+  external int depthCompareOp;
+  @Uint32()
+  external int depthBoundsTestEnable;
+  @Uint32()
+  external int stencilTestEnable;
+  @Int32()
+  external int front_failOp;
+  @Int32()
+  external int front_passOp;
+  @Int32()
+  external int front_depthFailOp;
+  @Int32()
+  external int front_compareOp;
+  @Uint32()
+  external int front_compareMask;
+  @Uint32()
+  external int front_writeMask;
+  @Uint32()
+  external int front_reference;
+  @Int32()
+  external int back_failOp;
+  @Int32()
+  external int back_passOp;
+  @Int32()
+  external int back_depthFailOp;
+  @Int32()
+  external int back_compareOp;
+  @Uint32()
+  external int back_compareMask;
+  @Uint32()
+  external int back_writeMask;
+  @Uint32()
+  external int back_reference;
+  @Float()
+  external double minDepthBounds;
+  @Float()
+  external double maxDepthBounds;
 }
 
 class VkGraphicsPipelineCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int stageCount;
-  Pointer<VkPipelineShaderStageCreateInfo> pStages;
-  Pointer<VkPipelineVertexInputStateCreateInfo> pVertexInputState;
-  Pointer<VkPipelineInputAssemblyStateCreateInfo> pInputAssemblyState;
-  Pointer<VkPipelineTessellationStateCreateInfo> pTessellationState;
-  Pointer<VkPipelineViewportStateCreateInfo> pViewportState;
-  Pointer<VkPipelineRasterizationStateCreateInfo> pRasterizationState;
-  Pointer<VkPipelineMultisampleStateCreateInfo> pMultisampleState;
-  Pointer<VkPipelineDepthStencilStateCreateInfo> pDepthStencilState;
-  Pointer<VkPipelineColorBlendStateCreateInfo> pColorBlendState;
-  Pointer<VkPipelineDynamicStateCreateInfo> pDynamicState;
-  Pointer<VkPipelineLayout> layout;
-  Pointer<VkRenderPass> renderPass;
-  @Uint32() int subpass;
-  Pointer<VkPipeline> basePipelineHandle;
-  @Int32() int basePipelineIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int stageCount;
+  external Pointer<VkPipelineShaderStageCreateInfo> pStages;
+  external Pointer<VkPipelineVertexInputStateCreateInfo> pVertexInputState;
+  external Pointer<VkPipelineInputAssemblyStateCreateInfo> pInputAssemblyState;
+  external Pointer<VkPipelineTessellationStateCreateInfo> pTessellationState;
+  external Pointer<VkPipelineViewportStateCreateInfo> pViewportState;
+  external Pointer<VkPipelineRasterizationStateCreateInfo> pRasterizationState;
+  external Pointer<VkPipelineMultisampleStateCreateInfo> pMultisampleState;
+  external Pointer<VkPipelineDepthStencilStateCreateInfo> pDepthStencilState;
+  external Pointer<VkPipelineColorBlendStateCreateInfo> pColorBlendState;
+  external Pointer<VkPipelineDynamicStateCreateInfo> pDynamicState;
+  external Pointer<VkPipelineLayout> layout;
+  external Pointer<VkRenderPass> renderPass;
+  @Uint32()
+  external int subpass;
+  external Pointer<VkPipeline> basePipelineHandle;
+  @Int32()
+  external int basePipelineIndex;
 }
 
 class VkPipelineCacheCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint64() int initialDataSize;
-  Pointer pInitialData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int initialDataSize;
+  external Pointer pInitialData;
 }
 
 class VkPushConstantRange extends Struct {
-  @Uint32() int stageFlags;
-  @Uint32() int offset;
-  @Uint32() int size;
+  @Uint32()
+  external int stageFlags;
+  @Uint32()
+  external int offset;
+  @Uint32()
+  external int size;
 }
 
 class VkPipelineLayoutCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int setLayoutCount;
-  Pointer<Pointer<VkDescriptorSetLayout>> pSetLayouts;
-  @Uint32() int pushConstantRangeCount;
-  Pointer<VkPushConstantRange> pPushConstantRanges;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int setLayoutCount;
+  external Pointer<Pointer<VkDescriptorSetLayout>> pSetLayouts;
+  @Uint32()
+  external int pushConstantRangeCount;
+  external Pointer<VkPushConstantRange> pPushConstantRanges;
 }
 
 class VkSamplerCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int magFilter;
-  @Int32() int minFilter;
-  @Int32() int mipmapMode;
-  @Int32() int addressModeU;
-  @Int32() int addressModeV;
-  @Int32() int addressModeW;
-  @Float() double mipLodBias;
-  @Uint32() int anisotropyEnable;
-  @Float() double maxAnisotropy;
-  @Uint32() int compareEnable;
-  @Int32() int compareOp;
-  @Float() double minLod;
-  @Float() double maxLod;
-  @Int32() int borderColor;
-  @Uint32() int unnormalizedCoordinates;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int magFilter;
+  @Int32()
+  external int minFilter;
+  @Int32()
+  external int mipmapMode;
+  @Int32()
+  external int addressModeU;
+  @Int32()
+  external int addressModeV;
+  @Int32()
+  external int addressModeW;
+  @Float()
+  external double mipLodBias;
+  @Uint32()
+  external int anisotropyEnable;
+  @Float()
+  external double maxAnisotropy;
+  @Uint32()
+  external int compareEnable;
+  @Int32()
+  external int compareOp;
+  @Float()
+  external double minLod;
+  @Float()
+  external double maxLod;
+  @Int32()
+  external int borderColor;
+  @Uint32()
+  external int unnormalizedCoordinates;
 }
 
 class VkCommandPoolCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int queueFamilyIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int queueFamilyIndex;
 }
 
 class VkCommandBufferAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkCommandPool> commandPool;
-  @Int32() int level;
-  @Uint32() int commandBufferCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkCommandPool> commandPool;
+  @Int32()
+  external int level;
+  @Uint32()
+  external int commandBufferCount;
 }
 
 class VkCommandBufferInheritanceInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkRenderPass> renderPass;
-  @Uint32() int subpass;
-  Pointer<VkFramebuffer> framebuffer;
-  @Uint32() int occlusionQueryEnable;
-  @Uint32() int queryFlags;
-  @Uint32() int pipelineStatistics;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkRenderPass> renderPass;
+  @Uint32()
+  external int subpass;
+  external Pointer<VkFramebuffer> framebuffer;
+  @Uint32()
+  external int occlusionQueryEnable;
+  @Uint32()
+  external int queryFlags;
+  @Uint32()
+  external int pipelineStatistics;
 }
 
 class VkCommandBufferBeginInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkCommandBufferInheritanceInfo> pInheritanceInfo;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkCommandBufferInheritanceInfo> pInheritanceInfo;
 }
 
 class VkRenderPassBeginInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkRenderPass> renderPass;
-  Pointer<VkFramebuffer> framebuffer;
-  @Int32() int renderArea_offset_x;
-  @Int32() int renderArea_offset_y;
-  @Uint32() int renderArea_extent_width;
-  @Uint32() int renderArea_extent_height;
-  @Uint32() int clearValueCount;
-  Pointer<VkClearValue> pClearValues;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkRenderPass> renderPass;
+  external Pointer<VkFramebuffer> framebuffer;
+  @Int32()
+  external int renderArea_offset_x;
+  @Int32()
+  external int renderArea_offset_y;
+  @Uint32()
+  external int renderArea_extent_width;
+  @Uint32()
+  external int renderArea_extent_height;
+  @Uint32()
+  external int clearValueCount;
+  external Pointer<VkClearValue> pClearValues;
 }
 
 class VkClearColorValue extends Opaque {
 }
 
 class VkClearColorValueFloat32 extends Struct {
-  @Float() double float32_0; @Float() double float32_1; @Float() double float32_2; @Float() double float32_3;
+  @Array(4)
+  external Array<Float> float32;
 }
 
 class VkClearColorValueInt32 extends Struct {
-  @Int32() int int32_0; @Int32() int int32_1; @Int32() int int32_2; @Int32() int int32_3;
+  @Array(4)
+  external Array<Int32> int32;
 }
 
 class VkClearColorValueUint32 extends Struct {
-  @Uint32() int uint32_0; @Uint32() int uint32_1; @Uint32() int uint32_2; @Uint32() int uint32_3;
+  @Array(4)
+  external Array<Uint32> uint32;
 }
 
 class VkClearDepthStencilValue extends Struct {
-  @Float() double depth;
-  @Uint32() int stencil;
+  @Float()
+  external double depth;
+  @Uint32()
+  external int stencil;
 }
 
 class VkClearValue extends Opaque {
 }
 
 class VkClearValueColor extends Struct {
+  external Pointer<VkClearColorValue> color;
 }
 
 class VkClearValueDepthStencil extends Struct {
-  @Float() double depthStencil_depth;
-  @Uint32() int depthStencil_stencil;
+  @Float()
+  external double depthStencil_depth;
+  @Uint32()
+  external int depthStencil_stencil;
 }
 
 class VkClearAttachment extends Struct {
-  @Uint32() int aspectMask;
-  @Uint32() int colorAttachment;
+  @Uint32()
+  external int aspectMask;
+  @Uint32()
+  external int colorAttachment;
 }
 
 class VkAttachmentDescription extends Struct {
-  @Uint32() int flags;
-  @Int32() int format;
-  @Int32() int samples;
-  @Int32() int loadOp;
-  @Int32() int storeOp;
-  @Int32() int stencilLoadOp;
-  @Int32() int stencilStoreOp;
-  @Int32() int initialLayout;
-  @Int32() int finalLayout;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int format;
+  @Int32()
+  external int samples;
+  @Int32()
+  external int loadOp;
+  @Int32()
+  external int storeOp;
+  @Int32()
+  external int stencilLoadOp;
+  @Int32()
+  external int stencilStoreOp;
+  @Int32()
+  external int initialLayout;
+  @Int32()
+  external int finalLayout;
 }
 
 class VkAttachmentReference extends Struct {
-  @Uint32() int attachment;
-  @Int32() int layout;
+  @Uint32()
+  external int attachment;
+  @Int32()
+  external int layout;
 }
 
 class VkSubpassDescription extends Struct {
-  @Uint32() int flags;
-  @Int32() int pipelineBindPoint;
-  @Uint32() int inputAttachmentCount;
-  Pointer<VkAttachmentReference> pInputAttachments;
-  @Uint32() int colorAttachmentCount;
-  Pointer<VkAttachmentReference> pColorAttachments;
-  Pointer<VkAttachmentReference> pResolveAttachments;
-  Pointer<VkAttachmentReference> pDepthStencilAttachment;
-  @Uint32() int preserveAttachmentCount;
-  Pointer pPreserveAttachments;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int pipelineBindPoint;
+  @Uint32()
+  external int inputAttachmentCount;
+  external Pointer<VkAttachmentReference> pInputAttachments;
+  @Uint32()
+  external int colorAttachmentCount;
+  external Pointer<VkAttachmentReference> pColorAttachments;
+  external Pointer<VkAttachmentReference> pResolveAttachments;
+  external Pointer<VkAttachmentReference> pDepthStencilAttachment;
+  @Uint32()
+  external int preserveAttachmentCount;
+  external Pointer pPreserveAttachments;
 }
 
 class VkSubpassDependency extends Struct {
-  @Uint32() int srcSubpass;
-  @Uint32() int dstSubpass;
-  @Uint32() int srcStageMask;
-  @Uint32() int dstStageMask;
-  @Uint32() int srcAccessMask;
-  @Uint32() int dstAccessMask;
-  @Uint32() int dependencyFlags;
+  @Uint32()
+  external int srcSubpass;
+  @Uint32()
+  external int dstSubpass;
+  @Uint32()
+  external int srcStageMask;
+  @Uint32()
+  external int dstStageMask;
+  @Uint32()
+  external int srcAccessMask;
+  @Uint32()
+  external int dstAccessMask;
+  @Uint32()
+  external int dependencyFlags;
 }
 
 class VkRenderPassCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int attachmentCount;
-  Pointer<VkAttachmentDescription> pAttachments;
-  @Uint32() int subpassCount;
-  Pointer<VkSubpassDescription> pSubpasses;
-  @Uint32() int dependencyCount;
-  Pointer<VkSubpassDependency> pDependencies;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int attachmentCount;
+  external Pointer<VkAttachmentDescription> pAttachments;
+  @Uint32()
+  external int subpassCount;
+  external Pointer<VkSubpassDescription> pSubpasses;
+  @Uint32()
+  external int dependencyCount;
+  external Pointer<VkSubpassDependency> pDependencies;
 }
 
 class VkEventCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
 }
 
 class VkFenceCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
 }
 
 class VkPhysicalDeviceFeatures extends Struct {
-  @Uint32() int robustBufferAccess;
-  @Uint32() int fullDrawIndexUint32;
-  @Uint32() int imageCubeArray;
-  @Uint32() int independentBlend;
-  @Uint32() int geometryShader;
-  @Uint32() int tessellationShader;
-  @Uint32() int sampleRateShading;
-  @Uint32() int dualSrcBlend;
-  @Uint32() int logicOp;
-  @Uint32() int multiDrawIndirect;
-  @Uint32() int drawIndirectFirstInstance;
-  @Uint32() int depthClamp;
-  @Uint32() int depthBiasClamp;
-  @Uint32() int fillModeNonSolid;
-  @Uint32() int depthBounds;
-  @Uint32() int wideLines;
-  @Uint32() int largePoints;
-  @Uint32() int alphaToOne;
-  @Uint32() int multiViewport;
-  @Uint32() int samplerAnisotropy;
-  @Uint32() int textureCompressionETC2;
-  @Uint32() int textureCompressionASTC_LDR;
-  @Uint32() int textureCompressionBC;
-  @Uint32() int occlusionQueryPrecise;
-  @Uint32() int pipelineStatisticsQuery;
-  @Uint32() int vertexPipelineStoresAndAtomics;
-  @Uint32() int fragmentStoresAndAtomics;
-  @Uint32() int shaderTessellationAndGeometryPointSize;
-  @Uint32() int shaderImageGatherExtended;
-  @Uint32() int shaderStorageImageExtendedFormats;
-  @Uint32() int shaderStorageImageMultisample;
-  @Uint32() int shaderStorageImageReadWithoutFormat;
-  @Uint32() int shaderStorageImageWriteWithoutFormat;
-  @Uint32() int shaderUniformBufferArrayDynamicIndexing;
-  @Uint32() int shaderSampledImageArrayDynamicIndexing;
-  @Uint32() int shaderStorageBufferArrayDynamicIndexing;
-  @Uint32() int shaderStorageImageArrayDynamicIndexing;
-  @Uint32() int shaderClipDistance;
-  @Uint32() int shaderCullDistance;
-  @Uint32() int shaderFloat64;
-  @Uint32() int shaderInt64;
-  @Uint32() int shaderInt16;
-  @Uint32() int shaderResourceResidency;
-  @Uint32() int shaderResourceMinLod;
-  @Uint32() int sparseBinding;
-  @Uint32() int sparseResidencyBuffer;
-  @Uint32() int sparseResidencyImage2D;
-  @Uint32() int sparseResidencyImage3D;
-  @Uint32() int sparseResidency2Samples;
-  @Uint32() int sparseResidency4Samples;
-  @Uint32() int sparseResidency8Samples;
-  @Uint32() int sparseResidency16Samples;
-  @Uint32() int sparseResidencyAliased;
-  @Uint32() int variableMultisampleRate;
-  @Uint32() int inheritedQueries;
+  @Uint32()
+  external int robustBufferAccess;
+  @Uint32()
+  external int fullDrawIndexUint32;
+  @Uint32()
+  external int imageCubeArray;
+  @Uint32()
+  external int independentBlend;
+  @Uint32()
+  external int geometryShader;
+  @Uint32()
+  external int tessellationShader;
+  @Uint32()
+  external int sampleRateShading;
+  @Uint32()
+  external int dualSrcBlend;
+  @Uint32()
+  external int logicOp;
+  @Uint32()
+  external int multiDrawIndirect;
+  @Uint32()
+  external int drawIndirectFirstInstance;
+  @Uint32()
+  external int depthClamp;
+  @Uint32()
+  external int depthBiasClamp;
+  @Uint32()
+  external int fillModeNonSolid;
+  @Uint32()
+  external int depthBounds;
+  @Uint32()
+  external int wideLines;
+  @Uint32()
+  external int largePoints;
+  @Uint32()
+  external int alphaToOne;
+  @Uint32()
+  external int multiViewport;
+  @Uint32()
+  external int samplerAnisotropy;
+  @Uint32()
+  external int textureCompressionETC2;
+  @Uint32()
+  external int textureCompressionASTC_LDR;
+  @Uint32()
+  external int textureCompressionBC;
+  @Uint32()
+  external int occlusionQueryPrecise;
+  @Uint32()
+  external int pipelineStatisticsQuery;
+  @Uint32()
+  external int vertexPipelineStoresAndAtomics;
+  @Uint32()
+  external int fragmentStoresAndAtomics;
+  @Uint32()
+  external int shaderTessellationAndGeometryPointSize;
+  @Uint32()
+  external int shaderImageGatherExtended;
+  @Uint32()
+  external int shaderStorageImageExtendedFormats;
+  @Uint32()
+  external int shaderStorageImageMultisample;
+  @Uint32()
+  external int shaderStorageImageReadWithoutFormat;
+  @Uint32()
+  external int shaderStorageImageWriteWithoutFormat;
+  @Uint32()
+  external int shaderUniformBufferArrayDynamicIndexing;
+  @Uint32()
+  external int shaderSampledImageArrayDynamicIndexing;
+  @Uint32()
+  external int shaderStorageBufferArrayDynamicIndexing;
+  @Uint32()
+  external int shaderStorageImageArrayDynamicIndexing;
+  @Uint32()
+  external int shaderClipDistance;
+  @Uint32()
+  external int shaderCullDistance;
+  @Uint32()
+  external int shaderFloat64;
+  @Uint32()
+  external int shaderInt64;
+  @Uint32()
+  external int shaderInt16;
+  @Uint32()
+  external int shaderResourceResidency;
+  @Uint32()
+  external int shaderResourceMinLod;
+  @Uint32()
+  external int sparseBinding;
+  @Uint32()
+  external int sparseResidencyBuffer;
+  @Uint32()
+  external int sparseResidencyImage2D;
+  @Uint32()
+  external int sparseResidencyImage3D;
+  @Uint32()
+  external int sparseResidency2Samples;
+  @Uint32()
+  external int sparseResidency4Samples;
+  @Uint32()
+  external int sparseResidency8Samples;
+  @Uint32()
+  external int sparseResidency16Samples;
+  @Uint32()
+  external int sparseResidencyAliased;
+  @Uint32()
+  external int variableMultisampleRate;
+  @Uint32()
+  external int inheritedQueries;
 }
 
 class VkPhysicalDeviceSparseProperties extends Struct {
-  @Uint32() int residencyStandard2DBlockShape;
-  @Uint32() int residencyStandard2DMultisampleBlockShape;
-  @Uint32() int residencyStandard3DBlockShape;
-  @Uint32() int residencyAlignedMipSize;
-  @Uint32() int residencyNonResidentStrict;
+  @Uint32()
+  external int residencyStandard2DBlockShape;
+  @Uint32()
+  external int residencyStandard2DMultisampleBlockShape;
+  @Uint32()
+  external int residencyStandard3DBlockShape;
+  @Uint32()
+  external int residencyAlignedMipSize;
+  @Uint32()
+  external int residencyNonResidentStrict;
 }
 
 class VkPhysicalDeviceLimits extends Struct {
-  @Uint32() int maxImageDimension1D;
-  @Uint32() int maxImageDimension2D;
-  @Uint32() int maxImageDimension3D;
-  @Uint32() int maxImageDimensionCube;
-  @Uint32() int maxImageArrayLayers;
-  @Uint32() int maxTexelBufferElements;
-  @Uint32() int maxUniformBufferRange;
-  @Uint32() int maxStorageBufferRange;
-  @Uint32() int maxPushConstantsSize;
-  @Uint32() int maxMemoryAllocationCount;
-  @Uint32() int maxSamplerAllocationCount;
-  @Uint64() int bufferImageGranularity;
-  @Uint64() int sparseAddressSpaceSize;
-  @Uint32() int maxBoundDescriptorSets;
-  @Uint32() int maxPerStageDescriptorSamplers;
-  @Uint32() int maxPerStageDescriptorUniformBuffers;
-  @Uint32() int maxPerStageDescriptorStorageBuffers;
-  @Uint32() int maxPerStageDescriptorSampledImages;
-  @Uint32() int maxPerStageDescriptorStorageImages;
-  @Uint32() int maxPerStageDescriptorInputAttachments;
-  @Uint32() int maxPerStageResources;
-  @Uint32() int maxDescriptorSetSamplers;
-  @Uint32() int maxDescriptorSetUniformBuffers;
-  @Uint32() int maxDescriptorSetUniformBuffersDynamic;
-  @Uint32() int maxDescriptorSetStorageBuffers;
-  @Uint32() int maxDescriptorSetStorageBuffersDynamic;
-  @Uint32() int maxDescriptorSetSampledImages;
-  @Uint32() int maxDescriptorSetStorageImages;
-  @Uint32() int maxDescriptorSetInputAttachments;
-  @Uint32() int maxVertexInputAttributes;
-  @Uint32() int maxVertexInputBindings;
-  @Uint32() int maxVertexInputAttributeOffset;
-  @Uint32() int maxVertexInputBindingStride;
-  @Uint32() int maxVertexOutputComponents;
-  @Uint32() int maxTessellationGenerationLevel;
-  @Uint32() int maxTessellationPatchSize;
-  @Uint32() int maxTessellationControlPerVertexInputComponents;
-  @Uint32() int maxTessellationControlPerVertexOutputComponents;
-  @Uint32() int maxTessellationControlPerPatchOutputComponents;
-  @Uint32() int maxTessellationControlTotalOutputComponents;
-  @Uint32() int maxTessellationEvaluationInputComponents;
-  @Uint32() int maxTessellationEvaluationOutputComponents;
-  @Uint32() int maxGeometryShaderInvocations;
-  @Uint32() int maxGeometryInputComponents;
-  @Uint32() int maxGeometryOutputComponents;
-  @Uint32() int maxGeometryOutputVertices;
-  @Uint32() int maxGeometryTotalOutputComponents;
-  @Uint32() int maxFragmentInputComponents;
-  @Uint32() int maxFragmentOutputAttachments;
-  @Uint32() int maxFragmentDualSrcAttachments;
-  @Uint32() int maxFragmentCombinedOutputResources;
-  @Uint32() int maxComputeSharedMemorySize;
-  @Uint32() int maxComputeWorkGroupCount_0; @Uint32() int maxComputeWorkGroupCount_1; @Uint32() int maxComputeWorkGroupCount_2;
-  @Uint32() int maxComputeWorkGroupInvocations;
-  @Uint32() int maxComputeWorkGroupSize_0; @Uint32() int maxComputeWorkGroupSize_1; @Uint32() int maxComputeWorkGroupSize_2;
-  @Uint32() int subPixelPrecisionBits;
-  @Uint32() int subTexelPrecisionBits;
-  @Uint32() int mipmapPrecisionBits;
-  @Uint32() int maxDrawIndexedIndexValue;
-  @Uint32() int maxDrawIndirectCount;
-  @Float() double maxSamplerLodBias;
-  @Float() double maxSamplerAnisotropy;
-  @Uint32() int maxViewports;
-  @Uint32() int maxViewportDimensions_0; @Uint32() int maxViewportDimensions_1;
-  @Float() double viewportBoundsRange_0; @Float() double viewportBoundsRange_1;
-  @Uint32() int viewportSubPixelBits;
-  @Uint64() int minMemoryMapAlignment;
-  @Uint64() int minTexelBufferOffsetAlignment;
-  @Uint64() int minUniformBufferOffsetAlignment;
-  @Uint64() int minStorageBufferOffsetAlignment;
-  @Int32() int minTexelOffset;
-  @Uint32() int maxTexelOffset;
-  @Int32() int minTexelGatherOffset;
-  @Uint32() int maxTexelGatherOffset;
-  @Float() double minInterpolationOffset;
-  @Float() double maxInterpolationOffset;
-  @Uint32() int subPixelInterpolationOffsetBits;
-  @Uint32() int maxFramebufferWidth;
-  @Uint32() int maxFramebufferHeight;
-  @Uint32() int maxFramebufferLayers;
-  @Uint32() int framebufferColorSampleCounts;
-  @Uint32() int framebufferDepthSampleCounts;
-  @Uint32() int framebufferStencilSampleCounts;
-  @Uint32() int framebufferNoAttachmentsSampleCounts;
-  @Uint32() int maxColorAttachments;
-  @Uint32() int sampledImageColorSampleCounts;
-  @Uint32() int sampledImageIntegerSampleCounts;
-  @Uint32() int sampledImageDepthSampleCounts;
-  @Uint32() int sampledImageStencilSampleCounts;
-  @Uint32() int storageImageSampleCounts;
-  @Uint32() int maxSampleMaskWords;
-  @Uint32() int timestampComputeAndGraphics;
-  @Float() double timestampPeriod;
-  @Uint32() int maxClipDistances;
-  @Uint32() int maxCullDistances;
-  @Uint32() int maxCombinedClipAndCullDistances;
-  @Uint32() int discreteQueuePriorities;
-  @Float() double pointSizeRange_0; @Float() double pointSizeRange_1;
-  @Float() double lineWidthRange_0; @Float() double lineWidthRange_1;
-  @Float() double pointSizeGranularity;
-  @Float() double lineWidthGranularity;
-  @Uint32() int strictLines;
-  @Uint32() int standardSampleLocations;
-  @Uint64() int optimalBufferCopyOffsetAlignment;
-  @Uint64() int optimalBufferCopyRowPitchAlignment;
-  @Uint64() int nonCoherentAtomSize;
+  @Uint32()
+  external int maxImageDimension1D;
+  @Uint32()
+  external int maxImageDimension2D;
+  @Uint32()
+  external int maxImageDimension3D;
+  @Uint32()
+  external int maxImageDimensionCube;
+  @Uint32()
+  external int maxImageArrayLayers;
+  @Uint32()
+  external int maxTexelBufferElements;
+  @Uint32()
+  external int maxUniformBufferRange;
+  @Uint32()
+  external int maxStorageBufferRange;
+  @Uint32()
+  external int maxPushConstantsSize;
+  @Uint32()
+  external int maxMemoryAllocationCount;
+  @Uint32()
+  external int maxSamplerAllocationCount;
+  @Uint64()
+  external int bufferImageGranularity;
+  @Uint64()
+  external int sparseAddressSpaceSize;
+  @Uint32()
+  external int maxBoundDescriptorSets;
+  @Uint32()
+  external int maxPerStageDescriptorSamplers;
+  @Uint32()
+  external int maxPerStageDescriptorUniformBuffers;
+  @Uint32()
+  external int maxPerStageDescriptorStorageBuffers;
+  @Uint32()
+  external int maxPerStageDescriptorSampledImages;
+  @Uint32()
+  external int maxPerStageDescriptorStorageImages;
+  @Uint32()
+  external int maxPerStageDescriptorInputAttachments;
+  @Uint32()
+  external int maxPerStageResources;
+  @Uint32()
+  external int maxDescriptorSetSamplers;
+  @Uint32()
+  external int maxDescriptorSetUniformBuffers;
+  @Uint32()
+  external int maxDescriptorSetUniformBuffersDynamic;
+  @Uint32()
+  external int maxDescriptorSetStorageBuffers;
+  @Uint32()
+  external int maxDescriptorSetStorageBuffersDynamic;
+  @Uint32()
+  external int maxDescriptorSetSampledImages;
+  @Uint32()
+  external int maxDescriptorSetStorageImages;
+  @Uint32()
+  external int maxDescriptorSetInputAttachments;
+  @Uint32()
+  external int maxVertexInputAttributes;
+  @Uint32()
+  external int maxVertexInputBindings;
+  @Uint32()
+  external int maxVertexInputAttributeOffset;
+  @Uint32()
+  external int maxVertexInputBindingStride;
+  @Uint32()
+  external int maxVertexOutputComponents;
+  @Uint32()
+  external int maxTessellationGenerationLevel;
+  @Uint32()
+  external int maxTessellationPatchSize;
+  @Uint32()
+  external int maxTessellationControlPerVertexInputComponents;
+  @Uint32()
+  external int maxTessellationControlPerVertexOutputComponents;
+  @Uint32()
+  external int maxTessellationControlPerPatchOutputComponents;
+  @Uint32()
+  external int maxTessellationControlTotalOutputComponents;
+  @Uint32()
+  external int maxTessellationEvaluationInputComponents;
+  @Uint32()
+  external int maxTessellationEvaluationOutputComponents;
+  @Uint32()
+  external int maxGeometryShaderInvocations;
+  @Uint32()
+  external int maxGeometryInputComponents;
+  @Uint32()
+  external int maxGeometryOutputComponents;
+  @Uint32()
+  external int maxGeometryOutputVertices;
+  @Uint32()
+  external int maxGeometryTotalOutputComponents;
+  @Uint32()
+  external int maxFragmentInputComponents;
+  @Uint32()
+  external int maxFragmentOutputAttachments;
+  @Uint32()
+  external int maxFragmentDualSrcAttachments;
+  @Uint32()
+  external int maxFragmentCombinedOutputResources;
+  @Uint32()
+  external int maxComputeSharedMemorySize;
+  @Array(3)
+  external Array<Uint32> maxComputeWorkGroupCount;
+  @Uint32()
+  external int maxComputeWorkGroupInvocations;
+  @Array(3)
+  external Array<Uint32> maxComputeWorkGroupSize;
+  @Uint32()
+  external int subPixelPrecisionBits;
+  @Uint32()
+  external int subTexelPrecisionBits;
+  @Uint32()
+  external int mipmapPrecisionBits;
+  @Uint32()
+  external int maxDrawIndexedIndexValue;
+  @Uint32()
+  external int maxDrawIndirectCount;
+  @Float()
+  external double maxSamplerLodBias;
+  @Float()
+  external double maxSamplerAnisotropy;
+  @Uint32()
+  external int maxViewports;
+  @Array(2)
+  external Array<Uint32> maxViewportDimensions;
+  @Array(2)
+  external Array<Float> viewportBoundsRange;
+  @Uint32()
+  external int viewportSubPixelBits;
+  @Uint64()
+  external int minMemoryMapAlignment;
+  @Uint64()
+  external int minTexelBufferOffsetAlignment;
+  @Uint64()
+  external int minUniformBufferOffsetAlignment;
+  @Uint64()
+  external int minStorageBufferOffsetAlignment;
+  @Int32()
+  external int minTexelOffset;
+  @Uint32()
+  external int maxTexelOffset;
+  @Int32()
+  external int minTexelGatherOffset;
+  @Uint32()
+  external int maxTexelGatherOffset;
+  @Float()
+  external double minInterpolationOffset;
+  @Float()
+  external double maxInterpolationOffset;
+  @Uint32()
+  external int subPixelInterpolationOffsetBits;
+  @Uint32()
+  external int maxFramebufferWidth;
+  @Uint32()
+  external int maxFramebufferHeight;
+  @Uint32()
+  external int maxFramebufferLayers;
+  @Uint32()
+  external int framebufferColorSampleCounts;
+  @Uint32()
+  external int framebufferDepthSampleCounts;
+  @Uint32()
+  external int framebufferStencilSampleCounts;
+  @Uint32()
+  external int framebufferNoAttachmentsSampleCounts;
+  @Uint32()
+  external int maxColorAttachments;
+  @Uint32()
+  external int sampledImageColorSampleCounts;
+  @Uint32()
+  external int sampledImageIntegerSampleCounts;
+  @Uint32()
+  external int sampledImageDepthSampleCounts;
+  @Uint32()
+  external int sampledImageStencilSampleCounts;
+  @Uint32()
+  external int storageImageSampleCounts;
+  @Uint32()
+  external int maxSampleMaskWords;
+  @Uint32()
+  external int timestampComputeAndGraphics;
+  @Float()
+  external double timestampPeriod;
+  @Uint32()
+  external int maxClipDistances;
+  @Uint32()
+  external int maxCullDistances;
+  @Uint32()
+  external int maxCombinedClipAndCullDistances;
+  @Uint32()
+  external int discreteQueuePriorities;
+  @Array(2)
+  external Array<Float> pointSizeRange;
+  @Array(2)
+  external Array<Float> lineWidthRange;
+  @Float()
+  external double pointSizeGranularity;
+  @Float()
+  external double lineWidthGranularity;
+  @Uint32()
+  external int strictLines;
+  @Uint32()
+  external int standardSampleLocations;
+  @Uint64()
+  external int optimalBufferCopyOffsetAlignment;
+  @Uint64()
+  external int optimalBufferCopyRowPitchAlignment;
+  @Uint64()
+  external int nonCoherentAtomSize;
 }
 
 class VkSemaphoreCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
 }
 
 class VkQueryPoolCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int queryType;
-  @Uint32() int queryCount;
-  @Uint32() int pipelineStatistics;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int queryType;
+  @Uint32()
+  external int queryCount;
+  @Uint32()
+  external int pipelineStatistics;
 }
 
 class VkFramebufferCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkRenderPass> renderPass;
-  @Uint32() int attachmentCount;
-  Pointer<Pointer<VkImageView>> pAttachments;
-  @Uint32() int width;
-  @Uint32() int height;
-  @Uint32() int layers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkRenderPass> renderPass;
+  @Uint32()
+  external int attachmentCount;
+  external Pointer<Pointer<VkImageView>> pAttachments;
+  @Uint32()
+  external int width;
+  @Uint32()
+  external int height;
+  @Uint32()
+  external int layers;
 }
 
 class VkDrawIndirectCommand extends Struct {
-  @Uint32() int vertexCount;
-  @Uint32() int instanceCount;
-  @Uint32() int firstVertex;
-  @Uint32() int firstInstance;
+  @Uint32()
+  external int vertexCount;
+  @Uint32()
+  external int instanceCount;
+  @Uint32()
+  external int firstVertex;
+  @Uint32()
+  external int firstInstance;
 }
 
 class VkDrawIndexedIndirectCommand extends Struct {
-  @Uint32() int indexCount;
-  @Uint32() int instanceCount;
-  @Uint32() int firstIndex;
-  @Int32() int vertexOffset;
-  @Uint32() int firstInstance;
+  @Uint32()
+  external int indexCount;
+  @Uint32()
+  external int instanceCount;
+  @Uint32()
+  external int firstIndex;
+  @Int32()
+  external int vertexOffset;
+  @Uint32()
+  external int firstInstance;
 }
 
 class VkDispatchIndirectCommand extends Struct {
-  @Uint32() int x;
-  @Uint32() int y;
-  @Uint32() int z;
+  @Uint32()
+  external int x;
+  @Uint32()
+  external int y;
+  @Uint32()
+  external int z;
 }
 
 class VkSubmitInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int waitSemaphoreCount;
-  Pointer<Pointer<VkSemaphore>> pWaitSemaphores;
-  Pointer pWaitDstStageMask;
-  @Uint32() int commandBufferCount;
-  Pointer<Pointer<VkCommandBuffer>> pCommandBuffers;
-  @Uint32() int signalSemaphoreCount;
-  Pointer<Pointer<VkSemaphore>> pSignalSemaphores;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int waitSemaphoreCount;
+  external Pointer<Pointer<VkSemaphore>> pWaitSemaphores;
+  external Pointer pWaitDstStageMask;
+  @Uint32()
+  external int commandBufferCount;
+  external Pointer<Pointer<VkCommandBuffer>> pCommandBuffers;
+  @Uint32()
+  external int signalSemaphoreCount;
+  external Pointer<Pointer<VkSemaphore>> pSignalSemaphores;
 }
 
 class VkDisplayPropertiesKHR extends Struct {
-  Pointer<VkDisplayKHR> display;
-  Pointer displayName;
-  @Uint32() int physicalDimensions_width;
-  @Uint32() int physicalDimensions_height;
-  @Uint32() int physicalResolution_width;
-  @Uint32() int physicalResolution_height;
-  @Uint32() int supportedTransforms;
-  @Uint32() int planeReorderPossible;
-  @Uint32() int persistentContent;
+  external Pointer<VkDisplayKHR> display;
+  external Pointer displayName;
+  @Uint32()
+  external int physicalDimensions_width;
+  @Uint32()
+  external int physicalDimensions_height;
+  @Uint32()
+  external int physicalResolution_width;
+  @Uint32()
+  external int physicalResolution_height;
+  @Uint32()
+  external int supportedTransforms;
+  @Uint32()
+  external int planeReorderPossible;
+  @Uint32()
+  external int persistentContent;
 }
 
 class VkDisplayPlanePropertiesKHR extends Struct {
-  Pointer<VkDisplayKHR> currentDisplay;
-  @Uint32() int currentStackIndex;
+  external Pointer<VkDisplayKHR> currentDisplay;
+  @Uint32()
+  external int currentStackIndex;
 }
 
 class VkDisplayModeParametersKHR extends Struct {
-  @Uint32() int visibleRegion_width;
-  @Uint32() int visibleRegion_height;
-  @Uint32() int refreshRate;
+  @Uint32()
+  external int visibleRegion_width;
+  @Uint32()
+  external int visibleRegion_height;
+  @Uint32()
+  external int refreshRate;
 }
 
 class VkDisplayModePropertiesKHR extends Struct {
-  Pointer<VkDisplayModeKHR> displayMode;
-  @Uint32() int parameters_visibleRegion_width;
-  @Uint32() int parameters_visibleRegion_height;
-  @Uint32() int parameters_refreshRate;
+  external Pointer<VkDisplayModeKHR> displayMode;
+  @Uint32()
+  external int parameters_visibleRegion_width;
+  @Uint32()
+  external int parameters_visibleRegion_height;
+  @Uint32()
+  external int parameters_refreshRate;
 }
 
 class VkDisplayModeCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int parameters_visibleRegion_width;
-  @Uint32() int parameters_visibleRegion_height;
-  @Uint32() int parameters_refreshRate;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int parameters_visibleRegion_width;
+  @Uint32()
+  external int parameters_visibleRegion_height;
+  @Uint32()
+  external int parameters_refreshRate;
 }
 
 class VkDisplayPlaneCapabilitiesKHR extends Struct {
-  @Uint32() int supportedAlpha;
-  @Int32() int minSrcPosition_x;
-  @Int32() int minSrcPosition_y;
-  @Int32() int maxSrcPosition_x;
-  @Int32() int maxSrcPosition_y;
-  @Uint32() int minSrcExtent_width;
-  @Uint32() int minSrcExtent_height;
-  @Uint32() int maxSrcExtent_width;
-  @Uint32() int maxSrcExtent_height;
-  @Int32() int minDstPosition_x;
-  @Int32() int minDstPosition_y;
-  @Int32() int maxDstPosition_x;
-  @Int32() int maxDstPosition_y;
-  @Uint32() int minDstExtent_width;
-  @Uint32() int minDstExtent_height;
-  @Uint32() int maxDstExtent_width;
-  @Uint32() int maxDstExtent_height;
+  @Uint32()
+  external int supportedAlpha;
+  @Int32()
+  external int minSrcPosition_x;
+  @Int32()
+  external int minSrcPosition_y;
+  @Int32()
+  external int maxSrcPosition_x;
+  @Int32()
+  external int maxSrcPosition_y;
+  @Uint32()
+  external int minSrcExtent_width;
+  @Uint32()
+  external int minSrcExtent_height;
+  @Uint32()
+  external int maxSrcExtent_width;
+  @Uint32()
+  external int maxSrcExtent_height;
+  @Int32()
+  external int minDstPosition_x;
+  @Int32()
+  external int minDstPosition_y;
+  @Int32()
+  external int maxDstPosition_x;
+  @Int32()
+  external int maxDstPosition_y;
+  @Uint32()
+  external int minDstExtent_width;
+  @Uint32()
+  external int minDstExtent_height;
+  @Uint32()
+  external int maxDstExtent_width;
+  @Uint32()
+  external int maxDstExtent_height;
 }
 
 class VkDisplaySurfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkDisplayModeKHR> displayMode;
-  @Uint32() int planeIndex;
-  @Uint32() int planeStackIndex;
-  @Int32() int transform;
-  @Float() double globalAlpha;
-  @Int32() int alphaMode;
-  @Uint32() int imageExtent_width;
-  @Uint32() int imageExtent_height;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkDisplayModeKHR> displayMode;
+  @Uint32()
+  external int planeIndex;
+  @Uint32()
+  external int planeStackIndex;
+  @Int32()
+  external int transform;
+  @Float()
+  external double globalAlpha;
+  @Int32()
+  external int alphaMode;
+  @Uint32()
+  external int imageExtent_width;
+  @Uint32()
+  external int imageExtent_height;
 }
 
 class VkDisplayPresentInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int srcRect_offset_x;
-  @Int32() int srcRect_offset_y;
-  @Uint32() int srcRect_extent_width;
-  @Uint32() int srcRect_extent_height;
-  @Int32() int dstRect_offset_x;
-  @Int32() int dstRect_offset_y;
-  @Uint32() int dstRect_extent_width;
-  @Uint32() int dstRect_extent_height;
-  @Uint32() int persistent;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int srcRect_offset_x;
+  @Int32()
+  external int srcRect_offset_y;
+  @Uint32()
+  external int srcRect_extent_width;
+  @Uint32()
+  external int srcRect_extent_height;
+  @Int32()
+  external int dstRect_offset_x;
+  @Int32()
+  external int dstRect_offset_y;
+  @Uint32()
+  external int dstRect_extent_width;
+  @Uint32()
+  external int dstRect_extent_height;
+  @Uint32()
+  external int persistent;
 }
 
 class VkSurfaceCapabilitiesKHR extends Struct {
-  @Uint32() int minImageCount;
-  @Uint32() int maxImageCount;
-  @Uint32() int currentExtent_width;
-  @Uint32() int currentExtent_height;
-  @Uint32() int minImageExtent_width;
-  @Uint32() int minImageExtent_height;
-  @Uint32() int maxImageExtent_width;
-  @Uint32() int maxImageExtent_height;
-  @Uint32() int maxImageArrayLayers;
-  @Uint32() int supportedTransforms;
-  @Int32() int currentTransform;
-  @Uint32() int supportedCompositeAlpha;
-  @Uint32() int supportedUsageFlags;
+  @Uint32()
+  external int minImageCount;
+  @Uint32()
+  external int maxImageCount;
+  @Uint32()
+  external int currentExtent_width;
+  @Uint32()
+  external int currentExtent_height;
+  @Uint32()
+  external int minImageExtent_width;
+  @Uint32()
+  external int minImageExtent_height;
+  @Uint32()
+  external int maxImageExtent_width;
+  @Uint32()
+  external int maxImageExtent_height;
+  @Uint32()
+  external int maxImageArrayLayers;
+  @Uint32()
+  external int supportedTransforms;
+  @Int32()
+  external int currentTransform;
+  @Uint32()
+  external int supportedCompositeAlpha;
+  @Uint32()
+  external int supportedUsageFlags;
 }
 
 class VkAndroidSurfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer window;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer window;
 }
 
 class VkViSurfaceCreateInfoNN extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer window;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer window;
 }
 
 class VkWaylandSurfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer display;
-  Pointer surface;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer display;
+  external Pointer surface;
 }
 
 class VkWin32SurfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer hinstance;
-  Pointer hwnd;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer hinstance;
+  external Pointer hwnd;
 }
 
 class VkXlibSurfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer dpy;
-  Pointer window;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer dpy;
+  external Pointer window;
 }
 
 class VkXcbSurfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer connection;
-  Pointer window;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer connection;
+  external Pointer window;
 }
 
 class VkDirectFBSurfaceCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer dfb;
-  Pointer surface;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer dfb;
+  external Pointer surface;
 }
 
 class VkImagePipeSurfaceCreateInfoFUCHSIA extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer imagePipeHandle;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer imagePipeHandle;
 }
 
 class VkStreamDescriptorSurfaceCreateInfoGGP extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer streamDescriptor;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer streamDescriptor;
 }
 
 class VkScreenSurfaceCreateInfoQNX extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer context;
-  Pointer window;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer context;
+  external Pointer window;
 }
 
 class VkSurfaceFormatKHR extends Struct {
-  @Int32() int format;
-  @Int32() int colorSpace;
+  @Int32()
+  external int format;
+  @Int32()
+  external int colorSpace;
 }
 
 class VkSwapchainCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer<VkSurfaceKHR> surface;
-  @Uint32() int minImageCount;
-  @Int32() int imageFormat;
-  @Int32() int imageColorSpace;
-  @Uint32() int imageExtent_width;
-  @Uint32() int imageExtent_height;
-  @Uint32() int imageArrayLayers;
-  @Uint32() int imageUsage;
-  @Int32() int imageSharingMode;
-  @Uint32() int queueFamilyIndexCount;
-  Pointer pQueueFamilyIndices;
-  @Int32() int preTransform;
-  @Int32() int compositeAlpha;
-  @Int32() int presentMode;
-  @Uint32() int clipped;
-  Pointer<VkSwapchainKHR> oldSwapchain;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer<VkSurfaceKHR> surface;
+  @Uint32()
+  external int minImageCount;
+  @Int32()
+  external int imageFormat;
+  @Int32()
+  external int imageColorSpace;
+  @Uint32()
+  external int imageExtent_width;
+  @Uint32()
+  external int imageExtent_height;
+  @Uint32()
+  external int imageArrayLayers;
+  @Uint32()
+  external int imageUsage;
+  @Int32()
+  external int imageSharingMode;
+  @Uint32()
+  external int queueFamilyIndexCount;
+  external Pointer pQueueFamilyIndices;
+  @Int32()
+  external int preTransform;
+  @Int32()
+  external int compositeAlpha;
+  @Int32()
+  external int presentMode;
+  @Uint32()
+  external int clipped;
+  external Pointer<VkSwapchainKHR> oldSwapchain;
 }
 
 class VkPresentInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int waitSemaphoreCount;
-  Pointer<Pointer<VkSemaphore>> pWaitSemaphores;
-  @Uint32() int swapchainCount;
-  Pointer<Pointer<VkSwapchainKHR>> pSwapchains;
-  Pointer pImageIndices;
-  Pointer<Int32> pResults;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int waitSemaphoreCount;
+  external Pointer<Pointer<VkSemaphore>> pWaitSemaphores;
+  @Uint32()
+  external int swapchainCount;
+  external Pointer<Pointer<VkSwapchainKHR>> pSwapchains;
+  external Pointer pImageIndices;
+  external Pointer<Int32> pResults;
 }
 
 class VkDebugReportCallbackCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer pfnCallback;
-  Pointer pUserData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer pfnCallback;
+  external Pointer pUserData;
 }
 
 class VkValidationFlagsEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int disabledValidationCheckCount;
-  Pointer<Int32> pDisabledValidationChecks;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int disabledValidationCheckCount;
+  external Pointer<Int32> pDisabledValidationChecks;
 }
 
 class VkValidationFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int enabledValidationFeatureCount;
-  Pointer<Int32> pEnabledValidationFeatures;
-  @Uint32() int disabledValidationFeatureCount;
-  Pointer<Int32> pDisabledValidationFeatures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int enabledValidationFeatureCount;
+  external Pointer<Int32> pEnabledValidationFeatures;
+  @Uint32()
+  external int disabledValidationFeatureCount;
+  external Pointer<Int32> pDisabledValidationFeatures;
 }
 
 class VkPipelineRasterizationStateRasterizationOrderAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int rasterizationOrder;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int rasterizationOrder;
 }
 
 class VkDebugMarkerObjectNameInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int objectType;
-  @Uint64() int object;
-  Pointer pObjectName;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int objectType;
+  @Uint64()
+  external int object;
+  external Pointer pObjectName;
 }
 
 class VkDebugMarkerObjectTagInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int objectType;
-  @Uint64() int object;
-  @Uint64() int tagName;
-  @Uint64() int tagSize;
-  Pointer pTag;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int objectType;
+  @Uint64()
+  external int object;
+  @Uint64()
+  external int tagName;
+  @Uint64()
+  external int tagSize;
+  external Pointer pTag;
 }
 
 class VkDebugMarkerMarkerInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pMarkerName;
-  @Float() double color_0; @Float() double color_1; @Float() double color_2; @Float() double color_3;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pMarkerName;
+  @Array(4)
+  external Array<Float> color;
 }
 
 class VkDedicatedAllocationImageCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int dedicatedAllocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int dedicatedAllocation;
 }
 
 class VkDedicatedAllocationBufferCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int dedicatedAllocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int dedicatedAllocation;
 }
 
 class VkDedicatedAllocationMemoryAllocateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> image;
-  Pointer<VkBuffer> buffer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> image;
+  external Pointer<VkBuffer> buffer;
 }
 
 class VkExternalImageFormatPropertiesNV extends Struct {
-  @Uint32() int imageFormatProperties_maxExtent_width;
-  @Uint32() int imageFormatProperties_maxExtent_height;
-  @Uint32() int imageFormatProperties_maxExtent_depth;
-  @Uint32() int imageFormatProperties_maxMipLevels;
-  @Uint32() int imageFormatProperties_maxArrayLayers;
-  @Uint32() int imageFormatProperties_sampleCounts;
-  @Uint64() int imageFormatProperties_maxResourceSize;
-  @Uint32() int externalMemoryFeatures;
-  @Uint32() int exportFromImportedHandleTypes;
-  @Uint32() int compatibleHandleTypes;
+  @Uint32()
+  external int imageFormatProperties_maxExtent_width;
+  @Uint32()
+  external int imageFormatProperties_maxExtent_height;
+  @Uint32()
+  external int imageFormatProperties_maxExtent_depth;
+  @Uint32()
+  external int imageFormatProperties_maxMipLevels;
+  @Uint32()
+  external int imageFormatProperties_maxArrayLayers;
+  @Uint32()
+  external int imageFormatProperties_sampleCounts;
+  @Uint64()
+  external int imageFormatProperties_maxResourceSize;
+  @Uint32()
+  external int externalMemoryFeatures;
+  @Uint32()
+  external int exportFromImportedHandleTypes;
+  @Uint32()
+  external int compatibleHandleTypes;
 }
 
 class VkExternalMemoryImageCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkExportMemoryAllocateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkImportMemoryWin32HandleInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleType;
-  Pointer handle;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleType;
+  external Pointer handle;
 }
 
 class VkExportMemoryWin32HandleInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pAttributes;
-  Pointer dwAccess;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pAttributes;
+  external Pointer dwAccess;
 }
 
 class VkWin32KeyedMutexAcquireReleaseInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int acquireCount;
-  Pointer<Pointer<VkDeviceMemory>> pAcquireSyncs;
-  Pointer pAcquireKeys;
-  Pointer pAcquireTimeoutMilliseconds;
-  @Uint32() int releaseCount;
-  Pointer<Pointer<VkDeviceMemory>> pReleaseSyncs;
-  Pointer pReleaseKeys;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int acquireCount;
+  external Pointer<Pointer<VkDeviceMemory>> pAcquireSyncs;
+  external Pointer pAcquireKeys;
+  external Pointer pAcquireTimeoutMilliseconds;
+  @Uint32()
+  external int releaseCount;
+  external Pointer<Pointer<VkDeviceMemory>> pReleaseSyncs;
+  external Pointer pReleaseKeys;
 }
 
 class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceGeneratedCommands;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceGeneratedCommands;
 }
 
 class VkDevicePrivateDataCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int privateDataSlotRequestCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int privateDataSlotRequestCount;
 }
 
 class VkPrivateDataSlotCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
 }
 
 class VkPhysicalDevicePrivateDataFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int privateData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int privateData;
 }
 
 class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxGraphicsShaderGroupCount;
-  @Uint32() int maxIndirectSequenceCount;
-  @Uint32() int maxIndirectCommandsTokenCount;
-  @Uint32() int maxIndirectCommandsStreamCount;
-  @Uint32() int maxIndirectCommandsTokenOffset;
-  @Uint32() int maxIndirectCommandsStreamStride;
-  @Uint32() int minSequencesCountBufferOffsetAlignment;
-  @Uint32() int minSequencesIndexBufferOffsetAlignment;
-  @Uint32() int minIndirectCommandsBufferOffsetAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxGraphicsShaderGroupCount;
+  @Uint32()
+  external int maxIndirectSequenceCount;
+  @Uint32()
+  external int maxIndirectCommandsTokenCount;
+  @Uint32()
+  external int maxIndirectCommandsStreamCount;
+  @Uint32()
+  external int maxIndirectCommandsTokenOffset;
+  @Uint32()
+  external int maxIndirectCommandsStreamStride;
+  @Uint32()
+  external int minSequencesCountBufferOffsetAlignment;
+  @Uint32()
+  external int minSequencesIndexBufferOffsetAlignment;
+  @Uint32()
+  external int minIndirectCommandsBufferOffsetAlignment;
 }
 
 class VkGraphicsShaderGroupCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int stageCount;
-  Pointer<VkPipelineShaderStageCreateInfo> pStages;
-  Pointer<VkPipelineVertexInputStateCreateInfo> pVertexInputState;
-  Pointer<VkPipelineTessellationStateCreateInfo> pTessellationState;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int stageCount;
+  external Pointer<VkPipelineShaderStageCreateInfo> pStages;
+  external Pointer<VkPipelineVertexInputStateCreateInfo> pVertexInputState;
+  external Pointer<VkPipelineTessellationStateCreateInfo> pTessellationState;
 }
 
 class VkGraphicsPipelineShaderGroupsCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int groupCount;
-  Pointer<VkGraphicsShaderGroupCreateInfoNV> pGroups;
-  @Uint32() int pipelineCount;
-  Pointer<Pointer<VkPipeline>> pPipelines;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int groupCount;
+  external Pointer<VkGraphicsShaderGroupCreateInfoNV> pGroups;
+  @Uint32()
+  external int pipelineCount;
+  external Pointer<Pointer<VkPipeline>> pPipelines;
 }
 
 class VkBindShaderGroupIndirectCommandNV extends Struct {
-  @Uint32() int groupIndex;
+  @Uint32()
+  external int groupIndex;
 }
 
 class VkBindIndexBufferIndirectCommandNV extends Struct {
-  @Uint64() int bufferAddress;
-  @Uint32() int size;
-  @Int32() int indexType;
+  @Uint64()
+  external int bufferAddress;
+  @Uint32()
+  external int size;
+  @Int32()
+  external int indexType;
 }
 
 class VkBindVertexBufferIndirectCommandNV extends Struct {
-  @Uint64() int bufferAddress;
-  @Uint32() int size;
-  @Uint32() int stride;
+  @Uint64()
+  external int bufferAddress;
+  @Uint32()
+  external int size;
+  @Uint32()
+  external int stride;
 }
 
 class VkSetStateFlagsIndirectCommandNV extends Struct {
-  @Uint32() int data;
+  @Uint32()
+  external int data;
 }
 
 class VkIndirectCommandsStreamNV extends Struct {
-  Pointer<VkBuffer> buffer;
-  @Uint64() int offset;
+  external Pointer<VkBuffer> buffer;
+  @Uint64()
+  external int offset;
 }
 
 class VkIndirectCommandsLayoutTokenNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int tokenType;
-  @Uint32() int stream;
-  @Uint32() int offset;
-  @Uint32() int vertexBindingUnit;
-  @Uint32() int vertexDynamicStride;
-  Pointer<VkPipelineLayout> pushconstantPipelineLayout;
-  @Uint32() int pushconstantShaderStageFlags;
-  @Uint32() int pushconstantOffset;
-  @Uint32() int pushconstantSize;
-  @Uint32() int indirectStateFlags;
-  @Uint32() int indexTypeCount;
-  Pointer<Int32> pIndexTypes;
-  Pointer pIndexTypeValues;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int tokenType;
+  @Uint32()
+  external int stream;
+  @Uint32()
+  external int offset;
+  @Uint32()
+  external int vertexBindingUnit;
+  @Uint32()
+  external int vertexDynamicStride;
+  external Pointer<VkPipelineLayout> pushconstantPipelineLayout;
+  @Uint32()
+  external int pushconstantShaderStageFlags;
+  @Uint32()
+  external int pushconstantOffset;
+  @Uint32()
+  external int pushconstantSize;
+  @Uint32()
+  external int indirectStateFlags;
+  @Uint32()
+  external int indexTypeCount;
+  external Pointer<Int32> pIndexTypes;
+  external Pointer pIndexTypeValues;
 }
 
 class VkIndirectCommandsLayoutCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int pipelineBindPoint;
-  @Uint32() int tokenCount;
-  Pointer<VkIndirectCommandsLayoutTokenNV> pTokens;
-  @Uint32() int streamCount;
-  Pointer pStreamStrides;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int pipelineBindPoint;
+  @Uint32()
+  external int tokenCount;
+  external Pointer<VkIndirectCommandsLayoutTokenNV> pTokens;
+  @Uint32()
+  external int streamCount;
+  external Pointer pStreamStrides;
 }
 
 class VkGeneratedCommandsInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int pipelineBindPoint;
-  Pointer<VkPipeline> pipeline;
-  Pointer<VkIndirectCommandsLayoutNV> indirectCommandsLayout;
-  @Uint32() int streamCount;
-  Pointer<VkIndirectCommandsStreamNV> pStreams;
-  @Uint32() int sequencesCount;
-  Pointer<VkBuffer> preprocessBuffer;
-  @Uint64() int preprocessOffset;
-  @Uint64() int preprocessSize;
-  Pointer<VkBuffer> sequencesCountBuffer;
-  @Uint64() int sequencesCountOffset;
-  Pointer<VkBuffer> sequencesIndexBuffer;
-  @Uint64() int sequencesIndexOffset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int pipelineBindPoint;
+  external Pointer<VkPipeline> pipeline;
+  external Pointer<VkIndirectCommandsLayoutNV> indirectCommandsLayout;
+  @Uint32()
+  external int streamCount;
+  external Pointer<VkIndirectCommandsStreamNV> pStreams;
+  @Uint32()
+  external int sequencesCount;
+  external Pointer<VkBuffer> preprocessBuffer;
+  @Uint64()
+  external int preprocessOffset;
+  @Uint64()
+  external int preprocessSize;
+  external Pointer<VkBuffer> sequencesCountBuffer;
+  @Uint64()
+  external int sequencesCountOffset;
+  external Pointer<VkBuffer> sequencesIndexBuffer;
+  @Uint64()
+  external int sequencesIndexOffset;
 }
 
 class VkGeneratedCommandsMemoryRequirementsInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int pipelineBindPoint;
-  Pointer<VkPipeline> pipeline;
-  Pointer<VkIndirectCommandsLayoutNV> indirectCommandsLayout;
-  @Uint32() int maxSequencesCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int pipelineBindPoint;
+  external Pointer<VkPipeline> pipeline;
+  external Pointer<VkIndirectCommandsLayoutNV> indirectCommandsLayout;
+  @Uint32()
+  external int maxSequencesCount;
 }
 
 class VkPhysicalDeviceFeatures2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int features_robustBufferAccess;
-  @Uint32() int features_fullDrawIndexUint32;
-  @Uint32() int features_imageCubeArray;
-  @Uint32() int features_independentBlend;
-  @Uint32() int features_geometryShader;
-  @Uint32() int features_tessellationShader;
-  @Uint32() int features_sampleRateShading;
-  @Uint32() int features_dualSrcBlend;
-  @Uint32() int features_logicOp;
-  @Uint32() int features_multiDrawIndirect;
-  @Uint32() int features_drawIndirectFirstInstance;
-  @Uint32() int features_depthClamp;
-  @Uint32() int features_depthBiasClamp;
-  @Uint32() int features_fillModeNonSolid;
-  @Uint32() int features_depthBounds;
-  @Uint32() int features_wideLines;
-  @Uint32() int features_largePoints;
-  @Uint32() int features_alphaToOne;
-  @Uint32() int features_multiViewport;
-  @Uint32() int features_samplerAnisotropy;
-  @Uint32() int features_textureCompressionETC2;
-  @Uint32() int features_textureCompressionASTC_LDR;
-  @Uint32() int features_textureCompressionBC;
-  @Uint32() int features_occlusionQueryPrecise;
-  @Uint32() int features_pipelineStatisticsQuery;
-  @Uint32() int features_vertexPipelineStoresAndAtomics;
-  @Uint32() int features_fragmentStoresAndAtomics;
-  @Uint32() int features_shaderTessellationAndGeometryPointSize;
-  @Uint32() int features_shaderImageGatherExtended;
-  @Uint32() int features_shaderStorageImageExtendedFormats;
-  @Uint32() int features_shaderStorageImageMultisample;
-  @Uint32() int features_shaderStorageImageReadWithoutFormat;
-  @Uint32() int features_shaderStorageImageWriteWithoutFormat;
-  @Uint32() int features_shaderUniformBufferArrayDynamicIndexing;
-  @Uint32() int features_shaderSampledImageArrayDynamicIndexing;
-  @Uint32() int features_shaderStorageBufferArrayDynamicIndexing;
-  @Uint32() int features_shaderStorageImageArrayDynamicIndexing;
-  @Uint32() int features_shaderClipDistance;
-  @Uint32() int features_shaderCullDistance;
-  @Uint32() int features_shaderFloat64;
-  @Uint32() int features_shaderInt64;
-  @Uint32() int features_shaderInt16;
-  @Uint32() int features_shaderResourceResidency;
-  @Uint32() int features_shaderResourceMinLod;
-  @Uint32() int features_sparseBinding;
-  @Uint32() int features_sparseResidencyBuffer;
-  @Uint32() int features_sparseResidencyImage2D;
-  @Uint32() int features_sparseResidencyImage3D;
-  @Uint32() int features_sparseResidency2Samples;
-  @Uint32() int features_sparseResidency4Samples;
-  @Uint32() int features_sparseResidency8Samples;
-  @Uint32() int features_sparseResidency16Samples;
-  @Uint32() int features_sparseResidencyAliased;
-  @Uint32() int features_variableMultisampleRate;
-  @Uint32() int features_inheritedQueries;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int features_robustBufferAccess;
+  @Uint32()
+  external int features_fullDrawIndexUint32;
+  @Uint32()
+  external int features_imageCubeArray;
+  @Uint32()
+  external int features_independentBlend;
+  @Uint32()
+  external int features_geometryShader;
+  @Uint32()
+  external int features_tessellationShader;
+  @Uint32()
+  external int features_sampleRateShading;
+  @Uint32()
+  external int features_dualSrcBlend;
+  @Uint32()
+  external int features_logicOp;
+  @Uint32()
+  external int features_multiDrawIndirect;
+  @Uint32()
+  external int features_drawIndirectFirstInstance;
+  @Uint32()
+  external int features_depthClamp;
+  @Uint32()
+  external int features_depthBiasClamp;
+  @Uint32()
+  external int features_fillModeNonSolid;
+  @Uint32()
+  external int features_depthBounds;
+  @Uint32()
+  external int features_wideLines;
+  @Uint32()
+  external int features_largePoints;
+  @Uint32()
+  external int features_alphaToOne;
+  @Uint32()
+  external int features_multiViewport;
+  @Uint32()
+  external int features_samplerAnisotropy;
+  @Uint32()
+  external int features_textureCompressionETC2;
+  @Uint32()
+  external int features_textureCompressionASTC_LDR;
+  @Uint32()
+  external int features_textureCompressionBC;
+  @Uint32()
+  external int features_occlusionQueryPrecise;
+  @Uint32()
+  external int features_pipelineStatisticsQuery;
+  @Uint32()
+  external int features_vertexPipelineStoresAndAtomics;
+  @Uint32()
+  external int features_fragmentStoresAndAtomics;
+  @Uint32()
+  external int features_shaderTessellationAndGeometryPointSize;
+  @Uint32()
+  external int features_shaderImageGatherExtended;
+  @Uint32()
+  external int features_shaderStorageImageExtendedFormats;
+  @Uint32()
+  external int features_shaderStorageImageMultisample;
+  @Uint32()
+  external int features_shaderStorageImageReadWithoutFormat;
+  @Uint32()
+  external int features_shaderStorageImageWriteWithoutFormat;
+  @Uint32()
+  external int features_shaderUniformBufferArrayDynamicIndexing;
+  @Uint32()
+  external int features_shaderSampledImageArrayDynamicIndexing;
+  @Uint32()
+  external int features_shaderStorageBufferArrayDynamicIndexing;
+  @Uint32()
+  external int features_shaderStorageImageArrayDynamicIndexing;
+  @Uint32()
+  external int features_shaderClipDistance;
+  @Uint32()
+  external int features_shaderCullDistance;
+  @Uint32()
+  external int features_shaderFloat64;
+  @Uint32()
+  external int features_shaderInt64;
+  @Uint32()
+  external int features_shaderInt16;
+  @Uint32()
+  external int features_shaderResourceResidency;
+  @Uint32()
+  external int features_shaderResourceMinLod;
+  @Uint32()
+  external int features_sparseBinding;
+  @Uint32()
+  external int features_sparseResidencyBuffer;
+  @Uint32()
+  external int features_sparseResidencyImage2D;
+  @Uint32()
+  external int features_sparseResidencyImage3D;
+  @Uint32()
+  external int features_sparseResidency2Samples;
+  @Uint32()
+  external int features_sparseResidency4Samples;
+  @Uint32()
+  external int features_sparseResidency8Samples;
+  @Uint32()
+  external int features_sparseResidency16Samples;
+  @Uint32()
+  external int features_sparseResidencyAliased;
+  @Uint32()
+  external int features_variableMultisampleRate;
+  @Uint32()
+  external int features_inheritedQueries;
 }
 
 class VkPhysicalDeviceFeatures2KHR extends Opaque {
 }
 
 class VkPhysicalDeviceProperties2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int properties_apiVersion;
-  @Uint32() int properties_driverVersion;
-  @Uint32() int properties_vendorID;
-  @Uint32() int properties_deviceID;
-  @Int32() int properties_deviceType;
-  @Uint8() int properties_deviceName_0; @Uint8() int properties_deviceName_1; @Uint8() int properties_deviceName_2; @Uint8() int properties_deviceName_3; @Uint8() int properties_deviceName_4; @Uint8() int properties_deviceName_5; @Uint8() int properties_deviceName_6; @Uint8() int properties_deviceName_7; @Uint8() int properties_deviceName_8; @Uint8() int properties_deviceName_9; @Uint8() int properties_deviceName_10; @Uint8() int properties_deviceName_11; @Uint8() int properties_deviceName_12; @Uint8() int properties_deviceName_13; @Uint8() int properties_deviceName_14; @Uint8() int properties_deviceName_15; @Uint8() int properties_deviceName_16; @Uint8() int properties_deviceName_17; @Uint8() int properties_deviceName_18; @Uint8() int properties_deviceName_19; @Uint8() int properties_deviceName_20; @Uint8() int properties_deviceName_21; @Uint8() int properties_deviceName_22; @Uint8() int properties_deviceName_23; @Uint8() int properties_deviceName_24; @Uint8() int properties_deviceName_25; @Uint8() int properties_deviceName_26; @Uint8() int properties_deviceName_27; @Uint8() int properties_deviceName_28; @Uint8() int properties_deviceName_29; @Uint8() int properties_deviceName_30; @Uint8() int properties_deviceName_31; @Uint8() int properties_deviceName_32; @Uint8() int properties_deviceName_33; @Uint8() int properties_deviceName_34; @Uint8() int properties_deviceName_35; @Uint8() int properties_deviceName_36; @Uint8() int properties_deviceName_37; @Uint8() int properties_deviceName_38; @Uint8() int properties_deviceName_39; @Uint8() int properties_deviceName_40; @Uint8() int properties_deviceName_41; @Uint8() int properties_deviceName_42; @Uint8() int properties_deviceName_43; @Uint8() int properties_deviceName_44; @Uint8() int properties_deviceName_45; @Uint8() int properties_deviceName_46; @Uint8() int properties_deviceName_47; @Uint8() int properties_deviceName_48; @Uint8() int properties_deviceName_49; @Uint8() int properties_deviceName_50; @Uint8() int properties_deviceName_51; @Uint8() int properties_deviceName_52; @Uint8() int properties_deviceName_53; @Uint8() int properties_deviceName_54; @Uint8() int properties_deviceName_55; @Uint8() int properties_deviceName_56; @Uint8() int properties_deviceName_57; @Uint8() int properties_deviceName_58; @Uint8() int properties_deviceName_59; @Uint8() int properties_deviceName_60; @Uint8() int properties_deviceName_61; @Uint8() int properties_deviceName_62; @Uint8() int properties_deviceName_63; @Uint8() int properties_deviceName_64; @Uint8() int properties_deviceName_65; @Uint8() int properties_deviceName_66; @Uint8() int properties_deviceName_67; @Uint8() int properties_deviceName_68; @Uint8() int properties_deviceName_69; @Uint8() int properties_deviceName_70; @Uint8() int properties_deviceName_71; @Uint8() int properties_deviceName_72; @Uint8() int properties_deviceName_73; @Uint8() int properties_deviceName_74; @Uint8() int properties_deviceName_75; @Uint8() int properties_deviceName_76; @Uint8() int properties_deviceName_77; @Uint8() int properties_deviceName_78; @Uint8() int properties_deviceName_79; @Uint8() int properties_deviceName_80; @Uint8() int properties_deviceName_81; @Uint8() int properties_deviceName_82; @Uint8() int properties_deviceName_83; @Uint8() int properties_deviceName_84; @Uint8() int properties_deviceName_85; @Uint8() int properties_deviceName_86; @Uint8() int properties_deviceName_87; @Uint8() int properties_deviceName_88; @Uint8() int properties_deviceName_89; @Uint8() int properties_deviceName_90; @Uint8() int properties_deviceName_91; @Uint8() int properties_deviceName_92; @Uint8() int properties_deviceName_93; @Uint8() int properties_deviceName_94; @Uint8() int properties_deviceName_95; @Uint8() int properties_deviceName_96; @Uint8() int properties_deviceName_97; @Uint8() int properties_deviceName_98; @Uint8() int properties_deviceName_99; @Uint8() int properties_deviceName_100; @Uint8() int properties_deviceName_101; @Uint8() int properties_deviceName_102; @Uint8() int properties_deviceName_103; @Uint8() int properties_deviceName_104; @Uint8() int properties_deviceName_105; @Uint8() int properties_deviceName_106; @Uint8() int properties_deviceName_107; @Uint8() int properties_deviceName_108; @Uint8() int properties_deviceName_109; @Uint8() int properties_deviceName_110; @Uint8() int properties_deviceName_111; @Uint8() int properties_deviceName_112; @Uint8() int properties_deviceName_113; @Uint8() int properties_deviceName_114; @Uint8() int properties_deviceName_115; @Uint8() int properties_deviceName_116; @Uint8() int properties_deviceName_117; @Uint8() int properties_deviceName_118; @Uint8() int properties_deviceName_119; @Uint8() int properties_deviceName_120; @Uint8() int properties_deviceName_121; @Uint8() int properties_deviceName_122; @Uint8() int properties_deviceName_123; @Uint8() int properties_deviceName_124; @Uint8() int properties_deviceName_125; @Uint8() int properties_deviceName_126; @Uint8() int properties_deviceName_127; @Uint8() int properties_deviceName_128; @Uint8() int properties_deviceName_129; @Uint8() int properties_deviceName_130; @Uint8() int properties_deviceName_131; @Uint8() int properties_deviceName_132; @Uint8() int properties_deviceName_133; @Uint8() int properties_deviceName_134; @Uint8() int properties_deviceName_135; @Uint8() int properties_deviceName_136; @Uint8() int properties_deviceName_137; @Uint8() int properties_deviceName_138; @Uint8() int properties_deviceName_139; @Uint8() int properties_deviceName_140; @Uint8() int properties_deviceName_141; @Uint8() int properties_deviceName_142; @Uint8() int properties_deviceName_143; @Uint8() int properties_deviceName_144; @Uint8() int properties_deviceName_145; @Uint8() int properties_deviceName_146; @Uint8() int properties_deviceName_147; @Uint8() int properties_deviceName_148; @Uint8() int properties_deviceName_149; @Uint8() int properties_deviceName_150; @Uint8() int properties_deviceName_151; @Uint8() int properties_deviceName_152; @Uint8() int properties_deviceName_153; @Uint8() int properties_deviceName_154; @Uint8() int properties_deviceName_155; @Uint8() int properties_deviceName_156; @Uint8() int properties_deviceName_157; @Uint8() int properties_deviceName_158; @Uint8() int properties_deviceName_159; @Uint8() int properties_deviceName_160; @Uint8() int properties_deviceName_161; @Uint8() int properties_deviceName_162; @Uint8() int properties_deviceName_163; @Uint8() int properties_deviceName_164; @Uint8() int properties_deviceName_165; @Uint8() int properties_deviceName_166; @Uint8() int properties_deviceName_167; @Uint8() int properties_deviceName_168; @Uint8() int properties_deviceName_169; @Uint8() int properties_deviceName_170; @Uint8() int properties_deviceName_171; @Uint8() int properties_deviceName_172; @Uint8() int properties_deviceName_173; @Uint8() int properties_deviceName_174; @Uint8() int properties_deviceName_175; @Uint8() int properties_deviceName_176; @Uint8() int properties_deviceName_177; @Uint8() int properties_deviceName_178; @Uint8() int properties_deviceName_179; @Uint8() int properties_deviceName_180; @Uint8() int properties_deviceName_181; @Uint8() int properties_deviceName_182; @Uint8() int properties_deviceName_183; @Uint8() int properties_deviceName_184; @Uint8() int properties_deviceName_185; @Uint8() int properties_deviceName_186; @Uint8() int properties_deviceName_187; @Uint8() int properties_deviceName_188; @Uint8() int properties_deviceName_189; @Uint8() int properties_deviceName_190; @Uint8() int properties_deviceName_191; @Uint8() int properties_deviceName_192; @Uint8() int properties_deviceName_193; @Uint8() int properties_deviceName_194; @Uint8() int properties_deviceName_195; @Uint8() int properties_deviceName_196; @Uint8() int properties_deviceName_197; @Uint8() int properties_deviceName_198; @Uint8() int properties_deviceName_199; @Uint8() int properties_deviceName_200; @Uint8() int properties_deviceName_201; @Uint8() int properties_deviceName_202; @Uint8() int properties_deviceName_203; @Uint8() int properties_deviceName_204; @Uint8() int properties_deviceName_205; @Uint8() int properties_deviceName_206; @Uint8() int properties_deviceName_207; @Uint8() int properties_deviceName_208; @Uint8() int properties_deviceName_209; @Uint8() int properties_deviceName_210; @Uint8() int properties_deviceName_211; @Uint8() int properties_deviceName_212; @Uint8() int properties_deviceName_213; @Uint8() int properties_deviceName_214; @Uint8() int properties_deviceName_215; @Uint8() int properties_deviceName_216; @Uint8() int properties_deviceName_217; @Uint8() int properties_deviceName_218; @Uint8() int properties_deviceName_219; @Uint8() int properties_deviceName_220; @Uint8() int properties_deviceName_221; @Uint8() int properties_deviceName_222; @Uint8() int properties_deviceName_223; @Uint8() int properties_deviceName_224; @Uint8() int properties_deviceName_225; @Uint8() int properties_deviceName_226; @Uint8() int properties_deviceName_227; @Uint8() int properties_deviceName_228; @Uint8() int properties_deviceName_229; @Uint8() int properties_deviceName_230; @Uint8() int properties_deviceName_231; @Uint8() int properties_deviceName_232; @Uint8() int properties_deviceName_233; @Uint8() int properties_deviceName_234; @Uint8() int properties_deviceName_235; @Uint8() int properties_deviceName_236; @Uint8() int properties_deviceName_237; @Uint8() int properties_deviceName_238; @Uint8() int properties_deviceName_239; @Uint8() int properties_deviceName_240; @Uint8() int properties_deviceName_241; @Uint8() int properties_deviceName_242; @Uint8() int properties_deviceName_243; @Uint8() int properties_deviceName_244; @Uint8() int properties_deviceName_245; @Uint8() int properties_deviceName_246; @Uint8() int properties_deviceName_247; @Uint8() int properties_deviceName_248; @Uint8() int properties_deviceName_249; @Uint8() int properties_deviceName_250; @Uint8() int properties_deviceName_251; @Uint8() int properties_deviceName_252; @Uint8() int properties_deviceName_253; @Uint8() int properties_deviceName_254; @Uint8() int properties_deviceName_255;
-  String get properties_deviceName {
-    var bytes = [properties_deviceName_0, properties_deviceName_1, properties_deviceName_2, properties_deviceName_3, properties_deviceName_4, properties_deviceName_5, properties_deviceName_6, properties_deviceName_7, properties_deviceName_8, properties_deviceName_9, properties_deviceName_10, properties_deviceName_11, properties_deviceName_12, properties_deviceName_13, properties_deviceName_14, properties_deviceName_15, properties_deviceName_16, properties_deviceName_17, properties_deviceName_18, properties_deviceName_19, properties_deviceName_20, properties_deviceName_21, properties_deviceName_22, properties_deviceName_23, properties_deviceName_24, properties_deviceName_25, properties_deviceName_26, properties_deviceName_27, properties_deviceName_28, properties_deviceName_29, properties_deviceName_30, properties_deviceName_31, properties_deviceName_32, properties_deviceName_33, properties_deviceName_34, properties_deviceName_35, properties_deviceName_36, properties_deviceName_37, properties_deviceName_38, properties_deviceName_39, properties_deviceName_40, properties_deviceName_41, properties_deviceName_42, properties_deviceName_43, properties_deviceName_44, properties_deviceName_45, properties_deviceName_46, properties_deviceName_47, properties_deviceName_48, properties_deviceName_49, properties_deviceName_50, properties_deviceName_51, properties_deviceName_52, properties_deviceName_53, properties_deviceName_54, properties_deviceName_55, properties_deviceName_56, properties_deviceName_57, properties_deviceName_58, properties_deviceName_59, properties_deviceName_60, properties_deviceName_61, properties_deviceName_62, properties_deviceName_63, properties_deviceName_64, properties_deviceName_65, properties_deviceName_66, properties_deviceName_67, properties_deviceName_68, properties_deviceName_69, properties_deviceName_70, properties_deviceName_71, properties_deviceName_72, properties_deviceName_73, properties_deviceName_74, properties_deviceName_75, properties_deviceName_76, properties_deviceName_77, properties_deviceName_78, properties_deviceName_79, properties_deviceName_80, properties_deviceName_81, properties_deviceName_82, properties_deviceName_83, properties_deviceName_84, properties_deviceName_85, properties_deviceName_86, properties_deviceName_87, properties_deviceName_88, properties_deviceName_89, properties_deviceName_90, properties_deviceName_91, properties_deviceName_92, properties_deviceName_93, properties_deviceName_94, properties_deviceName_95, properties_deviceName_96, properties_deviceName_97, properties_deviceName_98, properties_deviceName_99, properties_deviceName_100, properties_deviceName_101, properties_deviceName_102, properties_deviceName_103, properties_deviceName_104, properties_deviceName_105, properties_deviceName_106, properties_deviceName_107, properties_deviceName_108, properties_deviceName_109, properties_deviceName_110, properties_deviceName_111, properties_deviceName_112, properties_deviceName_113, properties_deviceName_114, properties_deviceName_115, properties_deviceName_116, properties_deviceName_117, properties_deviceName_118, properties_deviceName_119, properties_deviceName_120, properties_deviceName_121, properties_deviceName_122, properties_deviceName_123, properties_deviceName_124, properties_deviceName_125, properties_deviceName_126, properties_deviceName_127, properties_deviceName_128, properties_deviceName_129, properties_deviceName_130, properties_deviceName_131, properties_deviceName_132, properties_deviceName_133, properties_deviceName_134, properties_deviceName_135, properties_deviceName_136, properties_deviceName_137, properties_deviceName_138, properties_deviceName_139, properties_deviceName_140, properties_deviceName_141, properties_deviceName_142, properties_deviceName_143, properties_deviceName_144, properties_deviceName_145, properties_deviceName_146, properties_deviceName_147, properties_deviceName_148, properties_deviceName_149, properties_deviceName_150, properties_deviceName_151, properties_deviceName_152, properties_deviceName_153, properties_deviceName_154, properties_deviceName_155, properties_deviceName_156, properties_deviceName_157, properties_deviceName_158, properties_deviceName_159, properties_deviceName_160, properties_deviceName_161, properties_deviceName_162, properties_deviceName_163, properties_deviceName_164, properties_deviceName_165, properties_deviceName_166, properties_deviceName_167, properties_deviceName_168, properties_deviceName_169, properties_deviceName_170, properties_deviceName_171, properties_deviceName_172, properties_deviceName_173, properties_deviceName_174, properties_deviceName_175, properties_deviceName_176, properties_deviceName_177, properties_deviceName_178, properties_deviceName_179, properties_deviceName_180, properties_deviceName_181, properties_deviceName_182, properties_deviceName_183, properties_deviceName_184, properties_deviceName_185, properties_deviceName_186, properties_deviceName_187, properties_deviceName_188, properties_deviceName_189, properties_deviceName_190, properties_deviceName_191, properties_deviceName_192, properties_deviceName_193, properties_deviceName_194, properties_deviceName_195, properties_deviceName_196, properties_deviceName_197, properties_deviceName_198, properties_deviceName_199, properties_deviceName_200, properties_deviceName_201, properties_deviceName_202, properties_deviceName_203, properties_deviceName_204, properties_deviceName_205, properties_deviceName_206, properties_deviceName_207, properties_deviceName_208, properties_deviceName_209, properties_deviceName_210, properties_deviceName_211, properties_deviceName_212, properties_deviceName_213, properties_deviceName_214, properties_deviceName_215, properties_deviceName_216, properties_deviceName_217, properties_deviceName_218, properties_deviceName_219, properties_deviceName_220, properties_deviceName_221, properties_deviceName_222, properties_deviceName_223, properties_deviceName_224, properties_deviceName_225, properties_deviceName_226, properties_deviceName_227, properties_deviceName_228, properties_deviceName_229, properties_deviceName_230, properties_deviceName_231, properties_deviceName_232, properties_deviceName_233, properties_deviceName_234, properties_deviceName_235, properties_deviceName_236, properties_deviceName_237, properties_deviceName_238, properties_deviceName_239, properties_deviceName_240, properties_deviceName_241, properties_deviceName_242, properties_deviceName_243, properties_deviceName_244, properties_deviceName_245, properties_deviceName_246, properties_deviceName_247, properties_deviceName_248, properties_deviceName_249, properties_deviceName_250, properties_deviceName_251, properties_deviceName_252, properties_deviceName_253, properties_deviceName_254, properties_deviceName_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set properties_deviceName(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    properties_deviceName_0 = bytes[0]; properties_deviceName_1 = bytes[1]; properties_deviceName_2 = bytes[2]; properties_deviceName_3 = bytes[3]; properties_deviceName_4 = bytes[4]; properties_deviceName_5 = bytes[5]; properties_deviceName_6 = bytes[6]; properties_deviceName_7 = bytes[7]; properties_deviceName_8 = bytes[8]; properties_deviceName_9 = bytes[9]; properties_deviceName_10 = bytes[10]; properties_deviceName_11 = bytes[11]; properties_deviceName_12 = bytes[12]; properties_deviceName_13 = bytes[13]; properties_deviceName_14 = bytes[14]; properties_deviceName_15 = bytes[15]; properties_deviceName_16 = bytes[16]; properties_deviceName_17 = bytes[17]; properties_deviceName_18 = bytes[18]; properties_deviceName_19 = bytes[19]; properties_deviceName_20 = bytes[20]; properties_deviceName_21 = bytes[21]; properties_deviceName_22 = bytes[22]; properties_deviceName_23 = bytes[23]; properties_deviceName_24 = bytes[24]; properties_deviceName_25 = bytes[25]; properties_deviceName_26 = bytes[26]; properties_deviceName_27 = bytes[27]; properties_deviceName_28 = bytes[28]; properties_deviceName_29 = bytes[29]; properties_deviceName_30 = bytes[30]; properties_deviceName_31 = bytes[31]; properties_deviceName_32 = bytes[32]; properties_deviceName_33 = bytes[33]; properties_deviceName_34 = bytes[34]; properties_deviceName_35 = bytes[35]; properties_deviceName_36 = bytes[36]; properties_deviceName_37 = bytes[37]; properties_deviceName_38 = bytes[38]; properties_deviceName_39 = bytes[39]; properties_deviceName_40 = bytes[40]; properties_deviceName_41 = bytes[41]; properties_deviceName_42 = bytes[42]; properties_deviceName_43 = bytes[43]; properties_deviceName_44 = bytes[44]; properties_deviceName_45 = bytes[45]; properties_deviceName_46 = bytes[46]; properties_deviceName_47 = bytes[47]; properties_deviceName_48 = bytes[48]; properties_deviceName_49 = bytes[49]; properties_deviceName_50 = bytes[50]; properties_deviceName_51 = bytes[51]; properties_deviceName_52 = bytes[52]; properties_deviceName_53 = bytes[53]; properties_deviceName_54 = bytes[54]; properties_deviceName_55 = bytes[55]; properties_deviceName_56 = bytes[56]; properties_deviceName_57 = bytes[57]; properties_deviceName_58 = bytes[58]; properties_deviceName_59 = bytes[59]; properties_deviceName_60 = bytes[60]; properties_deviceName_61 = bytes[61]; properties_deviceName_62 = bytes[62]; properties_deviceName_63 = bytes[63]; properties_deviceName_64 = bytes[64]; properties_deviceName_65 = bytes[65]; properties_deviceName_66 = bytes[66]; properties_deviceName_67 = bytes[67]; properties_deviceName_68 = bytes[68]; properties_deviceName_69 = bytes[69]; properties_deviceName_70 = bytes[70]; properties_deviceName_71 = bytes[71]; properties_deviceName_72 = bytes[72]; properties_deviceName_73 = bytes[73]; properties_deviceName_74 = bytes[74]; properties_deviceName_75 = bytes[75]; properties_deviceName_76 = bytes[76]; properties_deviceName_77 = bytes[77]; properties_deviceName_78 = bytes[78]; properties_deviceName_79 = bytes[79]; properties_deviceName_80 = bytes[80]; properties_deviceName_81 = bytes[81]; properties_deviceName_82 = bytes[82]; properties_deviceName_83 = bytes[83]; properties_deviceName_84 = bytes[84]; properties_deviceName_85 = bytes[85]; properties_deviceName_86 = bytes[86]; properties_deviceName_87 = bytes[87]; properties_deviceName_88 = bytes[88]; properties_deviceName_89 = bytes[89]; properties_deviceName_90 = bytes[90]; properties_deviceName_91 = bytes[91]; properties_deviceName_92 = bytes[92]; properties_deviceName_93 = bytes[93]; properties_deviceName_94 = bytes[94]; properties_deviceName_95 = bytes[95]; properties_deviceName_96 = bytes[96]; properties_deviceName_97 = bytes[97]; properties_deviceName_98 = bytes[98]; properties_deviceName_99 = bytes[99]; properties_deviceName_100 = bytes[100]; properties_deviceName_101 = bytes[101]; properties_deviceName_102 = bytes[102]; properties_deviceName_103 = bytes[103]; properties_deviceName_104 = bytes[104]; properties_deviceName_105 = bytes[105]; properties_deviceName_106 = bytes[106]; properties_deviceName_107 = bytes[107]; properties_deviceName_108 = bytes[108]; properties_deviceName_109 = bytes[109]; properties_deviceName_110 = bytes[110]; properties_deviceName_111 = bytes[111]; properties_deviceName_112 = bytes[112]; properties_deviceName_113 = bytes[113]; properties_deviceName_114 = bytes[114]; properties_deviceName_115 = bytes[115]; properties_deviceName_116 = bytes[116]; properties_deviceName_117 = bytes[117]; properties_deviceName_118 = bytes[118]; properties_deviceName_119 = bytes[119]; properties_deviceName_120 = bytes[120]; properties_deviceName_121 = bytes[121]; properties_deviceName_122 = bytes[122]; properties_deviceName_123 = bytes[123]; properties_deviceName_124 = bytes[124]; properties_deviceName_125 = bytes[125]; properties_deviceName_126 = bytes[126]; properties_deviceName_127 = bytes[127]; properties_deviceName_128 = bytes[128]; properties_deviceName_129 = bytes[129]; properties_deviceName_130 = bytes[130]; properties_deviceName_131 = bytes[131]; properties_deviceName_132 = bytes[132]; properties_deviceName_133 = bytes[133]; properties_deviceName_134 = bytes[134]; properties_deviceName_135 = bytes[135]; properties_deviceName_136 = bytes[136]; properties_deviceName_137 = bytes[137]; properties_deviceName_138 = bytes[138]; properties_deviceName_139 = bytes[139]; properties_deviceName_140 = bytes[140]; properties_deviceName_141 = bytes[141]; properties_deviceName_142 = bytes[142]; properties_deviceName_143 = bytes[143]; properties_deviceName_144 = bytes[144]; properties_deviceName_145 = bytes[145]; properties_deviceName_146 = bytes[146]; properties_deviceName_147 = bytes[147]; properties_deviceName_148 = bytes[148]; properties_deviceName_149 = bytes[149]; properties_deviceName_150 = bytes[150]; properties_deviceName_151 = bytes[151]; properties_deviceName_152 = bytes[152]; properties_deviceName_153 = bytes[153]; properties_deviceName_154 = bytes[154]; properties_deviceName_155 = bytes[155]; properties_deviceName_156 = bytes[156]; properties_deviceName_157 = bytes[157]; properties_deviceName_158 = bytes[158]; properties_deviceName_159 = bytes[159]; properties_deviceName_160 = bytes[160]; properties_deviceName_161 = bytes[161]; properties_deviceName_162 = bytes[162]; properties_deviceName_163 = bytes[163]; properties_deviceName_164 = bytes[164]; properties_deviceName_165 = bytes[165]; properties_deviceName_166 = bytes[166]; properties_deviceName_167 = bytes[167]; properties_deviceName_168 = bytes[168]; properties_deviceName_169 = bytes[169]; properties_deviceName_170 = bytes[170]; properties_deviceName_171 = bytes[171]; properties_deviceName_172 = bytes[172]; properties_deviceName_173 = bytes[173]; properties_deviceName_174 = bytes[174]; properties_deviceName_175 = bytes[175]; properties_deviceName_176 = bytes[176]; properties_deviceName_177 = bytes[177]; properties_deviceName_178 = bytes[178]; properties_deviceName_179 = bytes[179]; properties_deviceName_180 = bytes[180]; properties_deviceName_181 = bytes[181]; properties_deviceName_182 = bytes[182]; properties_deviceName_183 = bytes[183]; properties_deviceName_184 = bytes[184]; properties_deviceName_185 = bytes[185]; properties_deviceName_186 = bytes[186]; properties_deviceName_187 = bytes[187]; properties_deviceName_188 = bytes[188]; properties_deviceName_189 = bytes[189]; properties_deviceName_190 = bytes[190]; properties_deviceName_191 = bytes[191]; properties_deviceName_192 = bytes[192]; properties_deviceName_193 = bytes[193]; properties_deviceName_194 = bytes[194]; properties_deviceName_195 = bytes[195]; properties_deviceName_196 = bytes[196]; properties_deviceName_197 = bytes[197]; properties_deviceName_198 = bytes[198]; properties_deviceName_199 = bytes[199]; properties_deviceName_200 = bytes[200]; properties_deviceName_201 = bytes[201]; properties_deviceName_202 = bytes[202]; properties_deviceName_203 = bytes[203]; properties_deviceName_204 = bytes[204]; properties_deviceName_205 = bytes[205]; properties_deviceName_206 = bytes[206]; properties_deviceName_207 = bytes[207]; properties_deviceName_208 = bytes[208]; properties_deviceName_209 = bytes[209]; properties_deviceName_210 = bytes[210]; properties_deviceName_211 = bytes[211]; properties_deviceName_212 = bytes[212]; properties_deviceName_213 = bytes[213]; properties_deviceName_214 = bytes[214]; properties_deviceName_215 = bytes[215]; properties_deviceName_216 = bytes[216]; properties_deviceName_217 = bytes[217]; properties_deviceName_218 = bytes[218]; properties_deviceName_219 = bytes[219]; properties_deviceName_220 = bytes[220]; properties_deviceName_221 = bytes[221]; properties_deviceName_222 = bytes[222]; properties_deviceName_223 = bytes[223]; properties_deviceName_224 = bytes[224]; properties_deviceName_225 = bytes[225]; properties_deviceName_226 = bytes[226]; properties_deviceName_227 = bytes[227]; properties_deviceName_228 = bytes[228]; properties_deviceName_229 = bytes[229]; properties_deviceName_230 = bytes[230]; properties_deviceName_231 = bytes[231]; properties_deviceName_232 = bytes[232]; properties_deviceName_233 = bytes[233]; properties_deviceName_234 = bytes[234]; properties_deviceName_235 = bytes[235]; properties_deviceName_236 = bytes[236]; properties_deviceName_237 = bytes[237]; properties_deviceName_238 = bytes[238]; properties_deviceName_239 = bytes[239]; properties_deviceName_240 = bytes[240]; properties_deviceName_241 = bytes[241]; properties_deviceName_242 = bytes[242]; properties_deviceName_243 = bytes[243]; properties_deviceName_244 = bytes[244]; properties_deviceName_245 = bytes[245]; properties_deviceName_246 = bytes[246]; properties_deviceName_247 = bytes[247]; properties_deviceName_248 = bytes[248]; properties_deviceName_249 = bytes[249]; properties_deviceName_250 = bytes[250]; properties_deviceName_251 = bytes[251]; properties_deviceName_252 = bytes[252]; properties_deviceName_253 = bytes[253]; properties_deviceName_254 = bytes[254]; properties_deviceName_255 = bytes[255];
-  }
-  @Uint8() int properties_pipelineCacheUUID_0; @Uint8() int properties_pipelineCacheUUID_1; @Uint8() int properties_pipelineCacheUUID_2; @Uint8() int properties_pipelineCacheUUID_3; @Uint8() int properties_pipelineCacheUUID_4; @Uint8() int properties_pipelineCacheUUID_5; @Uint8() int properties_pipelineCacheUUID_6; @Uint8() int properties_pipelineCacheUUID_7; @Uint8() int properties_pipelineCacheUUID_8; @Uint8() int properties_pipelineCacheUUID_9; @Uint8() int properties_pipelineCacheUUID_10; @Uint8() int properties_pipelineCacheUUID_11; @Uint8() int properties_pipelineCacheUUID_12; @Uint8() int properties_pipelineCacheUUID_13; @Uint8() int properties_pipelineCacheUUID_14; @Uint8() int properties_pipelineCacheUUID_15;
-  String get properties_pipelineCacheUUID {
-    var bytes = [properties_pipelineCacheUUID_0, properties_pipelineCacheUUID_1, properties_pipelineCacheUUID_2, properties_pipelineCacheUUID_3, properties_pipelineCacheUUID_4, properties_pipelineCacheUUID_5, properties_pipelineCacheUUID_6, properties_pipelineCacheUUID_7, properties_pipelineCacheUUID_8, properties_pipelineCacheUUID_9, properties_pipelineCacheUUID_10, properties_pipelineCacheUUID_11, properties_pipelineCacheUUID_12, properties_pipelineCacheUUID_13, properties_pipelineCacheUUID_14, properties_pipelineCacheUUID_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set properties_pipelineCacheUUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    properties_pipelineCacheUUID_0 = bytes[0]; properties_pipelineCacheUUID_1 = bytes[1]; properties_pipelineCacheUUID_2 = bytes[2]; properties_pipelineCacheUUID_3 = bytes[3]; properties_pipelineCacheUUID_4 = bytes[4]; properties_pipelineCacheUUID_5 = bytes[5]; properties_pipelineCacheUUID_6 = bytes[6]; properties_pipelineCacheUUID_7 = bytes[7]; properties_pipelineCacheUUID_8 = bytes[8]; properties_pipelineCacheUUID_9 = bytes[9]; properties_pipelineCacheUUID_10 = bytes[10]; properties_pipelineCacheUUID_11 = bytes[11]; properties_pipelineCacheUUID_12 = bytes[12]; properties_pipelineCacheUUID_13 = bytes[13]; properties_pipelineCacheUUID_14 = bytes[14]; properties_pipelineCacheUUID_15 = bytes[15];
-  }
-  @Uint32() int properties_limits_maxImageDimension1D;
-  @Uint32() int properties_limits_maxImageDimension2D;
-  @Uint32() int properties_limits_maxImageDimension3D;
-  @Uint32() int properties_limits_maxImageDimensionCube;
-  @Uint32() int properties_limits_maxImageArrayLayers;
-  @Uint32() int properties_limits_maxTexelBufferElements;
-  @Uint32() int properties_limits_maxUniformBufferRange;
-  @Uint32() int properties_limits_maxStorageBufferRange;
-  @Uint32() int properties_limits_maxPushConstantsSize;
-  @Uint32() int properties_limits_maxMemoryAllocationCount;
-  @Uint32() int properties_limits_maxSamplerAllocationCount;
-  @Uint64() int properties_limits_bufferImageGranularity;
-  @Uint64() int properties_limits_sparseAddressSpaceSize;
-  @Uint32() int properties_limits_maxBoundDescriptorSets;
-  @Uint32() int properties_limits_maxPerStageDescriptorSamplers;
-  @Uint32() int properties_limits_maxPerStageDescriptorUniformBuffers;
-  @Uint32() int properties_limits_maxPerStageDescriptorStorageBuffers;
-  @Uint32() int properties_limits_maxPerStageDescriptorSampledImages;
-  @Uint32() int properties_limits_maxPerStageDescriptorStorageImages;
-  @Uint32() int properties_limits_maxPerStageDescriptorInputAttachments;
-  @Uint32() int properties_limits_maxPerStageResources;
-  @Uint32() int properties_limits_maxDescriptorSetSamplers;
-  @Uint32() int properties_limits_maxDescriptorSetUniformBuffers;
-  @Uint32() int properties_limits_maxDescriptorSetUniformBuffersDynamic;
-  @Uint32() int properties_limits_maxDescriptorSetStorageBuffers;
-  @Uint32() int properties_limits_maxDescriptorSetStorageBuffersDynamic;
-  @Uint32() int properties_limits_maxDescriptorSetSampledImages;
-  @Uint32() int properties_limits_maxDescriptorSetStorageImages;
-  @Uint32() int properties_limits_maxDescriptorSetInputAttachments;
-  @Uint32() int properties_limits_maxVertexInputAttributes;
-  @Uint32() int properties_limits_maxVertexInputBindings;
-  @Uint32() int properties_limits_maxVertexInputAttributeOffset;
-  @Uint32() int properties_limits_maxVertexInputBindingStride;
-  @Uint32() int properties_limits_maxVertexOutputComponents;
-  @Uint32() int properties_limits_maxTessellationGenerationLevel;
-  @Uint32() int properties_limits_maxTessellationPatchSize;
-  @Uint32() int properties_limits_maxTessellationControlPerVertexInputComponents;
-  @Uint32() int properties_limits_maxTessellationControlPerVertexOutputComponents;
-  @Uint32() int properties_limits_maxTessellationControlPerPatchOutputComponents;
-  @Uint32() int properties_limits_maxTessellationControlTotalOutputComponents;
-  @Uint32() int properties_limits_maxTessellationEvaluationInputComponents;
-  @Uint32() int properties_limits_maxTessellationEvaluationOutputComponents;
-  @Uint32() int properties_limits_maxGeometryShaderInvocations;
-  @Uint32() int properties_limits_maxGeometryInputComponents;
-  @Uint32() int properties_limits_maxGeometryOutputComponents;
-  @Uint32() int properties_limits_maxGeometryOutputVertices;
-  @Uint32() int properties_limits_maxGeometryTotalOutputComponents;
-  @Uint32() int properties_limits_maxFragmentInputComponents;
-  @Uint32() int properties_limits_maxFragmentOutputAttachments;
-  @Uint32() int properties_limits_maxFragmentDualSrcAttachments;
-  @Uint32() int properties_limits_maxFragmentCombinedOutputResources;
-  @Uint32() int properties_limits_maxComputeSharedMemorySize;
-  @Uint32() int properties_limits_maxComputeWorkGroupCount_0; @Uint32() int properties_limits_maxComputeWorkGroupCount_1; @Uint32() int properties_limits_maxComputeWorkGroupCount_2;
-  @Uint32() int properties_limits_maxComputeWorkGroupInvocations;
-  @Uint32() int properties_limits_maxComputeWorkGroupSize_0; @Uint32() int properties_limits_maxComputeWorkGroupSize_1; @Uint32() int properties_limits_maxComputeWorkGroupSize_2;
-  @Uint32() int properties_limits_subPixelPrecisionBits;
-  @Uint32() int properties_limits_subTexelPrecisionBits;
-  @Uint32() int properties_limits_mipmapPrecisionBits;
-  @Uint32() int properties_limits_maxDrawIndexedIndexValue;
-  @Uint32() int properties_limits_maxDrawIndirectCount;
-  @Float() double properties_limits_maxSamplerLodBias;
-  @Float() double properties_limits_maxSamplerAnisotropy;
-  @Uint32() int properties_limits_maxViewports;
-  @Uint32() int properties_limits_maxViewportDimensions_0; @Uint32() int properties_limits_maxViewportDimensions_1;
-  @Float() double properties_limits_viewportBoundsRange_0; @Float() double properties_limits_viewportBoundsRange_1;
-  @Uint32() int properties_limits_viewportSubPixelBits;
-  @Uint64() int properties_limits_minMemoryMapAlignment;
-  @Uint64() int properties_limits_minTexelBufferOffsetAlignment;
-  @Uint64() int properties_limits_minUniformBufferOffsetAlignment;
-  @Uint64() int properties_limits_minStorageBufferOffsetAlignment;
-  @Int32() int properties_limits_minTexelOffset;
-  @Uint32() int properties_limits_maxTexelOffset;
-  @Int32() int properties_limits_minTexelGatherOffset;
-  @Uint32() int properties_limits_maxTexelGatherOffset;
-  @Float() double properties_limits_minInterpolationOffset;
-  @Float() double properties_limits_maxInterpolationOffset;
-  @Uint32() int properties_limits_subPixelInterpolationOffsetBits;
-  @Uint32() int properties_limits_maxFramebufferWidth;
-  @Uint32() int properties_limits_maxFramebufferHeight;
-  @Uint32() int properties_limits_maxFramebufferLayers;
-  @Uint32() int properties_limits_framebufferColorSampleCounts;
-  @Uint32() int properties_limits_framebufferDepthSampleCounts;
-  @Uint32() int properties_limits_framebufferStencilSampleCounts;
-  @Uint32() int properties_limits_framebufferNoAttachmentsSampleCounts;
-  @Uint32() int properties_limits_maxColorAttachments;
-  @Uint32() int properties_limits_sampledImageColorSampleCounts;
-  @Uint32() int properties_limits_sampledImageIntegerSampleCounts;
-  @Uint32() int properties_limits_sampledImageDepthSampleCounts;
-  @Uint32() int properties_limits_sampledImageStencilSampleCounts;
-  @Uint32() int properties_limits_storageImageSampleCounts;
-  @Uint32() int properties_limits_maxSampleMaskWords;
-  @Uint32() int properties_limits_timestampComputeAndGraphics;
-  @Float() double properties_limits_timestampPeriod;
-  @Uint32() int properties_limits_maxClipDistances;
-  @Uint32() int properties_limits_maxCullDistances;
-  @Uint32() int properties_limits_maxCombinedClipAndCullDistances;
-  @Uint32() int properties_limits_discreteQueuePriorities;
-  @Float() double properties_limits_pointSizeRange_0; @Float() double properties_limits_pointSizeRange_1;
-  @Float() double properties_limits_lineWidthRange_0; @Float() double properties_limits_lineWidthRange_1;
-  @Float() double properties_limits_pointSizeGranularity;
-  @Float() double properties_limits_lineWidthGranularity;
-  @Uint32() int properties_limits_strictLines;
-  @Uint32() int properties_limits_standardSampleLocations;
-  @Uint64() int properties_limits_optimalBufferCopyOffsetAlignment;
-  @Uint64() int properties_limits_optimalBufferCopyRowPitchAlignment;
-  @Uint64() int properties_limits_nonCoherentAtomSize;
-  @Uint32() int properties_sparseProperties_residencyStandard2DBlockShape;
-  @Uint32() int properties_sparseProperties_residencyStandard2DMultisampleBlockShape;
-  @Uint32() int properties_sparseProperties_residencyStandard3DBlockShape;
-  @Uint32() int properties_sparseProperties_residencyAlignedMipSize;
-  @Uint32() int properties_sparseProperties_residencyNonResidentStrict;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int properties_apiVersion;
+  @Uint32()
+  external int properties_driverVersion;
+  @Uint32()
+  external int properties_vendorID;
+  @Uint32()
+  external int properties_deviceID;
+  @Int32()
+  external int properties_deviceType;
+  @Array(256)
+  external Array<Uint8> properties_deviceName;
+  @Array(16)
+  external Array<Uint8> properties_pipelineCacheUUID;
+  @Uint32()
+  external int properties_limits_maxImageDimension1D;
+  @Uint32()
+  external int properties_limits_maxImageDimension2D;
+  @Uint32()
+  external int properties_limits_maxImageDimension3D;
+  @Uint32()
+  external int properties_limits_maxImageDimensionCube;
+  @Uint32()
+  external int properties_limits_maxImageArrayLayers;
+  @Uint32()
+  external int properties_limits_maxTexelBufferElements;
+  @Uint32()
+  external int properties_limits_maxUniformBufferRange;
+  @Uint32()
+  external int properties_limits_maxStorageBufferRange;
+  @Uint32()
+  external int properties_limits_maxPushConstantsSize;
+  @Uint32()
+  external int properties_limits_maxMemoryAllocationCount;
+  @Uint32()
+  external int properties_limits_maxSamplerAllocationCount;
+  @Uint64()
+  external int properties_limits_bufferImageGranularity;
+  @Uint64()
+  external int properties_limits_sparseAddressSpaceSize;
+  @Uint32()
+  external int properties_limits_maxBoundDescriptorSets;
+  @Uint32()
+  external int properties_limits_maxPerStageDescriptorSamplers;
+  @Uint32()
+  external int properties_limits_maxPerStageDescriptorUniformBuffers;
+  @Uint32()
+  external int properties_limits_maxPerStageDescriptorStorageBuffers;
+  @Uint32()
+  external int properties_limits_maxPerStageDescriptorSampledImages;
+  @Uint32()
+  external int properties_limits_maxPerStageDescriptorStorageImages;
+  @Uint32()
+  external int properties_limits_maxPerStageDescriptorInputAttachments;
+  @Uint32()
+  external int properties_limits_maxPerStageResources;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetSamplers;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetUniformBuffers;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetUniformBuffersDynamic;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetStorageBuffers;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetStorageBuffersDynamic;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetSampledImages;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetStorageImages;
+  @Uint32()
+  external int properties_limits_maxDescriptorSetInputAttachments;
+  @Uint32()
+  external int properties_limits_maxVertexInputAttributes;
+  @Uint32()
+  external int properties_limits_maxVertexInputBindings;
+  @Uint32()
+  external int properties_limits_maxVertexInputAttributeOffset;
+  @Uint32()
+  external int properties_limits_maxVertexInputBindingStride;
+  @Uint32()
+  external int properties_limits_maxVertexOutputComponents;
+  @Uint32()
+  external int properties_limits_maxTessellationGenerationLevel;
+  @Uint32()
+  external int properties_limits_maxTessellationPatchSize;
+  @Uint32()
+  external int properties_limits_maxTessellationControlPerVertexInputComponents;
+  @Uint32()
+  external int properties_limits_maxTessellationControlPerVertexOutputComponents;
+  @Uint32()
+  external int properties_limits_maxTessellationControlPerPatchOutputComponents;
+  @Uint32()
+  external int properties_limits_maxTessellationControlTotalOutputComponents;
+  @Uint32()
+  external int properties_limits_maxTessellationEvaluationInputComponents;
+  @Uint32()
+  external int properties_limits_maxTessellationEvaluationOutputComponents;
+  @Uint32()
+  external int properties_limits_maxGeometryShaderInvocations;
+  @Uint32()
+  external int properties_limits_maxGeometryInputComponents;
+  @Uint32()
+  external int properties_limits_maxGeometryOutputComponents;
+  @Uint32()
+  external int properties_limits_maxGeometryOutputVertices;
+  @Uint32()
+  external int properties_limits_maxGeometryTotalOutputComponents;
+  @Uint32()
+  external int properties_limits_maxFragmentInputComponents;
+  @Uint32()
+  external int properties_limits_maxFragmentOutputAttachments;
+  @Uint32()
+  external int properties_limits_maxFragmentDualSrcAttachments;
+  @Uint32()
+  external int properties_limits_maxFragmentCombinedOutputResources;
+  @Uint32()
+  external int properties_limits_maxComputeSharedMemorySize;
+  @Array(3)
+  external Array<Uint32> properties_limits_maxComputeWorkGroupCount;
+  @Uint32()
+  external int properties_limits_maxComputeWorkGroupInvocations;
+  @Array(3)
+  external Array<Uint32> properties_limits_maxComputeWorkGroupSize;
+  @Uint32()
+  external int properties_limits_subPixelPrecisionBits;
+  @Uint32()
+  external int properties_limits_subTexelPrecisionBits;
+  @Uint32()
+  external int properties_limits_mipmapPrecisionBits;
+  @Uint32()
+  external int properties_limits_maxDrawIndexedIndexValue;
+  @Uint32()
+  external int properties_limits_maxDrawIndirectCount;
+  @Float()
+  external double properties_limits_maxSamplerLodBias;
+  @Float()
+  external double properties_limits_maxSamplerAnisotropy;
+  @Uint32()
+  external int properties_limits_maxViewports;
+  @Array(2)
+  external Array<Uint32> properties_limits_maxViewportDimensions;
+  @Array(2)
+  external Array<Float> properties_limits_viewportBoundsRange;
+  @Uint32()
+  external int properties_limits_viewportSubPixelBits;
+  @Uint64()
+  external int properties_limits_minMemoryMapAlignment;
+  @Uint64()
+  external int properties_limits_minTexelBufferOffsetAlignment;
+  @Uint64()
+  external int properties_limits_minUniformBufferOffsetAlignment;
+  @Uint64()
+  external int properties_limits_minStorageBufferOffsetAlignment;
+  @Int32()
+  external int properties_limits_minTexelOffset;
+  @Uint32()
+  external int properties_limits_maxTexelOffset;
+  @Int32()
+  external int properties_limits_minTexelGatherOffset;
+  @Uint32()
+  external int properties_limits_maxTexelGatherOffset;
+  @Float()
+  external double properties_limits_minInterpolationOffset;
+  @Float()
+  external double properties_limits_maxInterpolationOffset;
+  @Uint32()
+  external int properties_limits_subPixelInterpolationOffsetBits;
+  @Uint32()
+  external int properties_limits_maxFramebufferWidth;
+  @Uint32()
+  external int properties_limits_maxFramebufferHeight;
+  @Uint32()
+  external int properties_limits_maxFramebufferLayers;
+  @Uint32()
+  external int properties_limits_framebufferColorSampleCounts;
+  @Uint32()
+  external int properties_limits_framebufferDepthSampleCounts;
+  @Uint32()
+  external int properties_limits_framebufferStencilSampleCounts;
+  @Uint32()
+  external int properties_limits_framebufferNoAttachmentsSampleCounts;
+  @Uint32()
+  external int properties_limits_maxColorAttachments;
+  @Uint32()
+  external int properties_limits_sampledImageColorSampleCounts;
+  @Uint32()
+  external int properties_limits_sampledImageIntegerSampleCounts;
+  @Uint32()
+  external int properties_limits_sampledImageDepthSampleCounts;
+  @Uint32()
+  external int properties_limits_sampledImageStencilSampleCounts;
+  @Uint32()
+  external int properties_limits_storageImageSampleCounts;
+  @Uint32()
+  external int properties_limits_maxSampleMaskWords;
+  @Uint32()
+  external int properties_limits_timestampComputeAndGraphics;
+  @Float()
+  external double properties_limits_timestampPeriod;
+  @Uint32()
+  external int properties_limits_maxClipDistances;
+  @Uint32()
+  external int properties_limits_maxCullDistances;
+  @Uint32()
+  external int properties_limits_maxCombinedClipAndCullDistances;
+  @Uint32()
+  external int properties_limits_discreteQueuePriorities;
+  @Array(2)
+  external Array<Float> properties_limits_pointSizeRange;
+  @Array(2)
+  external Array<Float> properties_limits_lineWidthRange;
+  @Float()
+  external double properties_limits_pointSizeGranularity;
+  @Float()
+  external double properties_limits_lineWidthGranularity;
+  @Uint32()
+  external int properties_limits_strictLines;
+  @Uint32()
+  external int properties_limits_standardSampleLocations;
+  @Uint64()
+  external int properties_limits_optimalBufferCopyOffsetAlignment;
+  @Uint64()
+  external int properties_limits_optimalBufferCopyRowPitchAlignment;
+  @Uint64()
+  external int properties_limits_nonCoherentAtomSize;
+  @Uint32()
+  external int properties_sparseProperties_residencyStandard2DBlockShape;
+  @Uint32()
+  external int properties_sparseProperties_residencyStandard2DMultisampleBlockShape;
+  @Uint32()
+  external int properties_sparseProperties_residencyStandard3DBlockShape;
+  @Uint32()
+  external int properties_sparseProperties_residencyAlignedMipSize;
+  @Uint32()
+  external int properties_sparseProperties_residencyNonResidentStrict;
 }
 
 class VkPhysicalDeviceProperties2KHR extends Opaque {
 }
 
 class VkFormatProperties2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int formatProperties_linearTilingFeatures;
-  @Uint32() int formatProperties_optimalTilingFeatures;
-  @Uint32() int formatProperties_bufferFeatures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int formatProperties_linearTilingFeatures;
+  @Uint32()
+  external int formatProperties_optimalTilingFeatures;
+  @Uint32()
+  external int formatProperties_bufferFeatures;
 }
 
 class VkFormatProperties2KHR extends Opaque {
 }
 
 class VkImageFormatProperties2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int imageFormatProperties_maxExtent_width;
-  @Uint32() int imageFormatProperties_maxExtent_height;
-  @Uint32() int imageFormatProperties_maxExtent_depth;
-  @Uint32() int imageFormatProperties_maxMipLevels;
-  @Uint32() int imageFormatProperties_maxArrayLayers;
-  @Uint32() int imageFormatProperties_sampleCounts;
-  @Uint64() int imageFormatProperties_maxResourceSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int imageFormatProperties_maxExtent_width;
+  @Uint32()
+  external int imageFormatProperties_maxExtent_height;
+  @Uint32()
+  external int imageFormatProperties_maxExtent_depth;
+  @Uint32()
+  external int imageFormatProperties_maxMipLevels;
+  @Uint32()
+  external int imageFormatProperties_maxArrayLayers;
+  @Uint32()
+  external int imageFormatProperties_sampleCounts;
+  @Uint64()
+  external int imageFormatProperties_maxResourceSize;
 }
 
 class VkImageFormatProperties2KHR extends Opaque {
 }
 
 class VkPhysicalDeviceImageFormatInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int format;
-  @Int32() int type;
-  @Int32() int tiling;
-  @Uint32() int usage;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int format;
+  @Int32()
+  external int type;
+  @Int32()
+  external int tiling;
+  @Uint32()
+  external int usage;
+  @Uint32()
+  external int flags;
 }
 
 class VkPhysicalDeviceImageFormatInfo2KHR extends Opaque {
 }
 
 class VkQueueFamilyProperties2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int queueFamilyProperties_queueFlags;
-  @Uint32() int queueFamilyProperties_queueCount;
-  @Uint32() int queueFamilyProperties_timestampValidBits;
-  @Uint32() int queueFamilyProperties_minImageTransferGranularity_width;
-  @Uint32() int queueFamilyProperties_minImageTransferGranularity_height;
-  @Uint32() int queueFamilyProperties_minImageTransferGranularity_depth;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int queueFamilyProperties_queueFlags;
+  @Uint32()
+  external int queueFamilyProperties_queueCount;
+  @Uint32()
+  external int queueFamilyProperties_timestampValidBits;
+  @Uint32()
+  external int queueFamilyProperties_minImageTransferGranularity_width;
+  @Uint32()
+  external int queueFamilyProperties_minImageTransferGranularity_height;
+  @Uint32()
+  external int queueFamilyProperties_minImageTransferGranularity_depth;
 }
 
 class VkQueueFamilyProperties2KHR extends Opaque {
 }
 
 class VkPhysicalDeviceMemoryProperties2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int memoryProperties_memoryTypeCount;
-  Pointer memoryProperties_memoryTypes_0; Pointer memoryProperties_memoryTypes_1; Pointer memoryProperties_memoryTypes_2; Pointer memoryProperties_memoryTypes_3; Pointer memoryProperties_memoryTypes_4; Pointer memoryProperties_memoryTypes_5; Pointer memoryProperties_memoryTypes_6; Pointer memoryProperties_memoryTypes_7; Pointer memoryProperties_memoryTypes_8; Pointer memoryProperties_memoryTypes_9; Pointer memoryProperties_memoryTypes_10; Pointer memoryProperties_memoryTypes_11; Pointer memoryProperties_memoryTypes_12; Pointer memoryProperties_memoryTypes_13; Pointer memoryProperties_memoryTypes_14; Pointer memoryProperties_memoryTypes_15; Pointer memoryProperties_memoryTypes_16; Pointer memoryProperties_memoryTypes_17; Pointer memoryProperties_memoryTypes_18; Pointer memoryProperties_memoryTypes_19; Pointer memoryProperties_memoryTypes_20; Pointer memoryProperties_memoryTypes_21; Pointer memoryProperties_memoryTypes_22; Pointer memoryProperties_memoryTypes_23; Pointer memoryProperties_memoryTypes_24; Pointer memoryProperties_memoryTypes_25; Pointer memoryProperties_memoryTypes_26; Pointer memoryProperties_memoryTypes_27; Pointer memoryProperties_memoryTypes_28; Pointer memoryProperties_memoryTypes_29; Pointer memoryProperties_memoryTypes_30; Pointer memoryProperties_memoryTypes_31;
-  @Uint32() int memoryProperties_memoryHeapCount;
-  Pointer memoryProperties_memoryHeaps_0; Pointer memoryProperties_memoryHeaps_1; Pointer memoryProperties_memoryHeaps_2; Pointer memoryProperties_memoryHeaps_3; Pointer memoryProperties_memoryHeaps_4; Pointer memoryProperties_memoryHeaps_5; Pointer memoryProperties_memoryHeaps_6; Pointer memoryProperties_memoryHeaps_7; Pointer memoryProperties_memoryHeaps_8; Pointer memoryProperties_memoryHeaps_9; Pointer memoryProperties_memoryHeaps_10; Pointer memoryProperties_memoryHeaps_11; Pointer memoryProperties_memoryHeaps_12; Pointer memoryProperties_memoryHeaps_13; Pointer memoryProperties_memoryHeaps_14; Pointer memoryProperties_memoryHeaps_15;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int memoryProperties_memoryTypeCount;
+  @Array(32)
+  external Array<Pointer> memoryProperties_memoryTypes;
+  @Uint32()
+  external int memoryProperties_memoryHeapCount;
+  @Array(16)
+  external Array<Pointer> memoryProperties_memoryHeaps;
 }
 
 class VkPhysicalDeviceMemoryProperties2KHR extends Opaque {
 }
 
 class VkSparseImageFormatProperties2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int properties_aspectMask;
-  @Uint32() int properties_imageGranularity_width;
-  @Uint32() int properties_imageGranularity_height;
-  @Uint32() int properties_imageGranularity_depth;
-  @Uint32() int properties_flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int properties_aspectMask;
+  @Uint32()
+  external int properties_imageGranularity_width;
+  @Uint32()
+  external int properties_imageGranularity_height;
+  @Uint32()
+  external int properties_imageGranularity_depth;
+  @Uint32()
+  external int properties_flags;
 }
 
 class VkSparseImageFormatProperties2KHR extends Opaque {
 }
 
 class VkPhysicalDeviceSparseImageFormatInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int format;
-  @Int32() int type;
-  @Int32() int samples;
-  @Uint32() int usage;
-  @Int32() int tiling;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int format;
+  @Int32()
+  external int type;
+  @Int32()
+  external int samples;
+  @Uint32()
+  external int usage;
+  @Int32()
+  external int tiling;
 }
 
 class VkPhysicalDeviceSparseImageFormatInfo2KHR extends Opaque {
 }
 
 class VkPhysicalDevicePushDescriptorPropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxPushDescriptors;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxPushDescriptors;
 }
 
 class VkConformanceVersion extends Struct {
-  @Uint8() int major;
-  @Uint8() int minor;
-  @Uint8() int subminor;
-  @Uint8() int patch;
+  @Uint8()
+  external int major;
+  @Uint8()
+  external int minor;
+  @Uint8()
+  external int subminor;
+  @Uint8()
+  external int patch;
 }
 
 class VkConformanceVersionKHR extends Opaque {
 }
 
 class VkPhysicalDeviceDriverProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int driverID;
-  @Uint8() int driverName_0; @Uint8() int driverName_1; @Uint8() int driverName_2; @Uint8() int driverName_3; @Uint8() int driverName_4; @Uint8() int driverName_5; @Uint8() int driverName_6; @Uint8() int driverName_7; @Uint8() int driverName_8; @Uint8() int driverName_9; @Uint8() int driverName_10; @Uint8() int driverName_11; @Uint8() int driverName_12; @Uint8() int driverName_13; @Uint8() int driverName_14; @Uint8() int driverName_15; @Uint8() int driverName_16; @Uint8() int driverName_17; @Uint8() int driverName_18; @Uint8() int driverName_19; @Uint8() int driverName_20; @Uint8() int driverName_21; @Uint8() int driverName_22; @Uint8() int driverName_23; @Uint8() int driverName_24; @Uint8() int driverName_25; @Uint8() int driverName_26; @Uint8() int driverName_27; @Uint8() int driverName_28; @Uint8() int driverName_29; @Uint8() int driverName_30; @Uint8() int driverName_31; @Uint8() int driverName_32; @Uint8() int driverName_33; @Uint8() int driverName_34; @Uint8() int driverName_35; @Uint8() int driverName_36; @Uint8() int driverName_37; @Uint8() int driverName_38; @Uint8() int driverName_39; @Uint8() int driverName_40; @Uint8() int driverName_41; @Uint8() int driverName_42; @Uint8() int driverName_43; @Uint8() int driverName_44; @Uint8() int driverName_45; @Uint8() int driverName_46; @Uint8() int driverName_47; @Uint8() int driverName_48; @Uint8() int driverName_49; @Uint8() int driverName_50; @Uint8() int driverName_51; @Uint8() int driverName_52; @Uint8() int driverName_53; @Uint8() int driverName_54; @Uint8() int driverName_55; @Uint8() int driverName_56; @Uint8() int driverName_57; @Uint8() int driverName_58; @Uint8() int driverName_59; @Uint8() int driverName_60; @Uint8() int driverName_61; @Uint8() int driverName_62; @Uint8() int driverName_63; @Uint8() int driverName_64; @Uint8() int driverName_65; @Uint8() int driverName_66; @Uint8() int driverName_67; @Uint8() int driverName_68; @Uint8() int driverName_69; @Uint8() int driverName_70; @Uint8() int driverName_71; @Uint8() int driverName_72; @Uint8() int driverName_73; @Uint8() int driverName_74; @Uint8() int driverName_75; @Uint8() int driverName_76; @Uint8() int driverName_77; @Uint8() int driverName_78; @Uint8() int driverName_79; @Uint8() int driverName_80; @Uint8() int driverName_81; @Uint8() int driverName_82; @Uint8() int driverName_83; @Uint8() int driverName_84; @Uint8() int driverName_85; @Uint8() int driverName_86; @Uint8() int driverName_87; @Uint8() int driverName_88; @Uint8() int driverName_89; @Uint8() int driverName_90; @Uint8() int driverName_91; @Uint8() int driverName_92; @Uint8() int driverName_93; @Uint8() int driverName_94; @Uint8() int driverName_95; @Uint8() int driverName_96; @Uint8() int driverName_97; @Uint8() int driverName_98; @Uint8() int driverName_99; @Uint8() int driverName_100; @Uint8() int driverName_101; @Uint8() int driverName_102; @Uint8() int driverName_103; @Uint8() int driverName_104; @Uint8() int driverName_105; @Uint8() int driverName_106; @Uint8() int driverName_107; @Uint8() int driverName_108; @Uint8() int driverName_109; @Uint8() int driverName_110; @Uint8() int driverName_111; @Uint8() int driverName_112; @Uint8() int driverName_113; @Uint8() int driverName_114; @Uint8() int driverName_115; @Uint8() int driverName_116; @Uint8() int driverName_117; @Uint8() int driverName_118; @Uint8() int driverName_119; @Uint8() int driverName_120; @Uint8() int driverName_121; @Uint8() int driverName_122; @Uint8() int driverName_123; @Uint8() int driverName_124; @Uint8() int driverName_125; @Uint8() int driverName_126; @Uint8() int driverName_127; @Uint8() int driverName_128; @Uint8() int driverName_129; @Uint8() int driverName_130; @Uint8() int driverName_131; @Uint8() int driverName_132; @Uint8() int driverName_133; @Uint8() int driverName_134; @Uint8() int driverName_135; @Uint8() int driverName_136; @Uint8() int driverName_137; @Uint8() int driverName_138; @Uint8() int driverName_139; @Uint8() int driverName_140; @Uint8() int driverName_141; @Uint8() int driverName_142; @Uint8() int driverName_143; @Uint8() int driverName_144; @Uint8() int driverName_145; @Uint8() int driverName_146; @Uint8() int driverName_147; @Uint8() int driverName_148; @Uint8() int driverName_149; @Uint8() int driverName_150; @Uint8() int driverName_151; @Uint8() int driverName_152; @Uint8() int driverName_153; @Uint8() int driverName_154; @Uint8() int driverName_155; @Uint8() int driverName_156; @Uint8() int driverName_157; @Uint8() int driverName_158; @Uint8() int driverName_159; @Uint8() int driverName_160; @Uint8() int driverName_161; @Uint8() int driverName_162; @Uint8() int driverName_163; @Uint8() int driverName_164; @Uint8() int driverName_165; @Uint8() int driverName_166; @Uint8() int driverName_167; @Uint8() int driverName_168; @Uint8() int driverName_169; @Uint8() int driverName_170; @Uint8() int driverName_171; @Uint8() int driverName_172; @Uint8() int driverName_173; @Uint8() int driverName_174; @Uint8() int driverName_175; @Uint8() int driverName_176; @Uint8() int driverName_177; @Uint8() int driverName_178; @Uint8() int driverName_179; @Uint8() int driverName_180; @Uint8() int driverName_181; @Uint8() int driverName_182; @Uint8() int driverName_183; @Uint8() int driverName_184; @Uint8() int driverName_185; @Uint8() int driverName_186; @Uint8() int driverName_187; @Uint8() int driverName_188; @Uint8() int driverName_189; @Uint8() int driverName_190; @Uint8() int driverName_191; @Uint8() int driverName_192; @Uint8() int driverName_193; @Uint8() int driverName_194; @Uint8() int driverName_195; @Uint8() int driverName_196; @Uint8() int driverName_197; @Uint8() int driverName_198; @Uint8() int driverName_199; @Uint8() int driverName_200; @Uint8() int driverName_201; @Uint8() int driverName_202; @Uint8() int driverName_203; @Uint8() int driverName_204; @Uint8() int driverName_205; @Uint8() int driverName_206; @Uint8() int driverName_207; @Uint8() int driverName_208; @Uint8() int driverName_209; @Uint8() int driverName_210; @Uint8() int driverName_211; @Uint8() int driverName_212; @Uint8() int driverName_213; @Uint8() int driverName_214; @Uint8() int driverName_215; @Uint8() int driverName_216; @Uint8() int driverName_217; @Uint8() int driverName_218; @Uint8() int driverName_219; @Uint8() int driverName_220; @Uint8() int driverName_221; @Uint8() int driverName_222; @Uint8() int driverName_223; @Uint8() int driverName_224; @Uint8() int driverName_225; @Uint8() int driverName_226; @Uint8() int driverName_227; @Uint8() int driverName_228; @Uint8() int driverName_229; @Uint8() int driverName_230; @Uint8() int driverName_231; @Uint8() int driverName_232; @Uint8() int driverName_233; @Uint8() int driverName_234; @Uint8() int driverName_235; @Uint8() int driverName_236; @Uint8() int driverName_237; @Uint8() int driverName_238; @Uint8() int driverName_239; @Uint8() int driverName_240; @Uint8() int driverName_241; @Uint8() int driverName_242; @Uint8() int driverName_243; @Uint8() int driverName_244; @Uint8() int driverName_245; @Uint8() int driverName_246; @Uint8() int driverName_247; @Uint8() int driverName_248; @Uint8() int driverName_249; @Uint8() int driverName_250; @Uint8() int driverName_251; @Uint8() int driverName_252; @Uint8() int driverName_253; @Uint8() int driverName_254; @Uint8() int driverName_255;
-  String get driverName {
-    var bytes = [driverName_0, driverName_1, driverName_2, driverName_3, driverName_4, driverName_5, driverName_6, driverName_7, driverName_8, driverName_9, driverName_10, driverName_11, driverName_12, driverName_13, driverName_14, driverName_15, driverName_16, driverName_17, driverName_18, driverName_19, driverName_20, driverName_21, driverName_22, driverName_23, driverName_24, driverName_25, driverName_26, driverName_27, driverName_28, driverName_29, driverName_30, driverName_31, driverName_32, driverName_33, driverName_34, driverName_35, driverName_36, driverName_37, driverName_38, driverName_39, driverName_40, driverName_41, driverName_42, driverName_43, driverName_44, driverName_45, driverName_46, driverName_47, driverName_48, driverName_49, driverName_50, driverName_51, driverName_52, driverName_53, driverName_54, driverName_55, driverName_56, driverName_57, driverName_58, driverName_59, driverName_60, driverName_61, driverName_62, driverName_63, driverName_64, driverName_65, driverName_66, driverName_67, driverName_68, driverName_69, driverName_70, driverName_71, driverName_72, driverName_73, driverName_74, driverName_75, driverName_76, driverName_77, driverName_78, driverName_79, driverName_80, driverName_81, driverName_82, driverName_83, driverName_84, driverName_85, driverName_86, driverName_87, driverName_88, driverName_89, driverName_90, driverName_91, driverName_92, driverName_93, driverName_94, driverName_95, driverName_96, driverName_97, driverName_98, driverName_99, driverName_100, driverName_101, driverName_102, driverName_103, driverName_104, driverName_105, driverName_106, driverName_107, driverName_108, driverName_109, driverName_110, driverName_111, driverName_112, driverName_113, driverName_114, driverName_115, driverName_116, driverName_117, driverName_118, driverName_119, driverName_120, driverName_121, driverName_122, driverName_123, driverName_124, driverName_125, driverName_126, driverName_127, driverName_128, driverName_129, driverName_130, driverName_131, driverName_132, driverName_133, driverName_134, driverName_135, driverName_136, driverName_137, driverName_138, driverName_139, driverName_140, driverName_141, driverName_142, driverName_143, driverName_144, driverName_145, driverName_146, driverName_147, driverName_148, driverName_149, driverName_150, driverName_151, driverName_152, driverName_153, driverName_154, driverName_155, driverName_156, driverName_157, driverName_158, driverName_159, driverName_160, driverName_161, driverName_162, driverName_163, driverName_164, driverName_165, driverName_166, driverName_167, driverName_168, driverName_169, driverName_170, driverName_171, driverName_172, driverName_173, driverName_174, driverName_175, driverName_176, driverName_177, driverName_178, driverName_179, driverName_180, driverName_181, driverName_182, driverName_183, driverName_184, driverName_185, driverName_186, driverName_187, driverName_188, driverName_189, driverName_190, driverName_191, driverName_192, driverName_193, driverName_194, driverName_195, driverName_196, driverName_197, driverName_198, driverName_199, driverName_200, driverName_201, driverName_202, driverName_203, driverName_204, driverName_205, driverName_206, driverName_207, driverName_208, driverName_209, driverName_210, driverName_211, driverName_212, driverName_213, driverName_214, driverName_215, driverName_216, driverName_217, driverName_218, driverName_219, driverName_220, driverName_221, driverName_222, driverName_223, driverName_224, driverName_225, driverName_226, driverName_227, driverName_228, driverName_229, driverName_230, driverName_231, driverName_232, driverName_233, driverName_234, driverName_235, driverName_236, driverName_237, driverName_238, driverName_239, driverName_240, driverName_241, driverName_242, driverName_243, driverName_244, driverName_245, driverName_246, driverName_247, driverName_248, driverName_249, driverName_250, driverName_251, driverName_252, driverName_253, driverName_254, driverName_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set driverName(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    driverName_0 = bytes[0]; driverName_1 = bytes[1]; driverName_2 = bytes[2]; driverName_3 = bytes[3]; driverName_4 = bytes[4]; driverName_5 = bytes[5]; driverName_6 = bytes[6]; driverName_7 = bytes[7]; driverName_8 = bytes[8]; driverName_9 = bytes[9]; driverName_10 = bytes[10]; driverName_11 = bytes[11]; driverName_12 = bytes[12]; driverName_13 = bytes[13]; driverName_14 = bytes[14]; driverName_15 = bytes[15]; driverName_16 = bytes[16]; driverName_17 = bytes[17]; driverName_18 = bytes[18]; driverName_19 = bytes[19]; driverName_20 = bytes[20]; driverName_21 = bytes[21]; driverName_22 = bytes[22]; driverName_23 = bytes[23]; driverName_24 = bytes[24]; driverName_25 = bytes[25]; driverName_26 = bytes[26]; driverName_27 = bytes[27]; driverName_28 = bytes[28]; driverName_29 = bytes[29]; driverName_30 = bytes[30]; driverName_31 = bytes[31]; driverName_32 = bytes[32]; driverName_33 = bytes[33]; driverName_34 = bytes[34]; driverName_35 = bytes[35]; driverName_36 = bytes[36]; driverName_37 = bytes[37]; driverName_38 = bytes[38]; driverName_39 = bytes[39]; driverName_40 = bytes[40]; driverName_41 = bytes[41]; driverName_42 = bytes[42]; driverName_43 = bytes[43]; driverName_44 = bytes[44]; driverName_45 = bytes[45]; driverName_46 = bytes[46]; driverName_47 = bytes[47]; driverName_48 = bytes[48]; driverName_49 = bytes[49]; driverName_50 = bytes[50]; driverName_51 = bytes[51]; driverName_52 = bytes[52]; driverName_53 = bytes[53]; driverName_54 = bytes[54]; driverName_55 = bytes[55]; driverName_56 = bytes[56]; driverName_57 = bytes[57]; driverName_58 = bytes[58]; driverName_59 = bytes[59]; driverName_60 = bytes[60]; driverName_61 = bytes[61]; driverName_62 = bytes[62]; driverName_63 = bytes[63]; driverName_64 = bytes[64]; driverName_65 = bytes[65]; driverName_66 = bytes[66]; driverName_67 = bytes[67]; driverName_68 = bytes[68]; driverName_69 = bytes[69]; driverName_70 = bytes[70]; driverName_71 = bytes[71]; driverName_72 = bytes[72]; driverName_73 = bytes[73]; driverName_74 = bytes[74]; driverName_75 = bytes[75]; driverName_76 = bytes[76]; driverName_77 = bytes[77]; driverName_78 = bytes[78]; driverName_79 = bytes[79]; driverName_80 = bytes[80]; driverName_81 = bytes[81]; driverName_82 = bytes[82]; driverName_83 = bytes[83]; driverName_84 = bytes[84]; driverName_85 = bytes[85]; driverName_86 = bytes[86]; driverName_87 = bytes[87]; driverName_88 = bytes[88]; driverName_89 = bytes[89]; driverName_90 = bytes[90]; driverName_91 = bytes[91]; driverName_92 = bytes[92]; driverName_93 = bytes[93]; driverName_94 = bytes[94]; driverName_95 = bytes[95]; driverName_96 = bytes[96]; driverName_97 = bytes[97]; driverName_98 = bytes[98]; driverName_99 = bytes[99]; driverName_100 = bytes[100]; driverName_101 = bytes[101]; driverName_102 = bytes[102]; driverName_103 = bytes[103]; driverName_104 = bytes[104]; driverName_105 = bytes[105]; driverName_106 = bytes[106]; driverName_107 = bytes[107]; driverName_108 = bytes[108]; driverName_109 = bytes[109]; driverName_110 = bytes[110]; driverName_111 = bytes[111]; driverName_112 = bytes[112]; driverName_113 = bytes[113]; driverName_114 = bytes[114]; driverName_115 = bytes[115]; driverName_116 = bytes[116]; driverName_117 = bytes[117]; driverName_118 = bytes[118]; driverName_119 = bytes[119]; driverName_120 = bytes[120]; driverName_121 = bytes[121]; driverName_122 = bytes[122]; driverName_123 = bytes[123]; driverName_124 = bytes[124]; driverName_125 = bytes[125]; driverName_126 = bytes[126]; driverName_127 = bytes[127]; driverName_128 = bytes[128]; driverName_129 = bytes[129]; driverName_130 = bytes[130]; driverName_131 = bytes[131]; driverName_132 = bytes[132]; driverName_133 = bytes[133]; driverName_134 = bytes[134]; driverName_135 = bytes[135]; driverName_136 = bytes[136]; driverName_137 = bytes[137]; driverName_138 = bytes[138]; driverName_139 = bytes[139]; driverName_140 = bytes[140]; driverName_141 = bytes[141]; driverName_142 = bytes[142]; driverName_143 = bytes[143]; driverName_144 = bytes[144]; driverName_145 = bytes[145]; driverName_146 = bytes[146]; driverName_147 = bytes[147]; driverName_148 = bytes[148]; driverName_149 = bytes[149]; driverName_150 = bytes[150]; driverName_151 = bytes[151]; driverName_152 = bytes[152]; driverName_153 = bytes[153]; driverName_154 = bytes[154]; driverName_155 = bytes[155]; driverName_156 = bytes[156]; driverName_157 = bytes[157]; driverName_158 = bytes[158]; driverName_159 = bytes[159]; driverName_160 = bytes[160]; driverName_161 = bytes[161]; driverName_162 = bytes[162]; driverName_163 = bytes[163]; driverName_164 = bytes[164]; driverName_165 = bytes[165]; driverName_166 = bytes[166]; driverName_167 = bytes[167]; driverName_168 = bytes[168]; driverName_169 = bytes[169]; driverName_170 = bytes[170]; driverName_171 = bytes[171]; driverName_172 = bytes[172]; driverName_173 = bytes[173]; driverName_174 = bytes[174]; driverName_175 = bytes[175]; driverName_176 = bytes[176]; driverName_177 = bytes[177]; driverName_178 = bytes[178]; driverName_179 = bytes[179]; driverName_180 = bytes[180]; driverName_181 = bytes[181]; driverName_182 = bytes[182]; driverName_183 = bytes[183]; driverName_184 = bytes[184]; driverName_185 = bytes[185]; driverName_186 = bytes[186]; driverName_187 = bytes[187]; driverName_188 = bytes[188]; driverName_189 = bytes[189]; driverName_190 = bytes[190]; driverName_191 = bytes[191]; driverName_192 = bytes[192]; driverName_193 = bytes[193]; driverName_194 = bytes[194]; driverName_195 = bytes[195]; driverName_196 = bytes[196]; driverName_197 = bytes[197]; driverName_198 = bytes[198]; driverName_199 = bytes[199]; driverName_200 = bytes[200]; driverName_201 = bytes[201]; driverName_202 = bytes[202]; driverName_203 = bytes[203]; driverName_204 = bytes[204]; driverName_205 = bytes[205]; driverName_206 = bytes[206]; driverName_207 = bytes[207]; driverName_208 = bytes[208]; driverName_209 = bytes[209]; driverName_210 = bytes[210]; driverName_211 = bytes[211]; driverName_212 = bytes[212]; driverName_213 = bytes[213]; driverName_214 = bytes[214]; driverName_215 = bytes[215]; driverName_216 = bytes[216]; driverName_217 = bytes[217]; driverName_218 = bytes[218]; driverName_219 = bytes[219]; driverName_220 = bytes[220]; driverName_221 = bytes[221]; driverName_222 = bytes[222]; driverName_223 = bytes[223]; driverName_224 = bytes[224]; driverName_225 = bytes[225]; driverName_226 = bytes[226]; driverName_227 = bytes[227]; driverName_228 = bytes[228]; driverName_229 = bytes[229]; driverName_230 = bytes[230]; driverName_231 = bytes[231]; driverName_232 = bytes[232]; driverName_233 = bytes[233]; driverName_234 = bytes[234]; driverName_235 = bytes[235]; driverName_236 = bytes[236]; driverName_237 = bytes[237]; driverName_238 = bytes[238]; driverName_239 = bytes[239]; driverName_240 = bytes[240]; driverName_241 = bytes[241]; driverName_242 = bytes[242]; driverName_243 = bytes[243]; driverName_244 = bytes[244]; driverName_245 = bytes[245]; driverName_246 = bytes[246]; driverName_247 = bytes[247]; driverName_248 = bytes[248]; driverName_249 = bytes[249]; driverName_250 = bytes[250]; driverName_251 = bytes[251]; driverName_252 = bytes[252]; driverName_253 = bytes[253]; driverName_254 = bytes[254]; driverName_255 = bytes[255];
-  }
-  @Uint8() int driverInfo_0; @Uint8() int driverInfo_1; @Uint8() int driverInfo_2; @Uint8() int driverInfo_3; @Uint8() int driverInfo_4; @Uint8() int driverInfo_5; @Uint8() int driverInfo_6; @Uint8() int driverInfo_7; @Uint8() int driverInfo_8; @Uint8() int driverInfo_9; @Uint8() int driverInfo_10; @Uint8() int driverInfo_11; @Uint8() int driverInfo_12; @Uint8() int driverInfo_13; @Uint8() int driverInfo_14; @Uint8() int driverInfo_15; @Uint8() int driverInfo_16; @Uint8() int driverInfo_17; @Uint8() int driverInfo_18; @Uint8() int driverInfo_19; @Uint8() int driverInfo_20; @Uint8() int driverInfo_21; @Uint8() int driverInfo_22; @Uint8() int driverInfo_23; @Uint8() int driverInfo_24; @Uint8() int driverInfo_25; @Uint8() int driverInfo_26; @Uint8() int driverInfo_27; @Uint8() int driverInfo_28; @Uint8() int driverInfo_29; @Uint8() int driverInfo_30; @Uint8() int driverInfo_31; @Uint8() int driverInfo_32; @Uint8() int driverInfo_33; @Uint8() int driverInfo_34; @Uint8() int driverInfo_35; @Uint8() int driverInfo_36; @Uint8() int driverInfo_37; @Uint8() int driverInfo_38; @Uint8() int driverInfo_39; @Uint8() int driverInfo_40; @Uint8() int driverInfo_41; @Uint8() int driverInfo_42; @Uint8() int driverInfo_43; @Uint8() int driverInfo_44; @Uint8() int driverInfo_45; @Uint8() int driverInfo_46; @Uint8() int driverInfo_47; @Uint8() int driverInfo_48; @Uint8() int driverInfo_49; @Uint8() int driverInfo_50; @Uint8() int driverInfo_51; @Uint8() int driverInfo_52; @Uint8() int driverInfo_53; @Uint8() int driverInfo_54; @Uint8() int driverInfo_55; @Uint8() int driverInfo_56; @Uint8() int driverInfo_57; @Uint8() int driverInfo_58; @Uint8() int driverInfo_59; @Uint8() int driverInfo_60; @Uint8() int driverInfo_61; @Uint8() int driverInfo_62; @Uint8() int driverInfo_63; @Uint8() int driverInfo_64; @Uint8() int driverInfo_65; @Uint8() int driverInfo_66; @Uint8() int driverInfo_67; @Uint8() int driverInfo_68; @Uint8() int driverInfo_69; @Uint8() int driverInfo_70; @Uint8() int driverInfo_71; @Uint8() int driverInfo_72; @Uint8() int driverInfo_73; @Uint8() int driverInfo_74; @Uint8() int driverInfo_75; @Uint8() int driverInfo_76; @Uint8() int driverInfo_77; @Uint8() int driverInfo_78; @Uint8() int driverInfo_79; @Uint8() int driverInfo_80; @Uint8() int driverInfo_81; @Uint8() int driverInfo_82; @Uint8() int driverInfo_83; @Uint8() int driverInfo_84; @Uint8() int driverInfo_85; @Uint8() int driverInfo_86; @Uint8() int driverInfo_87; @Uint8() int driverInfo_88; @Uint8() int driverInfo_89; @Uint8() int driverInfo_90; @Uint8() int driverInfo_91; @Uint8() int driverInfo_92; @Uint8() int driverInfo_93; @Uint8() int driverInfo_94; @Uint8() int driverInfo_95; @Uint8() int driverInfo_96; @Uint8() int driverInfo_97; @Uint8() int driverInfo_98; @Uint8() int driverInfo_99; @Uint8() int driverInfo_100; @Uint8() int driverInfo_101; @Uint8() int driverInfo_102; @Uint8() int driverInfo_103; @Uint8() int driverInfo_104; @Uint8() int driverInfo_105; @Uint8() int driverInfo_106; @Uint8() int driverInfo_107; @Uint8() int driverInfo_108; @Uint8() int driverInfo_109; @Uint8() int driverInfo_110; @Uint8() int driverInfo_111; @Uint8() int driverInfo_112; @Uint8() int driverInfo_113; @Uint8() int driverInfo_114; @Uint8() int driverInfo_115; @Uint8() int driverInfo_116; @Uint8() int driverInfo_117; @Uint8() int driverInfo_118; @Uint8() int driverInfo_119; @Uint8() int driverInfo_120; @Uint8() int driverInfo_121; @Uint8() int driverInfo_122; @Uint8() int driverInfo_123; @Uint8() int driverInfo_124; @Uint8() int driverInfo_125; @Uint8() int driverInfo_126; @Uint8() int driverInfo_127; @Uint8() int driverInfo_128; @Uint8() int driverInfo_129; @Uint8() int driverInfo_130; @Uint8() int driverInfo_131; @Uint8() int driverInfo_132; @Uint8() int driverInfo_133; @Uint8() int driverInfo_134; @Uint8() int driverInfo_135; @Uint8() int driverInfo_136; @Uint8() int driverInfo_137; @Uint8() int driverInfo_138; @Uint8() int driverInfo_139; @Uint8() int driverInfo_140; @Uint8() int driverInfo_141; @Uint8() int driverInfo_142; @Uint8() int driverInfo_143; @Uint8() int driverInfo_144; @Uint8() int driverInfo_145; @Uint8() int driverInfo_146; @Uint8() int driverInfo_147; @Uint8() int driverInfo_148; @Uint8() int driverInfo_149; @Uint8() int driverInfo_150; @Uint8() int driverInfo_151; @Uint8() int driverInfo_152; @Uint8() int driverInfo_153; @Uint8() int driverInfo_154; @Uint8() int driverInfo_155; @Uint8() int driverInfo_156; @Uint8() int driverInfo_157; @Uint8() int driverInfo_158; @Uint8() int driverInfo_159; @Uint8() int driverInfo_160; @Uint8() int driverInfo_161; @Uint8() int driverInfo_162; @Uint8() int driverInfo_163; @Uint8() int driverInfo_164; @Uint8() int driverInfo_165; @Uint8() int driverInfo_166; @Uint8() int driverInfo_167; @Uint8() int driverInfo_168; @Uint8() int driverInfo_169; @Uint8() int driverInfo_170; @Uint8() int driverInfo_171; @Uint8() int driverInfo_172; @Uint8() int driverInfo_173; @Uint8() int driverInfo_174; @Uint8() int driverInfo_175; @Uint8() int driverInfo_176; @Uint8() int driverInfo_177; @Uint8() int driverInfo_178; @Uint8() int driverInfo_179; @Uint8() int driverInfo_180; @Uint8() int driverInfo_181; @Uint8() int driverInfo_182; @Uint8() int driverInfo_183; @Uint8() int driverInfo_184; @Uint8() int driverInfo_185; @Uint8() int driverInfo_186; @Uint8() int driverInfo_187; @Uint8() int driverInfo_188; @Uint8() int driverInfo_189; @Uint8() int driverInfo_190; @Uint8() int driverInfo_191; @Uint8() int driverInfo_192; @Uint8() int driverInfo_193; @Uint8() int driverInfo_194; @Uint8() int driverInfo_195; @Uint8() int driverInfo_196; @Uint8() int driverInfo_197; @Uint8() int driverInfo_198; @Uint8() int driverInfo_199; @Uint8() int driverInfo_200; @Uint8() int driverInfo_201; @Uint8() int driverInfo_202; @Uint8() int driverInfo_203; @Uint8() int driverInfo_204; @Uint8() int driverInfo_205; @Uint8() int driverInfo_206; @Uint8() int driverInfo_207; @Uint8() int driverInfo_208; @Uint8() int driverInfo_209; @Uint8() int driverInfo_210; @Uint8() int driverInfo_211; @Uint8() int driverInfo_212; @Uint8() int driverInfo_213; @Uint8() int driverInfo_214; @Uint8() int driverInfo_215; @Uint8() int driverInfo_216; @Uint8() int driverInfo_217; @Uint8() int driverInfo_218; @Uint8() int driverInfo_219; @Uint8() int driverInfo_220; @Uint8() int driverInfo_221; @Uint8() int driverInfo_222; @Uint8() int driverInfo_223; @Uint8() int driverInfo_224; @Uint8() int driverInfo_225; @Uint8() int driverInfo_226; @Uint8() int driverInfo_227; @Uint8() int driverInfo_228; @Uint8() int driverInfo_229; @Uint8() int driverInfo_230; @Uint8() int driverInfo_231; @Uint8() int driverInfo_232; @Uint8() int driverInfo_233; @Uint8() int driverInfo_234; @Uint8() int driverInfo_235; @Uint8() int driverInfo_236; @Uint8() int driverInfo_237; @Uint8() int driverInfo_238; @Uint8() int driverInfo_239; @Uint8() int driverInfo_240; @Uint8() int driverInfo_241; @Uint8() int driverInfo_242; @Uint8() int driverInfo_243; @Uint8() int driverInfo_244; @Uint8() int driverInfo_245; @Uint8() int driverInfo_246; @Uint8() int driverInfo_247; @Uint8() int driverInfo_248; @Uint8() int driverInfo_249; @Uint8() int driverInfo_250; @Uint8() int driverInfo_251; @Uint8() int driverInfo_252; @Uint8() int driverInfo_253; @Uint8() int driverInfo_254; @Uint8() int driverInfo_255;
-  String get driverInfo {
-    var bytes = [driverInfo_0, driverInfo_1, driverInfo_2, driverInfo_3, driverInfo_4, driverInfo_5, driverInfo_6, driverInfo_7, driverInfo_8, driverInfo_9, driverInfo_10, driverInfo_11, driverInfo_12, driverInfo_13, driverInfo_14, driverInfo_15, driverInfo_16, driverInfo_17, driverInfo_18, driverInfo_19, driverInfo_20, driverInfo_21, driverInfo_22, driverInfo_23, driverInfo_24, driverInfo_25, driverInfo_26, driverInfo_27, driverInfo_28, driverInfo_29, driverInfo_30, driverInfo_31, driverInfo_32, driverInfo_33, driverInfo_34, driverInfo_35, driverInfo_36, driverInfo_37, driverInfo_38, driverInfo_39, driverInfo_40, driverInfo_41, driverInfo_42, driverInfo_43, driverInfo_44, driverInfo_45, driverInfo_46, driverInfo_47, driverInfo_48, driverInfo_49, driverInfo_50, driverInfo_51, driverInfo_52, driverInfo_53, driverInfo_54, driverInfo_55, driverInfo_56, driverInfo_57, driverInfo_58, driverInfo_59, driverInfo_60, driverInfo_61, driverInfo_62, driverInfo_63, driverInfo_64, driverInfo_65, driverInfo_66, driverInfo_67, driverInfo_68, driverInfo_69, driverInfo_70, driverInfo_71, driverInfo_72, driverInfo_73, driverInfo_74, driverInfo_75, driverInfo_76, driverInfo_77, driverInfo_78, driverInfo_79, driverInfo_80, driverInfo_81, driverInfo_82, driverInfo_83, driverInfo_84, driverInfo_85, driverInfo_86, driverInfo_87, driverInfo_88, driverInfo_89, driverInfo_90, driverInfo_91, driverInfo_92, driverInfo_93, driverInfo_94, driverInfo_95, driverInfo_96, driverInfo_97, driverInfo_98, driverInfo_99, driverInfo_100, driverInfo_101, driverInfo_102, driverInfo_103, driverInfo_104, driverInfo_105, driverInfo_106, driverInfo_107, driverInfo_108, driverInfo_109, driverInfo_110, driverInfo_111, driverInfo_112, driverInfo_113, driverInfo_114, driverInfo_115, driverInfo_116, driverInfo_117, driverInfo_118, driverInfo_119, driverInfo_120, driverInfo_121, driverInfo_122, driverInfo_123, driverInfo_124, driverInfo_125, driverInfo_126, driverInfo_127, driverInfo_128, driverInfo_129, driverInfo_130, driverInfo_131, driverInfo_132, driverInfo_133, driverInfo_134, driverInfo_135, driverInfo_136, driverInfo_137, driverInfo_138, driverInfo_139, driverInfo_140, driverInfo_141, driverInfo_142, driverInfo_143, driverInfo_144, driverInfo_145, driverInfo_146, driverInfo_147, driverInfo_148, driverInfo_149, driverInfo_150, driverInfo_151, driverInfo_152, driverInfo_153, driverInfo_154, driverInfo_155, driverInfo_156, driverInfo_157, driverInfo_158, driverInfo_159, driverInfo_160, driverInfo_161, driverInfo_162, driverInfo_163, driverInfo_164, driverInfo_165, driverInfo_166, driverInfo_167, driverInfo_168, driverInfo_169, driverInfo_170, driverInfo_171, driverInfo_172, driverInfo_173, driverInfo_174, driverInfo_175, driverInfo_176, driverInfo_177, driverInfo_178, driverInfo_179, driverInfo_180, driverInfo_181, driverInfo_182, driverInfo_183, driverInfo_184, driverInfo_185, driverInfo_186, driverInfo_187, driverInfo_188, driverInfo_189, driverInfo_190, driverInfo_191, driverInfo_192, driverInfo_193, driverInfo_194, driverInfo_195, driverInfo_196, driverInfo_197, driverInfo_198, driverInfo_199, driverInfo_200, driverInfo_201, driverInfo_202, driverInfo_203, driverInfo_204, driverInfo_205, driverInfo_206, driverInfo_207, driverInfo_208, driverInfo_209, driverInfo_210, driverInfo_211, driverInfo_212, driverInfo_213, driverInfo_214, driverInfo_215, driverInfo_216, driverInfo_217, driverInfo_218, driverInfo_219, driverInfo_220, driverInfo_221, driverInfo_222, driverInfo_223, driverInfo_224, driverInfo_225, driverInfo_226, driverInfo_227, driverInfo_228, driverInfo_229, driverInfo_230, driverInfo_231, driverInfo_232, driverInfo_233, driverInfo_234, driverInfo_235, driverInfo_236, driverInfo_237, driverInfo_238, driverInfo_239, driverInfo_240, driverInfo_241, driverInfo_242, driverInfo_243, driverInfo_244, driverInfo_245, driverInfo_246, driverInfo_247, driverInfo_248, driverInfo_249, driverInfo_250, driverInfo_251, driverInfo_252, driverInfo_253, driverInfo_254, driverInfo_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set driverInfo(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    driverInfo_0 = bytes[0]; driverInfo_1 = bytes[1]; driverInfo_2 = bytes[2]; driverInfo_3 = bytes[3]; driverInfo_4 = bytes[4]; driverInfo_5 = bytes[5]; driverInfo_6 = bytes[6]; driverInfo_7 = bytes[7]; driverInfo_8 = bytes[8]; driverInfo_9 = bytes[9]; driverInfo_10 = bytes[10]; driverInfo_11 = bytes[11]; driverInfo_12 = bytes[12]; driverInfo_13 = bytes[13]; driverInfo_14 = bytes[14]; driverInfo_15 = bytes[15]; driverInfo_16 = bytes[16]; driverInfo_17 = bytes[17]; driverInfo_18 = bytes[18]; driverInfo_19 = bytes[19]; driverInfo_20 = bytes[20]; driverInfo_21 = bytes[21]; driverInfo_22 = bytes[22]; driverInfo_23 = bytes[23]; driverInfo_24 = bytes[24]; driverInfo_25 = bytes[25]; driverInfo_26 = bytes[26]; driverInfo_27 = bytes[27]; driverInfo_28 = bytes[28]; driverInfo_29 = bytes[29]; driverInfo_30 = bytes[30]; driverInfo_31 = bytes[31]; driverInfo_32 = bytes[32]; driverInfo_33 = bytes[33]; driverInfo_34 = bytes[34]; driverInfo_35 = bytes[35]; driverInfo_36 = bytes[36]; driverInfo_37 = bytes[37]; driverInfo_38 = bytes[38]; driverInfo_39 = bytes[39]; driverInfo_40 = bytes[40]; driverInfo_41 = bytes[41]; driverInfo_42 = bytes[42]; driverInfo_43 = bytes[43]; driverInfo_44 = bytes[44]; driverInfo_45 = bytes[45]; driverInfo_46 = bytes[46]; driverInfo_47 = bytes[47]; driverInfo_48 = bytes[48]; driverInfo_49 = bytes[49]; driverInfo_50 = bytes[50]; driverInfo_51 = bytes[51]; driverInfo_52 = bytes[52]; driverInfo_53 = bytes[53]; driverInfo_54 = bytes[54]; driverInfo_55 = bytes[55]; driverInfo_56 = bytes[56]; driverInfo_57 = bytes[57]; driverInfo_58 = bytes[58]; driverInfo_59 = bytes[59]; driverInfo_60 = bytes[60]; driverInfo_61 = bytes[61]; driverInfo_62 = bytes[62]; driverInfo_63 = bytes[63]; driverInfo_64 = bytes[64]; driverInfo_65 = bytes[65]; driverInfo_66 = bytes[66]; driverInfo_67 = bytes[67]; driverInfo_68 = bytes[68]; driverInfo_69 = bytes[69]; driverInfo_70 = bytes[70]; driverInfo_71 = bytes[71]; driverInfo_72 = bytes[72]; driverInfo_73 = bytes[73]; driverInfo_74 = bytes[74]; driverInfo_75 = bytes[75]; driverInfo_76 = bytes[76]; driverInfo_77 = bytes[77]; driverInfo_78 = bytes[78]; driverInfo_79 = bytes[79]; driverInfo_80 = bytes[80]; driverInfo_81 = bytes[81]; driverInfo_82 = bytes[82]; driverInfo_83 = bytes[83]; driverInfo_84 = bytes[84]; driverInfo_85 = bytes[85]; driverInfo_86 = bytes[86]; driverInfo_87 = bytes[87]; driverInfo_88 = bytes[88]; driverInfo_89 = bytes[89]; driverInfo_90 = bytes[90]; driverInfo_91 = bytes[91]; driverInfo_92 = bytes[92]; driverInfo_93 = bytes[93]; driverInfo_94 = bytes[94]; driverInfo_95 = bytes[95]; driverInfo_96 = bytes[96]; driverInfo_97 = bytes[97]; driverInfo_98 = bytes[98]; driverInfo_99 = bytes[99]; driverInfo_100 = bytes[100]; driverInfo_101 = bytes[101]; driverInfo_102 = bytes[102]; driverInfo_103 = bytes[103]; driverInfo_104 = bytes[104]; driverInfo_105 = bytes[105]; driverInfo_106 = bytes[106]; driverInfo_107 = bytes[107]; driverInfo_108 = bytes[108]; driverInfo_109 = bytes[109]; driverInfo_110 = bytes[110]; driverInfo_111 = bytes[111]; driverInfo_112 = bytes[112]; driverInfo_113 = bytes[113]; driverInfo_114 = bytes[114]; driverInfo_115 = bytes[115]; driverInfo_116 = bytes[116]; driverInfo_117 = bytes[117]; driverInfo_118 = bytes[118]; driverInfo_119 = bytes[119]; driverInfo_120 = bytes[120]; driverInfo_121 = bytes[121]; driverInfo_122 = bytes[122]; driverInfo_123 = bytes[123]; driverInfo_124 = bytes[124]; driverInfo_125 = bytes[125]; driverInfo_126 = bytes[126]; driverInfo_127 = bytes[127]; driverInfo_128 = bytes[128]; driverInfo_129 = bytes[129]; driverInfo_130 = bytes[130]; driverInfo_131 = bytes[131]; driverInfo_132 = bytes[132]; driverInfo_133 = bytes[133]; driverInfo_134 = bytes[134]; driverInfo_135 = bytes[135]; driverInfo_136 = bytes[136]; driverInfo_137 = bytes[137]; driverInfo_138 = bytes[138]; driverInfo_139 = bytes[139]; driverInfo_140 = bytes[140]; driverInfo_141 = bytes[141]; driverInfo_142 = bytes[142]; driverInfo_143 = bytes[143]; driverInfo_144 = bytes[144]; driverInfo_145 = bytes[145]; driverInfo_146 = bytes[146]; driverInfo_147 = bytes[147]; driverInfo_148 = bytes[148]; driverInfo_149 = bytes[149]; driverInfo_150 = bytes[150]; driverInfo_151 = bytes[151]; driverInfo_152 = bytes[152]; driverInfo_153 = bytes[153]; driverInfo_154 = bytes[154]; driverInfo_155 = bytes[155]; driverInfo_156 = bytes[156]; driverInfo_157 = bytes[157]; driverInfo_158 = bytes[158]; driverInfo_159 = bytes[159]; driverInfo_160 = bytes[160]; driverInfo_161 = bytes[161]; driverInfo_162 = bytes[162]; driverInfo_163 = bytes[163]; driverInfo_164 = bytes[164]; driverInfo_165 = bytes[165]; driverInfo_166 = bytes[166]; driverInfo_167 = bytes[167]; driverInfo_168 = bytes[168]; driverInfo_169 = bytes[169]; driverInfo_170 = bytes[170]; driverInfo_171 = bytes[171]; driverInfo_172 = bytes[172]; driverInfo_173 = bytes[173]; driverInfo_174 = bytes[174]; driverInfo_175 = bytes[175]; driverInfo_176 = bytes[176]; driverInfo_177 = bytes[177]; driverInfo_178 = bytes[178]; driverInfo_179 = bytes[179]; driverInfo_180 = bytes[180]; driverInfo_181 = bytes[181]; driverInfo_182 = bytes[182]; driverInfo_183 = bytes[183]; driverInfo_184 = bytes[184]; driverInfo_185 = bytes[185]; driverInfo_186 = bytes[186]; driverInfo_187 = bytes[187]; driverInfo_188 = bytes[188]; driverInfo_189 = bytes[189]; driverInfo_190 = bytes[190]; driverInfo_191 = bytes[191]; driverInfo_192 = bytes[192]; driverInfo_193 = bytes[193]; driverInfo_194 = bytes[194]; driverInfo_195 = bytes[195]; driverInfo_196 = bytes[196]; driverInfo_197 = bytes[197]; driverInfo_198 = bytes[198]; driverInfo_199 = bytes[199]; driverInfo_200 = bytes[200]; driverInfo_201 = bytes[201]; driverInfo_202 = bytes[202]; driverInfo_203 = bytes[203]; driverInfo_204 = bytes[204]; driverInfo_205 = bytes[205]; driverInfo_206 = bytes[206]; driverInfo_207 = bytes[207]; driverInfo_208 = bytes[208]; driverInfo_209 = bytes[209]; driverInfo_210 = bytes[210]; driverInfo_211 = bytes[211]; driverInfo_212 = bytes[212]; driverInfo_213 = bytes[213]; driverInfo_214 = bytes[214]; driverInfo_215 = bytes[215]; driverInfo_216 = bytes[216]; driverInfo_217 = bytes[217]; driverInfo_218 = bytes[218]; driverInfo_219 = bytes[219]; driverInfo_220 = bytes[220]; driverInfo_221 = bytes[221]; driverInfo_222 = bytes[222]; driverInfo_223 = bytes[223]; driverInfo_224 = bytes[224]; driverInfo_225 = bytes[225]; driverInfo_226 = bytes[226]; driverInfo_227 = bytes[227]; driverInfo_228 = bytes[228]; driverInfo_229 = bytes[229]; driverInfo_230 = bytes[230]; driverInfo_231 = bytes[231]; driverInfo_232 = bytes[232]; driverInfo_233 = bytes[233]; driverInfo_234 = bytes[234]; driverInfo_235 = bytes[235]; driverInfo_236 = bytes[236]; driverInfo_237 = bytes[237]; driverInfo_238 = bytes[238]; driverInfo_239 = bytes[239]; driverInfo_240 = bytes[240]; driverInfo_241 = bytes[241]; driverInfo_242 = bytes[242]; driverInfo_243 = bytes[243]; driverInfo_244 = bytes[244]; driverInfo_245 = bytes[245]; driverInfo_246 = bytes[246]; driverInfo_247 = bytes[247]; driverInfo_248 = bytes[248]; driverInfo_249 = bytes[249]; driverInfo_250 = bytes[250]; driverInfo_251 = bytes[251]; driverInfo_252 = bytes[252]; driverInfo_253 = bytes[253]; driverInfo_254 = bytes[254]; driverInfo_255 = bytes[255];
-  }
-  @Uint8() int conformanceVersion_major;
-  @Uint8() int conformanceVersion_minor;
-  @Uint8() int conformanceVersion_subminor;
-  @Uint8() int conformanceVersion_patch;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int driverID;
+  @Array(256)
+  external Array<Uint8> driverName;
+  @Array(256)
+  external Array<Uint8> driverInfo;
+  @Uint8()
+  external int conformanceVersion_major;
+  @Uint8()
+  external int conformanceVersion_minor;
+  @Uint8()
+  external int conformanceVersion_subminor;
+  @Uint8()
+  external int conformanceVersion_patch;
 }
 
 class VkPhysicalDeviceDriverPropertiesKHR extends Opaque {
 }
 
 class VkPresentRegionsKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int swapchainCount;
-  Pointer<VkPresentRegionKHR> pRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int swapchainCount;
+  external Pointer<VkPresentRegionKHR> pRegions;
 }
 
 class VkPresentRegionKHR extends Struct {
-  @Uint32() int rectangleCount;
-  Pointer<VkRectLayerKHR> pRectangles;
+  @Uint32()
+  external int rectangleCount;
+  external Pointer<VkRectLayerKHR> pRectangles;
 }
 
 class VkRectLayerKHR extends Struct {
-  @Int32() int offset_x;
-  @Int32() int offset_y;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int layer;
+  @Int32()
+  external int offset_x;
+  @Int32()
+  external int offset_y;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int layer;
 }
 
 class VkPhysicalDeviceVariablePointersFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int variablePointersStorageBuffer;
-  @Uint32() int variablePointers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int variablePointersStorageBuffer;
+  @Uint32()
+  external int variablePointers;
 }
 
 class VkPhysicalDeviceVariablePointersFeaturesKHR extends Opaque {
@@ -5145,1304 +6331,1740 @@ class VkPhysicalDeviceVariablePointerFeatures extends Opaque {
 }
 
 class VkExternalMemoryProperties extends Struct {
-  @Uint32() int externalMemoryFeatures;
-  @Uint32() int exportFromImportedHandleTypes;
-  @Uint32() int compatibleHandleTypes;
+  @Uint32()
+  external int externalMemoryFeatures;
+  @Uint32()
+  external int exportFromImportedHandleTypes;
+  @Uint32()
+  external int compatibleHandleTypes;
 }
 
 class VkExternalMemoryPropertiesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceExternalImageFormatInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int handleType;
 }
 
 class VkPhysicalDeviceExternalImageFormatInfoKHR extends Opaque {
 }
 
 class VkExternalImageFormatProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int externalMemoryProperties_externalMemoryFeatures;
-  @Uint32() int externalMemoryProperties_exportFromImportedHandleTypes;
-  @Uint32() int externalMemoryProperties_compatibleHandleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int externalMemoryProperties_externalMemoryFeatures;
+  @Uint32()
+  external int externalMemoryProperties_exportFromImportedHandleTypes;
+  @Uint32()
+  external int externalMemoryProperties_compatibleHandleTypes;
 }
 
 class VkExternalImageFormatPropertiesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceExternalBufferInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int usage;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int usage;
+  @Int32()
+  external int handleType;
 }
 
 class VkPhysicalDeviceExternalBufferInfoKHR extends Opaque {
 }
 
 class VkExternalBufferProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int externalMemoryProperties_externalMemoryFeatures;
-  @Uint32() int externalMemoryProperties_exportFromImportedHandleTypes;
-  @Uint32() int externalMemoryProperties_compatibleHandleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int externalMemoryProperties_externalMemoryFeatures;
+  @Uint32()
+  external int externalMemoryProperties_exportFromImportedHandleTypes;
+  @Uint32()
+  external int externalMemoryProperties_compatibleHandleTypes;
 }
 
 class VkExternalBufferPropertiesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceIDProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint8() int deviceUUID_0; @Uint8() int deviceUUID_1; @Uint8() int deviceUUID_2; @Uint8() int deviceUUID_3; @Uint8() int deviceUUID_4; @Uint8() int deviceUUID_5; @Uint8() int deviceUUID_6; @Uint8() int deviceUUID_7; @Uint8() int deviceUUID_8; @Uint8() int deviceUUID_9; @Uint8() int deviceUUID_10; @Uint8() int deviceUUID_11; @Uint8() int deviceUUID_12; @Uint8() int deviceUUID_13; @Uint8() int deviceUUID_14; @Uint8() int deviceUUID_15;
-  String get deviceUUID {
-    var bytes = [deviceUUID_0, deviceUUID_1, deviceUUID_2, deviceUUID_3, deviceUUID_4, deviceUUID_5, deviceUUID_6, deviceUUID_7, deviceUUID_8, deviceUUID_9, deviceUUID_10, deviceUUID_11, deviceUUID_12, deviceUUID_13, deviceUUID_14, deviceUUID_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set deviceUUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    deviceUUID_0 = bytes[0]; deviceUUID_1 = bytes[1]; deviceUUID_2 = bytes[2]; deviceUUID_3 = bytes[3]; deviceUUID_4 = bytes[4]; deviceUUID_5 = bytes[5]; deviceUUID_6 = bytes[6]; deviceUUID_7 = bytes[7]; deviceUUID_8 = bytes[8]; deviceUUID_9 = bytes[9]; deviceUUID_10 = bytes[10]; deviceUUID_11 = bytes[11]; deviceUUID_12 = bytes[12]; deviceUUID_13 = bytes[13]; deviceUUID_14 = bytes[14]; deviceUUID_15 = bytes[15];
-  }
-  @Uint8() int driverUUID_0; @Uint8() int driverUUID_1; @Uint8() int driverUUID_2; @Uint8() int driverUUID_3; @Uint8() int driverUUID_4; @Uint8() int driverUUID_5; @Uint8() int driverUUID_6; @Uint8() int driverUUID_7; @Uint8() int driverUUID_8; @Uint8() int driverUUID_9; @Uint8() int driverUUID_10; @Uint8() int driverUUID_11; @Uint8() int driverUUID_12; @Uint8() int driverUUID_13; @Uint8() int driverUUID_14; @Uint8() int driverUUID_15;
-  String get driverUUID {
-    var bytes = [driverUUID_0, driverUUID_1, driverUUID_2, driverUUID_3, driverUUID_4, driverUUID_5, driverUUID_6, driverUUID_7, driverUUID_8, driverUUID_9, driverUUID_10, driverUUID_11, driverUUID_12, driverUUID_13, driverUUID_14, driverUUID_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set driverUUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    driverUUID_0 = bytes[0]; driverUUID_1 = bytes[1]; driverUUID_2 = bytes[2]; driverUUID_3 = bytes[3]; driverUUID_4 = bytes[4]; driverUUID_5 = bytes[5]; driverUUID_6 = bytes[6]; driverUUID_7 = bytes[7]; driverUUID_8 = bytes[8]; driverUUID_9 = bytes[9]; driverUUID_10 = bytes[10]; driverUUID_11 = bytes[11]; driverUUID_12 = bytes[12]; driverUUID_13 = bytes[13]; driverUUID_14 = bytes[14]; driverUUID_15 = bytes[15];
-  }
-  @Uint8() int deviceLUID_0; @Uint8() int deviceLUID_1; @Uint8() int deviceLUID_2; @Uint8() int deviceLUID_3; @Uint8() int deviceLUID_4; @Uint8() int deviceLUID_5; @Uint8() int deviceLUID_6; @Uint8() int deviceLUID_7;
-  String get deviceLUID {
-    var bytes = [deviceLUID_0, deviceLUID_1, deviceLUID_2, deviceLUID_3, deviceLUID_4, deviceLUID_5, deviceLUID_6, deviceLUID_7].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set deviceLUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(8-value.length, 0));
-    deviceLUID_0 = bytes[0]; deviceLUID_1 = bytes[1]; deviceLUID_2 = bytes[2]; deviceLUID_3 = bytes[3]; deviceLUID_4 = bytes[4]; deviceLUID_5 = bytes[5]; deviceLUID_6 = bytes[6]; deviceLUID_7 = bytes[7];
-  }
-  @Uint32() int deviceNodeMask;
-  @Uint32() int deviceLUIDValid;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(16)
+  external Array<Uint8> deviceUUID;
+  @Array(16)
+  external Array<Uint8> driverUUID;
+  @Array(8)
+  external Array<Uint8> deviceLUID;
+  @Uint32()
+  external int deviceNodeMask;
+  @Uint32()
+  external int deviceLUIDValid;
 }
 
 class VkPhysicalDeviceIDPropertiesKHR extends Opaque {
 }
 
 class VkExternalMemoryImageCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkExternalMemoryImageCreateInfoKHR extends Opaque {
 }
 
 class VkExternalMemoryBufferCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkExternalMemoryBufferCreateInfoKHR extends Opaque {
 }
 
 class VkExportMemoryAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkExportMemoryAllocateInfoKHR extends Opaque {
 }
 
 class VkImportMemoryWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int handleType;
-  Pointer handle;
-  Pointer name;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int handleType;
+  external Pointer handle;
+  external Pointer name;
 }
 
 class VkExportMemoryWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pAttributes;
-  Pointer dwAccess;
-  Pointer name;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pAttributes;
+  external Pointer dwAccess;
+  external Pointer name;
 }
 
 class VkMemoryWin32HandlePropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int memoryTypeBits;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int memoryTypeBits;
 }
 
 class VkMemoryGetWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDeviceMemory> memory;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDeviceMemory> memory;
+  @Int32()
+  external int handleType;
 }
 
 class VkImportMemoryFdInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int handleType;
-  Pointer fd;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int handleType;
+  external Pointer fd;
 }
 
 class VkMemoryFdPropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int memoryTypeBits;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int memoryTypeBits;
 }
 
 class VkMemoryGetFdInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDeviceMemory> memory;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDeviceMemory> memory;
+  @Int32()
+  external int handleType;
 }
 
 class VkWin32KeyedMutexAcquireReleaseInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int acquireCount;
-  Pointer<Pointer<VkDeviceMemory>> pAcquireSyncs;
-  Pointer pAcquireKeys;
-  Pointer pAcquireTimeouts;
-  @Uint32() int releaseCount;
-  Pointer<Pointer<VkDeviceMemory>> pReleaseSyncs;
-  Pointer pReleaseKeys;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int acquireCount;
+  external Pointer<Pointer<VkDeviceMemory>> pAcquireSyncs;
+  external Pointer pAcquireKeys;
+  external Pointer pAcquireTimeouts;
+  @Uint32()
+  external int releaseCount;
+  external Pointer<Pointer<VkDeviceMemory>> pReleaseSyncs;
+  external Pointer pReleaseKeys;
 }
 
 class VkPhysicalDeviceExternalSemaphoreInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int handleType;
 }
 
 class VkPhysicalDeviceExternalSemaphoreInfoKHR extends Opaque {
 }
 
 class VkExternalSemaphoreProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int exportFromImportedHandleTypes;
-  @Uint32() int compatibleHandleTypes;
-  @Uint32() int externalSemaphoreFeatures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int exportFromImportedHandleTypes;
+  @Uint32()
+  external int compatibleHandleTypes;
+  @Uint32()
+  external int externalSemaphoreFeatures;
 }
 
 class VkExternalSemaphorePropertiesKHR extends Opaque {
 }
 
 class VkExportSemaphoreCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkExportSemaphoreCreateInfoKHR extends Opaque {
 }
 
 class VkImportSemaphoreWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSemaphore> semaphore;
-  @Uint32() int flags;
-  @Int32() int handleType;
-  Pointer handle;
-  Pointer name;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSemaphore> semaphore;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int handleType;
+  external Pointer handle;
+  external Pointer name;
 }
 
 class VkExportSemaphoreWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pAttributes;
-  Pointer dwAccess;
-  Pointer name;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pAttributes;
+  external Pointer dwAccess;
+  external Pointer name;
 }
 
 class VkD3D12FenceSubmitInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int waitSemaphoreValuesCount;
-  Pointer pWaitSemaphoreValues;
-  @Uint32() int signalSemaphoreValuesCount;
-  Pointer pSignalSemaphoreValues;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int waitSemaphoreValuesCount;
+  external Pointer pWaitSemaphoreValues;
+  @Uint32()
+  external int signalSemaphoreValuesCount;
+  external Pointer pSignalSemaphoreValues;
 }
 
 class VkSemaphoreGetWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSemaphore> semaphore;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSemaphore> semaphore;
+  @Int32()
+  external int handleType;
 }
 
 class VkImportSemaphoreFdInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSemaphore> semaphore;
-  @Uint32() int flags;
-  @Int32() int handleType;
-  Pointer fd;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSemaphore> semaphore;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int handleType;
+  external Pointer fd;
 }
 
 class VkSemaphoreGetFdInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSemaphore> semaphore;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSemaphore> semaphore;
+  @Int32()
+  external int handleType;
 }
 
 class VkPhysicalDeviceExternalFenceInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int handleType;
 }
 
 class VkPhysicalDeviceExternalFenceInfoKHR extends Opaque {
 }
 
 class VkExternalFenceProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int exportFromImportedHandleTypes;
-  @Uint32() int compatibleHandleTypes;
-  @Uint32() int externalFenceFeatures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int exportFromImportedHandleTypes;
+  @Uint32()
+  external int compatibleHandleTypes;
+  @Uint32()
+  external int externalFenceFeatures;
 }
 
 class VkExternalFencePropertiesKHR extends Opaque {
 }
 
 class VkExportFenceCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int handleTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int handleTypes;
 }
 
 class VkExportFenceCreateInfoKHR extends Opaque {
 }
 
 class VkImportFenceWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkFence> fence;
-  @Uint32() int flags;
-  @Int32() int handleType;
-  Pointer handle;
-  Pointer name;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkFence> fence;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int handleType;
+  external Pointer handle;
+  external Pointer name;
 }
 
 class VkExportFenceWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pAttributes;
-  Pointer dwAccess;
-  Pointer name;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pAttributes;
+  external Pointer dwAccess;
+  external Pointer name;
 }
 
 class VkFenceGetWin32HandleInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkFence> fence;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkFence> fence;
+  @Int32()
+  external int handleType;
 }
 
 class VkImportFenceFdInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkFence> fence;
-  @Uint32() int flags;
-  @Int32() int handleType;
-  Pointer fd;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkFence> fence;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int handleType;
+  external Pointer fd;
 }
 
 class VkFenceGetFdInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkFence> fence;
-  @Int32() int handleType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkFence> fence;
+  @Int32()
+  external int handleType;
 }
 
 class VkPhysicalDeviceMultiviewFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int multiview;
-  @Uint32() int multiviewGeometryShader;
-  @Uint32() int multiviewTessellationShader;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int multiview;
+  @Uint32()
+  external int multiviewGeometryShader;
+  @Uint32()
+  external int multiviewTessellationShader;
 }
 
 class VkPhysicalDeviceMultiviewFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceMultiviewProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxMultiviewViewCount;
-  @Uint32() int maxMultiviewInstanceIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxMultiviewViewCount;
+  @Uint32()
+  external int maxMultiviewInstanceIndex;
 }
 
 class VkPhysicalDeviceMultiviewPropertiesKHR extends Opaque {
 }
 
 class VkRenderPassMultiviewCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int subpassCount;
-  Pointer pViewMasks;
-  @Uint32() int dependencyCount;
-  Pointer pViewOffsets;
-  @Uint32() int correlationMaskCount;
-  Pointer pCorrelationMasks;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int subpassCount;
+  external Pointer pViewMasks;
+  @Uint32()
+  external int dependencyCount;
+  external Pointer pViewOffsets;
+  @Uint32()
+  external int correlationMaskCount;
+  external Pointer pCorrelationMasks;
 }
 
 class VkRenderPassMultiviewCreateInfoKHR extends Opaque {
 }
 
 class VkSurfaceCapabilities2EXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int minImageCount;
-  @Uint32() int maxImageCount;
-  @Uint32() int currentExtent_width;
-  @Uint32() int currentExtent_height;
-  @Uint32() int minImageExtent_width;
-  @Uint32() int minImageExtent_height;
-  @Uint32() int maxImageExtent_width;
-  @Uint32() int maxImageExtent_height;
-  @Uint32() int maxImageArrayLayers;
-  @Uint32() int supportedTransforms;
-  @Int32() int currentTransform;
-  @Uint32() int supportedCompositeAlpha;
-  @Uint32() int supportedUsageFlags;
-  @Uint32() int supportedSurfaceCounters;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int minImageCount;
+  @Uint32()
+  external int maxImageCount;
+  @Uint32()
+  external int currentExtent_width;
+  @Uint32()
+  external int currentExtent_height;
+  @Uint32()
+  external int minImageExtent_width;
+  @Uint32()
+  external int minImageExtent_height;
+  @Uint32()
+  external int maxImageExtent_width;
+  @Uint32()
+  external int maxImageExtent_height;
+  @Uint32()
+  external int maxImageArrayLayers;
+  @Uint32()
+  external int supportedTransforms;
+  @Int32()
+  external int currentTransform;
+  @Uint32()
+  external int supportedCompositeAlpha;
+  @Uint32()
+  external int supportedUsageFlags;
+  @Uint32()
+  external int supportedSurfaceCounters;
 }
 
 class VkDisplayPowerInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int powerState;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int powerState;
 }
 
 class VkDeviceEventInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int deviceEvent;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int deviceEvent;
 }
 
 class VkDisplayEventInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int displayEvent;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int displayEvent;
 }
 
 class VkSwapchainCounterCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int surfaceCounters;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int surfaceCounters;
 }
 
 class VkPhysicalDeviceGroupProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int physicalDeviceCount;
-  Pointer physicalDevices_0; Pointer physicalDevices_1; Pointer physicalDevices_2; Pointer physicalDevices_3; Pointer physicalDevices_4; Pointer physicalDevices_5; Pointer physicalDevices_6; Pointer physicalDevices_7; Pointer physicalDevices_8; Pointer physicalDevices_9; Pointer physicalDevices_10; Pointer physicalDevices_11; Pointer physicalDevices_12; Pointer physicalDevices_13; Pointer physicalDevices_14; Pointer physicalDevices_15; Pointer physicalDevices_16; Pointer physicalDevices_17; Pointer physicalDevices_18; Pointer physicalDevices_19; Pointer physicalDevices_20; Pointer physicalDevices_21; Pointer physicalDevices_22; Pointer physicalDevices_23; Pointer physicalDevices_24; Pointer physicalDevices_25; Pointer physicalDevices_26; Pointer physicalDevices_27; Pointer physicalDevices_28; Pointer physicalDevices_29; Pointer physicalDevices_30; Pointer physicalDevices_31;
-  @Uint32() int subsetAllocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int physicalDeviceCount;
+  @Array(32)
+  external Array<Pointer> physicalDevices;
+  @Uint32()
+  external int subsetAllocation;
 }
 
 class VkPhysicalDeviceGroupPropertiesKHR extends Opaque {
 }
 
 class VkMemoryAllocateFlagsInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int deviceMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int deviceMask;
 }
 
 class VkMemoryAllocateFlagsInfoKHR extends Opaque {
 }
 
 class VkBindBufferMemoryInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> buffer;
-  Pointer<VkDeviceMemory> memory;
-  @Uint64() int memoryOffset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> buffer;
+  external Pointer<VkDeviceMemory> memory;
+  @Uint64()
+  external int memoryOffset;
 }
 
 class VkBindBufferMemoryInfoKHR extends Opaque {
 }
 
 class VkBindBufferMemoryDeviceGroupInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceIndexCount;
-  Pointer pDeviceIndices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceIndexCount;
+  external Pointer pDeviceIndices;
 }
 
 class VkBindBufferMemoryDeviceGroupInfoKHR extends Opaque {
 }
 
 class VkBindImageMemoryInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> image;
-  Pointer<VkDeviceMemory> memory;
-  @Uint64() int memoryOffset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> image;
+  external Pointer<VkDeviceMemory> memory;
+  @Uint64()
+  external int memoryOffset;
 }
 
 class VkBindImageMemoryInfoKHR extends Opaque {
 }
 
 class VkBindImageMemoryDeviceGroupInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceIndexCount;
-  Pointer pDeviceIndices;
-  @Uint32() int splitInstanceBindRegionCount;
-  Pointer<VkRect2D> pSplitInstanceBindRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceIndexCount;
+  external Pointer pDeviceIndices;
+  @Uint32()
+  external int splitInstanceBindRegionCount;
+  external Pointer<VkRect2D> pSplitInstanceBindRegions;
 }
 
 class VkBindImageMemoryDeviceGroupInfoKHR extends Opaque {
 }
 
 class VkDeviceGroupRenderPassBeginInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceMask;
-  @Uint32() int deviceRenderAreaCount;
-  Pointer<VkRect2D> pDeviceRenderAreas;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceMask;
+  @Uint32()
+  external int deviceRenderAreaCount;
+  external Pointer<VkRect2D> pDeviceRenderAreas;
 }
 
 class VkDeviceGroupRenderPassBeginInfoKHR extends Opaque {
 }
 
 class VkDeviceGroupCommandBufferBeginInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceMask;
 }
 
 class VkDeviceGroupCommandBufferBeginInfoKHR extends Opaque {
 }
 
 class VkDeviceGroupSubmitInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int waitSemaphoreCount;
-  Pointer pWaitSemaphoreDeviceIndices;
-  @Uint32() int commandBufferCount;
-  Pointer pCommandBufferDeviceMasks;
-  @Uint32() int signalSemaphoreCount;
-  Pointer pSignalSemaphoreDeviceIndices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int waitSemaphoreCount;
+  external Pointer pWaitSemaphoreDeviceIndices;
+  @Uint32()
+  external int commandBufferCount;
+  external Pointer pCommandBufferDeviceMasks;
+  @Uint32()
+  external int signalSemaphoreCount;
+  external Pointer pSignalSemaphoreDeviceIndices;
 }
 
 class VkDeviceGroupSubmitInfoKHR extends Opaque {
 }
 
 class VkDeviceGroupBindSparseInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int resourceDeviceIndex;
-  @Uint32() int memoryDeviceIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int resourceDeviceIndex;
+  @Uint32()
+  external int memoryDeviceIndex;
 }
 
 class VkDeviceGroupBindSparseInfoKHR extends Opaque {
 }
 
 class VkDeviceGroupPresentCapabilitiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int presentMask_0; @Uint32() int presentMask_1; @Uint32() int presentMask_2; @Uint32() int presentMask_3; @Uint32() int presentMask_4; @Uint32() int presentMask_5; @Uint32() int presentMask_6; @Uint32() int presentMask_7; @Uint32() int presentMask_8; @Uint32() int presentMask_9; @Uint32() int presentMask_10; @Uint32() int presentMask_11; @Uint32() int presentMask_12; @Uint32() int presentMask_13; @Uint32() int presentMask_14; @Uint32() int presentMask_15; @Uint32() int presentMask_16; @Uint32() int presentMask_17; @Uint32() int presentMask_18; @Uint32() int presentMask_19; @Uint32() int presentMask_20; @Uint32() int presentMask_21; @Uint32() int presentMask_22; @Uint32() int presentMask_23; @Uint32() int presentMask_24; @Uint32() int presentMask_25; @Uint32() int presentMask_26; @Uint32() int presentMask_27; @Uint32() int presentMask_28; @Uint32() int presentMask_29; @Uint32() int presentMask_30; @Uint32() int presentMask_31;
-  @Uint32() int modes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(32)
+  external Array<Uint32> presentMask;
+  @Uint32()
+  external int modes;
 }
 
 class VkImageSwapchainCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSwapchainKHR> swapchain;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSwapchainKHR> swapchain;
 }
 
 class VkBindImageMemorySwapchainInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSwapchainKHR> swapchain;
-  @Uint32() int imageIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSwapchainKHR> swapchain;
+  @Uint32()
+  external int imageIndex;
 }
 
 class VkAcquireNextImageInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSwapchainKHR> swapchain;
-  @Uint64() int timeout;
-  Pointer<VkSemaphore> semaphore;
-  Pointer<VkFence> fence;
-  @Uint32() int deviceMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSwapchainKHR> swapchain;
+  @Uint64()
+  external int timeout;
+  external Pointer<VkSemaphore> semaphore;
+  external Pointer<VkFence> fence;
+  @Uint32()
+  external int deviceMask;
 }
 
 class VkDeviceGroupPresentInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int swapchainCount;
-  Pointer pDeviceMasks;
-  @Int32() int mode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int swapchainCount;
+  external Pointer pDeviceMasks;
+  @Int32()
+  external int mode;
 }
 
 class VkDeviceGroupDeviceCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int physicalDeviceCount;
-  Pointer<Pointer<VkPhysicalDevice>> pPhysicalDevices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int physicalDeviceCount;
+  external Pointer<Pointer<VkPhysicalDevice>> pPhysicalDevices;
 }
 
 class VkDeviceGroupDeviceCreateInfoKHR extends Opaque {
 }
 
 class VkDeviceGroupSwapchainCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int modes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int modes;
 }
 
 class VkDescriptorUpdateTemplateEntry extends Struct {
-  @Uint32() int dstBinding;
-  @Uint32() int dstArrayElement;
-  @Uint32() int descriptorCount;
-  @Int32() int descriptorType;
-  @Uint64() int offset;
-  @Uint64() int stride;
+  @Uint32()
+  external int dstBinding;
+  @Uint32()
+  external int dstArrayElement;
+  @Uint32()
+  external int descriptorCount;
+  @Int32()
+  external int descriptorType;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int stride;
 }
 
 class VkDescriptorUpdateTemplateEntryKHR extends Opaque {
 }
 
 class VkDescriptorUpdateTemplateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int descriptorUpdateEntryCount;
-  Pointer<VkDescriptorUpdateTemplateEntry> pDescriptorUpdateEntries;
-  @Int32() int templateType;
-  Pointer<VkDescriptorSetLayout> descriptorSetLayout;
-  @Int32() int pipelineBindPoint;
-  Pointer<VkPipelineLayout> pipelineLayout;
-  @Uint32() int set;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int descriptorUpdateEntryCount;
+  external Pointer<VkDescriptorUpdateTemplateEntry> pDescriptorUpdateEntries;
+  @Int32()
+  external int templateType;
+  external Pointer<VkDescriptorSetLayout> descriptorSetLayout;
+  @Int32()
+  external int pipelineBindPoint;
+  external Pointer<VkPipelineLayout> pipelineLayout;
+  @Uint32()
+  external int set;
 }
 
 class VkDescriptorUpdateTemplateCreateInfoKHR extends Opaque {
 }
 
 class VkXYColorEXT extends Struct {
-  @Float() double x;
-  @Float() double y;
+  @Float()
+  external double x;
+  @Float()
+  external double y;
 }
 
 class VkHdrMetadataEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Float() double displayPrimaryRed_x;
-  @Float() double displayPrimaryRed_y;
-  @Float() double displayPrimaryGreen_x;
-  @Float() double displayPrimaryGreen_y;
-  @Float() double displayPrimaryBlue_x;
-  @Float() double displayPrimaryBlue_y;
-  @Float() double whitePoint_x;
-  @Float() double whitePoint_y;
-  @Float() double maxLuminance;
-  @Float() double minLuminance;
-  @Float() double maxContentLightLevel;
-  @Float() double maxFrameAverageLightLevel;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Float()
+  external double displayPrimaryRed_x;
+  @Float()
+  external double displayPrimaryRed_y;
+  @Float()
+  external double displayPrimaryGreen_x;
+  @Float()
+  external double displayPrimaryGreen_y;
+  @Float()
+  external double displayPrimaryBlue_x;
+  @Float()
+  external double displayPrimaryBlue_y;
+  @Float()
+  external double whitePoint_x;
+  @Float()
+  external double whitePoint_y;
+  @Float()
+  external double maxLuminance;
+  @Float()
+  external double minLuminance;
+  @Float()
+  external double maxContentLightLevel;
+  @Float()
+  external double maxFrameAverageLightLevel;
 }
 
 class VkDisplayNativeHdrSurfaceCapabilitiesAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int localDimmingSupport;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int localDimmingSupport;
 }
 
 class VkSwapchainDisplayNativeHdrCreateInfoAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int localDimmingEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int localDimmingEnable;
 }
 
 class VkRefreshCycleDurationGOOGLE extends Struct {
-  @Uint64() int refreshDuration;
+  @Uint64()
+  external int refreshDuration;
 }
 
 class VkPastPresentationTimingGOOGLE extends Struct {
-  @Uint32() int presentID;
-  @Uint64() int desiredPresentTime;
-  @Uint64() int actualPresentTime;
-  @Uint64() int earliestPresentTime;
-  @Uint64() int presentMargin;
+  @Uint32()
+  external int presentID;
+  @Uint64()
+  external int desiredPresentTime;
+  @Uint64()
+  external int actualPresentTime;
+  @Uint64()
+  external int earliestPresentTime;
+  @Uint64()
+  external int presentMargin;
 }
 
 class VkPresentTimesInfoGOOGLE extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int swapchainCount;
-  Pointer<VkPresentTimeGOOGLE> pTimes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int swapchainCount;
+  external Pointer<VkPresentTimeGOOGLE> pTimes;
 }
 
 class VkPresentTimeGOOGLE extends Struct {
-  @Uint32() int presentID;
-  @Uint64() int desiredPresentTime;
+  @Uint32()
+  external int presentID;
+  @Uint64()
+  external int desiredPresentTime;
 }
 
 class VkIOSSurfaceCreateInfoMVK extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer pView;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer pView;
 }
 
 class VkMacOSSurfaceCreateInfoMVK extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer pView;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer pView;
 }
 
 class VkMetalSurfaceCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer pLayer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer pLayer;
 }
 
 class VkViewportWScalingNV extends Struct {
-  @Float() double xcoeff;
-  @Float() double ycoeff;
+  @Float()
+  external double xcoeff;
+  @Float()
+  external double ycoeff;
 }
 
 class VkPipelineViewportWScalingStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int viewportWScalingEnable;
-  @Uint32() int viewportCount;
-  Pointer<VkViewportWScalingNV> pViewportWScalings;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int viewportWScalingEnable;
+  @Uint32()
+  external int viewportCount;
+  external Pointer<VkViewportWScalingNV> pViewportWScalings;
 }
 
 class VkViewportSwizzleNV extends Struct {
-  @Int32() int x;
-  @Int32() int y;
-  @Int32() int z;
-  @Int32() int w;
+  @Int32()
+  external int x;
+  @Int32()
+  external int y;
+  @Int32()
+  external int z;
+  @Int32()
+  external int w;
 }
 
 class VkPipelineViewportSwizzleStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int viewportCount;
-  Pointer<VkViewportSwizzleNV> pViewportSwizzles;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int viewportCount;
+  external Pointer<VkViewportSwizzleNV> pViewportSwizzles;
 }
 
 class VkPhysicalDeviceDiscardRectanglePropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxDiscardRectangles;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxDiscardRectangles;
 }
 
 class VkPipelineDiscardRectangleStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int discardRectangleMode;
-  @Uint32() int discardRectangleCount;
-  Pointer<VkRect2D> pDiscardRectangles;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int discardRectangleMode;
+  @Uint32()
+  external int discardRectangleCount;
+  external Pointer<VkRect2D> pDiscardRectangles;
 }
 
 class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int perViewPositionAllComponents;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int perViewPositionAllComponents;
 }
 
 class VkInputAttachmentAspectReference extends Struct {
-  @Uint32() int subpass;
-  @Uint32() int inputAttachmentIndex;
-  @Uint32() int aspectMask;
+  @Uint32()
+  external int subpass;
+  @Uint32()
+  external int inputAttachmentIndex;
+  @Uint32()
+  external int aspectMask;
 }
 
 class VkInputAttachmentAspectReferenceKHR extends Opaque {
 }
 
 class VkRenderPassInputAttachmentAspectCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int aspectReferenceCount;
-  Pointer<VkInputAttachmentAspectReference> pAspectReferences;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int aspectReferenceCount;
+  external Pointer<VkInputAttachmentAspectReference> pAspectReferences;
 }
 
 class VkRenderPassInputAttachmentAspectCreateInfoKHR extends Opaque {
 }
 
 class VkPhysicalDeviceSurfaceInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSurfaceKHR> surface;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSurfaceKHR> surface;
 }
 
 class VkSurfaceCapabilities2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int surfaceCapabilities_minImageCount;
-  @Uint32() int surfaceCapabilities_maxImageCount;
-  @Uint32() int surfaceCapabilities_currentExtent_width;
-  @Uint32() int surfaceCapabilities_currentExtent_height;
-  @Uint32() int surfaceCapabilities_minImageExtent_width;
-  @Uint32() int surfaceCapabilities_minImageExtent_height;
-  @Uint32() int surfaceCapabilities_maxImageExtent_width;
-  @Uint32() int surfaceCapabilities_maxImageExtent_height;
-  @Uint32() int surfaceCapabilities_maxImageArrayLayers;
-  @Uint32() int surfaceCapabilities_supportedTransforms;
-  @Int32() int surfaceCapabilities_currentTransform;
-  @Uint32() int surfaceCapabilities_supportedCompositeAlpha;
-  @Uint32() int surfaceCapabilities_supportedUsageFlags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int surfaceCapabilities_minImageCount;
+  @Uint32()
+  external int surfaceCapabilities_maxImageCount;
+  @Uint32()
+  external int surfaceCapabilities_currentExtent_width;
+  @Uint32()
+  external int surfaceCapabilities_currentExtent_height;
+  @Uint32()
+  external int surfaceCapabilities_minImageExtent_width;
+  @Uint32()
+  external int surfaceCapabilities_minImageExtent_height;
+  @Uint32()
+  external int surfaceCapabilities_maxImageExtent_width;
+  @Uint32()
+  external int surfaceCapabilities_maxImageExtent_height;
+  @Uint32()
+  external int surfaceCapabilities_maxImageArrayLayers;
+  @Uint32()
+  external int surfaceCapabilities_supportedTransforms;
+  @Int32()
+  external int surfaceCapabilities_currentTransform;
+  @Uint32()
+  external int surfaceCapabilities_supportedCompositeAlpha;
+  @Uint32()
+  external int surfaceCapabilities_supportedUsageFlags;
 }
 
 class VkSurfaceFormat2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int surfaceFormat_format;
-  @Int32() int surfaceFormat_colorSpace;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int surfaceFormat_format;
+  @Int32()
+  external int surfaceFormat_colorSpace;
 }
 
 class VkDisplayProperties2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDisplayKHR> displayProperties_display;
-  Pointer displayProperties_displayName;
-  @Uint32() int displayProperties_physicalDimensions_width;
-  @Uint32() int displayProperties_physicalDimensions_height;
-  @Uint32() int displayProperties_physicalResolution_width;
-  @Uint32() int displayProperties_physicalResolution_height;
-  @Uint32() int displayProperties_supportedTransforms;
-  @Uint32() int displayProperties_planeReorderPossible;
-  @Uint32() int displayProperties_persistentContent;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDisplayKHR> displayProperties_display;
+  external Pointer displayProperties_displayName;
+  @Uint32()
+  external int displayProperties_physicalDimensions_width;
+  @Uint32()
+  external int displayProperties_physicalDimensions_height;
+  @Uint32()
+  external int displayProperties_physicalResolution_width;
+  @Uint32()
+  external int displayProperties_physicalResolution_height;
+  @Uint32()
+  external int displayProperties_supportedTransforms;
+  @Uint32()
+  external int displayProperties_planeReorderPossible;
+  @Uint32()
+  external int displayProperties_persistentContent;
 }
 
 class VkDisplayPlaneProperties2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDisplayKHR> displayPlaneProperties_currentDisplay;
-  @Uint32() int displayPlaneProperties_currentStackIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDisplayKHR> displayPlaneProperties_currentDisplay;
+  @Uint32()
+  external int displayPlaneProperties_currentStackIndex;
 }
 
 class VkDisplayModeProperties2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDisplayModeKHR> displayModeProperties_displayMode;
-  @Uint32() int displayModeProperties_parameters_visibleRegion_width;
-  @Uint32() int displayModeProperties_parameters_visibleRegion_height;
-  @Uint32() int displayModeProperties_parameters_refreshRate;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDisplayModeKHR> displayModeProperties_displayMode;
+  @Uint32()
+  external int displayModeProperties_parameters_visibleRegion_width;
+  @Uint32()
+  external int displayModeProperties_parameters_visibleRegion_height;
+  @Uint32()
+  external int displayModeProperties_parameters_refreshRate;
 }
 
 class VkDisplayPlaneInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDisplayModeKHR> mode;
-  @Uint32() int planeIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDisplayModeKHR> mode;
+  @Uint32()
+  external int planeIndex;
 }
 
 class VkDisplayPlaneCapabilities2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int capabilities_supportedAlpha;
-  @Int32() int capabilities_minSrcPosition_x;
-  @Int32() int capabilities_minSrcPosition_y;
-  @Int32() int capabilities_maxSrcPosition_x;
-  @Int32() int capabilities_maxSrcPosition_y;
-  @Uint32() int capabilities_minSrcExtent_width;
-  @Uint32() int capabilities_minSrcExtent_height;
-  @Uint32() int capabilities_maxSrcExtent_width;
-  @Uint32() int capabilities_maxSrcExtent_height;
-  @Int32() int capabilities_minDstPosition_x;
-  @Int32() int capabilities_minDstPosition_y;
-  @Int32() int capabilities_maxDstPosition_x;
-  @Int32() int capabilities_maxDstPosition_y;
-  @Uint32() int capabilities_minDstExtent_width;
-  @Uint32() int capabilities_minDstExtent_height;
-  @Uint32() int capabilities_maxDstExtent_width;
-  @Uint32() int capabilities_maxDstExtent_height;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int capabilities_supportedAlpha;
+  @Int32()
+  external int capabilities_minSrcPosition_x;
+  @Int32()
+  external int capabilities_minSrcPosition_y;
+  @Int32()
+  external int capabilities_maxSrcPosition_x;
+  @Int32()
+  external int capabilities_maxSrcPosition_y;
+  @Uint32()
+  external int capabilities_minSrcExtent_width;
+  @Uint32()
+  external int capabilities_minSrcExtent_height;
+  @Uint32()
+  external int capabilities_maxSrcExtent_width;
+  @Uint32()
+  external int capabilities_maxSrcExtent_height;
+  @Int32()
+  external int capabilities_minDstPosition_x;
+  @Int32()
+  external int capabilities_minDstPosition_y;
+  @Int32()
+  external int capabilities_maxDstPosition_x;
+  @Int32()
+  external int capabilities_maxDstPosition_y;
+  @Uint32()
+  external int capabilities_minDstExtent_width;
+  @Uint32()
+  external int capabilities_minDstExtent_height;
+  @Uint32()
+  external int capabilities_maxDstExtent_width;
+  @Uint32()
+  external int capabilities_maxDstExtent_height;
 }
 
 class VkSharedPresentSurfaceCapabilitiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int sharedPresentSupportedUsageFlags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int sharedPresentSupportedUsageFlags;
 }
 
 class VkPhysicalDevice16BitStorageFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int storageBuffer16BitAccess;
-  @Uint32() int uniformAndStorageBuffer16BitAccess;
-  @Uint32() int storagePushConstant16;
-  @Uint32() int storageInputOutput16;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int storageBuffer16BitAccess;
+  @Uint32()
+  external int uniformAndStorageBuffer16BitAccess;
+  @Uint32()
+  external int storagePushConstant16;
+  @Uint32()
+  external int storageInputOutput16;
 }
 
 class VkPhysicalDevice16BitStorageFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceSubgroupProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int subgroupSize;
-  @Uint32() int supportedStages;
-  @Uint32() int supportedOperations;
-  @Uint32() int quadOperationsInAllStages;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int subgroupSize;
+  @Uint32()
+  external int supportedStages;
+  @Uint32()
+  external int supportedOperations;
+  @Uint32()
+  external int quadOperationsInAllStages;
 }
 
 class VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderSubgroupExtendedTypes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderSubgroupExtendedTypes;
 }
 
 class VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR extends Opaque {
 }
 
 class VkBufferMemoryRequirementsInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> buffer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> buffer;
 }
 
 class VkBufferMemoryRequirementsInfo2KHR extends Opaque {
 }
 
 class VkImageMemoryRequirementsInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> image;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> image;
 }
 
 class VkImageMemoryRequirementsInfo2KHR extends Opaque {
 }
 
 class VkImageSparseMemoryRequirementsInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> image;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> image;
 }
 
 class VkImageSparseMemoryRequirementsInfo2KHR extends Opaque {
 }
 
 class VkMemoryRequirements2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int memoryRequirements_size;
-  @Uint64() int memoryRequirements_alignment;
-  @Uint32() int memoryRequirements_memoryTypeBits;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int memoryRequirements_size;
+  @Uint64()
+  external int memoryRequirements_alignment;
+  @Uint32()
+  external int memoryRequirements_memoryTypeBits;
 }
 
 class VkMemoryRequirements2KHR extends Opaque {
 }
 
 class VkSparseImageMemoryRequirements2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int memoryRequirements_formatProperties_aspectMask;
-  @Uint32() int memoryRequirements_formatProperties_imageGranularity_width;
-  @Uint32() int memoryRequirements_formatProperties_imageGranularity_height;
-  @Uint32() int memoryRequirements_formatProperties_imageGranularity_depth;
-  @Uint32() int memoryRequirements_formatProperties_flags;
-  @Uint32() int memoryRequirements_imageMipTailFirstLod;
-  @Uint64() int memoryRequirements_imageMipTailSize;
-  @Uint64() int memoryRequirements_imageMipTailOffset;
-  @Uint64() int memoryRequirements_imageMipTailStride;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int memoryRequirements_formatProperties_aspectMask;
+  @Uint32()
+  external int memoryRequirements_formatProperties_imageGranularity_width;
+  @Uint32()
+  external int memoryRequirements_formatProperties_imageGranularity_height;
+  @Uint32()
+  external int memoryRequirements_formatProperties_imageGranularity_depth;
+  @Uint32()
+  external int memoryRequirements_formatProperties_flags;
+  @Uint32()
+  external int memoryRequirements_imageMipTailFirstLod;
+  @Uint64()
+  external int memoryRequirements_imageMipTailSize;
+  @Uint64()
+  external int memoryRequirements_imageMipTailOffset;
+  @Uint64()
+  external int memoryRequirements_imageMipTailStride;
 }
 
 class VkSparseImageMemoryRequirements2KHR extends Opaque {
 }
 
 class VkPhysicalDevicePointClippingProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int pointClippingBehavior;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int pointClippingBehavior;
 }
 
 class VkPhysicalDevicePointClippingPropertiesKHR extends Opaque {
 }
 
 class VkMemoryDedicatedRequirements extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int prefersDedicatedAllocation;
-  @Uint32() int requiresDedicatedAllocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int prefersDedicatedAllocation;
+  @Uint32()
+  external int requiresDedicatedAllocation;
 }
 
 class VkMemoryDedicatedRequirementsKHR extends Opaque {
 }
 
 class VkMemoryDedicatedAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> image;
-  Pointer<VkBuffer> buffer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> image;
+  external Pointer<VkBuffer> buffer;
 }
 
 class VkMemoryDedicatedAllocateInfoKHR extends Opaque {
 }
 
 class VkImageViewUsageCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int usage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int usage;
 }
 
 class VkImageViewUsageCreateInfoKHR extends Opaque {
 }
 
 class VkPipelineTessellationDomainOriginStateCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int domainOrigin;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int domainOrigin;
 }
 
 class VkPipelineTessellationDomainOriginStateCreateInfoKHR extends Opaque {
 }
 
 class VkSamplerYcbcrConversionInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSamplerYcbcrConversion> conversion;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSamplerYcbcrConversion> conversion;
 }
 
 class VkSamplerYcbcrConversionInfoKHR extends Opaque {
 }
 
 class VkSamplerYcbcrConversionCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int format;
-  @Int32() int ycbcrModel;
-  @Int32() int ycbcrRange;
-  @Int32() int components_r;
-  @Int32() int components_g;
-  @Int32() int components_b;
-  @Int32() int components_a;
-  @Int32() int xChromaOffset;
-  @Int32() int yChromaOffset;
-  @Int32() int chromaFilter;
-  @Uint32() int forceExplicitReconstruction;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int format;
+  @Int32()
+  external int ycbcrModel;
+  @Int32()
+  external int ycbcrRange;
+  @Int32()
+  external int components_r;
+  @Int32()
+  external int components_g;
+  @Int32()
+  external int components_b;
+  @Int32()
+  external int components_a;
+  @Int32()
+  external int xChromaOffset;
+  @Int32()
+  external int yChromaOffset;
+  @Int32()
+  external int chromaFilter;
+  @Uint32()
+  external int forceExplicitReconstruction;
 }
 
 class VkSamplerYcbcrConversionCreateInfoKHR extends Opaque {
 }
 
 class VkBindImagePlaneMemoryInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int planeAspect;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int planeAspect;
 }
 
 class VkBindImagePlaneMemoryInfoKHR extends Opaque {
 }
 
 class VkImagePlaneMemoryRequirementsInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int planeAspect;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int planeAspect;
 }
 
 class VkImagePlaneMemoryRequirementsInfoKHR extends Opaque {
 }
 
 class VkPhysicalDeviceSamplerYcbcrConversionFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int samplerYcbcrConversion;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int samplerYcbcrConversion;
 }
 
 class VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR extends Opaque {
 }
 
 class VkSamplerYcbcrConversionImageFormatProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int combinedImageSamplerDescriptorCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int combinedImageSamplerDescriptorCount;
 }
 
 class VkSamplerYcbcrConversionImageFormatPropertiesKHR extends Opaque {
 }
 
 class VkTextureLODGatherFormatPropertiesAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int supportsTextureGatherLODBiasAMD;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int supportsTextureGatherLODBiasAMD;
 }
 
 class VkConditionalRenderingBeginInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> buffer;
-  @Uint64() int offset;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> buffer;
+  @Uint64()
+  external int offset;
+  @Uint32()
+  external int flags;
 }
 
 class VkProtectedSubmitInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int protectedSubmit;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int protectedSubmit;
 }
 
 class VkPhysicalDeviceProtectedMemoryFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int protectedMemory;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int protectedMemory;
 }
 
 class VkPhysicalDeviceProtectedMemoryProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int protectedNoFault;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int protectedNoFault;
 }
 
 class VkDeviceQueueInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int queueFamilyIndex;
-  @Uint32() int queueIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int queueFamilyIndex;
+  @Uint32()
+  external int queueIndex;
 }
 
 class VkPipelineCoverageToColorStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int coverageToColorEnable;
-  @Uint32() int coverageToColorLocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int coverageToColorEnable;
+  @Uint32()
+  external int coverageToColorLocation;
 }
 
 class VkPhysicalDeviceSamplerFilterMinmaxProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int filterMinmaxSingleComponentFormats;
-  @Uint32() int filterMinmaxImageComponentMapping;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int filterMinmaxSingleComponentFormats;
+  @Uint32()
+  external int filterMinmaxImageComponentMapping;
 }
 
 class VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT extends Opaque {
 }
 
 class VkSampleLocationEXT extends Struct {
-  @Float() double x;
-  @Float() double y;
+  @Float()
+  external double x;
+  @Float()
+  external double y;
 }
 
 class VkSampleLocationsInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int sampleLocationsPerPixel;
-  @Uint32() int sampleLocationGridSize_width;
-  @Uint32() int sampleLocationGridSize_height;
-  @Uint32() int sampleLocationsCount;
-  Pointer<VkSampleLocationEXT> pSampleLocations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int sampleLocationsPerPixel;
+  @Uint32()
+  external int sampleLocationGridSize_width;
+  @Uint32()
+  external int sampleLocationGridSize_height;
+  @Uint32()
+  external int sampleLocationsCount;
+  external Pointer<VkSampleLocationEXT> pSampleLocations;
 }
 
 class VkAttachmentSampleLocationsEXT extends Struct {
-  @Uint32() int attachmentIndex;
-  @Int32() int sampleLocationsInfo_sType;
-  Pointer sampleLocationsInfo_pNext;
-  @Int32() int sampleLocationsInfo_sampleLocationsPerPixel;
-  @Uint32() int sampleLocationsInfo_sampleLocationGridSize_width;
-  @Uint32() int sampleLocationsInfo_sampleLocationGridSize_height;
-  @Uint32() int sampleLocationsInfo_sampleLocationsCount;
-  Pointer<VkSampleLocationEXT> sampleLocationsInfo_pSampleLocations;
+  @Uint32()
+  external int attachmentIndex;
+  @Int32()
+  external int sampleLocationsInfo_sType;
+  external Pointer sampleLocationsInfo_pNext;
+  @Int32()
+  external int sampleLocationsInfo_sampleLocationsPerPixel;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationGridSize_width;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationGridSize_height;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationsCount;
+  external Pointer<VkSampleLocationEXT> sampleLocationsInfo_pSampleLocations;
 }
 
 class VkSubpassSampleLocationsEXT extends Struct {
-  @Uint32() int subpassIndex;
-  @Int32() int sampleLocationsInfo_sType;
-  Pointer sampleLocationsInfo_pNext;
-  @Int32() int sampleLocationsInfo_sampleLocationsPerPixel;
-  @Uint32() int sampleLocationsInfo_sampleLocationGridSize_width;
-  @Uint32() int sampleLocationsInfo_sampleLocationGridSize_height;
-  @Uint32() int sampleLocationsInfo_sampleLocationsCount;
-  Pointer<VkSampleLocationEXT> sampleLocationsInfo_pSampleLocations;
+  @Uint32()
+  external int subpassIndex;
+  @Int32()
+  external int sampleLocationsInfo_sType;
+  external Pointer sampleLocationsInfo_pNext;
+  @Int32()
+  external int sampleLocationsInfo_sampleLocationsPerPixel;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationGridSize_width;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationGridSize_height;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationsCount;
+  external Pointer<VkSampleLocationEXT> sampleLocationsInfo_pSampleLocations;
 }
 
 class VkRenderPassSampleLocationsBeginInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int attachmentInitialSampleLocationsCount;
-  Pointer<VkAttachmentSampleLocationsEXT> pAttachmentInitialSampleLocations;
-  @Uint32() int postSubpassSampleLocationsCount;
-  Pointer<VkSubpassSampleLocationsEXT> pPostSubpassSampleLocations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int attachmentInitialSampleLocationsCount;
+  external Pointer<VkAttachmentSampleLocationsEXT> pAttachmentInitialSampleLocations;
+  @Uint32()
+  external int postSubpassSampleLocationsCount;
+  external Pointer<VkSubpassSampleLocationsEXT> pPostSubpassSampleLocations;
 }
 
 class VkPipelineSampleLocationsStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int sampleLocationsEnable;
-  @Int32() int sampleLocationsInfo_sType;
-  Pointer sampleLocationsInfo_pNext;
-  @Int32() int sampleLocationsInfo_sampleLocationsPerPixel;
-  @Uint32() int sampleLocationsInfo_sampleLocationGridSize_width;
-  @Uint32() int sampleLocationsInfo_sampleLocationGridSize_height;
-  @Uint32() int sampleLocationsInfo_sampleLocationsCount;
-  Pointer<VkSampleLocationEXT> sampleLocationsInfo_pSampleLocations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int sampleLocationsEnable;
+  @Int32()
+  external int sampleLocationsInfo_sType;
+  external Pointer sampleLocationsInfo_pNext;
+  @Int32()
+  external int sampleLocationsInfo_sampleLocationsPerPixel;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationGridSize_width;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationGridSize_height;
+  @Uint32()
+  external int sampleLocationsInfo_sampleLocationsCount;
+  external Pointer<VkSampleLocationEXT> sampleLocationsInfo_pSampleLocations;
 }
 
 class VkPhysicalDeviceSampleLocationsPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int sampleLocationSampleCounts;
-  @Uint32() int maxSampleLocationGridSize_width;
-  @Uint32() int maxSampleLocationGridSize_height;
-  @Float() double sampleLocationCoordinateRange_0; @Float() double sampleLocationCoordinateRange_1;
-  @Uint32() int sampleLocationSubPixelBits;
-  @Uint32() int variableSampleLocations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int sampleLocationSampleCounts;
+  @Uint32()
+  external int maxSampleLocationGridSize_width;
+  @Uint32()
+  external int maxSampleLocationGridSize_height;
+  @Array(2)
+  external Array<Float> sampleLocationCoordinateRange;
+  @Uint32()
+  external int sampleLocationSubPixelBits;
+  @Uint32()
+  external int variableSampleLocations;
 }
 
 class VkMultisamplePropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxSampleLocationGridSize_width;
-  @Uint32() int maxSampleLocationGridSize_height;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxSampleLocationGridSize_width;
+  @Uint32()
+  external int maxSampleLocationGridSize_height;
 }
 
 class VkSamplerReductionModeCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int reductionMode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int reductionMode;
 }
 
 class VkSamplerReductionModeCreateInfoEXT extends Opaque {
 }
 
 class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int advancedBlendCoherentOperations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int advancedBlendCoherentOperations;
 }
 
 class VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int advancedBlendMaxColorAttachments;
-  @Uint32() int advancedBlendIndependentBlend;
-  @Uint32() int advancedBlendNonPremultipliedSrcColor;
-  @Uint32() int advancedBlendNonPremultipliedDstColor;
-  @Uint32() int advancedBlendCorrelatedOverlap;
-  @Uint32() int advancedBlendAllOperations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int advancedBlendMaxColorAttachments;
+  @Uint32()
+  external int advancedBlendIndependentBlend;
+  @Uint32()
+  external int advancedBlendNonPremultipliedSrcColor;
+  @Uint32()
+  external int advancedBlendNonPremultipliedDstColor;
+  @Uint32()
+  external int advancedBlendCorrelatedOverlap;
+  @Uint32()
+  external int advancedBlendAllOperations;
 }
 
 class VkPipelineColorBlendAdvancedStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcPremultiplied;
-  @Uint32() int dstPremultiplied;
-  @Int32() int blendOverlap;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcPremultiplied;
+  @Uint32()
+  external int dstPremultiplied;
+  @Int32()
+  external int blendOverlap;
 }
 
 class VkPhysicalDeviceInlineUniformBlockFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int inlineUniformBlock;
-  @Uint32() int descriptorBindingInlineUniformBlockUpdateAfterBind;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int inlineUniformBlock;
+  @Uint32()
+  external int descriptorBindingInlineUniformBlockUpdateAfterBind;
 }
 
 class VkPhysicalDeviceInlineUniformBlockPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxInlineUniformBlockSize;
-  @Uint32() int maxPerStageDescriptorInlineUniformBlocks;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks;
-  @Uint32() int maxDescriptorSetInlineUniformBlocks;
-  @Uint32() int maxDescriptorSetUpdateAfterBindInlineUniformBlocks;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxInlineUniformBlockSize;
+  @Uint32()
+  external int maxPerStageDescriptorInlineUniformBlocks;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks;
+  @Uint32()
+  external int maxDescriptorSetInlineUniformBlocks;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindInlineUniformBlocks;
 }
 
 class VkWriteDescriptorSetInlineUniformBlockEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int dataSize;
-  Pointer pData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int dataSize;
+  external Pointer pData;
 }
 
 class VkDescriptorPoolInlineUniformBlockCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxInlineUniformBlockBindings;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxInlineUniformBlockBindings;
 }
 
 class VkPipelineCoverageModulationStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int coverageModulationMode;
-  @Uint32() int coverageModulationTableEnable;
-  @Uint32() int coverageModulationTableCount;
-  Pointer pCoverageModulationTable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int coverageModulationMode;
+  @Uint32()
+  external int coverageModulationTableEnable;
+  @Uint32()
+  external int coverageModulationTableCount;
+  external Pointer pCoverageModulationTable;
 }
 
 class VkImageFormatListCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int viewFormatCount;
-  Pointer<Int32> pViewFormats;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int viewFormatCount;
+  external Pointer<Int32> pViewFormats;
 }
 
 class VkImageFormatListCreateInfoKHR extends Opaque {
 }
 
 class VkValidationCacheCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint64() int initialDataSize;
-  Pointer pInitialData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int initialDataSize;
+  external Pointer pInitialData;
 }
 
 class VkShaderModuleValidationCacheCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkValidationCacheEXT> validationCache;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkValidationCacheEXT> validationCache;
 }
 
 class VkPhysicalDeviceMaintenance3Properties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxPerSetDescriptors;
-  @Uint64() int maxMemoryAllocationSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxPerSetDescriptors;
+  @Uint64()
+  external int maxMemoryAllocationSize;
 }
 
 class VkPhysicalDeviceMaintenance3PropertiesKHR extends Opaque {
 }
 
 class VkDescriptorSetLayoutSupport extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int supported;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int supported;
 }
 
 class VkDescriptorSetLayoutSupportKHR extends Opaque {
 }
 
 class VkPhysicalDeviceShaderDrawParametersFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderDrawParameters;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderDrawParameters;
 }
 
 class VkPhysicalDeviceShaderDrawParameterFeatures extends Opaque {
 }
 
 class VkPhysicalDeviceShaderFloat16Int8Features extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderFloat16;
-  @Uint32() int shaderInt8;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderFloat16;
+  @Uint32()
+  external int shaderInt8;
 }
 
 class VkPhysicalDeviceShaderFloat16Int8FeaturesKHR extends Opaque {
@@ -6452,1283 +8074,1860 @@ class VkPhysicalDeviceFloat16Int8FeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceFloatControlsProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int denormBehaviorIndependence;
-  @Int32() int roundingModeIndependence;
-  @Uint32() int shaderSignedZeroInfNanPreserveFloat16;
-  @Uint32() int shaderSignedZeroInfNanPreserveFloat32;
-  @Uint32() int shaderSignedZeroInfNanPreserveFloat64;
-  @Uint32() int shaderDenormPreserveFloat16;
-  @Uint32() int shaderDenormPreserveFloat32;
-  @Uint32() int shaderDenormPreserveFloat64;
-  @Uint32() int shaderDenormFlushToZeroFloat16;
-  @Uint32() int shaderDenormFlushToZeroFloat32;
-  @Uint32() int shaderDenormFlushToZeroFloat64;
-  @Uint32() int shaderRoundingModeRTEFloat16;
-  @Uint32() int shaderRoundingModeRTEFloat32;
-  @Uint32() int shaderRoundingModeRTEFloat64;
-  @Uint32() int shaderRoundingModeRTZFloat16;
-  @Uint32() int shaderRoundingModeRTZFloat32;
-  @Uint32() int shaderRoundingModeRTZFloat64;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int denormBehaviorIndependence;
+  @Int32()
+  external int roundingModeIndependence;
+  @Uint32()
+  external int shaderSignedZeroInfNanPreserveFloat16;
+  @Uint32()
+  external int shaderSignedZeroInfNanPreserveFloat32;
+  @Uint32()
+  external int shaderSignedZeroInfNanPreserveFloat64;
+  @Uint32()
+  external int shaderDenormPreserveFloat16;
+  @Uint32()
+  external int shaderDenormPreserveFloat32;
+  @Uint32()
+  external int shaderDenormPreserveFloat64;
+  @Uint32()
+  external int shaderDenormFlushToZeroFloat16;
+  @Uint32()
+  external int shaderDenormFlushToZeroFloat32;
+  @Uint32()
+  external int shaderDenormFlushToZeroFloat64;
+  @Uint32()
+  external int shaderRoundingModeRTEFloat16;
+  @Uint32()
+  external int shaderRoundingModeRTEFloat32;
+  @Uint32()
+  external int shaderRoundingModeRTEFloat64;
+  @Uint32()
+  external int shaderRoundingModeRTZFloat16;
+  @Uint32()
+  external int shaderRoundingModeRTZFloat32;
+  @Uint32()
+  external int shaderRoundingModeRTZFloat64;
 }
 
 class VkPhysicalDeviceFloatControlsPropertiesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceHostQueryResetFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int hostQueryReset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int hostQueryReset;
 }
 
 class VkPhysicalDeviceHostQueryResetFeaturesEXT extends Opaque {
 }
 
 class VkNativeBufferUsage2ANDROID extends Struct {
-  @Uint64() int consumer;
-  @Uint64() int producer;
+  @Uint64()
+  external int consumer;
+  @Uint64()
+  external int producer;
 }
 
 class VkNativeBufferANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer handle;
-  Pointer stride;
-  Pointer format;
-  Pointer usage;
-  @Uint64() int usage2_consumer;
-  @Uint64() int usage2_producer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer handle;
+  external Pointer stride;
+  external Pointer format;
+  external Pointer usage;
+  @Uint64()
+  external int usage2_consumer;
+  @Uint64()
+  external int usage2_producer;
 }
 
 class VkSwapchainImageCreateInfoANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int usage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int usage;
 }
 
 class VkPhysicalDevicePresentationPropertiesANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int sharedImage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int sharedImage;
 }
 
 class VkShaderResourceUsageAMD extends Struct {
-  @Uint32() int numUsedVgprs;
-  @Uint32() int numUsedSgprs;
-  @Uint32() int ldsSizePerLocalWorkGroup;
-  @Uint64() int ldsUsageSizeInBytes;
-  @Uint64() int scratchMemUsageInBytes;
+  @Uint32()
+  external int numUsedVgprs;
+  @Uint32()
+  external int numUsedSgprs;
+  @Uint32()
+  external int ldsSizePerLocalWorkGroup;
+  @Uint64()
+  external int ldsUsageSizeInBytes;
+  @Uint64()
+  external int scratchMemUsageInBytes;
 }
 
 class VkShaderStatisticsInfoAMD extends Struct {
-  @Uint32() int shaderStageMask;
-  @Uint32() int resourceUsage_numUsedVgprs;
-  @Uint32() int resourceUsage_numUsedSgprs;
-  @Uint32() int resourceUsage_ldsSizePerLocalWorkGroup;
-  @Uint64() int resourceUsage_ldsUsageSizeInBytes;
-  @Uint64() int resourceUsage_scratchMemUsageInBytes;
-  @Uint32() int numPhysicalVgprs;
-  @Uint32() int numPhysicalSgprs;
-  @Uint32() int numAvailableVgprs;
-  @Uint32() int numAvailableSgprs;
-  @Uint32() int computeWorkGroupSize_0; @Uint32() int computeWorkGroupSize_1; @Uint32() int computeWorkGroupSize_2;
+  @Uint32()
+  external int shaderStageMask;
+  @Uint32()
+  external int resourceUsage_numUsedVgprs;
+  @Uint32()
+  external int resourceUsage_numUsedSgprs;
+  @Uint32()
+  external int resourceUsage_ldsSizePerLocalWorkGroup;
+  @Uint64()
+  external int resourceUsage_ldsUsageSizeInBytes;
+  @Uint64()
+  external int resourceUsage_scratchMemUsageInBytes;
+  @Uint32()
+  external int numPhysicalVgprs;
+  @Uint32()
+  external int numPhysicalSgprs;
+  @Uint32()
+  external int numAvailableVgprs;
+  @Uint32()
+  external int numAvailableSgprs;
+  @Array(3)
+  external Array<Uint32> computeWorkGroupSize;
 }
 
 class VkDeviceQueueGlobalPriorityCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int globalPriority;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int globalPriority;
 }
 
 class VkDebugUtilsObjectNameInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int objectType;
-  @Uint64() int objectHandle;
-  Pointer pObjectName;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int objectType;
+  @Uint64()
+  external int objectHandle;
+  external Pointer pObjectName;
 }
 
 class VkDebugUtilsObjectTagInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int objectType;
-  @Uint64() int objectHandle;
-  @Uint64() int tagName;
-  @Uint64() int tagSize;
-  Pointer pTag;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int objectType;
+  @Uint64()
+  external int objectHandle;
+  @Uint64()
+  external int tagName;
+  @Uint64()
+  external int tagSize;
+  external Pointer pTag;
 }
 
 class VkDebugUtilsLabelEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pLabelName;
-  @Float() double color_0; @Float() double color_1; @Float() double color_2; @Float() double color_3;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pLabelName;
+  @Array(4)
+  external Array<Float> color;
 }
 
 class VkDebugUtilsMessengerCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int messageSeverity;
-  @Uint32() int messageType;
-  Pointer pfnUserCallback;
-  Pointer pUserData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int messageSeverity;
+  @Uint32()
+  external int messageType;
+  external Pointer pfnUserCallback;
+  external Pointer pUserData;
 }
 
 class VkDebugUtilsMessengerCallbackDataEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer pMessageIdName;
-  @Int32() int messageIdNumber;
-  Pointer pMessage;
-  @Uint32() int queueLabelCount;
-  Pointer<VkDebugUtilsLabelEXT> pQueueLabels;
-  @Uint32() int cmdBufLabelCount;
-  Pointer<VkDebugUtilsLabelEXT> pCmdBufLabels;
-  @Uint32() int objectCount;
-  Pointer<VkDebugUtilsObjectNameInfoEXT> pObjects;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer pMessageIdName;
+  @Int32()
+  external int messageIdNumber;
+  external Pointer pMessage;
+  @Uint32()
+  external int queueLabelCount;
+  external Pointer<VkDebugUtilsLabelEXT> pQueueLabels;
+  @Uint32()
+  external int cmdBufLabelCount;
+  external Pointer<VkDebugUtilsLabelEXT> pCmdBufLabels;
+  @Uint32()
+  external int objectCount;
+  external Pointer<VkDebugUtilsObjectNameInfoEXT> pObjects;
 }
 
 class VkPhysicalDeviceDeviceMemoryReportFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceMemoryReport;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceMemoryReport;
 }
 
 class VkDeviceDeviceMemoryReportCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  Pointer pfnUserCallback;
-  Pointer pUserData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  external Pointer pfnUserCallback;
+  external Pointer pUserData;
 }
 
 class VkDeviceMemoryReportCallbackDataEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int type;
-  @Uint64() int memoryObjectId;
-  @Uint64() int size;
-  @Int32() int objectType;
-  @Uint64() int objectHandle;
-  @Uint32() int heapIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int type;
+  @Uint64()
+  external int memoryObjectId;
+  @Uint64()
+  external int size;
+  @Int32()
+  external int objectType;
+  @Uint64()
+  external int objectHandle;
+  @Uint32()
+  external int heapIndex;
 }
 
 class VkImportMemoryHostPointerInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int handleType;
-  Pointer pHostPointer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int handleType;
+  external Pointer pHostPointer;
 }
 
 class VkMemoryHostPointerPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int memoryTypeBits;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int memoryTypeBits;
 }
 
 class VkPhysicalDeviceExternalMemoryHostPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int minImportedHostPointerAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int minImportedHostPointerAlignment;
 }
 
 class VkPhysicalDeviceConservativeRasterizationPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Float() double primitiveOverestimationSize;
-  @Float() double maxExtraPrimitiveOverestimationSize;
-  @Float() double extraPrimitiveOverestimationSizeGranularity;
-  @Uint32() int primitiveUnderestimation;
-  @Uint32() int conservativePointAndLineRasterization;
-  @Uint32() int degenerateTrianglesRasterized;
-  @Uint32() int degenerateLinesRasterized;
-  @Uint32() int fullyCoveredFragmentShaderInputVariable;
-  @Uint32() int conservativeRasterizationPostDepthCoverage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Float()
+  external double primitiveOverestimationSize;
+  @Float()
+  external double maxExtraPrimitiveOverestimationSize;
+  @Float()
+  external double extraPrimitiveOverestimationSizeGranularity;
+  @Uint32()
+  external int primitiveUnderestimation;
+  @Uint32()
+  external int conservativePointAndLineRasterization;
+  @Uint32()
+  external int degenerateTrianglesRasterized;
+  @Uint32()
+  external int degenerateLinesRasterized;
+  @Uint32()
+  external int fullyCoveredFragmentShaderInputVariable;
+  @Uint32()
+  external int conservativeRasterizationPostDepthCoverage;
 }
 
 class VkCalibratedTimestampInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int timeDomain;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int timeDomain;
 }
 
 class VkPhysicalDeviceShaderCorePropertiesAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderEngineCount;
-  @Uint32() int shaderArraysPerEngineCount;
-  @Uint32() int computeUnitsPerShaderArray;
-  @Uint32() int simdPerComputeUnit;
-  @Uint32() int wavefrontsPerSimd;
-  @Uint32() int wavefrontSize;
-  @Uint32() int sgprsPerSimd;
-  @Uint32() int minSgprAllocation;
-  @Uint32() int maxSgprAllocation;
-  @Uint32() int sgprAllocationGranularity;
-  @Uint32() int vgprsPerSimd;
-  @Uint32() int minVgprAllocation;
-  @Uint32() int maxVgprAllocation;
-  @Uint32() int vgprAllocationGranularity;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderEngineCount;
+  @Uint32()
+  external int shaderArraysPerEngineCount;
+  @Uint32()
+  external int computeUnitsPerShaderArray;
+  @Uint32()
+  external int simdPerComputeUnit;
+  @Uint32()
+  external int wavefrontsPerSimd;
+  @Uint32()
+  external int wavefrontSize;
+  @Uint32()
+  external int sgprsPerSimd;
+  @Uint32()
+  external int minSgprAllocation;
+  @Uint32()
+  external int maxSgprAllocation;
+  @Uint32()
+  external int sgprAllocationGranularity;
+  @Uint32()
+  external int vgprsPerSimd;
+  @Uint32()
+  external int minVgprAllocation;
+  @Uint32()
+  external int maxVgprAllocation;
+  @Uint32()
+  external int vgprAllocationGranularity;
 }
 
 class VkPhysicalDeviceShaderCoreProperties2AMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderCoreFeatures;
-  @Uint32() int activeComputeUnitCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderCoreFeatures;
+  @Uint32()
+  external int activeComputeUnitCount;
 }
 
 class VkPipelineRasterizationConservativeStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int conservativeRasterizationMode;
-  @Float() double extraPrimitiveOverestimationSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int conservativeRasterizationMode;
+  @Float()
+  external double extraPrimitiveOverestimationSize;
 }
 
 class VkPhysicalDeviceDescriptorIndexingFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderInputAttachmentArrayDynamicIndexing;
-  @Uint32() int shaderUniformTexelBufferArrayDynamicIndexing;
-  @Uint32() int shaderStorageTexelBufferArrayDynamicIndexing;
-  @Uint32() int shaderUniformBufferArrayNonUniformIndexing;
-  @Uint32() int shaderSampledImageArrayNonUniformIndexing;
-  @Uint32() int shaderStorageBufferArrayNonUniformIndexing;
-  @Uint32() int shaderStorageImageArrayNonUniformIndexing;
-  @Uint32() int shaderInputAttachmentArrayNonUniformIndexing;
-  @Uint32() int shaderUniformTexelBufferArrayNonUniformIndexing;
-  @Uint32() int shaderStorageTexelBufferArrayNonUniformIndexing;
-  @Uint32() int descriptorBindingUniformBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingSampledImageUpdateAfterBind;
-  @Uint32() int descriptorBindingStorageImageUpdateAfterBind;
-  @Uint32() int descriptorBindingStorageBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingUniformTexelBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingStorageTexelBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingUpdateUnusedWhilePending;
-  @Uint32() int descriptorBindingPartiallyBound;
-  @Uint32() int descriptorBindingVariableDescriptorCount;
-  @Uint32() int runtimeDescriptorArray;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderInputAttachmentArrayDynamicIndexing;
+  @Uint32()
+  external int shaderUniformTexelBufferArrayDynamicIndexing;
+  @Uint32()
+  external int shaderStorageTexelBufferArrayDynamicIndexing;
+  @Uint32()
+  external int shaderUniformBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderSampledImageArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderStorageBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderStorageImageArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderInputAttachmentArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderUniformTexelBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderStorageTexelBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int descriptorBindingUniformBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingSampledImageUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingStorageImageUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingStorageBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingUniformTexelBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingStorageTexelBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingUpdateUnusedWhilePending;
+  @Uint32()
+  external int descriptorBindingPartiallyBound;
+  @Uint32()
+  external int descriptorBindingVariableDescriptorCount;
+  @Uint32()
+  external int runtimeDescriptorArray;
 }
 
 class VkPhysicalDeviceDescriptorIndexingFeaturesEXT extends Opaque {
 }
 
 class VkPhysicalDeviceDescriptorIndexingProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxUpdateAfterBindDescriptorsInAllPools;
-  @Uint32() int shaderUniformBufferArrayNonUniformIndexingNative;
-  @Uint32() int shaderSampledImageArrayNonUniformIndexingNative;
-  @Uint32() int shaderStorageBufferArrayNonUniformIndexingNative;
-  @Uint32() int shaderStorageImageArrayNonUniformIndexingNative;
-  @Uint32() int shaderInputAttachmentArrayNonUniformIndexingNative;
-  @Uint32() int robustBufferAccessUpdateAfterBind;
-  @Uint32() int quadDivergentImplicitLod;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindSamplers;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindUniformBuffers;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindStorageBuffers;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindSampledImages;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindStorageImages;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindInputAttachments;
-  @Uint32() int maxPerStageUpdateAfterBindResources;
-  @Uint32() int maxDescriptorSetUpdateAfterBindSamplers;
-  @Uint32() int maxDescriptorSetUpdateAfterBindUniformBuffers;
-  @Uint32() int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
-  @Uint32() int maxDescriptorSetUpdateAfterBindStorageBuffers;
-  @Uint32() int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
-  @Uint32() int maxDescriptorSetUpdateAfterBindSampledImages;
-  @Uint32() int maxDescriptorSetUpdateAfterBindStorageImages;
-  @Uint32() int maxDescriptorSetUpdateAfterBindInputAttachments;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxUpdateAfterBindDescriptorsInAllPools;
+  @Uint32()
+  external int shaderUniformBufferArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderSampledImageArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderStorageBufferArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderStorageImageArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderInputAttachmentArrayNonUniformIndexingNative;
+  @Uint32()
+  external int robustBufferAccessUpdateAfterBind;
+  @Uint32()
+  external int quadDivergentImplicitLod;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindSamplers;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindUniformBuffers;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindStorageBuffers;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindSampledImages;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindStorageImages;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindInputAttachments;
+  @Uint32()
+  external int maxPerStageUpdateAfterBindResources;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindSamplers;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindUniformBuffers;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindStorageBuffers;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindSampledImages;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindStorageImages;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindInputAttachments;
 }
 
 class VkPhysicalDeviceDescriptorIndexingPropertiesEXT extends Opaque {
 }
 
 class VkDescriptorSetLayoutBindingFlagsCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int bindingCount;
-  Pointer pBindingFlags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int bindingCount;
+  external Pointer pBindingFlags;
 }
 
 class VkDescriptorSetLayoutBindingFlagsCreateInfoEXT extends Opaque {
 }
 
 class VkDescriptorSetVariableDescriptorCountAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int descriptorSetCount;
-  Pointer pDescriptorCounts;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int descriptorSetCount;
+  external Pointer pDescriptorCounts;
 }
 
 class VkDescriptorSetVariableDescriptorCountAllocateInfoEXT extends Opaque {
 }
 
 class VkDescriptorSetVariableDescriptorCountLayoutSupport extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxVariableDescriptorCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxVariableDescriptorCount;
 }
 
 class VkDescriptorSetVariableDescriptorCountLayoutSupportEXT extends Opaque {
 }
 
 class VkAttachmentDescription2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int format;
-  @Int32() int samples;
-  @Int32() int loadOp;
-  @Int32() int storeOp;
-  @Int32() int stencilLoadOp;
-  @Int32() int stencilStoreOp;
-  @Int32() int initialLayout;
-  @Int32() int finalLayout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int format;
+  @Int32()
+  external int samples;
+  @Int32()
+  external int loadOp;
+  @Int32()
+  external int storeOp;
+  @Int32()
+  external int stencilLoadOp;
+  @Int32()
+  external int stencilStoreOp;
+  @Int32()
+  external int initialLayout;
+  @Int32()
+  external int finalLayout;
 }
 
 class VkAttachmentDescription2KHR extends Opaque {
 }
 
 class VkAttachmentReference2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int attachment;
-  @Int32() int layout;
-  @Uint32() int aspectMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int attachment;
+  @Int32()
+  external int layout;
+  @Uint32()
+  external int aspectMask;
 }
 
 class VkAttachmentReference2KHR extends Opaque {
 }
 
 class VkSubpassDescription2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int pipelineBindPoint;
-  @Uint32() int viewMask;
-  @Uint32() int inputAttachmentCount;
-  Pointer<VkAttachmentReference2> pInputAttachments;
-  @Uint32() int colorAttachmentCount;
-  Pointer<VkAttachmentReference2> pColorAttachments;
-  Pointer<VkAttachmentReference2> pResolveAttachments;
-  Pointer<VkAttachmentReference2> pDepthStencilAttachment;
-  @Uint32() int preserveAttachmentCount;
-  Pointer pPreserveAttachments;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int pipelineBindPoint;
+  @Uint32()
+  external int viewMask;
+  @Uint32()
+  external int inputAttachmentCount;
+  external Pointer<VkAttachmentReference2> pInputAttachments;
+  @Uint32()
+  external int colorAttachmentCount;
+  external Pointer<VkAttachmentReference2> pColorAttachments;
+  external Pointer<VkAttachmentReference2> pResolveAttachments;
+  external Pointer<VkAttachmentReference2> pDepthStencilAttachment;
+  @Uint32()
+  external int preserveAttachmentCount;
+  external Pointer pPreserveAttachments;
 }
 
 class VkSubpassDescription2KHR extends Opaque {
 }
 
 class VkSubpassDependency2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcSubpass;
-  @Uint32() int dstSubpass;
-  @Uint32() int srcStageMask;
-  @Uint32() int dstStageMask;
-  @Uint32() int srcAccessMask;
-  @Uint32() int dstAccessMask;
-  @Uint32() int dependencyFlags;
-  @Int32() int viewOffset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcSubpass;
+  @Uint32()
+  external int dstSubpass;
+  @Uint32()
+  external int srcStageMask;
+  @Uint32()
+  external int dstStageMask;
+  @Uint32()
+  external int srcAccessMask;
+  @Uint32()
+  external int dstAccessMask;
+  @Uint32()
+  external int dependencyFlags;
+  @Int32()
+  external int viewOffset;
 }
 
 class VkSubpassDependency2KHR extends Opaque {
 }
 
 class VkRenderPassCreateInfo2 extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int attachmentCount;
-  Pointer<VkAttachmentDescription2> pAttachments;
-  @Uint32() int subpassCount;
-  Pointer<VkSubpassDescription2> pSubpasses;
-  @Uint32() int dependencyCount;
-  Pointer<VkSubpassDependency2> pDependencies;
-  @Uint32() int correlatedViewMaskCount;
-  Pointer pCorrelatedViewMasks;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int attachmentCount;
+  external Pointer<VkAttachmentDescription2> pAttachments;
+  @Uint32()
+  external int subpassCount;
+  external Pointer<VkSubpassDescription2> pSubpasses;
+  @Uint32()
+  external int dependencyCount;
+  external Pointer<VkSubpassDependency2> pDependencies;
+  @Uint32()
+  external int correlatedViewMaskCount;
+  external Pointer pCorrelatedViewMasks;
 }
 
 class VkRenderPassCreateInfo2KHR extends Opaque {
 }
 
 class VkSubpassBeginInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int contents;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int contents;
 }
 
 class VkSubpassBeginInfoKHR extends Opaque {
 }
 
 class VkSubpassEndInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
 }
 
 class VkSubpassEndInfoKHR extends Opaque {
 }
 
 class VkPhysicalDeviceTimelineSemaphoreFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int timelineSemaphore;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int timelineSemaphore;
 }
 
 class VkPhysicalDeviceTimelineSemaphoreFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceTimelineSemaphoreProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int maxTimelineSemaphoreValueDifference;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int maxTimelineSemaphoreValueDifference;
 }
 
 class VkPhysicalDeviceTimelineSemaphorePropertiesKHR extends Opaque {
 }
 
 class VkSemaphoreTypeCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int semaphoreType;
-  @Uint64() int initialValue;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int semaphoreType;
+  @Uint64()
+  external int initialValue;
 }
 
 class VkSemaphoreTypeCreateInfoKHR extends Opaque {
 }
 
 class VkTimelineSemaphoreSubmitInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int waitSemaphoreValueCount;
-  Pointer pWaitSemaphoreValues;
-  @Uint32() int signalSemaphoreValueCount;
-  Pointer pSignalSemaphoreValues;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int waitSemaphoreValueCount;
+  external Pointer pWaitSemaphoreValues;
+  @Uint32()
+  external int signalSemaphoreValueCount;
+  external Pointer pSignalSemaphoreValues;
 }
 
 class VkTimelineSemaphoreSubmitInfoKHR extends Opaque {
 }
 
 class VkSemaphoreWaitInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int semaphoreCount;
-  Pointer<Pointer<VkSemaphore>> pSemaphores;
-  Pointer pValues;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int semaphoreCount;
+  external Pointer<Pointer<VkSemaphore>> pSemaphores;
+  external Pointer pValues;
 }
 
 class VkSemaphoreWaitInfoKHR extends Opaque {
 }
 
 class VkSemaphoreSignalInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSemaphore> semaphore;
-  @Uint64() int value;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSemaphore> semaphore;
+  @Uint64()
+  external int value;
 }
 
 class VkSemaphoreSignalInfoKHR extends Opaque {
 }
 
 class VkVertexInputBindingDivisorDescriptionEXT extends Struct {
-  @Uint32() int binding;
-  @Uint32() int divisor;
+  @Uint32()
+  external int binding;
+  @Uint32()
+  external int divisor;
 }
 
 class VkPipelineVertexInputDivisorStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int vertexBindingDivisorCount;
-  Pointer<VkVertexInputBindingDivisorDescriptionEXT> pVertexBindingDivisors;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int vertexBindingDivisorCount;
+  external Pointer<VkVertexInputBindingDivisorDescriptionEXT> pVertexBindingDivisors;
 }
 
 class VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxVertexAttribDivisor;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxVertexAttribDivisor;
 }
 
 class VkPhysicalDevicePCIBusInfoPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int pciDomain;
-  @Uint32() int pciBus;
-  @Uint32() int pciDevice;
-  @Uint32() int pciFunction;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int pciDomain;
+  @Uint32()
+  external int pciBus;
+  @Uint32()
+  external int pciDevice;
+  @Uint32()
+  external int pciFunction;
 }
 
 class VkImportAndroidHardwareBufferInfoANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer buffer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer buffer;
 }
 
 class VkAndroidHardwareBufferUsageANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int androidHardwareBufferUsage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int androidHardwareBufferUsage;
 }
 
 class VkAndroidHardwareBufferPropertiesANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int allocationSize;
-  @Uint32() int memoryTypeBits;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int allocationSize;
+  @Uint32()
+  external int memoryTypeBits;
 }
 
 class VkMemoryGetAndroidHardwareBufferInfoANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDeviceMemory> memory;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDeviceMemory> memory;
 }
 
 class VkAndroidHardwareBufferFormatPropertiesANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int format;
-  @Uint64() int externalFormat;
-  @Uint32() int formatFeatures;
-  @Int32() int samplerYcbcrConversionComponents_r;
-  @Int32() int samplerYcbcrConversionComponents_g;
-  @Int32() int samplerYcbcrConversionComponents_b;
-  @Int32() int samplerYcbcrConversionComponents_a;
-  @Int32() int suggestedYcbcrModel;
-  @Int32() int suggestedYcbcrRange;
-  @Int32() int suggestedXChromaOffset;
-  @Int32() int suggestedYChromaOffset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int format;
+  @Uint64()
+  external int externalFormat;
+  @Uint32()
+  external int formatFeatures;
+  @Int32()
+  external int samplerYcbcrConversionComponents_r;
+  @Int32()
+  external int samplerYcbcrConversionComponents_g;
+  @Int32()
+  external int samplerYcbcrConversionComponents_b;
+  @Int32()
+  external int samplerYcbcrConversionComponents_a;
+  @Int32()
+  external int suggestedYcbcrModel;
+  @Int32()
+  external int suggestedYcbcrRange;
+  @Int32()
+  external int suggestedXChromaOffset;
+  @Int32()
+  external int suggestedYChromaOffset;
 }
 
 class VkCommandBufferInheritanceConditionalRenderingInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int conditionalRenderingEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int conditionalRenderingEnable;
 }
 
 class VkExternalFormatANDROID extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int externalFormat;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int externalFormat;
 }
 
 class VkPhysicalDevice8BitStorageFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int storageBuffer8BitAccess;
-  @Uint32() int uniformAndStorageBuffer8BitAccess;
-  @Uint32() int storagePushConstant8;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int storageBuffer8BitAccess;
+  @Uint32()
+  external int uniformAndStorageBuffer8BitAccess;
+  @Uint32()
+  external int storagePushConstant8;
 }
 
 class VkPhysicalDevice8BitStorageFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceConditionalRenderingFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int conditionalRendering;
-  @Uint32() int inheritedConditionalRendering;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int conditionalRendering;
+  @Uint32()
+  external int inheritedConditionalRendering;
 }
 
 class VkPhysicalDeviceVulkanMemoryModelFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int vulkanMemoryModel;
-  @Uint32() int vulkanMemoryModelDeviceScope;
-  @Uint32() int vulkanMemoryModelAvailabilityVisibilityChains;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int vulkanMemoryModel;
+  @Uint32()
+  external int vulkanMemoryModelDeviceScope;
+  @Uint32()
+  external int vulkanMemoryModelAvailabilityVisibilityChains;
 }
 
 class VkPhysicalDeviceVulkanMemoryModelFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceShaderAtomicInt64Features extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderBufferInt64Atomics;
-  @Uint32() int shaderSharedInt64Atomics;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderBufferInt64Atomics;
+  @Uint32()
+  external int shaderSharedInt64Atomics;
 }
 
 class VkPhysicalDeviceShaderAtomicInt64FeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceShaderAtomicFloatFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderBufferFloat32Atomics;
-  @Uint32() int shaderBufferFloat32AtomicAdd;
-  @Uint32() int shaderBufferFloat64Atomics;
-  @Uint32() int shaderBufferFloat64AtomicAdd;
-  @Uint32() int shaderSharedFloat32Atomics;
-  @Uint32() int shaderSharedFloat32AtomicAdd;
-  @Uint32() int shaderSharedFloat64Atomics;
-  @Uint32() int shaderSharedFloat64AtomicAdd;
-  @Uint32() int shaderImageFloat32Atomics;
-  @Uint32() int shaderImageFloat32AtomicAdd;
-  @Uint32() int sparseImageFloat32Atomics;
-  @Uint32() int sparseImageFloat32AtomicAdd;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderBufferFloat32Atomics;
+  @Uint32()
+  external int shaderBufferFloat32AtomicAdd;
+  @Uint32()
+  external int shaderBufferFloat64Atomics;
+  @Uint32()
+  external int shaderBufferFloat64AtomicAdd;
+  @Uint32()
+  external int shaderSharedFloat32Atomics;
+  @Uint32()
+  external int shaderSharedFloat32AtomicAdd;
+  @Uint32()
+  external int shaderSharedFloat64Atomics;
+  @Uint32()
+  external int shaderSharedFloat64AtomicAdd;
+  @Uint32()
+  external int shaderImageFloat32Atomics;
+  @Uint32()
+  external int shaderImageFloat32AtomicAdd;
+  @Uint32()
+  external int sparseImageFloat32Atomics;
+  @Uint32()
+  external int sparseImageFloat32AtomicAdd;
 }
 
 class VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int vertexAttributeInstanceRateDivisor;
-  @Uint32() int vertexAttributeInstanceRateZeroDivisor;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int vertexAttributeInstanceRateDivisor;
+  @Uint32()
+  external int vertexAttributeInstanceRateZeroDivisor;
 }
 
 class VkQueueFamilyCheckpointPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int checkpointExecutionStageMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int checkpointExecutionStageMask;
 }
 
 class VkCheckpointDataNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int stage;
-  Pointer pCheckpointMarker;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int stage;
+  external Pointer pCheckpointMarker;
 }
 
 class VkPhysicalDeviceDepthStencilResolveProperties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int supportedDepthResolveModes;
-  @Uint32() int supportedStencilResolveModes;
-  @Uint32() int independentResolveNone;
-  @Uint32() int independentResolve;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int supportedDepthResolveModes;
+  @Uint32()
+  external int supportedStencilResolveModes;
+  @Uint32()
+  external int independentResolveNone;
+  @Uint32()
+  external int independentResolve;
 }
 
 class VkPhysicalDeviceDepthStencilResolvePropertiesKHR extends Opaque {
 }
 
 class VkSubpassDescriptionDepthStencilResolve extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int depthResolveMode;
-  @Int32() int stencilResolveMode;
-  Pointer<VkAttachmentReference2> pDepthStencilResolveAttachment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int depthResolveMode;
+  @Int32()
+  external int stencilResolveMode;
+  external Pointer<VkAttachmentReference2> pDepthStencilResolveAttachment;
 }
 
 class VkSubpassDescriptionDepthStencilResolveKHR extends Opaque {
 }
 
 class VkImageViewASTCDecodeModeEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int decodeMode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int decodeMode;
 }
 
 class VkPhysicalDeviceASTCDecodeFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int decodeModeSharedExponent;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int decodeModeSharedExponent;
 }
 
 class VkPhysicalDeviceTransformFeedbackFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int transformFeedback;
-  @Uint32() int geometryStreams;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int transformFeedback;
+  @Uint32()
+  external int geometryStreams;
 }
 
 class VkPhysicalDeviceTransformFeedbackPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxTransformFeedbackStreams;
-  @Uint32() int maxTransformFeedbackBuffers;
-  @Uint64() int maxTransformFeedbackBufferSize;
-  @Uint32() int maxTransformFeedbackStreamDataSize;
-  @Uint32() int maxTransformFeedbackBufferDataSize;
-  @Uint32() int maxTransformFeedbackBufferDataStride;
-  @Uint32() int transformFeedbackQueries;
-  @Uint32() int transformFeedbackStreamsLinesTriangles;
-  @Uint32() int transformFeedbackRasterizationStreamSelect;
-  @Uint32() int transformFeedbackDraw;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxTransformFeedbackStreams;
+  @Uint32()
+  external int maxTransformFeedbackBuffers;
+  @Uint64()
+  external int maxTransformFeedbackBufferSize;
+  @Uint32()
+  external int maxTransformFeedbackStreamDataSize;
+  @Uint32()
+  external int maxTransformFeedbackBufferDataSize;
+  @Uint32()
+  external int maxTransformFeedbackBufferDataStride;
+  @Uint32()
+  external int transformFeedbackQueries;
+  @Uint32()
+  external int transformFeedbackStreamsLinesTriangles;
+  @Uint32()
+  external int transformFeedbackRasterizationStreamSelect;
+  @Uint32()
+  external int transformFeedbackDraw;
 }
 
 class VkPipelineRasterizationStateStreamCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int rasterizationStream;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int rasterizationStream;
 }
 
 class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int representativeFragmentTest;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int representativeFragmentTest;
 }
 
 class VkPipelineRepresentativeFragmentTestStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int representativeFragmentTestEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int representativeFragmentTestEnable;
 }
 
 class VkPhysicalDeviceExclusiveScissorFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int exclusiveScissor;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int exclusiveScissor;
 }
 
 class VkPipelineViewportExclusiveScissorStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int exclusiveScissorCount;
-  Pointer<VkRect2D> pExclusiveScissors;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int exclusiveScissorCount;
+  external Pointer<VkRect2D> pExclusiveScissors;
 }
 
 class VkPhysicalDeviceCornerSampledImageFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int cornerSampledImage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int cornerSampledImage;
 }
 
 class VkPhysicalDeviceComputeShaderDerivativesFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int computeDerivativeGroupQuads;
-  @Uint32() int computeDerivativeGroupLinear;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int computeDerivativeGroupQuads;
+  @Uint32()
+  external int computeDerivativeGroupLinear;
 }
 
 class VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentShaderBarycentric;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentShaderBarycentric;
 }
 
 class VkPhysicalDeviceShaderImageFootprintFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int imageFootprint;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int imageFootprint;
 }
 
 class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int dedicatedAllocationImageAliasing;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int dedicatedAllocationImageAliasing;
 }
 
 class VkShadingRatePaletteNV extends Struct {
-  @Uint32() int shadingRatePaletteEntryCount;
-  Pointer<Int32> pShadingRatePaletteEntries;
+  @Uint32()
+  external int shadingRatePaletteEntryCount;
+  external Pointer<Int32> pShadingRatePaletteEntries;
 }
 
 class VkPipelineViewportShadingRateImageStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shadingRateImageEnable;
-  @Uint32() int viewportCount;
-  Pointer<VkShadingRatePaletteNV> pShadingRatePalettes;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shadingRateImageEnable;
+  @Uint32()
+  external int viewportCount;
+  external Pointer<VkShadingRatePaletteNV> pShadingRatePalettes;
 }
 
 class VkPhysicalDeviceShadingRateImageFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shadingRateImage;
-  @Uint32() int shadingRateCoarseSampleOrder;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shadingRateImage;
+  @Uint32()
+  external int shadingRateCoarseSampleOrder;
 }
 
 class VkPhysicalDeviceShadingRateImagePropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shadingRateTexelSize_width;
-  @Uint32() int shadingRateTexelSize_height;
-  @Uint32() int shadingRatePaletteSize;
-  @Uint32() int shadingRateMaxCoarseSamples;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shadingRateTexelSize_width;
+  @Uint32()
+  external int shadingRateTexelSize_height;
+  @Uint32()
+  external int shadingRatePaletteSize;
+  @Uint32()
+  external int shadingRateMaxCoarseSamples;
 }
 
 class VkCoarseSampleLocationNV extends Struct {
-  @Uint32() int pixelX;
-  @Uint32() int pixelY;
-  @Uint32() int sample;
+  @Uint32()
+  external int pixelX;
+  @Uint32()
+  external int pixelY;
+  @Uint32()
+  external int sample;
 }
 
 class VkCoarseSampleOrderCustomNV extends Struct {
-  @Int32() int shadingRate;
-  @Uint32() int sampleCount;
-  @Uint32() int sampleLocationCount;
-  Pointer<VkCoarseSampleLocationNV> pSampleLocations;
+  @Int32()
+  external int shadingRate;
+  @Uint32()
+  external int sampleCount;
+  @Uint32()
+  external int sampleLocationCount;
+  external Pointer<VkCoarseSampleLocationNV> pSampleLocations;
 }
 
 class VkPipelineViewportCoarseSampleOrderStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int sampleOrderType;
-  @Uint32() int customSampleOrderCount;
-  Pointer<VkCoarseSampleOrderCustomNV> pCustomSampleOrders;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int sampleOrderType;
+  @Uint32()
+  external int customSampleOrderCount;
+  external Pointer<VkCoarseSampleOrderCustomNV> pCustomSampleOrders;
 }
 
 class VkPhysicalDeviceMeshShaderFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int taskShader;
-  @Uint32() int meshShader;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int taskShader;
+  @Uint32()
+  external int meshShader;
 }
 
 class VkPhysicalDeviceMeshShaderPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxDrawMeshTasksCount;
-  @Uint32() int maxTaskWorkGroupInvocations;
-  @Uint32() int maxTaskWorkGroupSize_0; @Uint32() int maxTaskWorkGroupSize_1; @Uint32() int maxTaskWorkGroupSize_2;
-  @Uint32() int maxTaskTotalMemorySize;
-  @Uint32() int maxTaskOutputCount;
-  @Uint32() int maxMeshWorkGroupInvocations;
-  @Uint32() int maxMeshWorkGroupSize_0; @Uint32() int maxMeshWorkGroupSize_1; @Uint32() int maxMeshWorkGroupSize_2;
-  @Uint32() int maxMeshTotalMemorySize;
-  @Uint32() int maxMeshOutputVertices;
-  @Uint32() int maxMeshOutputPrimitives;
-  @Uint32() int maxMeshMultiviewViewCount;
-  @Uint32() int meshOutputPerVertexGranularity;
-  @Uint32() int meshOutputPerPrimitiveGranularity;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxDrawMeshTasksCount;
+  @Uint32()
+  external int maxTaskWorkGroupInvocations;
+  @Array(3)
+  external Array<Uint32> maxTaskWorkGroupSize;
+  @Uint32()
+  external int maxTaskTotalMemorySize;
+  @Uint32()
+  external int maxTaskOutputCount;
+  @Uint32()
+  external int maxMeshWorkGroupInvocations;
+  @Array(3)
+  external Array<Uint32> maxMeshWorkGroupSize;
+  @Uint32()
+  external int maxMeshTotalMemorySize;
+  @Uint32()
+  external int maxMeshOutputVertices;
+  @Uint32()
+  external int maxMeshOutputPrimitives;
+  @Uint32()
+  external int maxMeshMultiviewViewCount;
+  @Uint32()
+  external int meshOutputPerVertexGranularity;
+  @Uint32()
+  external int meshOutputPerPrimitiveGranularity;
 }
 
 class VkDrawMeshTasksIndirectCommandNV extends Struct {
-  @Uint32() int taskCount;
-  @Uint32() int firstTask;
+  @Uint32()
+  external int taskCount;
+  @Uint32()
+  external int firstTask;
 }
 
 class VkRayTracingShaderGroupCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int type;
-  @Uint32() int generalShader;
-  @Uint32() int closestHitShader;
-  @Uint32() int anyHitShader;
-  @Uint32() int intersectionShader;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int type;
+  @Uint32()
+  external int generalShader;
+  @Uint32()
+  external int closestHitShader;
+  @Uint32()
+  external int anyHitShader;
+  @Uint32()
+  external int intersectionShader;
 }
 
 class VkRayTracingShaderGroupCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int type;
-  @Uint32() int generalShader;
-  @Uint32() int closestHitShader;
-  @Uint32() int anyHitShader;
-  @Uint32() int intersectionShader;
-  Pointer pShaderGroupCaptureReplayHandle;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int type;
+  @Uint32()
+  external int generalShader;
+  @Uint32()
+  external int closestHitShader;
+  @Uint32()
+  external int anyHitShader;
+  @Uint32()
+  external int intersectionShader;
+  external Pointer pShaderGroupCaptureReplayHandle;
 }
 
 class VkRayTracingPipelineCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int stageCount;
-  Pointer<VkPipelineShaderStageCreateInfo> pStages;
-  @Uint32() int groupCount;
-  Pointer<VkRayTracingShaderGroupCreateInfoNV> pGroups;
-  @Uint32() int maxRecursionDepth;
-  Pointer<VkPipelineLayout> layout;
-  Pointer<VkPipeline> basePipelineHandle;
-  @Int32() int basePipelineIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int stageCount;
+  external Pointer<VkPipelineShaderStageCreateInfo> pStages;
+  @Uint32()
+  external int groupCount;
+  external Pointer<VkRayTracingShaderGroupCreateInfoNV> pGroups;
+  @Uint32()
+  external int maxRecursionDepth;
+  external Pointer<VkPipelineLayout> layout;
+  external Pointer<VkPipeline> basePipelineHandle;
+  @Int32()
+  external int basePipelineIndex;
 }
 
 class VkRayTracingPipelineCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int stageCount;
-  Pointer<VkPipelineShaderStageCreateInfo> pStages;
-  @Uint32() int groupCount;
-  Pointer<VkRayTracingShaderGroupCreateInfoKHR> pGroups;
-  @Uint32() int maxPipelineRayRecursionDepth;
-  Pointer<VkPipelineLibraryCreateInfoKHR> pLibraryInfo;
-  Pointer<VkRayTracingPipelineInterfaceCreateInfoKHR> pLibraryInterface;
-  Pointer<VkPipelineDynamicStateCreateInfo> pDynamicState;
-  Pointer<VkPipelineLayout> layout;
-  Pointer<VkPipeline> basePipelineHandle;
-  @Int32() int basePipelineIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int stageCount;
+  external Pointer<VkPipelineShaderStageCreateInfo> pStages;
+  @Uint32()
+  external int groupCount;
+  external Pointer<VkRayTracingShaderGroupCreateInfoKHR> pGroups;
+  @Uint32()
+  external int maxPipelineRayRecursionDepth;
+  external Pointer<VkPipelineLibraryCreateInfoKHR> pLibraryInfo;
+  external Pointer<VkRayTracingPipelineInterfaceCreateInfoKHR> pLibraryInterface;
+  external Pointer<VkPipelineDynamicStateCreateInfo> pDynamicState;
+  external Pointer<VkPipelineLayout> layout;
+  external Pointer<VkPipeline> basePipelineHandle;
+  @Int32()
+  external int basePipelineIndex;
 }
 
 class VkGeometryTrianglesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> vertexData;
-  @Uint64() int vertexOffset;
-  @Uint32() int vertexCount;
-  @Uint64() int vertexStride;
-  @Int32() int vertexFormat;
-  Pointer<VkBuffer> indexData;
-  @Uint64() int indexOffset;
-  @Uint32() int indexCount;
-  @Int32() int indexType;
-  Pointer<VkBuffer> transformData;
-  @Uint64() int transformOffset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> vertexData;
+  @Uint64()
+  external int vertexOffset;
+  @Uint32()
+  external int vertexCount;
+  @Uint64()
+  external int vertexStride;
+  @Int32()
+  external int vertexFormat;
+  external Pointer<VkBuffer> indexData;
+  @Uint64()
+  external int indexOffset;
+  @Uint32()
+  external int indexCount;
+  @Int32()
+  external int indexType;
+  external Pointer<VkBuffer> transformData;
+  @Uint64()
+  external int transformOffset;
 }
 
 class VkGeometryAABBNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> aabbData;
-  @Uint32() int numAABBs;
-  @Uint32() int stride;
-  @Uint64() int offset;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> aabbData;
+  @Uint32()
+  external int numAABBs;
+  @Uint32()
+  external int stride;
+  @Uint64()
+  external int offset;
 }
 
 class VkGeometryDataNV extends Struct {
-  @Int32() int triangles_sType;
-  Pointer triangles_pNext;
-  Pointer<VkBuffer> triangles_vertexData;
-  @Uint64() int triangles_vertexOffset;
-  @Uint32() int triangles_vertexCount;
-  @Uint64() int triangles_vertexStride;
-  @Int32() int triangles_vertexFormat;
-  Pointer<VkBuffer> triangles_indexData;
-  @Uint64() int triangles_indexOffset;
-  @Uint32() int triangles_indexCount;
-  @Int32() int triangles_indexType;
-  Pointer<VkBuffer> triangles_transformData;
-  @Uint64() int triangles_transformOffset;
-  @Int32() int aabbs_sType;
-  Pointer aabbs_pNext;
-  Pointer<VkBuffer> aabbs_aabbData;
-  @Uint32() int aabbs_numAABBs;
-  @Uint32() int aabbs_stride;
-  @Uint64() int aabbs_offset;
+  @Int32()
+  external int triangles_sType;
+  external Pointer triangles_pNext;
+  external Pointer<VkBuffer> triangles_vertexData;
+  @Uint64()
+  external int triangles_vertexOffset;
+  @Uint32()
+  external int triangles_vertexCount;
+  @Uint64()
+  external int triangles_vertexStride;
+  @Int32()
+  external int triangles_vertexFormat;
+  external Pointer<VkBuffer> triangles_indexData;
+  @Uint64()
+  external int triangles_indexOffset;
+  @Uint32()
+  external int triangles_indexCount;
+  @Int32()
+  external int triangles_indexType;
+  external Pointer<VkBuffer> triangles_transformData;
+  @Uint64()
+  external int triangles_transformOffset;
+  @Int32()
+  external int aabbs_sType;
+  external Pointer aabbs_pNext;
+  external Pointer<VkBuffer> aabbs_aabbData;
+  @Uint32()
+  external int aabbs_numAABBs;
+  @Uint32()
+  external int aabbs_stride;
+  @Uint64()
+  external int aabbs_offset;
 }
 
 class VkGeometryNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int geometryType;
-  @Int32() int geometry_triangles_sType;
-  Pointer geometry_triangles_pNext;
-  Pointer<VkBuffer> geometry_triangles_vertexData;
-  @Uint64() int geometry_triangles_vertexOffset;
-  @Uint32() int geometry_triangles_vertexCount;
-  @Uint64() int geometry_triangles_vertexStride;
-  @Int32() int geometry_triangles_vertexFormat;
-  Pointer<VkBuffer> geometry_triangles_indexData;
-  @Uint64() int geometry_triangles_indexOffset;
-  @Uint32() int geometry_triangles_indexCount;
-  @Int32() int geometry_triangles_indexType;
-  Pointer<VkBuffer> geometry_triangles_transformData;
-  @Uint64() int geometry_triangles_transformOffset;
-  @Int32() int geometry_aabbs_sType;
-  Pointer geometry_aabbs_pNext;
-  Pointer<VkBuffer> geometry_aabbs_aabbData;
-  @Uint32() int geometry_aabbs_numAABBs;
-  @Uint32() int geometry_aabbs_stride;
-  @Uint64() int geometry_aabbs_offset;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int geometryType;
+  @Int32()
+  external int geometry_triangles_sType;
+  external Pointer geometry_triangles_pNext;
+  external Pointer<VkBuffer> geometry_triangles_vertexData;
+  @Uint64()
+  external int geometry_triangles_vertexOffset;
+  @Uint32()
+  external int geometry_triangles_vertexCount;
+  @Uint64()
+  external int geometry_triangles_vertexStride;
+  @Int32()
+  external int geometry_triangles_vertexFormat;
+  external Pointer<VkBuffer> geometry_triangles_indexData;
+  @Uint64()
+  external int geometry_triangles_indexOffset;
+  @Uint32()
+  external int geometry_triangles_indexCount;
+  @Int32()
+  external int geometry_triangles_indexType;
+  external Pointer<VkBuffer> geometry_triangles_transformData;
+  @Uint64()
+  external int geometry_triangles_transformOffset;
+  @Int32()
+  external int geometry_aabbs_sType;
+  external Pointer geometry_aabbs_pNext;
+  external Pointer<VkBuffer> geometry_aabbs_aabbData;
+  @Uint32()
+  external int geometry_aabbs_numAABBs;
+  @Uint32()
+  external int geometry_aabbs_stride;
+  @Uint64()
+  external int geometry_aabbs_offset;
+  @Uint32()
+  external int flags;
 }
 
 class VkAccelerationStructureInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer type;
-  Pointer flags;
-  @Uint32() int instanceCount;
-  @Uint32() int geometryCount;
-  Pointer<VkGeometryNV> pGeometries;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer type;
+  external Pointer flags;
+  @Uint32()
+  external int instanceCount;
+  @Uint32()
+  external int geometryCount;
+  external Pointer<VkGeometryNV> pGeometries;
 }
 
 class VkAccelerationStructureCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int compactedSize;
-  @Int32() int info_sType;
-  Pointer info_pNext;
-  Pointer info_type;
-  Pointer info_flags;
-  @Uint32() int info_instanceCount;
-  @Uint32() int info_geometryCount;
-  Pointer<VkGeometryNV> info_pGeometries;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int compactedSize;
+  @Int32()
+  external int info_sType;
+  external Pointer info_pNext;
+  external Pointer info_type;
+  external Pointer info_flags;
+  @Uint32()
+  external int info_instanceCount;
+  @Uint32()
+  external int info_geometryCount;
+  external Pointer<VkGeometryNV> info_pGeometries;
 }
 
 class VkBindAccelerationStructureMemoryInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkAccelerationStructureNV> accelerationStructure;
-  Pointer<VkDeviceMemory> memory;
-  @Uint64() int memoryOffset;
-  @Uint32() int deviceIndexCount;
-  Pointer pDeviceIndices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkAccelerationStructureNV> accelerationStructure;
+  external Pointer<VkDeviceMemory> memory;
+  @Uint64()
+  external int memoryOffset;
+  @Uint32()
+  external int deviceIndexCount;
+  external Pointer pDeviceIndices;
 }
 
 class VkWriteDescriptorSetAccelerationStructureKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int accelerationStructureCount;
-  Pointer<Pointer<VkAccelerationStructureKHR>> pAccelerationStructures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int accelerationStructureCount;
+  external Pointer<Pointer<VkAccelerationStructureKHR>> pAccelerationStructures;
 }
 
 class VkWriteDescriptorSetAccelerationStructureNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int accelerationStructureCount;
-  Pointer<Pointer<VkAccelerationStructureNV>> pAccelerationStructures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int accelerationStructureCount;
+  external Pointer<Pointer<VkAccelerationStructureNV>> pAccelerationStructures;
 }
 
 class VkAccelerationStructureMemoryRequirementsInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int type;
-  Pointer<VkAccelerationStructureNV> accelerationStructure;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int type;
+  external Pointer<VkAccelerationStructureNV> accelerationStructure;
 }
 
 class VkPhysicalDeviceAccelerationStructureFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int accelerationStructure;
-  @Uint32() int accelerationStructureCaptureReplay;
-  @Uint32() int accelerationStructureIndirectBuild;
-  @Uint32() int accelerationStructureHostCommands;
-  @Uint32() int descriptorBindingAccelerationStructureUpdateAfterBind;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int accelerationStructure;
+  @Uint32()
+  external int accelerationStructureCaptureReplay;
+  @Uint32()
+  external int accelerationStructureIndirectBuild;
+  @Uint32()
+  external int accelerationStructureHostCommands;
+  @Uint32()
+  external int descriptorBindingAccelerationStructureUpdateAfterBind;
 }
 
 class VkPhysicalDeviceRayTracingPipelineFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int rayTracingPipeline;
-  @Uint32() int rayTracingPipelineShaderGroupHandleCaptureReplay;
-  @Uint32() int rayTracingPipelineShaderGroupHandleCaptureReplayMixed;
-  @Uint32() int rayTracingPipelineTraceRaysIndirect;
-  @Uint32() int rayTraversalPrimitiveCulling;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int rayTracingPipeline;
+  @Uint32()
+  external int rayTracingPipelineShaderGroupHandleCaptureReplay;
+  @Uint32()
+  external int rayTracingPipelineShaderGroupHandleCaptureReplayMixed;
+  @Uint32()
+  external int rayTracingPipelineTraceRaysIndirect;
+  @Uint32()
+  external int rayTraversalPrimitiveCulling;
 }
 
 class VkPhysicalDeviceRayQueryFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int rayQuery;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int rayQuery;
 }
 
 class VkPhysicalDeviceAccelerationStructurePropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int maxGeometryCount;
-  @Uint64() int maxInstanceCount;
-  @Uint64() int maxPrimitiveCount;
-  @Uint32() int maxPerStageDescriptorAccelerationStructures;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindAccelerationStructures;
-  @Uint32() int maxDescriptorSetAccelerationStructures;
-  @Uint32() int maxDescriptorSetUpdateAfterBindAccelerationStructures;
-  @Uint32() int minAccelerationStructureScratchOffsetAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int maxGeometryCount;
+  @Uint64()
+  external int maxInstanceCount;
+  @Uint64()
+  external int maxPrimitiveCount;
+  @Uint32()
+  external int maxPerStageDescriptorAccelerationStructures;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindAccelerationStructures;
+  @Uint32()
+  external int maxDescriptorSetAccelerationStructures;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindAccelerationStructures;
+  @Uint32()
+  external int minAccelerationStructureScratchOffsetAlignment;
 }
 
 class VkPhysicalDeviceRayTracingPipelinePropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderGroupHandleSize;
-  @Uint32() int maxRayRecursionDepth;
-  @Uint32() int maxShaderGroupStride;
-  @Uint32() int shaderGroupBaseAlignment;
-  @Uint32() int shaderGroupHandleCaptureReplaySize;
-  @Uint32() int maxRayDispatchInvocationCount;
-  @Uint32() int shaderGroupHandleAlignment;
-  @Uint32() int maxRayHitAttributeSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderGroupHandleSize;
+  @Uint32()
+  external int maxRayRecursionDepth;
+  @Uint32()
+  external int maxShaderGroupStride;
+  @Uint32()
+  external int shaderGroupBaseAlignment;
+  @Uint32()
+  external int shaderGroupHandleCaptureReplaySize;
+  @Uint32()
+  external int maxRayDispatchInvocationCount;
+  @Uint32()
+  external int shaderGroupHandleAlignment;
+  @Uint32()
+  external int maxRayHitAttributeSize;
 }
 
 class VkPhysicalDeviceRayTracingPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderGroupHandleSize;
-  @Uint32() int maxRecursionDepth;
-  @Uint32() int maxShaderGroupStride;
-  @Uint32() int shaderGroupBaseAlignment;
-  @Uint64() int maxGeometryCount;
-  @Uint64() int maxInstanceCount;
-  @Uint64() int maxTriangleCount;
-  @Uint32() int maxDescriptorSetAccelerationStructures;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderGroupHandleSize;
+  @Uint32()
+  external int maxRecursionDepth;
+  @Uint32()
+  external int maxShaderGroupStride;
+  @Uint32()
+  external int shaderGroupBaseAlignment;
+  @Uint64()
+  external int maxGeometryCount;
+  @Uint64()
+  external int maxInstanceCount;
+  @Uint64()
+  external int maxTriangleCount;
+  @Uint32()
+  external int maxDescriptorSetAccelerationStructures;
 }
 
 class VkStridedDeviceAddressRegionKHR extends Struct {
-  @Uint64() int deviceAddress;
-  @Uint64() int stride;
-  @Uint64() int size;
+  @Uint64()
+  external int deviceAddress;
+  @Uint64()
+  external int stride;
+  @Uint64()
+  external int size;
 }
 
 class VkTraceRaysIndirectCommandKHR extends Struct {
-  @Uint32() int width;
-  @Uint32() int height;
-  @Uint32() int depth;
+  @Uint32()
+  external int width;
+  @Uint32()
+  external int height;
+  @Uint32()
+  external int depth;
 }
 
 class VkDrmFormatModifierPropertiesListEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int drmFormatModifierCount;
-  Pointer<VkDrmFormatModifierPropertiesEXT> pDrmFormatModifierProperties;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int drmFormatModifierCount;
+  external Pointer<VkDrmFormatModifierPropertiesEXT> pDrmFormatModifierProperties;
 }
 
 class VkDrmFormatModifierPropertiesEXT extends Struct {
-  @Uint64() int drmFormatModifier;
-  @Uint32() int drmFormatModifierPlaneCount;
-  @Uint32() int drmFormatModifierTilingFeatures;
+  @Uint64()
+  external int drmFormatModifier;
+  @Uint32()
+  external int drmFormatModifierPlaneCount;
+  @Uint32()
+  external int drmFormatModifierTilingFeatures;
 }
 
 class VkPhysicalDeviceImageDrmFormatModifierInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int drmFormatModifier;
-  @Int32() int sharingMode;
-  @Uint32() int queueFamilyIndexCount;
-  Pointer pQueueFamilyIndices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int drmFormatModifier;
+  @Int32()
+  external int sharingMode;
+  @Uint32()
+  external int queueFamilyIndexCount;
+  external Pointer pQueueFamilyIndices;
 }
 
 class VkImageDrmFormatModifierListCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int drmFormatModifierCount;
-  Pointer pDrmFormatModifiers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int drmFormatModifierCount;
+  external Pointer pDrmFormatModifiers;
 }
 
 class VkImageDrmFormatModifierExplicitCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int drmFormatModifier;
-  @Uint32() int drmFormatModifierPlaneCount;
-  Pointer<VkSubresourceLayout> pPlaneLayouts;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int drmFormatModifier;
+  @Uint32()
+  external int drmFormatModifierPlaneCount;
+  external Pointer<VkSubresourceLayout> pPlaneLayouts;
 }
 
 class VkImageDrmFormatModifierPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int drmFormatModifier;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int drmFormatModifier;
 }
 
 class VkImageStencilUsageCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int stencilUsage;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int stencilUsage;
 }
 
 class VkImageStencilUsageCreateInfoEXT extends Opaque {
 }
 
 class VkDeviceMemoryOverallocationCreateInfoAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int overallocationBehavior;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int overallocationBehavior;
 }
 
 class VkPhysicalDeviceFragmentDensityMapFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentDensityMap;
-  @Uint32() int fragmentDensityMapDynamic;
-  @Uint32() int fragmentDensityMapNonSubsampledImages;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentDensityMap;
+  @Uint32()
+  external int fragmentDensityMapDynamic;
+  @Uint32()
+  external int fragmentDensityMapNonSubsampledImages;
 }
 
 class VkPhysicalDeviceFragmentDensityMap2FeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentDensityMapDeferred;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentDensityMapDeferred;
 }
 
 class VkPhysicalDeviceFragmentDensityMapPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int minFragmentDensityTexelSize_width;
-  @Uint32() int minFragmentDensityTexelSize_height;
-  @Uint32() int maxFragmentDensityTexelSize_width;
-  @Uint32() int maxFragmentDensityTexelSize_height;
-  @Uint32() int fragmentDensityInvocations;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int minFragmentDensityTexelSize_width;
+  @Uint32()
+  external int minFragmentDensityTexelSize_height;
+  @Uint32()
+  external int maxFragmentDensityTexelSize_width;
+  @Uint32()
+  external int maxFragmentDensityTexelSize_height;
+  @Uint32()
+  external int fragmentDensityInvocations;
 }
 
 class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int subsampledLoads;
-  @Uint32() int subsampledCoarseReconstructionEarlyAccess;
-  @Uint32() int maxSubsampledArrayLayers;
-  @Uint32() int maxDescriptorSetSubsampledSamplers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int subsampledLoads;
+  @Uint32()
+  external int subsampledCoarseReconstructionEarlyAccess;
+  @Uint32()
+  external int maxSubsampledArrayLayers;
+  @Uint32()
+  external int maxDescriptorSetSubsampledSamplers;
 }
 
 class VkRenderPassFragmentDensityMapCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentDensityMapAttachment_attachment;
-  @Int32() int fragmentDensityMapAttachment_layout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentDensityMapAttachment_attachment;
+  @Int32()
+  external int fragmentDensityMapAttachment_layout;
 }
 
 class VkPhysicalDeviceScalarBlockLayoutFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int scalarBlockLayout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int scalarBlockLayout;
 }
 
 class VkPhysicalDeviceScalarBlockLayoutFeaturesEXT extends Opaque {
 }
 
 class VkSurfaceProtectedCapabilitiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int supportsProtected;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int supportsProtected;
 }
 
 class VkPhysicalDeviceUniformBufferStandardLayoutFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int uniformBufferStandardLayout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int uniformBufferStandardLayout;
 }
 
 class VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceDepthClipEnableFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int depthClipEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int depthClipEnable;
 }
 
 class VkPipelineRasterizationDepthClipStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int depthClipEnable;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int depthClipEnable;
 }
 
 class VkPhysicalDeviceMemoryBudgetPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int heapBudget_0; @Uint64() int heapBudget_1; @Uint64() int heapBudget_2; @Uint64() int heapBudget_3; @Uint64() int heapBudget_4; @Uint64() int heapBudget_5; @Uint64() int heapBudget_6; @Uint64() int heapBudget_7; @Uint64() int heapBudget_8; @Uint64() int heapBudget_9; @Uint64() int heapBudget_10; @Uint64() int heapBudget_11; @Uint64() int heapBudget_12; @Uint64() int heapBudget_13; @Uint64() int heapBudget_14; @Uint64() int heapBudget_15;
-  @Uint64() int heapUsage_0; @Uint64() int heapUsage_1; @Uint64() int heapUsage_2; @Uint64() int heapUsage_3; @Uint64() int heapUsage_4; @Uint64() int heapUsage_5; @Uint64() int heapUsage_6; @Uint64() int heapUsage_7; @Uint64() int heapUsage_8; @Uint64() int heapUsage_9; @Uint64() int heapUsage_10; @Uint64() int heapUsage_11; @Uint64() int heapUsage_12; @Uint64() int heapUsage_13; @Uint64() int heapUsage_14; @Uint64() int heapUsage_15;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(16)
+  external Array<Uint64> heapBudget;
+  @Array(16)
+  external Array<Uint64> heapUsage;
 }
 
 class VkPhysicalDeviceMemoryPriorityFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int memoryPriority;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int memoryPriority;
 }
 
 class VkMemoryPriorityAllocateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Float() double priority;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Float()
+  external double priority;
 }
 
 class VkPhysicalDeviceBufferDeviceAddressFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int bufferDeviceAddress;
-  @Uint32() int bufferDeviceAddressCaptureReplay;
-  @Uint32() int bufferDeviceAddressMultiDevice;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int bufferDeviceAddress;
+  @Uint32()
+  external int bufferDeviceAddressCaptureReplay;
+  @Uint32()
+  external int bufferDeviceAddressMultiDevice;
 }
 
 class VkPhysicalDeviceBufferDeviceAddressFeaturesKHR extends Opaque {
 }
 
 class VkPhysicalDeviceBufferDeviceAddressFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int bufferDeviceAddress;
-  @Uint32() int bufferDeviceAddressCaptureReplay;
-  @Uint32() int bufferDeviceAddressMultiDevice;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int bufferDeviceAddress;
+  @Uint32()
+  external int bufferDeviceAddressCaptureReplay;
+  @Uint32()
+  external int bufferDeviceAddressMultiDevice;
 }
 
 class VkPhysicalDeviceBufferAddressFeaturesEXT extends Opaque {
 }
 
 class VkBufferDeviceAddressInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> buffer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> buffer;
 }
 
 class VkBufferDeviceAddressInfoKHR extends Opaque {
@@ -7738,1568 +9937,2077 @@ class VkBufferDeviceAddressInfoEXT extends Opaque {
 }
 
 class VkBufferOpaqueCaptureAddressCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int opaqueCaptureAddress;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int opaqueCaptureAddress;
 }
 
 class VkBufferOpaqueCaptureAddressCreateInfoKHR extends Opaque {
 }
 
 class VkBufferDeviceAddressCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int deviceAddress;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int deviceAddress;
 }
 
 class VkPhysicalDeviceImageViewImageFormatInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int imageViewType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int imageViewType;
 }
 
 class VkFilterCubicImageViewImageFormatPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int filterCubic;
-  @Uint32() int filterCubicMinmax;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int filterCubic;
+  @Uint32()
+  external int filterCubicMinmax;
 }
 
 class VkPhysicalDeviceImagelessFramebufferFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int imagelessFramebuffer;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int imagelessFramebuffer;
 }
 
 class VkPhysicalDeviceImagelessFramebufferFeaturesKHR extends Opaque {
 }
 
 class VkFramebufferAttachmentsCreateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int attachmentImageInfoCount;
-  Pointer<VkFramebufferAttachmentImageInfo> pAttachmentImageInfos;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int attachmentImageInfoCount;
+  external Pointer<VkFramebufferAttachmentImageInfo> pAttachmentImageInfos;
 }
 
 class VkFramebufferAttachmentsCreateInfoKHR extends Opaque {
 }
 
 class VkFramebufferAttachmentImageInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int usage;
-  @Uint32() int width;
-  @Uint32() int height;
-  @Uint32() int layerCount;
-  @Uint32() int viewFormatCount;
-  Pointer<Int32> pViewFormats;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int usage;
+  @Uint32()
+  external int width;
+  @Uint32()
+  external int height;
+  @Uint32()
+  external int layerCount;
+  @Uint32()
+  external int viewFormatCount;
+  external Pointer<Int32> pViewFormats;
 }
 
 class VkFramebufferAttachmentImageInfoKHR extends Opaque {
 }
 
 class VkRenderPassAttachmentBeginInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int attachmentCount;
-  Pointer<Pointer<VkImageView>> pAttachments;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int attachmentCount;
+  external Pointer<Pointer<VkImageView>> pAttachments;
 }
 
 class VkRenderPassAttachmentBeginInfoKHR extends Opaque {
 }
 
 class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int textureCompressionASTC_HDR;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int textureCompressionASTC_HDR;
 }
 
 class VkPhysicalDeviceCooperativeMatrixFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int cooperativeMatrix;
-  @Uint32() int cooperativeMatrixRobustBufferAccess;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int cooperativeMatrix;
+  @Uint32()
+  external int cooperativeMatrixRobustBufferAccess;
 }
 
 class VkPhysicalDeviceCooperativeMatrixPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int cooperativeMatrixSupportedStages;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int cooperativeMatrixSupportedStages;
 }
 
 class VkCooperativeMatrixPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int MSize;
-  @Uint32() int NSize;
-  @Uint32() int KSize;
-  @Int32() int AType;
-  @Int32() int BType;
-  @Int32() int CType;
-  @Int32() int DType;
-  @Int32() int scope;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int MSize;
+  @Uint32()
+  external int NSize;
+  @Uint32()
+  external int KSize;
+  @Int32()
+  external int AType;
+  @Int32()
+  external int BType;
+  @Int32()
+  external int CType;
+  @Int32()
+  external int DType;
+  @Int32()
+  external int scope;
 }
 
 class VkPhysicalDeviceYcbcrImageArraysFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int ycbcrImageArrays;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int ycbcrImageArrays;
 }
 
 class VkImageViewHandleInfoNVX extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImageView> imageView;
-  @Int32() int descriptorType;
-  Pointer<VkSampler> sampler;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImageView> imageView;
+  @Int32()
+  external int descriptorType;
+  external Pointer<VkSampler> sampler;
 }
 
 class VkImageViewAddressPropertiesNVX extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int deviceAddress;
-  @Uint64() int size;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int deviceAddress;
+  @Uint64()
+  external int size;
 }
 
 class VkPresentFrameTokenGGP extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer frameToken;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer frameToken;
 }
 
 class VkPipelineCreationFeedbackEXT extends Struct {
-  @Uint32() int flags;
-  @Uint64() int duration;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int duration;
 }
 
 class VkPipelineCreationFeedbackCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkPipelineCreationFeedbackEXT> pPipelineCreationFeedback;
-  @Uint32() int pipelineStageCreationFeedbackCount;
-  Pointer<VkPipelineCreationFeedbackEXT> pPipelineStageCreationFeedbacks;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkPipelineCreationFeedbackEXT> pPipelineCreationFeedback;
+  @Uint32()
+  external int pipelineStageCreationFeedbackCount;
+  external Pointer<VkPipelineCreationFeedbackEXT> pPipelineStageCreationFeedbacks;
 }
 
 class VkSurfaceFullScreenExclusiveInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int fullScreenExclusive;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int fullScreenExclusive;
 }
 
 class VkSurfaceFullScreenExclusiveWin32InfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer hmonitor;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer hmonitor;
 }
 
 class VkSurfaceCapabilitiesFullScreenExclusiveEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fullScreenExclusiveSupported;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fullScreenExclusiveSupported;
 }
 
 class VkPhysicalDevicePerformanceQueryFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int performanceCounterQueryPools;
-  @Uint32() int performanceCounterMultipleQueryPools;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int performanceCounterQueryPools;
+  @Uint32()
+  external int performanceCounterMultipleQueryPools;
 }
 
 class VkPhysicalDevicePerformanceQueryPropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int allowCommandBufferQueryCopies;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int allowCommandBufferQueryCopies;
 }
 
 class VkPerformanceCounterKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int unit;
-  @Int32() int scope;
-  @Int32() int storage;
-  @Uint8() int uuid_0; @Uint8() int uuid_1; @Uint8() int uuid_2; @Uint8() int uuid_3; @Uint8() int uuid_4; @Uint8() int uuid_5; @Uint8() int uuid_6; @Uint8() int uuid_7; @Uint8() int uuid_8; @Uint8() int uuid_9; @Uint8() int uuid_10; @Uint8() int uuid_11; @Uint8() int uuid_12; @Uint8() int uuid_13; @Uint8() int uuid_14; @Uint8() int uuid_15;
-  String get uuid {
-    var bytes = [uuid_0, uuid_1, uuid_2, uuid_3, uuid_4, uuid_5, uuid_6, uuid_7, uuid_8, uuid_9, uuid_10, uuid_11, uuid_12, uuid_13, uuid_14, uuid_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set uuid(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    uuid_0 = bytes[0]; uuid_1 = bytes[1]; uuid_2 = bytes[2]; uuid_3 = bytes[3]; uuid_4 = bytes[4]; uuid_5 = bytes[5]; uuid_6 = bytes[6]; uuid_7 = bytes[7]; uuid_8 = bytes[8]; uuid_9 = bytes[9]; uuid_10 = bytes[10]; uuid_11 = bytes[11]; uuid_12 = bytes[12]; uuid_13 = bytes[13]; uuid_14 = bytes[14]; uuid_15 = bytes[15];
-  }
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int unit;
+  @Int32()
+  external int scope;
+  @Int32()
+  external int storage;
+  @Array(16)
+  external Array<Uint8> uuid;
 }
 
 class VkPerformanceCounterDescriptionKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint8() int name_0; @Uint8() int name_1; @Uint8() int name_2; @Uint8() int name_3; @Uint8() int name_4; @Uint8() int name_5; @Uint8() int name_6; @Uint8() int name_7; @Uint8() int name_8; @Uint8() int name_9; @Uint8() int name_10; @Uint8() int name_11; @Uint8() int name_12; @Uint8() int name_13; @Uint8() int name_14; @Uint8() int name_15; @Uint8() int name_16; @Uint8() int name_17; @Uint8() int name_18; @Uint8() int name_19; @Uint8() int name_20; @Uint8() int name_21; @Uint8() int name_22; @Uint8() int name_23; @Uint8() int name_24; @Uint8() int name_25; @Uint8() int name_26; @Uint8() int name_27; @Uint8() int name_28; @Uint8() int name_29; @Uint8() int name_30; @Uint8() int name_31; @Uint8() int name_32; @Uint8() int name_33; @Uint8() int name_34; @Uint8() int name_35; @Uint8() int name_36; @Uint8() int name_37; @Uint8() int name_38; @Uint8() int name_39; @Uint8() int name_40; @Uint8() int name_41; @Uint8() int name_42; @Uint8() int name_43; @Uint8() int name_44; @Uint8() int name_45; @Uint8() int name_46; @Uint8() int name_47; @Uint8() int name_48; @Uint8() int name_49; @Uint8() int name_50; @Uint8() int name_51; @Uint8() int name_52; @Uint8() int name_53; @Uint8() int name_54; @Uint8() int name_55; @Uint8() int name_56; @Uint8() int name_57; @Uint8() int name_58; @Uint8() int name_59; @Uint8() int name_60; @Uint8() int name_61; @Uint8() int name_62; @Uint8() int name_63; @Uint8() int name_64; @Uint8() int name_65; @Uint8() int name_66; @Uint8() int name_67; @Uint8() int name_68; @Uint8() int name_69; @Uint8() int name_70; @Uint8() int name_71; @Uint8() int name_72; @Uint8() int name_73; @Uint8() int name_74; @Uint8() int name_75; @Uint8() int name_76; @Uint8() int name_77; @Uint8() int name_78; @Uint8() int name_79; @Uint8() int name_80; @Uint8() int name_81; @Uint8() int name_82; @Uint8() int name_83; @Uint8() int name_84; @Uint8() int name_85; @Uint8() int name_86; @Uint8() int name_87; @Uint8() int name_88; @Uint8() int name_89; @Uint8() int name_90; @Uint8() int name_91; @Uint8() int name_92; @Uint8() int name_93; @Uint8() int name_94; @Uint8() int name_95; @Uint8() int name_96; @Uint8() int name_97; @Uint8() int name_98; @Uint8() int name_99; @Uint8() int name_100; @Uint8() int name_101; @Uint8() int name_102; @Uint8() int name_103; @Uint8() int name_104; @Uint8() int name_105; @Uint8() int name_106; @Uint8() int name_107; @Uint8() int name_108; @Uint8() int name_109; @Uint8() int name_110; @Uint8() int name_111; @Uint8() int name_112; @Uint8() int name_113; @Uint8() int name_114; @Uint8() int name_115; @Uint8() int name_116; @Uint8() int name_117; @Uint8() int name_118; @Uint8() int name_119; @Uint8() int name_120; @Uint8() int name_121; @Uint8() int name_122; @Uint8() int name_123; @Uint8() int name_124; @Uint8() int name_125; @Uint8() int name_126; @Uint8() int name_127; @Uint8() int name_128; @Uint8() int name_129; @Uint8() int name_130; @Uint8() int name_131; @Uint8() int name_132; @Uint8() int name_133; @Uint8() int name_134; @Uint8() int name_135; @Uint8() int name_136; @Uint8() int name_137; @Uint8() int name_138; @Uint8() int name_139; @Uint8() int name_140; @Uint8() int name_141; @Uint8() int name_142; @Uint8() int name_143; @Uint8() int name_144; @Uint8() int name_145; @Uint8() int name_146; @Uint8() int name_147; @Uint8() int name_148; @Uint8() int name_149; @Uint8() int name_150; @Uint8() int name_151; @Uint8() int name_152; @Uint8() int name_153; @Uint8() int name_154; @Uint8() int name_155; @Uint8() int name_156; @Uint8() int name_157; @Uint8() int name_158; @Uint8() int name_159; @Uint8() int name_160; @Uint8() int name_161; @Uint8() int name_162; @Uint8() int name_163; @Uint8() int name_164; @Uint8() int name_165; @Uint8() int name_166; @Uint8() int name_167; @Uint8() int name_168; @Uint8() int name_169; @Uint8() int name_170; @Uint8() int name_171; @Uint8() int name_172; @Uint8() int name_173; @Uint8() int name_174; @Uint8() int name_175; @Uint8() int name_176; @Uint8() int name_177; @Uint8() int name_178; @Uint8() int name_179; @Uint8() int name_180; @Uint8() int name_181; @Uint8() int name_182; @Uint8() int name_183; @Uint8() int name_184; @Uint8() int name_185; @Uint8() int name_186; @Uint8() int name_187; @Uint8() int name_188; @Uint8() int name_189; @Uint8() int name_190; @Uint8() int name_191; @Uint8() int name_192; @Uint8() int name_193; @Uint8() int name_194; @Uint8() int name_195; @Uint8() int name_196; @Uint8() int name_197; @Uint8() int name_198; @Uint8() int name_199; @Uint8() int name_200; @Uint8() int name_201; @Uint8() int name_202; @Uint8() int name_203; @Uint8() int name_204; @Uint8() int name_205; @Uint8() int name_206; @Uint8() int name_207; @Uint8() int name_208; @Uint8() int name_209; @Uint8() int name_210; @Uint8() int name_211; @Uint8() int name_212; @Uint8() int name_213; @Uint8() int name_214; @Uint8() int name_215; @Uint8() int name_216; @Uint8() int name_217; @Uint8() int name_218; @Uint8() int name_219; @Uint8() int name_220; @Uint8() int name_221; @Uint8() int name_222; @Uint8() int name_223; @Uint8() int name_224; @Uint8() int name_225; @Uint8() int name_226; @Uint8() int name_227; @Uint8() int name_228; @Uint8() int name_229; @Uint8() int name_230; @Uint8() int name_231; @Uint8() int name_232; @Uint8() int name_233; @Uint8() int name_234; @Uint8() int name_235; @Uint8() int name_236; @Uint8() int name_237; @Uint8() int name_238; @Uint8() int name_239; @Uint8() int name_240; @Uint8() int name_241; @Uint8() int name_242; @Uint8() int name_243; @Uint8() int name_244; @Uint8() int name_245; @Uint8() int name_246; @Uint8() int name_247; @Uint8() int name_248; @Uint8() int name_249; @Uint8() int name_250; @Uint8() int name_251; @Uint8() int name_252; @Uint8() int name_253; @Uint8() int name_254; @Uint8() int name_255;
-  String get name {
-    var bytes = [name_0, name_1, name_2, name_3, name_4, name_5, name_6, name_7, name_8, name_9, name_10, name_11, name_12, name_13, name_14, name_15, name_16, name_17, name_18, name_19, name_20, name_21, name_22, name_23, name_24, name_25, name_26, name_27, name_28, name_29, name_30, name_31, name_32, name_33, name_34, name_35, name_36, name_37, name_38, name_39, name_40, name_41, name_42, name_43, name_44, name_45, name_46, name_47, name_48, name_49, name_50, name_51, name_52, name_53, name_54, name_55, name_56, name_57, name_58, name_59, name_60, name_61, name_62, name_63, name_64, name_65, name_66, name_67, name_68, name_69, name_70, name_71, name_72, name_73, name_74, name_75, name_76, name_77, name_78, name_79, name_80, name_81, name_82, name_83, name_84, name_85, name_86, name_87, name_88, name_89, name_90, name_91, name_92, name_93, name_94, name_95, name_96, name_97, name_98, name_99, name_100, name_101, name_102, name_103, name_104, name_105, name_106, name_107, name_108, name_109, name_110, name_111, name_112, name_113, name_114, name_115, name_116, name_117, name_118, name_119, name_120, name_121, name_122, name_123, name_124, name_125, name_126, name_127, name_128, name_129, name_130, name_131, name_132, name_133, name_134, name_135, name_136, name_137, name_138, name_139, name_140, name_141, name_142, name_143, name_144, name_145, name_146, name_147, name_148, name_149, name_150, name_151, name_152, name_153, name_154, name_155, name_156, name_157, name_158, name_159, name_160, name_161, name_162, name_163, name_164, name_165, name_166, name_167, name_168, name_169, name_170, name_171, name_172, name_173, name_174, name_175, name_176, name_177, name_178, name_179, name_180, name_181, name_182, name_183, name_184, name_185, name_186, name_187, name_188, name_189, name_190, name_191, name_192, name_193, name_194, name_195, name_196, name_197, name_198, name_199, name_200, name_201, name_202, name_203, name_204, name_205, name_206, name_207, name_208, name_209, name_210, name_211, name_212, name_213, name_214, name_215, name_216, name_217, name_218, name_219, name_220, name_221, name_222, name_223, name_224, name_225, name_226, name_227, name_228, name_229, name_230, name_231, name_232, name_233, name_234, name_235, name_236, name_237, name_238, name_239, name_240, name_241, name_242, name_243, name_244, name_245, name_246, name_247, name_248, name_249, name_250, name_251, name_252, name_253, name_254, name_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set name(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    name_0 = bytes[0]; name_1 = bytes[1]; name_2 = bytes[2]; name_3 = bytes[3]; name_4 = bytes[4]; name_5 = bytes[5]; name_6 = bytes[6]; name_7 = bytes[7]; name_8 = bytes[8]; name_9 = bytes[9]; name_10 = bytes[10]; name_11 = bytes[11]; name_12 = bytes[12]; name_13 = bytes[13]; name_14 = bytes[14]; name_15 = bytes[15]; name_16 = bytes[16]; name_17 = bytes[17]; name_18 = bytes[18]; name_19 = bytes[19]; name_20 = bytes[20]; name_21 = bytes[21]; name_22 = bytes[22]; name_23 = bytes[23]; name_24 = bytes[24]; name_25 = bytes[25]; name_26 = bytes[26]; name_27 = bytes[27]; name_28 = bytes[28]; name_29 = bytes[29]; name_30 = bytes[30]; name_31 = bytes[31]; name_32 = bytes[32]; name_33 = bytes[33]; name_34 = bytes[34]; name_35 = bytes[35]; name_36 = bytes[36]; name_37 = bytes[37]; name_38 = bytes[38]; name_39 = bytes[39]; name_40 = bytes[40]; name_41 = bytes[41]; name_42 = bytes[42]; name_43 = bytes[43]; name_44 = bytes[44]; name_45 = bytes[45]; name_46 = bytes[46]; name_47 = bytes[47]; name_48 = bytes[48]; name_49 = bytes[49]; name_50 = bytes[50]; name_51 = bytes[51]; name_52 = bytes[52]; name_53 = bytes[53]; name_54 = bytes[54]; name_55 = bytes[55]; name_56 = bytes[56]; name_57 = bytes[57]; name_58 = bytes[58]; name_59 = bytes[59]; name_60 = bytes[60]; name_61 = bytes[61]; name_62 = bytes[62]; name_63 = bytes[63]; name_64 = bytes[64]; name_65 = bytes[65]; name_66 = bytes[66]; name_67 = bytes[67]; name_68 = bytes[68]; name_69 = bytes[69]; name_70 = bytes[70]; name_71 = bytes[71]; name_72 = bytes[72]; name_73 = bytes[73]; name_74 = bytes[74]; name_75 = bytes[75]; name_76 = bytes[76]; name_77 = bytes[77]; name_78 = bytes[78]; name_79 = bytes[79]; name_80 = bytes[80]; name_81 = bytes[81]; name_82 = bytes[82]; name_83 = bytes[83]; name_84 = bytes[84]; name_85 = bytes[85]; name_86 = bytes[86]; name_87 = bytes[87]; name_88 = bytes[88]; name_89 = bytes[89]; name_90 = bytes[90]; name_91 = bytes[91]; name_92 = bytes[92]; name_93 = bytes[93]; name_94 = bytes[94]; name_95 = bytes[95]; name_96 = bytes[96]; name_97 = bytes[97]; name_98 = bytes[98]; name_99 = bytes[99]; name_100 = bytes[100]; name_101 = bytes[101]; name_102 = bytes[102]; name_103 = bytes[103]; name_104 = bytes[104]; name_105 = bytes[105]; name_106 = bytes[106]; name_107 = bytes[107]; name_108 = bytes[108]; name_109 = bytes[109]; name_110 = bytes[110]; name_111 = bytes[111]; name_112 = bytes[112]; name_113 = bytes[113]; name_114 = bytes[114]; name_115 = bytes[115]; name_116 = bytes[116]; name_117 = bytes[117]; name_118 = bytes[118]; name_119 = bytes[119]; name_120 = bytes[120]; name_121 = bytes[121]; name_122 = bytes[122]; name_123 = bytes[123]; name_124 = bytes[124]; name_125 = bytes[125]; name_126 = bytes[126]; name_127 = bytes[127]; name_128 = bytes[128]; name_129 = bytes[129]; name_130 = bytes[130]; name_131 = bytes[131]; name_132 = bytes[132]; name_133 = bytes[133]; name_134 = bytes[134]; name_135 = bytes[135]; name_136 = bytes[136]; name_137 = bytes[137]; name_138 = bytes[138]; name_139 = bytes[139]; name_140 = bytes[140]; name_141 = bytes[141]; name_142 = bytes[142]; name_143 = bytes[143]; name_144 = bytes[144]; name_145 = bytes[145]; name_146 = bytes[146]; name_147 = bytes[147]; name_148 = bytes[148]; name_149 = bytes[149]; name_150 = bytes[150]; name_151 = bytes[151]; name_152 = bytes[152]; name_153 = bytes[153]; name_154 = bytes[154]; name_155 = bytes[155]; name_156 = bytes[156]; name_157 = bytes[157]; name_158 = bytes[158]; name_159 = bytes[159]; name_160 = bytes[160]; name_161 = bytes[161]; name_162 = bytes[162]; name_163 = bytes[163]; name_164 = bytes[164]; name_165 = bytes[165]; name_166 = bytes[166]; name_167 = bytes[167]; name_168 = bytes[168]; name_169 = bytes[169]; name_170 = bytes[170]; name_171 = bytes[171]; name_172 = bytes[172]; name_173 = bytes[173]; name_174 = bytes[174]; name_175 = bytes[175]; name_176 = bytes[176]; name_177 = bytes[177]; name_178 = bytes[178]; name_179 = bytes[179]; name_180 = bytes[180]; name_181 = bytes[181]; name_182 = bytes[182]; name_183 = bytes[183]; name_184 = bytes[184]; name_185 = bytes[185]; name_186 = bytes[186]; name_187 = bytes[187]; name_188 = bytes[188]; name_189 = bytes[189]; name_190 = bytes[190]; name_191 = bytes[191]; name_192 = bytes[192]; name_193 = bytes[193]; name_194 = bytes[194]; name_195 = bytes[195]; name_196 = bytes[196]; name_197 = bytes[197]; name_198 = bytes[198]; name_199 = bytes[199]; name_200 = bytes[200]; name_201 = bytes[201]; name_202 = bytes[202]; name_203 = bytes[203]; name_204 = bytes[204]; name_205 = bytes[205]; name_206 = bytes[206]; name_207 = bytes[207]; name_208 = bytes[208]; name_209 = bytes[209]; name_210 = bytes[210]; name_211 = bytes[211]; name_212 = bytes[212]; name_213 = bytes[213]; name_214 = bytes[214]; name_215 = bytes[215]; name_216 = bytes[216]; name_217 = bytes[217]; name_218 = bytes[218]; name_219 = bytes[219]; name_220 = bytes[220]; name_221 = bytes[221]; name_222 = bytes[222]; name_223 = bytes[223]; name_224 = bytes[224]; name_225 = bytes[225]; name_226 = bytes[226]; name_227 = bytes[227]; name_228 = bytes[228]; name_229 = bytes[229]; name_230 = bytes[230]; name_231 = bytes[231]; name_232 = bytes[232]; name_233 = bytes[233]; name_234 = bytes[234]; name_235 = bytes[235]; name_236 = bytes[236]; name_237 = bytes[237]; name_238 = bytes[238]; name_239 = bytes[239]; name_240 = bytes[240]; name_241 = bytes[241]; name_242 = bytes[242]; name_243 = bytes[243]; name_244 = bytes[244]; name_245 = bytes[245]; name_246 = bytes[246]; name_247 = bytes[247]; name_248 = bytes[248]; name_249 = bytes[249]; name_250 = bytes[250]; name_251 = bytes[251]; name_252 = bytes[252]; name_253 = bytes[253]; name_254 = bytes[254]; name_255 = bytes[255];
-  }
-  @Uint8() int category_0; @Uint8() int category_1; @Uint8() int category_2; @Uint8() int category_3; @Uint8() int category_4; @Uint8() int category_5; @Uint8() int category_6; @Uint8() int category_7; @Uint8() int category_8; @Uint8() int category_9; @Uint8() int category_10; @Uint8() int category_11; @Uint8() int category_12; @Uint8() int category_13; @Uint8() int category_14; @Uint8() int category_15; @Uint8() int category_16; @Uint8() int category_17; @Uint8() int category_18; @Uint8() int category_19; @Uint8() int category_20; @Uint8() int category_21; @Uint8() int category_22; @Uint8() int category_23; @Uint8() int category_24; @Uint8() int category_25; @Uint8() int category_26; @Uint8() int category_27; @Uint8() int category_28; @Uint8() int category_29; @Uint8() int category_30; @Uint8() int category_31; @Uint8() int category_32; @Uint8() int category_33; @Uint8() int category_34; @Uint8() int category_35; @Uint8() int category_36; @Uint8() int category_37; @Uint8() int category_38; @Uint8() int category_39; @Uint8() int category_40; @Uint8() int category_41; @Uint8() int category_42; @Uint8() int category_43; @Uint8() int category_44; @Uint8() int category_45; @Uint8() int category_46; @Uint8() int category_47; @Uint8() int category_48; @Uint8() int category_49; @Uint8() int category_50; @Uint8() int category_51; @Uint8() int category_52; @Uint8() int category_53; @Uint8() int category_54; @Uint8() int category_55; @Uint8() int category_56; @Uint8() int category_57; @Uint8() int category_58; @Uint8() int category_59; @Uint8() int category_60; @Uint8() int category_61; @Uint8() int category_62; @Uint8() int category_63; @Uint8() int category_64; @Uint8() int category_65; @Uint8() int category_66; @Uint8() int category_67; @Uint8() int category_68; @Uint8() int category_69; @Uint8() int category_70; @Uint8() int category_71; @Uint8() int category_72; @Uint8() int category_73; @Uint8() int category_74; @Uint8() int category_75; @Uint8() int category_76; @Uint8() int category_77; @Uint8() int category_78; @Uint8() int category_79; @Uint8() int category_80; @Uint8() int category_81; @Uint8() int category_82; @Uint8() int category_83; @Uint8() int category_84; @Uint8() int category_85; @Uint8() int category_86; @Uint8() int category_87; @Uint8() int category_88; @Uint8() int category_89; @Uint8() int category_90; @Uint8() int category_91; @Uint8() int category_92; @Uint8() int category_93; @Uint8() int category_94; @Uint8() int category_95; @Uint8() int category_96; @Uint8() int category_97; @Uint8() int category_98; @Uint8() int category_99; @Uint8() int category_100; @Uint8() int category_101; @Uint8() int category_102; @Uint8() int category_103; @Uint8() int category_104; @Uint8() int category_105; @Uint8() int category_106; @Uint8() int category_107; @Uint8() int category_108; @Uint8() int category_109; @Uint8() int category_110; @Uint8() int category_111; @Uint8() int category_112; @Uint8() int category_113; @Uint8() int category_114; @Uint8() int category_115; @Uint8() int category_116; @Uint8() int category_117; @Uint8() int category_118; @Uint8() int category_119; @Uint8() int category_120; @Uint8() int category_121; @Uint8() int category_122; @Uint8() int category_123; @Uint8() int category_124; @Uint8() int category_125; @Uint8() int category_126; @Uint8() int category_127; @Uint8() int category_128; @Uint8() int category_129; @Uint8() int category_130; @Uint8() int category_131; @Uint8() int category_132; @Uint8() int category_133; @Uint8() int category_134; @Uint8() int category_135; @Uint8() int category_136; @Uint8() int category_137; @Uint8() int category_138; @Uint8() int category_139; @Uint8() int category_140; @Uint8() int category_141; @Uint8() int category_142; @Uint8() int category_143; @Uint8() int category_144; @Uint8() int category_145; @Uint8() int category_146; @Uint8() int category_147; @Uint8() int category_148; @Uint8() int category_149; @Uint8() int category_150; @Uint8() int category_151; @Uint8() int category_152; @Uint8() int category_153; @Uint8() int category_154; @Uint8() int category_155; @Uint8() int category_156; @Uint8() int category_157; @Uint8() int category_158; @Uint8() int category_159; @Uint8() int category_160; @Uint8() int category_161; @Uint8() int category_162; @Uint8() int category_163; @Uint8() int category_164; @Uint8() int category_165; @Uint8() int category_166; @Uint8() int category_167; @Uint8() int category_168; @Uint8() int category_169; @Uint8() int category_170; @Uint8() int category_171; @Uint8() int category_172; @Uint8() int category_173; @Uint8() int category_174; @Uint8() int category_175; @Uint8() int category_176; @Uint8() int category_177; @Uint8() int category_178; @Uint8() int category_179; @Uint8() int category_180; @Uint8() int category_181; @Uint8() int category_182; @Uint8() int category_183; @Uint8() int category_184; @Uint8() int category_185; @Uint8() int category_186; @Uint8() int category_187; @Uint8() int category_188; @Uint8() int category_189; @Uint8() int category_190; @Uint8() int category_191; @Uint8() int category_192; @Uint8() int category_193; @Uint8() int category_194; @Uint8() int category_195; @Uint8() int category_196; @Uint8() int category_197; @Uint8() int category_198; @Uint8() int category_199; @Uint8() int category_200; @Uint8() int category_201; @Uint8() int category_202; @Uint8() int category_203; @Uint8() int category_204; @Uint8() int category_205; @Uint8() int category_206; @Uint8() int category_207; @Uint8() int category_208; @Uint8() int category_209; @Uint8() int category_210; @Uint8() int category_211; @Uint8() int category_212; @Uint8() int category_213; @Uint8() int category_214; @Uint8() int category_215; @Uint8() int category_216; @Uint8() int category_217; @Uint8() int category_218; @Uint8() int category_219; @Uint8() int category_220; @Uint8() int category_221; @Uint8() int category_222; @Uint8() int category_223; @Uint8() int category_224; @Uint8() int category_225; @Uint8() int category_226; @Uint8() int category_227; @Uint8() int category_228; @Uint8() int category_229; @Uint8() int category_230; @Uint8() int category_231; @Uint8() int category_232; @Uint8() int category_233; @Uint8() int category_234; @Uint8() int category_235; @Uint8() int category_236; @Uint8() int category_237; @Uint8() int category_238; @Uint8() int category_239; @Uint8() int category_240; @Uint8() int category_241; @Uint8() int category_242; @Uint8() int category_243; @Uint8() int category_244; @Uint8() int category_245; @Uint8() int category_246; @Uint8() int category_247; @Uint8() int category_248; @Uint8() int category_249; @Uint8() int category_250; @Uint8() int category_251; @Uint8() int category_252; @Uint8() int category_253; @Uint8() int category_254; @Uint8() int category_255;
-  String get category {
-    var bytes = [category_0, category_1, category_2, category_3, category_4, category_5, category_6, category_7, category_8, category_9, category_10, category_11, category_12, category_13, category_14, category_15, category_16, category_17, category_18, category_19, category_20, category_21, category_22, category_23, category_24, category_25, category_26, category_27, category_28, category_29, category_30, category_31, category_32, category_33, category_34, category_35, category_36, category_37, category_38, category_39, category_40, category_41, category_42, category_43, category_44, category_45, category_46, category_47, category_48, category_49, category_50, category_51, category_52, category_53, category_54, category_55, category_56, category_57, category_58, category_59, category_60, category_61, category_62, category_63, category_64, category_65, category_66, category_67, category_68, category_69, category_70, category_71, category_72, category_73, category_74, category_75, category_76, category_77, category_78, category_79, category_80, category_81, category_82, category_83, category_84, category_85, category_86, category_87, category_88, category_89, category_90, category_91, category_92, category_93, category_94, category_95, category_96, category_97, category_98, category_99, category_100, category_101, category_102, category_103, category_104, category_105, category_106, category_107, category_108, category_109, category_110, category_111, category_112, category_113, category_114, category_115, category_116, category_117, category_118, category_119, category_120, category_121, category_122, category_123, category_124, category_125, category_126, category_127, category_128, category_129, category_130, category_131, category_132, category_133, category_134, category_135, category_136, category_137, category_138, category_139, category_140, category_141, category_142, category_143, category_144, category_145, category_146, category_147, category_148, category_149, category_150, category_151, category_152, category_153, category_154, category_155, category_156, category_157, category_158, category_159, category_160, category_161, category_162, category_163, category_164, category_165, category_166, category_167, category_168, category_169, category_170, category_171, category_172, category_173, category_174, category_175, category_176, category_177, category_178, category_179, category_180, category_181, category_182, category_183, category_184, category_185, category_186, category_187, category_188, category_189, category_190, category_191, category_192, category_193, category_194, category_195, category_196, category_197, category_198, category_199, category_200, category_201, category_202, category_203, category_204, category_205, category_206, category_207, category_208, category_209, category_210, category_211, category_212, category_213, category_214, category_215, category_216, category_217, category_218, category_219, category_220, category_221, category_222, category_223, category_224, category_225, category_226, category_227, category_228, category_229, category_230, category_231, category_232, category_233, category_234, category_235, category_236, category_237, category_238, category_239, category_240, category_241, category_242, category_243, category_244, category_245, category_246, category_247, category_248, category_249, category_250, category_251, category_252, category_253, category_254, category_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set category(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    category_0 = bytes[0]; category_1 = bytes[1]; category_2 = bytes[2]; category_3 = bytes[3]; category_4 = bytes[4]; category_5 = bytes[5]; category_6 = bytes[6]; category_7 = bytes[7]; category_8 = bytes[8]; category_9 = bytes[9]; category_10 = bytes[10]; category_11 = bytes[11]; category_12 = bytes[12]; category_13 = bytes[13]; category_14 = bytes[14]; category_15 = bytes[15]; category_16 = bytes[16]; category_17 = bytes[17]; category_18 = bytes[18]; category_19 = bytes[19]; category_20 = bytes[20]; category_21 = bytes[21]; category_22 = bytes[22]; category_23 = bytes[23]; category_24 = bytes[24]; category_25 = bytes[25]; category_26 = bytes[26]; category_27 = bytes[27]; category_28 = bytes[28]; category_29 = bytes[29]; category_30 = bytes[30]; category_31 = bytes[31]; category_32 = bytes[32]; category_33 = bytes[33]; category_34 = bytes[34]; category_35 = bytes[35]; category_36 = bytes[36]; category_37 = bytes[37]; category_38 = bytes[38]; category_39 = bytes[39]; category_40 = bytes[40]; category_41 = bytes[41]; category_42 = bytes[42]; category_43 = bytes[43]; category_44 = bytes[44]; category_45 = bytes[45]; category_46 = bytes[46]; category_47 = bytes[47]; category_48 = bytes[48]; category_49 = bytes[49]; category_50 = bytes[50]; category_51 = bytes[51]; category_52 = bytes[52]; category_53 = bytes[53]; category_54 = bytes[54]; category_55 = bytes[55]; category_56 = bytes[56]; category_57 = bytes[57]; category_58 = bytes[58]; category_59 = bytes[59]; category_60 = bytes[60]; category_61 = bytes[61]; category_62 = bytes[62]; category_63 = bytes[63]; category_64 = bytes[64]; category_65 = bytes[65]; category_66 = bytes[66]; category_67 = bytes[67]; category_68 = bytes[68]; category_69 = bytes[69]; category_70 = bytes[70]; category_71 = bytes[71]; category_72 = bytes[72]; category_73 = bytes[73]; category_74 = bytes[74]; category_75 = bytes[75]; category_76 = bytes[76]; category_77 = bytes[77]; category_78 = bytes[78]; category_79 = bytes[79]; category_80 = bytes[80]; category_81 = bytes[81]; category_82 = bytes[82]; category_83 = bytes[83]; category_84 = bytes[84]; category_85 = bytes[85]; category_86 = bytes[86]; category_87 = bytes[87]; category_88 = bytes[88]; category_89 = bytes[89]; category_90 = bytes[90]; category_91 = bytes[91]; category_92 = bytes[92]; category_93 = bytes[93]; category_94 = bytes[94]; category_95 = bytes[95]; category_96 = bytes[96]; category_97 = bytes[97]; category_98 = bytes[98]; category_99 = bytes[99]; category_100 = bytes[100]; category_101 = bytes[101]; category_102 = bytes[102]; category_103 = bytes[103]; category_104 = bytes[104]; category_105 = bytes[105]; category_106 = bytes[106]; category_107 = bytes[107]; category_108 = bytes[108]; category_109 = bytes[109]; category_110 = bytes[110]; category_111 = bytes[111]; category_112 = bytes[112]; category_113 = bytes[113]; category_114 = bytes[114]; category_115 = bytes[115]; category_116 = bytes[116]; category_117 = bytes[117]; category_118 = bytes[118]; category_119 = bytes[119]; category_120 = bytes[120]; category_121 = bytes[121]; category_122 = bytes[122]; category_123 = bytes[123]; category_124 = bytes[124]; category_125 = bytes[125]; category_126 = bytes[126]; category_127 = bytes[127]; category_128 = bytes[128]; category_129 = bytes[129]; category_130 = bytes[130]; category_131 = bytes[131]; category_132 = bytes[132]; category_133 = bytes[133]; category_134 = bytes[134]; category_135 = bytes[135]; category_136 = bytes[136]; category_137 = bytes[137]; category_138 = bytes[138]; category_139 = bytes[139]; category_140 = bytes[140]; category_141 = bytes[141]; category_142 = bytes[142]; category_143 = bytes[143]; category_144 = bytes[144]; category_145 = bytes[145]; category_146 = bytes[146]; category_147 = bytes[147]; category_148 = bytes[148]; category_149 = bytes[149]; category_150 = bytes[150]; category_151 = bytes[151]; category_152 = bytes[152]; category_153 = bytes[153]; category_154 = bytes[154]; category_155 = bytes[155]; category_156 = bytes[156]; category_157 = bytes[157]; category_158 = bytes[158]; category_159 = bytes[159]; category_160 = bytes[160]; category_161 = bytes[161]; category_162 = bytes[162]; category_163 = bytes[163]; category_164 = bytes[164]; category_165 = bytes[165]; category_166 = bytes[166]; category_167 = bytes[167]; category_168 = bytes[168]; category_169 = bytes[169]; category_170 = bytes[170]; category_171 = bytes[171]; category_172 = bytes[172]; category_173 = bytes[173]; category_174 = bytes[174]; category_175 = bytes[175]; category_176 = bytes[176]; category_177 = bytes[177]; category_178 = bytes[178]; category_179 = bytes[179]; category_180 = bytes[180]; category_181 = bytes[181]; category_182 = bytes[182]; category_183 = bytes[183]; category_184 = bytes[184]; category_185 = bytes[185]; category_186 = bytes[186]; category_187 = bytes[187]; category_188 = bytes[188]; category_189 = bytes[189]; category_190 = bytes[190]; category_191 = bytes[191]; category_192 = bytes[192]; category_193 = bytes[193]; category_194 = bytes[194]; category_195 = bytes[195]; category_196 = bytes[196]; category_197 = bytes[197]; category_198 = bytes[198]; category_199 = bytes[199]; category_200 = bytes[200]; category_201 = bytes[201]; category_202 = bytes[202]; category_203 = bytes[203]; category_204 = bytes[204]; category_205 = bytes[205]; category_206 = bytes[206]; category_207 = bytes[207]; category_208 = bytes[208]; category_209 = bytes[209]; category_210 = bytes[210]; category_211 = bytes[211]; category_212 = bytes[212]; category_213 = bytes[213]; category_214 = bytes[214]; category_215 = bytes[215]; category_216 = bytes[216]; category_217 = bytes[217]; category_218 = bytes[218]; category_219 = bytes[219]; category_220 = bytes[220]; category_221 = bytes[221]; category_222 = bytes[222]; category_223 = bytes[223]; category_224 = bytes[224]; category_225 = bytes[225]; category_226 = bytes[226]; category_227 = bytes[227]; category_228 = bytes[228]; category_229 = bytes[229]; category_230 = bytes[230]; category_231 = bytes[231]; category_232 = bytes[232]; category_233 = bytes[233]; category_234 = bytes[234]; category_235 = bytes[235]; category_236 = bytes[236]; category_237 = bytes[237]; category_238 = bytes[238]; category_239 = bytes[239]; category_240 = bytes[240]; category_241 = bytes[241]; category_242 = bytes[242]; category_243 = bytes[243]; category_244 = bytes[244]; category_245 = bytes[245]; category_246 = bytes[246]; category_247 = bytes[247]; category_248 = bytes[248]; category_249 = bytes[249]; category_250 = bytes[250]; category_251 = bytes[251]; category_252 = bytes[252]; category_253 = bytes[253]; category_254 = bytes[254]; category_255 = bytes[255];
-  }
-  @Uint8() int description_0; @Uint8() int description_1; @Uint8() int description_2; @Uint8() int description_3; @Uint8() int description_4; @Uint8() int description_5; @Uint8() int description_6; @Uint8() int description_7; @Uint8() int description_8; @Uint8() int description_9; @Uint8() int description_10; @Uint8() int description_11; @Uint8() int description_12; @Uint8() int description_13; @Uint8() int description_14; @Uint8() int description_15; @Uint8() int description_16; @Uint8() int description_17; @Uint8() int description_18; @Uint8() int description_19; @Uint8() int description_20; @Uint8() int description_21; @Uint8() int description_22; @Uint8() int description_23; @Uint8() int description_24; @Uint8() int description_25; @Uint8() int description_26; @Uint8() int description_27; @Uint8() int description_28; @Uint8() int description_29; @Uint8() int description_30; @Uint8() int description_31; @Uint8() int description_32; @Uint8() int description_33; @Uint8() int description_34; @Uint8() int description_35; @Uint8() int description_36; @Uint8() int description_37; @Uint8() int description_38; @Uint8() int description_39; @Uint8() int description_40; @Uint8() int description_41; @Uint8() int description_42; @Uint8() int description_43; @Uint8() int description_44; @Uint8() int description_45; @Uint8() int description_46; @Uint8() int description_47; @Uint8() int description_48; @Uint8() int description_49; @Uint8() int description_50; @Uint8() int description_51; @Uint8() int description_52; @Uint8() int description_53; @Uint8() int description_54; @Uint8() int description_55; @Uint8() int description_56; @Uint8() int description_57; @Uint8() int description_58; @Uint8() int description_59; @Uint8() int description_60; @Uint8() int description_61; @Uint8() int description_62; @Uint8() int description_63; @Uint8() int description_64; @Uint8() int description_65; @Uint8() int description_66; @Uint8() int description_67; @Uint8() int description_68; @Uint8() int description_69; @Uint8() int description_70; @Uint8() int description_71; @Uint8() int description_72; @Uint8() int description_73; @Uint8() int description_74; @Uint8() int description_75; @Uint8() int description_76; @Uint8() int description_77; @Uint8() int description_78; @Uint8() int description_79; @Uint8() int description_80; @Uint8() int description_81; @Uint8() int description_82; @Uint8() int description_83; @Uint8() int description_84; @Uint8() int description_85; @Uint8() int description_86; @Uint8() int description_87; @Uint8() int description_88; @Uint8() int description_89; @Uint8() int description_90; @Uint8() int description_91; @Uint8() int description_92; @Uint8() int description_93; @Uint8() int description_94; @Uint8() int description_95; @Uint8() int description_96; @Uint8() int description_97; @Uint8() int description_98; @Uint8() int description_99; @Uint8() int description_100; @Uint8() int description_101; @Uint8() int description_102; @Uint8() int description_103; @Uint8() int description_104; @Uint8() int description_105; @Uint8() int description_106; @Uint8() int description_107; @Uint8() int description_108; @Uint8() int description_109; @Uint8() int description_110; @Uint8() int description_111; @Uint8() int description_112; @Uint8() int description_113; @Uint8() int description_114; @Uint8() int description_115; @Uint8() int description_116; @Uint8() int description_117; @Uint8() int description_118; @Uint8() int description_119; @Uint8() int description_120; @Uint8() int description_121; @Uint8() int description_122; @Uint8() int description_123; @Uint8() int description_124; @Uint8() int description_125; @Uint8() int description_126; @Uint8() int description_127; @Uint8() int description_128; @Uint8() int description_129; @Uint8() int description_130; @Uint8() int description_131; @Uint8() int description_132; @Uint8() int description_133; @Uint8() int description_134; @Uint8() int description_135; @Uint8() int description_136; @Uint8() int description_137; @Uint8() int description_138; @Uint8() int description_139; @Uint8() int description_140; @Uint8() int description_141; @Uint8() int description_142; @Uint8() int description_143; @Uint8() int description_144; @Uint8() int description_145; @Uint8() int description_146; @Uint8() int description_147; @Uint8() int description_148; @Uint8() int description_149; @Uint8() int description_150; @Uint8() int description_151; @Uint8() int description_152; @Uint8() int description_153; @Uint8() int description_154; @Uint8() int description_155; @Uint8() int description_156; @Uint8() int description_157; @Uint8() int description_158; @Uint8() int description_159; @Uint8() int description_160; @Uint8() int description_161; @Uint8() int description_162; @Uint8() int description_163; @Uint8() int description_164; @Uint8() int description_165; @Uint8() int description_166; @Uint8() int description_167; @Uint8() int description_168; @Uint8() int description_169; @Uint8() int description_170; @Uint8() int description_171; @Uint8() int description_172; @Uint8() int description_173; @Uint8() int description_174; @Uint8() int description_175; @Uint8() int description_176; @Uint8() int description_177; @Uint8() int description_178; @Uint8() int description_179; @Uint8() int description_180; @Uint8() int description_181; @Uint8() int description_182; @Uint8() int description_183; @Uint8() int description_184; @Uint8() int description_185; @Uint8() int description_186; @Uint8() int description_187; @Uint8() int description_188; @Uint8() int description_189; @Uint8() int description_190; @Uint8() int description_191; @Uint8() int description_192; @Uint8() int description_193; @Uint8() int description_194; @Uint8() int description_195; @Uint8() int description_196; @Uint8() int description_197; @Uint8() int description_198; @Uint8() int description_199; @Uint8() int description_200; @Uint8() int description_201; @Uint8() int description_202; @Uint8() int description_203; @Uint8() int description_204; @Uint8() int description_205; @Uint8() int description_206; @Uint8() int description_207; @Uint8() int description_208; @Uint8() int description_209; @Uint8() int description_210; @Uint8() int description_211; @Uint8() int description_212; @Uint8() int description_213; @Uint8() int description_214; @Uint8() int description_215; @Uint8() int description_216; @Uint8() int description_217; @Uint8() int description_218; @Uint8() int description_219; @Uint8() int description_220; @Uint8() int description_221; @Uint8() int description_222; @Uint8() int description_223; @Uint8() int description_224; @Uint8() int description_225; @Uint8() int description_226; @Uint8() int description_227; @Uint8() int description_228; @Uint8() int description_229; @Uint8() int description_230; @Uint8() int description_231; @Uint8() int description_232; @Uint8() int description_233; @Uint8() int description_234; @Uint8() int description_235; @Uint8() int description_236; @Uint8() int description_237; @Uint8() int description_238; @Uint8() int description_239; @Uint8() int description_240; @Uint8() int description_241; @Uint8() int description_242; @Uint8() int description_243; @Uint8() int description_244; @Uint8() int description_245; @Uint8() int description_246; @Uint8() int description_247; @Uint8() int description_248; @Uint8() int description_249; @Uint8() int description_250; @Uint8() int description_251; @Uint8() int description_252; @Uint8() int description_253; @Uint8() int description_254; @Uint8() int description_255;
-  String get description {
-    var bytes = [description_0, description_1, description_2, description_3, description_4, description_5, description_6, description_7, description_8, description_9, description_10, description_11, description_12, description_13, description_14, description_15, description_16, description_17, description_18, description_19, description_20, description_21, description_22, description_23, description_24, description_25, description_26, description_27, description_28, description_29, description_30, description_31, description_32, description_33, description_34, description_35, description_36, description_37, description_38, description_39, description_40, description_41, description_42, description_43, description_44, description_45, description_46, description_47, description_48, description_49, description_50, description_51, description_52, description_53, description_54, description_55, description_56, description_57, description_58, description_59, description_60, description_61, description_62, description_63, description_64, description_65, description_66, description_67, description_68, description_69, description_70, description_71, description_72, description_73, description_74, description_75, description_76, description_77, description_78, description_79, description_80, description_81, description_82, description_83, description_84, description_85, description_86, description_87, description_88, description_89, description_90, description_91, description_92, description_93, description_94, description_95, description_96, description_97, description_98, description_99, description_100, description_101, description_102, description_103, description_104, description_105, description_106, description_107, description_108, description_109, description_110, description_111, description_112, description_113, description_114, description_115, description_116, description_117, description_118, description_119, description_120, description_121, description_122, description_123, description_124, description_125, description_126, description_127, description_128, description_129, description_130, description_131, description_132, description_133, description_134, description_135, description_136, description_137, description_138, description_139, description_140, description_141, description_142, description_143, description_144, description_145, description_146, description_147, description_148, description_149, description_150, description_151, description_152, description_153, description_154, description_155, description_156, description_157, description_158, description_159, description_160, description_161, description_162, description_163, description_164, description_165, description_166, description_167, description_168, description_169, description_170, description_171, description_172, description_173, description_174, description_175, description_176, description_177, description_178, description_179, description_180, description_181, description_182, description_183, description_184, description_185, description_186, description_187, description_188, description_189, description_190, description_191, description_192, description_193, description_194, description_195, description_196, description_197, description_198, description_199, description_200, description_201, description_202, description_203, description_204, description_205, description_206, description_207, description_208, description_209, description_210, description_211, description_212, description_213, description_214, description_215, description_216, description_217, description_218, description_219, description_220, description_221, description_222, description_223, description_224, description_225, description_226, description_227, description_228, description_229, description_230, description_231, description_232, description_233, description_234, description_235, description_236, description_237, description_238, description_239, description_240, description_241, description_242, description_243, description_244, description_245, description_246, description_247, description_248, description_249, description_250, description_251, description_252, description_253, description_254, description_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set description(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    description_0 = bytes[0]; description_1 = bytes[1]; description_2 = bytes[2]; description_3 = bytes[3]; description_4 = bytes[4]; description_5 = bytes[5]; description_6 = bytes[6]; description_7 = bytes[7]; description_8 = bytes[8]; description_9 = bytes[9]; description_10 = bytes[10]; description_11 = bytes[11]; description_12 = bytes[12]; description_13 = bytes[13]; description_14 = bytes[14]; description_15 = bytes[15]; description_16 = bytes[16]; description_17 = bytes[17]; description_18 = bytes[18]; description_19 = bytes[19]; description_20 = bytes[20]; description_21 = bytes[21]; description_22 = bytes[22]; description_23 = bytes[23]; description_24 = bytes[24]; description_25 = bytes[25]; description_26 = bytes[26]; description_27 = bytes[27]; description_28 = bytes[28]; description_29 = bytes[29]; description_30 = bytes[30]; description_31 = bytes[31]; description_32 = bytes[32]; description_33 = bytes[33]; description_34 = bytes[34]; description_35 = bytes[35]; description_36 = bytes[36]; description_37 = bytes[37]; description_38 = bytes[38]; description_39 = bytes[39]; description_40 = bytes[40]; description_41 = bytes[41]; description_42 = bytes[42]; description_43 = bytes[43]; description_44 = bytes[44]; description_45 = bytes[45]; description_46 = bytes[46]; description_47 = bytes[47]; description_48 = bytes[48]; description_49 = bytes[49]; description_50 = bytes[50]; description_51 = bytes[51]; description_52 = bytes[52]; description_53 = bytes[53]; description_54 = bytes[54]; description_55 = bytes[55]; description_56 = bytes[56]; description_57 = bytes[57]; description_58 = bytes[58]; description_59 = bytes[59]; description_60 = bytes[60]; description_61 = bytes[61]; description_62 = bytes[62]; description_63 = bytes[63]; description_64 = bytes[64]; description_65 = bytes[65]; description_66 = bytes[66]; description_67 = bytes[67]; description_68 = bytes[68]; description_69 = bytes[69]; description_70 = bytes[70]; description_71 = bytes[71]; description_72 = bytes[72]; description_73 = bytes[73]; description_74 = bytes[74]; description_75 = bytes[75]; description_76 = bytes[76]; description_77 = bytes[77]; description_78 = bytes[78]; description_79 = bytes[79]; description_80 = bytes[80]; description_81 = bytes[81]; description_82 = bytes[82]; description_83 = bytes[83]; description_84 = bytes[84]; description_85 = bytes[85]; description_86 = bytes[86]; description_87 = bytes[87]; description_88 = bytes[88]; description_89 = bytes[89]; description_90 = bytes[90]; description_91 = bytes[91]; description_92 = bytes[92]; description_93 = bytes[93]; description_94 = bytes[94]; description_95 = bytes[95]; description_96 = bytes[96]; description_97 = bytes[97]; description_98 = bytes[98]; description_99 = bytes[99]; description_100 = bytes[100]; description_101 = bytes[101]; description_102 = bytes[102]; description_103 = bytes[103]; description_104 = bytes[104]; description_105 = bytes[105]; description_106 = bytes[106]; description_107 = bytes[107]; description_108 = bytes[108]; description_109 = bytes[109]; description_110 = bytes[110]; description_111 = bytes[111]; description_112 = bytes[112]; description_113 = bytes[113]; description_114 = bytes[114]; description_115 = bytes[115]; description_116 = bytes[116]; description_117 = bytes[117]; description_118 = bytes[118]; description_119 = bytes[119]; description_120 = bytes[120]; description_121 = bytes[121]; description_122 = bytes[122]; description_123 = bytes[123]; description_124 = bytes[124]; description_125 = bytes[125]; description_126 = bytes[126]; description_127 = bytes[127]; description_128 = bytes[128]; description_129 = bytes[129]; description_130 = bytes[130]; description_131 = bytes[131]; description_132 = bytes[132]; description_133 = bytes[133]; description_134 = bytes[134]; description_135 = bytes[135]; description_136 = bytes[136]; description_137 = bytes[137]; description_138 = bytes[138]; description_139 = bytes[139]; description_140 = bytes[140]; description_141 = bytes[141]; description_142 = bytes[142]; description_143 = bytes[143]; description_144 = bytes[144]; description_145 = bytes[145]; description_146 = bytes[146]; description_147 = bytes[147]; description_148 = bytes[148]; description_149 = bytes[149]; description_150 = bytes[150]; description_151 = bytes[151]; description_152 = bytes[152]; description_153 = bytes[153]; description_154 = bytes[154]; description_155 = bytes[155]; description_156 = bytes[156]; description_157 = bytes[157]; description_158 = bytes[158]; description_159 = bytes[159]; description_160 = bytes[160]; description_161 = bytes[161]; description_162 = bytes[162]; description_163 = bytes[163]; description_164 = bytes[164]; description_165 = bytes[165]; description_166 = bytes[166]; description_167 = bytes[167]; description_168 = bytes[168]; description_169 = bytes[169]; description_170 = bytes[170]; description_171 = bytes[171]; description_172 = bytes[172]; description_173 = bytes[173]; description_174 = bytes[174]; description_175 = bytes[175]; description_176 = bytes[176]; description_177 = bytes[177]; description_178 = bytes[178]; description_179 = bytes[179]; description_180 = bytes[180]; description_181 = bytes[181]; description_182 = bytes[182]; description_183 = bytes[183]; description_184 = bytes[184]; description_185 = bytes[185]; description_186 = bytes[186]; description_187 = bytes[187]; description_188 = bytes[188]; description_189 = bytes[189]; description_190 = bytes[190]; description_191 = bytes[191]; description_192 = bytes[192]; description_193 = bytes[193]; description_194 = bytes[194]; description_195 = bytes[195]; description_196 = bytes[196]; description_197 = bytes[197]; description_198 = bytes[198]; description_199 = bytes[199]; description_200 = bytes[200]; description_201 = bytes[201]; description_202 = bytes[202]; description_203 = bytes[203]; description_204 = bytes[204]; description_205 = bytes[205]; description_206 = bytes[206]; description_207 = bytes[207]; description_208 = bytes[208]; description_209 = bytes[209]; description_210 = bytes[210]; description_211 = bytes[211]; description_212 = bytes[212]; description_213 = bytes[213]; description_214 = bytes[214]; description_215 = bytes[215]; description_216 = bytes[216]; description_217 = bytes[217]; description_218 = bytes[218]; description_219 = bytes[219]; description_220 = bytes[220]; description_221 = bytes[221]; description_222 = bytes[222]; description_223 = bytes[223]; description_224 = bytes[224]; description_225 = bytes[225]; description_226 = bytes[226]; description_227 = bytes[227]; description_228 = bytes[228]; description_229 = bytes[229]; description_230 = bytes[230]; description_231 = bytes[231]; description_232 = bytes[232]; description_233 = bytes[233]; description_234 = bytes[234]; description_235 = bytes[235]; description_236 = bytes[236]; description_237 = bytes[237]; description_238 = bytes[238]; description_239 = bytes[239]; description_240 = bytes[240]; description_241 = bytes[241]; description_242 = bytes[242]; description_243 = bytes[243]; description_244 = bytes[244]; description_245 = bytes[245]; description_246 = bytes[246]; description_247 = bytes[247]; description_248 = bytes[248]; description_249 = bytes[249]; description_250 = bytes[250]; description_251 = bytes[251]; description_252 = bytes[252]; description_253 = bytes[253]; description_254 = bytes[254]; description_255 = bytes[255];
-  }
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Array(256)
+  external Array<Uint8> name;
+  @Array(256)
+  external Array<Uint8> category;
+  @Array(256)
+  external Array<Uint8> description;
 }
 
 class VkQueryPoolPerformanceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int queueFamilyIndex;
-  @Uint32() int counterIndexCount;
-  Pointer pCounterIndices;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int queueFamilyIndex;
+  @Uint32()
+  external int counterIndexCount;
+  external Pointer pCounterIndices;
 }
 
 class VkPerformanceCounterResultKHR extends Opaque {
 }
 
 class VkPerformanceCounterResultKHRInt32 extends Struct {
-  @Int32() int int32;
+  @Int32()
+  external int int32;
 }
 
 class VkPerformanceCounterResultKHRInt64 extends Struct {
-  @Int64() int int64;
+  @Int64()
+  external int int64;
 }
 
 class VkPerformanceCounterResultKHRUint32 extends Struct {
-  @Uint32() int uint32;
+  @Uint32()
+  external int uint32;
 }
 
 class VkPerformanceCounterResultKHRUint64 extends Struct {
-  @Uint64() int uint64;
+  @Uint64()
+  external int uint64;
 }
 
 class VkPerformanceCounterResultKHRFloat32 extends Struct {
-  @Float() double float32;
+  @Float()
+  external double float32;
 }
 
 class VkPerformanceCounterResultKHRFloat64 extends Struct {
-  @Double() double float64;
+  @Double()
+  external double float64;
 }
 
 class VkAcquireProfilingLockInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint64() int timeout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int timeout;
 }
 
 class VkPerformanceQuerySubmitInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int counterPassIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int counterPassIndex;
 }
 
 class VkHeadlessSurfaceCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
 }
 
 class VkPhysicalDeviceCoverageReductionModeFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int coverageReductionMode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int coverageReductionMode;
 }
 
 class VkPipelineCoverageReductionStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Int32() int coverageReductionMode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int coverageReductionMode;
 }
 
 class VkFramebufferMixedSamplesCombinationNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int coverageReductionMode;
-  @Int32() int rasterizationSamples;
-  @Uint32() int depthStencilSamples;
-  @Uint32() int colorSamples;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int coverageReductionMode;
+  @Int32()
+  external int rasterizationSamples;
+  @Uint32()
+  external int depthStencilSamples;
+  @Uint32()
+  external int colorSamples;
 }
 
 class VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderIntegerFunctions2;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderIntegerFunctions2;
 }
 
 class VkPerformanceValueDataINTEL extends Opaque {
 }
 
 class VkPerformanceValueDataINTELValue32 extends Struct {
-  @Uint32() int value32;
+  @Uint32()
+  external int value32;
 }
 
 class VkPerformanceValueDataINTELValue64 extends Struct {
-  @Uint64() int value64;
+  @Uint64()
+  external int value64;
 }
 
 class VkPerformanceValueDataINTELValueFloat extends Struct {
-  @Float() double valueFloat;
+  @Float()
+  external double valueFloat;
 }
 
 class VkPerformanceValueDataINTELValueBool extends Struct {
-  @Uint32() int valueBool;
+  @Uint32()
+  external int valueBool;
 }
 
 class VkPerformanceValueDataINTELValueString extends Struct {
-  Pointer valueString;
+  external Pointer valueString;
 }
 
 class VkPerformanceValueINTEL extends Struct {
-  @Int32() int type;
+  @Int32()
+  external int type;
 }
 
 class VkInitializePerformanceApiInfoINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pUserData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pUserData;
 }
 
 class VkQueryPoolPerformanceQueryCreateInfoINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int performanceCountersSampling;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int performanceCountersSampling;
 }
 
 class VkQueryPoolCreateInfoINTEL extends Opaque {
 }
 
 class VkPerformanceMarkerInfoINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int marker;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int marker;
 }
 
 class VkPerformanceStreamMarkerInfoINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int marker;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int marker;
 }
 
 class VkPerformanceOverrideInfoINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int type;
-  @Uint32() int enable;
-  @Uint64() int parameter;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int type;
+  @Uint32()
+  external int enable;
+  @Uint64()
+  external int parameter;
 }
 
 class VkPerformanceConfigurationAcquireInfoINTEL extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int type;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int type;
 }
 
 class VkPhysicalDeviceShaderClockFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderSubgroupClock;
-  @Uint32() int shaderDeviceClock;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderSubgroupClock;
+  @Uint32()
+  external int shaderDeviceClock;
 }
 
 class VkPhysicalDeviceIndexTypeUint8FeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int indexTypeUint8;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int indexTypeUint8;
 }
 
 class VkPhysicalDeviceShaderSMBuiltinsPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderSMCount;
-  @Uint32() int shaderWarpsPerSM;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderSMCount;
+  @Uint32()
+  external int shaderWarpsPerSM;
 }
 
 class VkPhysicalDeviceShaderSMBuiltinsFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderSMBuiltins;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderSMBuiltins;
 }
 
 class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentShaderSampleInterlock;
-  @Uint32() int fragmentShaderPixelInterlock;
-  @Uint32() int fragmentShaderShadingRateInterlock;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentShaderSampleInterlock;
+  @Uint32()
+  external int fragmentShaderPixelInterlock;
+  @Uint32()
+  external int fragmentShaderShadingRateInterlock;
 }
 
 class VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int separateDepthStencilLayouts;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int separateDepthStencilLayouts;
 }
 
 class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR extends Opaque {
 }
 
 class VkAttachmentReferenceStencilLayout extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int stencilLayout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int stencilLayout;
 }
 
 class VkAttachmentReferenceStencilLayoutKHR extends Opaque {
 }
 
 class VkAttachmentDescriptionStencilLayout extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int stencilInitialLayout;
-  @Int32() int stencilFinalLayout;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int stencilInitialLayout;
+  @Int32()
+  external int stencilFinalLayout;
 }
 
 class VkAttachmentDescriptionStencilLayoutKHR extends Opaque {
 }
 
 class VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int pipelineExecutableInfo;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int pipelineExecutableInfo;
 }
 
 class VkPipelineInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkPipeline> pipeline;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkPipeline> pipeline;
 }
 
 class VkPipelineExecutablePropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int stages;
-  @Uint8() int name_0; @Uint8() int name_1; @Uint8() int name_2; @Uint8() int name_3; @Uint8() int name_4; @Uint8() int name_5; @Uint8() int name_6; @Uint8() int name_7; @Uint8() int name_8; @Uint8() int name_9; @Uint8() int name_10; @Uint8() int name_11; @Uint8() int name_12; @Uint8() int name_13; @Uint8() int name_14; @Uint8() int name_15; @Uint8() int name_16; @Uint8() int name_17; @Uint8() int name_18; @Uint8() int name_19; @Uint8() int name_20; @Uint8() int name_21; @Uint8() int name_22; @Uint8() int name_23; @Uint8() int name_24; @Uint8() int name_25; @Uint8() int name_26; @Uint8() int name_27; @Uint8() int name_28; @Uint8() int name_29; @Uint8() int name_30; @Uint8() int name_31; @Uint8() int name_32; @Uint8() int name_33; @Uint8() int name_34; @Uint8() int name_35; @Uint8() int name_36; @Uint8() int name_37; @Uint8() int name_38; @Uint8() int name_39; @Uint8() int name_40; @Uint8() int name_41; @Uint8() int name_42; @Uint8() int name_43; @Uint8() int name_44; @Uint8() int name_45; @Uint8() int name_46; @Uint8() int name_47; @Uint8() int name_48; @Uint8() int name_49; @Uint8() int name_50; @Uint8() int name_51; @Uint8() int name_52; @Uint8() int name_53; @Uint8() int name_54; @Uint8() int name_55; @Uint8() int name_56; @Uint8() int name_57; @Uint8() int name_58; @Uint8() int name_59; @Uint8() int name_60; @Uint8() int name_61; @Uint8() int name_62; @Uint8() int name_63; @Uint8() int name_64; @Uint8() int name_65; @Uint8() int name_66; @Uint8() int name_67; @Uint8() int name_68; @Uint8() int name_69; @Uint8() int name_70; @Uint8() int name_71; @Uint8() int name_72; @Uint8() int name_73; @Uint8() int name_74; @Uint8() int name_75; @Uint8() int name_76; @Uint8() int name_77; @Uint8() int name_78; @Uint8() int name_79; @Uint8() int name_80; @Uint8() int name_81; @Uint8() int name_82; @Uint8() int name_83; @Uint8() int name_84; @Uint8() int name_85; @Uint8() int name_86; @Uint8() int name_87; @Uint8() int name_88; @Uint8() int name_89; @Uint8() int name_90; @Uint8() int name_91; @Uint8() int name_92; @Uint8() int name_93; @Uint8() int name_94; @Uint8() int name_95; @Uint8() int name_96; @Uint8() int name_97; @Uint8() int name_98; @Uint8() int name_99; @Uint8() int name_100; @Uint8() int name_101; @Uint8() int name_102; @Uint8() int name_103; @Uint8() int name_104; @Uint8() int name_105; @Uint8() int name_106; @Uint8() int name_107; @Uint8() int name_108; @Uint8() int name_109; @Uint8() int name_110; @Uint8() int name_111; @Uint8() int name_112; @Uint8() int name_113; @Uint8() int name_114; @Uint8() int name_115; @Uint8() int name_116; @Uint8() int name_117; @Uint8() int name_118; @Uint8() int name_119; @Uint8() int name_120; @Uint8() int name_121; @Uint8() int name_122; @Uint8() int name_123; @Uint8() int name_124; @Uint8() int name_125; @Uint8() int name_126; @Uint8() int name_127; @Uint8() int name_128; @Uint8() int name_129; @Uint8() int name_130; @Uint8() int name_131; @Uint8() int name_132; @Uint8() int name_133; @Uint8() int name_134; @Uint8() int name_135; @Uint8() int name_136; @Uint8() int name_137; @Uint8() int name_138; @Uint8() int name_139; @Uint8() int name_140; @Uint8() int name_141; @Uint8() int name_142; @Uint8() int name_143; @Uint8() int name_144; @Uint8() int name_145; @Uint8() int name_146; @Uint8() int name_147; @Uint8() int name_148; @Uint8() int name_149; @Uint8() int name_150; @Uint8() int name_151; @Uint8() int name_152; @Uint8() int name_153; @Uint8() int name_154; @Uint8() int name_155; @Uint8() int name_156; @Uint8() int name_157; @Uint8() int name_158; @Uint8() int name_159; @Uint8() int name_160; @Uint8() int name_161; @Uint8() int name_162; @Uint8() int name_163; @Uint8() int name_164; @Uint8() int name_165; @Uint8() int name_166; @Uint8() int name_167; @Uint8() int name_168; @Uint8() int name_169; @Uint8() int name_170; @Uint8() int name_171; @Uint8() int name_172; @Uint8() int name_173; @Uint8() int name_174; @Uint8() int name_175; @Uint8() int name_176; @Uint8() int name_177; @Uint8() int name_178; @Uint8() int name_179; @Uint8() int name_180; @Uint8() int name_181; @Uint8() int name_182; @Uint8() int name_183; @Uint8() int name_184; @Uint8() int name_185; @Uint8() int name_186; @Uint8() int name_187; @Uint8() int name_188; @Uint8() int name_189; @Uint8() int name_190; @Uint8() int name_191; @Uint8() int name_192; @Uint8() int name_193; @Uint8() int name_194; @Uint8() int name_195; @Uint8() int name_196; @Uint8() int name_197; @Uint8() int name_198; @Uint8() int name_199; @Uint8() int name_200; @Uint8() int name_201; @Uint8() int name_202; @Uint8() int name_203; @Uint8() int name_204; @Uint8() int name_205; @Uint8() int name_206; @Uint8() int name_207; @Uint8() int name_208; @Uint8() int name_209; @Uint8() int name_210; @Uint8() int name_211; @Uint8() int name_212; @Uint8() int name_213; @Uint8() int name_214; @Uint8() int name_215; @Uint8() int name_216; @Uint8() int name_217; @Uint8() int name_218; @Uint8() int name_219; @Uint8() int name_220; @Uint8() int name_221; @Uint8() int name_222; @Uint8() int name_223; @Uint8() int name_224; @Uint8() int name_225; @Uint8() int name_226; @Uint8() int name_227; @Uint8() int name_228; @Uint8() int name_229; @Uint8() int name_230; @Uint8() int name_231; @Uint8() int name_232; @Uint8() int name_233; @Uint8() int name_234; @Uint8() int name_235; @Uint8() int name_236; @Uint8() int name_237; @Uint8() int name_238; @Uint8() int name_239; @Uint8() int name_240; @Uint8() int name_241; @Uint8() int name_242; @Uint8() int name_243; @Uint8() int name_244; @Uint8() int name_245; @Uint8() int name_246; @Uint8() int name_247; @Uint8() int name_248; @Uint8() int name_249; @Uint8() int name_250; @Uint8() int name_251; @Uint8() int name_252; @Uint8() int name_253; @Uint8() int name_254; @Uint8() int name_255;
-  String get name {
-    var bytes = [name_0, name_1, name_2, name_3, name_4, name_5, name_6, name_7, name_8, name_9, name_10, name_11, name_12, name_13, name_14, name_15, name_16, name_17, name_18, name_19, name_20, name_21, name_22, name_23, name_24, name_25, name_26, name_27, name_28, name_29, name_30, name_31, name_32, name_33, name_34, name_35, name_36, name_37, name_38, name_39, name_40, name_41, name_42, name_43, name_44, name_45, name_46, name_47, name_48, name_49, name_50, name_51, name_52, name_53, name_54, name_55, name_56, name_57, name_58, name_59, name_60, name_61, name_62, name_63, name_64, name_65, name_66, name_67, name_68, name_69, name_70, name_71, name_72, name_73, name_74, name_75, name_76, name_77, name_78, name_79, name_80, name_81, name_82, name_83, name_84, name_85, name_86, name_87, name_88, name_89, name_90, name_91, name_92, name_93, name_94, name_95, name_96, name_97, name_98, name_99, name_100, name_101, name_102, name_103, name_104, name_105, name_106, name_107, name_108, name_109, name_110, name_111, name_112, name_113, name_114, name_115, name_116, name_117, name_118, name_119, name_120, name_121, name_122, name_123, name_124, name_125, name_126, name_127, name_128, name_129, name_130, name_131, name_132, name_133, name_134, name_135, name_136, name_137, name_138, name_139, name_140, name_141, name_142, name_143, name_144, name_145, name_146, name_147, name_148, name_149, name_150, name_151, name_152, name_153, name_154, name_155, name_156, name_157, name_158, name_159, name_160, name_161, name_162, name_163, name_164, name_165, name_166, name_167, name_168, name_169, name_170, name_171, name_172, name_173, name_174, name_175, name_176, name_177, name_178, name_179, name_180, name_181, name_182, name_183, name_184, name_185, name_186, name_187, name_188, name_189, name_190, name_191, name_192, name_193, name_194, name_195, name_196, name_197, name_198, name_199, name_200, name_201, name_202, name_203, name_204, name_205, name_206, name_207, name_208, name_209, name_210, name_211, name_212, name_213, name_214, name_215, name_216, name_217, name_218, name_219, name_220, name_221, name_222, name_223, name_224, name_225, name_226, name_227, name_228, name_229, name_230, name_231, name_232, name_233, name_234, name_235, name_236, name_237, name_238, name_239, name_240, name_241, name_242, name_243, name_244, name_245, name_246, name_247, name_248, name_249, name_250, name_251, name_252, name_253, name_254, name_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set name(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    name_0 = bytes[0]; name_1 = bytes[1]; name_2 = bytes[2]; name_3 = bytes[3]; name_4 = bytes[4]; name_5 = bytes[5]; name_6 = bytes[6]; name_7 = bytes[7]; name_8 = bytes[8]; name_9 = bytes[9]; name_10 = bytes[10]; name_11 = bytes[11]; name_12 = bytes[12]; name_13 = bytes[13]; name_14 = bytes[14]; name_15 = bytes[15]; name_16 = bytes[16]; name_17 = bytes[17]; name_18 = bytes[18]; name_19 = bytes[19]; name_20 = bytes[20]; name_21 = bytes[21]; name_22 = bytes[22]; name_23 = bytes[23]; name_24 = bytes[24]; name_25 = bytes[25]; name_26 = bytes[26]; name_27 = bytes[27]; name_28 = bytes[28]; name_29 = bytes[29]; name_30 = bytes[30]; name_31 = bytes[31]; name_32 = bytes[32]; name_33 = bytes[33]; name_34 = bytes[34]; name_35 = bytes[35]; name_36 = bytes[36]; name_37 = bytes[37]; name_38 = bytes[38]; name_39 = bytes[39]; name_40 = bytes[40]; name_41 = bytes[41]; name_42 = bytes[42]; name_43 = bytes[43]; name_44 = bytes[44]; name_45 = bytes[45]; name_46 = bytes[46]; name_47 = bytes[47]; name_48 = bytes[48]; name_49 = bytes[49]; name_50 = bytes[50]; name_51 = bytes[51]; name_52 = bytes[52]; name_53 = bytes[53]; name_54 = bytes[54]; name_55 = bytes[55]; name_56 = bytes[56]; name_57 = bytes[57]; name_58 = bytes[58]; name_59 = bytes[59]; name_60 = bytes[60]; name_61 = bytes[61]; name_62 = bytes[62]; name_63 = bytes[63]; name_64 = bytes[64]; name_65 = bytes[65]; name_66 = bytes[66]; name_67 = bytes[67]; name_68 = bytes[68]; name_69 = bytes[69]; name_70 = bytes[70]; name_71 = bytes[71]; name_72 = bytes[72]; name_73 = bytes[73]; name_74 = bytes[74]; name_75 = bytes[75]; name_76 = bytes[76]; name_77 = bytes[77]; name_78 = bytes[78]; name_79 = bytes[79]; name_80 = bytes[80]; name_81 = bytes[81]; name_82 = bytes[82]; name_83 = bytes[83]; name_84 = bytes[84]; name_85 = bytes[85]; name_86 = bytes[86]; name_87 = bytes[87]; name_88 = bytes[88]; name_89 = bytes[89]; name_90 = bytes[90]; name_91 = bytes[91]; name_92 = bytes[92]; name_93 = bytes[93]; name_94 = bytes[94]; name_95 = bytes[95]; name_96 = bytes[96]; name_97 = bytes[97]; name_98 = bytes[98]; name_99 = bytes[99]; name_100 = bytes[100]; name_101 = bytes[101]; name_102 = bytes[102]; name_103 = bytes[103]; name_104 = bytes[104]; name_105 = bytes[105]; name_106 = bytes[106]; name_107 = bytes[107]; name_108 = bytes[108]; name_109 = bytes[109]; name_110 = bytes[110]; name_111 = bytes[111]; name_112 = bytes[112]; name_113 = bytes[113]; name_114 = bytes[114]; name_115 = bytes[115]; name_116 = bytes[116]; name_117 = bytes[117]; name_118 = bytes[118]; name_119 = bytes[119]; name_120 = bytes[120]; name_121 = bytes[121]; name_122 = bytes[122]; name_123 = bytes[123]; name_124 = bytes[124]; name_125 = bytes[125]; name_126 = bytes[126]; name_127 = bytes[127]; name_128 = bytes[128]; name_129 = bytes[129]; name_130 = bytes[130]; name_131 = bytes[131]; name_132 = bytes[132]; name_133 = bytes[133]; name_134 = bytes[134]; name_135 = bytes[135]; name_136 = bytes[136]; name_137 = bytes[137]; name_138 = bytes[138]; name_139 = bytes[139]; name_140 = bytes[140]; name_141 = bytes[141]; name_142 = bytes[142]; name_143 = bytes[143]; name_144 = bytes[144]; name_145 = bytes[145]; name_146 = bytes[146]; name_147 = bytes[147]; name_148 = bytes[148]; name_149 = bytes[149]; name_150 = bytes[150]; name_151 = bytes[151]; name_152 = bytes[152]; name_153 = bytes[153]; name_154 = bytes[154]; name_155 = bytes[155]; name_156 = bytes[156]; name_157 = bytes[157]; name_158 = bytes[158]; name_159 = bytes[159]; name_160 = bytes[160]; name_161 = bytes[161]; name_162 = bytes[162]; name_163 = bytes[163]; name_164 = bytes[164]; name_165 = bytes[165]; name_166 = bytes[166]; name_167 = bytes[167]; name_168 = bytes[168]; name_169 = bytes[169]; name_170 = bytes[170]; name_171 = bytes[171]; name_172 = bytes[172]; name_173 = bytes[173]; name_174 = bytes[174]; name_175 = bytes[175]; name_176 = bytes[176]; name_177 = bytes[177]; name_178 = bytes[178]; name_179 = bytes[179]; name_180 = bytes[180]; name_181 = bytes[181]; name_182 = bytes[182]; name_183 = bytes[183]; name_184 = bytes[184]; name_185 = bytes[185]; name_186 = bytes[186]; name_187 = bytes[187]; name_188 = bytes[188]; name_189 = bytes[189]; name_190 = bytes[190]; name_191 = bytes[191]; name_192 = bytes[192]; name_193 = bytes[193]; name_194 = bytes[194]; name_195 = bytes[195]; name_196 = bytes[196]; name_197 = bytes[197]; name_198 = bytes[198]; name_199 = bytes[199]; name_200 = bytes[200]; name_201 = bytes[201]; name_202 = bytes[202]; name_203 = bytes[203]; name_204 = bytes[204]; name_205 = bytes[205]; name_206 = bytes[206]; name_207 = bytes[207]; name_208 = bytes[208]; name_209 = bytes[209]; name_210 = bytes[210]; name_211 = bytes[211]; name_212 = bytes[212]; name_213 = bytes[213]; name_214 = bytes[214]; name_215 = bytes[215]; name_216 = bytes[216]; name_217 = bytes[217]; name_218 = bytes[218]; name_219 = bytes[219]; name_220 = bytes[220]; name_221 = bytes[221]; name_222 = bytes[222]; name_223 = bytes[223]; name_224 = bytes[224]; name_225 = bytes[225]; name_226 = bytes[226]; name_227 = bytes[227]; name_228 = bytes[228]; name_229 = bytes[229]; name_230 = bytes[230]; name_231 = bytes[231]; name_232 = bytes[232]; name_233 = bytes[233]; name_234 = bytes[234]; name_235 = bytes[235]; name_236 = bytes[236]; name_237 = bytes[237]; name_238 = bytes[238]; name_239 = bytes[239]; name_240 = bytes[240]; name_241 = bytes[241]; name_242 = bytes[242]; name_243 = bytes[243]; name_244 = bytes[244]; name_245 = bytes[245]; name_246 = bytes[246]; name_247 = bytes[247]; name_248 = bytes[248]; name_249 = bytes[249]; name_250 = bytes[250]; name_251 = bytes[251]; name_252 = bytes[252]; name_253 = bytes[253]; name_254 = bytes[254]; name_255 = bytes[255];
-  }
-  @Uint8() int description_0; @Uint8() int description_1; @Uint8() int description_2; @Uint8() int description_3; @Uint8() int description_4; @Uint8() int description_5; @Uint8() int description_6; @Uint8() int description_7; @Uint8() int description_8; @Uint8() int description_9; @Uint8() int description_10; @Uint8() int description_11; @Uint8() int description_12; @Uint8() int description_13; @Uint8() int description_14; @Uint8() int description_15; @Uint8() int description_16; @Uint8() int description_17; @Uint8() int description_18; @Uint8() int description_19; @Uint8() int description_20; @Uint8() int description_21; @Uint8() int description_22; @Uint8() int description_23; @Uint8() int description_24; @Uint8() int description_25; @Uint8() int description_26; @Uint8() int description_27; @Uint8() int description_28; @Uint8() int description_29; @Uint8() int description_30; @Uint8() int description_31; @Uint8() int description_32; @Uint8() int description_33; @Uint8() int description_34; @Uint8() int description_35; @Uint8() int description_36; @Uint8() int description_37; @Uint8() int description_38; @Uint8() int description_39; @Uint8() int description_40; @Uint8() int description_41; @Uint8() int description_42; @Uint8() int description_43; @Uint8() int description_44; @Uint8() int description_45; @Uint8() int description_46; @Uint8() int description_47; @Uint8() int description_48; @Uint8() int description_49; @Uint8() int description_50; @Uint8() int description_51; @Uint8() int description_52; @Uint8() int description_53; @Uint8() int description_54; @Uint8() int description_55; @Uint8() int description_56; @Uint8() int description_57; @Uint8() int description_58; @Uint8() int description_59; @Uint8() int description_60; @Uint8() int description_61; @Uint8() int description_62; @Uint8() int description_63; @Uint8() int description_64; @Uint8() int description_65; @Uint8() int description_66; @Uint8() int description_67; @Uint8() int description_68; @Uint8() int description_69; @Uint8() int description_70; @Uint8() int description_71; @Uint8() int description_72; @Uint8() int description_73; @Uint8() int description_74; @Uint8() int description_75; @Uint8() int description_76; @Uint8() int description_77; @Uint8() int description_78; @Uint8() int description_79; @Uint8() int description_80; @Uint8() int description_81; @Uint8() int description_82; @Uint8() int description_83; @Uint8() int description_84; @Uint8() int description_85; @Uint8() int description_86; @Uint8() int description_87; @Uint8() int description_88; @Uint8() int description_89; @Uint8() int description_90; @Uint8() int description_91; @Uint8() int description_92; @Uint8() int description_93; @Uint8() int description_94; @Uint8() int description_95; @Uint8() int description_96; @Uint8() int description_97; @Uint8() int description_98; @Uint8() int description_99; @Uint8() int description_100; @Uint8() int description_101; @Uint8() int description_102; @Uint8() int description_103; @Uint8() int description_104; @Uint8() int description_105; @Uint8() int description_106; @Uint8() int description_107; @Uint8() int description_108; @Uint8() int description_109; @Uint8() int description_110; @Uint8() int description_111; @Uint8() int description_112; @Uint8() int description_113; @Uint8() int description_114; @Uint8() int description_115; @Uint8() int description_116; @Uint8() int description_117; @Uint8() int description_118; @Uint8() int description_119; @Uint8() int description_120; @Uint8() int description_121; @Uint8() int description_122; @Uint8() int description_123; @Uint8() int description_124; @Uint8() int description_125; @Uint8() int description_126; @Uint8() int description_127; @Uint8() int description_128; @Uint8() int description_129; @Uint8() int description_130; @Uint8() int description_131; @Uint8() int description_132; @Uint8() int description_133; @Uint8() int description_134; @Uint8() int description_135; @Uint8() int description_136; @Uint8() int description_137; @Uint8() int description_138; @Uint8() int description_139; @Uint8() int description_140; @Uint8() int description_141; @Uint8() int description_142; @Uint8() int description_143; @Uint8() int description_144; @Uint8() int description_145; @Uint8() int description_146; @Uint8() int description_147; @Uint8() int description_148; @Uint8() int description_149; @Uint8() int description_150; @Uint8() int description_151; @Uint8() int description_152; @Uint8() int description_153; @Uint8() int description_154; @Uint8() int description_155; @Uint8() int description_156; @Uint8() int description_157; @Uint8() int description_158; @Uint8() int description_159; @Uint8() int description_160; @Uint8() int description_161; @Uint8() int description_162; @Uint8() int description_163; @Uint8() int description_164; @Uint8() int description_165; @Uint8() int description_166; @Uint8() int description_167; @Uint8() int description_168; @Uint8() int description_169; @Uint8() int description_170; @Uint8() int description_171; @Uint8() int description_172; @Uint8() int description_173; @Uint8() int description_174; @Uint8() int description_175; @Uint8() int description_176; @Uint8() int description_177; @Uint8() int description_178; @Uint8() int description_179; @Uint8() int description_180; @Uint8() int description_181; @Uint8() int description_182; @Uint8() int description_183; @Uint8() int description_184; @Uint8() int description_185; @Uint8() int description_186; @Uint8() int description_187; @Uint8() int description_188; @Uint8() int description_189; @Uint8() int description_190; @Uint8() int description_191; @Uint8() int description_192; @Uint8() int description_193; @Uint8() int description_194; @Uint8() int description_195; @Uint8() int description_196; @Uint8() int description_197; @Uint8() int description_198; @Uint8() int description_199; @Uint8() int description_200; @Uint8() int description_201; @Uint8() int description_202; @Uint8() int description_203; @Uint8() int description_204; @Uint8() int description_205; @Uint8() int description_206; @Uint8() int description_207; @Uint8() int description_208; @Uint8() int description_209; @Uint8() int description_210; @Uint8() int description_211; @Uint8() int description_212; @Uint8() int description_213; @Uint8() int description_214; @Uint8() int description_215; @Uint8() int description_216; @Uint8() int description_217; @Uint8() int description_218; @Uint8() int description_219; @Uint8() int description_220; @Uint8() int description_221; @Uint8() int description_222; @Uint8() int description_223; @Uint8() int description_224; @Uint8() int description_225; @Uint8() int description_226; @Uint8() int description_227; @Uint8() int description_228; @Uint8() int description_229; @Uint8() int description_230; @Uint8() int description_231; @Uint8() int description_232; @Uint8() int description_233; @Uint8() int description_234; @Uint8() int description_235; @Uint8() int description_236; @Uint8() int description_237; @Uint8() int description_238; @Uint8() int description_239; @Uint8() int description_240; @Uint8() int description_241; @Uint8() int description_242; @Uint8() int description_243; @Uint8() int description_244; @Uint8() int description_245; @Uint8() int description_246; @Uint8() int description_247; @Uint8() int description_248; @Uint8() int description_249; @Uint8() int description_250; @Uint8() int description_251; @Uint8() int description_252; @Uint8() int description_253; @Uint8() int description_254; @Uint8() int description_255;
-  String get description {
-    var bytes = [description_0, description_1, description_2, description_3, description_4, description_5, description_6, description_7, description_8, description_9, description_10, description_11, description_12, description_13, description_14, description_15, description_16, description_17, description_18, description_19, description_20, description_21, description_22, description_23, description_24, description_25, description_26, description_27, description_28, description_29, description_30, description_31, description_32, description_33, description_34, description_35, description_36, description_37, description_38, description_39, description_40, description_41, description_42, description_43, description_44, description_45, description_46, description_47, description_48, description_49, description_50, description_51, description_52, description_53, description_54, description_55, description_56, description_57, description_58, description_59, description_60, description_61, description_62, description_63, description_64, description_65, description_66, description_67, description_68, description_69, description_70, description_71, description_72, description_73, description_74, description_75, description_76, description_77, description_78, description_79, description_80, description_81, description_82, description_83, description_84, description_85, description_86, description_87, description_88, description_89, description_90, description_91, description_92, description_93, description_94, description_95, description_96, description_97, description_98, description_99, description_100, description_101, description_102, description_103, description_104, description_105, description_106, description_107, description_108, description_109, description_110, description_111, description_112, description_113, description_114, description_115, description_116, description_117, description_118, description_119, description_120, description_121, description_122, description_123, description_124, description_125, description_126, description_127, description_128, description_129, description_130, description_131, description_132, description_133, description_134, description_135, description_136, description_137, description_138, description_139, description_140, description_141, description_142, description_143, description_144, description_145, description_146, description_147, description_148, description_149, description_150, description_151, description_152, description_153, description_154, description_155, description_156, description_157, description_158, description_159, description_160, description_161, description_162, description_163, description_164, description_165, description_166, description_167, description_168, description_169, description_170, description_171, description_172, description_173, description_174, description_175, description_176, description_177, description_178, description_179, description_180, description_181, description_182, description_183, description_184, description_185, description_186, description_187, description_188, description_189, description_190, description_191, description_192, description_193, description_194, description_195, description_196, description_197, description_198, description_199, description_200, description_201, description_202, description_203, description_204, description_205, description_206, description_207, description_208, description_209, description_210, description_211, description_212, description_213, description_214, description_215, description_216, description_217, description_218, description_219, description_220, description_221, description_222, description_223, description_224, description_225, description_226, description_227, description_228, description_229, description_230, description_231, description_232, description_233, description_234, description_235, description_236, description_237, description_238, description_239, description_240, description_241, description_242, description_243, description_244, description_245, description_246, description_247, description_248, description_249, description_250, description_251, description_252, description_253, description_254, description_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set description(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    description_0 = bytes[0]; description_1 = bytes[1]; description_2 = bytes[2]; description_3 = bytes[3]; description_4 = bytes[4]; description_5 = bytes[5]; description_6 = bytes[6]; description_7 = bytes[7]; description_8 = bytes[8]; description_9 = bytes[9]; description_10 = bytes[10]; description_11 = bytes[11]; description_12 = bytes[12]; description_13 = bytes[13]; description_14 = bytes[14]; description_15 = bytes[15]; description_16 = bytes[16]; description_17 = bytes[17]; description_18 = bytes[18]; description_19 = bytes[19]; description_20 = bytes[20]; description_21 = bytes[21]; description_22 = bytes[22]; description_23 = bytes[23]; description_24 = bytes[24]; description_25 = bytes[25]; description_26 = bytes[26]; description_27 = bytes[27]; description_28 = bytes[28]; description_29 = bytes[29]; description_30 = bytes[30]; description_31 = bytes[31]; description_32 = bytes[32]; description_33 = bytes[33]; description_34 = bytes[34]; description_35 = bytes[35]; description_36 = bytes[36]; description_37 = bytes[37]; description_38 = bytes[38]; description_39 = bytes[39]; description_40 = bytes[40]; description_41 = bytes[41]; description_42 = bytes[42]; description_43 = bytes[43]; description_44 = bytes[44]; description_45 = bytes[45]; description_46 = bytes[46]; description_47 = bytes[47]; description_48 = bytes[48]; description_49 = bytes[49]; description_50 = bytes[50]; description_51 = bytes[51]; description_52 = bytes[52]; description_53 = bytes[53]; description_54 = bytes[54]; description_55 = bytes[55]; description_56 = bytes[56]; description_57 = bytes[57]; description_58 = bytes[58]; description_59 = bytes[59]; description_60 = bytes[60]; description_61 = bytes[61]; description_62 = bytes[62]; description_63 = bytes[63]; description_64 = bytes[64]; description_65 = bytes[65]; description_66 = bytes[66]; description_67 = bytes[67]; description_68 = bytes[68]; description_69 = bytes[69]; description_70 = bytes[70]; description_71 = bytes[71]; description_72 = bytes[72]; description_73 = bytes[73]; description_74 = bytes[74]; description_75 = bytes[75]; description_76 = bytes[76]; description_77 = bytes[77]; description_78 = bytes[78]; description_79 = bytes[79]; description_80 = bytes[80]; description_81 = bytes[81]; description_82 = bytes[82]; description_83 = bytes[83]; description_84 = bytes[84]; description_85 = bytes[85]; description_86 = bytes[86]; description_87 = bytes[87]; description_88 = bytes[88]; description_89 = bytes[89]; description_90 = bytes[90]; description_91 = bytes[91]; description_92 = bytes[92]; description_93 = bytes[93]; description_94 = bytes[94]; description_95 = bytes[95]; description_96 = bytes[96]; description_97 = bytes[97]; description_98 = bytes[98]; description_99 = bytes[99]; description_100 = bytes[100]; description_101 = bytes[101]; description_102 = bytes[102]; description_103 = bytes[103]; description_104 = bytes[104]; description_105 = bytes[105]; description_106 = bytes[106]; description_107 = bytes[107]; description_108 = bytes[108]; description_109 = bytes[109]; description_110 = bytes[110]; description_111 = bytes[111]; description_112 = bytes[112]; description_113 = bytes[113]; description_114 = bytes[114]; description_115 = bytes[115]; description_116 = bytes[116]; description_117 = bytes[117]; description_118 = bytes[118]; description_119 = bytes[119]; description_120 = bytes[120]; description_121 = bytes[121]; description_122 = bytes[122]; description_123 = bytes[123]; description_124 = bytes[124]; description_125 = bytes[125]; description_126 = bytes[126]; description_127 = bytes[127]; description_128 = bytes[128]; description_129 = bytes[129]; description_130 = bytes[130]; description_131 = bytes[131]; description_132 = bytes[132]; description_133 = bytes[133]; description_134 = bytes[134]; description_135 = bytes[135]; description_136 = bytes[136]; description_137 = bytes[137]; description_138 = bytes[138]; description_139 = bytes[139]; description_140 = bytes[140]; description_141 = bytes[141]; description_142 = bytes[142]; description_143 = bytes[143]; description_144 = bytes[144]; description_145 = bytes[145]; description_146 = bytes[146]; description_147 = bytes[147]; description_148 = bytes[148]; description_149 = bytes[149]; description_150 = bytes[150]; description_151 = bytes[151]; description_152 = bytes[152]; description_153 = bytes[153]; description_154 = bytes[154]; description_155 = bytes[155]; description_156 = bytes[156]; description_157 = bytes[157]; description_158 = bytes[158]; description_159 = bytes[159]; description_160 = bytes[160]; description_161 = bytes[161]; description_162 = bytes[162]; description_163 = bytes[163]; description_164 = bytes[164]; description_165 = bytes[165]; description_166 = bytes[166]; description_167 = bytes[167]; description_168 = bytes[168]; description_169 = bytes[169]; description_170 = bytes[170]; description_171 = bytes[171]; description_172 = bytes[172]; description_173 = bytes[173]; description_174 = bytes[174]; description_175 = bytes[175]; description_176 = bytes[176]; description_177 = bytes[177]; description_178 = bytes[178]; description_179 = bytes[179]; description_180 = bytes[180]; description_181 = bytes[181]; description_182 = bytes[182]; description_183 = bytes[183]; description_184 = bytes[184]; description_185 = bytes[185]; description_186 = bytes[186]; description_187 = bytes[187]; description_188 = bytes[188]; description_189 = bytes[189]; description_190 = bytes[190]; description_191 = bytes[191]; description_192 = bytes[192]; description_193 = bytes[193]; description_194 = bytes[194]; description_195 = bytes[195]; description_196 = bytes[196]; description_197 = bytes[197]; description_198 = bytes[198]; description_199 = bytes[199]; description_200 = bytes[200]; description_201 = bytes[201]; description_202 = bytes[202]; description_203 = bytes[203]; description_204 = bytes[204]; description_205 = bytes[205]; description_206 = bytes[206]; description_207 = bytes[207]; description_208 = bytes[208]; description_209 = bytes[209]; description_210 = bytes[210]; description_211 = bytes[211]; description_212 = bytes[212]; description_213 = bytes[213]; description_214 = bytes[214]; description_215 = bytes[215]; description_216 = bytes[216]; description_217 = bytes[217]; description_218 = bytes[218]; description_219 = bytes[219]; description_220 = bytes[220]; description_221 = bytes[221]; description_222 = bytes[222]; description_223 = bytes[223]; description_224 = bytes[224]; description_225 = bytes[225]; description_226 = bytes[226]; description_227 = bytes[227]; description_228 = bytes[228]; description_229 = bytes[229]; description_230 = bytes[230]; description_231 = bytes[231]; description_232 = bytes[232]; description_233 = bytes[233]; description_234 = bytes[234]; description_235 = bytes[235]; description_236 = bytes[236]; description_237 = bytes[237]; description_238 = bytes[238]; description_239 = bytes[239]; description_240 = bytes[240]; description_241 = bytes[241]; description_242 = bytes[242]; description_243 = bytes[243]; description_244 = bytes[244]; description_245 = bytes[245]; description_246 = bytes[246]; description_247 = bytes[247]; description_248 = bytes[248]; description_249 = bytes[249]; description_250 = bytes[250]; description_251 = bytes[251]; description_252 = bytes[252]; description_253 = bytes[253]; description_254 = bytes[254]; description_255 = bytes[255];
-  }
-  @Uint32() int subgroupSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int stages;
+  @Array(256)
+  external Array<Uint8> name;
+  @Array(256)
+  external Array<Uint8> description;
+  @Uint32()
+  external int subgroupSize;
 }
 
 class VkPipelineExecutableInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkPipeline> pipeline;
-  @Uint32() int executableIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkPipeline> pipeline;
+  @Uint32()
+  external int executableIndex;
 }
 
 class VkPipelineExecutableStatisticValueKHR extends Opaque {
 }
 
 class VkPipelineExecutableStatisticValueKHRB32 extends Struct {
-  @Uint32() int b32;
+  @Uint32()
+  external int b32;
 }
 
 class VkPipelineExecutableStatisticValueKHRI64 extends Struct {
-  @Int64() int i64;
+  @Int64()
+  external int i64;
 }
 
 class VkPipelineExecutableStatisticValueKHRU64 extends Struct {
-  @Uint64() int u64;
+  @Uint64()
+  external int u64;
 }
 
 class VkPipelineExecutableStatisticValueKHRF64 extends Struct {
-  @Double() double f64;
+  @Double()
+  external double f64;
 }
 
 class VkPipelineExecutableStatisticKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint8() int name_0; @Uint8() int name_1; @Uint8() int name_2; @Uint8() int name_3; @Uint8() int name_4; @Uint8() int name_5; @Uint8() int name_6; @Uint8() int name_7; @Uint8() int name_8; @Uint8() int name_9; @Uint8() int name_10; @Uint8() int name_11; @Uint8() int name_12; @Uint8() int name_13; @Uint8() int name_14; @Uint8() int name_15; @Uint8() int name_16; @Uint8() int name_17; @Uint8() int name_18; @Uint8() int name_19; @Uint8() int name_20; @Uint8() int name_21; @Uint8() int name_22; @Uint8() int name_23; @Uint8() int name_24; @Uint8() int name_25; @Uint8() int name_26; @Uint8() int name_27; @Uint8() int name_28; @Uint8() int name_29; @Uint8() int name_30; @Uint8() int name_31; @Uint8() int name_32; @Uint8() int name_33; @Uint8() int name_34; @Uint8() int name_35; @Uint8() int name_36; @Uint8() int name_37; @Uint8() int name_38; @Uint8() int name_39; @Uint8() int name_40; @Uint8() int name_41; @Uint8() int name_42; @Uint8() int name_43; @Uint8() int name_44; @Uint8() int name_45; @Uint8() int name_46; @Uint8() int name_47; @Uint8() int name_48; @Uint8() int name_49; @Uint8() int name_50; @Uint8() int name_51; @Uint8() int name_52; @Uint8() int name_53; @Uint8() int name_54; @Uint8() int name_55; @Uint8() int name_56; @Uint8() int name_57; @Uint8() int name_58; @Uint8() int name_59; @Uint8() int name_60; @Uint8() int name_61; @Uint8() int name_62; @Uint8() int name_63; @Uint8() int name_64; @Uint8() int name_65; @Uint8() int name_66; @Uint8() int name_67; @Uint8() int name_68; @Uint8() int name_69; @Uint8() int name_70; @Uint8() int name_71; @Uint8() int name_72; @Uint8() int name_73; @Uint8() int name_74; @Uint8() int name_75; @Uint8() int name_76; @Uint8() int name_77; @Uint8() int name_78; @Uint8() int name_79; @Uint8() int name_80; @Uint8() int name_81; @Uint8() int name_82; @Uint8() int name_83; @Uint8() int name_84; @Uint8() int name_85; @Uint8() int name_86; @Uint8() int name_87; @Uint8() int name_88; @Uint8() int name_89; @Uint8() int name_90; @Uint8() int name_91; @Uint8() int name_92; @Uint8() int name_93; @Uint8() int name_94; @Uint8() int name_95; @Uint8() int name_96; @Uint8() int name_97; @Uint8() int name_98; @Uint8() int name_99; @Uint8() int name_100; @Uint8() int name_101; @Uint8() int name_102; @Uint8() int name_103; @Uint8() int name_104; @Uint8() int name_105; @Uint8() int name_106; @Uint8() int name_107; @Uint8() int name_108; @Uint8() int name_109; @Uint8() int name_110; @Uint8() int name_111; @Uint8() int name_112; @Uint8() int name_113; @Uint8() int name_114; @Uint8() int name_115; @Uint8() int name_116; @Uint8() int name_117; @Uint8() int name_118; @Uint8() int name_119; @Uint8() int name_120; @Uint8() int name_121; @Uint8() int name_122; @Uint8() int name_123; @Uint8() int name_124; @Uint8() int name_125; @Uint8() int name_126; @Uint8() int name_127; @Uint8() int name_128; @Uint8() int name_129; @Uint8() int name_130; @Uint8() int name_131; @Uint8() int name_132; @Uint8() int name_133; @Uint8() int name_134; @Uint8() int name_135; @Uint8() int name_136; @Uint8() int name_137; @Uint8() int name_138; @Uint8() int name_139; @Uint8() int name_140; @Uint8() int name_141; @Uint8() int name_142; @Uint8() int name_143; @Uint8() int name_144; @Uint8() int name_145; @Uint8() int name_146; @Uint8() int name_147; @Uint8() int name_148; @Uint8() int name_149; @Uint8() int name_150; @Uint8() int name_151; @Uint8() int name_152; @Uint8() int name_153; @Uint8() int name_154; @Uint8() int name_155; @Uint8() int name_156; @Uint8() int name_157; @Uint8() int name_158; @Uint8() int name_159; @Uint8() int name_160; @Uint8() int name_161; @Uint8() int name_162; @Uint8() int name_163; @Uint8() int name_164; @Uint8() int name_165; @Uint8() int name_166; @Uint8() int name_167; @Uint8() int name_168; @Uint8() int name_169; @Uint8() int name_170; @Uint8() int name_171; @Uint8() int name_172; @Uint8() int name_173; @Uint8() int name_174; @Uint8() int name_175; @Uint8() int name_176; @Uint8() int name_177; @Uint8() int name_178; @Uint8() int name_179; @Uint8() int name_180; @Uint8() int name_181; @Uint8() int name_182; @Uint8() int name_183; @Uint8() int name_184; @Uint8() int name_185; @Uint8() int name_186; @Uint8() int name_187; @Uint8() int name_188; @Uint8() int name_189; @Uint8() int name_190; @Uint8() int name_191; @Uint8() int name_192; @Uint8() int name_193; @Uint8() int name_194; @Uint8() int name_195; @Uint8() int name_196; @Uint8() int name_197; @Uint8() int name_198; @Uint8() int name_199; @Uint8() int name_200; @Uint8() int name_201; @Uint8() int name_202; @Uint8() int name_203; @Uint8() int name_204; @Uint8() int name_205; @Uint8() int name_206; @Uint8() int name_207; @Uint8() int name_208; @Uint8() int name_209; @Uint8() int name_210; @Uint8() int name_211; @Uint8() int name_212; @Uint8() int name_213; @Uint8() int name_214; @Uint8() int name_215; @Uint8() int name_216; @Uint8() int name_217; @Uint8() int name_218; @Uint8() int name_219; @Uint8() int name_220; @Uint8() int name_221; @Uint8() int name_222; @Uint8() int name_223; @Uint8() int name_224; @Uint8() int name_225; @Uint8() int name_226; @Uint8() int name_227; @Uint8() int name_228; @Uint8() int name_229; @Uint8() int name_230; @Uint8() int name_231; @Uint8() int name_232; @Uint8() int name_233; @Uint8() int name_234; @Uint8() int name_235; @Uint8() int name_236; @Uint8() int name_237; @Uint8() int name_238; @Uint8() int name_239; @Uint8() int name_240; @Uint8() int name_241; @Uint8() int name_242; @Uint8() int name_243; @Uint8() int name_244; @Uint8() int name_245; @Uint8() int name_246; @Uint8() int name_247; @Uint8() int name_248; @Uint8() int name_249; @Uint8() int name_250; @Uint8() int name_251; @Uint8() int name_252; @Uint8() int name_253; @Uint8() int name_254; @Uint8() int name_255;
-  String get name {
-    var bytes = [name_0, name_1, name_2, name_3, name_4, name_5, name_6, name_7, name_8, name_9, name_10, name_11, name_12, name_13, name_14, name_15, name_16, name_17, name_18, name_19, name_20, name_21, name_22, name_23, name_24, name_25, name_26, name_27, name_28, name_29, name_30, name_31, name_32, name_33, name_34, name_35, name_36, name_37, name_38, name_39, name_40, name_41, name_42, name_43, name_44, name_45, name_46, name_47, name_48, name_49, name_50, name_51, name_52, name_53, name_54, name_55, name_56, name_57, name_58, name_59, name_60, name_61, name_62, name_63, name_64, name_65, name_66, name_67, name_68, name_69, name_70, name_71, name_72, name_73, name_74, name_75, name_76, name_77, name_78, name_79, name_80, name_81, name_82, name_83, name_84, name_85, name_86, name_87, name_88, name_89, name_90, name_91, name_92, name_93, name_94, name_95, name_96, name_97, name_98, name_99, name_100, name_101, name_102, name_103, name_104, name_105, name_106, name_107, name_108, name_109, name_110, name_111, name_112, name_113, name_114, name_115, name_116, name_117, name_118, name_119, name_120, name_121, name_122, name_123, name_124, name_125, name_126, name_127, name_128, name_129, name_130, name_131, name_132, name_133, name_134, name_135, name_136, name_137, name_138, name_139, name_140, name_141, name_142, name_143, name_144, name_145, name_146, name_147, name_148, name_149, name_150, name_151, name_152, name_153, name_154, name_155, name_156, name_157, name_158, name_159, name_160, name_161, name_162, name_163, name_164, name_165, name_166, name_167, name_168, name_169, name_170, name_171, name_172, name_173, name_174, name_175, name_176, name_177, name_178, name_179, name_180, name_181, name_182, name_183, name_184, name_185, name_186, name_187, name_188, name_189, name_190, name_191, name_192, name_193, name_194, name_195, name_196, name_197, name_198, name_199, name_200, name_201, name_202, name_203, name_204, name_205, name_206, name_207, name_208, name_209, name_210, name_211, name_212, name_213, name_214, name_215, name_216, name_217, name_218, name_219, name_220, name_221, name_222, name_223, name_224, name_225, name_226, name_227, name_228, name_229, name_230, name_231, name_232, name_233, name_234, name_235, name_236, name_237, name_238, name_239, name_240, name_241, name_242, name_243, name_244, name_245, name_246, name_247, name_248, name_249, name_250, name_251, name_252, name_253, name_254, name_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set name(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    name_0 = bytes[0]; name_1 = bytes[1]; name_2 = bytes[2]; name_3 = bytes[3]; name_4 = bytes[4]; name_5 = bytes[5]; name_6 = bytes[6]; name_7 = bytes[7]; name_8 = bytes[8]; name_9 = bytes[9]; name_10 = bytes[10]; name_11 = bytes[11]; name_12 = bytes[12]; name_13 = bytes[13]; name_14 = bytes[14]; name_15 = bytes[15]; name_16 = bytes[16]; name_17 = bytes[17]; name_18 = bytes[18]; name_19 = bytes[19]; name_20 = bytes[20]; name_21 = bytes[21]; name_22 = bytes[22]; name_23 = bytes[23]; name_24 = bytes[24]; name_25 = bytes[25]; name_26 = bytes[26]; name_27 = bytes[27]; name_28 = bytes[28]; name_29 = bytes[29]; name_30 = bytes[30]; name_31 = bytes[31]; name_32 = bytes[32]; name_33 = bytes[33]; name_34 = bytes[34]; name_35 = bytes[35]; name_36 = bytes[36]; name_37 = bytes[37]; name_38 = bytes[38]; name_39 = bytes[39]; name_40 = bytes[40]; name_41 = bytes[41]; name_42 = bytes[42]; name_43 = bytes[43]; name_44 = bytes[44]; name_45 = bytes[45]; name_46 = bytes[46]; name_47 = bytes[47]; name_48 = bytes[48]; name_49 = bytes[49]; name_50 = bytes[50]; name_51 = bytes[51]; name_52 = bytes[52]; name_53 = bytes[53]; name_54 = bytes[54]; name_55 = bytes[55]; name_56 = bytes[56]; name_57 = bytes[57]; name_58 = bytes[58]; name_59 = bytes[59]; name_60 = bytes[60]; name_61 = bytes[61]; name_62 = bytes[62]; name_63 = bytes[63]; name_64 = bytes[64]; name_65 = bytes[65]; name_66 = bytes[66]; name_67 = bytes[67]; name_68 = bytes[68]; name_69 = bytes[69]; name_70 = bytes[70]; name_71 = bytes[71]; name_72 = bytes[72]; name_73 = bytes[73]; name_74 = bytes[74]; name_75 = bytes[75]; name_76 = bytes[76]; name_77 = bytes[77]; name_78 = bytes[78]; name_79 = bytes[79]; name_80 = bytes[80]; name_81 = bytes[81]; name_82 = bytes[82]; name_83 = bytes[83]; name_84 = bytes[84]; name_85 = bytes[85]; name_86 = bytes[86]; name_87 = bytes[87]; name_88 = bytes[88]; name_89 = bytes[89]; name_90 = bytes[90]; name_91 = bytes[91]; name_92 = bytes[92]; name_93 = bytes[93]; name_94 = bytes[94]; name_95 = bytes[95]; name_96 = bytes[96]; name_97 = bytes[97]; name_98 = bytes[98]; name_99 = bytes[99]; name_100 = bytes[100]; name_101 = bytes[101]; name_102 = bytes[102]; name_103 = bytes[103]; name_104 = bytes[104]; name_105 = bytes[105]; name_106 = bytes[106]; name_107 = bytes[107]; name_108 = bytes[108]; name_109 = bytes[109]; name_110 = bytes[110]; name_111 = bytes[111]; name_112 = bytes[112]; name_113 = bytes[113]; name_114 = bytes[114]; name_115 = bytes[115]; name_116 = bytes[116]; name_117 = bytes[117]; name_118 = bytes[118]; name_119 = bytes[119]; name_120 = bytes[120]; name_121 = bytes[121]; name_122 = bytes[122]; name_123 = bytes[123]; name_124 = bytes[124]; name_125 = bytes[125]; name_126 = bytes[126]; name_127 = bytes[127]; name_128 = bytes[128]; name_129 = bytes[129]; name_130 = bytes[130]; name_131 = bytes[131]; name_132 = bytes[132]; name_133 = bytes[133]; name_134 = bytes[134]; name_135 = bytes[135]; name_136 = bytes[136]; name_137 = bytes[137]; name_138 = bytes[138]; name_139 = bytes[139]; name_140 = bytes[140]; name_141 = bytes[141]; name_142 = bytes[142]; name_143 = bytes[143]; name_144 = bytes[144]; name_145 = bytes[145]; name_146 = bytes[146]; name_147 = bytes[147]; name_148 = bytes[148]; name_149 = bytes[149]; name_150 = bytes[150]; name_151 = bytes[151]; name_152 = bytes[152]; name_153 = bytes[153]; name_154 = bytes[154]; name_155 = bytes[155]; name_156 = bytes[156]; name_157 = bytes[157]; name_158 = bytes[158]; name_159 = bytes[159]; name_160 = bytes[160]; name_161 = bytes[161]; name_162 = bytes[162]; name_163 = bytes[163]; name_164 = bytes[164]; name_165 = bytes[165]; name_166 = bytes[166]; name_167 = bytes[167]; name_168 = bytes[168]; name_169 = bytes[169]; name_170 = bytes[170]; name_171 = bytes[171]; name_172 = bytes[172]; name_173 = bytes[173]; name_174 = bytes[174]; name_175 = bytes[175]; name_176 = bytes[176]; name_177 = bytes[177]; name_178 = bytes[178]; name_179 = bytes[179]; name_180 = bytes[180]; name_181 = bytes[181]; name_182 = bytes[182]; name_183 = bytes[183]; name_184 = bytes[184]; name_185 = bytes[185]; name_186 = bytes[186]; name_187 = bytes[187]; name_188 = bytes[188]; name_189 = bytes[189]; name_190 = bytes[190]; name_191 = bytes[191]; name_192 = bytes[192]; name_193 = bytes[193]; name_194 = bytes[194]; name_195 = bytes[195]; name_196 = bytes[196]; name_197 = bytes[197]; name_198 = bytes[198]; name_199 = bytes[199]; name_200 = bytes[200]; name_201 = bytes[201]; name_202 = bytes[202]; name_203 = bytes[203]; name_204 = bytes[204]; name_205 = bytes[205]; name_206 = bytes[206]; name_207 = bytes[207]; name_208 = bytes[208]; name_209 = bytes[209]; name_210 = bytes[210]; name_211 = bytes[211]; name_212 = bytes[212]; name_213 = bytes[213]; name_214 = bytes[214]; name_215 = bytes[215]; name_216 = bytes[216]; name_217 = bytes[217]; name_218 = bytes[218]; name_219 = bytes[219]; name_220 = bytes[220]; name_221 = bytes[221]; name_222 = bytes[222]; name_223 = bytes[223]; name_224 = bytes[224]; name_225 = bytes[225]; name_226 = bytes[226]; name_227 = bytes[227]; name_228 = bytes[228]; name_229 = bytes[229]; name_230 = bytes[230]; name_231 = bytes[231]; name_232 = bytes[232]; name_233 = bytes[233]; name_234 = bytes[234]; name_235 = bytes[235]; name_236 = bytes[236]; name_237 = bytes[237]; name_238 = bytes[238]; name_239 = bytes[239]; name_240 = bytes[240]; name_241 = bytes[241]; name_242 = bytes[242]; name_243 = bytes[243]; name_244 = bytes[244]; name_245 = bytes[245]; name_246 = bytes[246]; name_247 = bytes[247]; name_248 = bytes[248]; name_249 = bytes[249]; name_250 = bytes[250]; name_251 = bytes[251]; name_252 = bytes[252]; name_253 = bytes[253]; name_254 = bytes[254]; name_255 = bytes[255];
-  }
-  @Uint8() int description_0; @Uint8() int description_1; @Uint8() int description_2; @Uint8() int description_3; @Uint8() int description_4; @Uint8() int description_5; @Uint8() int description_6; @Uint8() int description_7; @Uint8() int description_8; @Uint8() int description_9; @Uint8() int description_10; @Uint8() int description_11; @Uint8() int description_12; @Uint8() int description_13; @Uint8() int description_14; @Uint8() int description_15; @Uint8() int description_16; @Uint8() int description_17; @Uint8() int description_18; @Uint8() int description_19; @Uint8() int description_20; @Uint8() int description_21; @Uint8() int description_22; @Uint8() int description_23; @Uint8() int description_24; @Uint8() int description_25; @Uint8() int description_26; @Uint8() int description_27; @Uint8() int description_28; @Uint8() int description_29; @Uint8() int description_30; @Uint8() int description_31; @Uint8() int description_32; @Uint8() int description_33; @Uint8() int description_34; @Uint8() int description_35; @Uint8() int description_36; @Uint8() int description_37; @Uint8() int description_38; @Uint8() int description_39; @Uint8() int description_40; @Uint8() int description_41; @Uint8() int description_42; @Uint8() int description_43; @Uint8() int description_44; @Uint8() int description_45; @Uint8() int description_46; @Uint8() int description_47; @Uint8() int description_48; @Uint8() int description_49; @Uint8() int description_50; @Uint8() int description_51; @Uint8() int description_52; @Uint8() int description_53; @Uint8() int description_54; @Uint8() int description_55; @Uint8() int description_56; @Uint8() int description_57; @Uint8() int description_58; @Uint8() int description_59; @Uint8() int description_60; @Uint8() int description_61; @Uint8() int description_62; @Uint8() int description_63; @Uint8() int description_64; @Uint8() int description_65; @Uint8() int description_66; @Uint8() int description_67; @Uint8() int description_68; @Uint8() int description_69; @Uint8() int description_70; @Uint8() int description_71; @Uint8() int description_72; @Uint8() int description_73; @Uint8() int description_74; @Uint8() int description_75; @Uint8() int description_76; @Uint8() int description_77; @Uint8() int description_78; @Uint8() int description_79; @Uint8() int description_80; @Uint8() int description_81; @Uint8() int description_82; @Uint8() int description_83; @Uint8() int description_84; @Uint8() int description_85; @Uint8() int description_86; @Uint8() int description_87; @Uint8() int description_88; @Uint8() int description_89; @Uint8() int description_90; @Uint8() int description_91; @Uint8() int description_92; @Uint8() int description_93; @Uint8() int description_94; @Uint8() int description_95; @Uint8() int description_96; @Uint8() int description_97; @Uint8() int description_98; @Uint8() int description_99; @Uint8() int description_100; @Uint8() int description_101; @Uint8() int description_102; @Uint8() int description_103; @Uint8() int description_104; @Uint8() int description_105; @Uint8() int description_106; @Uint8() int description_107; @Uint8() int description_108; @Uint8() int description_109; @Uint8() int description_110; @Uint8() int description_111; @Uint8() int description_112; @Uint8() int description_113; @Uint8() int description_114; @Uint8() int description_115; @Uint8() int description_116; @Uint8() int description_117; @Uint8() int description_118; @Uint8() int description_119; @Uint8() int description_120; @Uint8() int description_121; @Uint8() int description_122; @Uint8() int description_123; @Uint8() int description_124; @Uint8() int description_125; @Uint8() int description_126; @Uint8() int description_127; @Uint8() int description_128; @Uint8() int description_129; @Uint8() int description_130; @Uint8() int description_131; @Uint8() int description_132; @Uint8() int description_133; @Uint8() int description_134; @Uint8() int description_135; @Uint8() int description_136; @Uint8() int description_137; @Uint8() int description_138; @Uint8() int description_139; @Uint8() int description_140; @Uint8() int description_141; @Uint8() int description_142; @Uint8() int description_143; @Uint8() int description_144; @Uint8() int description_145; @Uint8() int description_146; @Uint8() int description_147; @Uint8() int description_148; @Uint8() int description_149; @Uint8() int description_150; @Uint8() int description_151; @Uint8() int description_152; @Uint8() int description_153; @Uint8() int description_154; @Uint8() int description_155; @Uint8() int description_156; @Uint8() int description_157; @Uint8() int description_158; @Uint8() int description_159; @Uint8() int description_160; @Uint8() int description_161; @Uint8() int description_162; @Uint8() int description_163; @Uint8() int description_164; @Uint8() int description_165; @Uint8() int description_166; @Uint8() int description_167; @Uint8() int description_168; @Uint8() int description_169; @Uint8() int description_170; @Uint8() int description_171; @Uint8() int description_172; @Uint8() int description_173; @Uint8() int description_174; @Uint8() int description_175; @Uint8() int description_176; @Uint8() int description_177; @Uint8() int description_178; @Uint8() int description_179; @Uint8() int description_180; @Uint8() int description_181; @Uint8() int description_182; @Uint8() int description_183; @Uint8() int description_184; @Uint8() int description_185; @Uint8() int description_186; @Uint8() int description_187; @Uint8() int description_188; @Uint8() int description_189; @Uint8() int description_190; @Uint8() int description_191; @Uint8() int description_192; @Uint8() int description_193; @Uint8() int description_194; @Uint8() int description_195; @Uint8() int description_196; @Uint8() int description_197; @Uint8() int description_198; @Uint8() int description_199; @Uint8() int description_200; @Uint8() int description_201; @Uint8() int description_202; @Uint8() int description_203; @Uint8() int description_204; @Uint8() int description_205; @Uint8() int description_206; @Uint8() int description_207; @Uint8() int description_208; @Uint8() int description_209; @Uint8() int description_210; @Uint8() int description_211; @Uint8() int description_212; @Uint8() int description_213; @Uint8() int description_214; @Uint8() int description_215; @Uint8() int description_216; @Uint8() int description_217; @Uint8() int description_218; @Uint8() int description_219; @Uint8() int description_220; @Uint8() int description_221; @Uint8() int description_222; @Uint8() int description_223; @Uint8() int description_224; @Uint8() int description_225; @Uint8() int description_226; @Uint8() int description_227; @Uint8() int description_228; @Uint8() int description_229; @Uint8() int description_230; @Uint8() int description_231; @Uint8() int description_232; @Uint8() int description_233; @Uint8() int description_234; @Uint8() int description_235; @Uint8() int description_236; @Uint8() int description_237; @Uint8() int description_238; @Uint8() int description_239; @Uint8() int description_240; @Uint8() int description_241; @Uint8() int description_242; @Uint8() int description_243; @Uint8() int description_244; @Uint8() int description_245; @Uint8() int description_246; @Uint8() int description_247; @Uint8() int description_248; @Uint8() int description_249; @Uint8() int description_250; @Uint8() int description_251; @Uint8() int description_252; @Uint8() int description_253; @Uint8() int description_254; @Uint8() int description_255;
-  String get description {
-    var bytes = [description_0, description_1, description_2, description_3, description_4, description_5, description_6, description_7, description_8, description_9, description_10, description_11, description_12, description_13, description_14, description_15, description_16, description_17, description_18, description_19, description_20, description_21, description_22, description_23, description_24, description_25, description_26, description_27, description_28, description_29, description_30, description_31, description_32, description_33, description_34, description_35, description_36, description_37, description_38, description_39, description_40, description_41, description_42, description_43, description_44, description_45, description_46, description_47, description_48, description_49, description_50, description_51, description_52, description_53, description_54, description_55, description_56, description_57, description_58, description_59, description_60, description_61, description_62, description_63, description_64, description_65, description_66, description_67, description_68, description_69, description_70, description_71, description_72, description_73, description_74, description_75, description_76, description_77, description_78, description_79, description_80, description_81, description_82, description_83, description_84, description_85, description_86, description_87, description_88, description_89, description_90, description_91, description_92, description_93, description_94, description_95, description_96, description_97, description_98, description_99, description_100, description_101, description_102, description_103, description_104, description_105, description_106, description_107, description_108, description_109, description_110, description_111, description_112, description_113, description_114, description_115, description_116, description_117, description_118, description_119, description_120, description_121, description_122, description_123, description_124, description_125, description_126, description_127, description_128, description_129, description_130, description_131, description_132, description_133, description_134, description_135, description_136, description_137, description_138, description_139, description_140, description_141, description_142, description_143, description_144, description_145, description_146, description_147, description_148, description_149, description_150, description_151, description_152, description_153, description_154, description_155, description_156, description_157, description_158, description_159, description_160, description_161, description_162, description_163, description_164, description_165, description_166, description_167, description_168, description_169, description_170, description_171, description_172, description_173, description_174, description_175, description_176, description_177, description_178, description_179, description_180, description_181, description_182, description_183, description_184, description_185, description_186, description_187, description_188, description_189, description_190, description_191, description_192, description_193, description_194, description_195, description_196, description_197, description_198, description_199, description_200, description_201, description_202, description_203, description_204, description_205, description_206, description_207, description_208, description_209, description_210, description_211, description_212, description_213, description_214, description_215, description_216, description_217, description_218, description_219, description_220, description_221, description_222, description_223, description_224, description_225, description_226, description_227, description_228, description_229, description_230, description_231, description_232, description_233, description_234, description_235, description_236, description_237, description_238, description_239, description_240, description_241, description_242, description_243, description_244, description_245, description_246, description_247, description_248, description_249, description_250, description_251, description_252, description_253, description_254, description_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set description(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    description_0 = bytes[0]; description_1 = bytes[1]; description_2 = bytes[2]; description_3 = bytes[3]; description_4 = bytes[4]; description_5 = bytes[5]; description_6 = bytes[6]; description_7 = bytes[7]; description_8 = bytes[8]; description_9 = bytes[9]; description_10 = bytes[10]; description_11 = bytes[11]; description_12 = bytes[12]; description_13 = bytes[13]; description_14 = bytes[14]; description_15 = bytes[15]; description_16 = bytes[16]; description_17 = bytes[17]; description_18 = bytes[18]; description_19 = bytes[19]; description_20 = bytes[20]; description_21 = bytes[21]; description_22 = bytes[22]; description_23 = bytes[23]; description_24 = bytes[24]; description_25 = bytes[25]; description_26 = bytes[26]; description_27 = bytes[27]; description_28 = bytes[28]; description_29 = bytes[29]; description_30 = bytes[30]; description_31 = bytes[31]; description_32 = bytes[32]; description_33 = bytes[33]; description_34 = bytes[34]; description_35 = bytes[35]; description_36 = bytes[36]; description_37 = bytes[37]; description_38 = bytes[38]; description_39 = bytes[39]; description_40 = bytes[40]; description_41 = bytes[41]; description_42 = bytes[42]; description_43 = bytes[43]; description_44 = bytes[44]; description_45 = bytes[45]; description_46 = bytes[46]; description_47 = bytes[47]; description_48 = bytes[48]; description_49 = bytes[49]; description_50 = bytes[50]; description_51 = bytes[51]; description_52 = bytes[52]; description_53 = bytes[53]; description_54 = bytes[54]; description_55 = bytes[55]; description_56 = bytes[56]; description_57 = bytes[57]; description_58 = bytes[58]; description_59 = bytes[59]; description_60 = bytes[60]; description_61 = bytes[61]; description_62 = bytes[62]; description_63 = bytes[63]; description_64 = bytes[64]; description_65 = bytes[65]; description_66 = bytes[66]; description_67 = bytes[67]; description_68 = bytes[68]; description_69 = bytes[69]; description_70 = bytes[70]; description_71 = bytes[71]; description_72 = bytes[72]; description_73 = bytes[73]; description_74 = bytes[74]; description_75 = bytes[75]; description_76 = bytes[76]; description_77 = bytes[77]; description_78 = bytes[78]; description_79 = bytes[79]; description_80 = bytes[80]; description_81 = bytes[81]; description_82 = bytes[82]; description_83 = bytes[83]; description_84 = bytes[84]; description_85 = bytes[85]; description_86 = bytes[86]; description_87 = bytes[87]; description_88 = bytes[88]; description_89 = bytes[89]; description_90 = bytes[90]; description_91 = bytes[91]; description_92 = bytes[92]; description_93 = bytes[93]; description_94 = bytes[94]; description_95 = bytes[95]; description_96 = bytes[96]; description_97 = bytes[97]; description_98 = bytes[98]; description_99 = bytes[99]; description_100 = bytes[100]; description_101 = bytes[101]; description_102 = bytes[102]; description_103 = bytes[103]; description_104 = bytes[104]; description_105 = bytes[105]; description_106 = bytes[106]; description_107 = bytes[107]; description_108 = bytes[108]; description_109 = bytes[109]; description_110 = bytes[110]; description_111 = bytes[111]; description_112 = bytes[112]; description_113 = bytes[113]; description_114 = bytes[114]; description_115 = bytes[115]; description_116 = bytes[116]; description_117 = bytes[117]; description_118 = bytes[118]; description_119 = bytes[119]; description_120 = bytes[120]; description_121 = bytes[121]; description_122 = bytes[122]; description_123 = bytes[123]; description_124 = bytes[124]; description_125 = bytes[125]; description_126 = bytes[126]; description_127 = bytes[127]; description_128 = bytes[128]; description_129 = bytes[129]; description_130 = bytes[130]; description_131 = bytes[131]; description_132 = bytes[132]; description_133 = bytes[133]; description_134 = bytes[134]; description_135 = bytes[135]; description_136 = bytes[136]; description_137 = bytes[137]; description_138 = bytes[138]; description_139 = bytes[139]; description_140 = bytes[140]; description_141 = bytes[141]; description_142 = bytes[142]; description_143 = bytes[143]; description_144 = bytes[144]; description_145 = bytes[145]; description_146 = bytes[146]; description_147 = bytes[147]; description_148 = bytes[148]; description_149 = bytes[149]; description_150 = bytes[150]; description_151 = bytes[151]; description_152 = bytes[152]; description_153 = bytes[153]; description_154 = bytes[154]; description_155 = bytes[155]; description_156 = bytes[156]; description_157 = bytes[157]; description_158 = bytes[158]; description_159 = bytes[159]; description_160 = bytes[160]; description_161 = bytes[161]; description_162 = bytes[162]; description_163 = bytes[163]; description_164 = bytes[164]; description_165 = bytes[165]; description_166 = bytes[166]; description_167 = bytes[167]; description_168 = bytes[168]; description_169 = bytes[169]; description_170 = bytes[170]; description_171 = bytes[171]; description_172 = bytes[172]; description_173 = bytes[173]; description_174 = bytes[174]; description_175 = bytes[175]; description_176 = bytes[176]; description_177 = bytes[177]; description_178 = bytes[178]; description_179 = bytes[179]; description_180 = bytes[180]; description_181 = bytes[181]; description_182 = bytes[182]; description_183 = bytes[183]; description_184 = bytes[184]; description_185 = bytes[185]; description_186 = bytes[186]; description_187 = bytes[187]; description_188 = bytes[188]; description_189 = bytes[189]; description_190 = bytes[190]; description_191 = bytes[191]; description_192 = bytes[192]; description_193 = bytes[193]; description_194 = bytes[194]; description_195 = bytes[195]; description_196 = bytes[196]; description_197 = bytes[197]; description_198 = bytes[198]; description_199 = bytes[199]; description_200 = bytes[200]; description_201 = bytes[201]; description_202 = bytes[202]; description_203 = bytes[203]; description_204 = bytes[204]; description_205 = bytes[205]; description_206 = bytes[206]; description_207 = bytes[207]; description_208 = bytes[208]; description_209 = bytes[209]; description_210 = bytes[210]; description_211 = bytes[211]; description_212 = bytes[212]; description_213 = bytes[213]; description_214 = bytes[214]; description_215 = bytes[215]; description_216 = bytes[216]; description_217 = bytes[217]; description_218 = bytes[218]; description_219 = bytes[219]; description_220 = bytes[220]; description_221 = bytes[221]; description_222 = bytes[222]; description_223 = bytes[223]; description_224 = bytes[224]; description_225 = bytes[225]; description_226 = bytes[226]; description_227 = bytes[227]; description_228 = bytes[228]; description_229 = bytes[229]; description_230 = bytes[230]; description_231 = bytes[231]; description_232 = bytes[232]; description_233 = bytes[233]; description_234 = bytes[234]; description_235 = bytes[235]; description_236 = bytes[236]; description_237 = bytes[237]; description_238 = bytes[238]; description_239 = bytes[239]; description_240 = bytes[240]; description_241 = bytes[241]; description_242 = bytes[242]; description_243 = bytes[243]; description_244 = bytes[244]; description_245 = bytes[245]; description_246 = bytes[246]; description_247 = bytes[247]; description_248 = bytes[248]; description_249 = bytes[249]; description_250 = bytes[250]; description_251 = bytes[251]; description_252 = bytes[252]; description_253 = bytes[253]; description_254 = bytes[254]; description_255 = bytes[255];
-  }
-  @Int32() int format;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(256)
+  external Array<Uint8> name;
+  @Array(256)
+  external Array<Uint8> description;
+  @Int32()
+  external int format;
 }
 
 class VkPipelineExecutableInternalRepresentationKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint8() int name_0; @Uint8() int name_1; @Uint8() int name_2; @Uint8() int name_3; @Uint8() int name_4; @Uint8() int name_5; @Uint8() int name_6; @Uint8() int name_7; @Uint8() int name_8; @Uint8() int name_9; @Uint8() int name_10; @Uint8() int name_11; @Uint8() int name_12; @Uint8() int name_13; @Uint8() int name_14; @Uint8() int name_15; @Uint8() int name_16; @Uint8() int name_17; @Uint8() int name_18; @Uint8() int name_19; @Uint8() int name_20; @Uint8() int name_21; @Uint8() int name_22; @Uint8() int name_23; @Uint8() int name_24; @Uint8() int name_25; @Uint8() int name_26; @Uint8() int name_27; @Uint8() int name_28; @Uint8() int name_29; @Uint8() int name_30; @Uint8() int name_31; @Uint8() int name_32; @Uint8() int name_33; @Uint8() int name_34; @Uint8() int name_35; @Uint8() int name_36; @Uint8() int name_37; @Uint8() int name_38; @Uint8() int name_39; @Uint8() int name_40; @Uint8() int name_41; @Uint8() int name_42; @Uint8() int name_43; @Uint8() int name_44; @Uint8() int name_45; @Uint8() int name_46; @Uint8() int name_47; @Uint8() int name_48; @Uint8() int name_49; @Uint8() int name_50; @Uint8() int name_51; @Uint8() int name_52; @Uint8() int name_53; @Uint8() int name_54; @Uint8() int name_55; @Uint8() int name_56; @Uint8() int name_57; @Uint8() int name_58; @Uint8() int name_59; @Uint8() int name_60; @Uint8() int name_61; @Uint8() int name_62; @Uint8() int name_63; @Uint8() int name_64; @Uint8() int name_65; @Uint8() int name_66; @Uint8() int name_67; @Uint8() int name_68; @Uint8() int name_69; @Uint8() int name_70; @Uint8() int name_71; @Uint8() int name_72; @Uint8() int name_73; @Uint8() int name_74; @Uint8() int name_75; @Uint8() int name_76; @Uint8() int name_77; @Uint8() int name_78; @Uint8() int name_79; @Uint8() int name_80; @Uint8() int name_81; @Uint8() int name_82; @Uint8() int name_83; @Uint8() int name_84; @Uint8() int name_85; @Uint8() int name_86; @Uint8() int name_87; @Uint8() int name_88; @Uint8() int name_89; @Uint8() int name_90; @Uint8() int name_91; @Uint8() int name_92; @Uint8() int name_93; @Uint8() int name_94; @Uint8() int name_95; @Uint8() int name_96; @Uint8() int name_97; @Uint8() int name_98; @Uint8() int name_99; @Uint8() int name_100; @Uint8() int name_101; @Uint8() int name_102; @Uint8() int name_103; @Uint8() int name_104; @Uint8() int name_105; @Uint8() int name_106; @Uint8() int name_107; @Uint8() int name_108; @Uint8() int name_109; @Uint8() int name_110; @Uint8() int name_111; @Uint8() int name_112; @Uint8() int name_113; @Uint8() int name_114; @Uint8() int name_115; @Uint8() int name_116; @Uint8() int name_117; @Uint8() int name_118; @Uint8() int name_119; @Uint8() int name_120; @Uint8() int name_121; @Uint8() int name_122; @Uint8() int name_123; @Uint8() int name_124; @Uint8() int name_125; @Uint8() int name_126; @Uint8() int name_127; @Uint8() int name_128; @Uint8() int name_129; @Uint8() int name_130; @Uint8() int name_131; @Uint8() int name_132; @Uint8() int name_133; @Uint8() int name_134; @Uint8() int name_135; @Uint8() int name_136; @Uint8() int name_137; @Uint8() int name_138; @Uint8() int name_139; @Uint8() int name_140; @Uint8() int name_141; @Uint8() int name_142; @Uint8() int name_143; @Uint8() int name_144; @Uint8() int name_145; @Uint8() int name_146; @Uint8() int name_147; @Uint8() int name_148; @Uint8() int name_149; @Uint8() int name_150; @Uint8() int name_151; @Uint8() int name_152; @Uint8() int name_153; @Uint8() int name_154; @Uint8() int name_155; @Uint8() int name_156; @Uint8() int name_157; @Uint8() int name_158; @Uint8() int name_159; @Uint8() int name_160; @Uint8() int name_161; @Uint8() int name_162; @Uint8() int name_163; @Uint8() int name_164; @Uint8() int name_165; @Uint8() int name_166; @Uint8() int name_167; @Uint8() int name_168; @Uint8() int name_169; @Uint8() int name_170; @Uint8() int name_171; @Uint8() int name_172; @Uint8() int name_173; @Uint8() int name_174; @Uint8() int name_175; @Uint8() int name_176; @Uint8() int name_177; @Uint8() int name_178; @Uint8() int name_179; @Uint8() int name_180; @Uint8() int name_181; @Uint8() int name_182; @Uint8() int name_183; @Uint8() int name_184; @Uint8() int name_185; @Uint8() int name_186; @Uint8() int name_187; @Uint8() int name_188; @Uint8() int name_189; @Uint8() int name_190; @Uint8() int name_191; @Uint8() int name_192; @Uint8() int name_193; @Uint8() int name_194; @Uint8() int name_195; @Uint8() int name_196; @Uint8() int name_197; @Uint8() int name_198; @Uint8() int name_199; @Uint8() int name_200; @Uint8() int name_201; @Uint8() int name_202; @Uint8() int name_203; @Uint8() int name_204; @Uint8() int name_205; @Uint8() int name_206; @Uint8() int name_207; @Uint8() int name_208; @Uint8() int name_209; @Uint8() int name_210; @Uint8() int name_211; @Uint8() int name_212; @Uint8() int name_213; @Uint8() int name_214; @Uint8() int name_215; @Uint8() int name_216; @Uint8() int name_217; @Uint8() int name_218; @Uint8() int name_219; @Uint8() int name_220; @Uint8() int name_221; @Uint8() int name_222; @Uint8() int name_223; @Uint8() int name_224; @Uint8() int name_225; @Uint8() int name_226; @Uint8() int name_227; @Uint8() int name_228; @Uint8() int name_229; @Uint8() int name_230; @Uint8() int name_231; @Uint8() int name_232; @Uint8() int name_233; @Uint8() int name_234; @Uint8() int name_235; @Uint8() int name_236; @Uint8() int name_237; @Uint8() int name_238; @Uint8() int name_239; @Uint8() int name_240; @Uint8() int name_241; @Uint8() int name_242; @Uint8() int name_243; @Uint8() int name_244; @Uint8() int name_245; @Uint8() int name_246; @Uint8() int name_247; @Uint8() int name_248; @Uint8() int name_249; @Uint8() int name_250; @Uint8() int name_251; @Uint8() int name_252; @Uint8() int name_253; @Uint8() int name_254; @Uint8() int name_255;
-  String get name {
-    var bytes = [name_0, name_1, name_2, name_3, name_4, name_5, name_6, name_7, name_8, name_9, name_10, name_11, name_12, name_13, name_14, name_15, name_16, name_17, name_18, name_19, name_20, name_21, name_22, name_23, name_24, name_25, name_26, name_27, name_28, name_29, name_30, name_31, name_32, name_33, name_34, name_35, name_36, name_37, name_38, name_39, name_40, name_41, name_42, name_43, name_44, name_45, name_46, name_47, name_48, name_49, name_50, name_51, name_52, name_53, name_54, name_55, name_56, name_57, name_58, name_59, name_60, name_61, name_62, name_63, name_64, name_65, name_66, name_67, name_68, name_69, name_70, name_71, name_72, name_73, name_74, name_75, name_76, name_77, name_78, name_79, name_80, name_81, name_82, name_83, name_84, name_85, name_86, name_87, name_88, name_89, name_90, name_91, name_92, name_93, name_94, name_95, name_96, name_97, name_98, name_99, name_100, name_101, name_102, name_103, name_104, name_105, name_106, name_107, name_108, name_109, name_110, name_111, name_112, name_113, name_114, name_115, name_116, name_117, name_118, name_119, name_120, name_121, name_122, name_123, name_124, name_125, name_126, name_127, name_128, name_129, name_130, name_131, name_132, name_133, name_134, name_135, name_136, name_137, name_138, name_139, name_140, name_141, name_142, name_143, name_144, name_145, name_146, name_147, name_148, name_149, name_150, name_151, name_152, name_153, name_154, name_155, name_156, name_157, name_158, name_159, name_160, name_161, name_162, name_163, name_164, name_165, name_166, name_167, name_168, name_169, name_170, name_171, name_172, name_173, name_174, name_175, name_176, name_177, name_178, name_179, name_180, name_181, name_182, name_183, name_184, name_185, name_186, name_187, name_188, name_189, name_190, name_191, name_192, name_193, name_194, name_195, name_196, name_197, name_198, name_199, name_200, name_201, name_202, name_203, name_204, name_205, name_206, name_207, name_208, name_209, name_210, name_211, name_212, name_213, name_214, name_215, name_216, name_217, name_218, name_219, name_220, name_221, name_222, name_223, name_224, name_225, name_226, name_227, name_228, name_229, name_230, name_231, name_232, name_233, name_234, name_235, name_236, name_237, name_238, name_239, name_240, name_241, name_242, name_243, name_244, name_245, name_246, name_247, name_248, name_249, name_250, name_251, name_252, name_253, name_254, name_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set name(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    name_0 = bytes[0]; name_1 = bytes[1]; name_2 = bytes[2]; name_3 = bytes[3]; name_4 = bytes[4]; name_5 = bytes[5]; name_6 = bytes[6]; name_7 = bytes[7]; name_8 = bytes[8]; name_9 = bytes[9]; name_10 = bytes[10]; name_11 = bytes[11]; name_12 = bytes[12]; name_13 = bytes[13]; name_14 = bytes[14]; name_15 = bytes[15]; name_16 = bytes[16]; name_17 = bytes[17]; name_18 = bytes[18]; name_19 = bytes[19]; name_20 = bytes[20]; name_21 = bytes[21]; name_22 = bytes[22]; name_23 = bytes[23]; name_24 = bytes[24]; name_25 = bytes[25]; name_26 = bytes[26]; name_27 = bytes[27]; name_28 = bytes[28]; name_29 = bytes[29]; name_30 = bytes[30]; name_31 = bytes[31]; name_32 = bytes[32]; name_33 = bytes[33]; name_34 = bytes[34]; name_35 = bytes[35]; name_36 = bytes[36]; name_37 = bytes[37]; name_38 = bytes[38]; name_39 = bytes[39]; name_40 = bytes[40]; name_41 = bytes[41]; name_42 = bytes[42]; name_43 = bytes[43]; name_44 = bytes[44]; name_45 = bytes[45]; name_46 = bytes[46]; name_47 = bytes[47]; name_48 = bytes[48]; name_49 = bytes[49]; name_50 = bytes[50]; name_51 = bytes[51]; name_52 = bytes[52]; name_53 = bytes[53]; name_54 = bytes[54]; name_55 = bytes[55]; name_56 = bytes[56]; name_57 = bytes[57]; name_58 = bytes[58]; name_59 = bytes[59]; name_60 = bytes[60]; name_61 = bytes[61]; name_62 = bytes[62]; name_63 = bytes[63]; name_64 = bytes[64]; name_65 = bytes[65]; name_66 = bytes[66]; name_67 = bytes[67]; name_68 = bytes[68]; name_69 = bytes[69]; name_70 = bytes[70]; name_71 = bytes[71]; name_72 = bytes[72]; name_73 = bytes[73]; name_74 = bytes[74]; name_75 = bytes[75]; name_76 = bytes[76]; name_77 = bytes[77]; name_78 = bytes[78]; name_79 = bytes[79]; name_80 = bytes[80]; name_81 = bytes[81]; name_82 = bytes[82]; name_83 = bytes[83]; name_84 = bytes[84]; name_85 = bytes[85]; name_86 = bytes[86]; name_87 = bytes[87]; name_88 = bytes[88]; name_89 = bytes[89]; name_90 = bytes[90]; name_91 = bytes[91]; name_92 = bytes[92]; name_93 = bytes[93]; name_94 = bytes[94]; name_95 = bytes[95]; name_96 = bytes[96]; name_97 = bytes[97]; name_98 = bytes[98]; name_99 = bytes[99]; name_100 = bytes[100]; name_101 = bytes[101]; name_102 = bytes[102]; name_103 = bytes[103]; name_104 = bytes[104]; name_105 = bytes[105]; name_106 = bytes[106]; name_107 = bytes[107]; name_108 = bytes[108]; name_109 = bytes[109]; name_110 = bytes[110]; name_111 = bytes[111]; name_112 = bytes[112]; name_113 = bytes[113]; name_114 = bytes[114]; name_115 = bytes[115]; name_116 = bytes[116]; name_117 = bytes[117]; name_118 = bytes[118]; name_119 = bytes[119]; name_120 = bytes[120]; name_121 = bytes[121]; name_122 = bytes[122]; name_123 = bytes[123]; name_124 = bytes[124]; name_125 = bytes[125]; name_126 = bytes[126]; name_127 = bytes[127]; name_128 = bytes[128]; name_129 = bytes[129]; name_130 = bytes[130]; name_131 = bytes[131]; name_132 = bytes[132]; name_133 = bytes[133]; name_134 = bytes[134]; name_135 = bytes[135]; name_136 = bytes[136]; name_137 = bytes[137]; name_138 = bytes[138]; name_139 = bytes[139]; name_140 = bytes[140]; name_141 = bytes[141]; name_142 = bytes[142]; name_143 = bytes[143]; name_144 = bytes[144]; name_145 = bytes[145]; name_146 = bytes[146]; name_147 = bytes[147]; name_148 = bytes[148]; name_149 = bytes[149]; name_150 = bytes[150]; name_151 = bytes[151]; name_152 = bytes[152]; name_153 = bytes[153]; name_154 = bytes[154]; name_155 = bytes[155]; name_156 = bytes[156]; name_157 = bytes[157]; name_158 = bytes[158]; name_159 = bytes[159]; name_160 = bytes[160]; name_161 = bytes[161]; name_162 = bytes[162]; name_163 = bytes[163]; name_164 = bytes[164]; name_165 = bytes[165]; name_166 = bytes[166]; name_167 = bytes[167]; name_168 = bytes[168]; name_169 = bytes[169]; name_170 = bytes[170]; name_171 = bytes[171]; name_172 = bytes[172]; name_173 = bytes[173]; name_174 = bytes[174]; name_175 = bytes[175]; name_176 = bytes[176]; name_177 = bytes[177]; name_178 = bytes[178]; name_179 = bytes[179]; name_180 = bytes[180]; name_181 = bytes[181]; name_182 = bytes[182]; name_183 = bytes[183]; name_184 = bytes[184]; name_185 = bytes[185]; name_186 = bytes[186]; name_187 = bytes[187]; name_188 = bytes[188]; name_189 = bytes[189]; name_190 = bytes[190]; name_191 = bytes[191]; name_192 = bytes[192]; name_193 = bytes[193]; name_194 = bytes[194]; name_195 = bytes[195]; name_196 = bytes[196]; name_197 = bytes[197]; name_198 = bytes[198]; name_199 = bytes[199]; name_200 = bytes[200]; name_201 = bytes[201]; name_202 = bytes[202]; name_203 = bytes[203]; name_204 = bytes[204]; name_205 = bytes[205]; name_206 = bytes[206]; name_207 = bytes[207]; name_208 = bytes[208]; name_209 = bytes[209]; name_210 = bytes[210]; name_211 = bytes[211]; name_212 = bytes[212]; name_213 = bytes[213]; name_214 = bytes[214]; name_215 = bytes[215]; name_216 = bytes[216]; name_217 = bytes[217]; name_218 = bytes[218]; name_219 = bytes[219]; name_220 = bytes[220]; name_221 = bytes[221]; name_222 = bytes[222]; name_223 = bytes[223]; name_224 = bytes[224]; name_225 = bytes[225]; name_226 = bytes[226]; name_227 = bytes[227]; name_228 = bytes[228]; name_229 = bytes[229]; name_230 = bytes[230]; name_231 = bytes[231]; name_232 = bytes[232]; name_233 = bytes[233]; name_234 = bytes[234]; name_235 = bytes[235]; name_236 = bytes[236]; name_237 = bytes[237]; name_238 = bytes[238]; name_239 = bytes[239]; name_240 = bytes[240]; name_241 = bytes[241]; name_242 = bytes[242]; name_243 = bytes[243]; name_244 = bytes[244]; name_245 = bytes[245]; name_246 = bytes[246]; name_247 = bytes[247]; name_248 = bytes[248]; name_249 = bytes[249]; name_250 = bytes[250]; name_251 = bytes[251]; name_252 = bytes[252]; name_253 = bytes[253]; name_254 = bytes[254]; name_255 = bytes[255];
-  }
-  @Uint8() int description_0; @Uint8() int description_1; @Uint8() int description_2; @Uint8() int description_3; @Uint8() int description_4; @Uint8() int description_5; @Uint8() int description_6; @Uint8() int description_7; @Uint8() int description_8; @Uint8() int description_9; @Uint8() int description_10; @Uint8() int description_11; @Uint8() int description_12; @Uint8() int description_13; @Uint8() int description_14; @Uint8() int description_15; @Uint8() int description_16; @Uint8() int description_17; @Uint8() int description_18; @Uint8() int description_19; @Uint8() int description_20; @Uint8() int description_21; @Uint8() int description_22; @Uint8() int description_23; @Uint8() int description_24; @Uint8() int description_25; @Uint8() int description_26; @Uint8() int description_27; @Uint8() int description_28; @Uint8() int description_29; @Uint8() int description_30; @Uint8() int description_31; @Uint8() int description_32; @Uint8() int description_33; @Uint8() int description_34; @Uint8() int description_35; @Uint8() int description_36; @Uint8() int description_37; @Uint8() int description_38; @Uint8() int description_39; @Uint8() int description_40; @Uint8() int description_41; @Uint8() int description_42; @Uint8() int description_43; @Uint8() int description_44; @Uint8() int description_45; @Uint8() int description_46; @Uint8() int description_47; @Uint8() int description_48; @Uint8() int description_49; @Uint8() int description_50; @Uint8() int description_51; @Uint8() int description_52; @Uint8() int description_53; @Uint8() int description_54; @Uint8() int description_55; @Uint8() int description_56; @Uint8() int description_57; @Uint8() int description_58; @Uint8() int description_59; @Uint8() int description_60; @Uint8() int description_61; @Uint8() int description_62; @Uint8() int description_63; @Uint8() int description_64; @Uint8() int description_65; @Uint8() int description_66; @Uint8() int description_67; @Uint8() int description_68; @Uint8() int description_69; @Uint8() int description_70; @Uint8() int description_71; @Uint8() int description_72; @Uint8() int description_73; @Uint8() int description_74; @Uint8() int description_75; @Uint8() int description_76; @Uint8() int description_77; @Uint8() int description_78; @Uint8() int description_79; @Uint8() int description_80; @Uint8() int description_81; @Uint8() int description_82; @Uint8() int description_83; @Uint8() int description_84; @Uint8() int description_85; @Uint8() int description_86; @Uint8() int description_87; @Uint8() int description_88; @Uint8() int description_89; @Uint8() int description_90; @Uint8() int description_91; @Uint8() int description_92; @Uint8() int description_93; @Uint8() int description_94; @Uint8() int description_95; @Uint8() int description_96; @Uint8() int description_97; @Uint8() int description_98; @Uint8() int description_99; @Uint8() int description_100; @Uint8() int description_101; @Uint8() int description_102; @Uint8() int description_103; @Uint8() int description_104; @Uint8() int description_105; @Uint8() int description_106; @Uint8() int description_107; @Uint8() int description_108; @Uint8() int description_109; @Uint8() int description_110; @Uint8() int description_111; @Uint8() int description_112; @Uint8() int description_113; @Uint8() int description_114; @Uint8() int description_115; @Uint8() int description_116; @Uint8() int description_117; @Uint8() int description_118; @Uint8() int description_119; @Uint8() int description_120; @Uint8() int description_121; @Uint8() int description_122; @Uint8() int description_123; @Uint8() int description_124; @Uint8() int description_125; @Uint8() int description_126; @Uint8() int description_127; @Uint8() int description_128; @Uint8() int description_129; @Uint8() int description_130; @Uint8() int description_131; @Uint8() int description_132; @Uint8() int description_133; @Uint8() int description_134; @Uint8() int description_135; @Uint8() int description_136; @Uint8() int description_137; @Uint8() int description_138; @Uint8() int description_139; @Uint8() int description_140; @Uint8() int description_141; @Uint8() int description_142; @Uint8() int description_143; @Uint8() int description_144; @Uint8() int description_145; @Uint8() int description_146; @Uint8() int description_147; @Uint8() int description_148; @Uint8() int description_149; @Uint8() int description_150; @Uint8() int description_151; @Uint8() int description_152; @Uint8() int description_153; @Uint8() int description_154; @Uint8() int description_155; @Uint8() int description_156; @Uint8() int description_157; @Uint8() int description_158; @Uint8() int description_159; @Uint8() int description_160; @Uint8() int description_161; @Uint8() int description_162; @Uint8() int description_163; @Uint8() int description_164; @Uint8() int description_165; @Uint8() int description_166; @Uint8() int description_167; @Uint8() int description_168; @Uint8() int description_169; @Uint8() int description_170; @Uint8() int description_171; @Uint8() int description_172; @Uint8() int description_173; @Uint8() int description_174; @Uint8() int description_175; @Uint8() int description_176; @Uint8() int description_177; @Uint8() int description_178; @Uint8() int description_179; @Uint8() int description_180; @Uint8() int description_181; @Uint8() int description_182; @Uint8() int description_183; @Uint8() int description_184; @Uint8() int description_185; @Uint8() int description_186; @Uint8() int description_187; @Uint8() int description_188; @Uint8() int description_189; @Uint8() int description_190; @Uint8() int description_191; @Uint8() int description_192; @Uint8() int description_193; @Uint8() int description_194; @Uint8() int description_195; @Uint8() int description_196; @Uint8() int description_197; @Uint8() int description_198; @Uint8() int description_199; @Uint8() int description_200; @Uint8() int description_201; @Uint8() int description_202; @Uint8() int description_203; @Uint8() int description_204; @Uint8() int description_205; @Uint8() int description_206; @Uint8() int description_207; @Uint8() int description_208; @Uint8() int description_209; @Uint8() int description_210; @Uint8() int description_211; @Uint8() int description_212; @Uint8() int description_213; @Uint8() int description_214; @Uint8() int description_215; @Uint8() int description_216; @Uint8() int description_217; @Uint8() int description_218; @Uint8() int description_219; @Uint8() int description_220; @Uint8() int description_221; @Uint8() int description_222; @Uint8() int description_223; @Uint8() int description_224; @Uint8() int description_225; @Uint8() int description_226; @Uint8() int description_227; @Uint8() int description_228; @Uint8() int description_229; @Uint8() int description_230; @Uint8() int description_231; @Uint8() int description_232; @Uint8() int description_233; @Uint8() int description_234; @Uint8() int description_235; @Uint8() int description_236; @Uint8() int description_237; @Uint8() int description_238; @Uint8() int description_239; @Uint8() int description_240; @Uint8() int description_241; @Uint8() int description_242; @Uint8() int description_243; @Uint8() int description_244; @Uint8() int description_245; @Uint8() int description_246; @Uint8() int description_247; @Uint8() int description_248; @Uint8() int description_249; @Uint8() int description_250; @Uint8() int description_251; @Uint8() int description_252; @Uint8() int description_253; @Uint8() int description_254; @Uint8() int description_255;
-  String get description {
-    var bytes = [description_0, description_1, description_2, description_3, description_4, description_5, description_6, description_7, description_8, description_9, description_10, description_11, description_12, description_13, description_14, description_15, description_16, description_17, description_18, description_19, description_20, description_21, description_22, description_23, description_24, description_25, description_26, description_27, description_28, description_29, description_30, description_31, description_32, description_33, description_34, description_35, description_36, description_37, description_38, description_39, description_40, description_41, description_42, description_43, description_44, description_45, description_46, description_47, description_48, description_49, description_50, description_51, description_52, description_53, description_54, description_55, description_56, description_57, description_58, description_59, description_60, description_61, description_62, description_63, description_64, description_65, description_66, description_67, description_68, description_69, description_70, description_71, description_72, description_73, description_74, description_75, description_76, description_77, description_78, description_79, description_80, description_81, description_82, description_83, description_84, description_85, description_86, description_87, description_88, description_89, description_90, description_91, description_92, description_93, description_94, description_95, description_96, description_97, description_98, description_99, description_100, description_101, description_102, description_103, description_104, description_105, description_106, description_107, description_108, description_109, description_110, description_111, description_112, description_113, description_114, description_115, description_116, description_117, description_118, description_119, description_120, description_121, description_122, description_123, description_124, description_125, description_126, description_127, description_128, description_129, description_130, description_131, description_132, description_133, description_134, description_135, description_136, description_137, description_138, description_139, description_140, description_141, description_142, description_143, description_144, description_145, description_146, description_147, description_148, description_149, description_150, description_151, description_152, description_153, description_154, description_155, description_156, description_157, description_158, description_159, description_160, description_161, description_162, description_163, description_164, description_165, description_166, description_167, description_168, description_169, description_170, description_171, description_172, description_173, description_174, description_175, description_176, description_177, description_178, description_179, description_180, description_181, description_182, description_183, description_184, description_185, description_186, description_187, description_188, description_189, description_190, description_191, description_192, description_193, description_194, description_195, description_196, description_197, description_198, description_199, description_200, description_201, description_202, description_203, description_204, description_205, description_206, description_207, description_208, description_209, description_210, description_211, description_212, description_213, description_214, description_215, description_216, description_217, description_218, description_219, description_220, description_221, description_222, description_223, description_224, description_225, description_226, description_227, description_228, description_229, description_230, description_231, description_232, description_233, description_234, description_235, description_236, description_237, description_238, description_239, description_240, description_241, description_242, description_243, description_244, description_245, description_246, description_247, description_248, description_249, description_250, description_251, description_252, description_253, description_254, description_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set description(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    description_0 = bytes[0]; description_1 = bytes[1]; description_2 = bytes[2]; description_3 = bytes[3]; description_4 = bytes[4]; description_5 = bytes[5]; description_6 = bytes[6]; description_7 = bytes[7]; description_8 = bytes[8]; description_9 = bytes[9]; description_10 = bytes[10]; description_11 = bytes[11]; description_12 = bytes[12]; description_13 = bytes[13]; description_14 = bytes[14]; description_15 = bytes[15]; description_16 = bytes[16]; description_17 = bytes[17]; description_18 = bytes[18]; description_19 = bytes[19]; description_20 = bytes[20]; description_21 = bytes[21]; description_22 = bytes[22]; description_23 = bytes[23]; description_24 = bytes[24]; description_25 = bytes[25]; description_26 = bytes[26]; description_27 = bytes[27]; description_28 = bytes[28]; description_29 = bytes[29]; description_30 = bytes[30]; description_31 = bytes[31]; description_32 = bytes[32]; description_33 = bytes[33]; description_34 = bytes[34]; description_35 = bytes[35]; description_36 = bytes[36]; description_37 = bytes[37]; description_38 = bytes[38]; description_39 = bytes[39]; description_40 = bytes[40]; description_41 = bytes[41]; description_42 = bytes[42]; description_43 = bytes[43]; description_44 = bytes[44]; description_45 = bytes[45]; description_46 = bytes[46]; description_47 = bytes[47]; description_48 = bytes[48]; description_49 = bytes[49]; description_50 = bytes[50]; description_51 = bytes[51]; description_52 = bytes[52]; description_53 = bytes[53]; description_54 = bytes[54]; description_55 = bytes[55]; description_56 = bytes[56]; description_57 = bytes[57]; description_58 = bytes[58]; description_59 = bytes[59]; description_60 = bytes[60]; description_61 = bytes[61]; description_62 = bytes[62]; description_63 = bytes[63]; description_64 = bytes[64]; description_65 = bytes[65]; description_66 = bytes[66]; description_67 = bytes[67]; description_68 = bytes[68]; description_69 = bytes[69]; description_70 = bytes[70]; description_71 = bytes[71]; description_72 = bytes[72]; description_73 = bytes[73]; description_74 = bytes[74]; description_75 = bytes[75]; description_76 = bytes[76]; description_77 = bytes[77]; description_78 = bytes[78]; description_79 = bytes[79]; description_80 = bytes[80]; description_81 = bytes[81]; description_82 = bytes[82]; description_83 = bytes[83]; description_84 = bytes[84]; description_85 = bytes[85]; description_86 = bytes[86]; description_87 = bytes[87]; description_88 = bytes[88]; description_89 = bytes[89]; description_90 = bytes[90]; description_91 = bytes[91]; description_92 = bytes[92]; description_93 = bytes[93]; description_94 = bytes[94]; description_95 = bytes[95]; description_96 = bytes[96]; description_97 = bytes[97]; description_98 = bytes[98]; description_99 = bytes[99]; description_100 = bytes[100]; description_101 = bytes[101]; description_102 = bytes[102]; description_103 = bytes[103]; description_104 = bytes[104]; description_105 = bytes[105]; description_106 = bytes[106]; description_107 = bytes[107]; description_108 = bytes[108]; description_109 = bytes[109]; description_110 = bytes[110]; description_111 = bytes[111]; description_112 = bytes[112]; description_113 = bytes[113]; description_114 = bytes[114]; description_115 = bytes[115]; description_116 = bytes[116]; description_117 = bytes[117]; description_118 = bytes[118]; description_119 = bytes[119]; description_120 = bytes[120]; description_121 = bytes[121]; description_122 = bytes[122]; description_123 = bytes[123]; description_124 = bytes[124]; description_125 = bytes[125]; description_126 = bytes[126]; description_127 = bytes[127]; description_128 = bytes[128]; description_129 = bytes[129]; description_130 = bytes[130]; description_131 = bytes[131]; description_132 = bytes[132]; description_133 = bytes[133]; description_134 = bytes[134]; description_135 = bytes[135]; description_136 = bytes[136]; description_137 = bytes[137]; description_138 = bytes[138]; description_139 = bytes[139]; description_140 = bytes[140]; description_141 = bytes[141]; description_142 = bytes[142]; description_143 = bytes[143]; description_144 = bytes[144]; description_145 = bytes[145]; description_146 = bytes[146]; description_147 = bytes[147]; description_148 = bytes[148]; description_149 = bytes[149]; description_150 = bytes[150]; description_151 = bytes[151]; description_152 = bytes[152]; description_153 = bytes[153]; description_154 = bytes[154]; description_155 = bytes[155]; description_156 = bytes[156]; description_157 = bytes[157]; description_158 = bytes[158]; description_159 = bytes[159]; description_160 = bytes[160]; description_161 = bytes[161]; description_162 = bytes[162]; description_163 = bytes[163]; description_164 = bytes[164]; description_165 = bytes[165]; description_166 = bytes[166]; description_167 = bytes[167]; description_168 = bytes[168]; description_169 = bytes[169]; description_170 = bytes[170]; description_171 = bytes[171]; description_172 = bytes[172]; description_173 = bytes[173]; description_174 = bytes[174]; description_175 = bytes[175]; description_176 = bytes[176]; description_177 = bytes[177]; description_178 = bytes[178]; description_179 = bytes[179]; description_180 = bytes[180]; description_181 = bytes[181]; description_182 = bytes[182]; description_183 = bytes[183]; description_184 = bytes[184]; description_185 = bytes[185]; description_186 = bytes[186]; description_187 = bytes[187]; description_188 = bytes[188]; description_189 = bytes[189]; description_190 = bytes[190]; description_191 = bytes[191]; description_192 = bytes[192]; description_193 = bytes[193]; description_194 = bytes[194]; description_195 = bytes[195]; description_196 = bytes[196]; description_197 = bytes[197]; description_198 = bytes[198]; description_199 = bytes[199]; description_200 = bytes[200]; description_201 = bytes[201]; description_202 = bytes[202]; description_203 = bytes[203]; description_204 = bytes[204]; description_205 = bytes[205]; description_206 = bytes[206]; description_207 = bytes[207]; description_208 = bytes[208]; description_209 = bytes[209]; description_210 = bytes[210]; description_211 = bytes[211]; description_212 = bytes[212]; description_213 = bytes[213]; description_214 = bytes[214]; description_215 = bytes[215]; description_216 = bytes[216]; description_217 = bytes[217]; description_218 = bytes[218]; description_219 = bytes[219]; description_220 = bytes[220]; description_221 = bytes[221]; description_222 = bytes[222]; description_223 = bytes[223]; description_224 = bytes[224]; description_225 = bytes[225]; description_226 = bytes[226]; description_227 = bytes[227]; description_228 = bytes[228]; description_229 = bytes[229]; description_230 = bytes[230]; description_231 = bytes[231]; description_232 = bytes[232]; description_233 = bytes[233]; description_234 = bytes[234]; description_235 = bytes[235]; description_236 = bytes[236]; description_237 = bytes[237]; description_238 = bytes[238]; description_239 = bytes[239]; description_240 = bytes[240]; description_241 = bytes[241]; description_242 = bytes[242]; description_243 = bytes[243]; description_244 = bytes[244]; description_245 = bytes[245]; description_246 = bytes[246]; description_247 = bytes[247]; description_248 = bytes[248]; description_249 = bytes[249]; description_250 = bytes[250]; description_251 = bytes[251]; description_252 = bytes[252]; description_253 = bytes[253]; description_254 = bytes[254]; description_255 = bytes[255];
-  }
-  @Uint32() int isText;
-  @Uint64() int dataSize;
-  Pointer pData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(256)
+  external Array<Uint8> name;
+  @Array(256)
+  external Array<Uint8> description;
+  @Uint32()
+  external int isText;
+  @Uint64()
+  external int dataSize;
+  external Pointer pData;
 }
 
 class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderDemoteToHelperInvocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderDemoteToHelperInvocation;
 }
 
 class VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int texelBufferAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int texelBufferAlignment;
 }
 
 class VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int storageTexelBufferOffsetAlignmentBytes;
-  @Uint32() int storageTexelBufferOffsetSingleTexelAlignment;
-  @Uint64() int uniformTexelBufferOffsetAlignmentBytes;
-  @Uint32() int uniformTexelBufferOffsetSingleTexelAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int storageTexelBufferOffsetAlignmentBytes;
+  @Uint32()
+  external int storageTexelBufferOffsetSingleTexelAlignment;
+  @Uint64()
+  external int uniformTexelBufferOffsetAlignmentBytes;
+  @Uint32()
+  external int uniformTexelBufferOffsetSingleTexelAlignment;
 }
 
 class VkPhysicalDeviceSubgroupSizeControlFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int subgroupSizeControl;
-  @Uint32() int computeFullSubgroups;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int subgroupSizeControl;
+  @Uint32()
+  external int computeFullSubgroups;
 }
 
 class VkPhysicalDeviceSubgroupSizeControlPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int minSubgroupSize;
-  @Uint32() int maxSubgroupSize;
-  @Uint32() int maxComputeWorkgroupSubgroups;
-  @Uint32() int requiredSubgroupSizeStages;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int minSubgroupSize;
+  @Uint32()
+  external int maxSubgroupSize;
+  @Uint32()
+  external int maxComputeWorkgroupSubgroups;
+  @Uint32()
+  external int requiredSubgroupSizeStages;
 }
 
 class VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int requiredSubgroupSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int requiredSubgroupSize;
 }
 
 class VkMemoryOpaqueCaptureAddressAllocateInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int opaqueCaptureAddress;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int opaqueCaptureAddress;
 }
 
 class VkMemoryOpaqueCaptureAddressAllocateInfoKHR extends Opaque {
 }
 
 class VkDeviceMemoryOpaqueCaptureAddressInfo extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkDeviceMemory> memory;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkDeviceMemory> memory;
 }
 
 class VkDeviceMemoryOpaqueCaptureAddressInfoKHR extends Opaque {
 }
 
 class VkPhysicalDeviceLineRasterizationFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int rectangularLines;
-  @Uint32() int bresenhamLines;
-  @Uint32() int smoothLines;
-  @Uint32() int stippledRectangularLines;
-  @Uint32() int stippledBresenhamLines;
-  @Uint32() int stippledSmoothLines;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int rectangularLines;
+  @Uint32()
+  external int bresenhamLines;
+  @Uint32()
+  external int smoothLines;
+  @Uint32()
+  external int stippledRectangularLines;
+  @Uint32()
+  external int stippledBresenhamLines;
+  @Uint32()
+  external int stippledSmoothLines;
 }
 
 class VkPhysicalDeviceLineRasterizationPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int lineSubPixelPrecisionBits;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int lineSubPixelPrecisionBits;
 }
 
 class VkPipelineRasterizationLineStateCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int lineRasterizationMode;
-  @Uint32() int stippledLineEnable;
-  @Uint32() int lineStippleFactor;
-  @Uint16() int lineStipplePattern;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int lineRasterizationMode;
+  @Uint32()
+  external int stippledLineEnable;
+  @Uint32()
+  external int lineStippleFactor;
+  @Uint16()
+  external int lineStipplePattern;
 }
 
 class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int pipelineCreationCacheControl;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int pipelineCreationCacheControl;
 }
 
 class VkPhysicalDeviceVulkan11Features extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int storageBuffer16BitAccess;
-  @Uint32() int uniformAndStorageBuffer16BitAccess;
-  @Uint32() int storagePushConstant16;
-  @Uint32() int storageInputOutput16;
-  @Uint32() int multiview;
-  @Uint32() int multiviewGeometryShader;
-  @Uint32() int multiviewTessellationShader;
-  @Uint32() int variablePointersStorageBuffer;
-  @Uint32() int variablePointers;
-  @Uint32() int protectedMemory;
-  @Uint32() int samplerYcbcrConversion;
-  @Uint32() int shaderDrawParameters;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int storageBuffer16BitAccess;
+  @Uint32()
+  external int uniformAndStorageBuffer16BitAccess;
+  @Uint32()
+  external int storagePushConstant16;
+  @Uint32()
+  external int storageInputOutput16;
+  @Uint32()
+  external int multiview;
+  @Uint32()
+  external int multiviewGeometryShader;
+  @Uint32()
+  external int multiviewTessellationShader;
+  @Uint32()
+  external int variablePointersStorageBuffer;
+  @Uint32()
+  external int variablePointers;
+  @Uint32()
+  external int protectedMemory;
+  @Uint32()
+  external int samplerYcbcrConversion;
+  @Uint32()
+  external int shaderDrawParameters;
 }
 
 class VkPhysicalDeviceVulkan11Properties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint8() int deviceUUID_0; @Uint8() int deviceUUID_1; @Uint8() int deviceUUID_2; @Uint8() int deviceUUID_3; @Uint8() int deviceUUID_4; @Uint8() int deviceUUID_5; @Uint8() int deviceUUID_6; @Uint8() int deviceUUID_7; @Uint8() int deviceUUID_8; @Uint8() int deviceUUID_9; @Uint8() int deviceUUID_10; @Uint8() int deviceUUID_11; @Uint8() int deviceUUID_12; @Uint8() int deviceUUID_13; @Uint8() int deviceUUID_14; @Uint8() int deviceUUID_15;
-  String get deviceUUID {
-    var bytes = [deviceUUID_0, deviceUUID_1, deviceUUID_2, deviceUUID_3, deviceUUID_4, deviceUUID_5, deviceUUID_6, deviceUUID_7, deviceUUID_8, deviceUUID_9, deviceUUID_10, deviceUUID_11, deviceUUID_12, deviceUUID_13, deviceUUID_14, deviceUUID_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set deviceUUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    deviceUUID_0 = bytes[0]; deviceUUID_1 = bytes[1]; deviceUUID_2 = bytes[2]; deviceUUID_3 = bytes[3]; deviceUUID_4 = bytes[4]; deviceUUID_5 = bytes[5]; deviceUUID_6 = bytes[6]; deviceUUID_7 = bytes[7]; deviceUUID_8 = bytes[8]; deviceUUID_9 = bytes[9]; deviceUUID_10 = bytes[10]; deviceUUID_11 = bytes[11]; deviceUUID_12 = bytes[12]; deviceUUID_13 = bytes[13]; deviceUUID_14 = bytes[14]; deviceUUID_15 = bytes[15];
-  }
-  @Uint8() int driverUUID_0; @Uint8() int driverUUID_1; @Uint8() int driverUUID_2; @Uint8() int driverUUID_3; @Uint8() int driverUUID_4; @Uint8() int driverUUID_5; @Uint8() int driverUUID_6; @Uint8() int driverUUID_7; @Uint8() int driverUUID_8; @Uint8() int driverUUID_9; @Uint8() int driverUUID_10; @Uint8() int driverUUID_11; @Uint8() int driverUUID_12; @Uint8() int driverUUID_13; @Uint8() int driverUUID_14; @Uint8() int driverUUID_15;
-  String get driverUUID {
-    var bytes = [driverUUID_0, driverUUID_1, driverUUID_2, driverUUID_3, driverUUID_4, driverUUID_5, driverUUID_6, driverUUID_7, driverUUID_8, driverUUID_9, driverUUID_10, driverUUID_11, driverUUID_12, driverUUID_13, driverUUID_14, driverUUID_15].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set driverUUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(16-value.length, 0));
-    driverUUID_0 = bytes[0]; driverUUID_1 = bytes[1]; driverUUID_2 = bytes[2]; driverUUID_3 = bytes[3]; driverUUID_4 = bytes[4]; driverUUID_5 = bytes[5]; driverUUID_6 = bytes[6]; driverUUID_7 = bytes[7]; driverUUID_8 = bytes[8]; driverUUID_9 = bytes[9]; driverUUID_10 = bytes[10]; driverUUID_11 = bytes[11]; driverUUID_12 = bytes[12]; driverUUID_13 = bytes[13]; driverUUID_14 = bytes[14]; driverUUID_15 = bytes[15];
-  }
-  @Uint8() int deviceLUID_0; @Uint8() int deviceLUID_1; @Uint8() int deviceLUID_2; @Uint8() int deviceLUID_3; @Uint8() int deviceLUID_4; @Uint8() int deviceLUID_5; @Uint8() int deviceLUID_6; @Uint8() int deviceLUID_7;
-  String get deviceLUID {
-    var bytes = [deviceLUID_0, deviceLUID_1, deviceLUID_2, deviceLUID_3, deviceLUID_4, deviceLUID_5, deviceLUID_6, deviceLUID_7].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set deviceLUID(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(8-value.length, 0));
-    deviceLUID_0 = bytes[0]; deviceLUID_1 = bytes[1]; deviceLUID_2 = bytes[2]; deviceLUID_3 = bytes[3]; deviceLUID_4 = bytes[4]; deviceLUID_5 = bytes[5]; deviceLUID_6 = bytes[6]; deviceLUID_7 = bytes[7];
-  }
-  @Uint32() int deviceNodeMask;
-  @Uint32() int deviceLUIDValid;
-  @Uint32() int subgroupSize;
-  @Uint32() int subgroupSupportedStages;
-  @Uint32() int subgroupSupportedOperations;
-  @Uint32() int subgroupQuadOperationsInAllStages;
-  @Int32() int pointClippingBehavior;
-  @Uint32() int maxMultiviewViewCount;
-  @Uint32() int maxMultiviewInstanceIndex;
-  @Uint32() int protectedNoFault;
-  @Uint32() int maxPerSetDescriptors;
-  @Uint64() int maxMemoryAllocationSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(16)
+  external Array<Uint8> deviceUUID;
+  @Array(16)
+  external Array<Uint8> driverUUID;
+  @Array(8)
+  external Array<Uint8> deviceLUID;
+  @Uint32()
+  external int deviceNodeMask;
+  @Uint32()
+  external int deviceLUIDValid;
+  @Uint32()
+  external int subgroupSize;
+  @Uint32()
+  external int subgroupSupportedStages;
+  @Uint32()
+  external int subgroupSupportedOperations;
+  @Uint32()
+  external int subgroupQuadOperationsInAllStages;
+  @Int32()
+  external int pointClippingBehavior;
+  @Uint32()
+  external int maxMultiviewViewCount;
+  @Uint32()
+  external int maxMultiviewInstanceIndex;
+  @Uint32()
+  external int protectedNoFault;
+  @Uint32()
+  external int maxPerSetDescriptors;
+  @Uint64()
+  external int maxMemoryAllocationSize;
 }
 
 class VkPhysicalDeviceVulkan12Features extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int samplerMirrorClampToEdge;
-  @Uint32() int drawIndirectCount;
-  @Uint32() int storageBuffer8BitAccess;
-  @Uint32() int uniformAndStorageBuffer8BitAccess;
-  @Uint32() int storagePushConstant8;
-  @Uint32() int shaderBufferInt64Atomics;
-  @Uint32() int shaderSharedInt64Atomics;
-  @Uint32() int shaderFloat16;
-  @Uint32() int shaderInt8;
-  @Uint32() int descriptorIndexing;
-  @Uint32() int shaderInputAttachmentArrayDynamicIndexing;
-  @Uint32() int shaderUniformTexelBufferArrayDynamicIndexing;
-  @Uint32() int shaderStorageTexelBufferArrayDynamicIndexing;
-  @Uint32() int shaderUniformBufferArrayNonUniformIndexing;
-  @Uint32() int shaderSampledImageArrayNonUniformIndexing;
-  @Uint32() int shaderStorageBufferArrayNonUniformIndexing;
-  @Uint32() int shaderStorageImageArrayNonUniformIndexing;
-  @Uint32() int shaderInputAttachmentArrayNonUniformIndexing;
-  @Uint32() int shaderUniformTexelBufferArrayNonUniformIndexing;
-  @Uint32() int shaderStorageTexelBufferArrayNonUniformIndexing;
-  @Uint32() int descriptorBindingUniformBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingSampledImageUpdateAfterBind;
-  @Uint32() int descriptorBindingStorageImageUpdateAfterBind;
-  @Uint32() int descriptorBindingStorageBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingUniformTexelBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingStorageTexelBufferUpdateAfterBind;
-  @Uint32() int descriptorBindingUpdateUnusedWhilePending;
-  @Uint32() int descriptorBindingPartiallyBound;
-  @Uint32() int descriptorBindingVariableDescriptorCount;
-  @Uint32() int runtimeDescriptorArray;
-  @Uint32() int samplerFilterMinmax;
-  @Uint32() int scalarBlockLayout;
-  @Uint32() int imagelessFramebuffer;
-  @Uint32() int uniformBufferStandardLayout;
-  @Uint32() int shaderSubgroupExtendedTypes;
-  @Uint32() int separateDepthStencilLayouts;
-  @Uint32() int hostQueryReset;
-  @Uint32() int timelineSemaphore;
-  @Uint32() int bufferDeviceAddress;
-  @Uint32() int bufferDeviceAddressCaptureReplay;
-  @Uint32() int bufferDeviceAddressMultiDevice;
-  @Uint32() int vulkanMemoryModel;
-  @Uint32() int vulkanMemoryModelDeviceScope;
-  @Uint32() int vulkanMemoryModelAvailabilityVisibilityChains;
-  @Uint32() int shaderOutputViewportIndex;
-  @Uint32() int shaderOutputLayer;
-  @Uint32() int subgroupBroadcastDynamicId;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int samplerMirrorClampToEdge;
+  @Uint32()
+  external int drawIndirectCount;
+  @Uint32()
+  external int storageBuffer8BitAccess;
+  @Uint32()
+  external int uniformAndStorageBuffer8BitAccess;
+  @Uint32()
+  external int storagePushConstant8;
+  @Uint32()
+  external int shaderBufferInt64Atomics;
+  @Uint32()
+  external int shaderSharedInt64Atomics;
+  @Uint32()
+  external int shaderFloat16;
+  @Uint32()
+  external int shaderInt8;
+  @Uint32()
+  external int descriptorIndexing;
+  @Uint32()
+  external int shaderInputAttachmentArrayDynamicIndexing;
+  @Uint32()
+  external int shaderUniformTexelBufferArrayDynamicIndexing;
+  @Uint32()
+  external int shaderStorageTexelBufferArrayDynamicIndexing;
+  @Uint32()
+  external int shaderUniformBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderSampledImageArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderStorageBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderStorageImageArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderInputAttachmentArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderUniformTexelBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int shaderStorageTexelBufferArrayNonUniformIndexing;
+  @Uint32()
+  external int descriptorBindingUniformBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingSampledImageUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingStorageImageUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingStorageBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingUniformTexelBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingStorageTexelBufferUpdateAfterBind;
+  @Uint32()
+  external int descriptorBindingUpdateUnusedWhilePending;
+  @Uint32()
+  external int descriptorBindingPartiallyBound;
+  @Uint32()
+  external int descriptorBindingVariableDescriptorCount;
+  @Uint32()
+  external int runtimeDescriptorArray;
+  @Uint32()
+  external int samplerFilterMinmax;
+  @Uint32()
+  external int scalarBlockLayout;
+  @Uint32()
+  external int imagelessFramebuffer;
+  @Uint32()
+  external int uniformBufferStandardLayout;
+  @Uint32()
+  external int shaderSubgroupExtendedTypes;
+  @Uint32()
+  external int separateDepthStencilLayouts;
+  @Uint32()
+  external int hostQueryReset;
+  @Uint32()
+  external int timelineSemaphore;
+  @Uint32()
+  external int bufferDeviceAddress;
+  @Uint32()
+  external int bufferDeviceAddressCaptureReplay;
+  @Uint32()
+  external int bufferDeviceAddressMultiDevice;
+  @Uint32()
+  external int vulkanMemoryModel;
+  @Uint32()
+  external int vulkanMemoryModelDeviceScope;
+  @Uint32()
+  external int vulkanMemoryModelAvailabilityVisibilityChains;
+  @Uint32()
+  external int shaderOutputViewportIndex;
+  @Uint32()
+  external int shaderOutputLayer;
+  @Uint32()
+  external int subgroupBroadcastDynamicId;
 }
 
 class VkPhysicalDeviceVulkan12Properties extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int driverID;
-  @Uint8() int driverName_0; @Uint8() int driverName_1; @Uint8() int driverName_2; @Uint8() int driverName_3; @Uint8() int driverName_4; @Uint8() int driverName_5; @Uint8() int driverName_6; @Uint8() int driverName_7; @Uint8() int driverName_8; @Uint8() int driverName_9; @Uint8() int driverName_10; @Uint8() int driverName_11; @Uint8() int driverName_12; @Uint8() int driverName_13; @Uint8() int driverName_14; @Uint8() int driverName_15; @Uint8() int driverName_16; @Uint8() int driverName_17; @Uint8() int driverName_18; @Uint8() int driverName_19; @Uint8() int driverName_20; @Uint8() int driverName_21; @Uint8() int driverName_22; @Uint8() int driverName_23; @Uint8() int driverName_24; @Uint8() int driverName_25; @Uint8() int driverName_26; @Uint8() int driverName_27; @Uint8() int driverName_28; @Uint8() int driverName_29; @Uint8() int driverName_30; @Uint8() int driverName_31; @Uint8() int driverName_32; @Uint8() int driverName_33; @Uint8() int driverName_34; @Uint8() int driverName_35; @Uint8() int driverName_36; @Uint8() int driverName_37; @Uint8() int driverName_38; @Uint8() int driverName_39; @Uint8() int driverName_40; @Uint8() int driverName_41; @Uint8() int driverName_42; @Uint8() int driverName_43; @Uint8() int driverName_44; @Uint8() int driverName_45; @Uint8() int driverName_46; @Uint8() int driverName_47; @Uint8() int driverName_48; @Uint8() int driverName_49; @Uint8() int driverName_50; @Uint8() int driverName_51; @Uint8() int driverName_52; @Uint8() int driverName_53; @Uint8() int driverName_54; @Uint8() int driverName_55; @Uint8() int driverName_56; @Uint8() int driverName_57; @Uint8() int driverName_58; @Uint8() int driverName_59; @Uint8() int driverName_60; @Uint8() int driverName_61; @Uint8() int driverName_62; @Uint8() int driverName_63; @Uint8() int driverName_64; @Uint8() int driverName_65; @Uint8() int driverName_66; @Uint8() int driverName_67; @Uint8() int driverName_68; @Uint8() int driverName_69; @Uint8() int driverName_70; @Uint8() int driverName_71; @Uint8() int driverName_72; @Uint8() int driverName_73; @Uint8() int driverName_74; @Uint8() int driverName_75; @Uint8() int driverName_76; @Uint8() int driverName_77; @Uint8() int driverName_78; @Uint8() int driverName_79; @Uint8() int driverName_80; @Uint8() int driverName_81; @Uint8() int driverName_82; @Uint8() int driverName_83; @Uint8() int driverName_84; @Uint8() int driverName_85; @Uint8() int driverName_86; @Uint8() int driverName_87; @Uint8() int driverName_88; @Uint8() int driverName_89; @Uint8() int driverName_90; @Uint8() int driverName_91; @Uint8() int driverName_92; @Uint8() int driverName_93; @Uint8() int driverName_94; @Uint8() int driverName_95; @Uint8() int driverName_96; @Uint8() int driverName_97; @Uint8() int driverName_98; @Uint8() int driverName_99; @Uint8() int driverName_100; @Uint8() int driverName_101; @Uint8() int driverName_102; @Uint8() int driverName_103; @Uint8() int driverName_104; @Uint8() int driverName_105; @Uint8() int driverName_106; @Uint8() int driverName_107; @Uint8() int driverName_108; @Uint8() int driverName_109; @Uint8() int driverName_110; @Uint8() int driverName_111; @Uint8() int driverName_112; @Uint8() int driverName_113; @Uint8() int driverName_114; @Uint8() int driverName_115; @Uint8() int driverName_116; @Uint8() int driverName_117; @Uint8() int driverName_118; @Uint8() int driverName_119; @Uint8() int driverName_120; @Uint8() int driverName_121; @Uint8() int driverName_122; @Uint8() int driverName_123; @Uint8() int driverName_124; @Uint8() int driverName_125; @Uint8() int driverName_126; @Uint8() int driverName_127; @Uint8() int driverName_128; @Uint8() int driverName_129; @Uint8() int driverName_130; @Uint8() int driverName_131; @Uint8() int driverName_132; @Uint8() int driverName_133; @Uint8() int driverName_134; @Uint8() int driverName_135; @Uint8() int driverName_136; @Uint8() int driverName_137; @Uint8() int driverName_138; @Uint8() int driverName_139; @Uint8() int driverName_140; @Uint8() int driverName_141; @Uint8() int driverName_142; @Uint8() int driverName_143; @Uint8() int driverName_144; @Uint8() int driverName_145; @Uint8() int driverName_146; @Uint8() int driverName_147; @Uint8() int driverName_148; @Uint8() int driverName_149; @Uint8() int driverName_150; @Uint8() int driverName_151; @Uint8() int driverName_152; @Uint8() int driverName_153; @Uint8() int driverName_154; @Uint8() int driverName_155; @Uint8() int driverName_156; @Uint8() int driverName_157; @Uint8() int driverName_158; @Uint8() int driverName_159; @Uint8() int driverName_160; @Uint8() int driverName_161; @Uint8() int driverName_162; @Uint8() int driverName_163; @Uint8() int driverName_164; @Uint8() int driverName_165; @Uint8() int driverName_166; @Uint8() int driverName_167; @Uint8() int driverName_168; @Uint8() int driverName_169; @Uint8() int driverName_170; @Uint8() int driverName_171; @Uint8() int driverName_172; @Uint8() int driverName_173; @Uint8() int driverName_174; @Uint8() int driverName_175; @Uint8() int driverName_176; @Uint8() int driverName_177; @Uint8() int driverName_178; @Uint8() int driverName_179; @Uint8() int driverName_180; @Uint8() int driverName_181; @Uint8() int driverName_182; @Uint8() int driverName_183; @Uint8() int driverName_184; @Uint8() int driverName_185; @Uint8() int driverName_186; @Uint8() int driverName_187; @Uint8() int driverName_188; @Uint8() int driverName_189; @Uint8() int driverName_190; @Uint8() int driverName_191; @Uint8() int driverName_192; @Uint8() int driverName_193; @Uint8() int driverName_194; @Uint8() int driverName_195; @Uint8() int driverName_196; @Uint8() int driverName_197; @Uint8() int driverName_198; @Uint8() int driverName_199; @Uint8() int driverName_200; @Uint8() int driverName_201; @Uint8() int driverName_202; @Uint8() int driverName_203; @Uint8() int driverName_204; @Uint8() int driverName_205; @Uint8() int driverName_206; @Uint8() int driverName_207; @Uint8() int driverName_208; @Uint8() int driverName_209; @Uint8() int driverName_210; @Uint8() int driverName_211; @Uint8() int driverName_212; @Uint8() int driverName_213; @Uint8() int driverName_214; @Uint8() int driverName_215; @Uint8() int driverName_216; @Uint8() int driverName_217; @Uint8() int driverName_218; @Uint8() int driverName_219; @Uint8() int driverName_220; @Uint8() int driverName_221; @Uint8() int driverName_222; @Uint8() int driverName_223; @Uint8() int driverName_224; @Uint8() int driverName_225; @Uint8() int driverName_226; @Uint8() int driverName_227; @Uint8() int driverName_228; @Uint8() int driverName_229; @Uint8() int driverName_230; @Uint8() int driverName_231; @Uint8() int driverName_232; @Uint8() int driverName_233; @Uint8() int driverName_234; @Uint8() int driverName_235; @Uint8() int driverName_236; @Uint8() int driverName_237; @Uint8() int driverName_238; @Uint8() int driverName_239; @Uint8() int driverName_240; @Uint8() int driverName_241; @Uint8() int driverName_242; @Uint8() int driverName_243; @Uint8() int driverName_244; @Uint8() int driverName_245; @Uint8() int driverName_246; @Uint8() int driverName_247; @Uint8() int driverName_248; @Uint8() int driverName_249; @Uint8() int driverName_250; @Uint8() int driverName_251; @Uint8() int driverName_252; @Uint8() int driverName_253; @Uint8() int driverName_254; @Uint8() int driverName_255;
-  String get driverName {
-    var bytes = [driverName_0, driverName_1, driverName_2, driverName_3, driverName_4, driverName_5, driverName_6, driverName_7, driverName_8, driverName_9, driverName_10, driverName_11, driverName_12, driverName_13, driverName_14, driverName_15, driverName_16, driverName_17, driverName_18, driverName_19, driverName_20, driverName_21, driverName_22, driverName_23, driverName_24, driverName_25, driverName_26, driverName_27, driverName_28, driverName_29, driverName_30, driverName_31, driverName_32, driverName_33, driverName_34, driverName_35, driverName_36, driverName_37, driverName_38, driverName_39, driverName_40, driverName_41, driverName_42, driverName_43, driverName_44, driverName_45, driverName_46, driverName_47, driverName_48, driverName_49, driverName_50, driverName_51, driverName_52, driverName_53, driverName_54, driverName_55, driverName_56, driverName_57, driverName_58, driverName_59, driverName_60, driverName_61, driverName_62, driverName_63, driverName_64, driverName_65, driverName_66, driverName_67, driverName_68, driverName_69, driverName_70, driverName_71, driverName_72, driverName_73, driverName_74, driverName_75, driverName_76, driverName_77, driverName_78, driverName_79, driverName_80, driverName_81, driverName_82, driverName_83, driverName_84, driverName_85, driverName_86, driverName_87, driverName_88, driverName_89, driverName_90, driverName_91, driverName_92, driverName_93, driverName_94, driverName_95, driverName_96, driverName_97, driverName_98, driverName_99, driverName_100, driverName_101, driverName_102, driverName_103, driverName_104, driverName_105, driverName_106, driverName_107, driverName_108, driverName_109, driverName_110, driverName_111, driverName_112, driverName_113, driverName_114, driverName_115, driverName_116, driverName_117, driverName_118, driverName_119, driverName_120, driverName_121, driverName_122, driverName_123, driverName_124, driverName_125, driverName_126, driverName_127, driverName_128, driverName_129, driverName_130, driverName_131, driverName_132, driverName_133, driverName_134, driverName_135, driverName_136, driverName_137, driverName_138, driverName_139, driverName_140, driverName_141, driverName_142, driverName_143, driverName_144, driverName_145, driverName_146, driverName_147, driverName_148, driverName_149, driverName_150, driverName_151, driverName_152, driverName_153, driverName_154, driverName_155, driverName_156, driverName_157, driverName_158, driverName_159, driverName_160, driverName_161, driverName_162, driverName_163, driverName_164, driverName_165, driverName_166, driverName_167, driverName_168, driverName_169, driverName_170, driverName_171, driverName_172, driverName_173, driverName_174, driverName_175, driverName_176, driverName_177, driverName_178, driverName_179, driverName_180, driverName_181, driverName_182, driverName_183, driverName_184, driverName_185, driverName_186, driverName_187, driverName_188, driverName_189, driverName_190, driverName_191, driverName_192, driverName_193, driverName_194, driverName_195, driverName_196, driverName_197, driverName_198, driverName_199, driverName_200, driverName_201, driverName_202, driverName_203, driverName_204, driverName_205, driverName_206, driverName_207, driverName_208, driverName_209, driverName_210, driverName_211, driverName_212, driverName_213, driverName_214, driverName_215, driverName_216, driverName_217, driverName_218, driverName_219, driverName_220, driverName_221, driverName_222, driverName_223, driverName_224, driverName_225, driverName_226, driverName_227, driverName_228, driverName_229, driverName_230, driverName_231, driverName_232, driverName_233, driverName_234, driverName_235, driverName_236, driverName_237, driverName_238, driverName_239, driverName_240, driverName_241, driverName_242, driverName_243, driverName_244, driverName_245, driverName_246, driverName_247, driverName_248, driverName_249, driverName_250, driverName_251, driverName_252, driverName_253, driverName_254, driverName_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set driverName(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    driverName_0 = bytes[0]; driverName_1 = bytes[1]; driverName_2 = bytes[2]; driverName_3 = bytes[3]; driverName_4 = bytes[4]; driverName_5 = bytes[5]; driverName_6 = bytes[6]; driverName_7 = bytes[7]; driverName_8 = bytes[8]; driverName_9 = bytes[9]; driverName_10 = bytes[10]; driverName_11 = bytes[11]; driverName_12 = bytes[12]; driverName_13 = bytes[13]; driverName_14 = bytes[14]; driverName_15 = bytes[15]; driverName_16 = bytes[16]; driverName_17 = bytes[17]; driverName_18 = bytes[18]; driverName_19 = bytes[19]; driverName_20 = bytes[20]; driverName_21 = bytes[21]; driverName_22 = bytes[22]; driverName_23 = bytes[23]; driverName_24 = bytes[24]; driverName_25 = bytes[25]; driverName_26 = bytes[26]; driverName_27 = bytes[27]; driverName_28 = bytes[28]; driverName_29 = bytes[29]; driverName_30 = bytes[30]; driverName_31 = bytes[31]; driverName_32 = bytes[32]; driverName_33 = bytes[33]; driverName_34 = bytes[34]; driverName_35 = bytes[35]; driverName_36 = bytes[36]; driverName_37 = bytes[37]; driverName_38 = bytes[38]; driverName_39 = bytes[39]; driverName_40 = bytes[40]; driverName_41 = bytes[41]; driverName_42 = bytes[42]; driverName_43 = bytes[43]; driverName_44 = bytes[44]; driverName_45 = bytes[45]; driverName_46 = bytes[46]; driverName_47 = bytes[47]; driverName_48 = bytes[48]; driverName_49 = bytes[49]; driverName_50 = bytes[50]; driverName_51 = bytes[51]; driverName_52 = bytes[52]; driverName_53 = bytes[53]; driverName_54 = bytes[54]; driverName_55 = bytes[55]; driverName_56 = bytes[56]; driverName_57 = bytes[57]; driverName_58 = bytes[58]; driverName_59 = bytes[59]; driverName_60 = bytes[60]; driverName_61 = bytes[61]; driverName_62 = bytes[62]; driverName_63 = bytes[63]; driverName_64 = bytes[64]; driverName_65 = bytes[65]; driverName_66 = bytes[66]; driverName_67 = bytes[67]; driverName_68 = bytes[68]; driverName_69 = bytes[69]; driverName_70 = bytes[70]; driverName_71 = bytes[71]; driverName_72 = bytes[72]; driverName_73 = bytes[73]; driverName_74 = bytes[74]; driverName_75 = bytes[75]; driverName_76 = bytes[76]; driverName_77 = bytes[77]; driverName_78 = bytes[78]; driverName_79 = bytes[79]; driverName_80 = bytes[80]; driverName_81 = bytes[81]; driverName_82 = bytes[82]; driverName_83 = bytes[83]; driverName_84 = bytes[84]; driverName_85 = bytes[85]; driverName_86 = bytes[86]; driverName_87 = bytes[87]; driverName_88 = bytes[88]; driverName_89 = bytes[89]; driverName_90 = bytes[90]; driverName_91 = bytes[91]; driverName_92 = bytes[92]; driverName_93 = bytes[93]; driverName_94 = bytes[94]; driverName_95 = bytes[95]; driverName_96 = bytes[96]; driverName_97 = bytes[97]; driverName_98 = bytes[98]; driverName_99 = bytes[99]; driverName_100 = bytes[100]; driverName_101 = bytes[101]; driverName_102 = bytes[102]; driverName_103 = bytes[103]; driverName_104 = bytes[104]; driverName_105 = bytes[105]; driverName_106 = bytes[106]; driverName_107 = bytes[107]; driverName_108 = bytes[108]; driverName_109 = bytes[109]; driverName_110 = bytes[110]; driverName_111 = bytes[111]; driverName_112 = bytes[112]; driverName_113 = bytes[113]; driverName_114 = bytes[114]; driverName_115 = bytes[115]; driverName_116 = bytes[116]; driverName_117 = bytes[117]; driverName_118 = bytes[118]; driverName_119 = bytes[119]; driverName_120 = bytes[120]; driverName_121 = bytes[121]; driverName_122 = bytes[122]; driverName_123 = bytes[123]; driverName_124 = bytes[124]; driverName_125 = bytes[125]; driverName_126 = bytes[126]; driverName_127 = bytes[127]; driverName_128 = bytes[128]; driverName_129 = bytes[129]; driverName_130 = bytes[130]; driverName_131 = bytes[131]; driverName_132 = bytes[132]; driverName_133 = bytes[133]; driverName_134 = bytes[134]; driverName_135 = bytes[135]; driverName_136 = bytes[136]; driverName_137 = bytes[137]; driverName_138 = bytes[138]; driverName_139 = bytes[139]; driverName_140 = bytes[140]; driverName_141 = bytes[141]; driverName_142 = bytes[142]; driverName_143 = bytes[143]; driverName_144 = bytes[144]; driverName_145 = bytes[145]; driverName_146 = bytes[146]; driverName_147 = bytes[147]; driverName_148 = bytes[148]; driverName_149 = bytes[149]; driverName_150 = bytes[150]; driverName_151 = bytes[151]; driverName_152 = bytes[152]; driverName_153 = bytes[153]; driverName_154 = bytes[154]; driverName_155 = bytes[155]; driverName_156 = bytes[156]; driverName_157 = bytes[157]; driverName_158 = bytes[158]; driverName_159 = bytes[159]; driverName_160 = bytes[160]; driverName_161 = bytes[161]; driverName_162 = bytes[162]; driverName_163 = bytes[163]; driverName_164 = bytes[164]; driverName_165 = bytes[165]; driverName_166 = bytes[166]; driverName_167 = bytes[167]; driverName_168 = bytes[168]; driverName_169 = bytes[169]; driverName_170 = bytes[170]; driverName_171 = bytes[171]; driverName_172 = bytes[172]; driverName_173 = bytes[173]; driverName_174 = bytes[174]; driverName_175 = bytes[175]; driverName_176 = bytes[176]; driverName_177 = bytes[177]; driverName_178 = bytes[178]; driverName_179 = bytes[179]; driverName_180 = bytes[180]; driverName_181 = bytes[181]; driverName_182 = bytes[182]; driverName_183 = bytes[183]; driverName_184 = bytes[184]; driverName_185 = bytes[185]; driverName_186 = bytes[186]; driverName_187 = bytes[187]; driverName_188 = bytes[188]; driverName_189 = bytes[189]; driverName_190 = bytes[190]; driverName_191 = bytes[191]; driverName_192 = bytes[192]; driverName_193 = bytes[193]; driverName_194 = bytes[194]; driverName_195 = bytes[195]; driverName_196 = bytes[196]; driverName_197 = bytes[197]; driverName_198 = bytes[198]; driverName_199 = bytes[199]; driverName_200 = bytes[200]; driverName_201 = bytes[201]; driverName_202 = bytes[202]; driverName_203 = bytes[203]; driverName_204 = bytes[204]; driverName_205 = bytes[205]; driverName_206 = bytes[206]; driverName_207 = bytes[207]; driverName_208 = bytes[208]; driverName_209 = bytes[209]; driverName_210 = bytes[210]; driverName_211 = bytes[211]; driverName_212 = bytes[212]; driverName_213 = bytes[213]; driverName_214 = bytes[214]; driverName_215 = bytes[215]; driverName_216 = bytes[216]; driverName_217 = bytes[217]; driverName_218 = bytes[218]; driverName_219 = bytes[219]; driverName_220 = bytes[220]; driverName_221 = bytes[221]; driverName_222 = bytes[222]; driverName_223 = bytes[223]; driverName_224 = bytes[224]; driverName_225 = bytes[225]; driverName_226 = bytes[226]; driverName_227 = bytes[227]; driverName_228 = bytes[228]; driverName_229 = bytes[229]; driverName_230 = bytes[230]; driverName_231 = bytes[231]; driverName_232 = bytes[232]; driverName_233 = bytes[233]; driverName_234 = bytes[234]; driverName_235 = bytes[235]; driverName_236 = bytes[236]; driverName_237 = bytes[237]; driverName_238 = bytes[238]; driverName_239 = bytes[239]; driverName_240 = bytes[240]; driverName_241 = bytes[241]; driverName_242 = bytes[242]; driverName_243 = bytes[243]; driverName_244 = bytes[244]; driverName_245 = bytes[245]; driverName_246 = bytes[246]; driverName_247 = bytes[247]; driverName_248 = bytes[248]; driverName_249 = bytes[249]; driverName_250 = bytes[250]; driverName_251 = bytes[251]; driverName_252 = bytes[252]; driverName_253 = bytes[253]; driverName_254 = bytes[254]; driverName_255 = bytes[255];
-  }
-  @Uint8() int driverInfo_0; @Uint8() int driverInfo_1; @Uint8() int driverInfo_2; @Uint8() int driverInfo_3; @Uint8() int driverInfo_4; @Uint8() int driverInfo_5; @Uint8() int driverInfo_6; @Uint8() int driverInfo_7; @Uint8() int driverInfo_8; @Uint8() int driverInfo_9; @Uint8() int driverInfo_10; @Uint8() int driverInfo_11; @Uint8() int driverInfo_12; @Uint8() int driverInfo_13; @Uint8() int driverInfo_14; @Uint8() int driverInfo_15; @Uint8() int driverInfo_16; @Uint8() int driverInfo_17; @Uint8() int driverInfo_18; @Uint8() int driverInfo_19; @Uint8() int driverInfo_20; @Uint8() int driverInfo_21; @Uint8() int driverInfo_22; @Uint8() int driverInfo_23; @Uint8() int driverInfo_24; @Uint8() int driverInfo_25; @Uint8() int driverInfo_26; @Uint8() int driverInfo_27; @Uint8() int driverInfo_28; @Uint8() int driverInfo_29; @Uint8() int driverInfo_30; @Uint8() int driverInfo_31; @Uint8() int driverInfo_32; @Uint8() int driverInfo_33; @Uint8() int driverInfo_34; @Uint8() int driverInfo_35; @Uint8() int driverInfo_36; @Uint8() int driverInfo_37; @Uint8() int driverInfo_38; @Uint8() int driverInfo_39; @Uint8() int driverInfo_40; @Uint8() int driverInfo_41; @Uint8() int driverInfo_42; @Uint8() int driverInfo_43; @Uint8() int driverInfo_44; @Uint8() int driverInfo_45; @Uint8() int driverInfo_46; @Uint8() int driverInfo_47; @Uint8() int driverInfo_48; @Uint8() int driverInfo_49; @Uint8() int driverInfo_50; @Uint8() int driverInfo_51; @Uint8() int driverInfo_52; @Uint8() int driverInfo_53; @Uint8() int driverInfo_54; @Uint8() int driverInfo_55; @Uint8() int driverInfo_56; @Uint8() int driverInfo_57; @Uint8() int driverInfo_58; @Uint8() int driverInfo_59; @Uint8() int driverInfo_60; @Uint8() int driverInfo_61; @Uint8() int driverInfo_62; @Uint8() int driverInfo_63; @Uint8() int driverInfo_64; @Uint8() int driverInfo_65; @Uint8() int driverInfo_66; @Uint8() int driverInfo_67; @Uint8() int driverInfo_68; @Uint8() int driverInfo_69; @Uint8() int driverInfo_70; @Uint8() int driverInfo_71; @Uint8() int driverInfo_72; @Uint8() int driverInfo_73; @Uint8() int driverInfo_74; @Uint8() int driverInfo_75; @Uint8() int driverInfo_76; @Uint8() int driverInfo_77; @Uint8() int driverInfo_78; @Uint8() int driverInfo_79; @Uint8() int driverInfo_80; @Uint8() int driverInfo_81; @Uint8() int driverInfo_82; @Uint8() int driverInfo_83; @Uint8() int driverInfo_84; @Uint8() int driverInfo_85; @Uint8() int driverInfo_86; @Uint8() int driverInfo_87; @Uint8() int driverInfo_88; @Uint8() int driverInfo_89; @Uint8() int driverInfo_90; @Uint8() int driverInfo_91; @Uint8() int driverInfo_92; @Uint8() int driverInfo_93; @Uint8() int driverInfo_94; @Uint8() int driverInfo_95; @Uint8() int driverInfo_96; @Uint8() int driverInfo_97; @Uint8() int driverInfo_98; @Uint8() int driverInfo_99; @Uint8() int driverInfo_100; @Uint8() int driverInfo_101; @Uint8() int driverInfo_102; @Uint8() int driverInfo_103; @Uint8() int driverInfo_104; @Uint8() int driverInfo_105; @Uint8() int driverInfo_106; @Uint8() int driverInfo_107; @Uint8() int driverInfo_108; @Uint8() int driverInfo_109; @Uint8() int driverInfo_110; @Uint8() int driverInfo_111; @Uint8() int driverInfo_112; @Uint8() int driverInfo_113; @Uint8() int driverInfo_114; @Uint8() int driverInfo_115; @Uint8() int driverInfo_116; @Uint8() int driverInfo_117; @Uint8() int driverInfo_118; @Uint8() int driverInfo_119; @Uint8() int driverInfo_120; @Uint8() int driverInfo_121; @Uint8() int driverInfo_122; @Uint8() int driverInfo_123; @Uint8() int driverInfo_124; @Uint8() int driverInfo_125; @Uint8() int driverInfo_126; @Uint8() int driverInfo_127; @Uint8() int driverInfo_128; @Uint8() int driverInfo_129; @Uint8() int driverInfo_130; @Uint8() int driverInfo_131; @Uint8() int driverInfo_132; @Uint8() int driverInfo_133; @Uint8() int driverInfo_134; @Uint8() int driverInfo_135; @Uint8() int driverInfo_136; @Uint8() int driverInfo_137; @Uint8() int driverInfo_138; @Uint8() int driverInfo_139; @Uint8() int driverInfo_140; @Uint8() int driverInfo_141; @Uint8() int driverInfo_142; @Uint8() int driverInfo_143; @Uint8() int driverInfo_144; @Uint8() int driverInfo_145; @Uint8() int driverInfo_146; @Uint8() int driverInfo_147; @Uint8() int driverInfo_148; @Uint8() int driverInfo_149; @Uint8() int driverInfo_150; @Uint8() int driverInfo_151; @Uint8() int driverInfo_152; @Uint8() int driverInfo_153; @Uint8() int driverInfo_154; @Uint8() int driverInfo_155; @Uint8() int driverInfo_156; @Uint8() int driverInfo_157; @Uint8() int driverInfo_158; @Uint8() int driverInfo_159; @Uint8() int driverInfo_160; @Uint8() int driverInfo_161; @Uint8() int driverInfo_162; @Uint8() int driverInfo_163; @Uint8() int driverInfo_164; @Uint8() int driverInfo_165; @Uint8() int driverInfo_166; @Uint8() int driverInfo_167; @Uint8() int driverInfo_168; @Uint8() int driverInfo_169; @Uint8() int driverInfo_170; @Uint8() int driverInfo_171; @Uint8() int driverInfo_172; @Uint8() int driverInfo_173; @Uint8() int driverInfo_174; @Uint8() int driverInfo_175; @Uint8() int driverInfo_176; @Uint8() int driverInfo_177; @Uint8() int driverInfo_178; @Uint8() int driverInfo_179; @Uint8() int driverInfo_180; @Uint8() int driverInfo_181; @Uint8() int driverInfo_182; @Uint8() int driverInfo_183; @Uint8() int driverInfo_184; @Uint8() int driverInfo_185; @Uint8() int driverInfo_186; @Uint8() int driverInfo_187; @Uint8() int driverInfo_188; @Uint8() int driverInfo_189; @Uint8() int driverInfo_190; @Uint8() int driverInfo_191; @Uint8() int driverInfo_192; @Uint8() int driverInfo_193; @Uint8() int driverInfo_194; @Uint8() int driverInfo_195; @Uint8() int driverInfo_196; @Uint8() int driverInfo_197; @Uint8() int driverInfo_198; @Uint8() int driverInfo_199; @Uint8() int driverInfo_200; @Uint8() int driverInfo_201; @Uint8() int driverInfo_202; @Uint8() int driverInfo_203; @Uint8() int driverInfo_204; @Uint8() int driverInfo_205; @Uint8() int driverInfo_206; @Uint8() int driverInfo_207; @Uint8() int driverInfo_208; @Uint8() int driverInfo_209; @Uint8() int driverInfo_210; @Uint8() int driverInfo_211; @Uint8() int driverInfo_212; @Uint8() int driverInfo_213; @Uint8() int driverInfo_214; @Uint8() int driverInfo_215; @Uint8() int driverInfo_216; @Uint8() int driverInfo_217; @Uint8() int driverInfo_218; @Uint8() int driverInfo_219; @Uint8() int driverInfo_220; @Uint8() int driverInfo_221; @Uint8() int driverInfo_222; @Uint8() int driverInfo_223; @Uint8() int driverInfo_224; @Uint8() int driverInfo_225; @Uint8() int driverInfo_226; @Uint8() int driverInfo_227; @Uint8() int driverInfo_228; @Uint8() int driverInfo_229; @Uint8() int driverInfo_230; @Uint8() int driverInfo_231; @Uint8() int driverInfo_232; @Uint8() int driverInfo_233; @Uint8() int driverInfo_234; @Uint8() int driverInfo_235; @Uint8() int driverInfo_236; @Uint8() int driverInfo_237; @Uint8() int driverInfo_238; @Uint8() int driverInfo_239; @Uint8() int driverInfo_240; @Uint8() int driverInfo_241; @Uint8() int driverInfo_242; @Uint8() int driverInfo_243; @Uint8() int driverInfo_244; @Uint8() int driverInfo_245; @Uint8() int driverInfo_246; @Uint8() int driverInfo_247; @Uint8() int driverInfo_248; @Uint8() int driverInfo_249; @Uint8() int driverInfo_250; @Uint8() int driverInfo_251; @Uint8() int driverInfo_252; @Uint8() int driverInfo_253; @Uint8() int driverInfo_254; @Uint8() int driverInfo_255;
-  String get driverInfo {
-    var bytes = [driverInfo_0, driverInfo_1, driverInfo_2, driverInfo_3, driverInfo_4, driverInfo_5, driverInfo_6, driverInfo_7, driverInfo_8, driverInfo_9, driverInfo_10, driverInfo_11, driverInfo_12, driverInfo_13, driverInfo_14, driverInfo_15, driverInfo_16, driverInfo_17, driverInfo_18, driverInfo_19, driverInfo_20, driverInfo_21, driverInfo_22, driverInfo_23, driverInfo_24, driverInfo_25, driverInfo_26, driverInfo_27, driverInfo_28, driverInfo_29, driverInfo_30, driverInfo_31, driverInfo_32, driverInfo_33, driverInfo_34, driverInfo_35, driverInfo_36, driverInfo_37, driverInfo_38, driverInfo_39, driverInfo_40, driverInfo_41, driverInfo_42, driverInfo_43, driverInfo_44, driverInfo_45, driverInfo_46, driverInfo_47, driverInfo_48, driverInfo_49, driverInfo_50, driverInfo_51, driverInfo_52, driverInfo_53, driverInfo_54, driverInfo_55, driverInfo_56, driverInfo_57, driverInfo_58, driverInfo_59, driverInfo_60, driverInfo_61, driverInfo_62, driverInfo_63, driverInfo_64, driverInfo_65, driverInfo_66, driverInfo_67, driverInfo_68, driverInfo_69, driverInfo_70, driverInfo_71, driverInfo_72, driverInfo_73, driverInfo_74, driverInfo_75, driverInfo_76, driverInfo_77, driverInfo_78, driverInfo_79, driverInfo_80, driverInfo_81, driverInfo_82, driverInfo_83, driverInfo_84, driverInfo_85, driverInfo_86, driverInfo_87, driverInfo_88, driverInfo_89, driverInfo_90, driverInfo_91, driverInfo_92, driverInfo_93, driverInfo_94, driverInfo_95, driverInfo_96, driverInfo_97, driverInfo_98, driverInfo_99, driverInfo_100, driverInfo_101, driverInfo_102, driverInfo_103, driverInfo_104, driverInfo_105, driverInfo_106, driverInfo_107, driverInfo_108, driverInfo_109, driverInfo_110, driverInfo_111, driverInfo_112, driverInfo_113, driverInfo_114, driverInfo_115, driverInfo_116, driverInfo_117, driverInfo_118, driverInfo_119, driverInfo_120, driverInfo_121, driverInfo_122, driverInfo_123, driverInfo_124, driverInfo_125, driverInfo_126, driverInfo_127, driverInfo_128, driverInfo_129, driverInfo_130, driverInfo_131, driverInfo_132, driverInfo_133, driverInfo_134, driverInfo_135, driverInfo_136, driverInfo_137, driverInfo_138, driverInfo_139, driverInfo_140, driverInfo_141, driverInfo_142, driverInfo_143, driverInfo_144, driverInfo_145, driverInfo_146, driverInfo_147, driverInfo_148, driverInfo_149, driverInfo_150, driverInfo_151, driverInfo_152, driverInfo_153, driverInfo_154, driverInfo_155, driverInfo_156, driverInfo_157, driverInfo_158, driverInfo_159, driverInfo_160, driverInfo_161, driverInfo_162, driverInfo_163, driverInfo_164, driverInfo_165, driverInfo_166, driverInfo_167, driverInfo_168, driverInfo_169, driverInfo_170, driverInfo_171, driverInfo_172, driverInfo_173, driverInfo_174, driverInfo_175, driverInfo_176, driverInfo_177, driverInfo_178, driverInfo_179, driverInfo_180, driverInfo_181, driverInfo_182, driverInfo_183, driverInfo_184, driverInfo_185, driverInfo_186, driverInfo_187, driverInfo_188, driverInfo_189, driverInfo_190, driverInfo_191, driverInfo_192, driverInfo_193, driverInfo_194, driverInfo_195, driverInfo_196, driverInfo_197, driverInfo_198, driverInfo_199, driverInfo_200, driverInfo_201, driverInfo_202, driverInfo_203, driverInfo_204, driverInfo_205, driverInfo_206, driverInfo_207, driverInfo_208, driverInfo_209, driverInfo_210, driverInfo_211, driverInfo_212, driverInfo_213, driverInfo_214, driverInfo_215, driverInfo_216, driverInfo_217, driverInfo_218, driverInfo_219, driverInfo_220, driverInfo_221, driverInfo_222, driverInfo_223, driverInfo_224, driverInfo_225, driverInfo_226, driverInfo_227, driverInfo_228, driverInfo_229, driverInfo_230, driverInfo_231, driverInfo_232, driverInfo_233, driverInfo_234, driverInfo_235, driverInfo_236, driverInfo_237, driverInfo_238, driverInfo_239, driverInfo_240, driverInfo_241, driverInfo_242, driverInfo_243, driverInfo_244, driverInfo_245, driverInfo_246, driverInfo_247, driverInfo_248, driverInfo_249, driverInfo_250, driverInfo_251, driverInfo_252, driverInfo_253, driverInfo_254, driverInfo_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set driverInfo(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    driverInfo_0 = bytes[0]; driverInfo_1 = bytes[1]; driverInfo_2 = bytes[2]; driverInfo_3 = bytes[3]; driverInfo_4 = bytes[4]; driverInfo_5 = bytes[5]; driverInfo_6 = bytes[6]; driverInfo_7 = bytes[7]; driverInfo_8 = bytes[8]; driverInfo_9 = bytes[9]; driverInfo_10 = bytes[10]; driverInfo_11 = bytes[11]; driverInfo_12 = bytes[12]; driverInfo_13 = bytes[13]; driverInfo_14 = bytes[14]; driverInfo_15 = bytes[15]; driverInfo_16 = bytes[16]; driverInfo_17 = bytes[17]; driverInfo_18 = bytes[18]; driverInfo_19 = bytes[19]; driverInfo_20 = bytes[20]; driverInfo_21 = bytes[21]; driverInfo_22 = bytes[22]; driverInfo_23 = bytes[23]; driverInfo_24 = bytes[24]; driverInfo_25 = bytes[25]; driverInfo_26 = bytes[26]; driverInfo_27 = bytes[27]; driverInfo_28 = bytes[28]; driverInfo_29 = bytes[29]; driverInfo_30 = bytes[30]; driverInfo_31 = bytes[31]; driverInfo_32 = bytes[32]; driverInfo_33 = bytes[33]; driverInfo_34 = bytes[34]; driverInfo_35 = bytes[35]; driverInfo_36 = bytes[36]; driverInfo_37 = bytes[37]; driverInfo_38 = bytes[38]; driverInfo_39 = bytes[39]; driverInfo_40 = bytes[40]; driverInfo_41 = bytes[41]; driverInfo_42 = bytes[42]; driverInfo_43 = bytes[43]; driverInfo_44 = bytes[44]; driverInfo_45 = bytes[45]; driverInfo_46 = bytes[46]; driverInfo_47 = bytes[47]; driverInfo_48 = bytes[48]; driverInfo_49 = bytes[49]; driverInfo_50 = bytes[50]; driverInfo_51 = bytes[51]; driverInfo_52 = bytes[52]; driverInfo_53 = bytes[53]; driverInfo_54 = bytes[54]; driverInfo_55 = bytes[55]; driverInfo_56 = bytes[56]; driverInfo_57 = bytes[57]; driverInfo_58 = bytes[58]; driverInfo_59 = bytes[59]; driverInfo_60 = bytes[60]; driverInfo_61 = bytes[61]; driverInfo_62 = bytes[62]; driverInfo_63 = bytes[63]; driverInfo_64 = bytes[64]; driverInfo_65 = bytes[65]; driverInfo_66 = bytes[66]; driverInfo_67 = bytes[67]; driverInfo_68 = bytes[68]; driverInfo_69 = bytes[69]; driverInfo_70 = bytes[70]; driverInfo_71 = bytes[71]; driverInfo_72 = bytes[72]; driverInfo_73 = bytes[73]; driverInfo_74 = bytes[74]; driverInfo_75 = bytes[75]; driverInfo_76 = bytes[76]; driverInfo_77 = bytes[77]; driverInfo_78 = bytes[78]; driverInfo_79 = bytes[79]; driverInfo_80 = bytes[80]; driverInfo_81 = bytes[81]; driverInfo_82 = bytes[82]; driverInfo_83 = bytes[83]; driverInfo_84 = bytes[84]; driverInfo_85 = bytes[85]; driverInfo_86 = bytes[86]; driverInfo_87 = bytes[87]; driverInfo_88 = bytes[88]; driverInfo_89 = bytes[89]; driverInfo_90 = bytes[90]; driverInfo_91 = bytes[91]; driverInfo_92 = bytes[92]; driverInfo_93 = bytes[93]; driverInfo_94 = bytes[94]; driverInfo_95 = bytes[95]; driverInfo_96 = bytes[96]; driverInfo_97 = bytes[97]; driverInfo_98 = bytes[98]; driverInfo_99 = bytes[99]; driverInfo_100 = bytes[100]; driverInfo_101 = bytes[101]; driverInfo_102 = bytes[102]; driverInfo_103 = bytes[103]; driverInfo_104 = bytes[104]; driverInfo_105 = bytes[105]; driverInfo_106 = bytes[106]; driverInfo_107 = bytes[107]; driverInfo_108 = bytes[108]; driverInfo_109 = bytes[109]; driverInfo_110 = bytes[110]; driverInfo_111 = bytes[111]; driverInfo_112 = bytes[112]; driverInfo_113 = bytes[113]; driverInfo_114 = bytes[114]; driverInfo_115 = bytes[115]; driverInfo_116 = bytes[116]; driverInfo_117 = bytes[117]; driverInfo_118 = bytes[118]; driverInfo_119 = bytes[119]; driverInfo_120 = bytes[120]; driverInfo_121 = bytes[121]; driverInfo_122 = bytes[122]; driverInfo_123 = bytes[123]; driverInfo_124 = bytes[124]; driverInfo_125 = bytes[125]; driverInfo_126 = bytes[126]; driverInfo_127 = bytes[127]; driverInfo_128 = bytes[128]; driverInfo_129 = bytes[129]; driverInfo_130 = bytes[130]; driverInfo_131 = bytes[131]; driverInfo_132 = bytes[132]; driverInfo_133 = bytes[133]; driverInfo_134 = bytes[134]; driverInfo_135 = bytes[135]; driverInfo_136 = bytes[136]; driverInfo_137 = bytes[137]; driverInfo_138 = bytes[138]; driverInfo_139 = bytes[139]; driverInfo_140 = bytes[140]; driverInfo_141 = bytes[141]; driverInfo_142 = bytes[142]; driverInfo_143 = bytes[143]; driverInfo_144 = bytes[144]; driverInfo_145 = bytes[145]; driverInfo_146 = bytes[146]; driverInfo_147 = bytes[147]; driverInfo_148 = bytes[148]; driverInfo_149 = bytes[149]; driverInfo_150 = bytes[150]; driverInfo_151 = bytes[151]; driverInfo_152 = bytes[152]; driverInfo_153 = bytes[153]; driverInfo_154 = bytes[154]; driverInfo_155 = bytes[155]; driverInfo_156 = bytes[156]; driverInfo_157 = bytes[157]; driverInfo_158 = bytes[158]; driverInfo_159 = bytes[159]; driverInfo_160 = bytes[160]; driverInfo_161 = bytes[161]; driverInfo_162 = bytes[162]; driverInfo_163 = bytes[163]; driverInfo_164 = bytes[164]; driverInfo_165 = bytes[165]; driverInfo_166 = bytes[166]; driverInfo_167 = bytes[167]; driverInfo_168 = bytes[168]; driverInfo_169 = bytes[169]; driverInfo_170 = bytes[170]; driverInfo_171 = bytes[171]; driverInfo_172 = bytes[172]; driverInfo_173 = bytes[173]; driverInfo_174 = bytes[174]; driverInfo_175 = bytes[175]; driverInfo_176 = bytes[176]; driverInfo_177 = bytes[177]; driverInfo_178 = bytes[178]; driverInfo_179 = bytes[179]; driverInfo_180 = bytes[180]; driverInfo_181 = bytes[181]; driverInfo_182 = bytes[182]; driverInfo_183 = bytes[183]; driverInfo_184 = bytes[184]; driverInfo_185 = bytes[185]; driverInfo_186 = bytes[186]; driverInfo_187 = bytes[187]; driverInfo_188 = bytes[188]; driverInfo_189 = bytes[189]; driverInfo_190 = bytes[190]; driverInfo_191 = bytes[191]; driverInfo_192 = bytes[192]; driverInfo_193 = bytes[193]; driverInfo_194 = bytes[194]; driverInfo_195 = bytes[195]; driverInfo_196 = bytes[196]; driverInfo_197 = bytes[197]; driverInfo_198 = bytes[198]; driverInfo_199 = bytes[199]; driverInfo_200 = bytes[200]; driverInfo_201 = bytes[201]; driverInfo_202 = bytes[202]; driverInfo_203 = bytes[203]; driverInfo_204 = bytes[204]; driverInfo_205 = bytes[205]; driverInfo_206 = bytes[206]; driverInfo_207 = bytes[207]; driverInfo_208 = bytes[208]; driverInfo_209 = bytes[209]; driverInfo_210 = bytes[210]; driverInfo_211 = bytes[211]; driverInfo_212 = bytes[212]; driverInfo_213 = bytes[213]; driverInfo_214 = bytes[214]; driverInfo_215 = bytes[215]; driverInfo_216 = bytes[216]; driverInfo_217 = bytes[217]; driverInfo_218 = bytes[218]; driverInfo_219 = bytes[219]; driverInfo_220 = bytes[220]; driverInfo_221 = bytes[221]; driverInfo_222 = bytes[222]; driverInfo_223 = bytes[223]; driverInfo_224 = bytes[224]; driverInfo_225 = bytes[225]; driverInfo_226 = bytes[226]; driverInfo_227 = bytes[227]; driverInfo_228 = bytes[228]; driverInfo_229 = bytes[229]; driverInfo_230 = bytes[230]; driverInfo_231 = bytes[231]; driverInfo_232 = bytes[232]; driverInfo_233 = bytes[233]; driverInfo_234 = bytes[234]; driverInfo_235 = bytes[235]; driverInfo_236 = bytes[236]; driverInfo_237 = bytes[237]; driverInfo_238 = bytes[238]; driverInfo_239 = bytes[239]; driverInfo_240 = bytes[240]; driverInfo_241 = bytes[241]; driverInfo_242 = bytes[242]; driverInfo_243 = bytes[243]; driverInfo_244 = bytes[244]; driverInfo_245 = bytes[245]; driverInfo_246 = bytes[246]; driverInfo_247 = bytes[247]; driverInfo_248 = bytes[248]; driverInfo_249 = bytes[249]; driverInfo_250 = bytes[250]; driverInfo_251 = bytes[251]; driverInfo_252 = bytes[252]; driverInfo_253 = bytes[253]; driverInfo_254 = bytes[254]; driverInfo_255 = bytes[255];
-  }
-  @Uint8() int conformanceVersion_major;
-  @Uint8() int conformanceVersion_minor;
-  @Uint8() int conformanceVersion_subminor;
-  @Uint8() int conformanceVersion_patch;
-  @Int32() int denormBehaviorIndependence;
-  @Int32() int roundingModeIndependence;
-  @Uint32() int shaderSignedZeroInfNanPreserveFloat16;
-  @Uint32() int shaderSignedZeroInfNanPreserveFloat32;
-  @Uint32() int shaderSignedZeroInfNanPreserveFloat64;
-  @Uint32() int shaderDenormPreserveFloat16;
-  @Uint32() int shaderDenormPreserveFloat32;
-  @Uint32() int shaderDenormPreserveFloat64;
-  @Uint32() int shaderDenormFlushToZeroFloat16;
-  @Uint32() int shaderDenormFlushToZeroFloat32;
-  @Uint32() int shaderDenormFlushToZeroFloat64;
-  @Uint32() int shaderRoundingModeRTEFloat16;
-  @Uint32() int shaderRoundingModeRTEFloat32;
-  @Uint32() int shaderRoundingModeRTEFloat64;
-  @Uint32() int shaderRoundingModeRTZFloat16;
-  @Uint32() int shaderRoundingModeRTZFloat32;
-  @Uint32() int shaderRoundingModeRTZFloat64;
-  @Uint32() int maxUpdateAfterBindDescriptorsInAllPools;
-  @Uint32() int shaderUniformBufferArrayNonUniformIndexingNative;
-  @Uint32() int shaderSampledImageArrayNonUniformIndexingNative;
-  @Uint32() int shaderStorageBufferArrayNonUniformIndexingNative;
-  @Uint32() int shaderStorageImageArrayNonUniformIndexingNative;
-  @Uint32() int shaderInputAttachmentArrayNonUniformIndexingNative;
-  @Uint32() int robustBufferAccessUpdateAfterBind;
-  @Uint32() int quadDivergentImplicitLod;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindSamplers;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindUniformBuffers;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindStorageBuffers;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindSampledImages;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindStorageImages;
-  @Uint32() int maxPerStageDescriptorUpdateAfterBindInputAttachments;
-  @Uint32() int maxPerStageUpdateAfterBindResources;
-  @Uint32() int maxDescriptorSetUpdateAfterBindSamplers;
-  @Uint32() int maxDescriptorSetUpdateAfterBindUniformBuffers;
-  @Uint32() int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
-  @Uint32() int maxDescriptorSetUpdateAfterBindStorageBuffers;
-  @Uint32() int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
-  @Uint32() int maxDescriptorSetUpdateAfterBindSampledImages;
-  @Uint32() int maxDescriptorSetUpdateAfterBindStorageImages;
-  @Uint32() int maxDescriptorSetUpdateAfterBindInputAttachments;
-  @Uint32() int supportedDepthResolveModes;
-  @Uint32() int supportedStencilResolveModes;
-  @Uint32() int independentResolveNone;
-  @Uint32() int independentResolve;
-  @Uint32() int filterMinmaxSingleComponentFormats;
-  @Uint32() int filterMinmaxImageComponentMapping;
-  @Uint64() int maxTimelineSemaphoreValueDifference;
-  @Uint32() int framebufferIntegerColorSampleCounts;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int driverID;
+  @Array(256)
+  external Array<Uint8> driverName;
+  @Array(256)
+  external Array<Uint8> driverInfo;
+  @Uint8()
+  external int conformanceVersion_major;
+  @Uint8()
+  external int conformanceVersion_minor;
+  @Uint8()
+  external int conformanceVersion_subminor;
+  @Uint8()
+  external int conformanceVersion_patch;
+  @Int32()
+  external int denormBehaviorIndependence;
+  @Int32()
+  external int roundingModeIndependence;
+  @Uint32()
+  external int shaderSignedZeroInfNanPreserveFloat16;
+  @Uint32()
+  external int shaderSignedZeroInfNanPreserveFloat32;
+  @Uint32()
+  external int shaderSignedZeroInfNanPreserveFloat64;
+  @Uint32()
+  external int shaderDenormPreserveFloat16;
+  @Uint32()
+  external int shaderDenormPreserveFloat32;
+  @Uint32()
+  external int shaderDenormPreserveFloat64;
+  @Uint32()
+  external int shaderDenormFlushToZeroFloat16;
+  @Uint32()
+  external int shaderDenormFlushToZeroFloat32;
+  @Uint32()
+  external int shaderDenormFlushToZeroFloat64;
+  @Uint32()
+  external int shaderRoundingModeRTEFloat16;
+  @Uint32()
+  external int shaderRoundingModeRTEFloat32;
+  @Uint32()
+  external int shaderRoundingModeRTEFloat64;
+  @Uint32()
+  external int shaderRoundingModeRTZFloat16;
+  @Uint32()
+  external int shaderRoundingModeRTZFloat32;
+  @Uint32()
+  external int shaderRoundingModeRTZFloat64;
+  @Uint32()
+  external int maxUpdateAfterBindDescriptorsInAllPools;
+  @Uint32()
+  external int shaderUniformBufferArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderSampledImageArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderStorageBufferArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderStorageImageArrayNonUniformIndexingNative;
+  @Uint32()
+  external int shaderInputAttachmentArrayNonUniformIndexingNative;
+  @Uint32()
+  external int robustBufferAccessUpdateAfterBind;
+  @Uint32()
+  external int quadDivergentImplicitLod;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindSamplers;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindUniformBuffers;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindStorageBuffers;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindSampledImages;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindStorageImages;
+  @Uint32()
+  external int maxPerStageDescriptorUpdateAfterBindInputAttachments;
+  @Uint32()
+  external int maxPerStageUpdateAfterBindResources;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindSamplers;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindUniformBuffers;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindStorageBuffers;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindSampledImages;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindStorageImages;
+  @Uint32()
+  external int maxDescriptorSetUpdateAfterBindInputAttachments;
+  @Uint32()
+  external int supportedDepthResolveModes;
+  @Uint32()
+  external int supportedStencilResolveModes;
+  @Uint32()
+  external int independentResolveNone;
+  @Uint32()
+  external int independentResolve;
+  @Uint32()
+  external int filterMinmaxSingleComponentFormats;
+  @Uint32()
+  external int filterMinmaxImageComponentMapping;
+  @Uint64()
+  external int maxTimelineSemaphoreValueDifference;
+  @Uint32()
+  external int framebufferIntegerColorSampleCounts;
 }
 
 class VkPipelineCompilerControlCreateInfoAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int compilerControlFlags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int compilerControlFlags;
 }
 
 class VkPhysicalDeviceCoherentMemoryFeaturesAMD extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int deviceCoherentMemory;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int deviceCoherentMemory;
 }
 
 class VkPhysicalDeviceToolPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint8() int name_0; @Uint8() int name_1; @Uint8() int name_2; @Uint8() int name_3; @Uint8() int name_4; @Uint8() int name_5; @Uint8() int name_6; @Uint8() int name_7; @Uint8() int name_8; @Uint8() int name_9; @Uint8() int name_10; @Uint8() int name_11; @Uint8() int name_12; @Uint8() int name_13; @Uint8() int name_14; @Uint8() int name_15; @Uint8() int name_16; @Uint8() int name_17; @Uint8() int name_18; @Uint8() int name_19; @Uint8() int name_20; @Uint8() int name_21; @Uint8() int name_22; @Uint8() int name_23; @Uint8() int name_24; @Uint8() int name_25; @Uint8() int name_26; @Uint8() int name_27; @Uint8() int name_28; @Uint8() int name_29; @Uint8() int name_30; @Uint8() int name_31; @Uint8() int name_32; @Uint8() int name_33; @Uint8() int name_34; @Uint8() int name_35; @Uint8() int name_36; @Uint8() int name_37; @Uint8() int name_38; @Uint8() int name_39; @Uint8() int name_40; @Uint8() int name_41; @Uint8() int name_42; @Uint8() int name_43; @Uint8() int name_44; @Uint8() int name_45; @Uint8() int name_46; @Uint8() int name_47; @Uint8() int name_48; @Uint8() int name_49; @Uint8() int name_50; @Uint8() int name_51; @Uint8() int name_52; @Uint8() int name_53; @Uint8() int name_54; @Uint8() int name_55; @Uint8() int name_56; @Uint8() int name_57; @Uint8() int name_58; @Uint8() int name_59; @Uint8() int name_60; @Uint8() int name_61; @Uint8() int name_62; @Uint8() int name_63; @Uint8() int name_64; @Uint8() int name_65; @Uint8() int name_66; @Uint8() int name_67; @Uint8() int name_68; @Uint8() int name_69; @Uint8() int name_70; @Uint8() int name_71; @Uint8() int name_72; @Uint8() int name_73; @Uint8() int name_74; @Uint8() int name_75; @Uint8() int name_76; @Uint8() int name_77; @Uint8() int name_78; @Uint8() int name_79; @Uint8() int name_80; @Uint8() int name_81; @Uint8() int name_82; @Uint8() int name_83; @Uint8() int name_84; @Uint8() int name_85; @Uint8() int name_86; @Uint8() int name_87; @Uint8() int name_88; @Uint8() int name_89; @Uint8() int name_90; @Uint8() int name_91; @Uint8() int name_92; @Uint8() int name_93; @Uint8() int name_94; @Uint8() int name_95; @Uint8() int name_96; @Uint8() int name_97; @Uint8() int name_98; @Uint8() int name_99; @Uint8() int name_100; @Uint8() int name_101; @Uint8() int name_102; @Uint8() int name_103; @Uint8() int name_104; @Uint8() int name_105; @Uint8() int name_106; @Uint8() int name_107; @Uint8() int name_108; @Uint8() int name_109; @Uint8() int name_110; @Uint8() int name_111; @Uint8() int name_112; @Uint8() int name_113; @Uint8() int name_114; @Uint8() int name_115; @Uint8() int name_116; @Uint8() int name_117; @Uint8() int name_118; @Uint8() int name_119; @Uint8() int name_120; @Uint8() int name_121; @Uint8() int name_122; @Uint8() int name_123; @Uint8() int name_124; @Uint8() int name_125; @Uint8() int name_126; @Uint8() int name_127; @Uint8() int name_128; @Uint8() int name_129; @Uint8() int name_130; @Uint8() int name_131; @Uint8() int name_132; @Uint8() int name_133; @Uint8() int name_134; @Uint8() int name_135; @Uint8() int name_136; @Uint8() int name_137; @Uint8() int name_138; @Uint8() int name_139; @Uint8() int name_140; @Uint8() int name_141; @Uint8() int name_142; @Uint8() int name_143; @Uint8() int name_144; @Uint8() int name_145; @Uint8() int name_146; @Uint8() int name_147; @Uint8() int name_148; @Uint8() int name_149; @Uint8() int name_150; @Uint8() int name_151; @Uint8() int name_152; @Uint8() int name_153; @Uint8() int name_154; @Uint8() int name_155; @Uint8() int name_156; @Uint8() int name_157; @Uint8() int name_158; @Uint8() int name_159; @Uint8() int name_160; @Uint8() int name_161; @Uint8() int name_162; @Uint8() int name_163; @Uint8() int name_164; @Uint8() int name_165; @Uint8() int name_166; @Uint8() int name_167; @Uint8() int name_168; @Uint8() int name_169; @Uint8() int name_170; @Uint8() int name_171; @Uint8() int name_172; @Uint8() int name_173; @Uint8() int name_174; @Uint8() int name_175; @Uint8() int name_176; @Uint8() int name_177; @Uint8() int name_178; @Uint8() int name_179; @Uint8() int name_180; @Uint8() int name_181; @Uint8() int name_182; @Uint8() int name_183; @Uint8() int name_184; @Uint8() int name_185; @Uint8() int name_186; @Uint8() int name_187; @Uint8() int name_188; @Uint8() int name_189; @Uint8() int name_190; @Uint8() int name_191; @Uint8() int name_192; @Uint8() int name_193; @Uint8() int name_194; @Uint8() int name_195; @Uint8() int name_196; @Uint8() int name_197; @Uint8() int name_198; @Uint8() int name_199; @Uint8() int name_200; @Uint8() int name_201; @Uint8() int name_202; @Uint8() int name_203; @Uint8() int name_204; @Uint8() int name_205; @Uint8() int name_206; @Uint8() int name_207; @Uint8() int name_208; @Uint8() int name_209; @Uint8() int name_210; @Uint8() int name_211; @Uint8() int name_212; @Uint8() int name_213; @Uint8() int name_214; @Uint8() int name_215; @Uint8() int name_216; @Uint8() int name_217; @Uint8() int name_218; @Uint8() int name_219; @Uint8() int name_220; @Uint8() int name_221; @Uint8() int name_222; @Uint8() int name_223; @Uint8() int name_224; @Uint8() int name_225; @Uint8() int name_226; @Uint8() int name_227; @Uint8() int name_228; @Uint8() int name_229; @Uint8() int name_230; @Uint8() int name_231; @Uint8() int name_232; @Uint8() int name_233; @Uint8() int name_234; @Uint8() int name_235; @Uint8() int name_236; @Uint8() int name_237; @Uint8() int name_238; @Uint8() int name_239; @Uint8() int name_240; @Uint8() int name_241; @Uint8() int name_242; @Uint8() int name_243; @Uint8() int name_244; @Uint8() int name_245; @Uint8() int name_246; @Uint8() int name_247; @Uint8() int name_248; @Uint8() int name_249; @Uint8() int name_250; @Uint8() int name_251; @Uint8() int name_252; @Uint8() int name_253; @Uint8() int name_254; @Uint8() int name_255;
-  String get name {
-    var bytes = [name_0, name_1, name_2, name_3, name_4, name_5, name_6, name_7, name_8, name_9, name_10, name_11, name_12, name_13, name_14, name_15, name_16, name_17, name_18, name_19, name_20, name_21, name_22, name_23, name_24, name_25, name_26, name_27, name_28, name_29, name_30, name_31, name_32, name_33, name_34, name_35, name_36, name_37, name_38, name_39, name_40, name_41, name_42, name_43, name_44, name_45, name_46, name_47, name_48, name_49, name_50, name_51, name_52, name_53, name_54, name_55, name_56, name_57, name_58, name_59, name_60, name_61, name_62, name_63, name_64, name_65, name_66, name_67, name_68, name_69, name_70, name_71, name_72, name_73, name_74, name_75, name_76, name_77, name_78, name_79, name_80, name_81, name_82, name_83, name_84, name_85, name_86, name_87, name_88, name_89, name_90, name_91, name_92, name_93, name_94, name_95, name_96, name_97, name_98, name_99, name_100, name_101, name_102, name_103, name_104, name_105, name_106, name_107, name_108, name_109, name_110, name_111, name_112, name_113, name_114, name_115, name_116, name_117, name_118, name_119, name_120, name_121, name_122, name_123, name_124, name_125, name_126, name_127, name_128, name_129, name_130, name_131, name_132, name_133, name_134, name_135, name_136, name_137, name_138, name_139, name_140, name_141, name_142, name_143, name_144, name_145, name_146, name_147, name_148, name_149, name_150, name_151, name_152, name_153, name_154, name_155, name_156, name_157, name_158, name_159, name_160, name_161, name_162, name_163, name_164, name_165, name_166, name_167, name_168, name_169, name_170, name_171, name_172, name_173, name_174, name_175, name_176, name_177, name_178, name_179, name_180, name_181, name_182, name_183, name_184, name_185, name_186, name_187, name_188, name_189, name_190, name_191, name_192, name_193, name_194, name_195, name_196, name_197, name_198, name_199, name_200, name_201, name_202, name_203, name_204, name_205, name_206, name_207, name_208, name_209, name_210, name_211, name_212, name_213, name_214, name_215, name_216, name_217, name_218, name_219, name_220, name_221, name_222, name_223, name_224, name_225, name_226, name_227, name_228, name_229, name_230, name_231, name_232, name_233, name_234, name_235, name_236, name_237, name_238, name_239, name_240, name_241, name_242, name_243, name_244, name_245, name_246, name_247, name_248, name_249, name_250, name_251, name_252, name_253, name_254, name_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set name(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    name_0 = bytes[0]; name_1 = bytes[1]; name_2 = bytes[2]; name_3 = bytes[3]; name_4 = bytes[4]; name_5 = bytes[5]; name_6 = bytes[6]; name_7 = bytes[7]; name_8 = bytes[8]; name_9 = bytes[9]; name_10 = bytes[10]; name_11 = bytes[11]; name_12 = bytes[12]; name_13 = bytes[13]; name_14 = bytes[14]; name_15 = bytes[15]; name_16 = bytes[16]; name_17 = bytes[17]; name_18 = bytes[18]; name_19 = bytes[19]; name_20 = bytes[20]; name_21 = bytes[21]; name_22 = bytes[22]; name_23 = bytes[23]; name_24 = bytes[24]; name_25 = bytes[25]; name_26 = bytes[26]; name_27 = bytes[27]; name_28 = bytes[28]; name_29 = bytes[29]; name_30 = bytes[30]; name_31 = bytes[31]; name_32 = bytes[32]; name_33 = bytes[33]; name_34 = bytes[34]; name_35 = bytes[35]; name_36 = bytes[36]; name_37 = bytes[37]; name_38 = bytes[38]; name_39 = bytes[39]; name_40 = bytes[40]; name_41 = bytes[41]; name_42 = bytes[42]; name_43 = bytes[43]; name_44 = bytes[44]; name_45 = bytes[45]; name_46 = bytes[46]; name_47 = bytes[47]; name_48 = bytes[48]; name_49 = bytes[49]; name_50 = bytes[50]; name_51 = bytes[51]; name_52 = bytes[52]; name_53 = bytes[53]; name_54 = bytes[54]; name_55 = bytes[55]; name_56 = bytes[56]; name_57 = bytes[57]; name_58 = bytes[58]; name_59 = bytes[59]; name_60 = bytes[60]; name_61 = bytes[61]; name_62 = bytes[62]; name_63 = bytes[63]; name_64 = bytes[64]; name_65 = bytes[65]; name_66 = bytes[66]; name_67 = bytes[67]; name_68 = bytes[68]; name_69 = bytes[69]; name_70 = bytes[70]; name_71 = bytes[71]; name_72 = bytes[72]; name_73 = bytes[73]; name_74 = bytes[74]; name_75 = bytes[75]; name_76 = bytes[76]; name_77 = bytes[77]; name_78 = bytes[78]; name_79 = bytes[79]; name_80 = bytes[80]; name_81 = bytes[81]; name_82 = bytes[82]; name_83 = bytes[83]; name_84 = bytes[84]; name_85 = bytes[85]; name_86 = bytes[86]; name_87 = bytes[87]; name_88 = bytes[88]; name_89 = bytes[89]; name_90 = bytes[90]; name_91 = bytes[91]; name_92 = bytes[92]; name_93 = bytes[93]; name_94 = bytes[94]; name_95 = bytes[95]; name_96 = bytes[96]; name_97 = bytes[97]; name_98 = bytes[98]; name_99 = bytes[99]; name_100 = bytes[100]; name_101 = bytes[101]; name_102 = bytes[102]; name_103 = bytes[103]; name_104 = bytes[104]; name_105 = bytes[105]; name_106 = bytes[106]; name_107 = bytes[107]; name_108 = bytes[108]; name_109 = bytes[109]; name_110 = bytes[110]; name_111 = bytes[111]; name_112 = bytes[112]; name_113 = bytes[113]; name_114 = bytes[114]; name_115 = bytes[115]; name_116 = bytes[116]; name_117 = bytes[117]; name_118 = bytes[118]; name_119 = bytes[119]; name_120 = bytes[120]; name_121 = bytes[121]; name_122 = bytes[122]; name_123 = bytes[123]; name_124 = bytes[124]; name_125 = bytes[125]; name_126 = bytes[126]; name_127 = bytes[127]; name_128 = bytes[128]; name_129 = bytes[129]; name_130 = bytes[130]; name_131 = bytes[131]; name_132 = bytes[132]; name_133 = bytes[133]; name_134 = bytes[134]; name_135 = bytes[135]; name_136 = bytes[136]; name_137 = bytes[137]; name_138 = bytes[138]; name_139 = bytes[139]; name_140 = bytes[140]; name_141 = bytes[141]; name_142 = bytes[142]; name_143 = bytes[143]; name_144 = bytes[144]; name_145 = bytes[145]; name_146 = bytes[146]; name_147 = bytes[147]; name_148 = bytes[148]; name_149 = bytes[149]; name_150 = bytes[150]; name_151 = bytes[151]; name_152 = bytes[152]; name_153 = bytes[153]; name_154 = bytes[154]; name_155 = bytes[155]; name_156 = bytes[156]; name_157 = bytes[157]; name_158 = bytes[158]; name_159 = bytes[159]; name_160 = bytes[160]; name_161 = bytes[161]; name_162 = bytes[162]; name_163 = bytes[163]; name_164 = bytes[164]; name_165 = bytes[165]; name_166 = bytes[166]; name_167 = bytes[167]; name_168 = bytes[168]; name_169 = bytes[169]; name_170 = bytes[170]; name_171 = bytes[171]; name_172 = bytes[172]; name_173 = bytes[173]; name_174 = bytes[174]; name_175 = bytes[175]; name_176 = bytes[176]; name_177 = bytes[177]; name_178 = bytes[178]; name_179 = bytes[179]; name_180 = bytes[180]; name_181 = bytes[181]; name_182 = bytes[182]; name_183 = bytes[183]; name_184 = bytes[184]; name_185 = bytes[185]; name_186 = bytes[186]; name_187 = bytes[187]; name_188 = bytes[188]; name_189 = bytes[189]; name_190 = bytes[190]; name_191 = bytes[191]; name_192 = bytes[192]; name_193 = bytes[193]; name_194 = bytes[194]; name_195 = bytes[195]; name_196 = bytes[196]; name_197 = bytes[197]; name_198 = bytes[198]; name_199 = bytes[199]; name_200 = bytes[200]; name_201 = bytes[201]; name_202 = bytes[202]; name_203 = bytes[203]; name_204 = bytes[204]; name_205 = bytes[205]; name_206 = bytes[206]; name_207 = bytes[207]; name_208 = bytes[208]; name_209 = bytes[209]; name_210 = bytes[210]; name_211 = bytes[211]; name_212 = bytes[212]; name_213 = bytes[213]; name_214 = bytes[214]; name_215 = bytes[215]; name_216 = bytes[216]; name_217 = bytes[217]; name_218 = bytes[218]; name_219 = bytes[219]; name_220 = bytes[220]; name_221 = bytes[221]; name_222 = bytes[222]; name_223 = bytes[223]; name_224 = bytes[224]; name_225 = bytes[225]; name_226 = bytes[226]; name_227 = bytes[227]; name_228 = bytes[228]; name_229 = bytes[229]; name_230 = bytes[230]; name_231 = bytes[231]; name_232 = bytes[232]; name_233 = bytes[233]; name_234 = bytes[234]; name_235 = bytes[235]; name_236 = bytes[236]; name_237 = bytes[237]; name_238 = bytes[238]; name_239 = bytes[239]; name_240 = bytes[240]; name_241 = bytes[241]; name_242 = bytes[242]; name_243 = bytes[243]; name_244 = bytes[244]; name_245 = bytes[245]; name_246 = bytes[246]; name_247 = bytes[247]; name_248 = bytes[248]; name_249 = bytes[249]; name_250 = bytes[250]; name_251 = bytes[251]; name_252 = bytes[252]; name_253 = bytes[253]; name_254 = bytes[254]; name_255 = bytes[255];
-  }
-  @Uint8() int version_0; @Uint8() int version_1; @Uint8() int version_2; @Uint8() int version_3; @Uint8() int version_4; @Uint8() int version_5; @Uint8() int version_6; @Uint8() int version_7; @Uint8() int version_8; @Uint8() int version_9; @Uint8() int version_10; @Uint8() int version_11; @Uint8() int version_12; @Uint8() int version_13; @Uint8() int version_14; @Uint8() int version_15; @Uint8() int version_16; @Uint8() int version_17; @Uint8() int version_18; @Uint8() int version_19; @Uint8() int version_20; @Uint8() int version_21; @Uint8() int version_22; @Uint8() int version_23; @Uint8() int version_24; @Uint8() int version_25; @Uint8() int version_26; @Uint8() int version_27; @Uint8() int version_28; @Uint8() int version_29; @Uint8() int version_30; @Uint8() int version_31; @Uint8() int version_32; @Uint8() int version_33; @Uint8() int version_34; @Uint8() int version_35; @Uint8() int version_36; @Uint8() int version_37; @Uint8() int version_38; @Uint8() int version_39; @Uint8() int version_40; @Uint8() int version_41; @Uint8() int version_42; @Uint8() int version_43; @Uint8() int version_44; @Uint8() int version_45; @Uint8() int version_46; @Uint8() int version_47; @Uint8() int version_48; @Uint8() int version_49; @Uint8() int version_50; @Uint8() int version_51; @Uint8() int version_52; @Uint8() int version_53; @Uint8() int version_54; @Uint8() int version_55; @Uint8() int version_56; @Uint8() int version_57; @Uint8() int version_58; @Uint8() int version_59; @Uint8() int version_60; @Uint8() int version_61; @Uint8() int version_62; @Uint8() int version_63; @Uint8() int version_64; @Uint8() int version_65; @Uint8() int version_66; @Uint8() int version_67; @Uint8() int version_68; @Uint8() int version_69; @Uint8() int version_70; @Uint8() int version_71; @Uint8() int version_72; @Uint8() int version_73; @Uint8() int version_74; @Uint8() int version_75; @Uint8() int version_76; @Uint8() int version_77; @Uint8() int version_78; @Uint8() int version_79; @Uint8() int version_80; @Uint8() int version_81; @Uint8() int version_82; @Uint8() int version_83; @Uint8() int version_84; @Uint8() int version_85; @Uint8() int version_86; @Uint8() int version_87; @Uint8() int version_88; @Uint8() int version_89; @Uint8() int version_90; @Uint8() int version_91; @Uint8() int version_92; @Uint8() int version_93; @Uint8() int version_94; @Uint8() int version_95; @Uint8() int version_96; @Uint8() int version_97; @Uint8() int version_98; @Uint8() int version_99; @Uint8() int version_100; @Uint8() int version_101; @Uint8() int version_102; @Uint8() int version_103; @Uint8() int version_104; @Uint8() int version_105; @Uint8() int version_106; @Uint8() int version_107; @Uint8() int version_108; @Uint8() int version_109; @Uint8() int version_110; @Uint8() int version_111; @Uint8() int version_112; @Uint8() int version_113; @Uint8() int version_114; @Uint8() int version_115; @Uint8() int version_116; @Uint8() int version_117; @Uint8() int version_118; @Uint8() int version_119; @Uint8() int version_120; @Uint8() int version_121; @Uint8() int version_122; @Uint8() int version_123; @Uint8() int version_124; @Uint8() int version_125; @Uint8() int version_126; @Uint8() int version_127; @Uint8() int version_128; @Uint8() int version_129; @Uint8() int version_130; @Uint8() int version_131; @Uint8() int version_132; @Uint8() int version_133; @Uint8() int version_134; @Uint8() int version_135; @Uint8() int version_136; @Uint8() int version_137; @Uint8() int version_138; @Uint8() int version_139; @Uint8() int version_140; @Uint8() int version_141; @Uint8() int version_142; @Uint8() int version_143; @Uint8() int version_144; @Uint8() int version_145; @Uint8() int version_146; @Uint8() int version_147; @Uint8() int version_148; @Uint8() int version_149; @Uint8() int version_150; @Uint8() int version_151; @Uint8() int version_152; @Uint8() int version_153; @Uint8() int version_154; @Uint8() int version_155; @Uint8() int version_156; @Uint8() int version_157; @Uint8() int version_158; @Uint8() int version_159; @Uint8() int version_160; @Uint8() int version_161; @Uint8() int version_162; @Uint8() int version_163; @Uint8() int version_164; @Uint8() int version_165; @Uint8() int version_166; @Uint8() int version_167; @Uint8() int version_168; @Uint8() int version_169; @Uint8() int version_170; @Uint8() int version_171; @Uint8() int version_172; @Uint8() int version_173; @Uint8() int version_174; @Uint8() int version_175; @Uint8() int version_176; @Uint8() int version_177; @Uint8() int version_178; @Uint8() int version_179; @Uint8() int version_180; @Uint8() int version_181; @Uint8() int version_182; @Uint8() int version_183; @Uint8() int version_184; @Uint8() int version_185; @Uint8() int version_186; @Uint8() int version_187; @Uint8() int version_188; @Uint8() int version_189; @Uint8() int version_190; @Uint8() int version_191; @Uint8() int version_192; @Uint8() int version_193; @Uint8() int version_194; @Uint8() int version_195; @Uint8() int version_196; @Uint8() int version_197; @Uint8() int version_198; @Uint8() int version_199; @Uint8() int version_200; @Uint8() int version_201; @Uint8() int version_202; @Uint8() int version_203; @Uint8() int version_204; @Uint8() int version_205; @Uint8() int version_206; @Uint8() int version_207; @Uint8() int version_208; @Uint8() int version_209; @Uint8() int version_210; @Uint8() int version_211; @Uint8() int version_212; @Uint8() int version_213; @Uint8() int version_214; @Uint8() int version_215; @Uint8() int version_216; @Uint8() int version_217; @Uint8() int version_218; @Uint8() int version_219; @Uint8() int version_220; @Uint8() int version_221; @Uint8() int version_222; @Uint8() int version_223; @Uint8() int version_224; @Uint8() int version_225; @Uint8() int version_226; @Uint8() int version_227; @Uint8() int version_228; @Uint8() int version_229; @Uint8() int version_230; @Uint8() int version_231; @Uint8() int version_232; @Uint8() int version_233; @Uint8() int version_234; @Uint8() int version_235; @Uint8() int version_236; @Uint8() int version_237; @Uint8() int version_238; @Uint8() int version_239; @Uint8() int version_240; @Uint8() int version_241; @Uint8() int version_242; @Uint8() int version_243; @Uint8() int version_244; @Uint8() int version_245; @Uint8() int version_246; @Uint8() int version_247; @Uint8() int version_248; @Uint8() int version_249; @Uint8() int version_250; @Uint8() int version_251; @Uint8() int version_252; @Uint8() int version_253; @Uint8() int version_254; @Uint8() int version_255;
-  String get version {
-    var bytes = [version_0, version_1, version_2, version_3, version_4, version_5, version_6, version_7, version_8, version_9, version_10, version_11, version_12, version_13, version_14, version_15, version_16, version_17, version_18, version_19, version_20, version_21, version_22, version_23, version_24, version_25, version_26, version_27, version_28, version_29, version_30, version_31, version_32, version_33, version_34, version_35, version_36, version_37, version_38, version_39, version_40, version_41, version_42, version_43, version_44, version_45, version_46, version_47, version_48, version_49, version_50, version_51, version_52, version_53, version_54, version_55, version_56, version_57, version_58, version_59, version_60, version_61, version_62, version_63, version_64, version_65, version_66, version_67, version_68, version_69, version_70, version_71, version_72, version_73, version_74, version_75, version_76, version_77, version_78, version_79, version_80, version_81, version_82, version_83, version_84, version_85, version_86, version_87, version_88, version_89, version_90, version_91, version_92, version_93, version_94, version_95, version_96, version_97, version_98, version_99, version_100, version_101, version_102, version_103, version_104, version_105, version_106, version_107, version_108, version_109, version_110, version_111, version_112, version_113, version_114, version_115, version_116, version_117, version_118, version_119, version_120, version_121, version_122, version_123, version_124, version_125, version_126, version_127, version_128, version_129, version_130, version_131, version_132, version_133, version_134, version_135, version_136, version_137, version_138, version_139, version_140, version_141, version_142, version_143, version_144, version_145, version_146, version_147, version_148, version_149, version_150, version_151, version_152, version_153, version_154, version_155, version_156, version_157, version_158, version_159, version_160, version_161, version_162, version_163, version_164, version_165, version_166, version_167, version_168, version_169, version_170, version_171, version_172, version_173, version_174, version_175, version_176, version_177, version_178, version_179, version_180, version_181, version_182, version_183, version_184, version_185, version_186, version_187, version_188, version_189, version_190, version_191, version_192, version_193, version_194, version_195, version_196, version_197, version_198, version_199, version_200, version_201, version_202, version_203, version_204, version_205, version_206, version_207, version_208, version_209, version_210, version_211, version_212, version_213, version_214, version_215, version_216, version_217, version_218, version_219, version_220, version_221, version_222, version_223, version_224, version_225, version_226, version_227, version_228, version_229, version_230, version_231, version_232, version_233, version_234, version_235, version_236, version_237, version_238, version_239, version_240, version_241, version_242, version_243, version_244, version_245, version_246, version_247, version_248, version_249, version_250, version_251, version_252, version_253, version_254, version_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set version(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    version_0 = bytes[0]; version_1 = bytes[1]; version_2 = bytes[2]; version_3 = bytes[3]; version_4 = bytes[4]; version_5 = bytes[5]; version_6 = bytes[6]; version_7 = bytes[7]; version_8 = bytes[8]; version_9 = bytes[9]; version_10 = bytes[10]; version_11 = bytes[11]; version_12 = bytes[12]; version_13 = bytes[13]; version_14 = bytes[14]; version_15 = bytes[15]; version_16 = bytes[16]; version_17 = bytes[17]; version_18 = bytes[18]; version_19 = bytes[19]; version_20 = bytes[20]; version_21 = bytes[21]; version_22 = bytes[22]; version_23 = bytes[23]; version_24 = bytes[24]; version_25 = bytes[25]; version_26 = bytes[26]; version_27 = bytes[27]; version_28 = bytes[28]; version_29 = bytes[29]; version_30 = bytes[30]; version_31 = bytes[31]; version_32 = bytes[32]; version_33 = bytes[33]; version_34 = bytes[34]; version_35 = bytes[35]; version_36 = bytes[36]; version_37 = bytes[37]; version_38 = bytes[38]; version_39 = bytes[39]; version_40 = bytes[40]; version_41 = bytes[41]; version_42 = bytes[42]; version_43 = bytes[43]; version_44 = bytes[44]; version_45 = bytes[45]; version_46 = bytes[46]; version_47 = bytes[47]; version_48 = bytes[48]; version_49 = bytes[49]; version_50 = bytes[50]; version_51 = bytes[51]; version_52 = bytes[52]; version_53 = bytes[53]; version_54 = bytes[54]; version_55 = bytes[55]; version_56 = bytes[56]; version_57 = bytes[57]; version_58 = bytes[58]; version_59 = bytes[59]; version_60 = bytes[60]; version_61 = bytes[61]; version_62 = bytes[62]; version_63 = bytes[63]; version_64 = bytes[64]; version_65 = bytes[65]; version_66 = bytes[66]; version_67 = bytes[67]; version_68 = bytes[68]; version_69 = bytes[69]; version_70 = bytes[70]; version_71 = bytes[71]; version_72 = bytes[72]; version_73 = bytes[73]; version_74 = bytes[74]; version_75 = bytes[75]; version_76 = bytes[76]; version_77 = bytes[77]; version_78 = bytes[78]; version_79 = bytes[79]; version_80 = bytes[80]; version_81 = bytes[81]; version_82 = bytes[82]; version_83 = bytes[83]; version_84 = bytes[84]; version_85 = bytes[85]; version_86 = bytes[86]; version_87 = bytes[87]; version_88 = bytes[88]; version_89 = bytes[89]; version_90 = bytes[90]; version_91 = bytes[91]; version_92 = bytes[92]; version_93 = bytes[93]; version_94 = bytes[94]; version_95 = bytes[95]; version_96 = bytes[96]; version_97 = bytes[97]; version_98 = bytes[98]; version_99 = bytes[99]; version_100 = bytes[100]; version_101 = bytes[101]; version_102 = bytes[102]; version_103 = bytes[103]; version_104 = bytes[104]; version_105 = bytes[105]; version_106 = bytes[106]; version_107 = bytes[107]; version_108 = bytes[108]; version_109 = bytes[109]; version_110 = bytes[110]; version_111 = bytes[111]; version_112 = bytes[112]; version_113 = bytes[113]; version_114 = bytes[114]; version_115 = bytes[115]; version_116 = bytes[116]; version_117 = bytes[117]; version_118 = bytes[118]; version_119 = bytes[119]; version_120 = bytes[120]; version_121 = bytes[121]; version_122 = bytes[122]; version_123 = bytes[123]; version_124 = bytes[124]; version_125 = bytes[125]; version_126 = bytes[126]; version_127 = bytes[127]; version_128 = bytes[128]; version_129 = bytes[129]; version_130 = bytes[130]; version_131 = bytes[131]; version_132 = bytes[132]; version_133 = bytes[133]; version_134 = bytes[134]; version_135 = bytes[135]; version_136 = bytes[136]; version_137 = bytes[137]; version_138 = bytes[138]; version_139 = bytes[139]; version_140 = bytes[140]; version_141 = bytes[141]; version_142 = bytes[142]; version_143 = bytes[143]; version_144 = bytes[144]; version_145 = bytes[145]; version_146 = bytes[146]; version_147 = bytes[147]; version_148 = bytes[148]; version_149 = bytes[149]; version_150 = bytes[150]; version_151 = bytes[151]; version_152 = bytes[152]; version_153 = bytes[153]; version_154 = bytes[154]; version_155 = bytes[155]; version_156 = bytes[156]; version_157 = bytes[157]; version_158 = bytes[158]; version_159 = bytes[159]; version_160 = bytes[160]; version_161 = bytes[161]; version_162 = bytes[162]; version_163 = bytes[163]; version_164 = bytes[164]; version_165 = bytes[165]; version_166 = bytes[166]; version_167 = bytes[167]; version_168 = bytes[168]; version_169 = bytes[169]; version_170 = bytes[170]; version_171 = bytes[171]; version_172 = bytes[172]; version_173 = bytes[173]; version_174 = bytes[174]; version_175 = bytes[175]; version_176 = bytes[176]; version_177 = bytes[177]; version_178 = bytes[178]; version_179 = bytes[179]; version_180 = bytes[180]; version_181 = bytes[181]; version_182 = bytes[182]; version_183 = bytes[183]; version_184 = bytes[184]; version_185 = bytes[185]; version_186 = bytes[186]; version_187 = bytes[187]; version_188 = bytes[188]; version_189 = bytes[189]; version_190 = bytes[190]; version_191 = bytes[191]; version_192 = bytes[192]; version_193 = bytes[193]; version_194 = bytes[194]; version_195 = bytes[195]; version_196 = bytes[196]; version_197 = bytes[197]; version_198 = bytes[198]; version_199 = bytes[199]; version_200 = bytes[200]; version_201 = bytes[201]; version_202 = bytes[202]; version_203 = bytes[203]; version_204 = bytes[204]; version_205 = bytes[205]; version_206 = bytes[206]; version_207 = bytes[207]; version_208 = bytes[208]; version_209 = bytes[209]; version_210 = bytes[210]; version_211 = bytes[211]; version_212 = bytes[212]; version_213 = bytes[213]; version_214 = bytes[214]; version_215 = bytes[215]; version_216 = bytes[216]; version_217 = bytes[217]; version_218 = bytes[218]; version_219 = bytes[219]; version_220 = bytes[220]; version_221 = bytes[221]; version_222 = bytes[222]; version_223 = bytes[223]; version_224 = bytes[224]; version_225 = bytes[225]; version_226 = bytes[226]; version_227 = bytes[227]; version_228 = bytes[228]; version_229 = bytes[229]; version_230 = bytes[230]; version_231 = bytes[231]; version_232 = bytes[232]; version_233 = bytes[233]; version_234 = bytes[234]; version_235 = bytes[235]; version_236 = bytes[236]; version_237 = bytes[237]; version_238 = bytes[238]; version_239 = bytes[239]; version_240 = bytes[240]; version_241 = bytes[241]; version_242 = bytes[242]; version_243 = bytes[243]; version_244 = bytes[244]; version_245 = bytes[245]; version_246 = bytes[246]; version_247 = bytes[247]; version_248 = bytes[248]; version_249 = bytes[249]; version_250 = bytes[250]; version_251 = bytes[251]; version_252 = bytes[252]; version_253 = bytes[253]; version_254 = bytes[254]; version_255 = bytes[255];
-  }
-  @Uint32() int purposes;
-  @Uint8() int description_0; @Uint8() int description_1; @Uint8() int description_2; @Uint8() int description_3; @Uint8() int description_4; @Uint8() int description_5; @Uint8() int description_6; @Uint8() int description_7; @Uint8() int description_8; @Uint8() int description_9; @Uint8() int description_10; @Uint8() int description_11; @Uint8() int description_12; @Uint8() int description_13; @Uint8() int description_14; @Uint8() int description_15; @Uint8() int description_16; @Uint8() int description_17; @Uint8() int description_18; @Uint8() int description_19; @Uint8() int description_20; @Uint8() int description_21; @Uint8() int description_22; @Uint8() int description_23; @Uint8() int description_24; @Uint8() int description_25; @Uint8() int description_26; @Uint8() int description_27; @Uint8() int description_28; @Uint8() int description_29; @Uint8() int description_30; @Uint8() int description_31; @Uint8() int description_32; @Uint8() int description_33; @Uint8() int description_34; @Uint8() int description_35; @Uint8() int description_36; @Uint8() int description_37; @Uint8() int description_38; @Uint8() int description_39; @Uint8() int description_40; @Uint8() int description_41; @Uint8() int description_42; @Uint8() int description_43; @Uint8() int description_44; @Uint8() int description_45; @Uint8() int description_46; @Uint8() int description_47; @Uint8() int description_48; @Uint8() int description_49; @Uint8() int description_50; @Uint8() int description_51; @Uint8() int description_52; @Uint8() int description_53; @Uint8() int description_54; @Uint8() int description_55; @Uint8() int description_56; @Uint8() int description_57; @Uint8() int description_58; @Uint8() int description_59; @Uint8() int description_60; @Uint8() int description_61; @Uint8() int description_62; @Uint8() int description_63; @Uint8() int description_64; @Uint8() int description_65; @Uint8() int description_66; @Uint8() int description_67; @Uint8() int description_68; @Uint8() int description_69; @Uint8() int description_70; @Uint8() int description_71; @Uint8() int description_72; @Uint8() int description_73; @Uint8() int description_74; @Uint8() int description_75; @Uint8() int description_76; @Uint8() int description_77; @Uint8() int description_78; @Uint8() int description_79; @Uint8() int description_80; @Uint8() int description_81; @Uint8() int description_82; @Uint8() int description_83; @Uint8() int description_84; @Uint8() int description_85; @Uint8() int description_86; @Uint8() int description_87; @Uint8() int description_88; @Uint8() int description_89; @Uint8() int description_90; @Uint8() int description_91; @Uint8() int description_92; @Uint8() int description_93; @Uint8() int description_94; @Uint8() int description_95; @Uint8() int description_96; @Uint8() int description_97; @Uint8() int description_98; @Uint8() int description_99; @Uint8() int description_100; @Uint8() int description_101; @Uint8() int description_102; @Uint8() int description_103; @Uint8() int description_104; @Uint8() int description_105; @Uint8() int description_106; @Uint8() int description_107; @Uint8() int description_108; @Uint8() int description_109; @Uint8() int description_110; @Uint8() int description_111; @Uint8() int description_112; @Uint8() int description_113; @Uint8() int description_114; @Uint8() int description_115; @Uint8() int description_116; @Uint8() int description_117; @Uint8() int description_118; @Uint8() int description_119; @Uint8() int description_120; @Uint8() int description_121; @Uint8() int description_122; @Uint8() int description_123; @Uint8() int description_124; @Uint8() int description_125; @Uint8() int description_126; @Uint8() int description_127; @Uint8() int description_128; @Uint8() int description_129; @Uint8() int description_130; @Uint8() int description_131; @Uint8() int description_132; @Uint8() int description_133; @Uint8() int description_134; @Uint8() int description_135; @Uint8() int description_136; @Uint8() int description_137; @Uint8() int description_138; @Uint8() int description_139; @Uint8() int description_140; @Uint8() int description_141; @Uint8() int description_142; @Uint8() int description_143; @Uint8() int description_144; @Uint8() int description_145; @Uint8() int description_146; @Uint8() int description_147; @Uint8() int description_148; @Uint8() int description_149; @Uint8() int description_150; @Uint8() int description_151; @Uint8() int description_152; @Uint8() int description_153; @Uint8() int description_154; @Uint8() int description_155; @Uint8() int description_156; @Uint8() int description_157; @Uint8() int description_158; @Uint8() int description_159; @Uint8() int description_160; @Uint8() int description_161; @Uint8() int description_162; @Uint8() int description_163; @Uint8() int description_164; @Uint8() int description_165; @Uint8() int description_166; @Uint8() int description_167; @Uint8() int description_168; @Uint8() int description_169; @Uint8() int description_170; @Uint8() int description_171; @Uint8() int description_172; @Uint8() int description_173; @Uint8() int description_174; @Uint8() int description_175; @Uint8() int description_176; @Uint8() int description_177; @Uint8() int description_178; @Uint8() int description_179; @Uint8() int description_180; @Uint8() int description_181; @Uint8() int description_182; @Uint8() int description_183; @Uint8() int description_184; @Uint8() int description_185; @Uint8() int description_186; @Uint8() int description_187; @Uint8() int description_188; @Uint8() int description_189; @Uint8() int description_190; @Uint8() int description_191; @Uint8() int description_192; @Uint8() int description_193; @Uint8() int description_194; @Uint8() int description_195; @Uint8() int description_196; @Uint8() int description_197; @Uint8() int description_198; @Uint8() int description_199; @Uint8() int description_200; @Uint8() int description_201; @Uint8() int description_202; @Uint8() int description_203; @Uint8() int description_204; @Uint8() int description_205; @Uint8() int description_206; @Uint8() int description_207; @Uint8() int description_208; @Uint8() int description_209; @Uint8() int description_210; @Uint8() int description_211; @Uint8() int description_212; @Uint8() int description_213; @Uint8() int description_214; @Uint8() int description_215; @Uint8() int description_216; @Uint8() int description_217; @Uint8() int description_218; @Uint8() int description_219; @Uint8() int description_220; @Uint8() int description_221; @Uint8() int description_222; @Uint8() int description_223; @Uint8() int description_224; @Uint8() int description_225; @Uint8() int description_226; @Uint8() int description_227; @Uint8() int description_228; @Uint8() int description_229; @Uint8() int description_230; @Uint8() int description_231; @Uint8() int description_232; @Uint8() int description_233; @Uint8() int description_234; @Uint8() int description_235; @Uint8() int description_236; @Uint8() int description_237; @Uint8() int description_238; @Uint8() int description_239; @Uint8() int description_240; @Uint8() int description_241; @Uint8() int description_242; @Uint8() int description_243; @Uint8() int description_244; @Uint8() int description_245; @Uint8() int description_246; @Uint8() int description_247; @Uint8() int description_248; @Uint8() int description_249; @Uint8() int description_250; @Uint8() int description_251; @Uint8() int description_252; @Uint8() int description_253; @Uint8() int description_254; @Uint8() int description_255;
-  String get description {
-    var bytes = [description_0, description_1, description_2, description_3, description_4, description_5, description_6, description_7, description_8, description_9, description_10, description_11, description_12, description_13, description_14, description_15, description_16, description_17, description_18, description_19, description_20, description_21, description_22, description_23, description_24, description_25, description_26, description_27, description_28, description_29, description_30, description_31, description_32, description_33, description_34, description_35, description_36, description_37, description_38, description_39, description_40, description_41, description_42, description_43, description_44, description_45, description_46, description_47, description_48, description_49, description_50, description_51, description_52, description_53, description_54, description_55, description_56, description_57, description_58, description_59, description_60, description_61, description_62, description_63, description_64, description_65, description_66, description_67, description_68, description_69, description_70, description_71, description_72, description_73, description_74, description_75, description_76, description_77, description_78, description_79, description_80, description_81, description_82, description_83, description_84, description_85, description_86, description_87, description_88, description_89, description_90, description_91, description_92, description_93, description_94, description_95, description_96, description_97, description_98, description_99, description_100, description_101, description_102, description_103, description_104, description_105, description_106, description_107, description_108, description_109, description_110, description_111, description_112, description_113, description_114, description_115, description_116, description_117, description_118, description_119, description_120, description_121, description_122, description_123, description_124, description_125, description_126, description_127, description_128, description_129, description_130, description_131, description_132, description_133, description_134, description_135, description_136, description_137, description_138, description_139, description_140, description_141, description_142, description_143, description_144, description_145, description_146, description_147, description_148, description_149, description_150, description_151, description_152, description_153, description_154, description_155, description_156, description_157, description_158, description_159, description_160, description_161, description_162, description_163, description_164, description_165, description_166, description_167, description_168, description_169, description_170, description_171, description_172, description_173, description_174, description_175, description_176, description_177, description_178, description_179, description_180, description_181, description_182, description_183, description_184, description_185, description_186, description_187, description_188, description_189, description_190, description_191, description_192, description_193, description_194, description_195, description_196, description_197, description_198, description_199, description_200, description_201, description_202, description_203, description_204, description_205, description_206, description_207, description_208, description_209, description_210, description_211, description_212, description_213, description_214, description_215, description_216, description_217, description_218, description_219, description_220, description_221, description_222, description_223, description_224, description_225, description_226, description_227, description_228, description_229, description_230, description_231, description_232, description_233, description_234, description_235, description_236, description_237, description_238, description_239, description_240, description_241, description_242, description_243, description_244, description_245, description_246, description_247, description_248, description_249, description_250, description_251, description_252, description_253, description_254, description_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set description(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    description_0 = bytes[0]; description_1 = bytes[1]; description_2 = bytes[2]; description_3 = bytes[3]; description_4 = bytes[4]; description_5 = bytes[5]; description_6 = bytes[6]; description_7 = bytes[7]; description_8 = bytes[8]; description_9 = bytes[9]; description_10 = bytes[10]; description_11 = bytes[11]; description_12 = bytes[12]; description_13 = bytes[13]; description_14 = bytes[14]; description_15 = bytes[15]; description_16 = bytes[16]; description_17 = bytes[17]; description_18 = bytes[18]; description_19 = bytes[19]; description_20 = bytes[20]; description_21 = bytes[21]; description_22 = bytes[22]; description_23 = bytes[23]; description_24 = bytes[24]; description_25 = bytes[25]; description_26 = bytes[26]; description_27 = bytes[27]; description_28 = bytes[28]; description_29 = bytes[29]; description_30 = bytes[30]; description_31 = bytes[31]; description_32 = bytes[32]; description_33 = bytes[33]; description_34 = bytes[34]; description_35 = bytes[35]; description_36 = bytes[36]; description_37 = bytes[37]; description_38 = bytes[38]; description_39 = bytes[39]; description_40 = bytes[40]; description_41 = bytes[41]; description_42 = bytes[42]; description_43 = bytes[43]; description_44 = bytes[44]; description_45 = bytes[45]; description_46 = bytes[46]; description_47 = bytes[47]; description_48 = bytes[48]; description_49 = bytes[49]; description_50 = bytes[50]; description_51 = bytes[51]; description_52 = bytes[52]; description_53 = bytes[53]; description_54 = bytes[54]; description_55 = bytes[55]; description_56 = bytes[56]; description_57 = bytes[57]; description_58 = bytes[58]; description_59 = bytes[59]; description_60 = bytes[60]; description_61 = bytes[61]; description_62 = bytes[62]; description_63 = bytes[63]; description_64 = bytes[64]; description_65 = bytes[65]; description_66 = bytes[66]; description_67 = bytes[67]; description_68 = bytes[68]; description_69 = bytes[69]; description_70 = bytes[70]; description_71 = bytes[71]; description_72 = bytes[72]; description_73 = bytes[73]; description_74 = bytes[74]; description_75 = bytes[75]; description_76 = bytes[76]; description_77 = bytes[77]; description_78 = bytes[78]; description_79 = bytes[79]; description_80 = bytes[80]; description_81 = bytes[81]; description_82 = bytes[82]; description_83 = bytes[83]; description_84 = bytes[84]; description_85 = bytes[85]; description_86 = bytes[86]; description_87 = bytes[87]; description_88 = bytes[88]; description_89 = bytes[89]; description_90 = bytes[90]; description_91 = bytes[91]; description_92 = bytes[92]; description_93 = bytes[93]; description_94 = bytes[94]; description_95 = bytes[95]; description_96 = bytes[96]; description_97 = bytes[97]; description_98 = bytes[98]; description_99 = bytes[99]; description_100 = bytes[100]; description_101 = bytes[101]; description_102 = bytes[102]; description_103 = bytes[103]; description_104 = bytes[104]; description_105 = bytes[105]; description_106 = bytes[106]; description_107 = bytes[107]; description_108 = bytes[108]; description_109 = bytes[109]; description_110 = bytes[110]; description_111 = bytes[111]; description_112 = bytes[112]; description_113 = bytes[113]; description_114 = bytes[114]; description_115 = bytes[115]; description_116 = bytes[116]; description_117 = bytes[117]; description_118 = bytes[118]; description_119 = bytes[119]; description_120 = bytes[120]; description_121 = bytes[121]; description_122 = bytes[122]; description_123 = bytes[123]; description_124 = bytes[124]; description_125 = bytes[125]; description_126 = bytes[126]; description_127 = bytes[127]; description_128 = bytes[128]; description_129 = bytes[129]; description_130 = bytes[130]; description_131 = bytes[131]; description_132 = bytes[132]; description_133 = bytes[133]; description_134 = bytes[134]; description_135 = bytes[135]; description_136 = bytes[136]; description_137 = bytes[137]; description_138 = bytes[138]; description_139 = bytes[139]; description_140 = bytes[140]; description_141 = bytes[141]; description_142 = bytes[142]; description_143 = bytes[143]; description_144 = bytes[144]; description_145 = bytes[145]; description_146 = bytes[146]; description_147 = bytes[147]; description_148 = bytes[148]; description_149 = bytes[149]; description_150 = bytes[150]; description_151 = bytes[151]; description_152 = bytes[152]; description_153 = bytes[153]; description_154 = bytes[154]; description_155 = bytes[155]; description_156 = bytes[156]; description_157 = bytes[157]; description_158 = bytes[158]; description_159 = bytes[159]; description_160 = bytes[160]; description_161 = bytes[161]; description_162 = bytes[162]; description_163 = bytes[163]; description_164 = bytes[164]; description_165 = bytes[165]; description_166 = bytes[166]; description_167 = bytes[167]; description_168 = bytes[168]; description_169 = bytes[169]; description_170 = bytes[170]; description_171 = bytes[171]; description_172 = bytes[172]; description_173 = bytes[173]; description_174 = bytes[174]; description_175 = bytes[175]; description_176 = bytes[176]; description_177 = bytes[177]; description_178 = bytes[178]; description_179 = bytes[179]; description_180 = bytes[180]; description_181 = bytes[181]; description_182 = bytes[182]; description_183 = bytes[183]; description_184 = bytes[184]; description_185 = bytes[185]; description_186 = bytes[186]; description_187 = bytes[187]; description_188 = bytes[188]; description_189 = bytes[189]; description_190 = bytes[190]; description_191 = bytes[191]; description_192 = bytes[192]; description_193 = bytes[193]; description_194 = bytes[194]; description_195 = bytes[195]; description_196 = bytes[196]; description_197 = bytes[197]; description_198 = bytes[198]; description_199 = bytes[199]; description_200 = bytes[200]; description_201 = bytes[201]; description_202 = bytes[202]; description_203 = bytes[203]; description_204 = bytes[204]; description_205 = bytes[205]; description_206 = bytes[206]; description_207 = bytes[207]; description_208 = bytes[208]; description_209 = bytes[209]; description_210 = bytes[210]; description_211 = bytes[211]; description_212 = bytes[212]; description_213 = bytes[213]; description_214 = bytes[214]; description_215 = bytes[215]; description_216 = bytes[216]; description_217 = bytes[217]; description_218 = bytes[218]; description_219 = bytes[219]; description_220 = bytes[220]; description_221 = bytes[221]; description_222 = bytes[222]; description_223 = bytes[223]; description_224 = bytes[224]; description_225 = bytes[225]; description_226 = bytes[226]; description_227 = bytes[227]; description_228 = bytes[228]; description_229 = bytes[229]; description_230 = bytes[230]; description_231 = bytes[231]; description_232 = bytes[232]; description_233 = bytes[233]; description_234 = bytes[234]; description_235 = bytes[235]; description_236 = bytes[236]; description_237 = bytes[237]; description_238 = bytes[238]; description_239 = bytes[239]; description_240 = bytes[240]; description_241 = bytes[241]; description_242 = bytes[242]; description_243 = bytes[243]; description_244 = bytes[244]; description_245 = bytes[245]; description_246 = bytes[246]; description_247 = bytes[247]; description_248 = bytes[248]; description_249 = bytes[249]; description_250 = bytes[250]; description_251 = bytes[251]; description_252 = bytes[252]; description_253 = bytes[253]; description_254 = bytes[254]; description_255 = bytes[255];
-  }
-  @Uint8() int layer_0; @Uint8() int layer_1; @Uint8() int layer_2; @Uint8() int layer_3; @Uint8() int layer_4; @Uint8() int layer_5; @Uint8() int layer_6; @Uint8() int layer_7; @Uint8() int layer_8; @Uint8() int layer_9; @Uint8() int layer_10; @Uint8() int layer_11; @Uint8() int layer_12; @Uint8() int layer_13; @Uint8() int layer_14; @Uint8() int layer_15; @Uint8() int layer_16; @Uint8() int layer_17; @Uint8() int layer_18; @Uint8() int layer_19; @Uint8() int layer_20; @Uint8() int layer_21; @Uint8() int layer_22; @Uint8() int layer_23; @Uint8() int layer_24; @Uint8() int layer_25; @Uint8() int layer_26; @Uint8() int layer_27; @Uint8() int layer_28; @Uint8() int layer_29; @Uint8() int layer_30; @Uint8() int layer_31; @Uint8() int layer_32; @Uint8() int layer_33; @Uint8() int layer_34; @Uint8() int layer_35; @Uint8() int layer_36; @Uint8() int layer_37; @Uint8() int layer_38; @Uint8() int layer_39; @Uint8() int layer_40; @Uint8() int layer_41; @Uint8() int layer_42; @Uint8() int layer_43; @Uint8() int layer_44; @Uint8() int layer_45; @Uint8() int layer_46; @Uint8() int layer_47; @Uint8() int layer_48; @Uint8() int layer_49; @Uint8() int layer_50; @Uint8() int layer_51; @Uint8() int layer_52; @Uint8() int layer_53; @Uint8() int layer_54; @Uint8() int layer_55; @Uint8() int layer_56; @Uint8() int layer_57; @Uint8() int layer_58; @Uint8() int layer_59; @Uint8() int layer_60; @Uint8() int layer_61; @Uint8() int layer_62; @Uint8() int layer_63; @Uint8() int layer_64; @Uint8() int layer_65; @Uint8() int layer_66; @Uint8() int layer_67; @Uint8() int layer_68; @Uint8() int layer_69; @Uint8() int layer_70; @Uint8() int layer_71; @Uint8() int layer_72; @Uint8() int layer_73; @Uint8() int layer_74; @Uint8() int layer_75; @Uint8() int layer_76; @Uint8() int layer_77; @Uint8() int layer_78; @Uint8() int layer_79; @Uint8() int layer_80; @Uint8() int layer_81; @Uint8() int layer_82; @Uint8() int layer_83; @Uint8() int layer_84; @Uint8() int layer_85; @Uint8() int layer_86; @Uint8() int layer_87; @Uint8() int layer_88; @Uint8() int layer_89; @Uint8() int layer_90; @Uint8() int layer_91; @Uint8() int layer_92; @Uint8() int layer_93; @Uint8() int layer_94; @Uint8() int layer_95; @Uint8() int layer_96; @Uint8() int layer_97; @Uint8() int layer_98; @Uint8() int layer_99; @Uint8() int layer_100; @Uint8() int layer_101; @Uint8() int layer_102; @Uint8() int layer_103; @Uint8() int layer_104; @Uint8() int layer_105; @Uint8() int layer_106; @Uint8() int layer_107; @Uint8() int layer_108; @Uint8() int layer_109; @Uint8() int layer_110; @Uint8() int layer_111; @Uint8() int layer_112; @Uint8() int layer_113; @Uint8() int layer_114; @Uint8() int layer_115; @Uint8() int layer_116; @Uint8() int layer_117; @Uint8() int layer_118; @Uint8() int layer_119; @Uint8() int layer_120; @Uint8() int layer_121; @Uint8() int layer_122; @Uint8() int layer_123; @Uint8() int layer_124; @Uint8() int layer_125; @Uint8() int layer_126; @Uint8() int layer_127; @Uint8() int layer_128; @Uint8() int layer_129; @Uint8() int layer_130; @Uint8() int layer_131; @Uint8() int layer_132; @Uint8() int layer_133; @Uint8() int layer_134; @Uint8() int layer_135; @Uint8() int layer_136; @Uint8() int layer_137; @Uint8() int layer_138; @Uint8() int layer_139; @Uint8() int layer_140; @Uint8() int layer_141; @Uint8() int layer_142; @Uint8() int layer_143; @Uint8() int layer_144; @Uint8() int layer_145; @Uint8() int layer_146; @Uint8() int layer_147; @Uint8() int layer_148; @Uint8() int layer_149; @Uint8() int layer_150; @Uint8() int layer_151; @Uint8() int layer_152; @Uint8() int layer_153; @Uint8() int layer_154; @Uint8() int layer_155; @Uint8() int layer_156; @Uint8() int layer_157; @Uint8() int layer_158; @Uint8() int layer_159; @Uint8() int layer_160; @Uint8() int layer_161; @Uint8() int layer_162; @Uint8() int layer_163; @Uint8() int layer_164; @Uint8() int layer_165; @Uint8() int layer_166; @Uint8() int layer_167; @Uint8() int layer_168; @Uint8() int layer_169; @Uint8() int layer_170; @Uint8() int layer_171; @Uint8() int layer_172; @Uint8() int layer_173; @Uint8() int layer_174; @Uint8() int layer_175; @Uint8() int layer_176; @Uint8() int layer_177; @Uint8() int layer_178; @Uint8() int layer_179; @Uint8() int layer_180; @Uint8() int layer_181; @Uint8() int layer_182; @Uint8() int layer_183; @Uint8() int layer_184; @Uint8() int layer_185; @Uint8() int layer_186; @Uint8() int layer_187; @Uint8() int layer_188; @Uint8() int layer_189; @Uint8() int layer_190; @Uint8() int layer_191; @Uint8() int layer_192; @Uint8() int layer_193; @Uint8() int layer_194; @Uint8() int layer_195; @Uint8() int layer_196; @Uint8() int layer_197; @Uint8() int layer_198; @Uint8() int layer_199; @Uint8() int layer_200; @Uint8() int layer_201; @Uint8() int layer_202; @Uint8() int layer_203; @Uint8() int layer_204; @Uint8() int layer_205; @Uint8() int layer_206; @Uint8() int layer_207; @Uint8() int layer_208; @Uint8() int layer_209; @Uint8() int layer_210; @Uint8() int layer_211; @Uint8() int layer_212; @Uint8() int layer_213; @Uint8() int layer_214; @Uint8() int layer_215; @Uint8() int layer_216; @Uint8() int layer_217; @Uint8() int layer_218; @Uint8() int layer_219; @Uint8() int layer_220; @Uint8() int layer_221; @Uint8() int layer_222; @Uint8() int layer_223; @Uint8() int layer_224; @Uint8() int layer_225; @Uint8() int layer_226; @Uint8() int layer_227; @Uint8() int layer_228; @Uint8() int layer_229; @Uint8() int layer_230; @Uint8() int layer_231; @Uint8() int layer_232; @Uint8() int layer_233; @Uint8() int layer_234; @Uint8() int layer_235; @Uint8() int layer_236; @Uint8() int layer_237; @Uint8() int layer_238; @Uint8() int layer_239; @Uint8() int layer_240; @Uint8() int layer_241; @Uint8() int layer_242; @Uint8() int layer_243; @Uint8() int layer_244; @Uint8() int layer_245; @Uint8() int layer_246; @Uint8() int layer_247; @Uint8() int layer_248; @Uint8() int layer_249; @Uint8() int layer_250; @Uint8() int layer_251; @Uint8() int layer_252; @Uint8() int layer_253; @Uint8() int layer_254; @Uint8() int layer_255;
-  String get layer {
-    var bytes = [layer_0, layer_1, layer_2, layer_3, layer_4, layer_5, layer_6, layer_7, layer_8, layer_9, layer_10, layer_11, layer_12, layer_13, layer_14, layer_15, layer_16, layer_17, layer_18, layer_19, layer_20, layer_21, layer_22, layer_23, layer_24, layer_25, layer_26, layer_27, layer_28, layer_29, layer_30, layer_31, layer_32, layer_33, layer_34, layer_35, layer_36, layer_37, layer_38, layer_39, layer_40, layer_41, layer_42, layer_43, layer_44, layer_45, layer_46, layer_47, layer_48, layer_49, layer_50, layer_51, layer_52, layer_53, layer_54, layer_55, layer_56, layer_57, layer_58, layer_59, layer_60, layer_61, layer_62, layer_63, layer_64, layer_65, layer_66, layer_67, layer_68, layer_69, layer_70, layer_71, layer_72, layer_73, layer_74, layer_75, layer_76, layer_77, layer_78, layer_79, layer_80, layer_81, layer_82, layer_83, layer_84, layer_85, layer_86, layer_87, layer_88, layer_89, layer_90, layer_91, layer_92, layer_93, layer_94, layer_95, layer_96, layer_97, layer_98, layer_99, layer_100, layer_101, layer_102, layer_103, layer_104, layer_105, layer_106, layer_107, layer_108, layer_109, layer_110, layer_111, layer_112, layer_113, layer_114, layer_115, layer_116, layer_117, layer_118, layer_119, layer_120, layer_121, layer_122, layer_123, layer_124, layer_125, layer_126, layer_127, layer_128, layer_129, layer_130, layer_131, layer_132, layer_133, layer_134, layer_135, layer_136, layer_137, layer_138, layer_139, layer_140, layer_141, layer_142, layer_143, layer_144, layer_145, layer_146, layer_147, layer_148, layer_149, layer_150, layer_151, layer_152, layer_153, layer_154, layer_155, layer_156, layer_157, layer_158, layer_159, layer_160, layer_161, layer_162, layer_163, layer_164, layer_165, layer_166, layer_167, layer_168, layer_169, layer_170, layer_171, layer_172, layer_173, layer_174, layer_175, layer_176, layer_177, layer_178, layer_179, layer_180, layer_181, layer_182, layer_183, layer_184, layer_185, layer_186, layer_187, layer_188, layer_189, layer_190, layer_191, layer_192, layer_193, layer_194, layer_195, layer_196, layer_197, layer_198, layer_199, layer_200, layer_201, layer_202, layer_203, layer_204, layer_205, layer_206, layer_207, layer_208, layer_209, layer_210, layer_211, layer_212, layer_213, layer_214, layer_215, layer_216, layer_217, layer_218, layer_219, layer_220, layer_221, layer_222, layer_223, layer_224, layer_225, layer_226, layer_227, layer_228, layer_229, layer_230, layer_231, layer_232, layer_233, layer_234, layer_235, layer_236, layer_237, layer_238, layer_239, layer_240, layer_241, layer_242, layer_243, layer_244, layer_245, layer_246, layer_247, layer_248, layer_249, layer_250, layer_251, layer_252, layer_253, layer_254, layer_255].takeWhile((b) => b > 0).toList();
-    return Utf8Decoder().convert(bytes);
-  }
-  set layer(String value) {
-    List<int> bytes =  Utf8Encoder().convert(value).followedBy(List.filled(256-value.length, 0));
-    layer_0 = bytes[0]; layer_1 = bytes[1]; layer_2 = bytes[2]; layer_3 = bytes[3]; layer_4 = bytes[4]; layer_5 = bytes[5]; layer_6 = bytes[6]; layer_7 = bytes[7]; layer_8 = bytes[8]; layer_9 = bytes[9]; layer_10 = bytes[10]; layer_11 = bytes[11]; layer_12 = bytes[12]; layer_13 = bytes[13]; layer_14 = bytes[14]; layer_15 = bytes[15]; layer_16 = bytes[16]; layer_17 = bytes[17]; layer_18 = bytes[18]; layer_19 = bytes[19]; layer_20 = bytes[20]; layer_21 = bytes[21]; layer_22 = bytes[22]; layer_23 = bytes[23]; layer_24 = bytes[24]; layer_25 = bytes[25]; layer_26 = bytes[26]; layer_27 = bytes[27]; layer_28 = bytes[28]; layer_29 = bytes[29]; layer_30 = bytes[30]; layer_31 = bytes[31]; layer_32 = bytes[32]; layer_33 = bytes[33]; layer_34 = bytes[34]; layer_35 = bytes[35]; layer_36 = bytes[36]; layer_37 = bytes[37]; layer_38 = bytes[38]; layer_39 = bytes[39]; layer_40 = bytes[40]; layer_41 = bytes[41]; layer_42 = bytes[42]; layer_43 = bytes[43]; layer_44 = bytes[44]; layer_45 = bytes[45]; layer_46 = bytes[46]; layer_47 = bytes[47]; layer_48 = bytes[48]; layer_49 = bytes[49]; layer_50 = bytes[50]; layer_51 = bytes[51]; layer_52 = bytes[52]; layer_53 = bytes[53]; layer_54 = bytes[54]; layer_55 = bytes[55]; layer_56 = bytes[56]; layer_57 = bytes[57]; layer_58 = bytes[58]; layer_59 = bytes[59]; layer_60 = bytes[60]; layer_61 = bytes[61]; layer_62 = bytes[62]; layer_63 = bytes[63]; layer_64 = bytes[64]; layer_65 = bytes[65]; layer_66 = bytes[66]; layer_67 = bytes[67]; layer_68 = bytes[68]; layer_69 = bytes[69]; layer_70 = bytes[70]; layer_71 = bytes[71]; layer_72 = bytes[72]; layer_73 = bytes[73]; layer_74 = bytes[74]; layer_75 = bytes[75]; layer_76 = bytes[76]; layer_77 = bytes[77]; layer_78 = bytes[78]; layer_79 = bytes[79]; layer_80 = bytes[80]; layer_81 = bytes[81]; layer_82 = bytes[82]; layer_83 = bytes[83]; layer_84 = bytes[84]; layer_85 = bytes[85]; layer_86 = bytes[86]; layer_87 = bytes[87]; layer_88 = bytes[88]; layer_89 = bytes[89]; layer_90 = bytes[90]; layer_91 = bytes[91]; layer_92 = bytes[92]; layer_93 = bytes[93]; layer_94 = bytes[94]; layer_95 = bytes[95]; layer_96 = bytes[96]; layer_97 = bytes[97]; layer_98 = bytes[98]; layer_99 = bytes[99]; layer_100 = bytes[100]; layer_101 = bytes[101]; layer_102 = bytes[102]; layer_103 = bytes[103]; layer_104 = bytes[104]; layer_105 = bytes[105]; layer_106 = bytes[106]; layer_107 = bytes[107]; layer_108 = bytes[108]; layer_109 = bytes[109]; layer_110 = bytes[110]; layer_111 = bytes[111]; layer_112 = bytes[112]; layer_113 = bytes[113]; layer_114 = bytes[114]; layer_115 = bytes[115]; layer_116 = bytes[116]; layer_117 = bytes[117]; layer_118 = bytes[118]; layer_119 = bytes[119]; layer_120 = bytes[120]; layer_121 = bytes[121]; layer_122 = bytes[122]; layer_123 = bytes[123]; layer_124 = bytes[124]; layer_125 = bytes[125]; layer_126 = bytes[126]; layer_127 = bytes[127]; layer_128 = bytes[128]; layer_129 = bytes[129]; layer_130 = bytes[130]; layer_131 = bytes[131]; layer_132 = bytes[132]; layer_133 = bytes[133]; layer_134 = bytes[134]; layer_135 = bytes[135]; layer_136 = bytes[136]; layer_137 = bytes[137]; layer_138 = bytes[138]; layer_139 = bytes[139]; layer_140 = bytes[140]; layer_141 = bytes[141]; layer_142 = bytes[142]; layer_143 = bytes[143]; layer_144 = bytes[144]; layer_145 = bytes[145]; layer_146 = bytes[146]; layer_147 = bytes[147]; layer_148 = bytes[148]; layer_149 = bytes[149]; layer_150 = bytes[150]; layer_151 = bytes[151]; layer_152 = bytes[152]; layer_153 = bytes[153]; layer_154 = bytes[154]; layer_155 = bytes[155]; layer_156 = bytes[156]; layer_157 = bytes[157]; layer_158 = bytes[158]; layer_159 = bytes[159]; layer_160 = bytes[160]; layer_161 = bytes[161]; layer_162 = bytes[162]; layer_163 = bytes[163]; layer_164 = bytes[164]; layer_165 = bytes[165]; layer_166 = bytes[166]; layer_167 = bytes[167]; layer_168 = bytes[168]; layer_169 = bytes[169]; layer_170 = bytes[170]; layer_171 = bytes[171]; layer_172 = bytes[172]; layer_173 = bytes[173]; layer_174 = bytes[174]; layer_175 = bytes[175]; layer_176 = bytes[176]; layer_177 = bytes[177]; layer_178 = bytes[178]; layer_179 = bytes[179]; layer_180 = bytes[180]; layer_181 = bytes[181]; layer_182 = bytes[182]; layer_183 = bytes[183]; layer_184 = bytes[184]; layer_185 = bytes[185]; layer_186 = bytes[186]; layer_187 = bytes[187]; layer_188 = bytes[188]; layer_189 = bytes[189]; layer_190 = bytes[190]; layer_191 = bytes[191]; layer_192 = bytes[192]; layer_193 = bytes[193]; layer_194 = bytes[194]; layer_195 = bytes[195]; layer_196 = bytes[196]; layer_197 = bytes[197]; layer_198 = bytes[198]; layer_199 = bytes[199]; layer_200 = bytes[200]; layer_201 = bytes[201]; layer_202 = bytes[202]; layer_203 = bytes[203]; layer_204 = bytes[204]; layer_205 = bytes[205]; layer_206 = bytes[206]; layer_207 = bytes[207]; layer_208 = bytes[208]; layer_209 = bytes[209]; layer_210 = bytes[210]; layer_211 = bytes[211]; layer_212 = bytes[212]; layer_213 = bytes[213]; layer_214 = bytes[214]; layer_215 = bytes[215]; layer_216 = bytes[216]; layer_217 = bytes[217]; layer_218 = bytes[218]; layer_219 = bytes[219]; layer_220 = bytes[220]; layer_221 = bytes[221]; layer_222 = bytes[222]; layer_223 = bytes[223]; layer_224 = bytes[224]; layer_225 = bytes[225]; layer_226 = bytes[226]; layer_227 = bytes[227]; layer_228 = bytes[228]; layer_229 = bytes[229]; layer_230 = bytes[230]; layer_231 = bytes[231]; layer_232 = bytes[232]; layer_233 = bytes[233]; layer_234 = bytes[234]; layer_235 = bytes[235]; layer_236 = bytes[236]; layer_237 = bytes[237]; layer_238 = bytes[238]; layer_239 = bytes[239]; layer_240 = bytes[240]; layer_241 = bytes[241]; layer_242 = bytes[242]; layer_243 = bytes[243]; layer_244 = bytes[244]; layer_245 = bytes[245]; layer_246 = bytes[246]; layer_247 = bytes[247]; layer_248 = bytes[248]; layer_249 = bytes[249]; layer_250 = bytes[250]; layer_251 = bytes[251]; layer_252 = bytes[252]; layer_253 = bytes[253]; layer_254 = bytes[254]; layer_255 = bytes[255];
-  }
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Array(256)
+  external Array<Uint8> name;
+  @Array(256)
+  external Array<Uint8> version;
+  @Uint32()
+  external int purposes;
+  @Array(256)
+  external Array<Uint8> description;
+  @Array(256)
+  external Array<Uint8> layer;
 }
 
 class VkSamplerCustomBorderColorCreateInfoEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int format;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int format;
 }
 
 class VkPhysicalDeviceCustomBorderColorPropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxCustomBorderColorSamplers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxCustomBorderColorSamplers;
 }
 
 class VkPhysicalDeviceCustomBorderColorFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int customBorderColors;
-  @Uint32() int customBorderColorWithoutFormat;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int customBorderColors;
+  @Uint32()
+  external int customBorderColorWithoutFormat;
 }
 
 class VkDeviceOrHostAddressKHR extends Opaque {
 }
 
 class VkDeviceOrHostAddressKHRDeviceAddress extends Struct {
-  @Uint64() int deviceAddress;
+  @Uint64()
+  external int deviceAddress;
 }
 
 class VkDeviceOrHostAddressKHRHostAddress extends Struct {
-  Pointer hostAddress;
+  external Pointer hostAddress;
 }
 
 class VkDeviceOrHostAddressConstKHR extends Opaque {
 }
 
 class VkDeviceOrHostAddressConstKHRDeviceAddress extends Struct {
-  @Uint64() int deviceAddress;
+  @Uint64()
+  external int deviceAddress;
 }
 
 class VkDeviceOrHostAddressConstKHRHostAddress extends Struct {
-  Pointer hostAddress;
+  external Pointer hostAddress;
 }
 
 class VkAccelerationStructureGeometryTrianglesDataKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int vertexFormat;
-  @Uint64() int vertexStride;
-  @Uint32() int maxVertex;
-  @Int32() int indexType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int vertexFormat;
+  @Uint64()
+  external int vertexStride;
+  @Uint32()
+  external int maxVertex;
+  @Int32()
+  external int indexType;
 }
 
 class VkAccelerationStructureGeometryAabbsDataKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int stride;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int stride;
 }
 
 class VkAccelerationStructureGeometryInstancesDataKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int arrayOfPointers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int arrayOfPointers;
 }
 
 class VkAccelerationStructureGeometryDataKHR extends Opaque {
 }
 
 class VkAccelerationStructureGeometryDataKHRTriangles extends Struct {
-  @Int32() int triangles_sType;
-  Pointer triangles_pNext;
-  @Int32() int triangles_vertexFormat;
-  @Uint64() int triangles_vertexStride;
-  @Uint32() int triangles_maxVertex;
-  @Int32() int triangles_indexType;
+  @Int32()
+  external int triangles_sType;
+  external Pointer triangles_pNext;
+  @Int32()
+  external int triangles_vertexFormat;
+  @Uint64()
+  external int triangles_vertexStride;
+  @Uint32()
+  external int triangles_maxVertex;
+  @Int32()
+  external int triangles_indexType;
 }
 
 class VkAccelerationStructureGeometryDataKHRAabbs extends Struct {
-  @Int32() int aabbs_sType;
-  Pointer aabbs_pNext;
-  @Uint64() int aabbs_stride;
+  @Int32()
+  external int aabbs_sType;
+  external Pointer aabbs_pNext;
+  @Uint64()
+  external int aabbs_stride;
 }
 
 class VkAccelerationStructureGeometryDataKHRInstances extends Struct {
-  @Int32() int instances_sType;
-  Pointer instances_pNext;
-  @Uint32() int instances_arrayOfPointers;
+  @Int32()
+  external int instances_sType;
+  external Pointer instances_pNext;
+  @Uint32()
+  external int instances_arrayOfPointers;
 }
 
 class VkAccelerationStructureGeometryKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int geometryType;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int geometryType;
+  @Uint32()
+  external int flags;
 }
 
 class VkAccelerationStructureBuildGeometryInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int type;
-  @Uint32() int flags;
-  @Int32() int mode;
-  Pointer<VkAccelerationStructureKHR> srcAccelerationStructure;
-  Pointer<VkAccelerationStructureKHR> dstAccelerationStructure;
-  @Uint32() int geometryCount;
-  Pointer<VkAccelerationStructureGeometryKHR> pGeometries;
-  Pointer ppGeometries;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int type;
+  @Uint32()
+  external int flags;
+  @Int32()
+  external int mode;
+  external Pointer<VkAccelerationStructureKHR> srcAccelerationStructure;
+  external Pointer<VkAccelerationStructureKHR> dstAccelerationStructure;
+  @Uint32()
+  external int geometryCount;
+  external Pointer<VkAccelerationStructureGeometryKHR> pGeometries;
+  external Pointer ppGeometries;
 }
 
 class VkAccelerationStructureBuildRangeInfoKHR extends Struct {
-  @Uint32() int primitiveCount;
-  @Uint32() int primitiveOffset;
-  @Uint32() int firstVertex;
-  @Uint32() int transformOffset;
+  @Uint32()
+  external int primitiveCount;
+  @Uint32()
+  external int primitiveOffset;
+  @Uint32()
+  external int firstVertex;
+  @Uint32()
+  external int transformOffset;
 }
 
 class VkAccelerationStructureCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int createFlags;
-  Pointer<VkBuffer> buffer;
-  @Uint64() int offset;
-  @Uint64() int size;
-  @Int32() int type;
-  @Uint64() int deviceAddress;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int createFlags;
+  external Pointer<VkBuffer> buffer;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int size;
+  @Int32()
+  external int type;
+  @Uint64()
+  external int deviceAddress;
 }
 
 class VkAabbPositionsKHR extends Struct {
-  @Float() double minX;
-  @Float() double minY;
-  @Float() double minZ;
-  @Float() double maxX;
-  @Float() double maxY;
-  @Float() double maxZ;
+  @Float()
+  external double minX;
+  @Float()
+  external double minY;
+  @Float()
+  external double minZ;
+  @Float()
+  external double maxX;
+  @Float()
+  external double maxY;
+  @Float()
+  external double maxZ;
 }
 
 class VkAabbPositionsNV extends Opaque {
 }
 
 class VkTransformMatrixKHR extends Struct {
-  @Float() double matrix_0; @Float() double matrix_1; @Float() double matrix_2; @Float() double matrix_3; @Float() double matrix_4; @Float() double matrix_5; @Float() double matrix_6; @Float() double matrix_7; @Float() double matrix_8; @Float() double matrix_9; @Float() double matrix_10; @Float() double matrix_11;
+  @Array(12)
+  external Array<Float> matrix;
 }
 
 class VkTransformMatrixNV extends Opaque {
 }
 
 class VkAccelerationStructureInstanceKHR extends Struct {
-  @Float() double transform_matrix_0; @Float() double transform_matrix_1; @Float() double transform_matrix_2; @Float() double transform_matrix_3; @Float() double transform_matrix_4; @Float() double transform_matrix_5; @Float() double transform_matrix_6; @Float() double transform_matrix_7; @Float() double transform_matrix_8; @Float() double transform_matrix_9; @Float() double transform_matrix_10; @Float() double transform_matrix_11;
-  @Uint32() int instanceCustomIndex;
-  @Uint32() int mask;
-  @Uint32() int instanceShaderBindingTableRecordOffset;
-  @Uint32() int flags;
-  @Uint64() int accelerationStructureReference;
+  @Array(12)
+  external Array<Float> transform_matrix;
+  @Uint32()
+  external int instanceCustomIndex;
+  @Uint32()
+  external int mask;
+  @Uint32()
+  external int instanceShaderBindingTableRecordOffset;
+  @Uint32()
+  external int flags;
+  @Uint64()
+  external int accelerationStructureReference;
 }
 
 class VkAccelerationStructureInstanceNV extends Opaque {
 }
 
 class VkAccelerationStructureDeviceAddressInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkAccelerationStructureKHR> accelerationStructure;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkAccelerationStructureKHR> accelerationStructure;
 }
 
 class VkAccelerationStructureVersionInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer pVersionData;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer pVersionData;
 }
 
 class VkCopyAccelerationStructureInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkAccelerationStructureKHR> src;
-  Pointer<VkAccelerationStructureKHR> dst;
-  @Int32() int mode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkAccelerationStructureKHR> src;
+  external Pointer<VkAccelerationStructureKHR> dst;
+  @Int32()
+  external int mode;
 }
 
 class VkCopyAccelerationStructureToMemoryInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkAccelerationStructureKHR> src;
-  @Int32() int mode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkAccelerationStructureKHR> src;
+  @Int32()
+  external int mode;
 }
 
 class VkCopyMemoryToAccelerationStructureInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkAccelerationStructureKHR> dst;
-  @Int32() int mode;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkAccelerationStructureKHR> dst;
+  @Int32()
+  external int mode;
 }
 
 class VkRayTracingPipelineInterfaceCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int maxPipelineRayPayloadSize;
-  @Uint32() int maxPipelineRayHitAttributeSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int maxPipelineRayPayloadSize;
+  @Uint32()
+  external int maxPipelineRayHitAttributeSize;
 }
 
 class VkPipelineLibraryCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int libraryCount;
-  Pointer<Pointer<VkPipeline>> pLibraries;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int libraryCount;
+  external Pointer<Pointer<VkPipeline>> pLibraries;
 }
 
 class VkPhysicalDeviceExtendedDynamicStateFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int extendedDynamicState;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int extendedDynamicState;
 }
 
 class VkRenderPassTransformBeginInfoQCOM extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int transform;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int transform;
 }
 
 class VkCopyCommandTransformInfoQCOM extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int transform;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int transform;
 }
 
 class VkCommandBufferInheritanceRenderPassTransformInfoQCOM extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int transform;
-  @Int32() int renderArea_offset_x;
-  @Int32() int renderArea_offset_y;
-  @Uint32() int renderArea_extent_width;
-  @Uint32() int renderArea_extent_height;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int transform;
+  @Int32()
+  external int renderArea_offset_x;
+  @Int32()
+  external int renderArea_offset_y;
+  @Uint32()
+  external int renderArea_extent_width;
+  @Uint32()
+  external int renderArea_extent_height;
 }
 
 class VkPhysicalDeviceDiagnosticsConfigFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int diagnosticsConfig;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int diagnosticsConfig;
 }
 
 class VkDeviceDiagnosticsConfigCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
 }
 
 class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderZeroInitializeWorkgroupMemory;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderZeroInitializeWorkgroupMemory;
 }
 
 class VkPhysicalDeviceRobustness2FeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int robustBufferAccess2;
-  @Uint32() int robustImageAccess2;
-  @Uint32() int nullDescriptor;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int robustBufferAccess2;
+  @Uint32()
+  external int robustImageAccess2;
+  @Uint32()
+  external int nullDescriptor;
 }
 
 class VkPhysicalDeviceRobustness2PropertiesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int robustStorageBufferAccessSizeAlignment;
-  @Uint64() int robustUniformBufferAccessSizeAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int robustStorageBufferAccessSizeAlignment;
+  @Uint64()
+  external int robustUniformBufferAccessSizeAlignment;
 }
 
 class VkPhysicalDeviceImageRobustnessFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int robustImageAccess;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int robustImageAccess;
 }
 
 class VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int workgroupMemoryExplicitLayout;
-  @Uint32() int workgroupMemoryExplicitLayoutScalarBlockLayout;
-  @Uint32() int workgroupMemoryExplicitLayout8BitAccess;
-  @Uint32() int workgroupMemoryExplicitLayout16BitAccess;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int workgroupMemoryExplicitLayout;
+  @Uint32()
+  external int workgroupMemoryExplicitLayoutScalarBlockLayout;
+  @Uint32()
+  external int workgroupMemoryExplicitLayout8BitAccess;
+  @Uint32()
+  external int workgroupMemoryExplicitLayout16BitAccess;
 }
 
 class VkPhysicalDevicePortabilitySubsetFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int constantAlphaColorBlendFactors;
-  @Uint32() int events;
-  @Uint32() int imageViewFormatReinterpretation;
-  @Uint32() int imageViewFormatSwizzle;
-  @Uint32() int imageView2DOn3DImage;
-  @Uint32() int multisampleArrayImage;
-  @Uint32() int mutableComparisonSamplers;
-  @Uint32() int pointPolygons;
-  @Uint32() int samplerMipLodBias;
-  @Uint32() int separateStencilMaskRef;
-  @Uint32() int shaderSampleRateInterpolationFunctions;
-  @Uint32() int tessellationIsolines;
-  @Uint32() int tessellationPointMode;
-  @Uint32() int triangleFans;
-  @Uint32() int vertexAttributeAccessBeyondStride;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int constantAlphaColorBlendFactors;
+  @Uint32()
+  external int events;
+  @Uint32()
+  external int imageViewFormatReinterpretation;
+  @Uint32()
+  external int imageViewFormatSwizzle;
+  @Uint32()
+  external int imageView2DOn3DImage;
+  @Uint32()
+  external int multisampleArrayImage;
+  @Uint32()
+  external int mutableComparisonSamplers;
+  @Uint32()
+  external int pointPolygons;
+  @Uint32()
+  external int samplerMipLodBias;
+  @Uint32()
+  external int separateStencilMaskRef;
+  @Uint32()
+  external int shaderSampleRateInterpolationFunctions;
+  @Uint32()
+  external int tessellationIsolines;
+  @Uint32()
+  external int tessellationPointMode;
+  @Uint32()
+  external int triangleFans;
+  @Uint32()
+  external int vertexAttributeAccessBeyondStride;
 }
 
 class VkPhysicalDevicePortabilitySubsetPropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int minVertexInputBindingStrideAlignment;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int minVertexInputBindingStrideAlignment;
 }
 
 class VkPhysicalDevice4444FormatsFeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int formatA4R4G4B4;
-  @Uint32() int formatA4B4G4R4;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int formatA4R4G4B4;
+  @Uint32()
+  external int formatA4B4G4R4;
 }
 
 class VkBufferCopy2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int srcOffset;
-  @Uint64() int dstOffset;
-  @Uint64() int size;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int srcOffset;
+  @Uint64()
+  external int dstOffset;
+  @Uint64()
+  external int size;
 }
 
 class VkImageCopy2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcSubresource_aspectMask;
-  @Uint32() int srcSubresource_mipLevel;
-  @Uint32() int srcSubresource_baseArrayLayer;
-  @Uint32() int srcSubresource_layerCount;
-  @Int32() int srcOffset_x;
-  @Int32() int srcOffset_y;
-  @Int32() int srcOffset_z;
-  @Uint32() int dstSubresource_aspectMask;
-  @Uint32() int dstSubresource_mipLevel;
-  @Uint32() int dstSubresource_baseArrayLayer;
-  @Uint32() int dstSubresource_layerCount;
-  @Int32() int dstOffset_x;
-  @Int32() int dstOffset_y;
-  @Int32() int dstOffset_z;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int extent_depth;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcSubresource_aspectMask;
+  @Uint32()
+  external int srcSubresource_mipLevel;
+  @Uint32()
+  external int srcSubresource_baseArrayLayer;
+  @Uint32()
+  external int srcSubresource_layerCount;
+  @Int32()
+  external int srcOffset_x;
+  @Int32()
+  external int srcOffset_y;
+  @Int32()
+  external int srcOffset_z;
+  @Uint32()
+  external int dstSubresource_aspectMask;
+  @Uint32()
+  external int dstSubresource_mipLevel;
+  @Uint32()
+  external int dstSubresource_baseArrayLayer;
+  @Uint32()
+  external int dstSubresource_layerCount;
+  @Int32()
+  external int dstOffset_x;
+  @Int32()
+  external int dstOffset_y;
+  @Int32()
+  external int dstOffset_z;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int extent_depth;
 }
 
 class VkImageBlit2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcSubresource_aspectMask;
-  @Uint32() int srcSubresource_mipLevel;
-  @Uint32() int srcSubresource_baseArrayLayer;
-  @Uint32() int srcSubresource_layerCount;
-  Pointer srcOffsets_0; Pointer srcOffsets_1;
-  @Uint32() int dstSubresource_aspectMask;
-  @Uint32() int dstSubresource_mipLevel;
-  @Uint32() int dstSubresource_baseArrayLayer;
-  @Uint32() int dstSubresource_layerCount;
-  Pointer dstOffsets_0; Pointer dstOffsets_1;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcSubresource_aspectMask;
+  @Uint32()
+  external int srcSubresource_mipLevel;
+  @Uint32()
+  external int srcSubresource_baseArrayLayer;
+  @Uint32()
+  external int srcSubresource_layerCount;
+  @Array(2)
+  external Array<Pointer> srcOffsets;
+  @Uint32()
+  external int dstSubresource_aspectMask;
+  @Uint32()
+  external int dstSubresource_mipLevel;
+  @Uint32()
+  external int dstSubresource_baseArrayLayer;
+  @Uint32()
+  external int dstSubresource_layerCount;
+  @Array(2)
+  external Array<Pointer> dstOffsets;
 }
 
 class VkBufferImageCopy2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int bufferOffset;
-  @Uint32() int bufferRowLength;
-  @Uint32() int bufferImageHeight;
-  @Uint32() int imageSubresource_aspectMask;
-  @Uint32() int imageSubresource_mipLevel;
-  @Uint32() int imageSubresource_baseArrayLayer;
-  @Uint32() int imageSubresource_layerCount;
-  @Int32() int imageOffset_x;
-  @Int32() int imageOffset_y;
-  @Int32() int imageOffset_z;
-  @Uint32() int imageExtent_width;
-  @Uint32() int imageExtent_height;
-  @Uint32() int imageExtent_depth;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int bufferOffset;
+  @Uint32()
+  external int bufferRowLength;
+  @Uint32()
+  external int bufferImageHeight;
+  @Uint32()
+  external int imageSubresource_aspectMask;
+  @Uint32()
+  external int imageSubresource_mipLevel;
+  @Uint32()
+  external int imageSubresource_baseArrayLayer;
+  @Uint32()
+  external int imageSubresource_layerCount;
+  @Int32()
+  external int imageOffset_x;
+  @Int32()
+  external int imageOffset_y;
+  @Int32()
+  external int imageOffset_z;
+  @Uint32()
+  external int imageExtent_width;
+  @Uint32()
+  external int imageExtent_height;
+  @Uint32()
+  external int imageExtent_depth;
 }
 
 class VkImageResolve2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int srcSubresource_aspectMask;
-  @Uint32() int srcSubresource_mipLevel;
-  @Uint32() int srcSubresource_baseArrayLayer;
-  @Uint32() int srcSubresource_layerCount;
-  @Int32() int srcOffset_x;
-  @Int32() int srcOffset_y;
-  @Int32() int srcOffset_z;
-  @Uint32() int dstSubresource_aspectMask;
-  @Uint32() int dstSubresource_mipLevel;
-  @Uint32() int dstSubresource_baseArrayLayer;
-  @Uint32() int dstSubresource_layerCount;
-  @Int32() int dstOffset_x;
-  @Int32() int dstOffset_y;
-  @Int32() int dstOffset_z;
-  @Uint32() int extent_width;
-  @Uint32() int extent_height;
-  @Uint32() int extent_depth;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int srcSubresource_aspectMask;
+  @Uint32()
+  external int srcSubresource_mipLevel;
+  @Uint32()
+  external int srcSubresource_baseArrayLayer;
+  @Uint32()
+  external int srcSubresource_layerCount;
+  @Int32()
+  external int srcOffset_x;
+  @Int32()
+  external int srcOffset_y;
+  @Int32()
+  external int srcOffset_z;
+  @Uint32()
+  external int dstSubresource_aspectMask;
+  @Uint32()
+  external int dstSubresource_mipLevel;
+  @Uint32()
+  external int dstSubresource_baseArrayLayer;
+  @Uint32()
+  external int dstSubresource_layerCount;
+  @Int32()
+  external int dstOffset_x;
+  @Int32()
+  external int dstOffset_y;
+  @Int32()
+  external int dstOffset_z;
+  @Uint32()
+  external int extent_width;
+  @Uint32()
+  external int extent_height;
+  @Uint32()
+  external int extent_depth;
 }
 
 class VkCopyBufferInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> srcBuffer;
-  Pointer<VkBuffer> dstBuffer;
-  @Uint32() int regionCount;
-  Pointer<VkBufferCopy2KHR> pRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> srcBuffer;
+  external Pointer<VkBuffer> dstBuffer;
+  @Uint32()
+  external int regionCount;
+  external Pointer<VkBufferCopy2KHR> pRegions;
 }
 
 class VkCopyImageInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> srcImage;
-  @Int32() int srcImageLayout;
-  Pointer<VkImage> dstImage;
-  @Int32() int dstImageLayout;
-  @Uint32() int regionCount;
-  Pointer<VkImageCopy2KHR> pRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> srcImage;
+  @Int32()
+  external int srcImageLayout;
+  external Pointer<VkImage> dstImage;
+  @Int32()
+  external int dstImageLayout;
+  @Uint32()
+  external int regionCount;
+  external Pointer<VkImageCopy2KHR> pRegions;
 }
 
 class VkBlitImageInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> srcImage;
-  @Int32() int srcImageLayout;
-  Pointer<VkImage> dstImage;
-  @Int32() int dstImageLayout;
-  @Uint32() int regionCount;
-  Pointer<VkImageBlit2KHR> pRegions;
-  @Int32() int filter;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> srcImage;
+  @Int32()
+  external int srcImageLayout;
+  external Pointer<VkImage> dstImage;
+  @Int32()
+  external int dstImageLayout;
+  @Uint32()
+  external int regionCount;
+  external Pointer<VkImageBlit2KHR> pRegions;
+  @Int32()
+  external int filter;
 }
 
 class VkCopyBufferToImageInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkBuffer> srcBuffer;
-  Pointer<VkImage> dstImage;
-  @Int32() int dstImageLayout;
-  @Uint32() int regionCount;
-  Pointer<VkBufferImageCopy2KHR> pRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkBuffer> srcBuffer;
+  external Pointer<VkImage> dstImage;
+  @Int32()
+  external int dstImageLayout;
+  @Uint32()
+  external int regionCount;
+  external Pointer<VkBufferImageCopy2KHR> pRegions;
 }
 
 class VkCopyImageToBufferInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> srcImage;
-  @Int32() int srcImageLayout;
-  Pointer<VkBuffer> dstBuffer;
-  @Uint32() int regionCount;
-  Pointer<VkBufferImageCopy2KHR> pRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> srcImage;
+  @Int32()
+  external int srcImageLayout;
+  external Pointer<VkBuffer> dstBuffer;
+  @Uint32()
+  external int regionCount;
+  external Pointer<VkBufferImageCopy2KHR> pRegions;
 }
 
 class VkResolveImageInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkImage> srcImage;
-  @Int32() int srcImageLayout;
-  Pointer<VkImage> dstImage;
-  @Int32() int dstImageLayout;
-  @Uint32() int regionCount;
-  Pointer<VkImageResolve2KHR> pRegions;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkImage> srcImage;
+  @Int32()
+  external int srcImageLayout;
+  external Pointer<VkImage> dstImage;
+  @Int32()
+  external int dstImageLayout;
+  @Uint32()
+  external int regionCount;
+  external Pointer<VkImageResolve2KHR> pRegions;
 }
 
 class VkPhysicalDeviceShaderImageAtomicInt64FeaturesEXT extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderImageInt64Atomics;
-  @Uint32() int sparseImageInt64Atomics;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderImageInt64Atomics;
+  @Uint32()
+  external int sparseImageInt64Atomics;
 }
 
 class VkFragmentShadingRateAttachmentInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkAttachmentReference2> pFragmentShadingRateAttachment;
-  @Uint32() int shadingRateAttachmentTexelSize_width;
-  @Uint32() int shadingRateAttachmentTexelSize_height;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkAttachmentReference2> pFragmentShadingRateAttachment;
+  @Uint32()
+  external int shadingRateAttachmentTexelSize_width;
+  @Uint32()
+  external int shadingRateAttachmentTexelSize_height;
 }
 
 class VkPipelineFragmentShadingRateStateCreateInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentSize_width;
-  @Uint32() int fragmentSize_height;
-  Pointer combinerOps_0; Pointer combinerOps_1;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentSize_width;
+  @Uint32()
+  external int fragmentSize_height;
+  @Array(2)
+  external Array<Pointer> combinerOps;
 }
 
 class VkPhysicalDeviceFragmentShadingRateFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int pipelineFragmentShadingRate;
-  @Uint32() int primitiveFragmentShadingRate;
-  @Uint32() int attachmentFragmentShadingRate;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int pipelineFragmentShadingRate;
+  @Uint32()
+  external int primitiveFragmentShadingRate;
+  @Uint32()
+  external int attachmentFragmentShadingRate;
 }
 
 class VkPhysicalDeviceFragmentShadingRatePropertiesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int minFragmentShadingRateAttachmentTexelSize_width;
-  @Uint32() int minFragmentShadingRateAttachmentTexelSize_height;
-  @Uint32() int maxFragmentShadingRateAttachmentTexelSize_width;
-  @Uint32() int maxFragmentShadingRateAttachmentTexelSize_height;
-  @Uint32() int maxFragmentShadingRateAttachmentTexelSizeAspectRatio;
-  @Uint32() int primitiveFragmentShadingRateWithMultipleViewports;
-  @Uint32() int layeredShadingRateAttachments;
-  @Uint32() int fragmentShadingRateNonTrivialCombinerOps;
-  @Uint32() int maxFragmentSize_width;
-  @Uint32() int maxFragmentSize_height;
-  @Uint32() int maxFragmentSizeAspectRatio;
-  @Uint32() int maxFragmentShadingRateCoverageSamples;
-  @Int32() int maxFragmentShadingRateRasterizationSamples;
-  @Uint32() int fragmentShadingRateWithShaderDepthStencilWrites;
-  @Uint32() int fragmentShadingRateWithSampleMask;
-  @Uint32() int fragmentShadingRateWithShaderSampleMask;
-  @Uint32() int fragmentShadingRateWithConservativeRasterization;
-  @Uint32() int fragmentShadingRateWithFragmentShaderInterlock;
-  @Uint32() int fragmentShadingRateWithCustomSampleLocations;
-  @Uint32() int fragmentShadingRateStrictMultiplyCombiner;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int minFragmentShadingRateAttachmentTexelSize_width;
+  @Uint32()
+  external int minFragmentShadingRateAttachmentTexelSize_height;
+  @Uint32()
+  external int maxFragmentShadingRateAttachmentTexelSize_width;
+  @Uint32()
+  external int maxFragmentShadingRateAttachmentTexelSize_height;
+  @Uint32()
+  external int maxFragmentShadingRateAttachmentTexelSizeAspectRatio;
+  @Uint32()
+  external int primitiveFragmentShadingRateWithMultipleViewports;
+  @Uint32()
+  external int layeredShadingRateAttachments;
+  @Uint32()
+  external int fragmentShadingRateNonTrivialCombinerOps;
+  @Uint32()
+  external int maxFragmentSize_width;
+  @Uint32()
+  external int maxFragmentSize_height;
+  @Uint32()
+  external int maxFragmentSizeAspectRatio;
+  @Uint32()
+  external int maxFragmentShadingRateCoverageSamples;
+  @Int32()
+  external int maxFragmentShadingRateRasterizationSamples;
+  @Uint32()
+  external int fragmentShadingRateWithShaderDepthStencilWrites;
+  @Uint32()
+  external int fragmentShadingRateWithSampleMask;
+  @Uint32()
+  external int fragmentShadingRateWithShaderSampleMask;
+  @Uint32()
+  external int fragmentShadingRateWithConservativeRasterization;
+  @Uint32()
+  external int fragmentShadingRateWithFragmentShaderInterlock;
+  @Uint32()
+  external int fragmentShadingRateWithCustomSampleLocations;
+  @Uint32()
+  external int fragmentShadingRateStrictMultiplyCombiner;
 }
 
 class VkPhysicalDeviceFragmentShadingRateKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int sampleCounts;
-  @Uint32() int fragmentSize_width;
-  @Uint32() int fragmentSize_height;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int sampleCounts;
+  @Uint32()
+  external int fragmentSize_width;
+  @Uint32()
+  external int fragmentSize_height;
 }
 
 class VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int shaderTerminateInvocation;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int shaderTerminateInvocation;
 }
 
 class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int fragmentShadingRateEnums;
-  @Uint32() int supersampleFragmentShadingRates;
-  @Uint32() int noInvocationFragmentShadingRates;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int fragmentShadingRateEnums;
+  @Uint32()
+  external int supersampleFragmentShadingRates;
+  @Uint32()
+  external int noInvocationFragmentShadingRates;
 }
 
 class VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int maxFragmentShadingRateInvocationCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int maxFragmentShadingRateInvocationCount;
 }
 
 class VkPipelineFragmentShadingRateEnumStateCreateInfoNV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Int32() int shadingRateType;
-  @Int32() int shadingRate;
-  Pointer combinerOps_0; Pointer combinerOps_1;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Int32()
+  external int shadingRateType;
+  @Int32()
+  external int shadingRate;
+  @Array(2)
+  external Array<Pointer> combinerOps;
 }
 
 class VkAccelerationStructureBuildSizesInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int accelerationStructureSize;
-  @Uint64() int updateScratchSize;
-  @Uint64() int buildScratchSize;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int accelerationStructureSize;
+  @Uint64()
+  external int updateScratchSize;
+  @Uint64()
+  external int buildScratchSize;
 }
 
 class VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int mutableDescriptorType;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int mutableDescriptorType;
 }
 
 class VkMutableDescriptorTypeListVALVE extends Struct {
-  @Uint32() int descriptorTypeCount;
-  Pointer<Int32> pDescriptorTypes;
+  @Uint32()
+  external int descriptorTypeCount;
+  external Pointer<Int32> pDescriptorTypes;
 }
 
 class VkMutableDescriptorTypeCreateInfoVALVE extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int mutableDescriptorTypeListCount;
-  Pointer<VkMutableDescriptorTypeListVALVE> pMutableDescriptorTypeLists;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int mutableDescriptorTypeListCount;
+  external Pointer<VkMutableDescriptorTypeListVALVE> pMutableDescriptorTypeLists;
 }
 
 class VkMemoryBarrier2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int srcStageMask;
-  @Uint64() int srcAccessMask;
-  @Uint64() int dstStageMask;
-  @Uint64() int dstAccessMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int srcStageMask;
+  @Uint64()
+  external int srcAccessMask;
+  @Uint64()
+  external int dstStageMask;
+  @Uint64()
+  external int dstAccessMask;
 }
 
 class VkImageMemoryBarrier2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int srcStageMask;
-  @Uint64() int srcAccessMask;
-  @Uint64() int dstStageMask;
-  @Uint64() int dstAccessMask;
-  @Int32() int oldLayout;
-  @Int32() int newLayout;
-  @Uint32() int srcQueueFamilyIndex;
-  @Uint32() int dstQueueFamilyIndex;
-  Pointer<VkImage> image;
-  @Uint32() int subresourceRange_aspectMask;
-  @Uint32() int subresourceRange_baseMipLevel;
-  @Uint32() int subresourceRange_levelCount;
-  @Uint32() int subresourceRange_baseArrayLayer;
-  @Uint32() int subresourceRange_layerCount;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int srcStageMask;
+  @Uint64()
+  external int srcAccessMask;
+  @Uint64()
+  external int dstStageMask;
+  @Uint64()
+  external int dstAccessMask;
+  @Int32()
+  external int oldLayout;
+  @Int32()
+  external int newLayout;
+  @Uint32()
+  external int srcQueueFamilyIndex;
+  @Uint32()
+  external int dstQueueFamilyIndex;
+  external Pointer<VkImage> image;
+  @Uint32()
+  external int subresourceRange_aspectMask;
+  @Uint32()
+  external int subresourceRange_baseMipLevel;
+  @Uint32()
+  external int subresourceRange_levelCount;
+  @Uint32()
+  external int subresourceRange_baseArrayLayer;
+  @Uint32()
+  external int subresourceRange_layerCount;
 }
 
 class VkBufferMemoryBarrier2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int srcStageMask;
-  @Uint64() int srcAccessMask;
-  @Uint64() int dstStageMask;
-  @Uint64() int dstAccessMask;
-  @Uint32() int srcQueueFamilyIndex;
-  @Uint32() int dstQueueFamilyIndex;
-  Pointer<VkBuffer> buffer;
-  @Uint64() int offset;
-  @Uint64() int size;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int srcStageMask;
+  @Uint64()
+  external int srcAccessMask;
+  @Uint64()
+  external int dstStageMask;
+  @Uint64()
+  external int dstAccessMask;
+  @Uint32()
+  external int srcQueueFamilyIndex;
+  @Uint32()
+  external int dstQueueFamilyIndex;
+  external Pointer<VkBuffer> buffer;
+  @Uint64()
+  external int offset;
+  @Uint64()
+  external int size;
 }
 
 class VkDependencyInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int dependencyFlags;
-  @Uint32() int memoryBarrierCount;
-  Pointer<VkMemoryBarrier2KHR> pMemoryBarriers;
-  @Uint32() int bufferMemoryBarrierCount;
-  Pointer<VkBufferMemoryBarrier2KHR> pBufferMemoryBarriers;
-  @Uint32() int imageMemoryBarrierCount;
-  Pointer<VkImageMemoryBarrier2KHR> pImageMemoryBarriers;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int dependencyFlags;
+  @Uint32()
+  external int memoryBarrierCount;
+  external Pointer<VkMemoryBarrier2KHR> pMemoryBarriers;
+  @Uint32()
+  external int bufferMemoryBarrierCount;
+  external Pointer<VkBufferMemoryBarrier2KHR> pBufferMemoryBarriers;
+  @Uint32()
+  external int imageMemoryBarrierCount;
+  external Pointer<VkImageMemoryBarrier2KHR> pImageMemoryBarriers;
 }
 
 class VkSemaphoreSubmitInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkSemaphore> semaphore;
-  @Uint64() int value;
-  @Uint64() int stageMask;
-  @Uint32() int deviceIndex;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkSemaphore> semaphore;
+  @Uint64()
+  external int value;
+  @Uint64()
+  external int stageMask;
+  @Uint32()
+  external int deviceIndex;
 }
 
 class VkCommandBufferSubmitInfoKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  Pointer<VkCommandBuffer> commandBuffer;
-  @Uint32() int deviceMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  external Pointer<VkCommandBuffer> commandBuffer;
+  @Uint32()
+  external int deviceMask;
 }
 
 class VkSubmitInfo2KHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int flags;
-  @Uint32() int waitSemaphoreInfoCount;
-  Pointer<VkSemaphoreSubmitInfoKHR> pWaitSemaphoreInfos;
-  @Uint32() int commandBufferInfoCount;
-  Pointer<VkCommandBufferSubmitInfoKHR> pCommandBufferInfos;
-  @Uint32() int signalSemaphoreInfoCount;
-  Pointer<VkSemaphoreSubmitInfoKHR> pSignalSemaphoreInfos;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int flags;
+  @Uint32()
+  external int waitSemaphoreInfoCount;
+  external Pointer<VkSemaphoreSubmitInfoKHR> pWaitSemaphoreInfos;
+  @Uint32()
+  external int commandBufferInfoCount;
+  external Pointer<VkCommandBufferSubmitInfoKHR> pCommandBufferInfos;
+  @Uint32()
+  external int signalSemaphoreInfoCount;
+  external Pointer<VkSemaphoreSubmitInfoKHR> pSignalSemaphoreInfos;
 }
 
 class VkQueueFamilyCheckpointProperties2NV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int checkpointExecutionStageMask;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int checkpointExecutionStageMask;
 }
 
 class VkCheckpointData2NV extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint64() int stage;
-  Pointer pCheckpointMarker;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint64()
+  external int stage;
+  external Pointer pCheckpointMarker;
 }
 
 class VkPhysicalDeviceSynchronization2FeaturesKHR extends Struct {
-  @Int32() int sType;
-  Pointer pNext;
-  @Uint32() int synchronization2;
+  @Int32()
+  external int sType;
+  external Pointer pNext;
+  @Uint32()
+  external int synchronization2;
 }
 
 //null
