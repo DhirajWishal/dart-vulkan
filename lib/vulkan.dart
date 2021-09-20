@@ -12,6 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
+/// Vulkan 1.2 FFI bindings for Dart
 library vulkan;
 
 export 'src/vulkan_header.dart';
