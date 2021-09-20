@@ -17,928 +17,1759 @@ import 'dart:ffi';
 import 'vulkan_header.dart';
 import 'vulkan_library.dart';
 
-VkCreateInstance vkCreateInstance = Pointer<NativeFunction<VkCreateInstanceNative>>.fromAddress(0).asFunction<VkCreateInstance>();
-VkDestroyInstance vkDestroyInstance = Pointer<NativeFunction<VkDestroyInstanceNative>>.fromAddress(0).asFunction<VkDestroyInstance>();
-VkEnumeratePhysicalDevices vkEnumeratePhysicalDevices = Pointer<NativeFunction<VkEnumeratePhysicalDevicesNative>>.fromAddress(0).asFunction<VkEnumeratePhysicalDevices>();
-VkGetDeviceProcAddr vkGetDeviceProcAddr = Pointer<NativeFunction<VkGetDeviceProcAddrNative>>.fromAddress(0).asFunction<VkGetDeviceProcAddr>();
-VkGetInstanceProcAddr vkGetInstanceProcAddr = Pointer<NativeFunction<VkGetInstanceProcAddrNative>>.fromAddress(0).asFunction<VkGetInstanceProcAddr>();
-VkGetPhysicalDeviceProperties vkGetPhysicalDeviceProperties = Pointer<NativeFunction<VkGetPhysicalDevicePropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceProperties>();
-VkGetPhysicalDeviceQueueFamilyProperties vkGetPhysicalDeviceQueueFamilyProperties = Pointer<NativeFunction<VkGetPhysicalDeviceQueueFamilyPropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceQueueFamilyProperties>();
-VkGetPhysicalDeviceMemoryProperties vkGetPhysicalDeviceMemoryProperties = Pointer<NativeFunction<VkGetPhysicalDeviceMemoryPropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceMemoryProperties>();
-VkGetPhysicalDeviceFeatures vkGetPhysicalDeviceFeatures = Pointer<NativeFunction<VkGetPhysicalDeviceFeaturesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFeatures>();
-VkGetPhysicalDeviceFormatProperties vkGetPhysicalDeviceFormatProperties = Pointer<NativeFunction<VkGetPhysicalDeviceFormatPropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFormatProperties>();
-VkGetPhysicalDeviceImageFormatProperties vkGetPhysicalDeviceImageFormatProperties = Pointer<NativeFunction<VkGetPhysicalDeviceImageFormatPropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceImageFormatProperties>();
-VkCreateDevice vkCreateDevice = Pointer<NativeFunction<VkCreateDeviceNative>>.fromAddress(0).asFunction<VkCreateDevice>();
-VkDestroyDevice vkDestroyDevice = Pointer<NativeFunction<VkDestroyDeviceNative>>.fromAddress(0).asFunction<VkDestroyDevice>();
-VkEnumerateInstanceVersion vkEnumerateInstanceVersion = Pointer<NativeFunction<VkEnumerateInstanceVersionNative>>.fromAddress(0).asFunction<VkEnumerateInstanceVersion>();
-VkEnumerateInstanceLayerProperties vkEnumerateInstanceLayerProperties = Pointer<NativeFunction<VkEnumerateInstanceLayerPropertiesNative>>.fromAddress(0).asFunction<VkEnumerateInstanceLayerProperties>();
-VkEnumerateInstanceExtensionProperties vkEnumerateInstanceExtensionProperties = Pointer<NativeFunction<VkEnumerateInstanceExtensionPropertiesNative>>.fromAddress(0).asFunction<VkEnumerateInstanceExtensionProperties>();
-VkEnumerateDeviceLayerProperties vkEnumerateDeviceLayerProperties = Pointer<NativeFunction<VkEnumerateDeviceLayerPropertiesNative>>.fromAddress(0).asFunction<VkEnumerateDeviceLayerProperties>();
-VkEnumerateDeviceExtensionProperties vkEnumerateDeviceExtensionProperties = Pointer<NativeFunction<VkEnumerateDeviceExtensionPropertiesNative>>.fromAddress(0).asFunction<VkEnumerateDeviceExtensionProperties>();
-VkGetDeviceQueue vkGetDeviceQueue = Pointer<NativeFunction<VkGetDeviceQueueNative>>.fromAddress(0).asFunction<VkGetDeviceQueue>();
-VkQueueSubmit vkQueueSubmit = Pointer<NativeFunction<VkQueueSubmitNative>>.fromAddress(0).asFunction<VkQueueSubmit>();
-VkQueueWaitIdle vkQueueWaitIdle = Pointer<NativeFunction<VkQueueWaitIdleNative>>.fromAddress(0).asFunction<VkQueueWaitIdle>();
-VkDeviceWaitIdle vkDeviceWaitIdle = Pointer<NativeFunction<VkDeviceWaitIdleNative>>.fromAddress(0).asFunction<VkDeviceWaitIdle>();
-VkAllocateMemory vkAllocateMemory = Pointer<NativeFunction<VkAllocateMemoryNative>>.fromAddress(0).asFunction<VkAllocateMemory>();
-VkFreeMemory vkFreeMemory = Pointer<NativeFunction<VkFreeMemoryNative>>.fromAddress(0).asFunction<VkFreeMemory>();
-VkMapMemory vkMapMemory = Pointer<NativeFunction<VkMapMemoryNative>>.fromAddress(0).asFunction<VkMapMemory>();
-VkUnmapMemory vkUnmapMemory = Pointer<NativeFunction<VkUnmapMemoryNative>>.fromAddress(0).asFunction<VkUnmapMemory>();
-VkFlushMappedMemoryRanges vkFlushMappedMemoryRanges = Pointer<NativeFunction<VkFlushMappedMemoryRangesNative>>.fromAddress(0).asFunction<VkFlushMappedMemoryRanges>();
-VkInvalidateMappedMemoryRanges vkInvalidateMappedMemoryRanges = Pointer<NativeFunction<VkInvalidateMappedMemoryRangesNative>>.fromAddress(0).asFunction<VkInvalidateMappedMemoryRanges>();
-VkGetDeviceMemoryCommitment vkGetDeviceMemoryCommitment = Pointer<NativeFunction<VkGetDeviceMemoryCommitmentNative>>.fromAddress(0).asFunction<VkGetDeviceMemoryCommitment>();
-VkGetBufferMemoryRequirements vkGetBufferMemoryRequirements = Pointer<NativeFunction<VkGetBufferMemoryRequirementsNative>>.fromAddress(0).asFunction<VkGetBufferMemoryRequirements>();
-VkBindBufferMemory vkBindBufferMemory = Pointer<NativeFunction<VkBindBufferMemoryNative>>.fromAddress(0).asFunction<VkBindBufferMemory>();
-VkGetImageMemoryRequirements vkGetImageMemoryRequirements = Pointer<NativeFunction<VkGetImageMemoryRequirementsNative>>.fromAddress(0).asFunction<VkGetImageMemoryRequirements>();
-VkBindImageMemory vkBindImageMemory = Pointer<NativeFunction<VkBindImageMemoryNative>>.fromAddress(0).asFunction<VkBindImageMemory>();
-VkGetImageSparseMemoryRequirements vkGetImageSparseMemoryRequirements = Pointer<NativeFunction<VkGetImageSparseMemoryRequirementsNative>>.fromAddress(0).asFunction<VkGetImageSparseMemoryRequirements>();
-VkGetPhysicalDeviceSparseImageFormatProperties vkGetPhysicalDeviceSparseImageFormatProperties = Pointer<NativeFunction<VkGetPhysicalDeviceSparseImageFormatPropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSparseImageFormatProperties>();
-VkQueueBindSparse vkQueueBindSparse = Pointer<NativeFunction<VkQueueBindSparseNative>>.fromAddress(0).asFunction<VkQueueBindSparse>();
-VkCreateFence vkCreateFence = Pointer<NativeFunction<VkCreateFenceNative>>.fromAddress(0).asFunction<VkCreateFence>();
-VkDestroyFence vkDestroyFence = Pointer<NativeFunction<VkDestroyFenceNative>>.fromAddress(0).asFunction<VkDestroyFence>();
-VkResetFences vkResetFences = Pointer<NativeFunction<VkResetFencesNative>>.fromAddress(0).asFunction<VkResetFences>();
-VkGetFenceStatus vkGetFenceStatus = Pointer<NativeFunction<VkGetFenceStatusNative>>.fromAddress(0).asFunction<VkGetFenceStatus>();
-VkWaitForFences vkWaitForFences = Pointer<NativeFunction<VkWaitForFencesNative>>.fromAddress(0).asFunction<VkWaitForFences>();
-VkCreateSemaphore vkCreateSemaphore = Pointer<NativeFunction<VkCreateSemaphoreNative>>.fromAddress(0).asFunction<VkCreateSemaphore>();
-VkDestroySemaphore vkDestroySemaphore = Pointer<NativeFunction<VkDestroySemaphoreNative>>.fromAddress(0).asFunction<VkDestroySemaphore>();
-VkCreateEvent vkCreateEvent = Pointer<NativeFunction<VkCreateEventNative>>.fromAddress(0).asFunction<VkCreateEvent>();
-VkDestroyEvent vkDestroyEvent = Pointer<NativeFunction<VkDestroyEventNative>>.fromAddress(0).asFunction<VkDestroyEvent>();
-VkGetEventStatus vkGetEventStatus = Pointer<NativeFunction<VkGetEventStatusNative>>.fromAddress(0).asFunction<VkGetEventStatus>();
-VkSetEvent vkSetEvent = Pointer<NativeFunction<VkSetEventNative>>.fromAddress(0).asFunction<VkSetEvent>();
-VkResetEvent vkResetEvent = Pointer<NativeFunction<VkResetEventNative>>.fromAddress(0).asFunction<VkResetEvent>();
-VkCreateQueryPool vkCreateQueryPool = Pointer<NativeFunction<VkCreateQueryPoolNative>>.fromAddress(0).asFunction<VkCreateQueryPool>();
-VkDestroyQueryPool vkDestroyQueryPool = Pointer<NativeFunction<VkDestroyQueryPoolNative>>.fromAddress(0).asFunction<VkDestroyQueryPool>();
-VkGetQueryPoolResults vkGetQueryPoolResults = Pointer<NativeFunction<VkGetQueryPoolResultsNative>>.fromAddress(0).asFunction<VkGetQueryPoolResults>();
-VkResetQueryPool vkResetQueryPool = Pointer<NativeFunction<VkResetQueryPoolNative>>.fromAddress(0).asFunction<VkResetQueryPool>();
-VkResetQueryPoolEXT vkResetQueryPoolEXT = Pointer<NativeFunction<VkResetQueryPoolEXTNative>>.fromAddress(0).asFunction<VkResetQueryPoolEXT>();
-VkCreateBuffer vkCreateBuffer = Pointer<NativeFunction<VkCreateBufferNative>>.fromAddress(0).asFunction<VkCreateBuffer>();
-VkDestroyBuffer vkDestroyBuffer = Pointer<NativeFunction<VkDestroyBufferNative>>.fromAddress(0).asFunction<VkDestroyBuffer>();
-VkCreateBufferView vkCreateBufferView = Pointer<NativeFunction<VkCreateBufferViewNative>>.fromAddress(0).asFunction<VkCreateBufferView>();
-VkDestroyBufferView vkDestroyBufferView = Pointer<NativeFunction<VkDestroyBufferViewNative>>.fromAddress(0).asFunction<VkDestroyBufferView>();
-VkCreateImage vkCreateImage = Pointer<NativeFunction<VkCreateImageNative>>.fromAddress(0).asFunction<VkCreateImage>();
-VkDestroyImage vkDestroyImage = Pointer<NativeFunction<VkDestroyImageNative>>.fromAddress(0).asFunction<VkDestroyImage>();
-VkGetImageSubresourceLayout vkGetImageSubresourceLayout = Pointer<NativeFunction<VkGetImageSubresourceLayoutNative>>.fromAddress(0).asFunction<VkGetImageSubresourceLayout>();
-VkCreateImageView vkCreateImageView = Pointer<NativeFunction<VkCreateImageViewNative>>.fromAddress(0).asFunction<VkCreateImageView>();
-VkDestroyImageView vkDestroyImageView = Pointer<NativeFunction<VkDestroyImageViewNative>>.fromAddress(0).asFunction<VkDestroyImageView>();
-VkCreateShaderModule vkCreateShaderModule = Pointer<NativeFunction<VkCreateShaderModuleNative>>.fromAddress(0).asFunction<VkCreateShaderModule>();
-VkDestroyShaderModule vkDestroyShaderModule = Pointer<NativeFunction<VkDestroyShaderModuleNative>>.fromAddress(0).asFunction<VkDestroyShaderModule>();
-VkCreatePipelineCache vkCreatePipelineCache = Pointer<NativeFunction<VkCreatePipelineCacheNative>>.fromAddress(0).asFunction<VkCreatePipelineCache>();
-VkDestroyPipelineCache vkDestroyPipelineCache = Pointer<NativeFunction<VkDestroyPipelineCacheNative>>.fromAddress(0).asFunction<VkDestroyPipelineCache>();
-VkGetPipelineCacheData vkGetPipelineCacheData = Pointer<NativeFunction<VkGetPipelineCacheDataNative>>.fromAddress(0).asFunction<VkGetPipelineCacheData>();
-VkMergePipelineCaches vkMergePipelineCaches = Pointer<NativeFunction<VkMergePipelineCachesNative>>.fromAddress(0).asFunction<VkMergePipelineCaches>();
-VkCreateGraphicsPipelines vkCreateGraphicsPipelines = Pointer<NativeFunction<VkCreateGraphicsPipelinesNative>>.fromAddress(0).asFunction<VkCreateGraphicsPipelines>();
-VkCreateComputePipelines vkCreateComputePipelines = Pointer<NativeFunction<VkCreateComputePipelinesNative>>.fromAddress(0).asFunction<VkCreateComputePipelines>();
-VkDestroyPipeline vkDestroyPipeline = Pointer<NativeFunction<VkDestroyPipelineNative>>.fromAddress(0).asFunction<VkDestroyPipeline>();
-VkCreatePipelineLayout vkCreatePipelineLayout = Pointer<NativeFunction<VkCreatePipelineLayoutNative>>.fromAddress(0).asFunction<VkCreatePipelineLayout>();
-VkDestroyPipelineLayout vkDestroyPipelineLayout = Pointer<NativeFunction<VkDestroyPipelineLayoutNative>>.fromAddress(0).asFunction<VkDestroyPipelineLayout>();
-VkCreateSampler vkCreateSampler = Pointer<NativeFunction<VkCreateSamplerNative>>.fromAddress(0).asFunction<VkCreateSampler>();
-VkDestroySampler vkDestroySampler = Pointer<NativeFunction<VkDestroySamplerNative>>.fromAddress(0).asFunction<VkDestroySampler>();
-VkCreateDescriptorSetLayout vkCreateDescriptorSetLayout = Pointer<NativeFunction<VkCreateDescriptorSetLayoutNative>>.fromAddress(0).asFunction<VkCreateDescriptorSetLayout>();
-VkDestroyDescriptorSetLayout vkDestroyDescriptorSetLayout = Pointer<NativeFunction<VkDestroyDescriptorSetLayoutNative>>.fromAddress(0).asFunction<VkDestroyDescriptorSetLayout>();
-VkCreateDescriptorPool vkCreateDescriptorPool = Pointer<NativeFunction<VkCreateDescriptorPoolNative>>.fromAddress(0).asFunction<VkCreateDescriptorPool>();
-VkDestroyDescriptorPool vkDestroyDescriptorPool = Pointer<NativeFunction<VkDestroyDescriptorPoolNative>>.fromAddress(0).asFunction<VkDestroyDescriptorPool>();
-VkResetDescriptorPool vkResetDescriptorPool = Pointer<NativeFunction<VkResetDescriptorPoolNative>>.fromAddress(0).asFunction<VkResetDescriptorPool>();
-VkAllocateDescriptorSets vkAllocateDescriptorSets = Pointer<NativeFunction<VkAllocateDescriptorSetsNative>>.fromAddress(0).asFunction<VkAllocateDescriptorSets>();
-VkFreeDescriptorSets vkFreeDescriptorSets = Pointer<NativeFunction<VkFreeDescriptorSetsNative>>.fromAddress(0).asFunction<VkFreeDescriptorSets>();
-VkUpdateDescriptorSets vkUpdateDescriptorSets = Pointer<NativeFunction<VkUpdateDescriptorSetsNative>>.fromAddress(0).asFunction<VkUpdateDescriptorSets>();
-VkCreateFramebuffer vkCreateFramebuffer = Pointer<NativeFunction<VkCreateFramebufferNative>>.fromAddress(0).asFunction<VkCreateFramebuffer>();
-VkDestroyFramebuffer vkDestroyFramebuffer = Pointer<NativeFunction<VkDestroyFramebufferNative>>.fromAddress(0).asFunction<VkDestroyFramebuffer>();
-VkCreateRenderPass vkCreateRenderPass = Pointer<NativeFunction<VkCreateRenderPassNative>>.fromAddress(0).asFunction<VkCreateRenderPass>();
-VkDestroyRenderPass vkDestroyRenderPass = Pointer<NativeFunction<VkDestroyRenderPassNative>>.fromAddress(0).asFunction<VkDestroyRenderPass>();
-VkGetRenderAreaGranularity vkGetRenderAreaGranularity = Pointer<NativeFunction<VkGetRenderAreaGranularityNative>>.fromAddress(0).asFunction<VkGetRenderAreaGranularity>();
-VkCreateCommandPool vkCreateCommandPool = Pointer<NativeFunction<VkCreateCommandPoolNative>>.fromAddress(0).asFunction<VkCreateCommandPool>();
-VkDestroyCommandPool vkDestroyCommandPool = Pointer<NativeFunction<VkDestroyCommandPoolNative>>.fromAddress(0).asFunction<VkDestroyCommandPool>();
-VkResetCommandPool vkResetCommandPool = Pointer<NativeFunction<VkResetCommandPoolNative>>.fromAddress(0).asFunction<VkResetCommandPool>();
-VkAllocateCommandBuffers vkAllocateCommandBuffers = Pointer<NativeFunction<VkAllocateCommandBuffersNative>>.fromAddress(0).asFunction<VkAllocateCommandBuffers>();
-VkFreeCommandBuffers vkFreeCommandBuffers = Pointer<NativeFunction<VkFreeCommandBuffersNative>>.fromAddress(0).asFunction<VkFreeCommandBuffers>();
-VkBeginCommandBuffer vkBeginCommandBuffer = Pointer<NativeFunction<VkBeginCommandBufferNative>>.fromAddress(0).asFunction<VkBeginCommandBuffer>();
-VkEndCommandBuffer vkEndCommandBuffer = Pointer<NativeFunction<VkEndCommandBufferNative>>.fromAddress(0).asFunction<VkEndCommandBuffer>();
-VkResetCommandBuffer vkResetCommandBuffer = Pointer<NativeFunction<VkResetCommandBufferNative>>.fromAddress(0).asFunction<VkResetCommandBuffer>();
-VkCmdBindPipeline vkCmdBindPipeline = Pointer<NativeFunction<VkCmdBindPipelineNative>>.fromAddress(0).asFunction<VkCmdBindPipeline>();
-VkCmdSetViewport vkCmdSetViewport = Pointer<NativeFunction<VkCmdSetViewportNative>>.fromAddress(0).asFunction<VkCmdSetViewport>();
-VkCmdSetScissor vkCmdSetScissor = Pointer<NativeFunction<VkCmdSetScissorNative>>.fromAddress(0).asFunction<VkCmdSetScissor>();
-VkCmdSetLineWidth vkCmdSetLineWidth = Pointer<NativeFunction<VkCmdSetLineWidthNative>>.fromAddress(0).asFunction<VkCmdSetLineWidth>();
-VkCmdSetDepthBias vkCmdSetDepthBias = Pointer<NativeFunction<VkCmdSetDepthBiasNative>>.fromAddress(0).asFunction<VkCmdSetDepthBias>();
-VkCmdSetBlendConstants vkCmdSetBlendConstants = Pointer<NativeFunction<VkCmdSetBlendConstantsNative>>.fromAddress(0).asFunction<VkCmdSetBlendConstants>();
-VkCmdSetDepthBounds vkCmdSetDepthBounds = Pointer<NativeFunction<VkCmdSetDepthBoundsNative>>.fromAddress(0).asFunction<VkCmdSetDepthBounds>();
-VkCmdSetStencilCompareMask vkCmdSetStencilCompareMask = Pointer<NativeFunction<VkCmdSetStencilCompareMaskNative>>.fromAddress(0).asFunction<VkCmdSetStencilCompareMask>();
-VkCmdSetStencilWriteMask vkCmdSetStencilWriteMask = Pointer<NativeFunction<VkCmdSetStencilWriteMaskNative>>.fromAddress(0).asFunction<VkCmdSetStencilWriteMask>();
-VkCmdSetStencilReference vkCmdSetStencilReference = Pointer<NativeFunction<VkCmdSetStencilReferenceNative>>.fromAddress(0).asFunction<VkCmdSetStencilReference>();
-VkCmdBindDescriptorSets vkCmdBindDescriptorSets = Pointer<NativeFunction<VkCmdBindDescriptorSetsNative>>.fromAddress(0).asFunction<VkCmdBindDescriptorSets>();
-VkCmdBindIndexBuffer vkCmdBindIndexBuffer = Pointer<NativeFunction<VkCmdBindIndexBufferNative>>.fromAddress(0).asFunction<VkCmdBindIndexBuffer>();
-VkCmdBindVertexBuffers vkCmdBindVertexBuffers = Pointer<NativeFunction<VkCmdBindVertexBuffersNative>>.fromAddress(0).asFunction<VkCmdBindVertexBuffers>();
-VkCmdDraw vkCmdDraw = Pointer<NativeFunction<VkCmdDrawNative>>.fromAddress(0).asFunction<VkCmdDraw>();
-VkCmdDrawIndexed vkCmdDrawIndexed = Pointer<NativeFunction<VkCmdDrawIndexedNative>>.fromAddress(0).asFunction<VkCmdDrawIndexed>();
-VkCmdDrawIndirect vkCmdDrawIndirect = Pointer<NativeFunction<VkCmdDrawIndirectNative>>.fromAddress(0).asFunction<VkCmdDrawIndirect>();
-VkCmdDrawIndexedIndirect vkCmdDrawIndexedIndirect = Pointer<NativeFunction<VkCmdDrawIndexedIndirectNative>>.fromAddress(0).asFunction<VkCmdDrawIndexedIndirect>();
-VkCmdDispatch vkCmdDispatch = Pointer<NativeFunction<VkCmdDispatchNative>>.fromAddress(0).asFunction<VkCmdDispatch>();
-VkCmdDispatchIndirect vkCmdDispatchIndirect = Pointer<NativeFunction<VkCmdDispatchIndirectNative>>.fromAddress(0).asFunction<VkCmdDispatchIndirect>();
-VkCmdCopyBuffer vkCmdCopyBuffer = Pointer<NativeFunction<VkCmdCopyBufferNative>>.fromAddress(0).asFunction<VkCmdCopyBuffer>();
-VkCmdCopyImage vkCmdCopyImage = Pointer<NativeFunction<VkCmdCopyImageNative>>.fromAddress(0).asFunction<VkCmdCopyImage>();
-VkCmdBlitImage vkCmdBlitImage = Pointer<NativeFunction<VkCmdBlitImageNative>>.fromAddress(0).asFunction<VkCmdBlitImage>();
-VkCmdCopyBufferToImage vkCmdCopyBufferToImage = Pointer<NativeFunction<VkCmdCopyBufferToImageNative>>.fromAddress(0).asFunction<VkCmdCopyBufferToImage>();
-VkCmdCopyImageToBuffer vkCmdCopyImageToBuffer = Pointer<NativeFunction<VkCmdCopyImageToBufferNative>>.fromAddress(0).asFunction<VkCmdCopyImageToBuffer>();
-VkCmdUpdateBuffer vkCmdUpdateBuffer = Pointer<NativeFunction<VkCmdUpdateBufferNative>>.fromAddress(0).asFunction<VkCmdUpdateBuffer>();
-VkCmdFillBuffer vkCmdFillBuffer = Pointer<NativeFunction<VkCmdFillBufferNative>>.fromAddress(0).asFunction<VkCmdFillBuffer>();
-VkCmdClearColorImage vkCmdClearColorImage = Pointer<NativeFunction<VkCmdClearColorImageNative>>.fromAddress(0).asFunction<VkCmdClearColorImage>();
-VkCmdClearDepthStencilImage vkCmdClearDepthStencilImage = Pointer<NativeFunction<VkCmdClearDepthStencilImageNative>>.fromAddress(0).asFunction<VkCmdClearDepthStencilImage>();
-VkCmdClearAttachments vkCmdClearAttachments = Pointer<NativeFunction<VkCmdClearAttachmentsNative>>.fromAddress(0).asFunction<VkCmdClearAttachments>();
-VkCmdResolveImage vkCmdResolveImage = Pointer<NativeFunction<VkCmdResolveImageNative>>.fromAddress(0).asFunction<VkCmdResolveImage>();
-VkCmdSetEvent vkCmdSetEvent = Pointer<NativeFunction<VkCmdSetEventNative>>.fromAddress(0).asFunction<VkCmdSetEvent>();
-VkCmdResetEvent vkCmdResetEvent = Pointer<NativeFunction<VkCmdResetEventNative>>.fromAddress(0).asFunction<VkCmdResetEvent>();
-VkCmdWaitEvents vkCmdWaitEvents = Pointer<NativeFunction<VkCmdWaitEventsNative>>.fromAddress(0).asFunction<VkCmdWaitEvents>();
-VkCmdPipelineBarrier vkCmdPipelineBarrier = Pointer<NativeFunction<VkCmdPipelineBarrierNative>>.fromAddress(0).asFunction<VkCmdPipelineBarrier>();
-VkCmdBeginQuery vkCmdBeginQuery = Pointer<NativeFunction<VkCmdBeginQueryNative>>.fromAddress(0).asFunction<VkCmdBeginQuery>();
-VkCmdEndQuery vkCmdEndQuery = Pointer<NativeFunction<VkCmdEndQueryNative>>.fromAddress(0).asFunction<VkCmdEndQuery>();
-VkCmdBeginConditionalRenderingEXT vkCmdBeginConditionalRenderingEXT = Pointer<NativeFunction<VkCmdBeginConditionalRenderingEXTNative>>.fromAddress(0).asFunction<VkCmdBeginConditionalRenderingEXT>();
-VkCmdEndConditionalRenderingEXT vkCmdEndConditionalRenderingEXT = Pointer<NativeFunction<VkCmdEndConditionalRenderingEXTNative>>.fromAddress(0).asFunction<VkCmdEndConditionalRenderingEXT>();
-VkCmdResetQueryPool vkCmdResetQueryPool = Pointer<NativeFunction<VkCmdResetQueryPoolNative>>.fromAddress(0).asFunction<VkCmdResetQueryPool>();
-VkCmdWriteTimestamp vkCmdWriteTimestamp = Pointer<NativeFunction<VkCmdWriteTimestampNative>>.fromAddress(0).asFunction<VkCmdWriteTimestamp>();
-VkCmdCopyQueryPoolResults vkCmdCopyQueryPoolResults = Pointer<NativeFunction<VkCmdCopyQueryPoolResultsNative>>.fromAddress(0).asFunction<VkCmdCopyQueryPoolResults>();
-VkCmdPushConstants vkCmdPushConstants = Pointer<NativeFunction<VkCmdPushConstantsNative>>.fromAddress(0).asFunction<VkCmdPushConstants>();
-VkCmdBeginRenderPass vkCmdBeginRenderPass = Pointer<NativeFunction<VkCmdBeginRenderPassNative>>.fromAddress(0).asFunction<VkCmdBeginRenderPass>();
-VkCmdNextSubpass vkCmdNextSubpass = Pointer<NativeFunction<VkCmdNextSubpassNative>>.fromAddress(0).asFunction<VkCmdNextSubpass>();
-VkCmdEndRenderPass vkCmdEndRenderPass = Pointer<NativeFunction<VkCmdEndRenderPassNative>>.fromAddress(0).asFunction<VkCmdEndRenderPass>();
-VkCmdExecuteCommands vkCmdExecuteCommands = Pointer<NativeFunction<VkCmdExecuteCommandsNative>>.fromAddress(0).asFunction<VkCmdExecuteCommands>();
-VkCreateAndroidSurfaceKHR vkCreateAndroidSurfaceKHR = Pointer<NativeFunction<VkCreateAndroidSurfaceKHRNative>>.fromAddress(0).asFunction<VkCreateAndroidSurfaceKHR>();
-VkGetPhysicalDeviceDisplayPropertiesKHR vkGetPhysicalDeviceDisplayPropertiesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceDisplayPropertiesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceDisplayPropertiesKHR>();
-VkGetPhysicalDeviceDisplayPlanePropertiesKHR vkGetPhysicalDeviceDisplayPlanePropertiesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceDisplayPlanePropertiesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceDisplayPlanePropertiesKHR>();
-VkGetDisplayPlaneSupportedDisplaysKHR vkGetDisplayPlaneSupportedDisplaysKHR = Pointer<NativeFunction<VkGetDisplayPlaneSupportedDisplaysKHRNative>>.fromAddress(0).asFunction<VkGetDisplayPlaneSupportedDisplaysKHR>();
-VkGetDisplayModePropertiesKHR vkGetDisplayModePropertiesKHR = Pointer<NativeFunction<VkGetDisplayModePropertiesKHRNative>>.fromAddress(0).asFunction<VkGetDisplayModePropertiesKHR>();
-VkCreateDisplayModeKHR vkCreateDisplayModeKHR = Pointer<NativeFunction<VkCreateDisplayModeKHRNative>>.fromAddress(0).asFunction<VkCreateDisplayModeKHR>();
-VkGetDisplayPlaneCapabilitiesKHR vkGetDisplayPlaneCapabilitiesKHR = Pointer<NativeFunction<VkGetDisplayPlaneCapabilitiesKHRNative>>.fromAddress(0).asFunction<VkGetDisplayPlaneCapabilitiesKHR>();
-VkCreateDisplayPlaneSurfaceKHR vkCreateDisplayPlaneSurfaceKHR = Pointer<NativeFunction<VkCreateDisplayPlaneSurfaceKHRNative>>.fromAddress(0).asFunction<VkCreateDisplayPlaneSurfaceKHR>();
-VkCreateSharedSwapchainsKHR vkCreateSharedSwapchainsKHR = Pointer<NativeFunction<VkCreateSharedSwapchainsKHRNative>>.fromAddress(0).asFunction<VkCreateSharedSwapchainsKHR>();
-VkDestroySurfaceKHR vkDestroySurfaceKHR = Pointer<NativeFunction<VkDestroySurfaceKHRNative>>.fromAddress(0).asFunction<VkDestroySurfaceKHR>();
-VkGetPhysicalDeviceSurfaceSupportKHR vkGetPhysicalDeviceSurfaceSupportKHR = Pointer<NativeFunction<VkGetPhysicalDeviceSurfaceSupportKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfaceSupportKHR>();
-VkGetPhysicalDeviceSurfaceCapabilitiesKHR vkGetPhysicalDeviceSurfaceCapabilitiesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceSurfaceCapabilitiesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfaceCapabilitiesKHR>();
-VkGetPhysicalDeviceSurfaceFormatsKHR vkGetPhysicalDeviceSurfaceFormatsKHR = Pointer<NativeFunction<VkGetPhysicalDeviceSurfaceFormatsKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfaceFormatsKHR>();
-VkGetPhysicalDeviceSurfacePresentModesKHR vkGetPhysicalDeviceSurfacePresentModesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceSurfacePresentModesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfacePresentModesKHR>();
-VkCreateSwapchainKHR vkCreateSwapchainKHR = Pointer<NativeFunction<VkCreateSwapchainKHRNative>>.fromAddress(0).asFunction<VkCreateSwapchainKHR>();
-VkDestroySwapchainKHR vkDestroySwapchainKHR = Pointer<NativeFunction<VkDestroySwapchainKHRNative>>.fromAddress(0).asFunction<VkDestroySwapchainKHR>();
-VkGetSwapchainImagesKHR vkGetSwapchainImagesKHR = Pointer<NativeFunction<VkGetSwapchainImagesKHRNative>>.fromAddress(0).asFunction<VkGetSwapchainImagesKHR>();
-VkAcquireNextImageKHR vkAcquireNextImageKHR = Pointer<NativeFunction<VkAcquireNextImageKHRNative>>.fromAddress(0).asFunction<VkAcquireNextImageKHR>();
-VkQueuePresentKHR vkQueuePresentKHR = Pointer<NativeFunction<VkQueuePresentKHRNative>>.fromAddress(0).asFunction<VkQueuePresentKHR>();
-VkCreateViSurfaceNN vkCreateViSurfaceNN = Pointer<NativeFunction<VkCreateViSurfaceNNNative>>.fromAddress(0).asFunction<VkCreateViSurfaceNN>();
-VkCreateWaylandSurfaceKHR vkCreateWaylandSurfaceKHR = Pointer<NativeFunction<VkCreateWaylandSurfaceKHRNative>>.fromAddress(0).asFunction<VkCreateWaylandSurfaceKHR>();
-VkGetPhysicalDeviceWaylandPresentationSupportKHR vkGetPhysicalDeviceWaylandPresentationSupportKHR = Pointer<NativeFunction<VkGetPhysicalDeviceWaylandPresentationSupportKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceWaylandPresentationSupportKHR>();
-VkCreateWin32SurfaceKHR vkCreateWin32SurfaceKHR = Pointer<NativeFunction<VkCreateWin32SurfaceKHRNative>>.fromAddress(0).asFunction<VkCreateWin32SurfaceKHR>();
-VkGetPhysicalDeviceWin32PresentationSupportKHR vkGetPhysicalDeviceWin32PresentationSupportKHR = Pointer<NativeFunction<VkGetPhysicalDeviceWin32PresentationSupportKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceWin32PresentationSupportKHR>();
-VkCreateXlibSurfaceKHR vkCreateXlibSurfaceKHR = Pointer<NativeFunction<VkCreateXlibSurfaceKHRNative>>.fromAddress(0).asFunction<VkCreateXlibSurfaceKHR>();
-VkGetPhysicalDeviceXlibPresentationSupportKHR vkGetPhysicalDeviceXlibPresentationSupportKHR = Pointer<NativeFunction<VkGetPhysicalDeviceXlibPresentationSupportKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceXlibPresentationSupportKHR>();
-VkCreateXcbSurfaceKHR vkCreateXcbSurfaceKHR = Pointer<NativeFunction<VkCreateXcbSurfaceKHRNative>>.fromAddress(0).asFunction<VkCreateXcbSurfaceKHR>();
-VkGetPhysicalDeviceXcbPresentationSupportKHR vkGetPhysicalDeviceXcbPresentationSupportKHR = Pointer<NativeFunction<VkGetPhysicalDeviceXcbPresentationSupportKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceXcbPresentationSupportKHR>();
-VkCreateDirectFBSurfaceEXT vkCreateDirectFBSurfaceEXT = Pointer<NativeFunction<VkCreateDirectFBSurfaceEXTNative>>.fromAddress(0).asFunction<VkCreateDirectFBSurfaceEXT>();
-VkGetPhysicalDeviceDirectFBPresentationSupportEXT vkGetPhysicalDeviceDirectFBPresentationSupportEXT = Pointer<NativeFunction<VkGetPhysicalDeviceDirectFBPresentationSupportEXTNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceDirectFBPresentationSupportEXT>();
-VkCreateImagePipeSurfaceFUCHSIA vkCreateImagePipeSurfaceFUCHSIA = Pointer<NativeFunction<VkCreateImagePipeSurfaceFUCHSIANative>>.fromAddress(0).asFunction<VkCreateImagePipeSurfaceFUCHSIA>();
-VkCreateStreamDescriptorSurfaceGGP vkCreateStreamDescriptorSurfaceGGP = Pointer<NativeFunction<VkCreateStreamDescriptorSurfaceGGPNative>>.fromAddress(0).asFunction<VkCreateStreamDescriptorSurfaceGGP>();
-VkCreateScreenSurfaceQNX vkCreateScreenSurfaceQNX = Pointer<NativeFunction<VkCreateScreenSurfaceQNXNative>>.fromAddress(0).asFunction<VkCreateScreenSurfaceQNX>();
-VkGetPhysicalDeviceScreenPresentationSupportQNX vkGetPhysicalDeviceScreenPresentationSupportQNX = Pointer<NativeFunction<VkGetPhysicalDeviceScreenPresentationSupportQNXNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceScreenPresentationSupportQNX>();
-VkCreateDebugReportCallbackEXT vkCreateDebugReportCallbackEXT = Pointer<NativeFunction<VkCreateDebugReportCallbackEXTNative>>.fromAddress(0).asFunction<VkCreateDebugReportCallbackEXT>();
-VkDestroyDebugReportCallbackEXT vkDestroyDebugReportCallbackEXT = Pointer<NativeFunction<VkDestroyDebugReportCallbackEXTNative>>.fromAddress(0).asFunction<VkDestroyDebugReportCallbackEXT>();
-VkDebugReportMessageEXT vkDebugReportMessageEXT = Pointer<NativeFunction<VkDebugReportMessageEXTNative>>.fromAddress(0).asFunction<VkDebugReportMessageEXT>();
-VkDebugMarkerSetObjectNameEXT vkDebugMarkerSetObjectNameEXT = Pointer<NativeFunction<VkDebugMarkerSetObjectNameEXTNative>>.fromAddress(0).asFunction<VkDebugMarkerSetObjectNameEXT>();
-VkDebugMarkerSetObjectTagEXT vkDebugMarkerSetObjectTagEXT = Pointer<NativeFunction<VkDebugMarkerSetObjectTagEXTNative>>.fromAddress(0).asFunction<VkDebugMarkerSetObjectTagEXT>();
-VkCmdDebugMarkerBeginEXT vkCmdDebugMarkerBeginEXT = Pointer<NativeFunction<VkCmdDebugMarkerBeginEXTNative>>.fromAddress(0).asFunction<VkCmdDebugMarkerBeginEXT>();
-VkCmdDebugMarkerEndEXT vkCmdDebugMarkerEndEXT = Pointer<NativeFunction<VkCmdDebugMarkerEndEXTNative>>.fromAddress(0).asFunction<VkCmdDebugMarkerEndEXT>();
-VkCmdDebugMarkerInsertEXT vkCmdDebugMarkerInsertEXT = Pointer<NativeFunction<VkCmdDebugMarkerInsertEXTNative>>.fromAddress(0).asFunction<VkCmdDebugMarkerInsertEXT>();
-VkGetPhysicalDeviceExternalImageFormatPropertiesNV vkGetPhysicalDeviceExternalImageFormatPropertiesNV = Pointer<NativeFunction<VkGetPhysicalDeviceExternalImageFormatPropertiesNVNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalImageFormatPropertiesNV>();
-VkGetMemoryWin32HandleNV vkGetMemoryWin32HandleNV = Pointer<NativeFunction<VkGetMemoryWin32HandleNVNative>>.fromAddress(0).asFunction<VkGetMemoryWin32HandleNV>();
-VkCmdExecuteGeneratedCommandsNV vkCmdExecuteGeneratedCommandsNV = Pointer<NativeFunction<VkCmdExecuteGeneratedCommandsNVNative>>.fromAddress(0).asFunction<VkCmdExecuteGeneratedCommandsNV>();
-VkCmdPreprocessGeneratedCommandsNV vkCmdPreprocessGeneratedCommandsNV = Pointer<NativeFunction<VkCmdPreprocessGeneratedCommandsNVNative>>.fromAddress(0).asFunction<VkCmdPreprocessGeneratedCommandsNV>();
-VkCmdBindPipelineShaderGroupNV vkCmdBindPipelineShaderGroupNV = Pointer<NativeFunction<VkCmdBindPipelineShaderGroupNVNative>>.fromAddress(0).asFunction<VkCmdBindPipelineShaderGroupNV>();
-VkGetGeneratedCommandsMemoryRequirementsNV vkGetGeneratedCommandsMemoryRequirementsNV = Pointer<NativeFunction<VkGetGeneratedCommandsMemoryRequirementsNVNative>>.fromAddress(0).asFunction<VkGetGeneratedCommandsMemoryRequirementsNV>();
-VkCreateIndirectCommandsLayoutNV vkCreateIndirectCommandsLayoutNV = Pointer<NativeFunction<VkCreateIndirectCommandsLayoutNVNative>>.fromAddress(0).asFunction<VkCreateIndirectCommandsLayoutNV>();
-VkDestroyIndirectCommandsLayoutNV vkDestroyIndirectCommandsLayoutNV = Pointer<NativeFunction<VkDestroyIndirectCommandsLayoutNVNative>>.fromAddress(0).asFunction<VkDestroyIndirectCommandsLayoutNV>();
-VkGetPhysicalDeviceFeatures2 vkGetPhysicalDeviceFeatures2 = Pointer<NativeFunction<VkGetPhysicalDeviceFeatures2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFeatures2>();
-VkGetPhysicalDeviceFeatures2KHR vkGetPhysicalDeviceFeatures2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceFeatures2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFeatures2KHR>();
-VkGetPhysicalDeviceProperties2 vkGetPhysicalDeviceProperties2 = Pointer<NativeFunction<VkGetPhysicalDeviceProperties2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceProperties2>();
-VkGetPhysicalDeviceProperties2KHR vkGetPhysicalDeviceProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceProperties2KHR>();
-VkGetPhysicalDeviceFormatProperties2 vkGetPhysicalDeviceFormatProperties2 = Pointer<NativeFunction<VkGetPhysicalDeviceFormatProperties2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFormatProperties2>();
-VkGetPhysicalDeviceFormatProperties2KHR vkGetPhysicalDeviceFormatProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceFormatProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFormatProperties2KHR>();
-VkGetPhysicalDeviceImageFormatProperties2 vkGetPhysicalDeviceImageFormatProperties2 = Pointer<NativeFunction<VkGetPhysicalDeviceImageFormatProperties2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceImageFormatProperties2>();
-VkGetPhysicalDeviceImageFormatProperties2KHR vkGetPhysicalDeviceImageFormatProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceImageFormatProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceImageFormatProperties2KHR>();
-VkGetPhysicalDeviceQueueFamilyProperties2 vkGetPhysicalDeviceQueueFamilyProperties2 = Pointer<NativeFunction<VkGetPhysicalDeviceQueueFamilyProperties2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceQueueFamilyProperties2>();
-VkGetPhysicalDeviceQueueFamilyProperties2KHR vkGetPhysicalDeviceQueueFamilyProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceQueueFamilyProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceQueueFamilyProperties2KHR>();
-VkGetPhysicalDeviceMemoryProperties2 vkGetPhysicalDeviceMemoryProperties2 = Pointer<NativeFunction<VkGetPhysicalDeviceMemoryProperties2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceMemoryProperties2>();
-VkGetPhysicalDeviceMemoryProperties2KHR vkGetPhysicalDeviceMemoryProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceMemoryProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceMemoryProperties2KHR>();
-VkGetPhysicalDeviceSparseImageFormatProperties2 vkGetPhysicalDeviceSparseImageFormatProperties2 = Pointer<NativeFunction<VkGetPhysicalDeviceSparseImageFormatProperties2Native>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSparseImageFormatProperties2>();
-VkGetPhysicalDeviceSparseImageFormatProperties2KHR vkGetPhysicalDeviceSparseImageFormatProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceSparseImageFormatProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSparseImageFormatProperties2KHR>();
-VkCmdPushDescriptorSetKHR vkCmdPushDescriptorSetKHR = Pointer<NativeFunction<VkCmdPushDescriptorSetKHRNative>>.fromAddress(0).asFunction<VkCmdPushDescriptorSetKHR>();
-VkTrimCommandPool vkTrimCommandPool = Pointer<NativeFunction<VkTrimCommandPoolNative>>.fromAddress(0).asFunction<VkTrimCommandPool>();
-VkTrimCommandPoolKHR vkTrimCommandPoolKHR = Pointer<NativeFunction<VkTrimCommandPoolKHRNative>>.fromAddress(0).asFunction<VkTrimCommandPoolKHR>();
-VkGetPhysicalDeviceExternalBufferProperties vkGetPhysicalDeviceExternalBufferProperties = Pointer<NativeFunction<VkGetPhysicalDeviceExternalBufferPropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalBufferProperties>();
-VkGetPhysicalDeviceExternalBufferPropertiesKHR vkGetPhysicalDeviceExternalBufferPropertiesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceExternalBufferPropertiesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalBufferPropertiesKHR>();
-VkGetMemoryWin32HandleKHR vkGetMemoryWin32HandleKHR = Pointer<NativeFunction<VkGetMemoryWin32HandleKHRNative>>.fromAddress(0).asFunction<VkGetMemoryWin32HandleKHR>();
-VkGetMemoryWin32HandlePropertiesKHR vkGetMemoryWin32HandlePropertiesKHR = Pointer<NativeFunction<VkGetMemoryWin32HandlePropertiesKHRNative>>.fromAddress(0).asFunction<VkGetMemoryWin32HandlePropertiesKHR>();
-VkGetMemoryFdKHR vkGetMemoryFdKHR = Pointer<NativeFunction<VkGetMemoryFdKHRNative>>.fromAddress(0).asFunction<VkGetMemoryFdKHR>();
-VkGetMemoryFdPropertiesKHR vkGetMemoryFdPropertiesKHR = Pointer<NativeFunction<VkGetMemoryFdPropertiesKHRNative>>.fromAddress(0).asFunction<VkGetMemoryFdPropertiesKHR>();
-VkGetPhysicalDeviceExternalSemaphoreProperties vkGetPhysicalDeviceExternalSemaphoreProperties = Pointer<NativeFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalSemaphoreProperties>();
-VkGetPhysicalDeviceExternalSemaphorePropertiesKHR vkGetPhysicalDeviceExternalSemaphorePropertiesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesKHR>();
-VkGetSemaphoreWin32HandleKHR vkGetSemaphoreWin32HandleKHR = Pointer<NativeFunction<VkGetSemaphoreWin32HandleKHRNative>>.fromAddress(0).asFunction<VkGetSemaphoreWin32HandleKHR>();
-VkImportSemaphoreWin32HandleKHR vkImportSemaphoreWin32HandleKHR = Pointer<NativeFunction<VkImportSemaphoreWin32HandleKHRNative>>.fromAddress(0).asFunction<VkImportSemaphoreWin32HandleKHR>();
-VkGetSemaphoreFdKHR vkGetSemaphoreFdKHR = Pointer<NativeFunction<VkGetSemaphoreFdKHRNative>>.fromAddress(0).asFunction<VkGetSemaphoreFdKHR>();
-VkImportSemaphoreFdKHR vkImportSemaphoreFdKHR = Pointer<NativeFunction<VkImportSemaphoreFdKHRNative>>.fromAddress(0).asFunction<VkImportSemaphoreFdKHR>();
-VkGetPhysicalDeviceExternalFenceProperties vkGetPhysicalDeviceExternalFenceProperties = Pointer<NativeFunction<VkGetPhysicalDeviceExternalFencePropertiesNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalFenceProperties>();
-VkGetPhysicalDeviceExternalFencePropertiesKHR vkGetPhysicalDeviceExternalFencePropertiesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceExternalFencePropertiesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceExternalFencePropertiesKHR>();
-VkGetFenceWin32HandleKHR vkGetFenceWin32HandleKHR = Pointer<NativeFunction<VkGetFenceWin32HandleKHRNative>>.fromAddress(0).asFunction<VkGetFenceWin32HandleKHR>();
-VkImportFenceWin32HandleKHR vkImportFenceWin32HandleKHR = Pointer<NativeFunction<VkImportFenceWin32HandleKHRNative>>.fromAddress(0).asFunction<VkImportFenceWin32HandleKHR>();
-VkGetFenceFdKHR vkGetFenceFdKHR = Pointer<NativeFunction<VkGetFenceFdKHRNative>>.fromAddress(0).asFunction<VkGetFenceFdKHR>();
-VkImportFenceFdKHR vkImportFenceFdKHR = Pointer<NativeFunction<VkImportFenceFdKHRNative>>.fromAddress(0).asFunction<VkImportFenceFdKHR>();
-VkReleaseDisplayEXT vkReleaseDisplayEXT = Pointer<NativeFunction<VkReleaseDisplayEXTNative>>.fromAddress(0).asFunction<VkReleaseDisplayEXT>();
-VkAcquireXlibDisplayEXT vkAcquireXlibDisplayEXT = Pointer<NativeFunction<VkAcquireXlibDisplayEXTNative>>.fromAddress(0).asFunction<VkAcquireXlibDisplayEXT>();
-VkGetRandROutputDisplayEXT vkGetRandROutputDisplayEXT = Pointer<NativeFunction<VkGetRandROutputDisplayEXTNative>>.fromAddress(0).asFunction<VkGetRandROutputDisplayEXT>();
-VkAcquireWinrtDisplayNV vkAcquireWinrtDisplayNV = Pointer<NativeFunction<VkAcquireWinrtDisplayNVNative>>.fromAddress(0).asFunction<VkAcquireWinrtDisplayNV>();
-VkGetWinrtDisplayNV vkGetWinrtDisplayNV = Pointer<NativeFunction<VkGetWinrtDisplayNVNative>>.fromAddress(0).asFunction<VkGetWinrtDisplayNV>();
-VkDisplayPowerControlEXT vkDisplayPowerControlEXT = Pointer<NativeFunction<VkDisplayPowerControlEXTNative>>.fromAddress(0).asFunction<VkDisplayPowerControlEXT>();
-VkRegisterDeviceEventEXT vkRegisterDeviceEventEXT = Pointer<NativeFunction<VkRegisterDeviceEventEXTNative>>.fromAddress(0).asFunction<VkRegisterDeviceEventEXT>();
-VkRegisterDisplayEventEXT vkRegisterDisplayEventEXT = Pointer<NativeFunction<VkRegisterDisplayEventEXTNative>>.fromAddress(0).asFunction<VkRegisterDisplayEventEXT>();
-VkGetSwapchainCounterEXT vkGetSwapchainCounterEXT = Pointer<NativeFunction<VkGetSwapchainCounterEXTNative>>.fromAddress(0).asFunction<VkGetSwapchainCounterEXT>();
-VkGetPhysicalDeviceSurfaceCapabilities2EXT vkGetPhysicalDeviceSurfaceCapabilities2EXT = Pointer<NativeFunction<VkGetPhysicalDeviceSurfaceCapabilities2EXTNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfaceCapabilities2EXT>();
-VkEnumeratePhysicalDeviceGroups vkEnumeratePhysicalDeviceGroups = Pointer<NativeFunction<VkEnumeratePhysicalDeviceGroupsNative>>.fromAddress(0).asFunction<VkEnumeratePhysicalDeviceGroups>();
-VkEnumeratePhysicalDeviceGroupsKHR vkEnumeratePhysicalDeviceGroupsKHR = Pointer<NativeFunction<VkEnumeratePhysicalDeviceGroupsKHRNative>>.fromAddress(0).asFunction<VkEnumeratePhysicalDeviceGroupsKHR>();
-VkGetDeviceGroupPeerMemoryFeatures vkGetDeviceGroupPeerMemoryFeatures = Pointer<NativeFunction<VkGetDeviceGroupPeerMemoryFeaturesNative>>.fromAddress(0).asFunction<VkGetDeviceGroupPeerMemoryFeatures>();
-VkGetDeviceGroupPeerMemoryFeaturesKHR vkGetDeviceGroupPeerMemoryFeaturesKHR = Pointer<NativeFunction<VkGetDeviceGroupPeerMemoryFeaturesKHRNative>>.fromAddress(0).asFunction<VkGetDeviceGroupPeerMemoryFeaturesKHR>();
-VkBindBufferMemory2 vkBindBufferMemory2 = Pointer<NativeFunction<VkBindBufferMemory2Native>>.fromAddress(0).asFunction<VkBindBufferMemory2>();
-VkBindBufferMemory2KHR vkBindBufferMemory2KHR = Pointer<NativeFunction<VkBindBufferMemory2KHRNative>>.fromAddress(0).asFunction<VkBindBufferMemory2KHR>();
-VkBindImageMemory2 vkBindImageMemory2 = Pointer<NativeFunction<VkBindImageMemory2Native>>.fromAddress(0).asFunction<VkBindImageMemory2>();
-VkBindImageMemory2KHR vkBindImageMemory2KHR = Pointer<NativeFunction<VkBindImageMemory2KHRNative>>.fromAddress(0).asFunction<VkBindImageMemory2KHR>();
-VkCmdSetDeviceMask vkCmdSetDeviceMask = Pointer<NativeFunction<VkCmdSetDeviceMaskNative>>.fromAddress(0).asFunction<VkCmdSetDeviceMask>();
-VkCmdSetDeviceMaskKHR vkCmdSetDeviceMaskKHR = Pointer<NativeFunction<VkCmdSetDeviceMaskKHRNative>>.fromAddress(0).asFunction<VkCmdSetDeviceMaskKHR>();
-VkGetDeviceGroupPresentCapabilitiesKHR vkGetDeviceGroupPresentCapabilitiesKHR = Pointer<NativeFunction<VkGetDeviceGroupPresentCapabilitiesKHRNative>>.fromAddress(0).asFunction<VkGetDeviceGroupPresentCapabilitiesKHR>();
-VkGetDeviceGroupSurfacePresentModesKHR vkGetDeviceGroupSurfacePresentModesKHR = Pointer<NativeFunction<VkGetDeviceGroupSurfacePresentModesKHRNative>>.fromAddress(0).asFunction<VkGetDeviceGroupSurfacePresentModesKHR>();
-VkAcquireNextImage2KHR vkAcquireNextImage2KHR = Pointer<NativeFunction<VkAcquireNextImage2KHRNative>>.fromAddress(0).asFunction<VkAcquireNextImage2KHR>();
-VkCmdDispatchBase vkCmdDispatchBase = Pointer<NativeFunction<VkCmdDispatchBaseNative>>.fromAddress(0).asFunction<VkCmdDispatchBase>();
-VkCmdDispatchBaseKHR vkCmdDispatchBaseKHR = Pointer<NativeFunction<VkCmdDispatchBaseKHRNative>>.fromAddress(0).asFunction<VkCmdDispatchBaseKHR>();
-VkGetPhysicalDevicePresentRectanglesKHR vkGetPhysicalDevicePresentRectanglesKHR = Pointer<NativeFunction<VkGetPhysicalDevicePresentRectanglesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDevicePresentRectanglesKHR>();
-VkCreateDescriptorUpdateTemplate vkCreateDescriptorUpdateTemplate = Pointer<NativeFunction<VkCreateDescriptorUpdateTemplateNative>>.fromAddress(0).asFunction<VkCreateDescriptorUpdateTemplate>();
-VkCreateDescriptorUpdateTemplateKHR vkCreateDescriptorUpdateTemplateKHR = Pointer<NativeFunction<VkCreateDescriptorUpdateTemplateKHRNative>>.fromAddress(0).asFunction<VkCreateDescriptorUpdateTemplateKHR>();
-VkDestroyDescriptorUpdateTemplate vkDestroyDescriptorUpdateTemplate = Pointer<NativeFunction<VkDestroyDescriptorUpdateTemplateNative>>.fromAddress(0).asFunction<VkDestroyDescriptorUpdateTemplate>();
-VkDestroyDescriptorUpdateTemplateKHR vkDestroyDescriptorUpdateTemplateKHR = Pointer<NativeFunction<VkDestroyDescriptorUpdateTemplateKHRNative>>.fromAddress(0).asFunction<VkDestroyDescriptorUpdateTemplateKHR>();
-VkUpdateDescriptorSetWithTemplate vkUpdateDescriptorSetWithTemplate = Pointer<NativeFunction<VkUpdateDescriptorSetWithTemplateNative>>.fromAddress(0).asFunction<VkUpdateDescriptorSetWithTemplate>();
-VkUpdateDescriptorSetWithTemplateKHR vkUpdateDescriptorSetWithTemplateKHR = Pointer<NativeFunction<VkUpdateDescriptorSetWithTemplateKHRNative>>.fromAddress(0).asFunction<VkUpdateDescriptorSetWithTemplateKHR>();
-VkCmdPushDescriptorSetWithTemplateKHR vkCmdPushDescriptorSetWithTemplateKHR = Pointer<NativeFunction<VkCmdPushDescriptorSetWithTemplateKHRNative>>.fromAddress(0).asFunction<VkCmdPushDescriptorSetWithTemplateKHR>();
-VkSetHdrMetadataEXT vkSetHdrMetadataEXT = Pointer<NativeFunction<VkSetHdrMetadataEXTNative>>.fromAddress(0).asFunction<VkSetHdrMetadataEXT>();
-VkGetSwapchainStatusKHR vkGetSwapchainStatusKHR = Pointer<NativeFunction<VkGetSwapchainStatusKHRNative>>.fromAddress(0).asFunction<VkGetSwapchainStatusKHR>();
-VkGetRefreshCycleDurationGOOGLE vkGetRefreshCycleDurationGOOGLE = Pointer<NativeFunction<VkGetRefreshCycleDurationGOOGLENative>>.fromAddress(0).asFunction<VkGetRefreshCycleDurationGOOGLE>();
-VkGetPastPresentationTimingGOOGLE vkGetPastPresentationTimingGOOGLE = Pointer<NativeFunction<VkGetPastPresentationTimingGOOGLENative>>.fromAddress(0).asFunction<VkGetPastPresentationTimingGOOGLE>();
-VkCreateIOSSurfaceMVK vkCreateIOSSurfaceMVK = Pointer<NativeFunction<VkCreateIOSSurfaceMVKNative>>.fromAddress(0).asFunction<VkCreateIOSSurfaceMVK>();
-VkCreateMacOSSurfaceMVK vkCreateMacOSSurfaceMVK = Pointer<NativeFunction<VkCreateMacOSSurfaceMVKNative>>.fromAddress(0).asFunction<VkCreateMacOSSurfaceMVK>();
-VkCreateMetalSurfaceEXT vkCreateMetalSurfaceEXT = Pointer<NativeFunction<VkCreateMetalSurfaceEXTNative>>.fromAddress(0).asFunction<VkCreateMetalSurfaceEXT>();
-VkCmdSetViewportWScalingNV vkCmdSetViewportWScalingNV = Pointer<NativeFunction<VkCmdSetViewportWScalingNVNative>>.fromAddress(0).asFunction<VkCmdSetViewportWScalingNV>();
-VkCmdSetDiscardRectangleEXT vkCmdSetDiscardRectangleEXT = Pointer<NativeFunction<VkCmdSetDiscardRectangleEXTNative>>.fromAddress(0).asFunction<VkCmdSetDiscardRectangleEXT>();
-VkCmdSetSampleLocationsEXT vkCmdSetSampleLocationsEXT = Pointer<NativeFunction<VkCmdSetSampleLocationsEXTNative>>.fromAddress(0).asFunction<VkCmdSetSampleLocationsEXT>();
-VkGetPhysicalDeviceMultisamplePropertiesEXT vkGetPhysicalDeviceMultisamplePropertiesEXT = Pointer<NativeFunction<VkGetPhysicalDeviceMultisamplePropertiesEXTNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceMultisamplePropertiesEXT>();
-VkGetPhysicalDeviceSurfaceCapabilities2KHR vkGetPhysicalDeviceSurfaceCapabilities2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceSurfaceCapabilities2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfaceCapabilities2KHR>();
-VkGetPhysicalDeviceSurfaceFormats2KHR vkGetPhysicalDeviceSurfaceFormats2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceSurfaceFormats2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfaceFormats2KHR>();
-VkGetPhysicalDeviceDisplayProperties2KHR vkGetPhysicalDeviceDisplayProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceDisplayProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceDisplayProperties2KHR>();
-VkGetPhysicalDeviceDisplayPlaneProperties2KHR vkGetPhysicalDeviceDisplayPlaneProperties2KHR = Pointer<NativeFunction<VkGetPhysicalDeviceDisplayPlaneProperties2KHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceDisplayPlaneProperties2KHR>();
-VkGetDisplayModeProperties2KHR vkGetDisplayModeProperties2KHR = Pointer<NativeFunction<VkGetDisplayModeProperties2KHRNative>>.fromAddress(0).asFunction<VkGetDisplayModeProperties2KHR>();
-VkGetDisplayPlaneCapabilities2KHR vkGetDisplayPlaneCapabilities2KHR = Pointer<NativeFunction<VkGetDisplayPlaneCapabilities2KHRNative>>.fromAddress(0).asFunction<VkGetDisplayPlaneCapabilities2KHR>();
-VkGetBufferMemoryRequirements2 vkGetBufferMemoryRequirements2 = Pointer<NativeFunction<VkGetBufferMemoryRequirements2Native>>.fromAddress(0).asFunction<VkGetBufferMemoryRequirements2>();
-VkGetBufferMemoryRequirements2KHR vkGetBufferMemoryRequirements2KHR = Pointer<NativeFunction<VkGetBufferMemoryRequirements2KHRNative>>.fromAddress(0).asFunction<VkGetBufferMemoryRequirements2KHR>();
-VkGetImageMemoryRequirements2 vkGetImageMemoryRequirements2 = Pointer<NativeFunction<VkGetImageMemoryRequirements2Native>>.fromAddress(0).asFunction<VkGetImageMemoryRequirements2>();
-VkGetImageMemoryRequirements2KHR vkGetImageMemoryRequirements2KHR = Pointer<NativeFunction<VkGetImageMemoryRequirements2KHRNative>>.fromAddress(0).asFunction<VkGetImageMemoryRequirements2KHR>();
-VkGetImageSparseMemoryRequirements2 vkGetImageSparseMemoryRequirements2 = Pointer<NativeFunction<VkGetImageSparseMemoryRequirements2Native>>.fromAddress(0).asFunction<VkGetImageSparseMemoryRequirements2>();
-VkGetImageSparseMemoryRequirements2KHR vkGetImageSparseMemoryRequirements2KHR = Pointer<NativeFunction<VkGetImageSparseMemoryRequirements2KHRNative>>.fromAddress(0).asFunction<VkGetImageSparseMemoryRequirements2KHR>();
-VkCreateSamplerYcbcrConversion vkCreateSamplerYcbcrConversion = Pointer<NativeFunction<VkCreateSamplerYcbcrConversionNative>>.fromAddress(0).asFunction<VkCreateSamplerYcbcrConversion>();
-VkCreateSamplerYcbcrConversionKHR vkCreateSamplerYcbcrConversionKHR = Pointer<NativeFunction<VkCreateSamplerYcbcrConversionKHRNative>>.fromAddress(0).asFunction<VkCreateSamplerYcbcrConversionKHR>();
-VkDestroySamplerYcbcrConversion vkDestroySamplerYcbcrConversion = Pointer<NativeFunction<VkDestroySamplerYcbcrConversionNative>>.fromAddress(0).asFunction<VkDestroySamplerYcbcrConversion>();
-VkDestroySamplerYcbcrConversionKHR vkDestroySamplerYcbcrConversionKHR = Pointer<NativeFunction<VkDestroySamplerYcbcrConversionKHRNative>>.fromAddress(0).asFunction<VkDestroySamplerYcbcrConversionKHR>();
-VkGetDeviceQueue2 vkGetDeviceQueue2 = Pointer<NativeFunction<VkGetDeviceQueue2Native>>.fromAddress(0).asFunction<VkGetDeviceQueue2>();
-VkCreateValidationCacheEXT vkCreateValidationCacheEXT = Pointer<NativeFunction<VkCreateValidationCacheEXTNative>>.fromAddress(0).asFunction<VkCreateValidationCacheEXT>();
-VkDestroyValidationCacheEXT vkDestroyValidationCacheEXT = Pointer<NativeFunction<VkDestroyValidationCacheEXTNative>>.fromAddress(0).asFunction<VkDestroyValidationCacheEXT>();
-VkGetValidationCacheDataEXT vkGetValidationCacheDataEXT = Pointer<NativeFunction<VkGetValidationCacheDataEXTNative>>.fromAddress(0).asFunction<VkGetValidationCacheDataEXT>();
-VkMergeValidationCachesEXT vkMergeValidationCachesEXT = Pointer<NativeFunction<VkMergeValidationCachesEXTNative>>.fromAddress(0).asFunction<VkMergeValidationCachesEXT>();
-VkGetDescriptorSetLayoutSupport vkGetDescriptorSetLayoutSupport = Pointer<NativeFunction<VkGetDescriptorSetLayoutSupportNative>>.fromAddress(0).asFunction<VkGetDescriptorSetLayoutSupport>();
-VkGetDescriptorSetLayoutSupportKHR vkGetDescriptorSetLayoutSupportKHR = Pointer<NativeFunction<VkGetDescriptorSetLayoutSupportKHRNative>>.fromAddress(0).asFunction<VkGetDescriptorSetLayoutSupportKHR>();
-VkGetSwapchainGrallocUsageANDROID vkGetSwapchainGrallocUsageANDROID = Pointer<NativeFunction<VkGetSwapchainGrallocUsageANDROIDNative>>.fromAddress(0).asFunction<VkGetSwapchainGrallocUsageANDROID>();
-VkGetSwapchainGrallocUsage2ANDROID vkGetSwapchainGrallocUsage2ANDROID = Pointer<NativeFunction<VkGetSwapchainGrallocUsage2ANDROIDNative>>.fromAddress(0).asFunction<VkGetSwapchainGrallocUsage2ANDROID>();
-VkAcquireImageANDROID vkAcquireImageANDROID = Pointer<NativeFunction<VkAcquireImageANDROIDNative>>.fromAddress(0).asFunction<VkAcquireImageANDROID>();
-VkQueueSignalReleaseImageANDROID vkQueueSignalReleaseImageANDROID = Pointer<NativeFunction<VkQueueSignalReleaseImageANDROIDNative>>.fromAddress(0).asFunction<VkQueueSignalReleaseImageANDROID>();
-VkGetShaderInfoAMD vkGetShaderInfoAMD = Pointer<NativeFunction<VkGetShaderInfoAMDNative>>.fromAddress(0).asFunction<VkGetShaderInfoAMD>();
-VkSetLocalDimmingAMD vkSetLocalDimmingAMD = Pointer<NativeFunction<VkSetLocalDimmingAMDNative>>.fromAddress(0).asFunction<VkSetLocalDimmingAMD>();
-VkGetPhysicalDeviceCalibrateableTimeDomainsEXT vkGetPhysicalDeviceCalibrateableTimeDomainsEXT = Pointer<NativeFunction<VkGetPhysicalDeviceCalibrateableTimeDomainsEXTNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceCalibrateableTimeDomainsEXT>();
-VkGetCalibratedTimestampsEXT vkGetCalibratedTimestampsEXT = Pointer<NativeFunction<VkGetCalibratedTimestampsEXTNative>>.fromAddress(0).asFunction<VkGetCalibratedTimestampsEXT>();
-VkSetDebugUtilsObjectNameEXT vkSetDebugUtilsObjectNameEXT = Pointer<NativeFunction<VkSetDebugUtilsObjectNameEXTNative>>.fromAddress(0).asFunction<VkSetDebugUtilsObjectNameEXT>();
-VkSetDebugUtilsObjectTagEXT vkSetDebugUtilsObjectTagEXT = Pointer<NativeFunction<VkSetDebugUtilsObjectTagEXTNative>>.fromAddress(0).asFunction<VkSetDebugUtilsObjectTagEXT>();
-VkQueueBeginDebugUtilsLabelEXT vkQueueBeginDebugUtilsLabelEXT = Pointer<NativeFunction<VkQueueBeginDebugUtilsLabelEXTNative>>.fromAddress(0).asFunction<VkQueueBeginDebugUtilsLabelEXT>();
-VkQueueEndDebugUtilsLabelEXT vkQueueEndDebugUtilsLabelEXT = Pointer<NativeFunction<VkQueueEndDebugUtilsLabelEXTNative>>.fromAddress(0).asFunction<VkQueueEndDebugUtilsLabelEXT>();
-VkQueueInsertDebugUtilsLabelEXT vkQueueInsertDebugUtilsLabelEXT = Pointer<NativeFunction<VkQueueInsertDebugUtilsLabelEXTNative>>.fromAddress(0).asFunction<VkQueueInsertDebugUtilsLabelEXT>();
-VkCmdBeginDebugUtilsLabelEXT vkCmdBeginDebugUtilsLabelEXT = Pointer<NativeFunction<VkCmdBeginDebugUtilsLabelEXTNative>>.fromAddress(0).asFunction<VkCmdBeginDebugUtilsLabelEXT>();
-VkCmdEndDebugUtilsLabelEXT vkCmdEndDebugUtilsLabelEXT = Pointer<NativeFunction<VkCmdEndDebugUtilsLabelEXTNative>>.fromAddress(0).asFunction<VkCmdEndDebugUtilsLabelEXT>();
-VkCmdInsertDebugUtilsLabelEXT vkCmdInsertDebugUtilsLabelEXT = Pointer<NativeFunction<VkCmdInsertDebugUtilsLabelEXTNative>>.fromAddress(0).asFunction<VkCmdInsertDebugUtilsLabelEXT>();
-VkCreateDebugUtilsMessengerEXT vkCreateDebugUtilsMessengerEXT = Pointer<NativeFunction<VkCreateDebugUtilsMessengerEXTNative>>.fromAddress(0).asFunction<VkCreateDebugUtilsMessengerEXT>();
-VkDestroyDebugUtilsMessengerEXT vkDestroyDebugUtilsMessengerEXT = Pointer<NativeFunction<VkDestroyDebugUtilsMessengerEXTNative>>.fromAddress(0).asFunction<VkDestroyDebugUtilsMessengerEXT>();
-VkSubmitDebugUtilsMessageEXT vkSubmitDebugUtilsMessageEXT = Pointer<NativeFunction<VkSubmitDebugUtilsMessageEXTNative>>.fromAddress(0).asFunction<VkSubmitDebugUtilsMessageEXT>();
-VkGetMemoryHostPointerPropertiesEXT vkGetMemoryHostPointerPropertiesEXT = Pointer<NativeFunction<VkGetMemoryHostPointerPropertiesEXTNative>>.fromAddress(0).asFunction<VkGetMemoryHostPointerPropertiesEXT>();
-VkCmdWriteBufferMarkerAMD vkCmdWriteBufferMarkerAMD = Pointer<NativeFunction<VkCmdWriteBufferMarkerAMDNative>>.fromAddress(0).asFunction<VkCmdWriteBufferMarkerAMD>();
-VkCreateRenderPass2 vkCreateRenderPass2 = Pointer<NativeFunction<VkCreateRenderPass2Native>>.fromAddress(0).asFunction<VkCreateRenderPass2>();
-VkCreateRenderPass2KHR vkCreateRenderPass2KHR = Pointer<NativeFunction<VkCreateRenderPass2KHRNative>>.fromAddress(0).asFunction<VkCreateRenderPass2KHR>();
-VkCmdBeginRenderPass2 vkCmdBeginRenderPass2 = Pointer<NativeFunction<VkCmdBeginRenderPass2Native>>.fromAddress(0).asFunction<VkCmdBeginRenderPass2>();
-VkCmdBeginRenderPass2KHR vkCmdBeginRenderPass2KHR = Pointer<NativeFunction<VkCmdBeginRenderPass2KHRNative>>.fromAddress(0).asFunction<VkCmdBeginRenderPass2KHR>();
-VkCmdNextSubpass2 vkCmdNextSubpass2 = Pointer<NativeFunction<VkCmdNextSubpass2Native>>.fromAddress(0).asFunction<VkCmdNextSubpass2>();
-VkCmdNextSubpass2KHR vkCmdNextSubpass2KHR = Pointer<NativeFunction<VkCmdNextSubpass2KHRNative>>.fromAddress(0).asFunction<VkCmdNextSubpass2KHR>();
-VkCmdEndRenderPass2 vkCmdEndRenderPass2 = Pointer<NativeFunction<VkCmdEndRenderPass2Native>>.fromAddress(0).asFunction<VkCmdEndRenderPass2>();
-VkCmdEndRenderPass2KHR vkCmdEndRenderPass2KHR = Pointer<NativeFunction<VkCmdEndRenderPass2KHRNative>>.fromAddress(0).asFunction<VkCmdEndRenderPass2KHR>();
-VkGetSemaphoreCounterValue vkGetSemaphoreCounterValue = Pointer<NativeFunction<VkGetSemaphoreCounterValueNative>>.fromAddress(0).asFunction<VkGetSemaphoreCounterValue>();
-VkGetSemaphoreCounterValueKHR vkGetSemaphoreCounterValueKHR = Pointer<NativeFunction<VkGetSemaphoreCounterValueKHRNative>>.fromAddress(0).asFunction<VkGetSemaphoreCounterValueKHR>();
-VkWaitSemaphores vkWaitSemaphores = Pointer<NativeFunction<VkWaitSemaphoresNative>>.fromAddress(0).asFunction<VkWaitSemaphores>();
-VkWaitSemaphoresKHR vkWaitSemaphoresKHR = Pointer<NativeFunction<VkWaitSemaphoresKHRNative>>.fromAddress(0).asFunction<VkWaitSemaphoresKHR>();
-VkSignalSemaphore vkSignalSemaphore = Pointer<NativeFunction<VkSignalSemaphoreNative>>.fromAddress(0).asFunction<VkSignalSemaphore>();
-VkSignalSemaphoreKHR vkSignalSemaphoreKHR = Pointer<NativeFunction<VkSignalSemaphoreKHRNative>>.fromAddress(0).asFunction<VkSignalSemaphoreKHR>();
-VkGetAndroidHardwareBufferPropertiesANDROID vkGetAndroidHardwareBufferPropertiesANDROID = Pointer<NativeFunction<VkGetAndroidHardwareBufferPropertiesANDROIDNative>>.fromAddress(0).asFunction<VkGetAndroidHardwareBufferPropertiesANDROID>();
-VkGetMemoryAndroidHardwareBufferANDROID vkGetMemoryAndroidHardwareBufferANDROID = Pointer<NativeFunction<VkGetMemoryAndroidHardwareBufferANDROIDNative>>.fromAddress(0).asFunction<VkGetMemoryAndroidHardwareBufferANDROID>();
-VkCmdDrawIndirectCount vkCmdDrawIndirectCount = Pointer<NativeFunction<VkCmdDrawIndirectCountNative>>.fromAddress(0).asFunction<VkCmdDrawIndirectCount>();
-VkCmdDrawIndirectCountKHR vkCmdDrawIndirectCountKHR = Pointer<NativeFunction<VkCmdDrawIndirectCountKHRNative>>.fromAddress(0).asFunction<VkCmdDrawIndirectCountKHR>();
-VkCmdDrawIndirectCountAMD vkCmdDrawIndirectCountAMD = Pointer<NativeFunction<VkCmdDrawIndirectCountAMDNative>>.fromAddress(0).asFunction<VkCmdDrawIndirectCountAMD>();
-VkCmdDrawIndexedIndirectCount vkCmdDrawIndexedIndirectCount = Pointer<NativeFunction<VkCmdDrawIndexedIndirectCountNative>>.fromAddress(0).asFunction<VkCmdDrawIndexedIndirectCount>();
-VkCmdDrawIndexedIndirectCountKHR vkCmdDrawIndexedIndirectCountKHR = Pointer<NativeFunction<VkCmdDrawIndexedIndirectCountKHRNative>>.fromAddress(0).asFunction<VkCmdDrawIndexedIndirectCountKHR>();
-VkCmdDrawIndexedIndirectCountAMD vkCmdDrawIndexedIndirectCountAMD = Pointer<NativeFunction<VkCmdDrawIndexedIndirectCountAMDNative>>.fromAddress(0).asFunction<VkCmdDrawIndexedIndirectCountAMD>();
-VkCmdSetCheckpointNV vkCmdSetCheckpointNV = Pointer<NativeFunction<VkCmdSetCheckpointNVNative>>.fromAddress(0).asFunction<VkCmdSetCheckpointNV>();
-VkGetQueueCheckpointDataNV vkGetQueueCheckpointDataNV = Pointer<NativeFunction<VkGetQueueCheckpointDataNVNative>>.fromAddress(0).asFunction<VkGetQueueCheckpointDataNV>();
-VkCmdBindTransformFeedbackBuffersEXT vkCmdBindTransformFeedbackBuffersEXT = Pointer<NativeFunction<VkCmdBindTransformFeedbackBuffersEXTNative>>.fromAddress(0).asFunction<VkCmdBindTransformFeedbackBuffersEXT>();
-VkCmdBeginTransformFeedbackEXT vkCmdBeginTransformFeedbackEXT = Pointer<NativeFunction<VkCmdBeginTransformFeedbackEXTNative>>.fromAddress(0).asFunction<VkCmdBeginTransformFeedbackEXT>();
-VkCmdEndTransformFeedbackEXT vkCmdEndTransformFeedbackEXT = Pointer<NativeFunction<VkCmdEndTransformFeedbackEXTNative>>.fromAddress(0).asFunction<VkCmdEndTransformFeedbackEXT>();
-VkCmdBeginQueryIndexedEXT vkCmdBeginQueryIndexedEXT = Pointer<NativeFunction<VkCmdBeginQueryIndexedEXTNative>>.fromAddress(0).asFunction<VkCmdBeginQueryIndexedEXT>();
-VkCmdEndQueryIndexedEXT vkCmdEndQueryIndexedEXT = Pointer<NativeFunction<VkCmdEndQueryIndexedEXTNative>>.fromAddress(0).asFunction<VkCmdEndQueryIndexedEXT>();
-VkCmdDrawIndirectByteCountEXT vkCmdDrawIndirectByteCountEXT = Pointer<NativeFunction<VkCmdDrawIndirectByteCountEXTNative>>.fromAddress(0).asFunction<VkCmdDrawIndirectByteCountEXT>();
-VkCmdSetExclusiveScissorNV vkCmdSetExclusiveScissorNV = Pointer<NativeFunction<VkCmdSetExclusiveScissorNVNative>>.fromAddress(0).asFunction<VkCmdSetExclusiveScissorNV>();
-VkCmdBindShadingRateImageNV vkCmdBindShadingRateImageNV = Pointer<NativeFunction<VkCmdBindShadingRateImageNVNative>>.fromAddress(0).asFunction<VkCmdBindShadingRateImageNV>();
-VkCmdSetViewportShadingRatePaletteNV vkCmdSetViewportShadingRatePaletteNV = Pointer<NativeFunction<VkCmdSetViewportShadingRatePaletteNVNative>>.fromAddress(0).asFunction<VkCmdSetViewportShadingRatePaletteNV>();
-VkCmdSetCoarseSampleOrderNV vkCmdSetCoarseSampleOrderNV = Pointer<NativeFunction<VkCmdSetCoarseSampleOrderNVNative>>.fromAddress(0).asFunction<VkCmdSetCoarseSampleOrderNV>();
-VkCmdDrawMeshTasksNV vkCmdDrawMeshTasksNV = Pointer<NativeFunction<VkCmdDrawMeshTasksNVNative>>.fromAddress(0).asFunction<VkCmdDrawMeshTasksNV>();
-VkCmdDrawMeshTasksIndirectNV vkCmdDrawMeshTasksIndirectNV = Pointer<NativeFunction<VkCmdDrawMeshTasksIndirectNVNative>>.fromAddress(0).asFunction<VkCmdDrawMeshTasksIndirectNV>();
-VkCmdDrawMeshTasksIndirectCountNV vkCmdDrawMeshTasksIndirectCountNV = Pointer<NativeFunction<VkCmdDrawMeshTasksIndirectCountNVNative>>.fromAddress(0).asFunction<VkCmdDrawMeshTasksIndirectCountNV>();
-VkCompileDeferredNV vkCompileDeferredNV = Pointer<NativeFunction<VkCompileDeferredNVNative>>.fromAddress(0).asFunction<VkCompileDeferredNV>();
-VkCreateAccelerationStructureNV vkCreateAccelerationStructureNV = Pointer<NativeFunction<VkCreateAccelerationStructureNVNative>>.fromAddress(0).asFunction<VkCreateAccelerationStructureNV>();
-VkDestroyAccelerationStructureKHR vkDestroyAccelerationStructureKHR = Pointer<NativeFunction<VkDestroyAccelerationStructureKHRNative>>.fromAddress(0).asFunction<VkDestroyAccelerationStructureKHR>();
-VkDestroyAccelerationStructureNV vkDestroyAccelerationStructureNV = Pointer<NativeFunction<VkDestroyAccelerationStructureNVNative>>.fromAddress(0).asFunction<VkDestroyAccelerationStructureNV>();
-VkGetAccelerationStructureMemoryRequirementsNV vkGetAccelerationStructureMemoryRequirementsNV = Pointer<NativeFunction<VkGetAccelerationStructureMemoryRequirementsNVNative>>.fromAddress(0).asFunction<VkGetAccelerationStructureMemoryRequirementsNV>();
-VkBindAccelerationStructureMemoryNV vkBindAccelerationStructureMemoryNV = Pointer<NativeFunction<VkBindAccelerationStructureMemoryNVNative>>.fromAddress(0).asFunction<VkBindAccelerationStructureMemoryNV>();
-VkCmdCopyAccelerationStructureNV vkCmdCopyAccelerationStructureNV = Pointer<NativeFunction<VkCmdCopyAccelerationStructureNVNative>>.fromAddress(0).asFunction<VkCmdCopyAccelerationStructureNV>();
-VkCmdCopyAccelerationStructureKHR vkCmdCopyAccelerationStructureKHR = Pointer<NativeFunction<VkCmdCopyAccelerationStructureKHRNative>>.fromAddress(0).asFunction<VkCmdCopyAccelerationStructureKHR>();
-VkCopyAccelerationStructureKHR vkCopyAccelerationStructureKHR = Pointer<NativeFunction<VkCopyAccelerationStructureKHRNative>>.fromAddress(0).asFunction<VkCopyAccelerationStructureKHR>();
-VkCmdCopyAccelerationStructureToMemoryKHR vkCmdCopyAccelerationStructureToMemoryKHR = Pointer<NativeFunction<VkCmdCopyAccelerationStructureToMemoryKHRNative>>.fromAddress(0).asFunction<VkCmdCopyAccelerationStructureToMemoryKHR>();
-VkCopyAccelerationStructureToMemoryKHR vkCopyAccelerationStructureToMemoryKHR = Pointer<NativeFunction<VkCopyAccelerationStructureToMemoryKHRNative>>.fromAddress(0).asFunction<VkCopyAccelerationStructureToMemoryKHR>();
-VkCmdCopyMemoryToAccelerationStructureKHR vkCmdCopyMemoryToAccelerationStructureKHR = Pointer<NativeFunction<VkCmdCopyMemoryToAccelerationStructureKHRNative>>.fromAddress(0).asFunction<VkCmdCopyMemoryToAccelerationStructureKHR>();
-VkCopyMemoryToAccelerationStructureKHR vkCopyMemoryToAccelerationStructureKHR = Pointer<NativeFunction<VkCopyMemoryToAccelerationStructureKHRNative>>.fromAddress(0).asFunction<VkCopyMemoryToAccelerationStructureKHR>();
-VkCmdWriteAccelerationStructuresPropertiesKHR vkCmdWriteAccelerationStructuresPropertiesKHR = Pointer<NativeFunction<VkCmdWriteAccelerationStructuresPropertiesKHRNative>>.fromAddress(0).asFunction<VkCmdWriteAccelerationStructuresPropertiesKHR>();
-VkCmdWriteAccelerationStructuresPropertiesNV vkCmdWriteAccelerationStructuresPropertiesNV = Pointer<NativeFunction<VkCmdWriteAccelerationStructuresPropertiesNVNative>>.fromAddress(0).asFunction<VkCmdWriteAccelerationStructuresPropertiesNV>();
-VkCmdBuildAccelerationStructureNV vkCmdBuildAccelerationStructureNV = Pointer<NativeFunction<VkCmdBuildAccelerationStructureNVNative>>.fromAddress(0).asFunction<VkCmdBuildAccelerationStructureNV>();
-VkWriteAccelerationStructuresPropertiesKHR vkWriteAccelerationStructuresPropertiesKHR = Pointer<NativeFunction<VkWriteAccelerationStructuresPropertiesKHRNative>>.fromAddress(0).asFunction<VkWriteAccelerationStructuresPropertiesKHR>();
-VkCmdTraceRaysKHR vkCmdTraceRaysKHR = Pointer<NativeFunction<VkCmdTraceRaysKHRNative>>.fromAddress(0).asFunction<VkCmdTraceRaysKHR>();
-VkCmdTraceRaysNV vkCmdTraceRaysNV = Pointer<NativeFunction<VkCmdTraceRaysNVNative>>.fromAddress(0).asFunction<VkCmdTraceRaysNV>();
-VkGetRayTracingShaderGroupHandlesKHR vkGetRayTracingShaderGroupHandlesKHR = Pointer<NativeFunction<VkGetRayTracingShaderGroupHandlesKHRNative>>.fromAddress(0).asFunction<VkGetRayTracingShaderGroupHandlesKHR>();
-VkGetRayTracingShaderGroupHandlesNV vkGetRayTracingShaderGroupHandlesNV = Pointer<NativeFunction<VkGetRayTracingShaderGroupHandlesNVNative>>.fromAddress(0).asFunction<VkGetRayTracingShaderGroupHandlesNV>();
-VkGetRayTracingCaptureReplayShaderGroupHandlesKHR vkGetRayTracingCaptureReplayShaderGroupHandlesKHR = Pointer<NativeFunction<VkGetRayTracingCaptureReplayShaderGroupHandlesKHRNative>>.fromAddress(0).asFunction<VkGetRayTracingCaptureReplayShaderGroupHandlesKHR>();
-VkGetAccelerationStructureHandleNV vkGetAccelerationStructureHandleNV = Pointer<NativeFunction<VkGetAccelerationStructureHandleNVNative>>.fromAddress(0).asFunction<VkGetAccelerationStructureHandleNV>();
-VkCreateRayTracingPipelinesNV vkCreateRayTracingPipelinesNV = Pointer<NativeFunction<VkCreateRayTracingPipelinesNVNative>>.fromAddress(0).asFunction<VkCreateRayTracingPipelinesNV>();
-VkCreateRayTracingPipelinesKHR vkCreateRayTracingPipelinesKHR = Pointer<NativeFunction<VkCreateRayTracingPipelinesKHRNative>>.fromAddress(0).asFunction<VkCreateRayTracingPipelinesKHR>();
-VkGetPhysicalDeviceCooperativeMatrixPropertiesNV vkGetPhysicalDeviceCooperativeMatrixPropertiesNV = Pointer<NativeFunction<VkGetPhysicalDeviceCooperativeMatrixPropertiesNVNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceCooperativeMatrixPropertiesNV>();
-VkCmdTraceRaysIndirectKHR vkCmdTraceRaysIndirectKHR = Pointer<NativeFunction<VkCmdTraceRaysIndirectKHRNative>>.fromAddress(0).asFunction<VkCmdTraceRaysIndirectKHR>();
-VkGetDeviceAccelerationStructureCompatibilityKHR vkGetDeviceAccelerationStructureCompatibilityKHR = Pointer<NativeFunction<VkGetDeviceAccelerationStructureCompatibilityKHRNative>>.fromAddress(0).asFunction<VkGetDeviceAccelerationStructureCompatibilityKHR>();
-VkGetRayTracingShaderGroupStackSizeKHR vkGetRayTracingShaderGroupStackSizeKHR = Pointer<NativeFunction<VkGetRayTracingShaderGroupStackSizeKHRNative>>.fromAddress(0).asFunction<VkGetRayTracingShaderGroupStackSizeKHR>();
-VkCmdSetRayTracingPipelineStackSizeKHR vkCmdSetRayTracingPipelineStackSizeKHR = Pointer<NativeFunction<VkCmdSetRayTracingPipelineStackSizeKHRNative>>.fromAddress(0).asFunction<VkCmdSetRayTracingPipelineStackSizeKHR>();
-VkGetImageViewHandleNVX vkGetImageViewHandleNVX = Pointer<NativeFunction<VkGetImageViewHandleNVXNative>>.fromAddress(0).asFunction<VkGetImageViewHandleNVX>();
-VkGetImageViewAddressNVX vkGetImageViewAddressNVX = Pointer<NativeFunction<VkGetImageViewAddressNVXNative>>.fromAddress(0).asFunction<VkGetImageViewAddressNVX>();
-VkGetPhysicalDeviceSurfacePresentModes2EXT vkGetPhysicalDeviceSurfacePresentModes2EXT = Pointer<NativeFunction<VkGetPhysicalDeviceSurfacePresentModes2EXTNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSurfacePresentModes2EXT>();
-VkGetDeviceGroupSurfacePresentModes2EXT vkGetDeviceGroupSurfacePresentModes2EXT = Pointer<NativeFunction<VkGetDeviceGroupSurfacePresentModes2EXTNative>>.fromAddress(0).asFunction<VkGetDeviceGroupSurfacePresentModes2EXT>();
-VkAcquireFullScreenExclusiveModeEXT vkAcquireFullScreenExclusiveModeEXT = Pointer<NativeFunction<VkAcquireFullScreenExclusiveModeEXTNative>>.fromAddress(0).asFunction<VkAcquireFullScreenExclusiveModeEXT>();
-VkReleaseFullScreenExclusiveModeEXT vkReleaseFullScreenExclusiveModeEXT = Pointer<NativeFunction<VkReleaseFullScreenExclusiveModeEXTNative>>.fromAddress(0).asFunction<VkReleaseFullScreenExclusiveModeEXT>();
-VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR = Pointer<NativeFunction<VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHRNative>>.fromAddress(0).asFunction<VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR>();
-VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR>();
-VkAcquireProfilingLockKHR vkAcquireProfilingLockKHR = Pointer<NativeFunction<VkAcquireProfilingLockKHRNative>>.fromAddress(0).asFunction<VkAcquireProfilingLockKHR>();
-VkReleaseProfilingLockKHR vkReleaseProfilingLockKHR = Pointer<NativeFunction<VkReleaseProfilingLockKHRNative>>.fromAddress(0).asFunction<VkReleaseProfilingLockKHR>();
-VkGetImageDrmFormatModifierPropertiesEXT vkGetImageDrmFormatModifierPropertiesEXT = Pointer<NativeFunction<VkGetImageDrmFormatModifierPropertiesEXTNative>>.fromAddress(0).asFunction<VkGetImageDrmFormatModifierPropertiesEXT>();
-VkGetBufferOpaqueCaptureAddress vkGetBufferOpaqueCaptureAddress = Pointer<NativeFunction<VkGetBufferOpaqueCaptureAddressNative>>.fromAddress(0).asFunction<VkGetBufferOpaqueCaptureAddress>();
-VkGetBufferOpaqueCaptureAddressKHR vkGetBufferOpaqueCaptureAddressKHR = Pointer<NativeFunction<VkGetBufferOpaqueCaptureAddressKHRNative>>.fromAddress(0).asFunction<VkGetBufferOpaqueCaptureAddressKHR>();
-VkGetBufferDeviceAddress vkGetBufferDeviceAddress = Pointer<NativeFunction<VkGetBufferDeviceAddressNative>>.fromAddress(0).asFunction<VkGetBufferDeviceAddress>();
-VkGetBufferDeviceAddressKHR vkGetBufferDeviceAddressKHR = Pointer<NativeFunction<VkGetBufferDeviceAddressKHRNative>>.fromAddress(0).asFunction<VkGetBufferDeviceAddressKHR>();
-VkGetBufferDeviceAddressEXT vkGetBufferDeviceAddressEXT = Pointer<NativeFunction<VkGetBufferDeviceAddressEXTNative>>.fromAddress(0).asFunction<VkGetBufferDeviceAddressEXT>();
-VkCreateHeadlessSurfaceEXT vkCreateHeadlessSurfaceEXT = Pointer<NativeFunction<VkCreateHeadlessSurfaceEXTNative>>.fromAddress(0).asFunction<VkCreateHeadlessSurfaceEXT>();
-VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV = Pointer<NativeFunction<VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNVNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV>();
-VkInitializePerformanceApiINTEL vkInitializePerformanceApiINTEL = Pointer<NativeFunction<VkInitializePerformanceApiINTELNative>>.fromAddress(0).asFunction<VkInitializePerformanceApiINTEL>();
-VkUninitializePerformanceApiINTEL vkUninitializePerformanceApiINTEL = Pointer<NativeFunction<VkUninitializePerformanceApiINTELNative>>.fromAddress(0).asFunction<VkUninitializePerformanceApiINTEL>();
-VkCmdSetPerformanceMarkerINTEL vkCmdSetPerformanceMarkerINTEL = Pointer<NativeFunction<VkCmdSetPerformanceMarkerINTELNative>>.fromAddress(0).asFunction<VkCmdSetPerformanceMarkerINTEL>();
-VkCmdSetPerformanceStreamMarkerINTEL vkCmdSetPerformanceStreamMarkerINTEL = Pointer<NativeFunction<VkCmdSetPerformanceStreamMarkerINTELNative>>.fromAddress(0).asFunction<VkCmdSetPerformanceStreamMarkerINTEL>();
-VkCmdSetPerformanceOverrideINTEL vkCmdSetPerformanceOverrideINTEL = Pointer<NativeFunction<VkCmdSetPerformanceOverrideINTELNative>>.fromAddress(0).asFunction<VkCmdSetPerformanceOverrideINTEL>();
-VkAcquirePerformanceConfigurationINTEL vkAcquirePerformanceConfigurationINTEL = Pointer<NativeFunction<VkAcquirePerformanceConfigurationINTELNative>>.fromAddress(0).asFunction<VkAcquirePerformanceConfigurationINTEL>();
-VkReleasePerformanceConfigurationINTEL vkReleasePerformanceConfigurationINTEL = Pointer<NativeFunction<VkReleasePerformanceConfigurationINTELNative>>.fromAddress(0).asFunction<VkReleasePerformanceConfigurationINTEL>();
-VkQueueSetPerformanceConfigurationINTEL vkQueueSetPerformanceConfigurationINTEL = Pointer<NativeFunction<VkQueueSetPerformanceConfigurationINTELNative>>.fromAddress(0).asFunction<VkQueueSetPerformanceConfigurationINTEL>();
-VkGetPerformanceParameterINTEL vkGetPerformanceParameterINTEL = Pointer<NativeFunction<VkGetPerformanceParameterINTELNative>>.fromAddress(0).asFunction<VkGetPerformanceParameterINTEL>();
-VkGetDeviceMemoryOpaqueCaptureAddress vkGetDeviceMemoryOpaqueCaptureAddress = Pointer<NativeFunction<VkGetDeviceMemoryOpaqueCaptureAddressNative>>.fromAddress(0).asFunction<VkGetDeviceMemoryOpaqueCaptureAddress>();
-VkGetDeviceMemoryOpaqueCaptureAddressKHR vkGetDeviceMemoryOpaqueCaptureAddressKHR = Pointer<NativeFunction<VkGetDeviceMemoryOpaqueCaptureAddressKHRNative>>.fromAddress(0).asFunction<VkGetDeviceMemoryOpaqueCaptureAddressKHR>();
-VkGetPipelineExecutablePropertiesKHR vkGetPipelineExecutablePropertiesKHR = Pointer<NativeFunction<VkGetPipelineExecutablePropertiesKHRNative>>.fromAddress(0).asFunction<VkGetPipelineExecutablePropertiesKHR>();
-VkGetPipelineExecutableStatisticsKHR vkGetPipelineExecutableStatisticsKHR = Pointer<NativeFunction<VkGetPipelineExecutableStatisticsKHRNative>>.fromAddress(0).asFunction<VkGetPipelineExecutableStatisticsKHR>();
-VkGetPipelineExecutableInternalRepresentationsKHR vkGetPipelineExecutableInternalRepresentationsKHR = Pointer<NativeFunction<VkGetPipelineExecutableInternalRepresentationsKHRNative>>.fromAddress(0).asFunction<VkGetPipelineExecutableInternalRepresentationsKHR>();
-VkCmdSetLineStippleEXT vkCmdSetLineStippleEXT = Pointer<NativeFunction<VkCmdSetLineStippleEXTNative>>.fromAddress(0).asFunction<VkCmdSetLineStippleEXT>();
-VkGetPhysicalDeviceToolPropertiesEXT vkGetPhysicalDeviceToolPropertiesEXT = Pointer<NativeFunction<VkGetPhysicalDeviceToolPropertiesEXTNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceToolPropertiesEXT>();
-VkCreateAccelerationStructureKHR vkCreateAccelerationStructureKHR = Pointer<NativeFunction<VkCreateAccelerationStructureKHRNative>>.fromAddress(0).asFunction<VkCreateAccelerationStructureKHR>();
-VkCmdBuildAccelerationStructuresKHR vkCmdBuildAccelerationStructuresKHR = Pointer<NativeFunction<VkCmdBuildAccelerationStructuresKHRNative>>.fromAddress(0).asFunction<VkCmdBuildAccelerationStructuresKHR>();
-VkCmdBuildAccelerationStructuresIndirectKHR vkCmdBuildAccelerationStructuresIndirectKHR = Pointer<NativeFunction<VkCmdBuildAccelerationStructuresIndirectKHRNative>>.fromAddress(0).asFunction<VkCmdBuildAccelerationStructuresIndirectKHR>();
-VkBuildAccelerationStructuresKHR vkBuildAccelerationStructuresKHR = Pointer<NativeFunction<VkBuildAccelerationStructuresKHRNative>>.fromAddress(0).asFunction<VkBuildAccelerationStructuresKHR>();
-VkGetAccelerationStructureDeviceAddressKHR vkGetAccelerationStructureDeviceAddressKHR = Pointer<NativeFunction<VkGetAccelerationStructureDeviceAddressKHRNative>>.fromAddress(0).asFunction<VkGetAccelerationStructureDeviceAddressKHR>();
-VkCreateDeferredOperationKHR vkCreateDeferredOperationKHR = Pointer<NativeFunction<VkCreateDeferredOperationKHRNative>>.fromAddress(0).asFunction<VkCreateDeferredOperationKHR>();
-VkDestroyDeferredOperationKHR vkDestroyDeferredOperationKHR = Pointer<NativeFunction<VkDestroyDeferredOperationKHRNative>>.fromAddress(0).asFunction<VkDestroyDeferredOperationKHR>();
-VkGetDeferredOperationMaxConcurrencyKHR vkGetDeferredOperationMaxConcurrencyKHR = Pointer<NativeFunction<VkGetDeferredOperationMaxConcurrencyKHRNative>>.fromAddress(0).asFunction<VkGetDeferredOperationMaxConcurrencyKHR>();
-VkGetDeferredOperationResultKHR vkGetDeferredOperationResultKHR = Pointer<NativeFunction<VkGetDeferredOperationResultKHRNative>>.fromAddress(0).asFunction<VkGetDeferredOperationResultKHR>();
-VkDeferredOperationJoinKHR vkDeferredOperationJoinKHR = Pointer<NativeFunction<VkDeferredOperationJoinKHRNative>>.fromAddress(0).asFunction<VkDeferredOperationJoinKHR>();
-VkCmdSetCullModeEXT vkCmdSetCullModeEXT = Pointer<NativeFunction<VkCmdSetCullModeEXTNative>>.fromAddress(0).asFunction<VkCmdSetCullModeEXT>();
-VkCmdSetFrontFaceEXT vkCmdSetFrontFaceEXT = Pointer<NativeFunction<VkCmdSetFrontFaceEXTNative>>.fromAddress(0).asFunction<VkCmdSetFrontFaceEXT>();
-VkCmdSetPrimitiveTopologyEXT vkCmdSetPrimitiveTopologyEXT = Pointer<NativeFunction<VkCmdSetPrimitiveTopologyEXTNative>>.fromAddress(0).asFunction<VkCmdSetPrimitiveTopologyEXT>();
-VkCmdSetViewportWithCountEXT vkCmdSetViewportWithCountEXT = Pointer<NativeFunction<VkCmdSetViewportWithCountEXTNative>>.fromAddress(0).asFunction<VkCmdSetViewportWithCountEXT>();
-VkCmdSetScissorWithCountEXT vkCmdSetScissorWithCountEXT = Pointer<NativeFunction<VkCmdSetScissorWithCountEXTNative>>.fromAddress(0).asFunction<VkCmdSetScissorWithCountEXT>();
-VkCmdBindVertexBuffers2EXT vkCmdBindVertexBuffers2EXT = Pointer<NativeFunction<VkCmdBindVertexBuffers2EXTNative>>.fromAddress(0).asFunction<VkCmdBindVertexBuffers2EXT>();
-VkCmdSetDepthTestEnableEXT vkCmdSetDepthTestEnableEXT = Pointer<NativeFunction<VkCmdSetDepthTestEnableEXTNative>>.fromAddress(0).asFunction<VkCmdSetDepthTestEnableEXT>();
-VkCmdSetDepthWriteEnableEXT vkCmdSetDepthWriteEnableEXT = Pointer<NativeFunction<VkCmdSetDepthWriteEnableEXTNative>>.fromAddress(0).asFunction<VkCmdSetDepthWriteEnableEXT>();
-VkCmdSetDepthCompareOpEXT vkCmdSetDepthCompareOpEXT = Pointer<NativeFunction<VkCmdSetDepthCompareOpEXTNative>>.fromAddress(0).asFunction<VkCmdSetDepthCompareOpEXT>();
-VkCmdSetDepthBoundsTestEnableEXT vkCmdSetDepthBoundsTestEnableEXT = Pointer<NativeFunction<VkCmdSetDepthBoundsTestEnableEXTNative>>.fromAddress(0).asFunction<VkCmdSetDepthBoundsTestEnableEXT>();
-VkCmdSetStencilTestEnableEXT vkCmdSetStencilTestEnableEXT = Pointer<NativeFunction<VkCmdSetStencilTestEnableEXTNative>>.fromAddress(0).asFunction<VkCmdSetStencilTestEnableEXT>();
-VkCmdSetStencilOpEXT vkCmdSetStencilOpEXT = Pointer<NativeFunction<VkCmdSetStencilOpEXTNative>>.fromAddress(0).asFunction<VkCmdSetStencilOpEXT>();
-VkCreatePrivateDataSlotEXT vkCreatePrivateDataSlotEXT = Pointer<NativeFunction<VkCreatePrivateDataSlotEXTNative>>.fromAddress(0).asFunction<VkCreatePrivateDataSlotEXT>();
-VkDestroyPrivateDataSlotEXT vkDestroyPrivateDataSlotEXT = Pointer<NativeFunction<VkDestroyPrivateDataSlotEXTNative>>.fromAddress(0).asFunction<VkDestroyPrivateDataSlotEXT>();
-VkSetPrivateDataEXT vkSetPrivateDataEXT = Pointer<NativeFunction<VkSetPrivateDataEXTNative>>.fromAddress(0).asFunction<VkSetPrivateDataEXT>();
-VkGetPrivateDataEXT vkGetPrivateDataEXT = Pointer<NativeFunction<VkGetPrivateDataEXTNative>>.fromAddress(0).asFunction<VkGetPrivateDataEXT>();
-VkCmdCopyBuffer2KHR vkCmdCopyBuffer2KHR = Pointer<NativeFunction<VkCmdCopyBuffer2KHRNative>>.fromAddress(0).asFunction<VkCmdCopyBuffer2KHR>();
-VkCmdCopyImage2KHR vkCmdCopyImage2KHR = Pointer<NativeFunction<VkCmdCopyImage2KHRNative>>.fromAddress(0).asFunction<VkCmdCopyImage2KHR>();
-VkCmdBlitImage2KHR vkCmdBlitImage2KHR = Pointer<NativeFunction<VkCmdBlitImage2KHRNative>>.fromAddress(0).asFunction<VkCmdBlitImage2KHR>();
-VkCmdCopyBufferToImage2KHR vkCmdCopyBufferToImage2KHR = Pointer<NativeFunction<VkCmdCopyBufferToImage2KHRNative>>.fromAddress(0).asFunction<VkCmdCopyBufferToImage2KHR>();
-VkCmdCopyImageToBuffer2KHR vkCmdCopyImageToBuffer2KHR = Pointer<NativeFunction<VkCmdCopyImageToBuffer2KHRNative>>.fromAddress(0).asFunction<VkCmdCopyImageToBuffer2KHR>();
-VkCmdResolveImage2KHR vkCmdResolveImage2KHR = Pointer<NativeFunction<VkCmdResolveImage2KHRNative>>.fromAddress(0).asFunction<VkCmdResolveImage2KHR>();
-VkCmdSetFragmentShadingRateKHR vkCmdSetFragmentShadingRateKHR = Pointer<NativeFunction<VkCmdSetFragmentShadingRateKHRNative>>.fromAddress(0).asFunction<VkCmdSetFragmentShadingRateKHR>();
-VkGetPhysicalDeviceFragmentShadingRatesKHR vkGetPhysicalDeviceFragmentShadingRatesKHR = Pointer<NativeFunction<VkGetPhysicalDeviceFragmentShadingRatesKHRNative>>.fromAddress(0).asFunction<VkGetPhysicalDeviceFragmentShadingRatesKHR>();
-VkCmdSetFragmentShadingRateEnumNV vkCmdSetFragmentShadingRateEnumNV = Pointer<NativeFunction<VkCmdSetFragmentShadingRateEnumNVNative>>.fromAddress(0).asFunction<VkCmdSetFragmentShadingRateEnumNV>();
-VkGetAccelerationStructureBuildSizesKHR vkGetAccelerationStructureBuildSizesKHR = Pointer<NativeFunction<VkGetAccelerationStructureBuildSizesKHRNative>>.fromAddress(0).asFunction<VkGetAccelerationStructureBuildSizesKHR>();
-VkCmdSetEvent2KHR vkCmdSetEvent2KHR = Pointer<NativeFunction<VkCmdSetEvent2KHRNative>>.fromAddress(0).asFunction<VkCmdSetEvent2KHR>();
-VkCmdResetEvent2KHR vkCmdResetEvent2KHR = Pointer<NativeFunction<VkCmdResetEvent2KHRNative>>.fromAddress(0).asFunction<VkCmdResetEvent2KHR>();
-VkCmdWaitEvents2KHR vkCmdWaitEvents2KHR = Pointer<NativeFunction<VkCmdWaitEvents2KHRNative>>.fromAddress(0).asFunction<VkCmdWaitEvents2KHR>();
-VkCmdPipelineBarrier2KHR vkCmdPipelineBarrier2KHR = Pointer<NativeFunction<VkCmdPipelineBarrier2KHRNative>>.fromAddress(0).asFunction<VkCmdPipelineBarrier2KHR>();
-VkQueueSubmit2KHR vkQueueSubmit2KHR = Pointer<NativeFunction<VkQueueSubmit2KHRNative>>.fromAddress(0).asFunction<VkQueueSubmit2KHR>();
-VkCmdWriteTimestamp2KHR vkCmdWriteTimestamp2KHR = Pointer<NativeFunction<VkCmdWriteTimestamp2KHRNative>>.fromAddress(0).asFunction<VkCmdWriteTimestamp2KHR>();
-VkCmdWriteBufferMarker2AMD vkCmdWriteBufferMarker2AMD = Pointer<NativeFunction<VkCmdWriteBufferMarker2AMDNative>>.fromAddress(0).asFunction<VkCmdWriteBufferMarker2AMD>();
-VkGetQueueCheckpointData2NV vkGetQueueCheckpointData2NV = Pointer<NativeFunction<VkGetQueueCheckpointData2NVNative>>.fromAddress(0).asFunction<VkGetQueueCheckpointData2NV>();
-
-void initVulkan() {
-  final lib = loadLibrary();
-
-  vkCreateInstance = loadFunction<VkCreateInstanceNative>(lib, 'vkCreateInstance').asFunction<VkCreateInstance>();
-  vkDestroyInstance = loadFunction<VkDestroyInstanceNative>(lib, 'vkDestroyInstance').asFunction<VkDestroyInstance>();
-  vkEnumeratePhysicalDevices = loadFunction<VkEnumeratePhysicalDevicesNative>(lib, 'vkEnumeratePhysicalDevices').asFunction<VkEnumeratePhysicalDevices>();
-  vkGetDeviceProcAddr = loadFunction<VkGetDeviceProcAddrNative>(lib, 'vkGetDeviceProcAddr').asFunction<VkGetDeviceProcAddr>();
-  vkGetInstanceProcAddr = loadFunction<VkGetInstanceProcAddrNative>(lib, 'vkGetInstanceProcAddr').asFunction<VkGetInstanceProcAddr>();
-  vkGetPhysicalDeviceProperties = loadFunction<VkGetPhysicalDevicePropertiesNative>(lib, 'vkGetPhysicalDeviceProperties').asFunction<VkGetPhysicalDeviceProperties>();
-  vkGetPhysicalDeviceQueueFamilyProperties = loadFunction<VkGetPhysicalDeviceQueueFamilyPropertiesNative>(lib, 'vkGetPhysicalDeviceQueueFamilyProperties').asFunction<VkGetPhysicalDeviceQueueFamilyProperties>();
-  vkGetPhysicalDeviceMemoryProperties = loadFunction<VkGetPhysicalDeviceMemoryPropertiesNative>(lib, 'vkGetPhysicalDeviceMemoryProperties').asFunction<VkGetPhysicalDeviceMemoryProperties>();
-  vkGetPhysicalDeviceFeatures = loadFunction<VkGetPhysicalDeviceFeaturesNative>(lib, 'vkGetPhysicalDeviceFeatures').asFunction<VkGetPhysicalDeviceFeatures>();
-  vkGetPhysicalDeviceFormatProperties = loadFunction<VkGetPhysicalDeviceFormatPropertiesNative>(lib, 'vkGetPhysicalDeviceFormatProperties').asFunction<VkGetPhysicalDeviceFormatProperties>();
-  vkGetPhysicalDeviceImageFormatProperties = loadFunction<VkGetPhysicalDeviceImageFormatPropertiesNative>(lib, 'vkGetPhysicalDeviceImageFormatProperties').asFunction<VkGetPhysicalDeviceImageFormatProperties>();
-  vkCreateDevice = loadFunction<VkCreateDeviceNative>(lib, 'vkCreateDevice').asFunction<VkCreateDevice>();
-  vkDestroyDevice = loadFunction<VkDestroyDeviceNative>(lib, 'vkDestroyDevice').asFunction<VkDestroyDevice>();
-  vkEnumerateInstanceVersion = loadFunction<VkEnumerateInstanceVersionNative>(lib, 'vkEnumerateInstanceVersion').asFunction<VkEnumerateInstanceVersion>();
-  vkEnumerateInstanceLayerProperties = loadFunction<VkEnumerateInstanceLayerPropertiesNative>(lib, 'vkEnumerateInstanceLayerProperties').asFunction<VkEnumerateInstanceLayerProperties>();
-  vkEnumerateInstanceExtensionProperties = loadFunction<VkEnumerateInstanceExtensionPropertiesNative>(lib, 'vkEnumerateInstanceExtensionProperties').asFunction<VkEnumerateInstanceExtensionProperties>();
-  vkEnumerateDeviceLayerProperties = loadFunction<VkEnumerateDeviceLayerPropertiesNative>(lib, 'vkEnumerateDeviceLayerProperties').asFunction<VkEnumerateDeviceLayerProperties>();
-  vkEnumerateDeviceExtensionProperties = loadFunction<VkEnumerateDeviceExtensionPropertiesNative>(lib, 'vkEnumerateDeviceExtensionProperties').asFunction<VkEnumerateDeviceExtensionProperties>();
-  vkGetDeviceQueue = loadFunction<VkGetDeviceQueueNative>(lib, 'vkGetDeviceQueue').asFunction<VkGetDeviceQueue>();
-  vkQueueSubmit = loadFunction<VkQueueSubmitNative>(lib, 'vkQueueSubmit').asFunction<VkQueueSubmit>();
-  vkQueueWaitIdle = loadFunction<VkQueueWaitIdleNative>(lib, 'vkQueueWaitIdle').asFunction<VkQueueWaitIdle>();
-  vkDeviceWaitIdle = loadFunction<VkDeviceWaitIdleNative>(lib, 'vkDeviceWaitIdle').asFunction<VkDeviceWaitIdle>();
-  vkAllocateMemory = loadFunction<VkAllocateMemoryNative>(lib, 'vkAllocateMemory').asFunction<VkAllocateMemory>();
-  vkFreeMemory = loadFunction<VkFreeMemoryNative>(lib, 'vkFreeMemory').asFunction<VkFreeMemory>();
-  vkMapMemory = loadFunction<VkMapMemoryNative>(lib, 'vkMapMemory').asFunction<VkMapMemory>();
-  vkUnmapMemory = loadFunction<VkUnmapMemoryNative>(lib, 'vkUnmapMemory').asFunction<VkUnmapMemory>();
-  vkFlushMappedMemoryRanges = loadFunction<VkFlushMappedMemoryRangesNative>(lib, 'vkFlushMappedMemoryRanges').asFunction<VkFlushMappedMemoryRanges>();
-  vkInvalidateMappedMemoryRanges = loadFunction<VkInvalidateMappedMemoryRangesNative>(lib, 'vkInvalidateMappedMemoryRanges').asFunction<VkInvalidateMappedMemoryRanges>();
-  vkGetDeviceMemoryCommitment = loadFunction<VkGetDeviceMemoryCommitmentNative>(lib, 'vkGetDeviceMemoryCommitment').asFunction<VkGetDeviceMemoryCommitment>();
-  vkGetBufferMemoryRequirements = loadFunction<VkGetBufferMemoryRequirementsNative>(lib, 'vkGetBufferMemoryRequirements').asFunction<VkGetBufferMemoryRequirements>();
-  vkBindBufferMemory = loadFunction<VkBindBufferMemoryNative>(lib, 'vkBindBufferMemory').asFunction<VkBindBufferMemory>();
-  vkGetImageMemoryRequirements = loadFunction<VkGetImageMemoryRequirementsNative>(lib, 'vkGetImageMemoryRequirements').asFunction<VkGetImageMemoryRequirements>();
-  vkBindImageMemory = loadFunction<VkBindImageMemoryNative>(lib, 'vkBindImageMemory').asFunction<VkBindImageMemory>();
-  vkGetImageSparseMemoryRequirements = loadFunction<VkGetImageSparseMemoryRequirementsNative>(lib, 'vkGetImageSparseMemoryRequirements').asFunction<VkGetImageSparseMemoryRequirements>();
-  vkGetPhysicalDeviceSparseImageFormatProperties = loadFunction<VkGetPhysicalDeviceSparseImageFormatPropertiesNative>(lib, 'vkGetPhysicalDeviceSparseImageFormatProperties').asFunction<VkGetPhysicalDeviceSparseImageFormatProperties>();
-  vkQueueBindSparse = loadFunction<VkQueueBindSparseNative>(lib, 'vkQueueBindSparse').asFunction<VkQueueBindSparse>();
-  vkCreateFence = loadFunction<VkCreateFenceNative>(lib, 'vkCreateFence').asFunction<VkCreateFence>();
-  vkDestroyFence = loadFunction<VkDestroyFenceNative>(lib, 'vkDestroyFence').asFunction<VkDestroyFence>();
-  vkResetFences = loadFunction<VkResetFencesNative>(lib, 'vkResetFences').asFunction<VkResetFences>();
-  vkGetFenceStatus = loadFunction<VkGetFenceStatusNative>(lib, 'vkGetFenceStatus').asFunction<VkGetFenceStatus>();
-  vkWaitForFences = loadFunction<VkWaitForFencesNative>(lib, 'vkWaitForFences').asFunction<VkWaitForFences>();
-  vkCreateSemaphore = loadFunction<VkCreateSemaphoreNative>(lib, 'vkCreateSemaphore').asFunction<VkCreateSemaphore>();
-  vkDestroySemaphore = loadFunction<VkDestroySemaphoreNative>(lib, 'vkDestroySemaphore').asFunction<VkDestroySemaphore>();
-  vkCreateEvent = loadFunction<VkCreateEventNative>(lib, 'vkCreateEvent').asFunction<VkCreateEvent>();
-  vkDestroyEvent = loadFunction<VkDestroyEventNative>(lib, 'vkDestroyEvent').asFunction<VkDestroyEvent>();
-  vkGetEventStatus = loadFunction<VkGetEventStatusNative>(lib, 'vkGetEventStatus').asFunction<VkGetEventStatus>();
-  vkSetEvent = loadFunction<VkSetEventNative>(lib, 'vkSetEvent').asFunction<VkSetEvent>();
-  vkResetEvent = loadFunction<VkResetEventNative>(lib, 'vkResetEvent').asFunction<VkResetEvent>();
-  vkCreateQueryPool = loadFunction<VkCreateQueryPoolNative>(lib, 'vkCreateQueryPool').asFunction<VkCreateQueryPool>();
-  vkDestroyQueryPool = loadFunction<VkDestroyQueryPoolNative>(lib, 'vkDestroyQueryPool').asFunction<VkDestroyQueryPool>();
-  vkGetQueryPoolResults = loadFunction<VkGetQueryPoolResultsNative>(lib, 'vkGetQueryPoolResults').asFunction<VkGetQueryPoolResults>();
-  vkResetQueryPool = loadFunction<VkResetQueryPoolNative>(lib, 'vkResetQueryPool').asFunction<VkResetQueryPool>();
-  vkResetQueryPoolEXT = loadFunction<VkResetQueryPoolEXTNative>(lib, 'vkResetQueryPoolEXT').asFunction<VkResetQueryPoolEXT>();
-  vkCreateBuffer = loadFunction<VkCreateBufferNative>(lib, 'vkCreateBuffer').asFunction<VkCreateBuffer>();
-  vkDestroyBuffer = loadFunction<VkDestroyBufferNative>(lib, 'vkDestroyBuffer').asFunction<VkDestroyBuffer>();
-  vkCreateBufferView = loadFunction<VkCreateBufferViewNative>(lib, 'vkCreateBufferView').asFunction<VkCreateBufferView>();
-  vkDestroyBufferView = loadFunction<VkDestroyBufferViewNative>(lib, 'vkDestroyBufferView').asFunction<VkDestroyBufferView>();
-  vkCreateImage = loadFunction<VkCreateImageNative>(lib, 'vkCreateImage').asFunction<VkCreateImage>();
-  vkDestroyImage = loadFunction<VkDestroyImageNative>(lib, 'vkDestroyImage').asFunction<VkDestroyImage>();
-  vkGetImageSubresourceLayout = loadFunction<VkGetImageSubresourceLayoutNative>(lib, 'vkGetImageSubresourceLayout').asFunction<VkGetImageSubresourceLayout>();
-  vkCreateImageView = loadFunction<VkCreateImageViewNative>(lib, 'vkCreateImageView').asFunction<VkCreateImageView>();
-  vkDestroyImageView = loadFunction<VkDestroyImageViewNative>(lib, 'vkDestroyImageView').asFunction<VkDestroyImageView>();
-  vkCreateShaderModule = loadFunction<VkCreateShaderModuleNative>(lib, 'vkCreateShaderModule').asFunction<VkCreateShaderModule>();
-  vkDestroyShaderModule = loadFunction<VkDestroyShaderModuleNative>(lib, 'vkDestroyShaderModule').asFunction<VkDestroyShaderModule>();
-  vkCreatePipelineCache = loadFunction<VkCreatePipelineCacheNative>(lib, 'vkCreatePipelineCache').asFunction<VkCreatePipelineCache>();
-  vkDestroyPipelineCache = loadFunction<VkDestroyPipelineCacheNative>(lib, 'vkDestroyPipelineCache').asFunction<VkDestroyPipelineCache>();
-  vkGetPipelineCacheData = loadFunction<VkGetPipelineCacheDataNative>(lib, 'vkGetPipelineCacheData').asFunction<VkGetPipelineCacheData>();
-  vkMergePipelineCaches = loadFunction<VkMergePipelineCachesNative>(lib, 'vkMergePipelineCaches').asFunction<VkMergePipelineCaches>();
-  vkCreateGraphicsPipelines = loadFunction<VkCreateGraphicsPipelinesNative>(lib, 'vkCreateGraphicsPipelines').asFunction<VkCreateGraphicsPipelines>();
-  vkCreateComputePipelines = loadFunction<VkCreateComputePipelinesNative>(lib, 'vkCreateComputePipelines').asFunction<VkCreateComputePipelines>();
-  vkDestroyPipeline = loadFunction<VkDestroyPipelineNative>(lib, 'vkDestroyPipeline').asFunction<VkDestroyPipeline>();
-  vkCreatePipelineLayout = loadFunction<VkCreatePipelineLayoutNative>(lib, 'vkCreatePipelineLayout').asFunction<VkCreatePipelineLayout>();
-  vkDestroyPipelineLayout = loadFunction<VkDestroyPipelineLayoutNative>(lib, 'vkDestroyPipelineLayout').asFunction<VkDestroyPipelineLayout>();
-  vkCreateSampler = loadFunction<VkCreateSamplerNative>(lib, 'vkCreateSampler').asFunction<VkCreateSampler>();
-  vkDestroySampler = loadFunction<VkDestroySamplerNative>(lib, 'vkDestroySampler').asFunction<VkDestroySampler>();
-  vkCreateDescriptorSetLayout = loadFunction<VkCreateDescriptorSetLayoutNative>(lib, 'vkCreateDescriptorSetLayout').asFunction<VkCreateDescriptorSetLayout>();
-  vkDestroyDescriptorSetLayout = loadFunction<VkDestroyDescriptorSetLayoutNative>(lib, 'vkDestroyDescriptorSetLayout').asFunction<VkDestroyDescriptorSetLayout>();
-  vkCreateDescriptorPool = loadFunction<VkCreateDescriptorPoolNative>(lib, 'vkCreateDescriptorPool').asFunction<VkCreateDescriptorPool>();
-  vkDestroyDescriptorPool = loadFunction<VkDestroyDescriptorPoolNative>(lib, 'vkDestroyDescriptorPool').asFunction<VkDestroyDescriptorPool>();
-  vkResetDescriptorPool = loadFunction<VkResetDescriptorPoolNative>(lib, 'vkResetDescriptorPool').asFunction<VkResetDescriptorPool>();
-  vkAllocateDescriptorSets = loadFunction<VkAllocateDescriptorSetsNative>(lib, 'vkAllocateDescriptorSets').asFunction<VkAllocateDescriptorSets>();
-  vkFreeDescriptorSets = loadFunction<VkFreeDescriptorSetsNative>(lib, 'vkFreeDescriptorSets').asFunction<VkFreeDescriptorSets>();
-  vkUpdateDescriptorSets = loadFunction<VkUpdateDescriptorSetsNative>(lib, 'vkUpdateDescriptorSets').asFunction<VkUpdateDescriptorSets>();
-  vkCreateFramebuffer = loadFunction<VkCreateFramebufferNative>(lib, 'vkCreateFramebuffer').asFunction<VkCreateFramebuffer>();
-  vkDestroyFramebuffer = loadFunction<VkDestroyFramebufferNative>(lib, 'vkDestroyFramebuffer').asFunction<VkDestroyFramebuffer>();
-  vkCreateRenderPass = loadFunction<VkCreateRenderPassNative>(lib, 'vkCreateRenderPass').asFunction<VkCreateRenderPass>();
-  vkDestroyRenderPass = loadFunction<VkDestroyRenderPassNative>(lib, 'vkDestroyRenderPass').asFunction<VkDestroyRenderPass>();
-  vkGetRenderAreaGranularity = loadFunction<VkGetRenderAreaGranularityNative>(lib, 'vkGetRenderAreaGranularity').asFunction<VkGetRenderAreaGranularity>();
-  vkCreateCommandPool = loadFunction<VkCreateCommandPoolNative>(lib, 'vkCreateCommandPool').asFunction<VkCreateCommandPool>();
-  vkDestroyCommandPool = loadFunction<VkDestroyCommandPoolNative>(lib, 'vkDestroyCommandPool').asFunction<VkDestroyCommandPool>();
-  vkResetCommandPool = loadFunction<VkResetCommandPoolNative>(lib, 'vkResetCommandPool').asFunction<VkResetCommandPool>();
-  vkAllocateCommandBuffers = loadFunction<VkAllocateCommandBuffersNative>(lib, 'vkAllocateCommandBuffers').asFunction<VkAllocateCommandBuffers>();
-  vkFreeCommandBuffers = loadFunction<VkFreeCommandBuffersNative>(lib, 'vkFreeCommandBuffers').asFunction<VkFreeCommandBuffers>();
-  vkBeginCommandBuffer = loadFunction<VkBeginCommandBufferNative>(lib, 'vkBeginCommandBuffer').asFunction<VkBeginCommandBuffer>();
-  vkEndCommandBuffer = loadFunction<VkEndCommandBufferNative>(lib, 'vkEndCommandBuffer').asFunction<VkEndCommandBuffer>();
-  vkResetCommandBuffer = loadFunction<VkResetCommandBufferNative>(lib, 'vkResetCommandBuffer').asFunction<VkResetCommandBuffer>();
-  vkCmdBindPipeline = loadFunction<VkCmdBindPipelineNative>(lib, 'vkCmdBindPipeline').asFunction<VkCmdBindPipeline>();
-  vkCmdSetViewport = loadFunction<VkCmdSetViewportNative>(lib, 'vkCmdSetViewport').asFunction<VkCmdSetViewport>();
-  vkCmdSetScissor = loadFunction<VkCmdSetScissorNative>(lib, 'vkCmdSetScissor').asFunction<VkCmdSetScissor>();
-  vkCmdSetLineWidth = loadFunction<VkCmdSetLineWidthNative>(lib, 'vkCmdSetLineWidth').asFunction<VkCmdSetLineWidth>();
-  vkCmdSetDepthBias = loadFunction<VkCmdSetDepthBiasNative>(lib, 'vkCmdSetDepthBias').asFunction<VkCmdSetDepthBias>();
-  vkCmdSetBlendConstants = loadFunction<VkCmdSetBlendConstantsNative>(lib, 'vkCmdSetBlendConstants').asFunction<VkCmdSetBlendConstants>();
-  vkCmdSetDepthBounds = loadFunction<VkCmdSetDepthBoundsNative>(lib, 'vkCmdSetDepthBounds').asFunction<VkCmdSetDepthBounds>();
-  vkCmdSetStencilCompareMask = loadFunction<VkCmdSetStencilCompareMaskNative>(lib, 'vkCmdSetStencilCompareMask').asFunction<VkCmdSetStencilCompareMask>();
-  vkCmdSetStencilWriteMask = loadFunction<VkCmdSetStencilWriteMaskNative>(lib, 'vkCmdSetStencilWriteMask').asFunction<VkCmdSetStencilWriteMask>();
-  vkCmdSetStencilReference = loadFunction<VkCmdSetStencilReferenceNative>(lib, 'vkCmdSetStencilReference').asFunction<VkCmdSetStencilReference>();
-  vkCmdBindDescriptorSets = loadFunction<VkCmdBindDescriptorSetsNative>(lib, 'vkCmdBindDescriptorSets').asFunction<VkCmdBindDescriptorSets>();
-  vkCmdBindIndexBuffer = loadFunction<VkCmdBindIndexBufferNative>(lib, 'vkCmdBindIndexBuffer').asFunction<VkCmdBindIndexBuffer>();
-  vkCmdBindVertexBuffers = loadFunction<VkCmdBindVertexBuffersNative>(lib, 'vkCmdBindVertexBuffers').asFunction<VkCmdBindVertexBuffers>();
-  vkCmdDraw = loadFunction<VkCmdDrawNative>(lib, 'vkCmdDraw').asFunction<VkCmdDraw>();
-  vkCmdDrawIndexed = loadFunction<VkCmdDrawIndexedNative>(lib, 'vkCmdDrawIndexed').asFunction<VkCmdDrawIndexed>();
-  vkCmdDrawIndirect = loadFunction<VkCmdDrawIndirectNative>(lib, 'vkCmdDrawIndirect').asFunction<VkCmdDrawIndirect>();
-  vkCmdDrawIndexedIndirect = loadFunction<VkCmdDrawIndexedIndirectNative>(lib, 'vkCmdDrawIndexedIndirect').asFunction<VkCmdDrawIndexedIndirect>();
-  vkCmdDispatch = loadFunction<VkCmdDispatchNative>(lib, 'vkCmdDispatch').asFunction<VkCmdDispatch>();
-  vkCmdDispatchIndirect = loadFunction<VkCmdDispatchIndirectNative>(lib, 'vkCmdDispatchIndirect').asFunction<VkCmdDispatchIndirect>();
-  vkCmdCopyBuffer = loadFunction<VkCmdCopyBufferNative>(lib, 'vkCmdCopyBuffer').asFunction<VkCmdCopyBuffer>();
-  vkCmdCopyImage = loadFunction<VkCmdCopyImageNative>(lib, 'vkCmdCopyImage').asFunction<VkCmdCopyImage>();
-  vkCmdBlitImage = loadFunction<VkCmdBlitImageNative>(lib, 'vkCmdBlitImage').asFunction<VkCmdBlitImage>();
-  vkCmdCopyBufferToImage = loadFunction<VkCmdCopyBufferToImageNative>(lib, 'vkCmdCopyBufferToImage').asFunction<VkCmdCopyBufferToImage>();
-  vkCmdCopyImageToBuffer = loadFunction<VkCmdCopyImageToBufferNative>(lib, 'vkCmdCopyImageToBuffer').asFunction<VkCmdCopyImageToBuffer>();
-  vkCmdUpdateBuffer = loadFunction<VkCmdUpdateBufferNative>(lib, 'vkCmdUpdateBuffer').asFunction<VkCmdUpdateBuffer>();
-  vkCmdFillBuffer = loadFunction<VkCmdFillBufferNative>(lib, 'vkCmdFillBuffer').asFunction<VkCmdFillBuffer>();
-  vkCmdClearColorImage = loadFunction<VkCmdClearColorImageNative>(lib, 'vkCmdClearColorImage').asFunction<VkCmdClearColorImage>();
-  vkCmdClearDepthStencilImage = loadFunction<VkCmdClearDepthStencilImageNative>(lib, 'vkCmdClearDepthStencilImage').asFunction<VkCmdClearDepthStencilImage>();
-  vkCmdClearAttachments = loadFunction<VkCmdClearAttachmentsNative>(lib, 'vkCmdClearAttachments').asFunction<VkCmdClearAttachments>();
-  vkCmdResolveImage = loadFunction<VkCmdResolveImageNative>(lib, 'vkCmdResolveImage').asFunction<VkCmdResolveImage>();
-  vkCmdSetEvent = loadFunction<VkCmdSetEventNative>(lib, 'vkCmdSetEvent').asFunction<VkCmdSetEvent>();
-  vkCmdResetEvent = loadFunction<VkCmdResetEventNative>(lib, 'vkCmdResetEvent').asFunction<VkCmdResetEvent>();
-  vkCmdWaitEvents = loadFunction<VkCmdWaitEventsNative>(lib, 'vkCmdWaitEvents').asFunction<VkCmdWaitEvents>();
-  vkCmdPipelineBarrier = loadFunction<VkCmdPipelineBarrierNative>(lib, 'vkCmdPipelineBarrier').asFunction<VkCmdPipelineBarrier>();
-  vkCmdBeginQuery = loadFunction<VkCmdBeginQueryNative>(lib, 'vkCmdBeginQuery').asFunction<VkCmdBeginQuery>();
-  vkCmdEndQuery = loadFunction<VkCmdEndQueryNative>(lib, 'vkCmdEndQuery').asFunction<VkCmdEndQuery>();
-  vkCmdBeginConditionalRenderingEXT = loadFunction<VkCmdBeginConditionalRenderingEXTNative>(lib, 'vkCmdBeginConditionalRenderingEXT').asFunction<VkCmdBeginConditionalRenderingEXT>();
-  vkCmdEndConditionalRenderingEXT = loadFunction<VkCmdEndConditionalRenderingEXTNative>(lib, 'vkCmdEndConditionalRenderingEXT').asFunction<VkCmdEndConditionalRenderingEXT>();
-  vkCmdResetQueryPool = loadFunction<VkCmdResetQueryPoolNative>(lib, 'vkCmdResetQueryPool').asFunction<VkCmdResetQueryPool>();
-  vkCmdWriteTimestamp = loadFunction<VkCmdWriteTimestampNative>(lib, 'vkCmdWriteTimestamp').asFunction<VkCmdWriteTimestamp>();
-  vkCmdCopyQueryPoolResults = loadFunction<VkCmdCopyQueryPoolResultsNative>(lib, 'vkCmdCopyQueryPoolResults').asFunction<VkCmdCopyQueryPoolResults>();
-  vkCmdPushConstants = loadFunction<VkCmdPushConstantsNative>(lib, 'vkCmdPushConstants').asFunction<VkCmdPushConstants>();
-  vkCmdBeginRenderPass = loadFunction<VkCmdBeginRenderPassNative>(lib, 'vkCmdBeginRenderPass').asFunction<VkCmdBeginRenderPass>();
-  vkCmdNextSubpass = loadFunction<VkCmdNextSubpassNative>(lib, 'vkCmdNextSubpass').asFunction<VkCmdNextSubpass>();
-  vkCmdEndRenderPass = loadFunction<VkCmdEndRenderPassNative>(lib, 'vkCmdEndRenderPass').asFunction<VkCmdEndRenderPass>();
-  vkCmdExecuteCommands = loadFunction<VkCmdExecuteCommandsNative>(lib, 'vkCmdExecuteCommands').asFunction<VkCmdExecuteCommands>();
-  vkCreateAndroidSurfaceKHR = loadFunction<VkCreateAndroidSurfaceKHRNative>(lib, 'vkCreateAndroidSurfaceKHR').asFunction<VkCreateAndroidSurfaceKHR>();
-  vkGetPhysicalDeviceDisplayPropertiesKHR = loadFunction<VkGetPhysicalDeviceDisplayPropertiesKHRNative>(lib, 'vkGetPhysicalDeviceDisplayPropertiesKHR').asFunction<VkGetPhysicalDeviceDisplayPropertiesKHR>();
-  vkGetPhysicalDeviceDisplayPlanePropertiesKHR = loadFunction<VkGetPhysicalDeviceDisplayPlanePropertiesKHRNative>(lib, 'vkGetPhysicalDeviceDisplayPlanePropertiesKHR').asFunction<VkGetPhysicalDeviceDisplayPlanePropertiesKHR>();
-  vkGetDisplayPlaneSupportedDisplaysKHR = loadFunction<VkGetDisplayPlaneSupportedDisplaysKHRNative>(lib, 'vkGetDisplayPlaneSupportedDisplaysKHR').asFunction<VkGetDisplayPlaneSupportedDisplaysKHR>();
-  vkGetDisplayModePropertiesKHR = loadFunction<VkGetDisplayModePropertiesKHRNative>(lib, 'vkGetDisplayModePropertiesKHR').asFunction<VkGetDisplayModePropertiesKHR>();
-  vkCreateDisplayModeKHR = loadFunction<VkCreateDisplayModeKHRNative>(lib, 'vkCreateDisplayModeKHR').asFunction<VkCreateDisplayModeKHR>();
-  vkGetDisplayPlaneCapabilitiesKHR = loadFunction<VkGetDisplayPlaneCapabilitiesKHRNative>(lib, 'vkGetDisplayPlaneCapabilitiesKHR').asFunction<VkGetDisplayPlaneCapabilitiesKHR>();
-  vkCreateDisplayPlaneSurfaceKHR = loadFunction<VkCreateDisplayPlaneSurfaceKHRNative>(lib, 'vkCreateDisplayPlaneSurfaceKHR').asFunction<VkCreateDisplayPlaneSurfaceKHR>();
-  vkCreateSharedSwapchainsKHR = loadFunction<VkCreateSharedSwapchainsKHRNative>(lib, 'vkCreateSharedSwapchainsKHR').asFunction<VkCreateSharedSwapchainsKHR>();
-  vkDestroySurfaceKHR = loadFunction<VkDestroySurfaceKHRNative>(lib, 'vkDestroySurfaceKHR').asFunction<VkDestroySurfaceKHR>();
-  vkGetPhysicalDeviceSurfaceSupportKHR = loadFunction<VkGetPhysicalDeviceSurfaceSupportKHRNative>(lib, 'vkGetPhysicalDeviceSurfaceSupportKHR').asFunction<VkGetPhysicalDeviceSurfaceSupportKHR>();
-  vkGetPhysicalDeviceSurfaceCapabilitiesKHR = loadFunction<VkGetPhysicalDeviceSurfaceCapabilitiesKHRNative>(lib, 'vkGetPhysicalDeviceSurfaceCapabilitiesKHR').asFunction<VkGetPhysicalDeviceSurfaceCapabilitiesKHR>();
-  vkGetPhysicalDeviceSurfaceFormatsKHR = loadFunction<VkGetPhysicalDeviceSurfaceFormatsKHRNative>(lib, 'vkGetPhysicalDeviceSurfaceFormatsKHR').asFunction<VkGetPhysicalDeviceSurfaceFormatsKHR>();
-  vkGetPhysicalDeviceSurfacePresentModesKHR = loadFunction<VkGetPhysicalDeviceSurfacePresentModesKHRNative>(lib, 'vkGetPhysicalDeviceSurfacePresentModesKHR').asFunction<VkGetPhysicalDeviceSurfacePresentModesKHR>();
-  vkCreateSwapchainKHR = loadFunction<VkCreateSwapchainKHRNative>(lib, 'vkCreateSwapchainKHR').asFunction<VkCreateSwapchainKHR>();
-  vkDestroySwapchainKHR = loadFunction<VkDestroySwapchainKHRNative>(lib, 'vkDestroySwapchainKHR').asFunction<VkDestroySwapchainKHR>();
-  vkGetSwapchainImagesKHR = loadFunction<VkGetSwapchainImagesKHRNative>(lib, 'vkGetSwapchainImagesKHR').asFunction<VkGetSwapchainImagesKHR>();
-  vkAcquireNextImageKHR = loadFunction<VkAcquireNextImageKHRNative>(lib, 'vkAcquireNextImageKHR').asFunction<VkAcquireNextImageKHR>();
-  vkQueuePresentKHR = loadFunction<VkQueuePresentKHRNative>(lib, 'vkQueuePresentKHR').asFunction<VkQueuePresentKHR>();
-  vkCreateViSurfaceNN = loadFunction<VkCreateViSurfaceNNNative>(lib, 'vkCreateViSurfaceNN').asFunction<VkCreateViSurfaceNN>();
-  vkCreateWaylandSurfaceKHR = loadFunction<VkCreateWaylandSurfaceKHRNative>(lib, 'vkCreateWaylandSurfaceKHR').asFunction<VkCreateWaylandSurfaceKHR>();
-  vkGetPhysicalDeviceWaylandPresentationSupportKHR = loadFunction<VkGetPhysicalDeviceWaylandPresentationSupportKHRNative>(lib, 'vkGetPhysicalDeviceWaylandPresentationSupportKHR').asFunction<VkGetPhysicalDeviceWaylandPresentationSupportKHR>();
-  vkCreateWin32SurfaceKHR = loadFunction<VkCreateWin32SurfaceKHRNative>(lib, 'vkCreateWin32SurfaceKHR').asFunction<VkCreateWin32SurfaceKHR>();
-  vkGetPhysicalDeviceWin32PresentationSupportKHR = loadFunction<VkGetPhysicalDeviceWin32PresentationSupportKHRNative>(lib, 'vkGetPhysicalDeviceWin32PresentationSupportKHR').asFunction<VkGetPhysicalDeviceWin32PresentationSupportKHR>();
-  vkCreateXlibSurfaceKHR = loadFunction<VkCreateXlibSurfaceKHRNative>(lib, 'vkCreateXlibSurfaceKHR').asFunction<VkCreateXlibSurfaceKHR>();
-  vkGetPhysicalDeviceXlibPresentationSupportKHR = loadFunction<VkGetPhysicalDeviceXlibPresentationSupportKHRNative>(lib, 'vkGetPhysicalDeviceXlibPresentationSupportKHR').asFunction<VkGetPhysicalDeviceXlibPresentationSupportKHR>();
-  vkCreateXcbSurfaceKHR = loadFunction<VkCreateXcbSurfaceKHRNative>(lib, 'vkCreateXcbSurfaceKHR').asFunction<VkCreateXcbSurfaceKHR>();
-  vkGetPhysicalDeviceXcbPresentationSupportKHR = loadFunction<VkGetPhysicalDeviceXcbPresentationSupportKHRNative>(lib, 'vkGetPhysicalDeviceXcbPresentationSupportKHR').asFunction<VkGetPhysicalDeviceXcbPresentationSupportKHR>();
-  vkCreateDirectFBSurfaceEXT = loadFunction<VkCreateDirectFBSurfaceEXTNative>(lib, 'vkCreateDirectFBSurfaceEXT').asFunction<VkCreateDirectFBSurfaceEXT>();
-  vkGetPhysicalDeviceDirectFBPresentationSupportEXT = loadFunction<VkGetPhysicalDeviceDirectFBPresentationSupportEXTNative>(lib, 'vkGetPhysicalDeviceDirectFBPresentationSupportEXT').asFunction<VkGetPhysicalDeviceDirectFBPresentationSupportEXT>();
-  vkCreateImagePipeSurfaceFUCHSIA = loadFunction<VkCreateImagePipeSurfaceFUCHSIANative>(lib, 'vkCreateImagePipeSurfaceFUCHSIA').asFunction<VkCreateImagePipeSurfaceFUCHSIA>();
-  vkCreateStreamDescriptorSurfaceGGP = loadFunction<VkCreateStreamDescriptorSurfaceGGPNative>(lib, 'vkCreateStreamDescriptorSurfaceGGP').asFunction<VkCreateStreamDescriptorSurfaceGGP>();
-  vkCreateScreenSurfaceQNX = loadFunction<VkCreateScreenSurfaceQNXNative>(lib, 'vkCreateScreenSurfaceQNX').asFunction<VkCreateScreenSurfaceQNX>();
-  vkGetPhysicalDeviceScreenPresentationSupportQNX = loadFunction<VkGetPhysicalDeviceScreenPresentationSupportQNXNative>(lib, 'vkGetPhysicalDeviceScreenPresentationSupportQNX').asFunction<VkGetPhysicalDeviceScreenPresentationSupportQNX>();
-  vkCreateDebugReportCallbackEXT = loadFunction<VkCreateDebugReportCallbackEXTNative>(lib, 'vkCreateDebugReportCallbackEXT').asFunction<VkCreateDebugReportCallbackEXT>();
-  vkDestroyDebugReportCallbackEXT = loadFunction<VkDestroyDebugReportCallbackEXTNative>(lib, 'vkDestroyDebugReportCallbackEXT').asFunction<VkDestroyDebugReportCallbackEXT>();
-  vkDebugReportMessageEXT = loadFunction<VkDebugReportMessageEXTNative>(lib, 'vkDebugReportMessageEXT').asFunction<VkDebugReportMessageEXT>();
-  vkDebugMarkerSetObjectNameEXT = loadFunction<VkDebugMarkerSetObjectNameEXTNative>(lib, 'vkDebugMarkerSetObjectNameEXT').asFunction<VkDebugMarkerSetObjectNameEXT>();
-  vkDebugMarkerSetObjectTagEXT = loadFunction<VkDebugMarkerSetObjectTagEXTNative>(lib, 'vkDebugMarkerSetObjectTagEXT').asFunction<VkDebugMarkerSetObjectTagEXT>();
-  vkCmdDebugMarkerBeginEXT = loadFunction<VkCmdDebugMarkerBeginEXTNative>(lib, 'vkCmdDebugMarkerBeginEXT').asFunction<VkCmdDebugMarkerBeginEXT>();
-  vkCmdDebugMarkerEndEXT = loadFunction<VkCmdDebugMarkerEndEXTNative>(lib, 'vkCmdDebugMarkerEndEXT').asFunction<VkCmdDebugMarkerEndEXT>();
-  vkCmdDebugMarkerInsertEXT = loadFunction<VkCmdDebugMarkerInsertEXTNative>(lib, 'vkCmdDebugMarkerInsertEXT').asFunction<VkCmdDebugMarkerInsertEXT>();
-  vkGetPhysicalDeviceExternalImageFormatPropertiesNV = loadFunction<VkGetPhysicalDeviceExternalImageFormatPropertiesNVNative>(lib, 'vkGetPhysicalDeviceExternalImageFormatPropertiesNV').asFunction<VkGetPhysicalDeviceExternalImageFormatPropertiesNV>();
-  vkGetMemoryWin32HandleNV = loadFunction<VkGetMemoryWin32HandleNVNative>(lib, 'vkGetMemoryWin32HandleNV').asFunction<VkGetMemoryWin32HandleNV>();
-  vkCmdExecuteGeneratedCommandsNV = loadFunction<VkCmdExecuteGeneratedCommandsNVNative>(lib, 'vkCmdExecuteGeneratedCommandsNV').asFunction<VkCmdExecuteGeneratedCommandsNV>();
-  vkCmdPreprocessGeneratedCommandsNV = loadFunction<VkCmdPreprocessGeneratedCommandsNVNative>(lib, 'vkCmdPreprocessGeneratedCommandsNV').asFunction<VkCmdPreprocessGeneratedCommandsNV>();
-  vkCmdBindPipelineShaderGroupNV = loadFunction<VkCmdBindPipelineShaderGroupNVNative>(lib, 'vkCmdBindPipelineShaderGroupNV').asFunction<VkCmdBindPipelineShaderGroupNV>();
-  vkGetGeneratedCommandsMemoryRequirementsNV = loadFunction<VkGetGeneratedCommandsMemoryRequirementsNVNative>(lib, 'vkGetGeneratedCommandsMemoryRequirementsNV').asFunction<VkGetGeneratedCommandsMemoryRequirementsNV>();
-  vkCreateIndirectCommandsLayoutNV = loadFunction<VkCreateIndirectCommandsLayoutNVNative>(lib, 'vkCreateIndirectCommandsLayoutNV').asFunction<VkCreateIndirectCommandsLayoutNV>();
-  vkDestroyIndirectCommandsLayoutNV = loadFunction<VkDestroyIndirectCommandsLayoutNVNative>(lib, 'vkDestroyIndirectCommandsLayoutNV').asFunction<VkDestroyIndirectCommandsLayoutNV>();
-  vkGetPhysicalDeviceFeatures2 = loadFunction<VkGetPhysicalDeviceFeatures2Native>(lib, 'vkGetPhysicalDeviceFeatures2').asFunction<VkGetPhysicalDeviceFeatures2>();
-  vkGetPhysicalDeviceFeatures2KHR = loadFunction<VkGetPhysicalDeviceFeatures2KHRNative>(lib, 'vkGetPhysicalDeviceFeatures2KHR').asFunction<VkGetPhysicalDeviceFeatures2KHR>();
-  vkGetPhysicalDeviceProperties2 = loadFunction<VkGetPhysicalDeviceProperties2Native>(lib, 'vkGetPhysicalDeviceProperties2').asFunction<VkGetPhysicalDeviceProperties2>();
-  vkGetPhysicalDeviceProperties2KHR = loadFunction<VkGetPhysicalDeviceProperties2KHRNative>(lib, 'vkGetPhysicalDeviceProperties2KHR').asFunction<VkGetPhysicalDeviceProperties2KHR>();
-  vkGetPhysicalDeviceFormatProperties2 = loadFunction<VkGetPhysicalDeviceFormatProperties2Native>(lib, 'vkGetPhysicalDeviceFormatProperties2').asFunction<VkGetPhysicalDeviceFormatProperties2>();
-  vkGetPhysicalDeviceFormatProperties2KHR = loadFunction<VkGetPhysicalDeviceFormatProperties2KHRNative>(lib, 'vkGetPhysicalDeviceFormatProperties2KHR').asFunction<VkGetPhysicalDeviceFormatProperties2KHR>();
-  vkGetPhysicalDeviceImageFormatProperties2 = loadFunction<VkGetPhysicalDeviceImageFormatProperties2Native>(lib, 'vkGetPhysicalDeviceImageFormatProperties2').asFunction<VkGetPhysicalDeviceImageFormatProperties2>();
-  vkGetPhysicalDeviceImageFormatProperties2KHR = loadFunction<VkGetPhysicalDeviceImageFormatProperties2KHRNative>(lib, 'vkGetPhysicalDeviceImageFormatProperties2KHR').asFunction<VkGetPhysicalDeviceImageFormatProperties2KHR>();
-  vkGetPhysicalDeviceQueueFamilyProperties2 = loadFunction<VkGetPhysicalDeviceQueueFamilyProperties2Native>(lib, 'vkGetPhysicalDeviceQueueFamilyProperties2').asFunction<VkGetPhysicalDeviceQueueFamilyProperties2>();
-  vkGetPhysicalDeviceQueueFamilyProperties2KHR = loadFunction<VkGetPhysicalDeviceQueueFamilyProperties2KHRNative>(lib, 'vkGetPhysicalDeviceQueueFamilyProperties2KHR').asFunction<VkGetPhysicalDeviceQueueFamilyProperties2KHR>();
-  vkGetPhysicalDeviceMemoryProperties2 = loadFunction<VkGetPhysicalDeviceMemoryProperties2Native>(lib, 'vkGetPhysicalDeviceMemoryProperties2').asFunction<VkGetPhysicalDeviceMemoryProperties2>();
-  vkGetPhysicalDeviceMemoryProperties2KHR = loadFunction<VkGetPhysicalDeviceMemoryProperties2KHRNative>(lib, 'vkGetPhysicalDeviceMemoryProperties2KHR').asFunction<VkGetPhysicalDeviceMemoryProperties2KHR>();
-  vkGetPhysicalDeviceSparseImageFormatProperties2 = loadFunction<VkGetPhysicalDeviceSparseImageFormatProperties2Native>(lib, 'vkGetPhysicalDeviceSparseImageFormatProperties2').asFunction<VkGetPhysicalDeviceSparseImageFormatProperties2>();
-  vkGetPhysicalDeviceSparseImageFormatProperties2KHR = loadFunction<VkGetPhysicalDeviceSparseImageFormatProperties2KHRNative>(lib, 'vkGetPhysicalDeviceSparseImageFormatProperties2KHR').asFunction<VkGetPhysicalDeviceSparseImageFormatProperties2KHR>();
-  vkCmdPushDescriptorSetKHR = loadFunction<VkCmdPushDescriptorSetKHRNative>(lib, 'vkCmdPushDescriptorSetKHR').asFunction<VkCmdPushDescriptorSetKHR>();
-  vkTrimCommandPool = loadFunction<VkTrimCommandPoolNative>(lib, 'vkTrimCommandPool').asFunction<VkTrimCommandPool>();
-  vkTrimCommandPoolKHR = loadFunction<VkTrimCommandPoolKHRNative>(lib, 'vkTrimCommandPoolKHR').asFunction<VkTrimCommandPoolKHR>();
-  vkGetPhysicalDeviceExternalBufferProperties = loadFunction<VkGetPhysicalDeviceExternalBufferPropertiesNative>(lib, 'vkGetPhysicalDeviceExternalBufferProperties').asFunction<VkGetPhysicalDeviceExternalBufferProperties>();
-  vkGetPhysicalDeviceExternalBufferPropertiesKHR = loadFunction<VkGetPhysicalDeviceExternalBufferPropertiesKHRNative>(lib, 'vkGetPhysicalDeviceExternalBufferPropertiesKHR').asFunction<VkGetPhysicalDeviceExternalBufferPropertiesKHR>();
-  vkGetMemoryWin32HandleKHR = loadFunction<VkGetMemoryWin32HandleKHRNative>(lib, 'vkGetMemoryWin32HandleKHR').asFunction<VkGetMemoryWin32HandleKHR>();
-  vkGetMemoryWin32HandlePropertiesKHR = loadFunction<VkGetMemoryWin32HandlePropertiesKHRNative>(lib, 'vkGetMemoryWin32HandlePropertiesKHR').asFunction<VkGetMemoryWin32HandlePropertiesKHR>();
-  vkGetMemoryFdKHR = loadFunction<VkGetMemoryFdKHRNative>(lib, 'vkGetMemoryFdKHR').asFunction<VkGetMemoryFdKHR>();
-  vkGetMemoryFdPropertiesKHR = loadFunction<VkGetMemoryFdPropertiesKHRNative>(lib, 'vkGetMemoryFdPropertiesKHR').asFunction<VkGetMemoryFdPropertiesKHR>();
-  vkGetPhysicalDeviceExternalSemaphoreProperties = loadFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesNative>(lib, 'vkGetPhysicalDeviceExternalSemaphoreProperties').asFunction<VkGetPhysicalDeviceExternalSemaphoreProperties>();
-  vkGetPhysicalDeviceExternalSemaphorePropertiesKHR = loadFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesKHRNative>(lib, 'vkGetPhysicalDeviceExternalSemaphorePropertiesKHR').asFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesKHR>();
-  vkGetSemaphoreWin32HandleKHR = loadFunction<VkGetSemaphoreWin32HandleKHRNative>(lib, 'vkGetSemaphoreWin32HandleKHR').asFunction<VkGetSemaphoreWin32HandleKHR>();
-  vkImportSemaphoreWin32HandleKHR = loadFunction<VkImportSemaphoreWin32HandleKHRNative>(lib, 'vkImportSemaphoreWin32HandleKHR').asFunction<VkImportSemaphoreWin32HandleKHR>();
-  vkGetSemaphoreFdKHR = loadFunction<VkGetSemaphoreFdKHRNative>(lib, 'vkGetSemaphoreFdKHR').asFunction<VkGetSemaphoreFdKHR>();
-  vkImportSemaphoreFdKHR = loadFunction<VkImportSemaphoreFdKHRNative>(lib, 'vkImportSemaphoreFdKHR').asFunction<VkImportSemaphoreFdKHR>();
-  vkGetPhysicalDeviceExternalFenceProperties = loadFunction<VkGetPhysicalDeviceExternalFencePropertiesNative>(lib, 'vkGetPhysicalDeviceExternalFenceProperties').asFunction<VkGetPhysicalDeviceExternalFenceProperties>();
-  vkGetPhysicalDeviceExternalFencePropertiesKHR = loadFunction<VkGetPhysicalDeviceExternalFencePropertiesKHRNative>(lib, 'vkGetPhysicalDeviceExternalFencePropertiesKHR').asFunction<VkGetPhysicalDeviceExternalFencePropertiesKHR>();
-  vkGetFenceWin32HandleKHR = loadFunction<VkGetFenceWin32HandleKHRNative>(lib, 'vkGetFenceWin32HandleKHR').asFunction<VkGetFenceWin32HandleKHR>();
-  vkImportFenceWin32HandleKHR = loadFunction<VkImportFenceWin32HandleKHRNative>(lib, 'vkImportFenceWin32HandleKHR').asFunction<VkImportFenceWin32HandleKHR>();
-  vkGetFenceFdKHR = loadFunction<VkGetFenceFdKHRNative>(lib, 'vkGetFenceFdKHR').asFunction<VkGetFenceFdKHR>();
-  vkImportFenceFdKHR = loadFunction<VkImportFenceFdKHRNative>(lib, 'vkImportFenceFdKHR').asFunction<VkImportFenceFdKHR>();
-  vkReleaseDisplayEXT = loadFunction<VkReleaseDisplayEXTNative>(lib, 'vkReleaseDisplayEXT').asFunction<VkReleaseDisplayEXT>();
-  vkAcquireXlibDisplayEXT = loadFunction<VkAcquireXlibDisplayEXTNative>(lib, 'vkAcquireXlibDisplayEXT').asFunction<VkAcquireXlibDisplayEXT>();
-  vkGetRandROutputDisplayEXT = loadFunction<VkGetRandROutputDisplayEXTNative>(lib, 'vkGetRandROutputDisplayEXT').asFunction<VkGetRandROutputDisplayEXT>();
-  vkAcquireWinrtDisplayNV = loadFunction<VkAcquireWinrtDisplayNVNative>(lib, 'vkAcquireWinrtDisplayNV').asFunction<VkAcquireWinrtDisplayNV>();
-  vkGetWinrtDisplayNV = loadFunction<VkGetWinrtDisplayNVNative>(lib, 'vkGetWinrtDisplayNV').asFunction<VkGetWinrtDisplayNV>();
-  vkDisplayPowerControlEXT = loadFunction<VkDisplayPowerControlEXTNative>(lib, 'vkDisplayPowerControlEXT').asFunction<VkDisplayPowerControlEXT>();
-  vkRegisterDeviceEventEXT = loadFunction<VkRegisterDeviceEventEXTNative>(lib, 'vkRegisterDeviceEventEXT').asFunction<VkRegisterDeviceEventEXT>();
-  vkRegisterDisplayEventEXT = loadFunction<VkRegisterDisplayEventEXTNative>(lib, 'vkRegisterDisplayEventEXT').asFunction<VkRegisterDisplayEventEXT>();
-  vkGetSwapchainCounterEXT = loadFunction<VkGetSwapchainCounterEXTNative>(lib, 'vkGetSwapchainCounterEXT').asFunction<VkGetSwapchainCounterEXT>();
-  vkGetPhysicalDeviceSurfaceCapabilities2EXT = loadFunction<VkGetPhysicalDeviceSurfaceCapabilities2EXTNative>(lib, 'vkGetPhysicalDeviceSurfaceCapabilities2EXT').asFunction<VkGetPhysicalDeviceSurfaceCapabilities2EXT>();
-  vkEnumeratePhysicalDeviceGroups = loadFunction<VkEnumeratePhysicalDeviceGroupsNative>(lib, 'vkEnumeratePhysicalDeviceGroups').asFunction<VkEnumeratePhysicalDeviceGroups>();
-  vkEnumeratePhysicalDeviceGroupsKHR = loadFunction<VkEnumeratePhysicalDeviceGroupsKHRNative>(lib, 'vkEnumeratePhysicalDeviceGroupsKHR').asFunction<VkEnumeratePhysicalDeviceGroupsKHR>();
-  vkGetDeviceGroupPeerMemoryFeatures = loadFunction<VkGetDeviceGroupPeerMemoryFeaturesNative>(lib, 'vkGetDeviceGroupPeerMemoryFeatures').asFunction<VkGetDeviceGroupPeerMemoryFeatures>();
-  vkGetDeviceGroupPeerMemoryFeaturesKHR = loadFunction<VkGetDeviceGroupPeerMemoryFeaturesKHRNative>(lib, 'vkGetDeviceGroupPeerMemoryFeaturesKHR').asFunction<VkGetDeviceGroupPeerMemoryFeaturesKHR>();
-  vkBindBufferMemory2 = loadFunction<VkBindBufferMemory2Native>(lib, 'vkBindBufferMemory2').asFunction<VkBindBufferMemory2>();
-  vkBindBufferMemory2KHR = loadFunction<VkBindBufferMemory2KHRNative>(lib, 'vkBindBufferMemory2KHR').asFunction<VkBindBufferMemory2KHR>();
-  vkBindImageMemory2 = loadFunction<VkBindImageMemory2Native>(lib, 'vkBindImageMemory2').asFunction<VkBindImageMemory2>();
-  vkBindImageMemory2KHR = loadFunction<VkBindImageMemory2KHRNative>(lib, 'vkBindImageMemory2KHR').asFunction<VkBindImageMemory2KHR>();
-  vkCmdSetDeviceMask = loadFunction<VkCmdSetDeviceMaskNative>(lib, 'vkCmdSetDeviceMask').asFunction<VkCmdSetDeviceMask>();
-  vkCmdSetDeviceMaskKHR = loadFunction<VkCmdSetDeviceMaskKHRNative>(lib, 'vkCmdSetDeviceMaskKHR').asFunction<VkCmdSetDeviceMaskKHR>();
-  vkGetDeviceGroupPresentCapabilitiesKHR = loadFunction<VkGetDeviceGroupPresentCapabilitiesKHRNative>(lib, 'vkGetDeviceGroupPresentCapabilitiesKHR').asFunction<VkGetDeviceGroupPresentCapabilitiesKHR>();
-  vkGetDeviceGroupSurfacePresentModesKHR = loadFunction<VkGetDeviceGroupSurfacePresentModesKHRNative>(lib, 'vkGetDeviceGroupSurfacePresentModesKHR').asFunction<VkGetDeviceGroupSurfacePresentModesKHR>();
-  vkAcquireNextImage2KHR = loadFunction<VkAcquireNextImage2KHRNative>(lib, 'vkAcquireNextImage2KHR').asFunction<VkAcquireNextImage2KHR>();
-  vkCmdDispatchBase = loadFunction<VkCmdDispatchBaseNative>(lib, 'vkCmdDispatchBase').asFunction<VkCmdDispatchBase>();
-  vkCmdDispatchBaseKHR = loadFunction<VkCmdDispatchBaseKHRNative>(lib, 'vkCmdDispatchBaseKHR').asFunction<VkCmdDispatchBaseKHR>();
-  vkGetPhysicalDevicePresentRectanglesKHR = loadFunction<VkGetPhysicalDevicePresentRectanglesKHRNative>(lib, 'vkGetPhysicalDevicePresentRectanglesKHR').asFunction<VkGetPhysicalDevicePresentRectanglesKHR>();
-  vkCreateDescriptorUpdateTemplate = loadFunction<VkCreateDescriptorUpdateTemplateNative>(lib, 'vkCreateDescriptorUpdateTemplate').asFunction<VkCreateDescriptorUpdateTemplate>();
-  vkCreateDescriptorUpdateTemplateKHR = loadFunction<VkCreateDescriptorUpdateTemplateKHRNative>(lib, 'vkCreateDescriptorUpdateTemplateKHR').asFunction<VkCreateDescriptorUpdateTemplateKHR>();
-  vkDestroyDescriptorUpdateTemplate = loadFunction<VkDestroyDescriptorUpdateTemplateNative>(lib, 'vkDestroyDescriptorUpdateTemplate').asFunction<VkDestroyDescriptorUpdateTemplate>();
-  vkDestroyDescriptorUpdateTemplateKHR = loadFunction<VkDestroyDescriptorUpdateTemplateKHRNative>(lib, 'vkDestroyDescriptorUpdateTemplateKHR').asFunction<VkDestroyDescriptorUpdateTemplateKHR>();
-  vkUpdateDescriptorSetWithTemplate = loadFunction<VkUpdateDescriptorSetWithTemplateNative>(lib, 'vkUpdateDescriptorSetWithTemplate').asFunction<VkUpdateDescriptorSetWithTemplate>();
-  vkUpdateDescriptorSetWithTemplateKHR = loadFunction<VkUpdateDescriptorSetWithTemplateKHRNative>(lib, 'vkUpdateDescriptorSetWithTemplateKHR').asFunction<VkUpdateDescriptorSetWithTemplateKHR>();
-  vkCmdPushDescriptorSetWithTemplateKHR = loadFunction<VkCmdPushDescriptorSetWithTemplateKHRNative>(lib, 'vkCmdPushDescriptorSetWithTemplateKHR').asFunction<VkCmdPushDescriptorSetWithTemplateKHR>();
-  vkSetHdrMetadataEXT = loadFunction<VkSetHdrMetadataEXTNative>(lib, 'vkSetHdrMetadataEXT').asFunction<VkSetHdrMetadataEXT>();
-  vkGetSwapchainStatusKHR = loadFunction<VkGetSwapchainStatusKHRNative>(lib, 'vkGetSwapchainStatusKHR').asFunction<VkGetSwapchainStatusKHR>();
-  vkGetRefreshCycleDurationGOOGLE = loadFunction<VkGetRefreshCycleDurationGOOGLENative>(lib, 'vkGetRefreshCycleDurationGOOGLE').asFunction<VkGetRefreshCycleDurationGOOGLE>();
-  vkGetPastPresentationTimingGOOGLE = loadFunction<VkGetPastPresentationTimingGOOGLENative>(lib, 'vkGetPastPresentationTimingGOOGLE').asFunction<VkGetPastPresentationTimingGOOGLE>();
-  vkCreateIOSSurfaceMVK = loadFunction<VkCreateIOSSurfaceMVKNative>(lib, 'vkCreateIOSSurfaceMVK').asFunction<VkCreateIOSSurfaceMVK>();
-  vkCreateMacOSSurfaceMVK = loadFunction<VkCreateMacOSSurfaceMVKNative>(lib, 'vkCreateMacOSSurfaceMVK').asFunction<VkCreateMacOSSurfaceMVK>();
-  vkCreateMetalSurfaceEXT = loadFunction<VkCreateMetalSurfaceEXTNative>(lib, 'vkCreateMetalSurfaceEXT').asFunction<VkCreateMetalSurfaceEXT>();
-  vkCmdSetViewportWScalingNV = loadFunction<VkCmdSetViewportWScalingNVNative>(lib, 'vkCmdSetViewportWScalingNV').asFunction<VkCmdSetViewportWScalingNV>();
-  vkCmdSetDiscardRectangleEXT = loadFunction<VkCmdSetDiscardRectangleEXTNative>(lib, 'vkCmdSetDiscardRectangleEXT').asFunction<VkCmdSetDiscardRectangleEXT>();
-  vkCmdSetSampleLocationsEXT = loadFunction<VkCmdSetSampleLocationsEXTNative>(lib, 'vkCmdSetSampleLocationsEXT').asFunction<VkCmdSetSampleLocationsEXT>();
-  vkGetPhysicalDeviceMultisamplePropertiesEXT = loadFunction<VkGetPhysicalDeviceMultisamplePropertiesEXTNative>(lib, 'vkGetPhysicalDeviceMultisamplePropertiesEXT').asFunction<VkGetPhysicalDeviceMultisamplePropertiesEXT>();
-  vkGetPhysicalDeviceSurfaceCapabilities2KHR = loadFunction<VkGetPhysicalDeviceSurfaceCapabilities2KHRNative>(lib, 'vkGetPhysicalDeviceSurfaceCapabilities2KHR').asFunction<VkGetPhysicalDeviceSurfaceCapabilities2KHR>();
-  vkGetPhysicalDeviceSurfaceFormats2KHR = loadFunction<VkGetPhysicalDeviceSurfaceFormats2KHRNative>(lib, 'vkGetPhysicalDeviceSurfaceFormats2KHR').asFunction<VkGetPhysicalDeviceSurfaceFormats2KHR>();
-  vkGetPhysicalDeviceDisplayProperties2KHR = loadFunction<VkGetPhysicalDeviceDisplayProperties2KHRNative>(lib, 'vkGetPhysicalDeviceDisplayProperties2KHR').asFunction<VkGetPhysicalDeviceDisplayProperties2KHR>();
-  vkGetPhysicalDeviceDisplayPlaneProperties2KHR = loadFunction<VkGetPhysicalDeviceDisplayPlaneProperties2KHRNative>(lib, 'vkGetPhysicalDeviceDisplayPlaneProperties2KHR').asFunction<VkGetPhysicalDeviceDisplayPlaneProperties2KHR>();
-  vkGetDisplayModeProperties2KHR = loadFunction<VkGetDisplayModeProperties2KHRNative>(lib, 'vkGetDisplayModeProperties2KHR').asFunction<VkGetDisplayModeProperties2KHR>();
-  vkGetDisplayPlaneCapabilities2KHR = loadFunction<VkGetDisplayPlaneCapabilities2KHRNative>(lib, 'vkGetDisplayPlaneCapabilities2KHR').asFunction<VkGetDisplayPlaneCapabilities2KHR>();
-  vkGetBufferMemoryRequirements2 = loadFunction<VkGetBufferMemoryRequirements2Native>(lib, 'vkGetBufferMemoryRequirements2').asFunction<VkGetBufferMemoryRequirements2>();
-  vkGetBufferMemoryRequirements2KHR = loadFunction<VkGetBufferMemoryRequirements2KHRNative>(lib, 'vkGetBufferMemoryRequirements2KHR').asFunction<VkGetBufferMemoryRequirements2KHR>();
-  vkGetImageMemoryRequirements2 = loadFunction<VkGetImageMemoryRequirements2Native>(lib, 'vkGetImageMemoryRequirements2').asFunction<VkGetImageMemoryRequirements2>();
-  vkGetImageMemoryRequirements2KHR = loadFunction<VkGetImageMemoryRequirements2KHRNative>(lib, 'vkGetImageMemoryRequirements2KHR').asFunction<VkGetImageMemoryRequirements2KHR>();
-  vkGetImageSparseMemoryRequirements2 = loadFunction<VkGetImageSparseMemoryRequirements2Native>(lib, 'vkGetImageSparseMemoryRequirements2').asFunction<VkGetImageSparseMemoryRequirements2>();
-  vkGetImageSparseMemoryRequirements2KHR = loadFunction<VkGetImageSparseMemoryRequirements2KHRNative>(lib, 'vkGetImageSparseMemoryRequirements2KHR').asFunction<VkGetImageSparseMemoryRequirements2KHR>();
-  vkCreateSamplerYcbcrConversion = loadFunction<VkCreateSamplerYcbcrConversionNative>(lib, 'vkCreateSamplerYcbcrConversion').asFunction<VkCreateSamplerYcbcrConversion>();
-  vkCreateSamplerYcbcrConversionKHR = loadFunction<VkCreateSamplerYcbcrConversionKHRNative>(lib, 'vkCreateSamplerYcbcrConversionKHR').asFunction<VkCreateSamplerYcbcrConversionKHR>();
-  vkDestroySamplerYcbcrConversion = loadFunction<VkDestroySamplerYcbcrConversionNative>(lib, 'vkDestroySamplerYcbcrConversion').asFunction<VkDestroySamplerYcbcrConversion>();
-  vkDestroySamplerYcbcrConversionKHR = loadFunction<VkDestroySamplerYcbcrConversionKHRNative>(lib, 'vkDestroySamplerYcbcrConversionKHR').asFunction<VkDestroySamplerYcbcrConversionKHR>();
-  vkGetDeviceQueue2 = loadFunction<VkGetDeviceQueue2Native>(lib, 'vkGetDeviceQueue2').asFunction<VkGetDeviceQueue2>();
-  vkCreateValidationCacheEXT = loadFunction<VkCreateValidationCacheEXTNative>(lib, 'vkCreateValidationCacheEXT').asFunction<VkCreateValidationCacheEXT>();
-  vkDestroyValidationCacheEXT = loadFunction<VkDestroyValidationCacheEXTNative>(lib, 'vkDestroyValidationCacheEXT').asFunction<VkDestroyValidationCacheEXT>();
-  vkGetValidationCacheDataEXT = loadFunction<VkGetValidationCacheDataEXTNative>(lib, 'vkGetValidationCacheDataEXT').asFunction<VkGetValidationCacheDataEXT>();
-  vkMergeValidationCachesEXT = loadFunction<VkMergeValidationCachesEXTNative>(lib, 'vkMergeValidationCachesEXT').asFunction<VkMergeValidationCachesEXT>();
-  vkGetDescriptorSetLayoutSupport = loadFunction<VkGetDescriptorSetLayoutSupportNative>(lib, 'vkGetDescriptorSetLayoutSupport').asFunction<VkGetDescriptorSetLayoutSupport>();
-  vkGetDescriptorSetLayoutSupportKHR = loadFunction<VkGetDescriptorSetLayoutSupportKHRNative>(lib, 'vkGetDescriptorSetLayoutSupportKHR').asFunction<VkGetDescriptorSetLayoutSupportKHR>();
-  vkGetSwapchainGrallocUsageANDROID = loadFunction<VkGetSwapchainGrallocUsageANDROIDNative>(lib, 'vkGetSwapchainGrallocUsageANDROID').asFunction<VkGetSwapchainGrallocUsageANDROID>();
-  vkGetSwapchainGrallocUsage2ANDROID = loadFunction<VkGetSwapchainGrallocUsage2ANDROIDNative>(lib, 'vkGetSwapchainGrallocUsage2ANDROID').asFunction<VkGetSwapchainGrallocUsage2ANDROID>();
-  vkAcquireImageANDROID = loadFunction<VkAcquireImageANDROIDNative>(lib, 'vkAcquireImageANDROID').asFunction<VkAcquireImageANDROID>();
-  vkQueueSignalReleaseImageANDROID = loadFunction<VkQueueSignalReleaseImageANDROIDNative>(lib, 'vkQueueSignalReleaseImageANDROID').asFunction<VkQueueSignalReleaseImageANDROID>();
-  vkGetShaderInfoAMD = loadFunction<VkGetShaderInfoAMDNative>(lib, 'vkGetShaderInfoAMD').asFunction<VkGetShaderInfoAMD>();
-  vkSetLocalDimmingAMD = loadFunction<VkSetLocalDimmingAMDNative>(lib, 'vkSetLocalDimmingAMD').asFunction<VkSetLocalDimmingAMD>();
-  vkGetPhysicalDeviceCalibrateableTimeDomainsEXT = loadFunction<VkGetPhysicalDeviceCalibrateableTimeDomainsEXTNative>(lib, 'vkGetPhysicalDeviceCalibrateableTimeDomainsEXT').asFunction<VkGetPhysicalDeviceCalibrateableTimeDomainsEXT>();
-  vkGetCalibratedTimestampsEXT = loadFunction<VkGetCalibratedTimestampsEXTNative>(lib, 'vkGetCalibratedTimestampsEXT').asFunction<VkGetCalibratedTimestampsEXT>();
-  vkSetDebugUtilsObjectNameEXT = loadFunction<VkSetDebugUtilsObjectNameEXTNative>(lib, 'vkSetDebugUtilsObjectNameEXT').asFunction<VkSetDebugUtilsObjectNameEXT>();
-  vkSetDebugUtilsObjectTagEXT = loadFunction<VkSetDebugUtilsObjectTagEXTNative>(lib, 'vkSetDebugUtilsObjectTagEXT').asFunction<VkSetDebugUtilsObjectTagEXT>();
-  vkQueueBeginDebugUtilsLabelEXT = loadFunction<VkQueueBeginDebugUtilsLabelEXTNative>(lib, 'vkQueueBeginDebugUtilsLabelEXT').asFunction<VkQueueBeginDebugUtilsLabelEXT>();
-  vkQueueEndDebugUtilsLabelEXT = loadFunction<VkQueueEndDebugUtilsLabelEXTNative>(lib, 'vkQueueEndDebugUtilsLabelEXT').asFunction<VkQueueEndDebugUtilsLabelEXT>();
-  vkQueueInsertDebugUtilsLabelEXT = loadFunction<VkQueueInsertDebugUtilsLabelEXTNative>(lib, 'vkQueueInsertDebugUtilsLabelEXT').asFunction<VkQueueInsertDebugUtilsLabelEXT>();
-  vkCmdBeginDebugUtilsLabelEXT = loadFunction<VkCmdBeginDebugUtilsLabelEXTNative>(lib, 'vkCmdBeginDebugUtilsLabelEXT').asFunction<VkCmdBeginDebugUtilsLabelEXT>();
-  vkCmdEndDebugUtilsLabelEXT = loadFunction<VkCmdEndDebugUtilsLabelEXTNative>(lib, 'vkCmdEndDebugUtilsLabelEXT').asFunction<VkCmdEndDebugUtilsLabelEXT>();
-  vkCmdInsertDebugUtilsLabelEXT = loadFunction<VkCmdInsertDebugUtilsLabelEXTNative>(lib, 'vkCmdInsertDebugUtilsLabelEXT').asFunction<VkCmdInsertDebugUtilsLabelEXT>();
-  vkCreateDebugUtilsMessengerEXT = loadFunction<VkCreateDebugUtilsMessengerEXTNative>(lib, 'vkCreateDebugUtilsMessengerEXT').asFunction<VkCreateDebugUtilsMessengerEXT>();
-  vkDestroyDebugUtilsMessengerEXT = loadFunction<VkDestroyDebugUtilsMessengerEXTNative>(lib, 'vkDestroyDebugUtilsMessengerEXT').asFunction<VkDestroyDebugUtilsMessengerEXT>();
-  vkSubmitDebugUtilsMessageEXT = loadFunction<VkSubmitDebugUtilsMessageEXTNative>(lib, 'vkSubmitDebugUtilsMessageEXT').asFunction<VkSubmitDebugUtilsMessageEXT>();
-  vkGetMemoryHostPointerPropertiesEXT = loadFunction<VkGetMemoryHostPointerPropertiesEXTNative>(lib, 'vkGetMemoryHostPointerPropertiesEXT').asFunction<VkGetMemoryHostPointerPropertiesEXT>();
-  vkCmdWriteBufferMarkerAMD = loadFunction<VkCmdWriteBufferMarkerAMDNative>(lib, 'vkCmdWriteBufferMarkerAMD').asFunction<VkCmdWriteBufferMarkerAMD>();
-  vkCreateRenderPass2 = loadFunction<VkCreateRenderPass2Native>(lib, 'vkCreateRenderPass2').asFunction<VkCreateRenderPass2>();
-  vkCreateRenderPass2KHR = loadFunction<VkCreateRenderPass2KHRNative>(lib, 'vkCreateRenderPass2KHR').asFunction<VkCreateRenderPass2KHR>();
-  vkCmdBeginRenderPass2 = loadFunction<VkCmdBeginRenderPass2Native>(lib, 'vkCmdBeginRenderPass2').asFunction<VkCmdBeginRenderPass2>();
-  vkCmdBeginRenderPass2KHR = loadFunction<VkCmdBeginRenderPass2KHRNative>(lib, 'vkCmdBeginRenderPass2KHR').asFunction<VkCmdBeginRenderPass2KHR>();
-  vkCmdNextSubpass2 = loadFunction<VkCmdNextSubpass2Native>(lib, 'vkCmdNextSubpass2').asFunction<VkCmdNextSubpass2>();
-  vkCmdNextSubpass2KHR = loadFunction<VkCmdNextSubpass2KHRNative>(lib, 'vkCmdNextSubpass2KHR').asFunction<VkCmdNextSubpass2KHR>();
-  vkCmdEndRenderPass2 = loadFunction<VkCmdEndRenderPass2Native>(lib, 'vkCmdEndRenderPass2').asFunction<VkCmdEndRenderPass2>();
-  vkCmdEndRenderPass2KHR = loadFunction<VkCmdEndRenderPass2KHRNative>(lib, 'vkCmdEndRenderPass2KHR').asFunction<VkCmdEndRenderPass2KHR>();
-  vkGetSemaphoreCounterValue = loadFunction<VkGetSemaphoreCounterValueNative>(lib, 'vkGetSemaphoreCounterValue').asFunction<VkGetSemaphoreCounterValue>();
-  vkGetSemaphoreCounterValueKHR = loadFunction<VkGetSemaphoreCounterValueKHRNative>(lib, 'vkGetSemaphoreCounterValueKHR').asFunction<VkGetSemaphoreCounterValueKHR>();
-  vkWaitSemaphores = loadFunction<VkWaitSemaphoresNative>(lib, 'vkWaitSemaphores').asFunction<VkWaitSemaphores>();
-  vkWaitSemaphoresKHR = loadFunction<VkWaitSemaphoresKHRNative>(lib, 'vkWaitSemaphoresKHR').asFunction<VkWaitSemaphoresKHR>();
-  vkSignalSemaphore = loadFunction<VkSignalSemaphoreNative>(lib, 'vkSignalSemaphore').asFunction<VkSignalSemaphore>();
-  vkSignalSemaphoreKHR = loadFunction<VkSignalSemaphoreKHRNative>(lib, 'vkSignalSemaphoreKHR').asFunction<VkSignalSemaphoreKHR>();
-  vkGetAndroidHardwareBufferPropertiesANDROID = loadFunction<VkGetAndroidHardwareBufferPropertiesANDROIDNative>(lib, 'vkGetAndroidHardwareBufferPropertiesANDROID').asFunction<VkGetAndroidHardwareBufferPropertiesANDROID>();
-  vkGetMemoryAndroidHardwareBufferANDROID = loadFunction<VkGetMemoryAndroidHardwareBufferANDROIDNative>(lib, 'vkGetMemoryAndroidHardwareBufferANDROID').asFunction<VkGetMemoryAndroidHardwareBufferANDROID>();
-  vkCmdDrawIndirectCount = loadFunction<VkCmdDrawIndirectCountNative>(lib, 'vkCmdDrawIndirectCount').asFunction<VkCmdDrawIndirectCount>();
-  vkCmdDrawIndirectCountKHR = loadFunction<VkCmdDrawIndirectCountKHRNative>(lib, 'vkCmdDrawIndirectCountKHR').asFunction<VkCmdDrawIndirectCountKHR>();
-  vkCmdDrawIndirectCountAMD = loadFunction<VkCmdDrawIndirectCountAMDNative>(lib, 'vkCmdDrawIndirectCountAMD').asFunction<VkCmdDrawIndirectCountAMD>();
-  vkCmdDrawIndexedIndirectCount = loadFunction<VkCmdDrawIndexedIndirectCountNative>(lib, 'vkCmdDrawIndexedIndirectCount').asFunction<VkCmdDrawIndexedIndirectCount>();
-  vkCmdDrawIndexedIndirectCountKHR = loadFunction<VkCmdDrawIndexedIndirectCountKHRNative>(lib, 'vkCmdDrawIndexedIndirectCountKHR').asFunction<VkCmdDrawIndexedIndirectCountKHR>();
-  vkCmdDrawIndexedIndirectCountAMD = loadFunction<VkCmdDrawIndexedIndirectCountAMDNative>(lib, 'vkCmdDrawIndexedIndirectCountAMD').asFunction<VkCmdDrawIndexedIndirectCountAMD>();
-  vkCmdSetCheckpointNV = loadFunction<VkCmdSetCheckpointNVNative>(lib, 'vkCmdSetCheckpointNV').asFunction<VkCmdSetCheckpointNV>();
-  vkGetQueueCheckpointDataNV = loadFunction<VkGetQueueCheckpointDataNVNative>(lib, 'vkGetQueueCheckpointDataNV').asFunction<VkGetQueueCheckpointDataNV>();
-  vkCmdBindTransformFeedbackBuffersEXT = loadFunction<VkCmdBindTransformFeedbackBuffersEXTNative>(lib, 'vkCmdBindTransformFeedbackBuffersEXT').asFunction<VkCmdBindTransformFeedbackBuffersEXT>();
-  vkCmdBeginTransformFeedbackEXT = loadFunction<VkCmdBeginTransformFeedbackEXTNative>(lib, 'vkCmdBeginTransformFeedbackEXT').asFunction<VkCmdBeginTransformFeedbackEXT>();
-  vkCmdEndTransformFeedbackEXT = loadFunction<VkCmdEndTransformFeedbackEXTNative>(lib, 'vkCmdEndTransformFeedbackEXT').asFunction<VkCmdEndTransformFeedbackEXT>();
-  vkCmdBeginQueryIndexedEXT = loadFunction<VkCmdBeginQueryIndexedEXTNative>(lib, 'vkCmdBeginQueryIndexedEXT').asFunction<VkCmdBeginQueryIndexedEXT>();
-  vkCmdEndQueryIndexedEXT = loadFunction<VkCmdEndQueryIndexedEXTNative>(lib, 'vkCmdEndQueryIndexedEXT').asFunction<VkCmdEndQueryIndexedEXT>();
-  vkCmdDrawIndirectByteCountEXT = loadFunction<VkCmdDrawIndirectByteCountEXTNative>(lib, 'vkCmdDrawIndirectByteCountEXT').asFunction<VkCmdDrawIndirectByteCountEXT>();
-  vkCmdSetExclusiveScissorNV = loadFunction<VkCmdSetExclusiveScissorNVNative>(lib, 'vkCmdSetExclusiveScissorNV').asFunction<VkCmdSetExclusiveScissorNV>();
-  vkCmdBindShadingRateImageNV = loadFunction<VkCmdBindShadingRateImageNVNative>(lib, 'vkCmdBindShadingRateImageNV').asFunction<VkCmdBindShadingRateImageNV>();
-  vkCmdSetViewportShadingRatePaletteNV = loadFunction<VkCmdSetViewportShadingRatePaletteNVNative>(lib, 'vkCmdSetViewportShadingRatePaletteNV').asFunction<VkCmdSetViewportShadingRatePaletteNV>();
-  vkCmdSetCoarseSampleOrderNV = loadFunction<VkCmdSetCoarseSampleOrderNVNative>(lib, 'vkCmdSetCoarseSampleOrderNV').asFunction<VkCmdSetCoarseSampleOrderNV>();
-  vkCmdDrawMeshTasksNV = loadFunction<VkCmdDrawMeshTasksNVNative>(lib, 'vkCmdDrawMeshTasksNV').asFunction<VkCmdDrawMeshTasksNV>();
-  vkCmdDrawMeshTasksIndirectNV = loadFunction<VkCmdDrawMeshTasksIndirectNVNative>(lib, 'vkCmdDrawMeshTasksIndirectNV').asFunction<VkCmdDrawMeshTasksIndirectNV>();
-  vkCmdDrawMeshTasksIndirectCountNV = loadFunction<VkCmdDrawMeshTasksIndirectCountNVNative>(lib, 'vkCmdDrawMeshTasksIndirectCountNV').asFunction<VkCmdDrawMeshTasksIndirectCountNV>();
-  vkCompileDeferredNV = loadFunction<VkCompileDeferredNVNative>(lib, 'vkCompileDeferredNV').asFunction<VkCompileDeferredNV>();
-  vkCreateAccelerationStructureNV = loadFunction<VkCreateAccelerationStructureNVNative>(lib, 'vkCreateAccelerationStructureNV').asFunction<VkCreateAccelerationStructureNV>();
-  vkDestroyAccelerationStructureKHR = loadFunction<VkDestroyAccelerationStructureKHRNative>(lib, 'vkDestroyAccelerationStructureKHR').asFunction<VkDestroyAccelerationStructureKHR>();
-  vkDestroyAccelerationStructureNV = loadFunction<VkDestroyAccelerationStructureNVNative>(lib, 'vkDestroyAccelerationStructureNV').asFunction<VkDestroyAccelerationStructureNV>();
-  vkGetAccelerationStructureMemoryRequirementsNV = loadFunction<VkGetAccelerationStructureMemoryRequirementsNVNative>(lib, 'vkGetAccelerationStructureMemoryRequirementsNV').asFunction<VkGetAccelerationStructureMemoryRequirementsNV>();
-  vkBindAccelerationStructureMemoryNV = loadFunction<VkBindAccelerationStructureMemoryNVNative>(lib, 'vkBindAccelerationStructureMemoryNV').asFunction<VkBindAccelerationStructureMemoryNV>();
-  vkCmdCopyAccelerationStructureNV = loadFunction<VkCmdCopyAccelerationStructureNVNative>(lib, 'vkCmdCopyAccelerationStructureNV').asFunction<VkCmdCopyAccelerationStructureNV>();
-  vkCmdCopyAccelerationStructureKHR = loadFunction<VkCmdCopyAccelerationStructureKHRNative>(lib, 'vkCmdCopyAccelerationStructureKHR').asFunction<VkCmdCopyAccelerationStructureKHR>();
-  vkCopyAccelerationStructureKHR = loadFunction<VkCopyAccelerationStructureKHRNative>(lib, 'vkCopyAccelerationStructureKHR').asFunction<VkCopyAccelerationStructureKHR>();
-  vkCmdCopyAccelerationStructureToMemoryKHR = loadFunction<VkCmdCopyAccelerationStructureToMemoryKHRNative>(lib, 'vkCmdCopyAccelerationStructureToMemoryKHR').asFunction<VkCmdCopyAccelerationStructureToMemoryKHR>();
-  vkCopyAccelerationStructureToMemoryKHR = loadFunction<VkCopyAccelerationStructureToMemoryKHRNative>(lib, 'vkCopyAccelerationStructureToMemoryKHR').asFunction<VkCopyAccelerationStructureToMemoryKHR>();
-  vkCmdCopyMemoryToAccelerationStructureKHR = loadFunction<VkCmdCopyMemoryToAccelerationStructureKHRNative>(lib, 'vkCmdCopyMemoryToAccelerationStructureKHR').asFunction<VkCmdCopyMemoryToAccelerationStructureKHR>();
-  vkCopyMemoryToAccelerationStructureKHR = loadFunction<VkCopyMemoryToAccelerationStructureKHRNative>(lib, 'vkCopyMemoryToAccelerationStructureKHR').asFunction<VkCopyMemoryToAccelerationStructureKHR>();
-  vkCmdWriteAccelerationStructuresPropertiesKHR = loadFunction<VkCmdWriteAccelerationStructuresPropertiesKHRNative>(lib, 'vkCmdWriteAccelerationStructuresPropertiesKHR').asFunction<VkCmdWriteAccelerationStructuresPropertiesKHR>();
-  vkCmdWriteAccelerationStructuresPropertiesNV = loadFunction<VkCmdWriteAccelerationStructuresPropertiesNVNative>(lib, 'vkCmdWriteAccelerationStructuresPropertiesNV').asFunction<VkCmdWriteAccelerationStructuresPropertiesNV>();
-  vkCmdBuildAccelerationStructureNV = loadFunction<VkCmdBuildAccelerationStructureNVNative>(lib, 'vkCmdBuildAccelerationStructureNV').asFunction<VkCmdBuildAccelerationStructureNV>();
-  vkWriteAccelerationStructuresPropertiesKHR = loadFunction<VkWriteAccelerationStructuresPropertiesKHRNative>(lib, 'vkWriteAccelerationStructuresPropertiesKHR').asFunction<VkWriteAccelerationStructuresPropertiesKHR>();
-  vkCmdTraceRaysKHR = loadFunction<VkCmdTraceRaysKHRNative>(lib, 'vkCmdTraceRaysKHR').asFunction<VkCmdTraceRaysKHR>();
-  vkCmdTraceRaysNV = loadFunction<VkCmdTraceRaysNVNative>(lib, 'vkCmdTraceRaysNV').asFunction<VkCmdTraceRaysNV>();
-  vkGetRayTracingShaderGroupHandlesKHR = loadFunction<VkGetRayTracingShaderGroupHandlesKHRNative>(lib, 'vkGetRayTracingShaderGroupHandlesKHR').asFunction<VkGetRayTracingShaderGroupHandlesKHR>();
-  vkGetRayTracingShaderGroupHandlesNV = loadFunction<VkGetRayTracingShaderGroupHandlesNVNative>(lib, 'vkGetRayTracingShaderGroupHandlesNV').asFunction<VkGetRayTracingShaderGroupHandlesNV>();
-  vkGetRayTracingCaptureReplayShaderGroupHandlesKHR = loadFunction<VkGetRayTracingCaptureReplayShaderGroupHandlesKHRNative>(lib, 'vkGetRayTracingCaptureReplayShaderGroupHandlesKHR').asFunction<VkGetRayTracingCaptureReplayShaderGroupHandlesKHR>();
-  vkGetAccelerationStructureHandleNV = loadFunction<VkGetAccelerationStructureHandleNVNative>(lib, 'vkGetAccelerationStructureHandleNV').asFunction<VkGetAccelerationStructureHandleNV>();
-  vkCreateRayTracingPipelinesNV = loadFunction<VkCreateRayTracingPipelinesNVNative>(lib, 'vkCreateRayTracingPipelinesNV').asFunction<VkCreateRayTracingPipelinesNV>();
-  vkCreateRayTracingPipelinesKHR = loadFunction<VkCreateRayTracingPipelinesKHRNative>(lib, 'vkCreateRayTracingPipelinesKHR').asFunction<VkCreateRayTracingPipelinesKHR>();
-  vkGetPhysicalDeviceCooperativeMatrixPropertiesNV = loadFunction<VkGetPhysicalDeviceCooperativeMatrixPropertiesNVNative>(lib, 'vkGetPhysicalDeviceCooperativeMatrixPropertiesNV').asFunction<VkGetPhysicalDeviceCooperativeMatrixPropertiesNV>();
-  vkCmdTraceRaysIndirectKHR = loadFunction<VkCmdTraceRaysIndirectKHRNative>(lib, 'vkCmdTraceRaysIndirectKHR').asFunction<VkCmdTraceRaysIndirectKHR>();
-  vkGetDeviceAccelerationStructureCompatibilityKHR = loadFunction<VkGetDeviceAccelerationStructureCompatibilityKHRNative>(lib, 'vkGetDeviceAccelerationStructureCompatibilityKHR').asFunction<VkGetDeviceAccelerationStructureCompatibilityKHR>();
-  vkGetRayTracingShaderGroupStackSizeKHR = loadFunction<VkGetRayTracingShaderGroupStackSizeKHRNative>(lib, 'vkGetRayTracingShaderGroupStackSizeKHR').asFunction<VkGetRayTracingShaderGroupStackSizeKHR>();
-  vkCmdSetRayTracingPipelineStackSizeKHR = loadFunction<VkCmdSetRayTracingPipelineStackSizeKHRNative>(lib, 'vkCmdSetRayTracingPipelineStackSizeKHR').asFunction<VkCmdSetRayTracingPipelineStackSizeKHR>();
-  vkGetImageViewHandleNVX = loadFunction<VkGetImageViewHandleNVXNative>(lib, 'vkGetImageViewHandleNVX').asFunction<VkGetImageViewHandleNVX>();
-  vkGetImageViewAddressNVX = loadFunction<VkGetImageViewAddressNVXNative>(lib, 'vkGetImageViewAddressNVX').asFunction<VkGetImageViewAddressNVX>();
-  vkGetPhysicalDeviceSurfacePresentModes2EXT = loadFunction<VkGetPhysicalDeviceSurfacePresentModes2EXTNative>(lib, 'vkGetPhysicalDeviceSurfacePresentModes2EXT').asFunction<VkGetPhysicalDeviceSurfacePresentModes2EXT>();
-  vkGetDeviceGroupSurfacePresentModes2EXT = loadFunction<VkGetDeviceGroupSurfacePresentModes2EXTNative>(lib, 'vkGetDeviceGroupSurfacePresentModes2EXT').asFunction<VkGetDeviceGroupSurfacePresentModes2EXT>();
-  vkAcquireFullScreenExclusiveModeEXT = loadFunction<VkAcquireFullScreenExclusiveModeEXTNative>(lib, 'vkAcquireFullScreenExclusiveModeEXT').asFunction<VkAcquireFullScreenExclusiveModeEXT>();
-  vkReleaseFullScreenExclusiveModeEXT = loadFunction<VkReleaseFullScreenExclusiveModeEXTNative>(lib, 'vkReleaseFullScreenExclusiveModeEXT').asFunction<VkReleaseFullScreenExclusiveModeEXT>();
-  vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR = loadFunction<VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHRNative>(lib, 'vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR').asFunction<VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR>();
-  vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR = loadFunction<VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHRNative>(lib, 'vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR').asFunction<VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR>();
-  vkAcquireProfilingLockKHR = loadFunction<VkAcquireProfilingLockKHRNative>(lib, 'vkAcquireProfilingLockKHR').asFunction<VkAcquireProfilingLockKHR>();
-  vkReleaseProfilingLockKHR = loadFunction<VkReleaseProfilingLockKHRNative>(lib, 'vkReleaseProfilingLockKHR').asFunction<VkReleaseProfilingLockKHR>();
-  vkGetImageDrmFormatModifierPropertiesEXT = loadFunction<VkGetImageDrmFormatModifierPropertiesEXTNative>(lib, 'vkGetImageDrmFormatModifierPropertiesEXT').asFunction<VkGetImageDrmFormatModifierPropertiesEXT>();
-  vkGetBufferOpaqueCaptureAddress = loadFunction<VkGetBufferOpaqueCaptureAddressNative>(lib, 'vkGetBufferOpaqueCaptureAddress').asFunction<VkGetBufferOpaqueCaptureAddress>();
-  vkGetBufferOpaqueCaptureAddressKHR = loadFunction<VkGetBufferOpaqueCaptureAddressKHRNative>(lib, 'vkGetBufferOpaqueCaptureAddressKHR').asFunction<VkGetBufferOpaqueCaptureAddressKHR>();
-  vkGetBufferDeviceAddress = loadFunction<VkGetBufferDeviceAddressNative>(lib, 'vkGetBufferDeviceAddress').asFunction<VkGetBufferDeviceAddress>();
-  vkGetBufferDeviceAddressKHR = loadFunction<VkGetBufferDeviceAddressKHRNative>(lib, 'vkGetBufferDeviceAddressKHR').asFunction<VkGetBufferDeviceAddressKHR>();
-  vkGetBufferDeviceAddressEXT = loadFunction<VkGetBufferDeviceAddressEXTNative>(lib, 'vkGetBufferDeviceAddressEXT').asFunction<VkGetBufferDeviceAddressEXT>();
-  vkCreateHeadlessSurfaceEXT = loadFunction<VkCreateHeadlessSurfaceEXTNative>(lib, 'vkCreateHeadlessSurfaceEXT').asFunction<VkCreateHeadlessSurfaceEXT>();
-  vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV = loadFunction<VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNVNative>(lib, 'vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV').asFunction<VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV>();
-  vkInitializePerformanceApiINTEL = loadFunction<VkInitializePerformanceApiINTELNative>(lib, 'vkInitializePerformanceApiINTEL').asFunction<VkInitializePerformanceApiINTEL>();
-  vkUninitializePerformanceApiINTEL = loadFunction<VkUninitializePerformanceApiINTELNative>(lib, 'vkUninitializePerformanceApiINTEL').asFunction<VkUninitializePerformanceApiINTEL>();
-  vkCmdSetPerformanceMarkerINTEL = loadFunction<VkCmdSetPerformanceMarkerINTELNative>(lib, 'vkCmdSetPerformanceMarkerINTEL').asFunction<VkCmdSetPerformanceMarkerINTEL>();
-  vkCmdSetPerformanceStreamMarkerINTEL = loadFunction<VkCmdSetPerformanceStreamMarkerINTELNative>(lib, 'vkCmdSetPerformanceStreamMarkerINTEL').asFunction<VkCmdSetPerformanceStreamMarkerINTEL>();
-  vkCmdSetPerformanceOverrideINTEL = loadFunction<VkCmdSetPerformanceOverrideINTELNative>(lib, 'vkCmdSetPerformanceOverrideINTEL').asFunction<VkCmdSetPerformanceOverrideINTEL>();
-  vkAcquirePerformanceConfigurationINTEL = loadFunction<VkAcquirePerformanceConfigurationINTELNative>(lib, 'vkAcquirePerformanceConfigurationINTEL').asFunction<VkAcquirePerformanceConfigurationINTEL>();
-  vkReleasePerformanceConfigurationINTEL = loadFunction<VkReleasePerformanceConfigurationINTELNative>(lib, 'vkReleasePerformanceConfigurationINTEL').asFunction<VkReleasePerformanceConfigurationINTEL>();
-  vkQueueSetPerformanceConfigurationINTEL = loadFunction<VkQueueSetPerformanceConfigurationINTELNative>(lib, 'vkQueueSetPerformanceConfigurationINTEL').asFunction<VkQueueSetPerformanceConfigurationINTEL>();
-  vkGetPerformanceParameterINTEL = loadFunction<VkGetPerformanceParameterINTELNative>(lib, 'vkGetPerformanceParameterINTEL').asFunction<VkGetPerformanceParameterINTEL>();
-  vkGetDeviceMemoryOpaqueCaptureAddress = loadFunction<VkGetDeviceMemoryOpaqueCaptureAddressNative>(lib, 'vkGetDeviceMemoryOpaqueCaptureAddress').asFunction<VkGetDeviceMemoryOpaqueCaptureAddress>();
-  vkGetDeviceMemoryOpaqueCaptureAddressKHR = loadFunction<VkGetDeviceMemoryOpaqueCaptureAddressKHRNative>(lib, 'vkGetDeviceMemoryOpaqueCaptureAddressKHR').asFunction<VkGetDeviceMemoryOpaqueCaptureAddressKHR>();
-  vkGetPipelineExecutablePropertiesKHR = loadFunction<VkGetPipelineExecutablePropertiesKHRNative>(lib, 'vkGetPipelineExecutablePropertiesKHR').asFunction<VkGetPipelineExecutablePropertiesKHR>();
-  vkGetPipelineExecutableStatisticsKHR = loadFunction<VkGetPipelineExecutableStatisticsKHRNative>(lib, 'vkGetPipelineExecutableStatisticsKHR').asFunction<VkGetPipelineExecutableStatisticsKHR>();
-  vkGetPipelineExecutableInternalRepresentationsKHR = loadFunction<VkGetPipelineExecutableInternalRepresentationsKHRNative>(lib, 'vkGetPipelineExecutableInternalRepresentationsKHR').asFunction<VkGetPipelineExecutableInternalRepresentationsKHR>();
-  vkCmdSetLineStippleEXT = loadFunction<VkCmdSetLineStippleEXTNative>(lib, 'vkCmdSetLineStippleEXT').asFunction<VkCmdSetLineStippleEXT>();
-  vkGetPhysicalDeviceToolPropertiesEXT = loadFunction<VkGetPhysicalDeviceToolPropertiesEXTNative>(lib, 'vkGetPhysicalDeviceToolPropertiesEXT').asFunction<VkGetPhysicalDeviceToolPropertiesEXT>();
-  vkCreateAccelerationStructureKHR = loadFunction<VkCreateAccelerationStructureKHRNative>(lib, 'vkCreateAccelerationStructureKHR').asFunction<VkCreateAccelerationStructureKHR>();
-  vkCmdBuildAccelerationStructuresKHR = loadFunction<VkCmdBuildAccelerationStructuresKHRNative>(lib, 'vkCmdBuildAccelerationStructuresKHR').asFunction<VkCmdBuildAccelerationStructuresKHR>();
-  vkCmdBuildAccelerationStructuresIndirectKHR = loadFunction<VkCmdBuildAccelerationStructuresIndirectKHRNative>(lib, 'vkCmdBuildAccelerationStructuresIndirectKHR').asFunction<VkCmdBuildAccelerationStructuresIndirectKHR>();
-  vkBuildAccelerationStructuresKHR = loadFunction<VkBuildAccelerationStructuresKHRNative>(lib, 'vkBuildAccelerationStructuresKHR').asFunction<VkBuildAccelerationStructuresKHR>();
-  vkGetAccelerationStructureDeviceAddressKHR = loadFunction<VkGetAccelerationStructureDeviceAddressKHRNative>(lib, 'vkGetAccelerationStructureDeviceAddressKHR').asFunction<VkGetAccelerationStructureDeviceAddressKHR>();
-  vkCreateDeferredOperationKHR = loadFunction<VkCreateDeferredOperationKHRNative>(lib, 'vkCreateDeferredOperationKHR').asFunction<VkCreateDeferredOperationKHR>();
-  vkDestroyDeferredOperationKHR = loadFunction<VkDestroyDeferredOperationKHRNative>(lib, 'vkDestroyDeferredOperationKHR').asFunction<VkDestroyDeferredOperationKHR>();
-  vkGetDeferredOperationMaxConcurrencyKHR = loadFunction<VkGetDeferredOperationMaxConcurrencyKHRNative>(lib, 'vkGetDeferredOperationMaxConcurrencyKHR').asFunction<VkGetDeferredOperationMaxConcurrencyKHR>();
-  vkGetDeferredOperationResultKHR = loadFunction<VkGetDeferredOperationResultKHRNative>(lib, 'vkGetDeferredOperationResultKHR').asFunction<VkGetDeferredOperationResultKHR>();
-  vkDeferredOperationJoinKHR = loadFunction<VkDeferredOperationJoinKHRNative>(lib, 'vkDeferredOperationJoinKHR').asFunction<VkDeferredOperationJoinKHR>();
-  vkCmdSetCullModeEXT = loadFunction<VkCmdSetCullModeEXTNative>(lib, 'vkCmdSetCullModeEXT').asFunction<VkCmdSetCullModeEXT>();
-  vkCmdSetFrontFaceEXT = loadFunction<VkCmdSetFrontFaceEXTNative>(lib, 'vkCmdSetFrontFaceEXT').asFunction<VkCmdSetFrontFaceEXT>();
-  vkCmdSetPrimitiveTopologyEXT = loadFunction<VkCmdSetPrimitiveTopologyEXTNative>(lib, 'vkCmdSetPrimitiveTopologyEXT').asFunction<VkCmdSetPrimitiveTopologyEXT>();
-  vkCmdSetViewportWithCountEXT = loadFunction<VkCmdSetViewportWithCountEXTNative>(lib, 'vkCmdSetViewportWithCountEXT').asFunction<VkCmdSetViewportWithCountEXT>();
-  vkCmdSetScissorWithCountEXT = loadFunction<VkCmdSetScissorWithCountEXTNative>(lib, 'vkCmdSetScissorWithCountEXT').asFunction<VkCmdSetScissorWithCountEXT>();
-  vkCmdBindVertexBuffers2EXT = loadFunction<VkCmdBindVertexBuffers2EXTNative>(lib, 'vkCmdBindVertexBuffers2EXT').asFunction<VkCmdBindVertexBuffers2EXT>();
-  vkCmdSetDepthTestEnableEXT = loadFunction<VkCmdSetDepthTestEnableEXTNative>(lib, 'vkCmdSetDepthTestEnableEXT').asFunction<VkCmdSetDepthTestEnableEXT>();
-  vkCmdSetDepthWriteEnableEXT = loadFunction<VkCmdSetDepthWriteEnableEXTNative>(lib, 'vkCmdSetDepthWriteEnableEXT').asFunction<VkCmdSetDepthWriteEnableEXT>();
-  vkCmdSetDepthCompareOpEXT = loadFunction<VkCmdSetDepthCompareOpEXTNative>(lib, 'vkCmdSetDepthCompareOpEXT').asFunction<VkCmdSetDepthCompareOpEXT>();
-  vkCmdSetDepthBoundsTestEnableEXT = loadFunction<VkCmdSetDepthBoundsTestEnableEXTNative>(lib, 'vkCmdSetDepthBoundsTestEnableEXT').asFunction<VkCmdSetDepthBoundsTestEnableEXT>();
-  vkCmdSetStencilTestEnableEXT = loadFunction<VkCmdSetStencilTestEnableEXTNative>(lib, 'vkCmdSetStencilTestEnableEXT').asFunction<VkCmdSetStencilTestEnableEXT>();
-  vkCmdSetStencilOpEXT = loadFunction<VkCmdSetStencilOpEXTNative>(lib, 'vkCmdSetStencilOpEXT').asFunction<VkCmdSetStencilOpEXT>();
-  vkCreatePrivateDataSlotEXT = loadFunction<VkCreatePrivateDataSlotEXTNative>(lib, 'vkCreatePrivateDataSlotEXT').asFunction<VkCreatePrivateDataSlotEXT>();
-  vkDestroyPrivateDataSlotEXT = loadFunction<VkDestroyPrivateDataSlotEXTNative>(lib, 'vkDestroyPrivateDataSlotEXT').asFunction<VkDestroyPrivateDataSlotEXT>();
-  vkSetPrivateDataEXT = loadFunction<VkSetPrivateDataEXTNative>(lib, 'vkSetPrivateDataEXT').asFunction<VkSetPrivateDataEXT>();
-  vkGetPrivateDataEXT = loadFunction<VkGetPrivateDataEXTNative>(lib, 'vkGetPrivateDataEXT').asFunction<VkGetPrivateDataEXT>();
-  vkCmdCopyBuffer2KHR = loadFunction<VkCmdCopyBuffer2KHRNative>(lib, 'vkCmdCopyBuffer2KHR').asFunction<VkCmdCopyBuffer2KHR>();
-  vkCmdCopyImage2KHR = loadFunction<VkCmdCopyImage2KHRNative>(lib, 'vkCmdCopyImage2KHR').asFunction<VkCmdCopyImage2KHR>();
-  vkCmdBlitImage2KHR = loadFunction<VkCmdBlitImage2KHRNative>(lib, 'vkCmdBlitImage2KHR').asFunction<VkCmdBlitImage2KHR>();
-  vkCmdCopyBufferToImage2KHR = loadFunction<VkCmdCopyBufferToImage2KHRNative>(lib, 'vkCmdCopyBufferToImage2KHR').asFunction<VkCmdCopyBufferToImage2KHR>();
-  vkCmdCopyImageToBuffer2KHR = loadFunction<VkCmdCopyImageToBuffer2KHRNative>(lib, 'vkCmdCopyImageToBuffer2KHR').asFunction<VkCmdCopyImageToBuffer2KHR>();
-  vkCmdResolveImage2KHR = loadFunction<VkCmdResolveImage2KHRNative>(lib, 'vkCmdResolveImage2KHR').asFunction<VkCmdResolveImage2KHR>();
-  vkCmdSetFragmentShadingRateKHR = loadFunction<VkCmdSetFragmentShadingRateKHRNative>(lib, 'vkCmdSetFragmentShadingRateKHR').asFunction<VkCmdSetFragmentShadingRateKHR>();
-  vkGetPhysicalDeviceFragmentShadingRatesKHR = loadFunction<VkGetPhysicalDeviceFragmentShadingRatesKHRNative>(lib, 'vkGetPhysicalDeviceFragmentShadingRatesKHR').asFunction<VkGetPhysicalDeviceFragmentShadingRatesKHR>();
-  vkCmdSetFragmentShadingRateEnumNV = loadFunction<VkCmdSetFragmentShadingRateEnumNVNative>(lib, 'vkCmdSetFragmentShadingRateEnumNV').asFunction<VkCmdSetFragmentShadingRateEnumNV>();
-  vkGetAccelerationStructureBuildSizesKHR = loadFunction<VkGetAccelerationStructureBuildSizesKHRNative>(lib, 'vkGetAccelerationStructureBuildSizesKHR').asFunction<VkGetAccelerationStructureBuildSizesKHR>();
-  vkCmdSetEvent2KHR = loadFunction<VkCmdSetEvent2KHRNative>(lib, 'vkCmdSetEvent2KHR').asFunction<VkCmdSetEvent2KHR>();
-  vkCmdResetEvent2KHR = loadFunction<VkCmdResetEvent2KHRNative>(lib, 'vkCmdResetEvent2KHR').asFunction<VkCmdResetEvent2KHR>();
-  vkCmdWaitEvents2KHR = loadFunction<VkCmdWaitEvents2KHRNative>(lib, 'vkCmdWaitEvents2KHR').asFunction<VkCmdWaitEvents2KHR>();
-  vkCmdPipelineBarrier2KHR = loadFunction<VkCmdPipelineBarrier2KHRNative>(lib, 'vkCmdPipelineBarrier2KHR').asFunction<VkCmdPipelineBarrier2KHR>();
-  vkQueueSubmit2KHR = loadFunction<VkQueueSubmit2KHRNative>(lib, 'vkQueueSubmit2KHR').asFunction<VkQueueSubmit2KHR>();
-  vkCmdWriteTimestamp2KHR = loadFunction<VkCmdWriteTimestamp2KHRNative>(lib, 'vkCmdWriteTimestamp2KHR').asFunction<VkCmdWriteTimestamp2KHR>();
-  vkCmdWriteBufferMarker2AMD = loadFunction<VkCmdWriteBufferMarker2AMDNative>(lib, 'vkCmdWriteBufferMarker2AMD').asFunction<VkCmdWriteBufferMarker2AMD>();
-  vkGetQueueCheckpointData2NV = loadFunction<VkGetQueueCheckpointData2NVNative>(lib, 'vkGetQueueCheckpointData2NV').asFunction<VkGetQueueCheckpointData2NV>();
-}
+late final _library = loadLibrary();
+VkCreateInstance vkCreateInstance =
+    loadFunction<VkCreateInstanceNative>(_library, 'vkCreateInstance')
+        .asFunction<VkCreateInstance>();
+VkDestroyInstance vkDestroyInstance =
+    loadFunction<VkDestroyInstanceNative>(_library, 'vkDestroyInstance')
+        .asFunction<VkDestroyInstance>();
+VkEnumeratePhysicalDevices vkEnumeratePhysicalDevices =
+    loadFunction<VkEnumeratePhysicalDevicesNative>(
+            _library, 'vkEnumeratePhysicalDevices')
+        .asFunction<VkEnumeratePhysicalDevices>();
+VkGetDeviceProcAddr vkGetDeviceProcAddr =
+    loadFunction<VkGetDeviceProcAddrNative>(_library, 'vkGetDeviceProcAddr')
+        .asFunction<VkGetDeviceProcAddr>();
+VkGetInstanceProcAddr vkGetInstanceProcAddr =
+    loadFunction<VkGetInstanceProcAddrNative>(_library, 'vkGetInstanceProcAddr')
+        .asFunction<VkGetInstanceProcAddr>();
+VkGetPhysicalDeviceProperties vkGetPhysicalDeviceProperties =
+    loadFunction<VkGetPhysicalDevicePropertiesNative>(
+            _library, 'vkGetPhysicalDeviceProperties')
+        .asFunction<VkGetPhysicalDeviceProperties>();
+VkGetPhysicalDeviceQueueFamilyProperties
+    vkGetPhysicalDeviceQueueFamilyProperties =
+    loadFunction<VkGetPhysicalDeviceQueueFamilyPropertiesNative>(
+            _library, 'vkGetPhysicalDeviceQueueFamilyProperties')
+        .asFunction<VkGetPhysicalDeviceQueueFamilyProperties>();
+VkGetPhysicalDeviceMemoryProperties vkGetPhysicalDeviceMemoryProperties =
+    loadFunction<VkGetPhysicalDeviceMemoryPropertiesNative>(
+            _library, 'vkGetPhysicalDeviceMemoryProperties')
+        .asFunction<VkGetPhysicalDeviceMemoryProperties>();
+VkGetPhysicalDeviceFeatures vkGetPhysicalDeviceFeatures =
+    loadFunction<VkGetPhysicalDeviceFeaturesNative>(
+            _library, 'vkGetPhysicalDeviceFeatures')
+        .asFunction<VkGetPhysicalDeviceFeatures>();
+VkGetPhysicalDeviceFormatProperties vkGetPhysicalDeviceFormatProperties =
+    loadFunction<VkGetPhysicalDeviceFormatPropertiesNative>(
+            _library, 'vkGetPhysicalDeviceFormatProperties')
+        .asFunction<VkGetPhysicalDeviceFormatProperties>();
+VkGetPhysicalDeviceImageFormatProperties
+    vkGetPhysicalDeviceImageFormatProperties =
+    loadFunction<VkGetPhysicalDeviceImageFormatPropertiesNative>(
+            _library, 'vkGetPhysicalDeviceImageFormatProperties')
+        .asFunction<VkGetPhysicalDeviceImageFormatProperties>();
+VkCreateDevice vkCreateDevice =
+    loadFunction<VkCreateDeviceNative>(_library, 'vkCreateDevice')
+        .asFunction<VkCreateDevice>();
+VkDestroyDevice vkDestroyDevice =
+    loadFunction<VkDestroyDeviceNative>(_library, 'vkDestroyDevice')
+        .asFunction<VkDestroyDevice>();
+VkEnumerateInstanceVersion vkEnumerateInstanceVersion =
+    loadFunction<VkEnumerateInstanceVersionNative>(
+            _library, 'vkEnumerateInstanceVersion')
+        .asFunction<VkEnumerateInstanceVersion>();
+VkEnumerateInstanceLayerProperties vkEnumerateInstanceLayerProperties =
+    loadFunction<VkEnumerateInstanceLayerPropertiesNative>(
+            _library, 'vkEnumerateInstanceLayerProperties')
+        .asFunction<VkEnumerateInstanceLayerProperties>();
+VkEnumerateInstanceExtensionProperties vkEnumerateInstanceExtensionProperties =
+    loadFunction<VkEnumerateInstanceExtensionPropertiesNative>(
+            _library, 'vkEnumerateInstanceExtensionProperties')
+        .asFunction<VkEnumerateInstanceExtensionProperties>();
+VkEnumerateDeviceLayerProperties vkEnumerateDeviceLayerProperties =
+    loadFunction<VkEnumerateDeviceLayerPropertiesNative>(
+            _library, 'vkEnumerateDeviceLayerProperties')
+        .asFunction<VkEnumerateDeviceLayerProperties>();
+VkEnumerateDeviceExtensionProperties vkEnumerateDeviceExtensionProperties =
+    loadFunction<VkEnumerateDeviceExtensionPropertiesNative>(
+            _library, 'vkEnumerateDeviceExtensionProperties')
+        .asFunction<VkEnumerateDeviceExtensionProperties>();
+VkGetDeviceQueue vkGetDeviceQueue =
+    loadFunction<VkGetDeviceQueueNative>(_library, 'vkGetDeviceQueue')
+        .asFunction<VkGetDeviceQueue>();
+VkQueueSubmit vkQueueSubmit =
+    loadFunction<VkQueueSubmitNative>(_library, 'vkQueueSubmit')
+        .asFunction<VkQueueSubmit>();
+VkQueueWaitIdle vkQueueWaitIdle =
+    loadFunction<VkQueueWaitIdleNative>(_library, 'vkQueueWaitIdle')
+        .asFunction<VkQueueWaitIdle>();
+VkDeviceWaitIdle vkDeviceWaitIdle =
+    loadFunction<VkDeviceWaitIdleNative>(_library, 'vkDeviceWaitIdle')
+        .asFunction<VkDeviceWaitIdle>();
+VkAllocateMemory vkAllocateMemory =
+    loadFunction<VkAllocateMemoryNative>(_library, 'vkAllocateMemory')
+        .asFunction<VkAllocateMemory>();
+VkFreeMemory vkFreeMemory =
+    loadFunction<VkFreeMemoryNative>(_library, 'vkFreeMemory')
+        .asFunction<VkFreeMemory>();
+VkMapMemory vkMapMemory =
+    loadFunction<VkMapMemoryNative>(_library, 'vkMapMemory')
+        .asFunction<VkMapMemory>();
+VkUnmapMemory vkUnmapMemory =
+    loadFunction<VkUnmapMemoryNative>(_library, 'vkUnmapMemory')
+        .asFunction<VkUnmapMemory>();
+VkFlushMappedMemoryRanges vkFlushMappedMemoryRanges =
+    loadFunction<VkFlushMappedMemoryRangesNative>(
+            _library, 'vkFlushMappedMemoryRanges')
+        .asFunction<VkFlushMappedMemoryRanges>();
+VkInvalidateMappedMemoryRanges vkInvalidateMappedMemoryRanges =
+    loadFunction<VkInvalidateMappedMemoryRangesNative>(
+            _library, 'vkInvalidateMappedMemoryRanges')
+        .asFunction<VkInvalidateMappedMemoryRanges>();
+VkGetDeviceMemoryCommitment vkGetDeviceMemoryCommitment =
+    loadFunction<VkGetDeviceMemoryCommitmentNative>(
+            _library, 'vkGetDeviceMemoryCommitment')
+        .asFunction<VkGetDeviceMemoryCommitment>();
+VkGetBufferMemoryRequirements vkGetBufferMemoryRequirements =
+    loadFunction<VkGetBufferMemoryRequirementsNative>(
+            _library, 'vkGetBufferMemoryRequirements')
+        .asFunction<VkGetBufferMemoryRequirements>();
+VkBindBufferMemory vkBindBufferMemory =
+    loadFunction<VkBindBufferMemoryNative>(_library, 'vkBindBufferMemory')
+        .asFunction<VkBindBufferMemory>();
+VkGetImageMemoryRequirements vkGetImageMemoryRequirements =
+    loadFunction<VkGetImageMemoryRequirementsNative>(
+            _library, 'vkGetImageMemoryRequirements')
+        .asFunction<VkGetImageMemoryRequirements>();
+VkBindImageMemory vkBindImageMemory =
+    loadFunction<VkBindImageMemoryNative>(_library, 'vkBindImageMemory')
+        .asFunction<VkBindImageMemory>();
+VkGetImageSparseMemoryRequirements vkGetImageSparseMemoryRequirements =
+    loadFunction<VkGetImageSparseMemoryRequirementsNative>(
+            _library, 'vkGetImageSparseMemoryRequirements')
+        .asFunction<VkGetImageSparseMemoryRequirements>();
+VkGetPhysicalDeviceSparseImageFormatProperties
+    vkGetPhysicalDeviceSparseImageFormatProperties =
+    loadFunction<VkGetPhysicalDeviceSparseImageFormatPropertiesNative>(
+            _library, 'vkGetPhysicalDeviceSparseImageFormatProperties')
+        .asFunction<VkGetPhysicalDeviceSparseImageFormatProperties>();
+VkQueueBindSparse vkQueueBindSparse =
+    loadFunction<VkQueueBindSparseNative>(_library, 'vkQueueBindSparse')
+        .asFunction<VkQueueBindSparse>();
+VkCreateFence vkCreateFence =
+    loadFunction<VkCreateFenceNative>(_library, 'vkCreateFence')
+        .asFunction<VkCreateFence>();
+VkDestroyFence vkDestroyFence =
+    loadFunction<VkDestroyFenceNative>(_library, 'vkDestroyFence')
+        .asFunction<VkDestroyFence>();
+VkResetFences vkResetFences =
+    loadFunction<VkResetFencesNative>(_library, 'vkResetFences')
+        .asFunction<VkResetFences>();
+VkGetFenceStatus vkGetFenceStatus =
+    loadFunction<VkGetFenceStatusNative>(_library, 'vkGetFenceStatus')
+        .asFunction<VkGetFenceStatus>();
+VkWaitForFences vkWaitForFences =
+    loadFunction<VkWaitForFencesNative>(_library, 'vkWaitForFences')
+        .asFunction<VkWaitForFences>();
+VkCreateSemaphore vkCreateSemaphore =
+    loadFunction<VkCreateSemaphoreNative>(_library, 'vkCreateSemaphore')
+        .asFunction<VkCreateSemaphore>();
+VkDestroySemaphore vkDestroySemaphore =
+    loadFunction<VkDestroySemaphoreNative>(_library, 'vkDestroySemaphore')
+        .asFunction<VkDestroySemaphore>();
+VkCreateEvent vkCreateEvent =
+    loadFunction<VkCreateEventNative>(_library, 'vkCreateEvent')
+        .asFunction<VkCreateEvent>();
+VkDestroyEvent vkDestroyEvent =
+    loadFunction<VkDestroyEventNative>(_library, 'vkDestroyEvent')
+        .asFunction<VkDestroyEvent>();
+VkGetEventStatus vkGetEventStatus =
+    loadFunction<VkGetEventStatusNative>(_library, 'vkGetEventStatus')
+        .asFunction<VkGetEventStatus>();
+VkSetEvent vkSetEvent = loadFunction<VkSetEventNative>(_library, 'vkSetEvent')
+    .asFunction<VkSetEvent>();
+VkResetEvent vkResetEvent =
+    loadFunction<VkResetEventNative>(_library, 'vkResetEvent')
+        .asFunction<VkResetEvent>();
+VkCreateQueryPool vkCreateQueryPool =
+    loadFunction<VkCreateQueryPoolNative>(_library, 'vkCreateQueryPool')
+        .asFunction<VkCreateQueryPool>();
+VkDestroyQueryPool vkDestroyQueryPool =
+    loadFunction<VkDestroyQueryPoolNative>(_library, 'vkDestroyQueryPool')
+        .asFunction<VkDestroyQueryPool>();
+VkGetQueryPoolResults vkGetQueryPoolResults =
+    loadFunction<VkGetQueryPoolResultsNative>(_library, 'vkGetQueryPoolResults')
+        .asFunction<VkGetQueryPoolResults>();
+VkResetQueryPool vkResetQueryPool =
+    loadFunction<VkResetQueryPoolNative>(_library, 'vkResetQueryPool')
+        .asFunction<VkResetQueryPool>();
+VkResetQueryPoolEXT vkResetQueryPoolEXT =
+    loadFunction<VkResetQueryPoolEXTNative>(_library, 'vkResetQueryPoolEXT')
+        .asFunction<VkResetQueryPoolEXT>();
+VkCreateBuffer vkCreateBuffer =
+    loadFunction<VkCreateBufferNative>(_library, 'vkCreateBuffer')
+        .asFunction<VkCreateBuffer>();
+VkDestroyBuffer vkDestroyBuffer =
+    loadFunction<VkDestroyBufferNative>(_library, 'vkDestroyBuffer')
+        .asFunction<VkDestroyBuffer>();
+VkCreateBufferView vkCreateBufferView =
+    loadFunction<VkCreateBufferViewNative>(_library, 'vkCreateBufferView')
+        .asFunction<VkCreateBufferView>();
+VkDestroyBufferView vkDestroyBufferView =
+    loadFunction<VkDestroyBufferViewNative>(_library, 'vkDestroyBufferView')
+        .asFunction<VkDestroyBufferView>();
+VkCreateImage vkCreateImage =
+    loadFunction<VkCreateImageNative>(_library, 'vkCreateImage')
+        .asFunction<VkCreateImage>();
+VkDestroyImage vkDestroyImage =
+    loadFunction<VkDestroyImageNative>(_library, 'vkDestroyImage')
+        .asFunction<VkDestroyImage>();
+VkGetImageSubresourceLayout vkGetImageSubresourceLayout =
+    loadFunction<VkGetImageSubresourceLayoutNative>(
+            _library, 'vkGetImageSubresourceLayout')
+        .asFunction<VkGetImageSubresourceLayout>();
+VkCreateImageView vkCreateImageView =
+    loadFunction<VkCreateImageViewNative>(_library, 'vkCreateImageView')
+        .asFunction<VkCreateImageView>();
+VkDestroyImageView vkDestroyImageView =
+    loadFunction<VkDestroyImageViewNative>(_library, 'vkDestroyImageView')
+        .asFunction<VkDestroyImageView>();
+VkCreateShaderModule vkCreateShaderModule =
+    loadFunction<VkCreateShaderModuleNative>(_library, 'vkCreateShaderModule')
+        .asFunction<VkCreateShaderModule>();
+VkDestroyShaderModule vkDestroyShaderModule =
+    loadFunction<VkDestroyShaderModuleNative>(_library, 'vkDestroyShaderModule')
+        .asFunction<VkDestroyShaderModule>();
+VkCreatePipelineCache vkCreatePipelineCache =
+    loadFunction<VkCreatePipelineCacheNative>(_library, 'vkCreatePipelineCache')
+        .asFunction<VkCreatePipelineCache>();
+VkDestroyPipelineCache vkDestroyPipelineCache =
+    loadFunction<VkDestroyPipelineCacheNative>(
+            _library, 'vkDestroyPipelineCache')
+        .asFunction<VkDestroyPipelineCache>();
+VkGetPipelineCacheData vkGetPipelineCacheData =
+    loadFunction<VkGetPipelineCacheDataNative>(
+            _library, 'vkGetPipelineCacheData')
+        .asFunction<VkGetPipelineCacheData>();
+VkMergePipelineCaches vkMergePipelineCaches =
+    loadFunction<VkMergePipelineCachesNative>(_library, 'vkMergePipelineCaches')
+        .asFunction<VkMergePipelineCaches>();
+VkCreateGraphicsPipelines vkCreateGraphicsPipelines =
+    loadFunction<VkCreateGraphicsPipelinesNative>(
+            _library, 'vkCreateGraphicsPipelines')
+        .asFunction<VkCreateGraphicsPipelines>();
+VkCreateComputePipelines vkCreateComputePipelines =
+    loadFunction<VkCreateComputePipelinesNative>(
+            _library, 'vkCreateComputePipelines')
+        .asFunction<VkCreateComputePipelines>();
+VkDestroyPipeline vkDestroyPipeline =
+    loadFunction<VkDestroyPipelineNative>(_library, 'vkDestroyPipeline')
+        .asFunction<VkDestroyPipeline>();
+VkCreatePipelineLayout vkCreatePipelineLayout =
+    loadFunction<VkCreatePipelineLayoutNative>(
+            _library, 'vkCreatePipelineLayout')
+        .asFunction<VkCreatePipelineLayout>();
+VkDestroyPipelineLayout vkDestroyPipelineLayout =
+    loadFunction<VkDestroyPipelineLayoutNative>(
+            _library, 'vkDestroyPipelineLayout')
+        .asFunction<VkDestroyPipelineLayout>();
+VkCreateSampler vkCreateSampler =
+    loadFunction<VkCreateSamplerNative>(_library, 'vkCreateSampler')
+        .asFunction<VkCreateSampler>();
+VkDestroySampler vkDestroySampler =
+    loadFunction<VkDestroySamplerNative>(_library, 'vkDestroySampler')
+        .asFunction<VkDestroySampler>();
+VkCreateDescriptorSetLayout vkCreateDescriptorSetLayout =
+    loadFunction<VkCreateDescriptorSetLayoutNative>(
+            _library, 'vkCreateDescriptorSetLayout')
+        .asFunction<VkCreateDescriptorSetLayout>();
+VkDestroyDescriptorSetLayout vkDestroyDescriptorSetLayout =
+    loadFunction<VkDestroyDescriptorSetLayoutNative>(
+            _library, 'vkDestroyDescriptorSetLayout')
+        .asFunction<VkDestroyDescriptorSetLayout>();
+VkCreateDescriptorPool vkCreateDescriptorPool =
+    loadFunction<VkCreateDescriptorPoolNative>(
+            _library, 'vkCreateDescriptorPool')
+        .asFunction<VkCreateDescriptorPool>();
+VkDestroyDescriptorPool vkDestroyDescriptorPool =
+    loadFunction<VkDestroyDescriptorPoolNative>(
+            _library, 'vkDestroyDescriptorPool')
+        .asFunction<VkDestroyDescriptorPool>();
+VkResetDescriptorPool vkResetDescriptorPool =
+    loadFunction<VkResetDescriptorPoolNative>(_library, 'vkResetDescriptorPool')
+        .asFunction<VkResetDescriptorPool>();
+VkAllocateDescriptorSets vkAllocateDescriptorSets =
+    loadFunction<VkAllocateDescriptorSetsNative>(
+            _library, 'vkAllocateDescriptorSets')
+        .asFunction<VkAllocateDescriptorSets>();
+VkFreeDescriptorSets vkFreeDescriptorSets =
+    loadFunction<VkFreeDescriptorSetsNative>(_library, 'vkFreeDescriptorSets')
+        .asFunction<VkFreeDescriptorSets>();
+VkUpdateDescriptorSets vkUpdateDescriptorSets =
+    loadFunction<VkUpdateDescriptorSetsNative>(
+            _library, 'vkUpdateDescriptorSets')
+        .asFunction<VkUpdateDescriptorSets>();
+VkCreateFramebuffer vkCreateFramebuffer =
+    loadFunction<VkCreateFramebufferNative>(_library, 'vkCreateFramebuffer')
+        .asFunction<VkCreateFramebuffer>();
+VkDestroyFramebuffer vkDestroyFramebuffer =
+    loadFunction<VkDestroyFramebufferNative>(_library, 'vkDestroyFramebuffer')
+        .asFunction<VkDestroyFramebuffer>();
+VkCreateRenderPass vkCreateRenderPass =
+    loadFunction<VkCreateRenderPassNative>(_library, 'vkCreateRenderPass')
+        .asFunction<VkCreateRenderPass>();
+VkDestroyRenderPass vkDestroyRenderPass =
+    loadFunction<VkDestroyRenderPassNative>(_library, 'vkDestroyRenderPass')
+        .asFunction<VkDestroyRenderPass>();
+VkGetRenderAreaGranularity vkGetRenderAreaGranularity =
+    loadFunction<VkGetRenderAreaGranularityNative>(
+            _library, 'vkGetRenderAreaGranularity')
+        .asFunction<VkGetRenderAreaGranularity>();
+VkCreateCommandPool vkCreateCommandPool =
+    loadFunction<VkCreateCommandPoolNative>(_library, 'vkCreateCommandPool')
+        .asFunction<VkCreateCommandPool>();
+VkDestroyCommandPool vkDestroyCommandPool =
+    loadFunction<VkDestroyCommandPoolNative>(_library, 'vkDestroyCommandPool')
+        .asFunction<VkDestroyCommandPool>();
+VkResetCommandPool vkResetCommandPool =
+    loadFunction<VkResetCommandPoolNative>(_library, 'vkResetCommandPool')
+        .asFunction<VkResetCommandPool>();
+VkAllocateCommandBuffers vkAllocateCommandBuffers =
+    loadFunction<VkAllocateCommandBuffersNative>(
+            _library, 'vkAllocateCommandBuffers')
+        .asFunction<VkAllocateCommandBuffers>();
+VkFreeCommandBuffers vkFreeCommandBuffers =
+    loadFunction<VkFreeCommandBuffersNative>(_library, 'vkFreeCommandBuffers')
+        .asFunction<VkFreeCommandBuffers>();
+VkBeginCommandBuffer vkBeginCommandBuffer =
+    loadFunction<VkBeginCommandBufferNative>(_library, 'vkBeginCommandBuffer')
+        .asFunction<VkBeginCommandBuffer>();
+VkEndCommandBuffer vkEndCommandBuffer =
+    loadFunction<VkEndCommandBufferNative>(_library, 'vkEndCommandBuffer')
+        .asFunction<VkEndCommandBuffer>();
+VkResetCommandBuffer vkResetCommandBuffer =
+    loadFunction<VkResetCommandBufferNative>(_library, 'vkResetCommandBuffer')
+        .asFunction<VkResetCommandBuffer>();
+VkCmdBindPipeline vkCmdBindPipeline =
+    loadFunction<VkCmdBindPipelineNative>(_library, 'vkCmdBindPipeline')
+        .asFunction<VkCmdBindPipeline>();
+VkCmdSetViewport vkCmdSetViewport =
+    loadFunction<VkCmdSetViewportNative>(_library, 'vkCmdSetViewport')
+        .asFunction<VkCmdSetViewport>();
+VkCmdSetScissor vkCmdSetScissor =
+    loadFunction<VkCmdSetScissorNative>(_library, 'vkCmdSetScissor')
+        .asFunction<VkCmdSetScissor>();
+VkCmdSetLineWidth vkCmdSetLineWidth =
+    loadFunction<VkCmdSetLineWidthNative>(_library, 'vkCmdSetLineWidth')
+        .asFunction<VkCmdSetLineWidth>();
+VkCmdSetDepthBias vkCmdSetDepthBias =
+    loadFunction<VkCmdSetDepthBiasNative>(_library, 'vkCmdSetDepthBias')
+        .asFunction<VkCmdSetDepthBias>();
+VkCmdSetBlendConstants vkCmdSetBlendConstants =
+    loadFunction<VkCmdSetBlendConstantsNative>(
+            _library, 'vkCmdSetBlendConstants')
+        .asFunction<VkCmdSetBlendConstants>();
+VkCmdSetDepthBounds vkCmdSetDepthBounds =
+    loadFunction<VkCmdSetDepthBoundsNative>(_library, 'vkCmdSetDepthBounds')
+        .asFunction<VkCmdSetDepthBounds>();
+VkCmdSetStencilCompareMask vkCmdSetStencilCompareMask =
+    loadFunction<VkCmdSetStencilCompareMaskNative>(
+            _library, 'vkCmdSetStencilCompareMask')
+        .asFunction<VkCmdSetStencilCompareMask>();
+VkCmdSetStencilWriteMask vkCmdSetStencilWriteMask =
+    loadFunction<VkCmdSetStencilWriteMaskNative>(
+            _library, 'vkCmdSetStencilWriteMask')
+        .asFunction<VkCmdSetStencilWriteMask>();
+VkCmdSetStencilReference vkCmdSetStencilReference =
+    loadFunction<VkCmdSetStencilReferenceNative>(
+            _library, 'vkCmdSetStencilReference')
+        .asFunction<VkCmdSetStencilReference>();
+VkCmdBindDescriptorSets vkCmdBindDescriptorSets =
+    loadFunction<VkCmdBindDescriptorSetsNative>(
+            _library, 'vkCmdBindDescriptorSets')
+        .asFunction<VkCmdBindDescriptorSets>();
+VkCmdBindIndexBuffer vkCmdBindIndexBuffer =
+    loadFunction<VkCmdBindIndexBufferNative>(_library, 'vkCmdBindIndexBuffer')
+        .asFunction<VkCmdBindIndexBuffer>();
+VkCmdBindVertexBuffers vkCmdBindVertexBuffers =
+    loadFunction<VkCmdBindVertexBuffersNative>(
+            _library, 'vkCmdBindVertexBuffers')
+        .asFunction<VkCmdBindVertexBuffers>();
+VkCmdDraw vkCmdDraw = loadFunction<VkCmdDrawNative>(_library, 'vkCmdDraw')
+    .asFunction<VkCmdDraw>();
+VkCmdDrawIndexed vkCmdDrawIndexed =
+    loadFunction<VkCmdDrawIndexedNative>(_library, 'vkCmdDrawIndexed')
+        .asFunction<VkCmdDrawIndexed>();
+VkCmdDrawIndirect vkCmdDrawIndirect =
+    loadFunction<VkCmdDrawIndirectNative>(_library, 'vkCmdDrawIndirect')
+        .asFunction<VkCmdDrawIndirect>();
+VkCmdDrawIndexedIndirect vkCmdDrawIndexedIndirect =
+    loadFunction<VkCmdDrawIndexedIndirectNative>(
+            _library, 'vkCmdDrawIndexedIndirect')
+        .asFunction<VkCmdDrawIndexedIndirect>();
+VkCmdDispatch vkCmdDispatch =
+    loadFunction<VkCmdDispatchNative>(_library, 'vkCmdDispatch')
+        .asFunction<VkCmdDispatch>();
+VkCmdDispatchIndirect vkCmdDispatchIndirect =
+    loadFunction<VkCmdDispatchIndirectNative>(_library, 'vkCmdDispatchIndirect')
+        .asFunction<VkCmdDispatchIndirect>();
+VkCmdCopyBuffer vkCmdCopyBuffer =
+    loadFunction<VkCmdCopyBufferNative>(_library, 'vkCmdCopyBuffer')
+        .asFunction<VkCmdCopyBuffer>();
+VkCmdCopyImage vkCmdCopyImage =
+    loadFunction<VkCmdCopyImageNative>(_library, 'vkCmdCopyImage')
+        .asFunction<VkCmdCopyImage>();
+VkCmdBlitImage vkCmdBlitImage =
+    loadFunction<VkCmdBlitImageNative>(_library, 'vkCmdBlitImage')
+        .asFunction<VkCmdBlitImage>();
+VkCmdCopyBufferToImage vkCmdCopyBufferToImage =
+    loadFunction<VkCmdCopyBufferToImageNative>(
+            _library, 'vkCmdCopyBufferToImage')
+        .asFunction<VkCmdCopyBufferToImage>();
+VkCmdCopyImageToBuffer vkCmdCopyImageToBuffer =
+    loadFunction<VkCmdCopyImageToBufferNative>(
+            _library, 'vkCmdCopyImageToBuffer')
+        .asFunction<VkCmdCopyImageToBuffer>();
+VkCmdUpdateBuffer vkCmdUpdateBuffer =
+    loadFunction<VkCmdUpdateBufferNative>(_library, 'vkCmdUpdateBuffer')
+        .asFunction<VkCmdUpdateBuffer>();
+VkCmdFillBuffer vkCmdFillBuffer =
+    loadFunction<VkCmdFillBufferNative>(_library, 'vkCmdFillBuffer')
+        .asFunction<VkCmdFillBuffer>();
+VkCmdClearColorImage vkCmdClearColorImage =
+    loadFunction<VkCmdClearColorImageNative>(_library, 'vkCmdClearColorImage')
+        .asFunction<VkCmdClearColorImage>();
+VkCmdClearDepthStencilImage vkCmdClearDepthStencilImage =
+    loadFunction<VkCmdClearDepthStencilImageNative>(
+            _library, 'vkCmdClearDepthStencilImage')
+        .asFunction<VkCmdClearDepthStencilImage>();
+VkCmdClearAttachments vkCmdClearAttachments =
+    loadFunction<VkCmdClearAttachmentsNative>(_library, 'vkCmdClearAttachments')
+        .asFunction<VkCmdClearAttachments>();
+VkCmdResolveImage vkCmdResolveImage =
+    loadFunction<VkCmdResolveImageNative>(_library, 'vkCmdResolveImage')
+        .asFunction<VkCmdResolveImage>();
+VkCmdSetEvent vkCmdSetEvent =
+    loadFunction<VkCmdSetEventNative>(_library, 'vkCmdSetEvent')
+        .asFunction<VkCmdSetEvent>();
+VkCmdResetEvent vkCmdResetEvent =
+    loadFunction<VkCmdResetEventNative>(_library, 'vkCmdResetEvent')
+        .asFunction<VkCmdResetEvent>();
+VkCmdWaitEvents vkCmdWaitEvents =
+    loadFunction<VkCmdWaitEventsNative>(_library, 'vkCmdWaitEvents')
+        .asFunction<VkCmdWaitEvents>();
+VkCmdPipelineBarrier vkCmdPipelineBarrier =
+    loadFunction<VkCmdPipelineBarrierNative>(_library, 'vkCmdPipelineBarrier')
+        .asFunction<VkCmdPipelineBarrier>();
+VkCmdBeginQuery vkCmdBeginQuery =
+    loadFunction<VkCmdBeginQueryNative>(_library, 'vkCmdBeginQuery')
+        .asFunction<VkCmdBeginQuery>();
+VkCmdEndQuery vkCmdEndQuery =
+    loadFunction<VkCmdEndQueryNative>(_library, 'vkCmdEndQuery')
+        .asFunction<VkCmdEndQuery>();
+VkCmdBeginConditionalRenderingEXT vkCmdBeginConditionalRenderingEXT =
+    loadFunction<VkCmdBeginConditionalRenderingEXTNative>(
+            _library, 'vkCmdBeginConditionalRenderingEXT')
+        .asFunction<VkCmdBeginConditionalRenderingEXT>();
+VkCmdEndConditionalRenderingEXT vkCmdEndConditionalRenderingEXT =
+    loadFunction<VkCmdEndConditionalRenderingEXTNative>(
+            _library, 'vkCmdEndConditionalRenderingEXT')
+        .asFunction<VkCmdEndConditionalRenderingEXT>();
+VkCmdResetQueryPool vkCmdResetQueryPool =
+    loadFunction<VkCmdResetQueryPoolNative>(_library, 'vkCmdResetQueryPool')
+        .asFunction<VkCmdResetQueryPool>();
+VkCmdWriteTimestamp vkCmdWriteTimestamp =
+    loadFunction<VkCmdWriteTimestampNative>(_library, 'vkCmdWriteTimestamp')
+        .asFunction<VkCmdWriteTimestamp>();
+VkCmdCopyQueryPoolResults vkCmdCopyQueryPoolResults =
+    loadFunction<VkCmdCopyQueryPoolResultsNative>(
+            _library, 'vkCmdCopyQueryPoolResults')
+        .asFunction<VkCmdCopyQueryPoolResults>();
+VkCmdPushConstants vkCmdPushConstants =
+    loadFunction<VkCmdPushConstantsNative>(_library, 'vkCmdPushConstants')
+        .asFunction<VkCmdPushConstants>();
+VkCmdBeginRenderPass vkCmdBeginRenderPass =
+    loadFunction<VkCmdBeginRenderPassNative>(_library, 'vkCmdBeginRenderPass')
+        .asFunction<VkCmdBeginRenderPass>();
+VkCmdNextSubpass vkCmdNextSubpass =
+    loadFunction<VkCmdNextSubpassNative>(_library, 'vkCmdNextSubpass')
+        .asFunction<VkCmdNextSubpass>();
+VkCmdEndRenderPass vkCmdEndRenderPass =
+    loadFunction<VkCmdEndRenderPassNative>(_library, 'vkCmdEndRenderPass')
+        .asFunction<VkCmdEndRenderPass>();
+VkCmdExecuteCommands vkCmdExecuteCommands =
+    loadFunction<VkCmdExecuteCommandsNative>(_library, 'vkCmdExecuteCommands')
+        .asFunction<VkCmdExecuteCommands>();
+VkCreateAndroidSurfaceKHR vkCreateAndroidSurfaceKHR =
+    loadFunction<VkCreateAndroidSurfaceKHRNative>(
+            _library, 'vkCreateAndroidSurfaceKHR')
+        .asFunction<VkCreateAndroidSurfaceKHR>();
+VkGetPhysicalDeviceDisplayPropertiesKHR
+    vkGetPhysicalDeviceDisplayPropertiesKHR =
+    loadFunction<VkGetPhysicalDeviceDisplayPropertiesKHRNative>(
+            _library, 'vkGetPhysicalDeviceDisplayPropertiesKHR')
+        .asFunction<VkGetPhysicalDeviceDisplayPropertiesKHR>();
+VkGetPhysicalDeviceDisplayPlanePropertiesKHR
+    vkGetPhysicalDeviceDisplayPlanePropertiesKHR =
+    loadFunction<VkGetPhysicalDeviceDisplayPlanePropertiesKHRNative>(
+            _library, 'vkGetPhysicalDeviceDisplayPlanePropertiesKHR')
+        .asFunction<VkGetPhysicalDeviceDisplayPlanePropertiesKHR>();
+VkGetDisplayPlaneSupportedDisplaysKHR vkGetDisplayPlaneSupportedDisplaysKHR =
+    loadFunction<VkGetDisplayPlaneSupportedDisplaysKHRNative>(
+            _library, 'vkGetDisplayPlaneSupportedDisplaysKHR')
+        .asFunction<VkGetDisplayPlaneSupportedDisplaysKHR>();
+VkGetDisplayModePropertiesKHR vkGetDisplayModePropertiesKHR =
+    loadFunction<VkGetDisplayModePropertiesKHRNative>(
+            _library, 'vkGetDisplayModePropertiesKHR')
+        .asFunction<VkGetDisplayModePropertiesKHR>();
+VkCreateDisplayModeKHR vkCreateDisplayModeKHR =
+    loadFunction<VkCreateDisplayModeKHRNative>(
+            _library, 'vkCreateDisplayModeKHR')
+        .asFunction<VkCreateDisplayModeKHR>();
+VkGetDisplayPlaneCapabilitiesKHR vkGetDisplayPlaneCapabilitiesKHR =
+    loadFunction<VkGetDisplayPlaneCapabilitiesKHRNative>(
+            _library, 'vkGetDisplayPlaneCapabilitiesKHR')
+        .asFunction<VkGetDisplayPlaneCapabilitiesKHR>();
+VkCreateDisplayPlaneSurfaceKHR vkCreateDisplayPlaneSurfaceKHR =
+    loadFunction<VkCreateDisplayPlaneSurfaceKHRNative>(
+            _library, 'vkCreateDisplayPlaneSurfaceKHR')
+        .asFunction<VkCreateDisplayPlaneSurfaceKHR>();
+VkCreateSharedSwapchainsKHR vkCreateSharedSwapchainsKHR =
+    loadFunction<VkCreateSharedSwapchainsKHRNative>(
+            _library, 'vkCreateSharedSwapchainsKHR')
+        .asFunction<VkCreateSharedSwapchainsKHR>();
+VkDestroySurfaceKHR vkDestroySurfaceKHR =
+    loadFunction<VkDestroySurfaceKHRNative>(_library, 'vkDestroySurfaceKHR')
+        .asFunction<VkDestroySurfaceKHR>();
+VkGetPhysicalDeviceSurfaceSupportKHR vkGetPhysicalDeviceSurfaceSupportKHR =
+    loadFunction<VkGetPhysicalDeviceSurfaceSupportKHRNative>(
+            _library, 'vkGetPhysicalDeviceSurfaceSupportKHR')
+        .asFunction<VkGetPhysicalDeviceSurfaceSupportKHR>();
+VkGetPhysicalDeviceSurfaceCapabilitiesKHR
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR =
+    loadFunction<VkGetPhysicalDeviceSurfaceCapabilitiesKHRNative>(
+            _library, 'vkGetPhysicalDeviceSurfaceCapabilitiesKHR')
+        .asFunction<VkGetPhysicalDeviceSurfaceCapabilitiesKHR>();
+VkGetPhysicalDeviceSurfaceFormatsKHR vkGetPhysicalDeviceSurfaceFormatsKHR =
+    loadFunction<VkGetPhysicalDeviceSurfaceFormatsKHRNative>(
+            _library, 'vkGetPhysicalDeviceSurfaceFormatsKHR')
+        .asFunction<VkGetPhysicalDeviceSurfaceFormatsKHR>();
+VkGetPhysicalDeviceSurfacePresentModesKHR
+    vkGetPhysicalDeviceSurfacePresentModesKHR =
+    loadFunction<VkGetPhysicalDeviceSurfacePresentModesKHRNative>(
+            _library, 'vkGetPhysicalDeviceSurfacePresentModesKHR')
+        .asFunction<VkGetPhysicalDeviceSurfacePresentModesKHR>();
+VkCreateSwapchainKHR vkCreateSwapchainKHR =
+    loadFunction<VkCreateSwapchainKHRNative>(_library, 'vkCreateSwapchainKHR')
+        .asFunction<VkCreateSwapchainKHR>();
+VkDestroySwapchainKHR vkDestroySwapchainKHR =
+    loadFunction<VkDestroySwapchainKHRNative>(_library, 'vkDestroySwapchainKHR')
+        .asFunction<VkDestroySwapchainKHR>();
+VkGetSwapchainImagesKHR vkGetSwapchainImagesKHR =
+    loadFunction<VkGetSwapchainImagesKHRNative>(
+            _library, 'vkGetSwapchainImagesKHR')
+        .asFunction<VkGetSwapchainImagesKHR>();
+VkAcquireNextImageKHR vkAcquireNextImageKHR =
+    loadFunction<VkAcquireNextImageKHRNative>(_library, 'vkAcquireNextImageKHR')
+        .asFunction<VkAcquireNextImageKHR>();
+VkQueuePresentKHR vkQueuePresentKHR =
+    loadFunction<VkQueuePresentKHRNative>(_library, 'vkQueuePresentKHR')
+        .asFunction<VkQueuePresentKHR>();
+VkCreateViSurfaceNN vkCreateViSurfaceNN =
+    loadFunction<VkCreateViSurfaceNNNative>(_library, 'vkCreateViSurfaceNN')
+        .asFunction<VkCreateViSurfaceNN>();
+VkCreateWaylandSurfaceKHR vkCreateWaylandSurfaceKHR =
+    loadFunction<VkCreateWaylandSurfaceKHRNative>(
+            _library, 'vkCreateWaylandSurfaceKHR')
+        .asFunction<VkCreateWaylandSurfaceKHR>();
+VkGetPhysicalDeviceWaylandPresentationSupportKHR
+    vkGetPhysicalDeviceWaylandPresentationSupportKHR =
+    loadFunction<VkGetPhysicalDeviceWaylandPresentationSupportKHRNative>(
+            _library, 'vkGetPhysicalDeviceWaylandPresentationSupportKHR')
+        .asFunction<VkGetPhysicalDeviceWaylandPresentationSupportKHR>();
+VkCreateWin32SurfaceKHR vkCreateWin32SurfaceKHR =
+    loadFunction<VkCreateWin32SurfaceKHRNative>(
+            _library, 'vkCreateWin32SurfaceKHR')
+        .asFunction<VkCreateWin32SurfaceKHR>();
+VkGetPhysicalDeviceWin32PresentationSupportKHR
+    vkGetPhysicalDeviceWin32PresentationSupportKHR =
+    loadFunction<VkGetPhysicalDeviceWin32PresentationSupportKHRNative>(
+            _library, 'vkGetPhysicalDeviceWin32PresentationSupportKHR')
+        .asFunction<VkGetPhysicalDeviceWin32PresentationSupportKHR>();
+VkCreateXlibSurfaceKHR vkCreateXlibSurfaceKHR =
+    loadFunction<VkCreateXlibSurfaceKHRNative>(
+            _library, 'vkCreateXlibSurfaceKHR')
+        .asFunction<VkCreateXlibSurfaceKHR>();
+VkGetPhysicalDeviceXlibPresentationSupportKHR
+    vkGetPhysicalDeviceXlibPresentationSupportKHR =
+    loadFunction<VkGetPhysicalDeviceXlibPresentationSupportKHRNative>(
+            _library, 'vkGetPhysicalDeviceXlibPresentationSupportKHR')
+        .asFunction<VkGetPhysicalDeviceXlibPresentationSupportKHR>();
+VkCreateXcbSurfaceKHR vkCreateXcbSurfaceKHR =
+    loadFunction<VkCreateXcbSurfaceKHRNative>(_library, 'vkCreateXcbSurfaceKHR')
+        .asFunction<VkCreateXcbSurfaceKHR>();
+VkGetPhysicalDeviceXcbPresentationSupportKHR
+    vkGetPhysicalDeviceXcbPresentationSupportKHR =
+    loadFunction<VkGetPhysicalDeviceXcbPresentationSupportKHRNative>(
+            _library, 'vkGetPhysicalDeviceXcbPresentationSupportKHR')
+        .asFunction<VkGetPhysicalDeviceXcbPresentationSupportKHR>();
+VkCreateDirectFBSurfaceEXT vkCreateDirectFBSurfaceEXT =
+    loadFunction<VkCreateDirectFBSurfaceEXTNative>(
+            _library, 'vkCreateDirectFBSurfaceEXT')
+        .asFunction<VkCreateDirectFBSurfaceEXT>();
+VkGetPhysicalDeviceDirectFBPresentationSupportEXT
+    vkGetPhysicalDeviceDirectFBPresentationSupportEXT =
+    loadFunction<VkGetPhysicalDeviceDirectFBPresentationSupportEXTNative>(
+            _library, 'vkGetPhysicalDeviceDirectFBPresentationSupportEXT')
+        .asFunction<VkGetPhysicalDeviceDirectFBPresentationSupportEXT>();
+VkCreateImagePipeSurfaceFUCHSIA vkCreateImagePipeSurfaceFUCHSIA =
+    loadFunction<VkCreateImagePipeSurfaceFUCHSIANative>(
+            _library, 'vkCreateImagePipeSurfaceFUCHSIA')
+        .asFunction<VkCreateImagePipeSurfaceFUCHSIA>();
+VkCreateStreamDescriptorSurfaceGGP vkCreateStreamDescriptorSurfaceGGP =
+    loadFunction<VkCreateStreamDescriptorSurfaceGGPNative>(
+            _library, 'vkCreateStreamDescriptorSurfaceGGP')
+        .asFunction<VkCreateStreamDescriptorSurfaceGGP>();
+VkCreateScreenSurfaceQNX vkCreateScreenSurfaceQNX =
+    loadFunction<VkCreateScreenSurfaceQNXNative>(
+            _library, 'vkCreateScreenSurfaceQNX')
+        .asFunction<VkCreateScreenSurfaceQNX>();
+VkGetPhysicalDeviceScreenPresentationSupportQNX
+    vkGetPhysicalDeviceScreenPresentationSupportQNX =
+    loadFunction<VkGetPhysicalDeviceScreenPresentationSupportQNXNative>(
+            _library, 'vkGetPhysicalDeviceScreenPresentationSupportQNX')
+        .asFunction<VkGetPhysicalDeviceScreenPresentationSupportQNX>();
+VkCreateDebugReportCallbackEXT vkCreateDebugReportCallbackEXT =
+    loadFunction<VkCreateDebugReportCallbackEXTNative>(
+            _library, 'vkCreateDebugReportCallbackEXT')
+        .asFunction<VkCreateDebugReportCallbackEXT>();
+VkDestroyDebugReportCallbackEXT vkDestroyDebugReportCallbackEXT =
+    loadFunction<VkDestroyDebugReportCallbackEXTNative>(
+            _library, 'vkDestroyDebugReportCallbackEXT')
+        .asFunction<VkDestroyDebugReportCallbackEXT>();
+VkDebugReportMessageEXT vkDebugReportMessageEXT =
+    loadFunction<VkDebugReportMessageEXTNative>(
+            _library, 'vkDebugReportMessageEXT')
+        .asFunction<VkDebugReportMessageEXT>();
+VkDebugMarkerSetObjectNameEXT vkDebugMarkerSetObjectNameEXT =
+    loadFunction<VkDebugMarkerSetObjectNameEXTNative>(
+            _library, 'vkDebugMarkerSetObjectNameEXT')
+        .asFunction<VkDebugMarkerSetObjectNameEXT>();
+VkDebugMarkerSetObjectTagEXT vkDebugMarkerSetObjectTagEXT =
+    loadFunction<VkDebugMarkerSetObjectTagEXTNative>(
+            _library, 'vkDebugMarkerSetObjectTagEXT')
+        .asFunction<VkDebugMarkerSetObjectTagEXT>();
+VkCmdDebugMarkerBeginEXT vkCmdDebugMarkerBeginEXT =
+    loadFunction<VkCmdDebugMarkerBeginEXTNative>(
+            _library, 'vkCmdDebugMarkerBeginEXT')
+        .asFunction<VkCmdDebugMarkerBeginEXT>();
+VkCmdDebugMarkerEndEXT vkCmdDebugMarkerEndEXT =
+    loadFunction<VkCmdDebugMarkerEndEXTNative>(
+            _library, 'vkCmdDebugMarkerEndEXT')
+        .asFunction<VkCmdDebugMarkerEndEXT>();
+VkCmdDebugMarkerInsertEXT vkCmdDebugMarkerInsertEXT =
+    loadFunction<VkCmdDebugMarkerInsertEXTNative>(
+            _library, 'vkCmdDebugMarkerInsertEXT')
+        .asFunction<VkCmdDebugMarkerInsertEXT>();
+VkGetPhysicalDeviceExternalImageFormatPropertiesNV
+    vkGetPhysicalDeviceExternalImageFormatPropertiesNV =
+    loadFunction<VkGetPhysicalDeviceExternalImageFormatPropertiesNVNative>(
+            _library, 'vkGetPhysicalDeviceExternalImageFormatPropertiesNV')
+        .asFunction<VkGetPhysicalDeviceExternalImageFormatPropertiesNV>();
+VkGetMemoryWin32HandleNV vkGetMemoryWin32HandleNV =
+    loadFunction<VkGetMemoryWin32HandleNVNative>(
+            _library, 'vkGetMemoryWin32HandleNV')
+        .asFunction<VkGetMemoryWin32HandleNV>();
+VkCmdExecuteGeneratedCommandsNV vkCmdExecuteGeneratedCommandsNV =
+    loadFunction<VkCmdExecuteGeneratedCommandsNVNative>(
+            _library, 'vkCmdExecuteGeneratedCommandsNV')
+        .asFunction<VkCmdExecuteGeneratedCommandsNV>();
+VkCmdPreprocessGeneratedCommandsNV vkCmdPreprocessGeneratedCommandsNV =
+    loadFunction<VkCmdPreprocessGeneratedCommandsNVNative>(
+            _library, 'vkCmdPreprocessGeneratedCommandsNV')
+        .asFunction<VkCmdPreprocessGeneratedCommandsNV>();
+VkCmdBindPipelineShaderGroupNV vkCmdBindPipelineShaderGroupNV =
+    loadFunction<VkCmdBindPipelineShaderGroupNVNative>(
+            _library, 'vkCmdBindPipelineShaderGroupNV')
+        .asFunction<VkCmdBindPipelineShaderGroupNV>();
+VkGetGeneratedCommandsMemoryRequirementsNV
+    vkGetGeneratedCommandsMemoryRequirementsNV =
+    loadFunction<VkGetGeneratedCommandsMemoryRequirementsNVNative>(
+            _library, 'vkGetGeneratedCommandsMemoryRequirementsNV')
+        .asFunction<VkGetGeneratedCommandsMemoryRequirementsNV>();
+VkCreateIndirectCommandsLayoutNV vkCreateIndirectCommandsLayoutNV =
+    loadFunction<VkCreateIndirectCommandsLayoutNVNative>(
+            _library, 'vkCreateIndirectCommandsLayoutNV')
+        .asFunction<VkCreateIndirectCommandsLayoutNV>();
+VkDestroyIndirectCommandsLayoutNV vkDestroyIndirectCommandsLayoutNV =
+    loadFunction<VkDestroyIndirectCommandsLayoutNVNative>(
+            _library, 'vkDestroyIndirectCommandsLayoutNV')
+        .asFunction<VkDestroyIndirectCommandsLayoutNV>();
+VkGetPhysicalDeviceFeatures2 vkGetPhysicalDeviceFeatures2 =
+    loadFunction<VkGetPhysicalDeviceFeatures2Native>(
+            _library, 'vkGetPhysicalDeviceFeatures2')
+        .asFunction<VkGetPhysicalDeviceFeatures2>();
+VkGetPhysicalDeviceFeatures2KHR vkGetPhysicalDeviceFeatures2KHR =
+    loadFunction<VkGetPhysicalDeviceFeatures2KHRNative>(
+            _library, 'vkGetPhysicalDeviceFeatures2KHR')
+        .asFunction<VkGetPhysicalDeviceFeatures2KHR>();
+VkGetPhysicalDeviceProperties2 vkGetPhysicalDeviceProperties2 =
+    loadFunction<VkGetPhysicalDeviceProperties2Native>(
+            _library, 'vkGetPhysicalDeviceProperties2')
+        .asFunction<VkGetPhysicalDeviceProperties2>();
+VkGetPhysicalDeviceProperties2KHR vkGetPhysicalDeviceProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceProperties2KHR>();
+VkGetPhysicalDeviceFormatProperties2 vkGetPhysicalDeviceFormatProperties2 =
+    loadFunction<VkGetPhysicalDeviceFormatProperties2Native>(
+            _library, 'vkGetPhysicalDeviceFormatProperties2')
+        .asFunction<VkGetPhysicalDeviceFormatProperties2>();
+VkGetPhysicalDeviceFormatProperties2KHR
+    vkGetPhysicalDeviceFormatProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceFormatProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceFormatProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceFormatProperties2KHR>();
+VkGetPhysicalDeviceImageFormatProperties2
+    vkGetPhysicalDeviceImageFormatProperties2 =
+    loadFunction<VkGetPhysicalDeviceImageFormatProperties2Native>(
+            _library, 'vkGetPhysicalDeviceImageFormatProperties2')
+        .asFunction<VkGetPhysicalDeviceImageFormatProperties2>();
+VkGetPhysicalDeviceImageFormatProperties2KHR
+    vkGetPhysicalDeviceImageFormatProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceImageFormatProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceImageFormatProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceImageFormatProperties2KHR>();
+VkGetPhysicalDeviceQueueFamilyProperties2
+    vkGetPhysicalDeviceQueueFamilyProperties2 =
+    loadFunction<VkGetPhysicalDeviceQueueFamilyProperties2Native>(
+            _library, 'vkGetPhysicalDeviceQueueFamilyProperties2')
+        .asFunction<VkGetPhysicalDeviceQueueFamilyProperties2>();
+VkGetPhysicalDeviceQueueFamilyProperties2KHR
+    vkGetPhysicalDeviceQueueFamilyProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceQueueFamilyProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceQueueFamilyProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceQueueFamilyProperties2KHR>();
+VkGetPhysicalDeviceMemoryProperties2 vkGetPhysicalDeviceMemoryProperties2 =
+    loadFunction<VkGetPhysicalDeviceMemoryProperties2Native>(
+            _library, 'vkGetPhysicalDeviceMemoryProperties2')
+        .asFunction<VkGetPhysicalDeviceMemoryProperties2>();
+VkGetPhysicalDeviceMemoryProperties2KHR
+    vkGetPhysicalDeviceMemoryProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceMemoryProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceMemoryProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceMemoryProperties2KHR>();
+VkGetPhysicalDeviceSparseImageFormatProperties2
+    vkGetPhysicalDeviceSparseImageFormatProperties2 =
+    loadFunction<VkGetPhysicalDeviceSparseImageFormatProperties2Native>(
+            _library, 'vkGetPhysicalDeviceSparseImageFormatProperties2')
+        .asFunction<VkGetPhysicalDeviceSparseImageFormatProperties2>();
+VkGetPhysicalDeviceSparseImageFormatProperties2KHR
+    vkGetPhysicalDeviceSparseImageFormatProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceSparseImageFormatProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceSparseImageFormatProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceSparseImageFormatProperties2KHR>();
+VkCmdPushDescriptorSetKHR vkCmdPushDescriptorSetKHR =
+    loadFunction<VkCmdPushDescriptorSetKHRNative>(
+            _library, 'vkCmdPushDescriptorSetKHR')
+        .asFunction<VkCmdPushDescriptorSetKHR>();
+VkTrimCommandPool vkTrimCommandPool =
+    loadFunction<VkTrimCommandPoolNative>(_library, 'vkTrimCommandPool')
+        .asFunction<VkTrimCommandPool>();
+VkTrimCommandPoolKHR vkTrimCommandPoolKHR =
+    loadFunction<VkTrimCommandPoolKHRNative>(_library, 'vkTrimCommandPoolKHR')
+        .asFunction<VkTrimCommandPoolKHR>();
+VkGetPhysicalDeviceExternalBufferProperties
+    vkGetPhysicalDeviceExternalBufferProperties =
+    loadFunction<VkGetPhysicalDeviceExternalBufferPropertiesNative>(
+            _library, 'vkGetPhysicalDeviceExternalBufferProperties')
+        .asFunction<VkGetPhysicalDeviceExternalBufferProperties>();
+VkGetPhysicalDeviceExternalBufferPropertiesKHR
+    vkGetPhysicalDeviceExternalBufferPropertiesKHR =
+    loadFunction<VkGetPhysicalDeviceExternalBufferPropertiesKHRNative>(
+            _library, 'vkGetPhysicalDeviceExternalBufferPropertiesKHR')
+        .asFunction<VkGetPhysicalDeviceExternalBufferPropertiesKHR>();
+VkGetMemoryWin32HandleKHR vkGetMemoryWin32HandleKHR =
+    loadFunction<VkGetMemoryWin32HandleKHRNative>(
+            _library, 'vkGetMemoryWin32HandleKHR')
+        .asFunction<VkGetMemoryWin32HandleKHR>();
+VkGetMemoryWin32HandlePropertiesKHR vkGetMemoryWin32HandlePropertiesKHR =
+    loadFunction<VkGetMemoryWin32HandlePropertiesKHRNative>(
+            _library, 'vkGetMemoryWin32HandlePropertiesKHR')
+        .asFunction<VkGetMemoryWin32HandlePropertiesKHR>();
+VkGetMemoryFdKHR vkGetMemoryFdKHR =
+    loadFunction<VkGetMemoryFdKHRNative>(_library, 'vkGetMemoryFdKHR')
+        .asFunction<VkGetMemoryFdKHR>();
+VkGetMemoryFdPropertiesKHR vkGetMemoryFdPropertiesKHR =
+    loadFunction<VkGetMemoryFdPropertiesKHRNative>(
+            _library, 'vkGetMemoryFdPropertiesKHR')
+        .asFunction<VkGetMemoryFdPropertiesKHR>();
+VkGetPhysicalDeviceExternalSemaphoreProperties
+    vkGetPhysicalDeviceExternalSemaphoreProperties =
+    loadFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesNative>(
+            _library, 'vkGetPhysicalDeviceExternalSemaphoreProperties')
+        .asFunction<VkGetPhysicalDeviceExternalSemaphoreProperties>();
+VkGetPhysicalDeviceExternalSemaphorePropertiesKHR
+    vkGetPhysicalDeviceExternalSemaphorePropertiesKHR =
+    loadFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesKHRNative>(
+            _library, 'vkGetPhysicalDeviceExternalSemaphorePropertiesKHR')
+        .asFunction<VkGetPhysicalDeviceExternalSemaphorePropertiesKHR>();
+VkGetSemaphoreWin32HandleKHR vkGetSemaphoreWin32HandleKHR =
+    loadFunction<VkGetSemaphoreWin32HandleKHRNative>(
+            _library, 'vkGetSemaphoreWin32HandleKHR')
+        .asFunction<VkGetSemaphoreWin32HandleKHR>();
+VkImportSemaphoreWin32HandleKHR vkImportSemaphoreWin32HandleKHR =
+    loadFunction<VkImportSemaphoreWin32HandleKHRNative>(
+            _library, 'vkImportSemaphoreWin32HandleKHR')
+        .asFunction<VkImportSemaphoreWin32HandleKHR>();
+VkGetSemaphoreFdKHR vkGetSemaphoreFdKHR =
+    loadFunction<VkGetSemaphoreFdKHRNative>(_library, 'vkGetSemaphoreFdKHR')
+        .asFunction<VkGetSemaphoreFdKHR>();
+VkImportSemaphoreFdKHR vkImportSemaphoreFdKHR =
+    loadFunction<VkImportSemaphoreFdKHRNative>(
+            _library, 'vkImportSemaphoreFdKHR')
+        .asFunction<VkImportSemaphoreFdKHR>();
+VkGetPhysicalDeviceExternalFenceProperties
+    vkGetPhysicalDeviceExternalFenceProperties =
+    loadFunction<VkGetPhysicalDeviceExternalFencePropertiesNative>(
+            _library, 'vkGetPhysicalDeviceExternalFenceProperties')
+        .asFunction<VkGetPhysicalDeviceExternalFenceProperties>();
+VkGetPhysicalDeviceExternalFencePropertiesKHR
+    vkGetPhysicalDeviceExternalFencePropertiesKHR =
+    loadFunction<VkGetPhysicalDeviceExternalFencePropertiesKHRNative>(
+            _library, 'vkGetPhysicalDeviceExternalFencePropertiesKHR')
+        .asFunction<VkGetPhysicalDeviceExternalFencePropertiesKHR>();
+VkGetFenceWin32HandleKHR vkGetFenceWin32HandleKHR =
+    loadFunction<VkGetFenceWin32HandleKHRNative>(
+            _library, 'vkGetFenceWin32HandleKHR')
+        .asFunction<VkGetFenceWin32HandleKHR>();
+VkImportFenceWin32HandleKHR vkImportFenceWin32HandleKHR =
+    loadFunction<VkImportFenceWin32HandleKHRNative>(
+            _library, 'vkImportFenceWin32HandleKHR')
+        .asFunction<VkImportFenceWin32HandleKHR>();
+VkGetFenceFdKHR vkGetFenceFdKHR =
+    loadFunction<VkGetFenceFdKHRNative>(_library, 'vkGetFenceFdKHR')
+        .asFunction<VkGetFenceFdKHR>();
+VkImportFenceFdKHR vkImportFenceFdKHR =
+    loadFunction<VkImportFenceFdKHRNative>(_library, 'vkImportFenceFdKHR')
+        .asFunction<VkImportFenceFdKHR>();
+VkReleaseDisplayEXT vkReleaseDisplayEXT =
+    loadFunction<VkReleaseDisplayEXTNative>(_library, 'vkReleaseDisplayEXT')
+        .asFunction<VkReleaseDisplayEXT>();
+VkAcquireXlibDisplayEXT vkAcquireXlibDisplayEXT =
+    loadFunction<VkAcquireXlibDisplayEXTNative>(
+            _library, 'vkAcquireXlibDisplayEXT')
+        .asFunction<VkAcquireXlibDisplayEXT>();
+VkGetRandROutputDisplayEXT vkGetRandROutputDisplayEXT =
+    loadFunction<VkGetRandROutputDisplayEXTNative>(
+            _library, 'vkGetRandROutputDisplayEXT')
+        .asFunction<VkGetRandROutputDisplayEXT>();
+VkAcquireWinrtDisplayNV vkAcquireWinrtDisplayNV =
+    loadFunction<VkAcquireWinrtDisplayNVNative>(
+            _library, 'vkAcquireWinrtDisplayNV')
+        .asFunction<VkAcquireWinrtDisplayNV>();
+VkGetWinrtDisplayNV vkGetWinrtDisplayNV =
+    loadFunction<VkGetWinrtDisplayNVNative>(_library, 'vkGetWinrtDisplayNV')
+        .asFunction<VkGetWinrtDisplayNV>();
+VkDisplayPowerControlEXT vkDisplayPowerControlEXT =
+    loadFunction<VkDisplayPowerControlEXTNative>(
+            _library, 'vkDisplayPowerControlEXT')
+        .asFunction<VkDisplayPowerControlEXT>();
+VkRegisterDeviceEventEXT vkRegisterDeviceEventEXT =
+    loadFunction<VkRegisterDeviceEventEXTNative>(
+            _library, 'vkRegisterDeviceEventEXT')
+        .asFunction<VkRegisterDeviceEventEXT>();
+VkRegisterDisplayEventEXT vkRegisterDisplayEventEXT =
+    loadFunction<VkRegisterDisplayEventEXTNative>(
+            _library, 'vkRegisterDisplayEventEXT')
+        .asFunction<VkRegisterDisplayEventEXT>();
+VkGetSwapchainCounterEXT vkGetSwapchainCounterEXT =
+    loadFunction<VkGetSwapchainCounterEXTNative>(
+            _library, 'vkGetSwapchainCounterEXT')
+        .asFunction<VkGetSwapchainCounterEXT>();
+VkGetPhysicalDeviceSurfaceCapabilities2EXT
+    vkGetPhysicalDeviceSurfaceCapabilities2EXT =
+    loadFunction<VkGetPhysicalDeviceSurfaceCapabilities2EXTNative>(
+            _library, 'vkGetPhysicalDeviceSurfaceCapabilities2EXT')
+        .asFunction<VkGetPhysicalDeviceSurfaceCapabilities2EXT>();
+VkEnumeratePhysicalDeviceGroups vkEnumeratePhysicalDeviceGroups =
+    loadFunction<VkEnumeratePhysicalDeviceGroupsNative>(
+            _library, 'vkEnumeratePhysicalDeviceGroups')
+        .asFunction<VkEnumeratePhysicalDeviceGroups>();
+VkEnumeratePhysicalDeviceGroupsKHR vkEnumeratePhysicalDeviceGroupsKHR =
+    loadFunction<VkEnumeratePhysicalDeviceGroupsKHRNative>(
+            _library, 'vkEnumeratePhysicalDeviceGroupsKHR')
+        .asFunction<VkEnumeratePhysicalDeviceGroupsKHR>();
+VkGetDeviceGroupPeerMemoryFeatures vkGetDeviceGroupPeerMemoryFeatures =
+    loadFunction<VkGetDeviceGroupPeerMemoryFeaturesNative>(
+            _library, 'vkGetDeviceGroupPeerMemoryFeatures')
+        .asFunction<VkGetDeviceGroupPeerMemoryFeatures>();
+VkGetDeviceGroupPeerMemoryFeaturesKHR vkGetDeviceGroupPeerMemoryFeaturesKHR =
+    loadFunction<VkGetDeviceGroupPeerMemoryFeaturesKHRNative>(
+            _library, 'vkGetDeviceGroupPeerMemoryFeaturesKHR')
+        .asFunction<VkGetDeviceGroupPeerMemoryFeaturesKHR>();
+VkBindBufferMemory2 vkBindBufferMemory2 =
+    loadFunction<VkBindBufferMemory2Native>(_library, 'vkBindBufferMemory2')
+        .asFunction<VkBindBufferMemory2>();
+VkBindBufferMemory2KHR vkBindBufferMemory2KHR =
+    loadFunction<VkBindBufferMemory2KHRNative>(
+            _library, 'vkBindBufferMemory2KHR')
+        .asFunction<VkBindBufferMemory2KHR>();
+VkBindImageMemory2 vkBindImageMemory2 =
+    loadFunction<VkBindImageMemory2Native>(_library, 'vkBindImageMemory2')
+        .asFunction<VkBindImageMemory2>();
+VkBindImageMemory2KHR vkBindImageMemory2KHR =
+    loadFunction<VkBindImageMemory2KHRNative>(_library, 'vkBindImageMemory2KHR')
+        .asFunction<VkBindImageMemory2KHR>();
+VkCmdSetDeviceMask vkCmdSetDeviceMask =
+    loadFunction<VkCmdSetDeviceMaskNative>(_library, 'vkCmdSetDeviceMask')
+        .asFunction<VkCmdSetDeviceMask>();
+VkCmdSetDeviceMaskKHR vkCmdSetDeviceMaskKHR =
+    loadFunction<VkCmdSetDeviceMaskKHRNative>(_library, 'vkCmdSetDeviceMaskKHR')
+        .asFunction<VkCmdSetDeviceMaskKHR>();
+VkGetDeviceGroupPresentCapabilitiesKHR vkGetDeviceGroupPresentCapabilitiesKHR =
+    loadFunction<VkGetDeviceGroupPresentCapabilitiesKHRNative>(
+            _library, 'vkGetDeviceGroupPresentCapabilitiesKHR')
+        .asFunction<VkGetDeviceGroupPresentCapabilitiesKHR>();
+VkGetDeviceGroupSurfacePresentModesKHR vkGetDeviceGroupSurfacePresentModesKHR =
+    loadFunction<VkGetDeviceGroupSurfacePresentModesKHRNative>(
+            _library, 'vkGetDeviceGroupSurfacePresentModesKHR')
+        .asFunction<VkGetDeviceGroupSurfacePresentModesKHR>();
+VkAcquireNextImage2KHR vkAcquireNextImage2KHR =
+    loadFunction<VkAcquireNextImage2KHRNative>(
+            _library, 'vkAcquireNextImage2KHR')
+        .asFunction<VkAcquireNextImage2KHR>();
+VkCmdDispatchBase vkCmdDispatchBase =
+    loadFunction<VkCmdDispatchBaseNative>(_library, 'vkCmdDispatchBase')
+        .asFunction<VkCmdDispatchBase>();
+VkCmdDispatchBaseKHR vkCmdDispatchBaseKHR =
+    loadFunction<VkCmdDispatchBaseKHRNative>(_library, 'vkCmdDispatchBaseKHR')
+        .asFunction<VkCmdDispatchBaseKHR>();
+VkGetPhysicalDevicePresentRectanglesKHR
+    vkGetPhysicalDevicePresentRectanglesKHR =
+    loadFunction<VkGetPhysicalDevicePresentRectanglesKHRNative>(
+            _library, 'vkGetPhysicalDevicePresentRectanglesKHR')
+        .asFunction<VkGetPhysicalDevicePresentRectanglesKHR>();
+VkCreateDescriptorUpdateTemplate vkCreateDescriptorUpdateTemplate =
+    loadFunction<VkCreateDescriptorUpdateTemplateNative>(
+            _library, 'vkCreateDescriptorUpdateTemplate')
+        .asFunction<VkCreateDescriptorUpdateTemplate>();
+VkCreateDescriptorUpdateTemplateKHR vkCreateDescriptorUpdateTemplateKHR =
+    loadFunction<VkCreateDescriptorUpdateTemplateKHRNative>(
+            _library, 'vkCreateDescriptorUpdateTemplateKHR')
+        .asFunction<VkCreateDescriptorUpdateTemplateKHR>();
+VkDestroyDescriptorUpdateTemplate vkDestroyDescriptorUpdateTemplate =
+    loadFunction<VkDestroyDescriptorUpdateTemplateNative>(
+            _library, 'vkDestroyDescriptorUpdateTemplate')
+        .asFunction<VkDestroyDescriptorUpdateTemplate>();
+VkDestroyDescriptorUpdateTemplateKHR vkDestroyDescriptorUpdateTemplateKHR =
+    loadFunction<VkDestroyDescriptorUpdateTemplateKHRNative>(
+            _library, 'vkDestroyDescriptorUpdateTemplateKHR')
+        .asFunction<VkDestroyDescriptorUpdateTemplateKHR>();
+VkUpdateDescriptorSetWithTemplate vkUpdateDescriptorSetWithTemplate =
+    loadFunction<VkUpdateDescriptorSetWithTemplateNative>(
+            _library, 'vkUpdateDescriptorSetWithTemplate')
+        .asFunction<VkUpdateDescriptorSetWithTemplate>();
+VkUpdateDescriptorSetWithTemplateKHR vkUpdateDescriptorSetWithTemplateKHR =
+    loadFunction<VkUpdateDescriptorSetWithTemplateKHRNative>(
+            _library, 'vkUpdateDescriptorSetWithTemplateKHR')
+        .asFunction<VkUpdateDescriptorSetWithTemplateKHR>();
+VkCmdPushDescriptorSetWithTemplateKHR vkCmdPushDescriptorSetWithTemplateKHR =
+    loadFunction<VkCmdPushDescriptorSetWithTemplateKHRNative>(
+            _library, 'vkCmdPushDescriptorSetWithTemplateKHR')
+        .asFunction<VkCmdPushDescriptorSetWithTemplateKHR>();
+VkSetHdrMetadataEXT vkSetHdrMetadataEXT =
+    loadFunction<VkSetHdrMetadataEXTNative>(_library, 'vkSetHdrMetadataEXT')
+        .asFunction<VkSetHdrMetadataEXT>();
+VkGetSwapchainStatusKHR vkGetSwapchainStatusKHR =
+    loadFunction<VkGetSwapchainStatusKHRNative>(
+            _library, 'vkGetSwapchainStatusKHR')
+        .asFunction<VkGetSwapchainStatusKHR>();
+VkGetRefreshCycleDurationGOOGLE vkGetRefreshCycleDurationGOOGLE =
+    loadFunction<VkGetRefreshCycleDurationGOOGLENative>(
+            _library, 'vkGetRefreshCycleDurationGOOGLE')
+        .asFunction<VkGetRefreshCycleDurationGOOGLE>();
+VkGetPastPresentationTimingGOOGLE vkGetPastPresentationTimingGOOGLE =
+    loadFunction<VkGetPastPresentationTimingGOOGLENative>(
+            _library, 'vkGetPastPresentationTimingGOOGLE')
+        .asFunction<VkGetPastPresentationTimingGOOGLE>();
+VkCreateIOSSurfaceMVK vkCreateIOSSurfaceMVK =
+    loadFunction<VkCreateIOSSurfaceMVKNative>(_library, 'vkCreateIOSSurfaceMVK')
+        .asFunction<VkCreateIOSSurfaceMVK>();
+VkCreateMacOSSurfaceMVK vkCreateMacOSSurfaceMVK =
+    loadFunction<VkCreateMacOSSurfaceMVKNative>(
+            _library, 'vkCreateMacOSSurfaceMVK')
+        .asFunction<VkCreateMacOSSurfaceMVK>();
+VkCreateMetalSurfaceEXT vkCreateMetalSurfaceEXT =
+    loadFunction<VkCreateMetalSurfaceEXTNative>(
+            _library, 'vkCreateMetalSurfaceEXT')
+        .asFunction<VkCreateMetalSurfaceEXT>();
+VkCmdSetViewportWScalingNV vkCmdSetViewportWScalingNV =
+    loadFunction<VkCmdSetViewportWScalingNVNative>(
+            _library, 'vkCmdSetViewportWScalingNV')
+        .asFunction<VkCmdSetViewportWScalingNV>();
+VkCmdSetDiscardRectangleEXT vkCmdSetDiscardRectangleEXT =
+    loadFunction<VkCmdSetDiscardRectangleEXTNative>(
+            _library, 'vkCmdSetDiscardRectangleEXT')
+        .asFunction<VkCmdSetDiscardRectangleEXT>();
+VkCmdSetSampleLocationsEXT vkCmdSetSampleLocationsEXT =
+    loadFunction<VkCmdSetSampleLocationsEXTNative>(
+            _library, 'vkCmdSetSampleLocationsEXT')
+        .asFunction<VkCmdSetSampleLocationsEXT>();
+VkGetPhysicalDeviceMultisamplePropertiesEXT
+    vkGetPhysicalDeviceMultisamplePropertiesEXT =
+    loadFunction<VkGetPhysicalDeviceMultisamplePropertiesEXTNative>(
+            _library, 'vkGetPhysicalDeviceMultisamplePropertiesEXT')
+        .asFunction<VkGetPhysicalDeviceMultisamplePropertiesEXT>();
+VkGetPhysicalDeviceSurfaceCapabilities2KHR
+    vkGetPhysicalDeviceSurfaceCapabilities2KHR =
+    loadFunction<VkGetPhysicalDeviceSurfaceCapabilities2KHRNative>(
+            _library, 'vkGetPhysicalDeviceSurfaceCapabilities2KHR')
+        .asFunction<VkGetPhysicalDeviceSurfaceCapabilities2KHR>();
+VkGetPhysicalDeviceSurfaceFormats2KHR vkGetPhysicalDeviceSurfaceFormats2KHR =
+    loadFunction<VkGetPhysicalDeviceSurfaceFormats2KHRNative>(
+            _library, 'vkGetPhysicalDeviceSurfaceFormats2KHR')
+        .asFunction<VkGetPhysicalDeviceSurfaceFormats2KHR>();
+VkGetPhysicalDeviceDisplayProperties2KHR
+    vkGetPhysicalDeviceDisplayProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceDisplayProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceDisplayProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceDisplayProperties2KHR>();
+VkGetPhysicalDeviceDisplayPlaneProperties2KHR
+    vkGetPhysicalDeviceDisplayPlaneProperties2KHR =
+    loadFunction<VkGetPhysicalDeviceDisplayPlaneProperties2KHRNative>(
+            _library, 'vkGetPhysicalDeviceDisplayPlaneProperties2KHR')
+        .asFunction<VkGetPhysicalDeviceDisplayPlaneProperties2KHR>();
+VkGetDisplayModeProperties2KHR vkGetDisplayModeProperties2KHR =
+    loadFunction<VkGetDisplayModeProperties2KHRNative>(
+            _library, 'vkGetDisplayModeProperties2KHR')
+        .asFunction<VkGetDisplayModeProperties2KHR>();
+VkGetDisplayPlaneCapabilities2KHR vkGetDisplayPlaneCapabilities2KHR =
+    loadFunction<VkGetDisplayPlaneCapabilities2KHRNative>(
+            _library, 'vkGetDisplayPlaneCapabilities2KHR')
+        .asFunction<VkGetDisplayPlaneCapabilities2KHR>();
+VkGetBufferMemoryRequirements2 vkGetBufferMemoryRequirements2 =
+    loadFunction<VkGetBufferMemoryRequirements2Native>(
+            _library, 'vkGetBufferMemoryRequirements2')
+        .asFunction<VkGetBufferMemoryRequirements2>();
+VkGetBufferMemoryRequirements2KHR vkGetBufferMemoryRequirements2KHR =
+    loadFunction<VkGetBufferMemoryRequirements2KHRNative>(
+            _library, 'vkGetBufferMemoryRequirements2KHR')
+        .asFunction<VkGetBufferMemoryRequirements2KHR>();
+VkGetImageMemoryRequirements2 vkGetImageMemoryRequirements2 =
+    loadFunction<VkGetImageMemoryRequirements2Native>(
+            _library, 'vkGetImageMemoryRequirements2')
+        .asFunction<VkGetImageMemoryRequirements2>();
+VkGetImageMemoryRequirements2KHR vkGetImageMemoryRequirements2KHR =
+    loadFunction<VkGetImageMemoryRequirements2KHRNative>(
+            _library, 'vkGetImageMemoryRequirements2KHR')
+        .asFunction<VkGetImageMemoryRequirements2KHR>();
+VkGetImageSparseMemoryRequirements2 vkGetImageSparseMemoryRequirements2 =
+    loadFunction<VkGetImageSparseMemoryRequirements2Native>(
+            _library, 'vkGetImageSparseMemoryRequirements2')
+        .asFunction<VkGetImageSparseMemoryRequirements2>();
+VkGetImageSparseMemoryRequirements2KHR vkGetImageSparseMemoryRequirements2KHR =
+    loadFunction<VkGetImageSparseMemoryRequirements2KHRNative>(
+            _library, 'vkGetImageSparseMemoryRequirements2KHR')
+        .asFunction<VkGetImageSparseMemoryRequirements2KHR>();
+VkCreateSamplerYcbcrConversion vkCreateSamplerYcbcrConversion =
+    loadFunction<VkCreateSamplerYcbcrConversionNative>(
+            _library, 'vkCreateSamplerYcbcrConversion')
+        .asFunction<VkCreateSamplerYcbcrConversion>();
+VkCreateSamplerYcbcrConversionKHR vkCreateSamplerYcbcrConversionKHR =
+    loadFunction<VkCreateSamplerYcbcrConversionKHRNative>(
+            _library, 'vkCreateSamplerYcbcrConversionKHR')
+        .asFunction<VkCreateSamplerYcbcrConversionKHR>();
+VkDestroySamplerYcbcrConversion vkDestroySamplerYcbcrConversion =
+    loadFunction<VkDestroySamplerYcbcrConversionNative>(
+            _library, 'vkDestroySamplerYcbcrConversion')
+        .asFunction<VkDestroySamplerYcbcrConversion>();
+VkDestroySamplerYcbcrConversionKHR vkDestroySamplerYcbcrConversionKHR =
+    loadFunction<VkDestroySamplerYcbcrConversionKHRNative>(
+            _library, 'vkDestroySamplerYcbcrConversionKHR')
+        .asFunction<VkDestroySamplerYcbcrConversionKHR>();
+VkGetDeviceQueue2 vkGetDeviceQueue2 =
+    loadFunction<VkGetDeviceQueue2Native>(_library, 'vkGetDeviceQueue2')
+        .asFunction<VkGetDeviceQueue2>();
+VkCreateValidationCacheEXT vkCreateValidationCacheEXT =
+    loadFunction<VkCreateValidationCacheEXTNative>(
+            _library, 'vkCreateValidationCacheEXT')
+        .asFunction<VkCreateValidationCacheEXT>();
+VkDestroyValidationCacheEXT vkDestroyValidationCacheEXT =
+    loadFunction<VkDestroyValidationCacheEXTNative>(
+            _library, 'vkDestroyValidationCacheEXT')
+        .asFunction<VkDestroyValidationCacheEXT>();
+VkGetValidationCacheDataEXT vkGetValidationCacheDataEXT =
+    loadFunction<VkGetValidationCacheDataEXTNative>(
+            _library, 'vkGetValidationCacheDataEXT')
+        .asFunction<VkGetValidationCacheDataEXT>();
+VkMergeValidationCachesEXT vkMergeValidationCachesEXT =
+    loadFunction<VkMergeValidationCachesEXTNative>(
+            _library, 'vkMergeValidationCachesEXT')
+        .asFunction<VkMergeValidationCachesEXT>();
+VkGetDescriptorSetLayoutSupport vkGetDescriptorSetLayoutSupport =
+    loadFunction<VkGetDescriptorSetLayoutSupportNative>(
+            _library, 'vkGetDescriptorSetLayoutSupport')
+        .asFunction<VkGetDescriptorSetLayoutSupport>();
+VkGetDescriptorSetLayoutSupportKHR vkGetDescriptorSetLayoutSupportKHR =
+    loadFunction<VkGetDescriptorSetLayoutSupportKHRNative>(
+            _library, 'vkGetDescriptorSetLayoutSupportKHR')
+        .asFunction<VkGetDescriptorSetLayoutSupportKHR>();
+VkGetSwapchainGrallocUsageANDROID vkGetSwapchainGrallocUsageANDROID =
+    loadFunction<VkGetSwapchainGrallocUsageANDROIDNative>(
+            _library, 'vkGetSwapchainGrallocUsageANDROID')
+        .asFunction<VkGetSwapchainGrallocUsageANDROID>();
+VkGetSwapchainGrallocUsage2ANDROID vkGetSwapchainGrallocUsage2ANDROID =
+    loadFunction<VkGetSwapchainGrallocUsage2ANDROIDNative>(
+            _library, 'vkGetSwapchainGrallocUsage2ANDROID')
+        .asFunction<VkGetSwapchainGrallocUsage2ANDROID>();
+VkAcquireImageANDROID vkAcquireImageANDROID =
+    loadFunction<VkAcquireImageANDROIDNative>(_library, 'vkAcquireImageANDROID')
+        .asFunction<VkAcquireImageANDROID>();
+VkQueueSignalReleaseImageANDROID vkQueueSignalReleaseImageANDROID =
+    loadFunction<VkQueueSignalReleaseImageANDROIDNative>(
+            _library, 'vkQueueSignalReleaseImageANDROID')
+        .asFunction<VkQueueSignalReleaseImageANDROID>();
+VkGetShaderInfoAMD vkGetShaderInfoAMD =
+    loadFunction<VkGetShaderInfoAMDNative>(_library, 'vkGetShaderInfoAMD')
+        .asFunction<VkGetShaderInfoAMD>();
+VkSetLocalDimmingAMD vkSetLocalDimmingAMD =
+    loadFunction<VkSetLocalDimmingAMDNative>(_library, 'vkSetLocalDimmingAMD')
+        .asFunction<VkSetLocalDimmingAMD>();
+VkGetPhysicalDeviceCalibrateableTimeDomainsEXT
+    vkGetPhysicalDeviceCalibrateableTimeDomainsEXT =
+    loadFunction<VkGetPhysicalDeviceCalibrateableTimeDomainsEXTNative>(
+            _library, 'vkGetPhysicalDeviceCalibrateableTimeDomainsEXT')
+        .asFunction<VkGetPhysicalDeviceCalibrateableTimeDomainsEXT>();
+VkGetCalibratedTimestampsEXT vkGetCalibratedTimestampsEXT =
+    loadFunction<VkGetCalibratedTimestampsEXTNative>(
+            _library, 'vkGetCalibratedTimestampsEXT')
+        .asFunction<VkGetCalibratedTimestampsEXT>();
+VkSetDebugUtilsObjectNameEXT vkSetDebugUtilsObjectNameEXT =
+    loadFunction<VkSetDebugUtilsObjectNameEXTNative>(
+            _library, 'vkSetDebugUtilsObjectNameEXT')
+        .asFunction<VkSetDebugUtilsObjectNameEXT>();
+VkSetDebugUtilsObjectTagEXT vkSetDebugUtilsObjectTagEXT =
+    loadFunction<VkSetDebugUtilsObjectTagEXTNative>(
+            _library, 'vkSetDebugUtilsObjectTagEXT')
+        .asFunction<VkSetDebugUtilsObjectTagEXT>();
+VkQueueBeginDebugUtilsLabelEXT vkQueueBeginDebugUtilsLabelEXT =
+    loadFunction<VkQueueBeginDebugUtilsLabelEXTNative>(
+            _library, 'vkQueueBeginDebugUtilsLabelEXT')
+        .asFunction<VkQueueBeginDebugUtilsLabelEXT>();
+VkQueueEndDebugUtilsLabelEXT vkQueueEndDebugUtilsLabelEXT =
+    loadFunction<VkQueueEndDebugUtilsLabelEXTNative>(
+            _library, 'vkQueueEndDebugUtilsLabelEXT')
+        .asFunction<VkQueueEndDebugUtilsLabelEXT>();
+VkQueueInsertDebugUtilsLabelEXT vkQueueInsertDebugUtilsLabelEXT =
+    loadFunction<VkQueueInsertDebugUtilsLabelEXTNative>(
+            _library, 'vkQueueInsertDebugUtilsLabelEXT')
+        .asFunction<VkQueueInsertDebugUtilsLabelEXT>();
+VkCmdBeginDebugUtilsLabelEXT vkCmdBeginDebugUtilsLabelEXT =
+    loadFunction<VkCmdBeginDebugUtilsLabelEXTNative>(
+            _library, 'vkCmdBeginDebugUtilsLabelEXT')
+        .asFunction<VkCmdBeginDebugUtilsLabelEXT>();
+VkCmdEndDebugUtilsLabelEXT vkCmdEndDebugUtilsLabelEXT =
+    loadFunction<VkCmdEndDebugUtilsLabelEXTNative>(
+            _library, 'vkCmdEndDebugUtilsLabelEXT')
+        .asFunction<VkCmdEndDebugUtilsLabelEXT>();
+VkCmdInsertDebugUtilsLabelEXT vkCmdInsertDebugUtilsLabelEXT =
+    loadFunction<VkCmdInsertDebugUtilsLabelEXTNative>(
+            _library, 'vkCmdInsertDebugUtilsLabelEXT')
+        .asFunction<VkCmdInsertDebugUtilsLabelEXT>();
+VkCreateDebugUtilsMessengerEXT vkCreateDebugUtilsMessengerEXT =
+    loadFunction<VkCreateDebugUtilsMessengerEXTNative>(
+            _library, 'vkCreateDebugUtilsMessengerEXT')
+        .asFunction<VkCreateDebugUtilsMessengerEXT>();
+VkDestroyDebugUtilsMessengerEXT vkDestroyDebugUtilsMessengerEXT =
+    loadFunction<VkDestroyDebugUtilsMessengerEXTNative>(
+            _library, 'vkDestroyDebugUtilsMessengerEXT')
+        .asFunction<VkDestroyDebugUtilsMessengerEXT>();
+VkSubmitDebugUtilsMessageEXT vkSubmitDebugUtilsMessageEXT =
+    loadFunction<VkSubmitDebugUtilsMessageEXTNative>(
+            _library, 'vkSubmitDebugUtilsMessageEXT')
+        .asFunction<VkSubmitDebugUtilsMessageEXT>();
+VkGetMemoryHostPointerPropertiesEXT vkGetMemoryHostPointerPropertiesEXT =
+    loadFunction<VkGetMemoryHostPointerPropertiesEXTNative>(
+            _library, 'vkGetMemoryHostPointerPropertiesEXT')
+        .asFunction<VkGetMemoryHostPointerPropertiesEXT>();
+VkCmdWriteBufferMarkerAMD vkCmdWriteBufferMarkerAMD =
+    loadFunction<VkCmdWriteBufferMarkerAMDNative>(
+            _library, 'vkCmdWriteBufferMarkerAMD')
+        .asFunction<VkCmdWriteBufferMarkerAMD>();
+VkCreateRenderPass2 vkCreateRenderPass2 =
+    loadFunction<VkCreateRenderPass2Native>(_library, 'vkCreateRenderPass2')
+        .asFunction<VkCreateRenderPass2>();
+VkCreateRenderPass2KHR vkCreateRenderPass2KHR =
+    loadFunction<VkCreateRenderPass2KHRNative>(
+            _library, 'vkCreateRenderPass2KHR')
+        .asFunction<VkCreateRenderPass2KHR>();
+VkCmdBeginRenderPass2 vkCmdBeginRenderPass2 =
+    loadFunction<VkCmdBeginRenderPass2Native>(_library, 'vkCmdBeginRenderPass2')
+        .asFunction<VkCmdBeginRenderPass2>();
+VkCmdBeginRenderPass2KHR vkCmdBeginRenderPass2KHR =
+    loadFunction<VkCmdBeginRenderPass2KHRNative>(
+            _library, 'vkCmdBeginRenderPass2KHR')
+        .asFunction<VkCmdBeginRenderPass2KHR>();
+VkCmdNextSubpass2 vkCmdNextSubpass2 =
+    loadFunction<VkCmdNextSubpass2Native>(_library, 'vkCmdNextSubpass2')
+        .asFunction<VkCmdNextSubpass2>();
+VkCmdNextSubpass2KHR vkCmdNextSubpass2KHR =
+    loadFunction<VkCmdNextSubpass2KHRNative>(_library, 'vkCmdNextSubpass2KHR')
+        .asFunction<VkCmdNextSubpass2KHR>();
+VkCmdEndRenderPass2 vkCmdEndRenderPass2 =
+    loadFunction<VkCmdEndRenderPass2Native>(_library, 'vkCmdEndRenderPass2')
+        .asFunction<VkCmdEndRenderPass2>();
+VkCmdEndRenderPass2KHR vkCmdEndRenderPass2KHR =
+    loadFunction<VkCmdEndRenderPass2KHRNative>(
+            _library, 'vkCmdEndRenderPass2KHR')
+        .asFunction<VkCmdEndRenderPass2KHR>();
+VkGetSemaphoreCounterValue vkGetSemaphoreCounterValue =
+    loadFunction<VkGetSemaphoreCounterValueNative>(
+            _library, 'vkGetSemaphoreCounterValue')
+        .asFunction<VkGetSemaphoreCounterValue>();
+VkGetSemaphoreCounterValueKHR vkGetSemaphoreCounterValueKHR =
+    loadFunction<VkGetSemaphoreCounterValueKHRNative>(
+            _library, 'vkGetSemaphoreCounterValueKHR')
+        .asFunction<VkGetSemaphoreCounterValueKHR>();
+VkWaitSemaphores vkWaitSemaphores =
+    loadFunction<VkWaitSemaphoresNative>(_library, 'vkWaitSemaphores')
+        .asFunction<VkWaitSemaphores>();
+VkWaitSemaphoresKHR vkWaitSemaphoresKHR =
+    loadFunction<VkWaitSemaphoresKHRNative>(_library, 'vkWaitSemaphoresKHR')
+        .asFunction<VkWaitSemaphoresKHR>();
+VkSignalSemaphore vkSignalSemaphore =
+    loadFunction<VkSignalSemaphoreNative>(_library, 'vkSignalSemaphore')
+        .asFunction<VkSignalSemaphore>();
+VkSignalSemaphoreKHR vkSignalSemaphoreKHR =
+    loadFunction<VkSignalSemaphoreKHRNative>(_library, 'vkSignalSemaphoreKHR')
+        .asFunction<VkSignalSemaphoreKHR>();
+VkGetAndroidHardwareBufferPropertiesANDROID
+    vkGetAndroidHardwareBufferPropertiesANDROID =
+    loadFunction<VkGetAndroidHardwareBufferPropertiesANDROIDNative>(
+            _library, 'vkGetAndroidHardwareBufferPropertiesANDROID')
+        .asFunction<VkGetAndroidHardwareBufferPropertiesANDROID>();
+VkGetMemoryAndroidHardwareBufferANDROID
+    vkGetMemoryAndroidHardwareBufferANDROID =
+    loadFunction<VkGetMemoryAndroidHardwareBufferANDROIDNative>(
+            _library, 'vkGetMemoryAndroidHardwareBufferANDROID')
+        .asFunction<VkGetMemoryAndroidHardwareBufferANDROID>();
+VkCmdDrawIndirectCount vkCmdDrawIndirectCount =
+    loadFunction<VkCmdDrawIndirectCountNative>(
+            _library, 'vkCmdDrawIndirectCount')
+        .asFunction<VkCmdDrawIndirectCount>();
+VkCmdDrawIndirectCountKHR vkCmdDrawIndirectCountKHR =
+    loadFunction<VkCmdDrawIndirectCountKHRNative>(
+            _library, 'vkCmdDrawIndirectCountKHR')
+        .asFunction<VkCmdDrawIndirectCountKHR>();
+VkCmdDrawIndirectCountAMD vkCmdDrawIndirectCountAMD =
+    loadFunction<VkCmdDrawIndirectCountAMDNative>(
+            _library, 'vkCmdDrawIndirectCountAMD')
+        .asFunction<VkCmdDrawIndirectCountAMD>();
+VkCmdDrawIndexedIndirectCount vkCmdDrawIndexedIndirectCount =
+    loadFunction<VkCmdDrawIndexedIndirectCountNative>(
+            _library, 'vkCmdDrawIndexedIndirectCount')
+        .asFunction<VkCmdDrawIndexedIndirectCount>();
+VkCmdDrawIndexedIndirectCountKHR vkCmdDrawIndexedIndirectCountKHR =
+    loadFunction<VkCmdDrawIndexedIndirectCountKHRNative>(
+            _library, 'vkCmdDrawIndexedIndirectCountKHR')
+        .asFunction<VkCmdDrawIndexedIndirectCountKHR>();
+VkCmdDrawIndexedIndirectCountAMD vkCmdDrawIndexedIndirectCountAMD =
+    loadFunction<VkCmdDrawIndexedIndirectCountAMDNative>(
+            _library, 'vkCmdDrawIndexedIndirectCountAMD')
+        .asFunction<VkCmdDrawIndexedIndirectCountAMD>();
+VkCmdSetCheckpointNV vkCmdSetCheckpointNV =
+    loadFunction<VkCmdSetCheckpointNVNative>(_library, 'vkCmdSetCheckpointNV')
+        .asFunction<VkCmdSetCheckpointNV>();
+VkGetQueueCheckpointDataNV vkGetQueueCheckpointDataNV =
+    loadFunction<VkGetQueueCheckpointDataNVNative>(
+            _library, 'vkGetQueueCheckpointDataNV')
+        .asFunction<VkGetQueueCheckpointDataNV>();
+VkCmdBindTransformFeedbackBuffersEXT vkCmdBindTransformFeedbackBuffersEXT =
+    loadFunction<VkCmdBindTransformFeedbackBuffersEXTNative>(
+            _library, 'vkCmdBindTransformFeedbackBuffersEXT')
+        .asFunction<VkCmdBindTransformFeedbackBuffersEXT>();
+VkCmdBeginTransformFeedbackEXT vkCmdBeginTransformFeedbackEXT =
+    loadFunction<VkCmdBeginTransformFeedbackEXTNative>(
+            _library, 'vkCmdBeginTransformFeedbackEXT')
+        .asFunction<VkCmdBeginTransformFeedbackEXT>();
+VkCmdEndTransformFeedbackEXT vkCmdEndTransformFeedbackEXT =
+    loadFunction<VkCmdEndTransformFeedbackEXTNative>(
+            _library, 'vkCmdEndTransformFeedbackEXT')
+        .asFunction<VkCmdEndTransformFeedbackEXT>();
+VkCmdBeginQueryIndexedEXT vkCmdBeginQueryIndexedEXT =
+    loadFunction<VkCmdBeginQueryIndexedEXTNative>(
+            _library, 'vkCmdBeginQueryIndexedEXT')
+        .asFunction<VkCmdBeginQueryIndexedEXT>();
+VkCmdEndQueryIndexedEXT vkCmdEndQueryIndexedEXT =
+    loadFunction<VkCmdEndQueryIndexedEXTNative>(
+            _library, 'vkCmdEndQueryIndexedEXT')
+        .asFunction<VkCmdEndQueryIndexedEXT>();
+VkCmdDrawIndirectByteCountEXT vkCmdDrawIndirectByteCountEXT =
+    loadFunction<VkCmdDrawIndirectByteCountEXTNative>(
+            _library, 'vkCmdDrawIndirectByteCountEXT')
+        .asFunction<VkCmdDrawIndirectByteCountEXT>();
+VkCmdSetExclusiveScissorNV vkCmdSetExclusiveScissorNV =
+    loadFunction<VkCmdSetExclusiveScissorNVNative>(
+            _library, 'vkCmdSetExclusiveScissorNV')
+        .asFunction<VkCmdSetExclusiveScissorNV>();
+VkCmdBindShadingRateImageNV vkCmdBindShadingRateImageNV =
+    loadFunction<VkCmdBindShadingRateImageNVNative>(
+            _library, 'vkCmdBindShadingRateImageNV')
+        .asFunction<VkCmdBindShadingRateImageNV>();
+VkCmdSetViewportShadingRatePaletteNV vkCmdSetViewportShadingRatePaletteNV =
+    loadFunction<VkCmdSetViewportShadingRatePaletteNVNative>(
+            _library, 'vkCmdSetViewportShadingRatePaletteNV')
+        .asFunction<VkCmdSetViewportShadingRatePaletteNV>();
+VkCmdSetCoarseSampleOrderNV vkCmdSetCoarseSampleOrderNV =
+    loadFunction<VkCmdSetCoarseSampleOrderNVNative>(
+            _library, 'vkCmdSetCoarseSampleOrderNV')
+        .asFunction<VkCmdSetCoarseSampleOrderNV>();
+VkCmdDrawMeshTasksNV vkCmdDrawMeshTasksNV =
+    loadFunction<VkCmdDrawMeshTasksNVNative>(_library, 'vkCmdDrawMeshTasksNV')
+        .asFunction<VkCmdDrawMeshTasksNV>();
+VkCmdDrawMeshTasksIndirectNV vkCmdDrawMeshTasksIndirectNV =
+    loadFunction<VkCmdDrawMeshTasksIndirectNVNative>(
+            _library, 'vkCmdDrawMeshTasksIndirectNV')
+        .asFunction<VkCmdDrawMeshTasksIndirectNV>();
+VkCmdDrawMeshTasksIndirectCountNV vkCmdDrawMeshTasksIndirectCountNV =
+    loadFunction<VkCmdDrawMeshTasksIndirectCountNVNative>(
+            _library, 'vkCmdDrawMeshTasksIndirectCountNV')
+        .asFunction<VkCmdDrawMeshTasksIndirectCountNV>();
+VkCompileDeferredNV vkCompileDeferredNV =
+    loadFunction<VkCompileDeferredNVNative>(_library, 'vkCompileDeferredNV')
+        .asFunction<VkCompileDeferredNV>();
+VkCreateAccelerationStructureNV vkCreateAccelerationStructureNV =
+    loadFunction<VkCreateAccelerationStructureNVNative>(
+            _library, 'vkCreateAccelerationStructureNV')
+        .asFunction<VkCreateAccelerationStructureNV>();
+VkDestroyAccelerationStructureKHR vkDestroyAccelerationStructureKHR =
+    loadFunction<VkDestroyAccelerationStructureKHRNative>(
+            _library, 'vkDestroyAccelerationStructureKHR')
+        .asFunction<VkDestroyAccelerationStructureKHR>();
+VkDestroyAccelerationStructureNV vkDestroyAccelerationStructureNV =
+    loadFunction<VkDestroyAccelerationStructureNVNative>(
+            _library, 'vkDestroyAccelerationStructureNV')
+        .asFunction<VkDestroyAccelerationStructureNV>();
+VkGetAccelerationStructureMemoryRequirementsNV
+    vkGetAccelerationStructureMemoryRequirementsNV =
+    loadFunction<VkGetAccelerationStructureMemoryRequirementsNVNative>(
+            _library, 'vkGetAccelerationStructureMemoryRequirementsNV')
+        .asFunction<VkGetAccelerationStructureMemoryRequirementsNV>();
+VkBindAccelerationStructureMemoryNV vkBindAccelerationStructureMemoryNV =
+    loadFunction<VkBindAccelerationStructureMemoryNVNative>(
+            _library, 'vkBindAccelerationStructureMemoryNV')
+        .asFunction<VkBindAccelerationStructureMemoryNV>();
+VkCmdCopyAccelerationStructureNV vkCmdCopyAccelerationStructureNV =
+    loadFunction<VkCmdCopyAccelerationStructureNVNative>(
+            _library, 'vkCmdCopyAccelerationStructureNV')
+        .asFunction<VkCmdCopyAccelerationStructureNV>();
+VkCmdCopyAccelerationStructureKHR vkCmdCopyAccelerationStructureKHR =
+    loadFunction<VkCmdCopyAccelerationStructureKHRNative>(
+            _library, 'vkCmdCopyAccelerationStructureKHR')
+        .asFunction<VkCmdCopyAccelerationStructureKHR>();
+VkCopyAccelerationStructureKHR vkCopyAccelerationStructureKHR =
+    loadFunction<VkCopyAccelerationStructureKHRNative>(
+            _library, 'vkCopyAccelerationStructureKHR')
+        .asFunction<VkCopyAccelerationStructureKHR>();
+VkCmdCopyAccelerationStructureToMemoryKHR
+    vkCmdCopyAccelerationStructureToMemoryKHR =
+    loadFunction<VkCmdCopyAccelerationStructureToMemoryKHRNative>(
+            _library, 'vkCmdCopyAccelerationStructureToMemoryKHR')
+        .asFunction<VkCmdCopyAccelerationStructureToMemoryKHR>();
+VkCopyAccelerationStructureToMemoryKHR vkCopyAccelerationStructureToMemoryKHR =
+    loadFunction<VkCopyAccelerationStructureToMemoryKHRNative>(
+            _library, 'vkCopyAccelerationStructureToMemoryKHR')
+        .asFunction<VkCopyAccelerationStructureToMemoryKHR>();
+VkCmdCopyMemoryToAccelerationStructureKHR
+    vkCmdCopyMemoryToAccelerationStructureKHR =
+    loadFunction<VkCmdCopyMemoryToAccelerationStructureKHRNative>(
+            _library, 'vkCmdCopyMemoryToAccelerationStructureKHR')
+        .asFunction<VkCmdCopyMemoryToAccelerationStructureKHR>();
+VkCopyMemoryToAccelerationStructureKHR vkCopyMemoryToAccelerationStructureKHR =
+    loadFunction<VkCopyMemoryToAccelerationStructureKHRNative>(
+            _library, 'vkCopyMemoryToAccelerationStructureKHR')
+        .asFunction<VkCopyMemoryToAccelerationStructureKHR>();
+VkCmdWriteAccelerationStructuresPropertiesKHR
+    vkCmdWriteAccelerationStructuresPropertiesKHR =
+    loadFunction<VkCmdWriteAccelerationStructuresPropertiesKHRNative>(
+            _library, 'vkCmdWriteAccelerationStructuresPropertiesKHR')
+        .asFunction<VkCmdWriteAccelerationStructuresPropertiesKHR>();
+VkCmdWriteAccelerationStructuresPropertiesNV
+    vkCmdWriteAccelerationStructuresPropertiesNV =
+    loadFunction<VkCmdWriteAccelerationStructuresPropertiesNVNative>(
+            _library, 'vkCmdWriteAccelerationStructuresPropertiesNV')
+        .asFunction<VkCmdWriteAccelerationStructuresPropertiesNV>();
+VkCmdBuildAccelerationStructureNV vkCmdBuildAccelerationStructureNV =
+    loadFunction<VkCmdBuildAccelerationStructureNVNative>(
+            _library, 'vkCmdBuildAccelerationStructureNV')
+        .asFunction<VkCmdBuildAccelerationStructureNV>();
+VkWriteAccelerationStructuresPropertiesKHR
+    vkWriteAccelerationStructuresPropertiesKHR =
+    loadFunction<VkWriteAccelerationStructuresPropertiesKHRNative>(
+            _library, 'vkWriteAccelerationStructuresPropertiesKHR')
+        .asFunction<VkWriteAccelerationStructuresPropertiesKHR>();
+VkCmdTraceRaysKHR vkCmdTraceRaysKHR =
+    loadFunction<VkCmdTraceRaysKHRNative>(_library, 'vkCmdTraceRaysKHR')
+        .asFunction<VkCmdTraceRaysKHR>();
+VkCmdTraceRaysNV vkCmdTraceRaysNV =
+    loadFunction<VkCmdTraceRaysNVNative>(_library, 'vkCmdTraceRaysNV')
+        .asFunction<VkCmdTraceRaysNV>();
+VkGetRayTracingShaderGroupHandlesKHR vkGetRayTracingShaderGroupHandlesKHR =
+    loadFunction<VkGetRayTracingShaderGroupHandlesKHRNative>(
+            _library, 'vkGetRayTracingShaderGroupHandlesKHR')
+        .asFunction<VkGetRayTracingShaderGroupHandlesKHR>();
+VkGetRayTracingShaderGroupHandlesNV vkGetRayTracingShaderGroupHandlesNV =
+    loadFunction<VkGetRayTracingShaderGroupHandlesNVNative>(
+            _library, 'vkGetRayTracingShaderGroupHandlesNV')
+        .asFunction<VkGetRayTracingShaderGroupHandlesNV>();
+VkGetRayTracingCaptureReplayShaderGroupHandlesKHR
+    vkGetRayTracingCaptureReplayShaderGroupHandlesKHR =
+    loadFunction<VkGetRayTracingCaptureReplayShaderGroupHandlesKHRNative>(
+            _library, 'vkGetRayTracingCaptureReplayShaderGroupHandlesKHR')
+        .asFunction<VkGetRayTracingCaptureReplayShaderGroupHandlesKHR>();
+VkGetAccelerationStructureHandleNV vkGetAccelerationStructureHandleNV =
+    loadFunction<VkGetAccelerationStructureHandleNVNative>(
+            _library, 'vkGetAccelerationStructureHandleNV')
+        .asFunction<VkGetAccelerationStructureHandleNV>();
+VkCreateRayTracingPipelinesNV vkCreateRayTracingPipelinesNV =
+    loadFunction<VkCreateRayTracingPipelinesNVNative>(
+            _library, 'vkCreateRayTracingPipelinesNV')
+        .asFunction<VkCreateRayTracingPipelinesNV>();
+VkCreateRayTracingPipelinesKHR vkCreateRayTracingPipelinesKHR =
+    loadFunction<VkCreateRayTracingPipelinesKHRNative>(
+            _library, 'vkCreateRayTracingPipelinesKHR')
+        .asFunction<VkCreateRayTracingPipelinesKHR>();
+VkGetPhysicalDeviceCooperativeMatrixPropertiesNV
+    vkGetPhysicalDeviceCooperativeMatrixPropertiesNV =
+    loadFunction<VkGetPhysicalDeviceCooperativeMatrixPropertiesNVNative>(
+            _library, 'vkGetPhysicalDeviceCooperativeMatrixPropertiesNV')
+        .asFunction<VkGetPhysicalDeviceCooperativeMatrixPropertiesNV>();
+VkCmdTraceRaysIndirectKHR vkCmdTraceRaysIndirectKHR =
+    loadFunction<VkCmdTraceRaysIndirectKHRNative>(
+            _library, 'vkCmdTraceRaysIndirectKHR')
+        .asFunction<VkCmdTraceRaysIndirectKHR>();
+VkGetDeviceAccelerationStructureCompatibilityKHR
+    vkGetDeviceAccelerationStructureCompatibilityKHR =
+    loadFunction<VkGetDeviceAccelerationStructureCompatibilityKHRNative>(
+            _library, 'vkGetDeviceAccelerationStructureCompatibilityKHR')
+        .asFunction<VkGetDeviceAccelerationStructureCompatibilityKHR>();
+VkGetRayTracingShaderGroupStackSizeKHR vkGetRayTracingShaderGroupStackSizeKHR =
+    loadFunction<VkGetRayTracingShaderGroupStackSizeKHRNative>(
+            _library, 'vkGetRayTracingShaderGroupStackSizeKHR')
+        .asFunction<VkGetRayTracingShaderGroupStackSizeKHR>();
+VkCmdSetRayTracingPipelineStackSizeKHR vkCmdSetRayTracingPipelineStackSizeKHR =
+    loadFunction<VkCmdSetRayTracingPipelineStackSizeKHRNative>(
+            _library, 'vkCmdSetRayTracingPipelineStackSizeKHR')
+        .asFunction<VkCmdSetRayTracingPipelineStackSizeKHR>();
+VkGetImageViewHandleNVX vkGetImageViewHandleNVX =
+    loadFunction<VkGetImageViewHandleNVXNative>(
+            _library, 'vkGetImageViewHandleNVX')
+        .asFunction<VkGetImageViewHandleNVX>();
+VkGetImageViewAddressNVX vkGetImageViewAddressNVX =
+    loadFunction<VkGetImageViewAddressNVXNative>(
+            _library, 'vkGetImageViewAddressNVX')
+        .asFunction<VkGetImageViewAddressNVX>();
+VkGetPhysicalDeviceSurfacePresentModes2EXT
+    vkGetPhysicalDeviceSurfacePresentModes2EXT =
+    loadFunction<VkGetPhysicalDeviceSurfacePresentModes2EXTNative>(
+            _library, 'vkGetPhysicalDeviceSurfacePresentModes2EXT')
+        .asFunction<VkGetPhysicalDeviceSurfacePresentModes2EXT>();
+VkGetDeviceGroupSurfacePresentModes2EXT
+    vkGetDeviceGroupSurfacePresentModes2EXT =
+    loadFunction<VkGetDeviceGroupSurfacePresentModes2EXTNative>(
+            _library, 'vkGetDeviceGroupSurfacePresentModes2EXT')
+        .asFunction<VkGetDeviceGroupSurfacePresentModes2EXT>();
+VkAcquireFullScreenExclusiveModeEXT vkAcquireFullScreenExclusiveModeEXT =
+    loadFunction<VkAcquireFullScreenExclusiveModeEXTNative>(
+            _library, 'vkAcquireFullScreenExclusiveModeEXT')
+        .asFunction<VkAcquireFullScreenExclusiveModeEXT>();
+VkReleaseFullScreenExclusiveModeEXT vkReleaseFullScreenExclusiveModeEXT =
+    loadFunction<VkReleaseFullScreenExclusiveModeEXTNative>(
+            _library, 'vkReleaseFullScreenExclusiveModeEXT')
+        .asFunction<VkReleaseFullScreenExclusiveModeEXT>();
+VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR
+    vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR =
+    loadFunction<
+                VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHRNative>(
+            _library,
+            'vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR')
+        .asFunction<
+            VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR>();
+VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR
+    vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR =
+    loadFunction<VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHRNative>(
+            _library, 'vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR')
+        .asFunction<VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR>();
+VkAcquireProfilingLockKHR vkAcquireProfilingLockKHR =
+    loadFunction<VkAcquireProfilingLockKHRNative>(
+            _library, 'vkAcquireProfilingLockKHR')
+        .asFunction<VkAcquireProfilingLockKHR>();
+VkReleaseProfilingLockKHR vkReleaseProfilingLockKHR =
+    loadFunction<VkReleaseProfilingLockKHRNative>(
+            _library, 'vkReleaseProfilingLockKHR')
+        .asFunction<VkReleaseProfilingLockKHR>();
+VkGetImageDrmFormatModifierPropertiesEXT
+    vkGetImageDrmFormatModifierPropertiesEXT =
+    loadFunction<VkGetImageDrmFormatModifierPropertiesEXTNative>(
+            _library, 'vkGetImageDrmFormatModifierPropertiesEXT')
+        .asFunction<VkGetImageDrmFormatModifierPropertiesEXT>();
+VkGetBufferOpaqueCaptureAddress vkGetBufferOpaqueCaptureAddress =
+    loadFunction<VkGetBufferOpaqueCaptureAddressNative>(
+            _library, 'vkGetBufferOpaqueCaptureAddress')
+        .asFunction<VkGetBufferOpaqueCaptureAddress>();
+VkGetBufferOpaqueCaptureAddressKHR vkGetBufferOpaqueCaptureAddressKHR =
+    loadFunction<VkGetBufferOpaqueCaptureAddressKHRNative>(
+            _library, 'vkGetBufferOpaqueCaptureAddressKHR')
+        .asFunction<VkGetBufferOpaqueCaptureAddressKHR>();
+VkGetBufferDeviceAddress vkGetBufferDeviceAddress =
+    loadFunction<VkGetBufferDeviceAddressNative>(
+            _library, 'vkGetBufferDeviceAddress')
+        .asFunction<VkGetBufferDeviceAddress>();
+VkGetBufferDeviceAddressKHR vkGetBufferDeviceAddressKHR =
+    loadFunction<VkGetBufferDeviceAddressKHRNative>(
+            _library, 'vkGetBufferDeviceAddressKHR')
+        .asFunction<VkGetBufferDeviceAddressKHR>();
+VkGetBufferDeviceAddressEXT vkGetBufferDeviceAddressEXT =
+    loadFunction<VkGetBufferDeviceAddressEXTNative>(
+            _library, 'vkGetBufferDeviceAddressEXT')
+        .asFunction<VkGetBufferDeviceAddressEXT>();
+VkCreateHeadlessSurfaceEXT vkCreateHeadlessSurfaceEXT =
+    loadFunction<VkCreateHeadlessSurfaceEXTNative>(
+            _library, 'vkCreateHeadlessSurfaceEXT')
+        .asFunction<VkCreateHeadlessSurfaceEXT>();
+VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV
+    vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV =
+    loadFunction<
+                VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNVNative>(
+            _library,
+            'vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV')
+        .asFunction<
+            VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV>();
+VkInitializePerformanceApiINTEL vkInitializePerformanceApiINTEL =
+    loadFunction<VkInitializePerformanceApiINTELNative>(
+            _library, 'vkInitializePerformanceApiINTEL')
+        .asFunction<VkInitializePerformanceApiINTEL>();
+VkUninitializePerformanceApiINTEL vkUninitializePerformanceApiINTEL =
+    loadFunction<VkUninitializePerformanceApiINTELNative>(
+            _library, 'vkUninitializePerformanceApiINTEL')
+        .asFunction<VkUninitializePerformanceApiINTEL>();
+VkCmdSetPerformanceMarkerINTEL vkCmdSetPerformanceMarkerINTEL =
+    loadFunction<VkCmdSetPerformanceMarkerINTELNative>(
+            _library, 'vkCmdSetPerformanceMarkerINTEL')
+        .asFunction<VkCmdSetPerformanceMarkerINTEL>();
+VkCmdSetPerformanceStreamMarkerINTEL vkCmdSetPerformanceStreamMarkerINTEL =
+    loadFunction<VkCmdSetPerformanceStreamMarkerINTELNative>(
+            _library, 'vkCmdSetPerformanceStreamMarkerINTEL')
+        .asFunction<VkCmdSetPerformanceStreamMarkerINTEL>();
+VkCmdSetPerformanceOverrideINTEL vkCmdSetPerformanceOverrideINTEL =
+    loadFunction<VkCmdSetPerformanceOverrideINTELNative>(
+            _library, 'vkCmdSetPerformanceOverrideINTEL')
+        .asFunction<VkCmdSetPerformanceOverrideINTEL>();
+VkAcquirePerformanceConfigurationINTEL vkAcquirePerformanceConfigurationINTEL =
+    loadFunction<VkAcquirePerformanceConfigurationINTELNative>(
+            _library, 'vkAcquirePerformanceConfigurationINTEL')
+        .asFunction<VkAcquirePerformanceConfigurationINTEL>();
+VkReleasePerformanceConfigurationINTEL vkReleasePerformanceConfigurationINTEL =
+    loadFunction<VkReleasePerformanceConfigurationINTELNative>(
+            _library, 'vkReleasePerformanceConfigurationINTEL')
+        .asFunction<VkReleasePerformanceConfigurationINTEL>();
+VkQueueSetPerformanceConfigurationINTEL
+    vkQueueSetPerformanceConfigurationINTEL =
+    loadFunction<VkQueueSetPerformanceConfigurationINTELNative>(
+            _library, 'vkQueueSetPerformanceConfigurationINTEL')
+        .asFunction<VkQueueSetPerformanceConfigurationINTEL>();
+VkGetPerformanceParameterINTEL vkGetPerformanceParameterINTEL =
+    loadFunction<VkGetPerformanceParameterINTELNative>(
+            _library, 'vkGetPerformanceParameterINTEL')
+        .asFunction<VkGetPerformanceParameterINTEL>();
+VkGetDeviceMemoryOpaqueCaptureAddress vkGetDeviceMemoryOpaqueCaptureAddress =
+    loadFunction<VkGetDeviceMemoryOpaqueCaptureAddressNative>(
+            _library, 'vkGetDeviceMemoryOpaqueCaptureAddress')
+        .asFunction<VkGetDeviceMemoryOpaqueCaptureAddress>();
+VkGetDeviceMemoryOpaqueCaptureAddressKHR
+    vkGetDeviceMemoryOpaqueCaptureAddressKHR =
+    loadFunction<VkGetDeviceMemoryOpaqueCaptureAddressKHRNative>(
+            _library, 'vkGetDeviceMemoryOpaqueCaptureAddressKHR')
+        .asFunction<VkGetDeviceMemoryOpaqueCaptureAddressKHR>();
+VkGetPipelineExecutablePropertiesKHR vkGetPipelineExecutablePropertiesKHR =
+    loadFunction<VkGetPipelineExecutablePropertiesKHRNative>(
+            _library, 'vkGetPipelineExecutablePropertiesKHR')
+        .asFunction<VkGetPipelineExecutablePropertiesKHR>();
+VkGetPipelineExecutableStatisticsKHR vkGetPipelineExecutableStatisticsKHR =
+    loadFunction<VkGetPipelineExecutableStatisticsKHRNative>(
+            _library, 'vkGetPipelineExecutableStatisticsKHR')
+        .asFunction<VkGetPipelineExecutableStatisticsKHR>();
+VkGetPipelineExecutableInternalRepresentationsKHR
+    vkGetPipelineExecutableInternalRepresentationsKHR =
+    loadFunction<VkGetPipelineExecutableInternalRepresentationsKHRNative>(
+            _library, 'vkGetPipelineExecutableInternalRepresentationsKHR')
+        .asFunction<VkGetPipelineExecutableInternalRepresentationsKHR>();
+VkCmdSetLineStippleEXT vkCmdSetLineStippleEXT =
+    loadFunction<VkCmdSetLineStippleEXTNative>(
+            _library, 'vkCmdSetLineStippleEXT')
+        .asFunction<VkCmdSetLineStippleEXT>();
+VkGetPhysicalDeviceToolPropertiesEXT vkGetPhysicalDeviceToolPropertiesEXT =
+    loadFunction<VkGetPhysicalDeviceToolPropertiesEXTNative>(
+            _library, 'vkGetPhysicalDeviceToolPropertiesEXT')
+        .asFunction<VkGetPhysicalDeviceToolPropertiesEXT>();
+VkCreateAccelerationStructureKHR vkCreateAccelerationStructureKHR =
+    loadFunction<VkCreateAccelerationStructureKHRNative>(
+            _library, 'vkCreateAccelerationStructureKHR')
+        .asFunction<VkCreateAccelerationStructureKHR>();
+VkCmdBuildAccelerationStructuresKHR vkCmdBuildAccelerationStructuresKHR =
+    loadFunction<VkCmdBuildAccelerationStructuresKHRNative>(
+            _library, 'vkCmdBuildAccelerationStructuresKHR')
+        .asFunction<VkCmdBuildAccelerationStructuresKHR>();
+VkCmdBuildAccelerationStructuresIndirectKHR
+    vkCmdBuildAccelerationStructuresIndirectKHR =
+    loadFunction<VkCmdBuildAccelerationStructuresIndirectKHRNative>(
+            _library, 'vkCmdBuildAccelerationStructuresIndirectKHR')
+        .asFunction<VkCmdBuildAccelerationStructuresIndirectKHR>();
+VkBuildAccelerationStructuresKHR vkBuildAccelerationStructuresKHR =
+    loadFunction<VkBuildAccelerationStructuresKHRNative>(
+            _library, 'vkBuildAccelerationStructuresKHR')
+        .asFunction<VkBuildAccelerationStructuresKHR>();
+VkGetAccelerationStructureDeviceAddressKHR
+    vkGetAccelerationStructureDeviceAddressKHR =
+    loadFunction<VkGetAccelerationStructureDeviceAddressKHRNative>(
+            _library, 'vkGetAccelerationStructureDeviceAddressKHR')
+        .asFunction<VkGetAccelerationStructureDeviceAddressKHR>();
+VkCreateDeferredOperationKHR vkCreateDeferredOperationKHR =
+    loadFunction<VkCreateDeferredOperationKHRNative>(
+            _library, 'vkCreateDeferredOperationKHR')
+        .asFunction<VkCreateDeferredOperationKHR>();
+VkDestroyDeferredOperationKHR vkDestroyDeferredOperationKHR =
+    loadFunction<VkDestroyDeferredOperationKHRNative>(
+            _library, 'vkDestroyDeferredOperationKHR')
+        .asFunction<VkDestroyDeferredOperationKHR>();
+VkGetDeferredOperationMaxConcurrencyKHR
+    vkGetDeferredOperationMaxConcurrencyKHR =
+    loadFunction<VkGetDeferredOperationMaxConcurrencyKHRNative>(
+            _library, 'vkGetDeferredOperationMaxConcurrencyKHR')
+        .asFunction<VkGetDeferredOperationMaxConcurrencyKHR>();
+VkGetDeferredOperationResultKHR vkGetDeferredOperationResultKHR =
+    loadFunction<VkGetDeferredOperationResultKHRNative>(
+            _library, 'vkGetDeferredOperationResultKHR')
+        .asFunction<VkGetDeferredOperationResultKHR>();
+VkDeferredOperationJoinKHR vkDeferredOperationJoinKHR =
+    loadFunction<VkDeferredOperationJoinKHRNative>(
+            _library, 'vkDeferredOperationJoinKHR')
+        .asFunction<VkDeferredOperationJoinKHR>();
+VkCmdSetCullModeEXT vkCmdSetCullModeEXT =
+    loadFunction<VkCmdSetCullModeEXTNative>(_library, 'vkCmdSetCullModeEXT')
+        .asFunction<VkCmdSetCullModeEXT>();
+VkCmdSetFrontFaceEXT vkCmdSetFrontFaceEXT =
+    loadFunction<VkCmdSetFrontFaceEXTNative>(_library, 'vkCmdSetFrontFaceEXT')
+        .asFunction<VkCmdSetFrontFaceEXT>();
+VkCmdSetPrimitiveTopologyEXT vkCmdSetPrimitiveTopologyEXT =
+    loadFunction<VkCmdSetPrimitiveTopologyEXTNative>(
+            _library, 'vkCmdSetPrimitiveTopologyEXT')
+        .asFunction<VkCmdSetPrimitiveTopologyEXT>();
+VkCmdSetViewportWithCountEXT vkCmdSetViewportWithCountEXT =
+    loadFunction<VkCmdSetViewportWithCountEXTNative>(
+            _library, 'vkCmdSetViewportWithCountEXT')
+        .asFunction<VkCmdSetViewportWithCountEXT>();
+VkCmdSetScissorWithCountEXT vkCmdSetScissorWithCountEXT =
+    loadFunction<VkCmdSetScissorWithCountEXTNative>(
+            _library, 'vkCmdSetScissorWithCountEXT')
+        .asFunction<VkCmdSetScissorWithCountEXT>();
+VkCmdBindVertexBuffers2EXT vkCmdBindVertexBuffers2EXT =
+    loadFunction<VkCmdBindVertexBuffers2EXTNative>(
+            _library, 'vkCmdBindVertexBuffers2EXT')
+        .asFunction<VkCmdBindVertexBuffers2EXT>();
+VkCmdSetDepthTestEnableEXT vkCmdSetDepthTestEnableEXT =
+    loadFunction<VkCmdSetDepthTestEnableEXTNative>(
+            _library, 'vkCmdSetDepthTestEnableEXT')
+        .asFunction<VkCmdSetDepthTestEnableEXT>();
+VkCmdSetDepthWriteEnableEXT vkCmdSetDepthWriteEnableEXT =
+    loadFunction<VkCmdSetDepthWriteEnableEXTNative>(
+            _library, 'vkCmdSetDepthWriteEnableEXT')
+        .asFunction<VkCmdSetDepthWriteEnableEXT>();
+VkCmdSetDepthCompareOpEXT vkCmdSetDepthCompareOpEXT =
+    loadFunction<VkCmdSetDepthCompareOpEXTNative>(
+            _library, 'vkCmdSetDepthCompareOpEXT')
+        .asFunction<VkCmdSetDepthCompareOpEXT>();
+VkCmdSetDepthBoundsTestEnableEXT vkCmdSetDepthBoundsTestEnableEXT =
+    loadFunction<VkCmdSetDepthBoundsTestEnableEXTNative>(
+            _library, 'vkCmdSetDepthBoundsTestEnableEXT')
+        .asFunction<VkCmdSetDepthBoundsTestEnableEXT>();
+VkCmdSetStencilTestEnableEXT vkCmdSetStencilTestEnableEXT =
+    loadFunction<VkCmdSetStencilTestEnableEXTNative>(
+            _library, 'vkCmdSetStencilTestEnableEXT')
+        .asFunction<VkCmdSetStencilTestEnableEXT>();
+VkCmdSetStencilOpEXT vkCmdSetStencilOpEXT =
+    loadFunction<VkCmdSetStencilOpEXTNative>(_library, 'vkCmdSetStencilOpEXT')
+        .asFunction<VkCmdSetStencilOpEXT>();
+VkCreatePrivateDataSlotEXT vkCreatePrivateDataSlotEXT =
+    loadFunction<VkCreatePrivateDataSlotEXTNative>(
+            _library, 'vkCreatePrivateDataSlotEXT')
+        .asFunction<VkCreatePrivateDataSlotEXT>();
+VkDestroyPrivateDataSlotEXT vkDestroyPrivateDataSlotEXT =
+    loadFunction<VkDestroyPrivateDataSlotEXTNative>(
+            _library, 'vkDestroyPrivateDataSlotEXT')
+        .asFunction<VkDestroyPrivateDataSlotEXT>();
+VkSetPrivateDataEXT vkSetPrivateDataEXT =
+    loadFunction<VkSetPrivateDataEXTNative>(_library, 'vkSetPrivateDataEXT')
+        .asFunction<VkSetPrivateDataEXT>();
+VkGetPrivateDataEXT vkGetPrivateDataEXT =
+    loadFunction<VkGetPrivateDataEXTNative>(_library, 'vkGetPrivateDataEXT')
+        .asFunction<VkGetPrivateDataEXT>();
+VkCmdCopyBuffer2KHR vkCmdCopyBuffer2KHR =
+    loadFunction<VkCmdCopyBuffer2KHRNative>(_library, 'vkCmdCopyBuffer2KHR')
+        .asFunction<VkCmdCopyBuffer2KHR>();
+VkCmdCopyImage2KHR vkCmdCopyImage2KHR =
+    loadFunction<VkCmdCopyImage2KHRNative>(_library, 'vkCmdCopyImage2KHR')
+        .asFunction<VkCmdCopyImage2KHR>();
+VkCmdBlitImage2KHR vkCmdBlitImage2KHR =
+    loadFunction<VkCmdBlitImage2KHRNative>(_library, 'vkCmdBlitImage2KHR')
+        .asFunction<VkCmdBlitImage2KHR>();
+VkCmdCopyBufferToImage2KHR vkCmdCopyBufferToImage2KHR =
+    loadFunction<VkCmdCopyBufferToImage2KHRNative>(
+            _library, 'vkCmdCopyBufferToImage2KHR')
+        .asFunction<VkCmdCopyBufferToImage2KHR>();
+VkCmdCopyImageToBuffer2KHR vkCmdCopyImageToBuffer2KHR =
+    loadFunction<VkCmdCopyImageToBuffer2KHRNative>(
+            _library, 'vkCmdCopyImageToBuffer2KHR')
+        .asFunction<VkCmdCopyImageToBuffer2KHR>();
+VkCmdResolveImage2KHR vkCmdResolveImage2KHR =
+    loadFunction<VkCmdResolveImage2KHRNative>(_library, 'vkCmdResolveImage2KHR')
+        .asFunction<VkCmdResolveImage2KHR>();
+VkCmdSetFragmentShadingRateKHR vkCmdSetFragmentShadingRateKHR =
+    loadFunction<VkCmdSetFragmentShadingRateKHRNative>(
+            _library, 'vkCmdSetFragmentShadingRateKHR')
+        .asFunction<VkCmdSetFragmentShadingRateKHR>();
+VkGetPhysicalDeviceFragmentShadingRatesKHR
+    vkGetPhysicalDeviceFragmentShadingRatesKHR =
+    loadFunction<VkGetPhysicalDeviceFragmentShadingRatesKHRNative>(
+            _library, 'vkGetPhysicalDeviceFragmentShadingRatesKHR')
+        .asFunction<VkGetPhysicalDeviceFragmentShadingRatesKHR>();
+VkCmdSetFragmentShadingRateEnumNV vkCmdSetFragmentShadingRateEnumNV =
+    loadFunction<VkCmdSetFragmentShadingRateEnumNVNative>(
+            _library, 'vkCmdSetFragmentShadingRateEnumNV')
+        .asFunction<VkCmdSetFragmentShadingRateEnumNV>();
+VkGetAccelerationStructureBuildSizesKHR
+    vkGetAccelerationStructureBuildSizesKHR =
+    loadFunction<VkGetAccelerationStructureBuildSizesKHRNative>(
+            _library, 'vkGetAccelerationStructureBuildSizesKHR')
+        .asFunction<VkGetAccelerationStructureBuildSizesKHR>();
+VkCmdSetEvent2KHR vkCmdSetEvent2KHR =
+    loadFunction<VkCmdSetEvent2KHRNative>(_library, 'vkCmdSetEvent2KHR')
+        .asFunction<VkCmdSetEvent2KHR>();
+VkCmdResetEvent2KHR vkCmdResetEvent2KHR =
+    loadFunction<VkCmdResetEvent2KHRNative>(_library, 'vkCmdResetEvent2KHR')
+        .asFunction<VkCmdResetEvent2KHR>();
+VkCmdWaitEvents2KHR vkCmdWaitEvents2KHR =
+    loadFunction<VkCmdWaitEvents2KHRNative>(_library, 'vkCmdWaitEvents2KHR')
+        .asFunction<VkCmdWaitEvents2KHR>();
+VkCmdPipelineBarrier2KHR vkCmdPipelineBarrier2KHR =
+    loadFunction<VkCmdPipelineBarrier2KHRNative>(
+            _library, 'vkCmdPipelineBarrier2KHR')
+        .asFunction<VkCmdPipelineBarrier2KHR>();
+VkQueueSubmit2KHR vkQueueSubmit2KHR =
+    loadFunction<VkQueueSubmit2KHRNative>(_library, 'vkQueueSubmit2KHR')
+        .asFunction<VkQueueSubmit2KHR>();
+VkCmdWriteTimestamp2KHR vkCmdWriteTimestamp2KHR =
+    loadFunction<VkCmdWriteTimestamp2KHRNative>(
+            _library, 'vkCmdWriteTimestamp2KHR')
+        .asFunction<VkCmdWriteTimestamp2KHR>();
+VkCmdWriteBufferMarker2AMD vkCmdWriteBufferMarker2AMD =
+    loadFunction<VkCmdWriteBufferMarker2AMDNative>(
+            _library, 'vkCmdWriteBufferMarker2AMD')
+        .asFunction<VkCmdWriteBufferMarker2AMD>();
+VkGetQueueCheckpointData2NV vkGetQueueCheckpointData2NV =
+    loadFunction<VkGetQueueCheckpointData2NVNative>(
+            _library, 'vkGetQueueCheckpointData2NV')
+        .asFunction<VkGetQueueCheckpointData2NV>();

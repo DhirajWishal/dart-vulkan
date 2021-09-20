@@ -3,8 +3,6 @@ import 'package:ffi/ffi.dart';
 import 'package:vulkan/vulkan.dart';
 
 void main() {
-  initVulkan();
-
   final ai = calloc<VkApplicationInfo>();
   ai.ref
     ..sType = VK_STRUCTURE_TYPE_APPLICATION_INFO
