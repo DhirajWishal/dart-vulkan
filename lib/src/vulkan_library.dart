@@ -16,17 +16,26 @@ import 'dart:ffi';
 import 'dart:io';
 
 DynamicLibrary loadLibrary() {
-  var lib;
+  final name = libraryName();
   try {
-    if (Platform.isWindows) {
-      lib = DynamicLibrary.open('vulkan-1');
-    } else if (Platform.isLinux) {
-      lib = DynamicLibrary.open('vulkan');
-    }
+    return DynamicLibrary.open(name);  
   } catch (ex) {
-    throw Exception('failed to load Vulkan library');
+    throw Exception('failed to load Vulkan library $name');
   }
-  return lib;
+}
+
+String libraryName() {
+  final name;
+  if (Platform.isWindows) {
+    name = 'vulkan-1.dll';
+  } else if (Platform.isLinux) {
+    name = 'libvulkan.so.1';
+  } else if (Platform.isMacOS) {
+    name = 'libvulkan.1.dylib';
+  } else {
+    throw UnsupportedError('unsupported platform ${Platform.operatingSystem}');
+  }
+  return name;
 }
 
 Pointer<NativeFunction<FN>> loadFunction<FN extends Function>(DynamicLibrary lib, String name) {
