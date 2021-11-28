@@ -18,7 +18,7 @@ import 'dart:io';
 DynamicLibrary loadLibrary() {
   final name = libraryName();
   try {
-    return DynamicLibrary.open(name);  
+    return DynamicLibrary.open(name);
   } catch (ex) {
     throw Exception('failed to load Vulkan library $name');
   }
@@ -38,7 +38,8 @@ String libraryName() {
   return name;
 }
 
-Pointer<NativeFunction<FN>> loadFunction<FN extends Function>(DynamicLibrary lib, String name) {
+Pointer<NativeFunction<FN>> loadFunction<FN extends Function>(
+    DynamicLibrary lib, String name) {
   Pointer<NativeFunction<FN>>? funcPointer;
   if (lib.providesSymbol(name)) {
     funcPointer = lib.lookup(name);
