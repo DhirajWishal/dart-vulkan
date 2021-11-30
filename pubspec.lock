@@ -85,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.2"
+  ffi_utils:
+    dependency: "direct dev"
+    description:
+      name: ffi_utils
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0+1"
   file:
     dependency: transitive
     description:
@@ -99,6 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+  glfw:
+    dependency: "direct dev"
+    description:
+      name: glfw
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0"
   glob:
     dependency: transitive
     description:
