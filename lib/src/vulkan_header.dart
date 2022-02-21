@@ -3473,7 +3473,9 @@ const int VK_EVENT_CREATE_FLAG_BITS_MAX_ENUM = 0x7FFFFFFF;
 
 class VkInstance extends Opaque {}
 
-class VkPhysicalDevice extends Opaque {}
+class VkPhysicalDevice extends Struct {
+  external Pointer<VkPhysicalDevice> pointer;
+}
 
 class VkDevice extends Opaque {}
 
@@ -3996,11 +3998,11 @@ class VkPhysicalDeviceMemoryProperties extends Struct {
   @Uint32()
   external int memoryTypeCount;
   @Array(32)
-  external Array<Pointer> memoryTypes;
+  external Array<VkMemoryType> memoryTypes;
   @Uint32()
   external int memoryHeapCount;
   @Array(16)
-  external Array<Pointer> memoryHeaps;
+  external Array<VkMemoryHeap> memoryHeaps;
 }
 
 class VkMemoryAllocateInfo extends Struct {
@@ -4496,7 +4498,7 @@ class VkImageBlit extends Struct {
   @Uint32()
   external int srcSubresource_layerCount;
   @Array(2)
-  external Array<Pointer> srcOffsets;
+  external Array<VkOffset3D> srcOffsets;
   @Uint32()
   external int dstSubresource_aspectMask;
   @Uint32()
@@ -4506,7 +4508,7 @@ class VkImageBlit extends Struct {
   @Uint32()
   external int dstSubresource_layerCount;
   @Array(2)
-  external Array<Pointer> dstOffsets;
+  external Array<VkOffset3D> dstOffsets;
 }
 
 class VkBufferImageCopy extends Struct {
@@ -6793,11 +6795,11 @@ class VkPhysicalDeviceMemoryProperties2 extends Struct {
   @Uint32()
   external int memoryProperties_memoryTypeCount;
   @Array(32)
-  external Array<Pointer> memoryProperties_memoryTypes;
+  external Array<VkMemoryType> memoryProperties_memoryTypes;
   @Uint32()
   external int memoryProperties_memoryHeapCount;
   @Array(16)
-  external Array<Pointer> memoryProperties_memoryHeaps;
+  external Array<VkMemoryHeap> memoryProperties_memoryHeaps;
 }
 
 class VkPhysicalDeviceMemoryProperties2KHR extends Opaque {}
@@ -7413,7 +7415,7 @@ class VkPhysicalDeviceGroupProperties extends Struct {
   @Uint32()
   external int physicalDeviceCount;
   @Array(32)
-  external Array<Pointer> physicalDevices;
+  external Array<VkPhysicalDevice> physicalDevices;
   @Uint32()
   external int subsetAllocation;
 }
@@ -12002,7 +12004,7 @@ class VkImageBlit2KHR extends Struct {
   @Uint32()
   external int srcSubresource_layerCount;
   @Array(2)
-  external Array<Pointer> srcOffsets;
+  external Array<VkOffset3D> srcOffsets;
   @Uint32()
   external int dstSubresource_aspectMask;
   @Uint32()
@@ -12012,7 +12014,7 @@ class VkImageBlit2KHR extends Struct {
   @Uint32()
   external int dstSubresource_layerCount;
   @Array(2)
-  external Array<Pointer> dstOffsets;
+  external Array<VkOffset3D> dstOffsets;
 }
 
 class VkBufferImageCopy2KHR extends Struct {
@@ -12201,7 +12203,7 @@ class VkPipelineFragmentShadingRateStateCreateInfoKHR extends Struct {
   @Uint32()
   external int fragmentSize_height;
   @Array(2)
-  external Array<Pointer> combinerOps;
+  external Array<Int32> combinerOps;
 }
 
 class VkPhysicalDeviceFragmentShadingRateFeaturesKHR extends Struct {
@@ -12311,7 +12313,7 @@ class VkPipelineFragmentShadingRateEnumStateCreateInfoNV extends Struct {
   @Int32()
   external int shadingRate;
   @Array(2)
-  external Array<Pointer> combinerOps;
+  external Array<Int32> combinerOps;
 }
 
 class VkAccelerationStructureBuildSizesInfoKHR extends Struct {
@@ -16726,11 +16728,11 @@ typedef VkCmdResolveImage2KHR = void Function(
 typedef VkCmdSetFragmentShadingRateKHRNative = Void Function(
     Pointer<VkCommandBuffer> commandBuffer,
     Pointer<VkExtent2D> pFragmentSize,
-    Pointer<Int32> combinerOps);
+    Int32 combinerOps);
 typedef VkCmdSetFragmentShadingRateKHR = void Function(
     Pointer<VkCommandBuffer> commandBuffer,
     Pointer<VkExtent2D> pFragmentSize,
-    Pointer<Int32> combinerOps);
+    int combinerOps);
 
 typedef VkGetPhysicalDeviceFragmentShadingRatesKHRNative = Int32 Function(
     Pointer<VkPhysicalDevice> physicalDevice,
@@ -16744,11 +16746,9 @@ typedef VkGetPhysicalDeviceFragmentShadingRatesKHR = int Function(
 typedef VkCmdSetFragmentShadingRateEnumNVNative = Void Function(
     Pointer<VkCommandBuffer> commandBuffer,
     Int32 shadingRate,
-    Pointer<Int32> combinerOps);
+    Int32 combinerOps);
 typedef VkCmdSetFragmentShadingRateEnumNV = void Function(
-    Pointer<VkCommandBuffer> commandBuffer,
-    int shadingRate,
-    Pointer<Int32> combinerOps);
+    Pointer<VkCommandBuffer> commandBuffer, int shadingRate, int combinerOps);
 
 typedef VkGetAccelerationStructureBuildSizesKHRNative = Void Function(
     Pointer<VkDevice> device,
