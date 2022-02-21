@@ -6,7 +6,6 @@ import 'package:glfw/glfw.dart';
 import 'package:vulkan/vulkan.dart';
 import 'package:ffi_utils/ffi_utils.dart';
 
-
 late Pointer<GLFWwindow> window;
 late Pointer<VkSurfaceKHR> surface;
 
@@ -49,11 +48,11 @@ late int currentFrame = 0;
 const int windowWidth = 800;
 const int windowHeight = 600;
 const int maxFrames = 2;
-const int uint64Max = 2^64;
+const int uint64Max = 2 ^ 64;
 
 void main() {
   initWindow();
-  init();  
+  init();
   loop();
   cleanup();
 }
@@ -61,7 +60,7 @@ void main() {
 void initWindow() {
   glfwInit();
   glfwVulkanSupported();
-  
+
   final title = 'Dart FFI + GLFW + Vulkan'.toNativeUtf8();
   glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
@@ -86,8 +85,7 @@ void init() {
 }
 
 void loop() {
-  while (glfwWindowShouldClose(window) != GLFW_TRUE)
-  {
+  while (glfwWindowShouldClose(window) != GLFW_TRUE) {
     glfwPollEvents();
     draw();
   }
@@ -104,30 +102,35 @@ void cleanup() {
 }
 
 void getInstanceExtensions() {
-  vkEnumerateInstanceExtensionProperties = Pointer<NativeFunction<VkEnumerateInstanceExtensionPropertiesNative>>
-    .fromAddress(vkGetInstanceProcAddr(nullptr, 'vkEnumerateInstanceExtensionProperties'.toNativeUtf8()).address)
-    .asFunction<VkEnumerateInstanceExtensionProperties>();
+  vkEnumerateInstanceExtensionProperties = Pointer<
+              NativeFunction<
+                  VkEnumerateInstanceExtensionPropertiesNative>>.fromAddress(
+          vkGetInstanceProcAddr(nullptr,
+                  'vkEnumerateInstanceExtensionProperties'.toNativeUtf8())
+              .address)
+      .asFunction<VkEnumerateInstanceExtensionProperties>();
 
   extensionsCount = calloc<Int32>();
   vkEnumerateInstanceExtensionProperties(nullptr, extensionsCount, nullptr);
   final props = calloc<VkExtensionProperties>(extensionsCount.value);
   vkEnumerateInstanceExtensionProperties(nullptr, extensionsCount, props);
 
-  final names = List<String>.generate(extensionsCount.value, (i) => props.elementAt(i).ref.extensionName.toDartString(256));
+  final names = List<String>.generate(extensionsCount.value,
+      (i) => props.elementAt(i).ref.extensionName.toDartString(256));
   extensions = NativeStringArray.fromList(names).cast();
 }
 
-void createInstance() {  
+void createInstance() {
   final ai = calloc<VkApplicationInfo>();
   ai.ref
-    ..sType  = VK_STRUCTURE_TYPE_APPLICATION_INFO
+    ..sType = VK_STRUCTURE_TYPE_APPLICATION_INFO
     ..pNext = nullptr
     ..pApplicationName = 'Application'.toNativeUtf8()
     ..applicationVersion = makeVersion(1, 0, 0)
     ..pEngineName = 'Engine'.toNativeUtf8()
     ..engineVersion = 0
     ..apiVersion = makeVersion(1, 0, 0);
-  
+
   final ici = calloc<VkInstanceCreateInfo>();
   ici.ref
     ..sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO
@@ -139,7 +142,7 @@ void createInstance() {
     ..enabledLayerCount = 0
     ..ppEnabledLayerNames = nullptr;
 
-  final pinstance = calloc<Pointer<VkInstance>>();  
+  final pinstance = calloc<Pointer<VkInstance>>();
   vkCreateInstance(ici, nullptr, pinstance);
   instance = pinstance.value;
 }
@@ -147,20 +150,23 @@ void createInstance() {
 void getPhysicalDevice() {
   final count = calloc<Int32>();
   vkEnumeratePhysicalDevices(instance, count, nullptr);
-  
+
   physicalDeviceCount = count.value;
   print('physical devices count $physicalDeviceCount');
 
-  final pphysicalDevices = calloc<Pointer<VkPhysicalDevice>>(physicalDeviceCount);
+  final pphysicalDevices =
+      calloc<Pointer<VkPhysicalDevice>>(physicalDeviceCount);
   vkEnumeratePhysicalDevices(instance, count, pphysicalDevices);
   for (var i = 0; i < physicalDeviceCount; i++) {
     final device = pphysicalDevices.elementAt(i).value;
     final physicalDeviceProperties = calloc<VkPhysicalDeviceProperties>();
     vkGetPhysicalDeviceProperties(device, physicalDeviceProperties);
-    print('check [${physicalDeviceProperties.ref.deviceName.toDartString(256)}] ${deviceTypeString(physicalDeviceProperties.ref.deviceType)}');
+    print(
+        'check [${physicalDeviceProperties.ref.deviceName.toDartString(256)}] ${deviceTypeString(physicalDeviceProperties.ref.deviceType)}');
     if (physicalDevice == nullptr && isDeviceSuitable(device)) {
       physicalDevice = device;
-      print('pick [${physicalDeviceProperties.ref.deviceName.toDartString(256)}]');
+      print(
+          'pick [${physicalDeviceProperties.ref.deviceName.toDartString(256)}]');
     }
   }
 }
@@ -172,14 +178,14 @@ void createSurface() {
 }
 
 bool isDeviceSuitable(Pointer<VkPhysicalDevice> physicalDevice) {
-  
   final count = calloc<Int32>();
   vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, count, nullptr);
   familyCount = count.value;
 
   final queueFamilyProps = calloc<VkQueueFamilyProperties>(familyCount);
-  vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, count, queueFamilyProps);
-  
+  vkGetPhysicalDeviceQueueFamilyProperties(
+      physicalDevice, count, queueFamilyProps);
+
   for (var i = 0; i < familyCount; i++) {
     final queueFamily = queueFamilyProps.elementAt(i).ref;
     if (queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT > 0) {
@@ -187,12 +193,13 @@ bool isDeviceSuitable(Pointer<VkPhysicalDevice> physicalDevice) {
     }
 
     final presentSupport = calloc<Uint32>();
-    vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevice, i, surface, presentSupport);
+    vkGetPhysicalDeviceSurfaceSupportKHR(
+        physicalDevice, i, surface, presentSupport);
     if (presentSupport.value == VK_TRUE) {
       presentFamily = i;
     }
 
-    if (graphicsFamily >= 0 && presentFamily >= 0){
+    if (graphicsFamily >= 0 && presentFamily >= 0) {
       break;
     }
   }
@@ -215,7 +222,7 @@ void createLogicalDevice() {
     ..queueFamilyIndex = familyIndex
     ..queueCount = 1
     ..pQueuePriorities = queuePriorities;
-  
+
   final createInfo = calloc<VkDeviceCreateInfo>();
   createInfo.ref
     ..sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO
@@ -227,7 +234,7 @@ void createLogicalDevice() {
     ..enabledExtensionCount = 1
     ..ppEnabledExtensionNames = NativeStringArray.fromList(['VK_KHR_swapchain'])
     ..pEnabledFeatures = requiredFeatures;
-  
+
   final pdevice = calloc<Pointer<VkDevice>>();
   vkCreateDevice(physicalDevice, createInfo, nullptr, pdevice);
   device = pdevice.value;
@@ -237,21 +244,24 @@ void getQueues() {
   final pgraphicsQueue = calloc<Pointer<VkQueue>>();
   vkGetDeviceQueue(device, graphicsFamily, 0, pgraphicsQueue);
   graphicsQueue = pgraphicsQueue.value;
-  
+
   final ppresentQueue = calloc<Pointer<VkQueue>>();
   vkGetDeviceQueue(device, presentFamily, 0, ppresentQueue);
   presentQueue = ppresentQueue.value;
 }
 
-void createSwapChain() {  
+void createSwapChain() {
   final swapChainSupport = querySwapChainSupport(physicalDevice);
-  final surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formats, swapChainSupport.formatCount);
-  final presentMode = chooseSwapPresentMode(swapChainSupport.presentModes, swapChainSupport.presentModeCount);
+  final surfaceFormat = chooseSwapSurfaceFormat(
+      swapChainSupport.formats, swapChainSupport.formatCount);
+  final presentMode = chooseSwapPresentMode(
+      swapChainSupport.presentModes, swapChainSupport.presentModeCount);
   final extent = chooseSwapExtent(swapChainSupport.capabilities.ref);
 
   var minImageCount = swapChainSupport.capabilities.ref.minImageCount + 1;
-  if (swapChainSupport.capabilities.ref.maxImageCount > 0 && minImageCount > swapChainSupport.capabilities.ref.maxImageCount) {
-      minImageCount = swapChainSupport.capabilities.ref.maxImageCount;
+  if (swapChainSupport.capabilities.ref.maxImageCount > 0 &&
+      minImageCount > swapChainSupport.capabilities.ref.maxImageCount) {
+    minImageCount = swapChainSupport.capabilities.ref.maxImageCount;
   }
 
   final createInfo = calloc<VkSwapchainCreateInfoKHR>();
@@ -274,15 +284,16 @@ void createSwapChain() {
 
   swapChain = calloc<Pointer<VkSwapchainKHR>>();
   vkCreateSwapchainKHR(device, createInfo, nullptr, swapChain);
-  
+
   final imageCount = calloc<Uint32>();
   vkGetSwapchainImagesKHR(device, swapChain.value, imageCount, nullptr);
-  swapChainImagesCount = imageCount.value;  
-    
+  swapChainImagesCount = imageCount.value;
+
   final pswapChainImage = calloc<Pointer<VkImage>>(swapChainImagesCount);
   vkGetSwapchainImagesKHR(device, swapChain.value, imageCount, pswapChainImage);
-  swapChainImages = List<Pointer<VkImage>>.generate(swapChainImagesCount, (i) => pswapChainImage.elementAt(i).value);
-  
+  swapChainImages = List<Pointer<VkImage>>.generate(
+      swapChainImagesCount, (i) => pswapChainImage.elementAt(i).value);
+
   swapChainImageFormat = surfaceFormat.format;
   swapChainExtent = extent;
 }
@@ -306,7 +317,7 @@ void createImageViews() {
       ..subresourceRange_levelCount = 1
       ..subresourceRange_baseArrayLayer = 0
       ..subresourceRange_layerCount = 1;
-    
+
     swapChainImageViews[i] = calloc<Pointer<VkImageView>>();
     vkCreateImageView(device, createInfo, nullptr, swapChainImageViews[i]);
   }
@@ -378,7 +389,7 @@ void createGraphicsPipeline() {
     ..sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO
     ..stage = VK_SHADER_STAGE_VERTEX_BIT
     ..module = vertShaderModule.value
-    ..pName =  'main'.toNativeUtf8();
+    ..pName = 'main'.toNativeUtf8();
 
   final fragShaderStageInfo = shaderStages.elementAt(1);
   fragShaderStageInfo.ref
@@ -442,7 +453,10 @@ void createGraphicsPipeline() {
 
   final colorBlendAttachment = calloc<VkPipelineColorBlendAttachmentState>();
   colorBlendAttachment.ref
-    ..colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT
+    ..colorWriteMask = VK_COLOR_COMPONENT_R_BIT |
+        VK_COLOR_COMPONENT_G_BIT |
+        VK_COLOR_COMPONENT_B_BIT |
+        VK_COLOR_COMPONENT_A_BIT
     ..blendEnable = VK_FALSE;
 
   final colorBlending = calloc<VkPipelineColorBlendStateCreateInfo>();
@@ -466,7 +480,7 @@ void createGraphicsPipeline() {
   final ppipelineLayout = calloc<Pointer<VkPipelineLayout>>();
   vkCreatePipelineLayout(device, pipelineLayoutInfo, nullptr, ppipelineLayout);
   pipelineLayout = ppipelineLayout.value;
-    
+
   final pipelineInfo = calloc<VkGraphicsPipelineCreateInfo>();
   pipelineInfo.ref
     ..sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO
@@ -484,16 +498,17 @@ void createGraphicsPipeline() {
     ..basePipelineHandle = nullptr;
 
   final pgraphicsPipeline = calloc<Pointer<VkPipeline>>();
-  vkCreateGraphicsPipelines(device, nullptr, 1, pipelineInfo, nullptr, pgraphicsPipeline);
+  vkCreateGraphicsPipelines(
+      device, nullptr, 1, pipelineInfo, nullptr, pgraphicsPipeline);
   graphicsPipeline = pgraphicsPipeline.value;
-  
+
   vkDestroyShaderModule(device, fragShaderModule.value, nullptr);
   vkDestroyShaderModule(device, vertShaderModule.value, nullptr);
 }
 
 void createFramebuffers() {
   swapChainFramebuffers = List.filled(swapChainImagesCount, nullptr);
-  
+
   for (var i = 0; i < swapChainImagesCount; i++) {
     final framebufferInfo = calloc<VkFramebufferCreateInfo>();
     framebufferInfo.ref
@@ -529,14 +544,14 @@ void createCommandBuffers() {
     ..commandPool = commandPool
     ..level = VK_COMMAND_BUFFER_LEVEL_PRIMARY
     ..commandBufferCount = swapChainImagesCount;
-  
+
   commandBuffers = calloc<Pointer<VkCommandBuffer>>(swapChainImagesCount);
   vkAllocateCommandBuffers(device, allocInfo, commandBuffers);
-  
+
   for (var i = 0; i < swapChainImagesCount; i++) {
     final beginInfo = calloc<VkCommandBufferBeginInfo>();
     beginInfo.ref.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-  
+
     vkBeginCommandBuffer(commandBuffers.elementAt(i).value, beginInfo);
 
     final renderPassInfo = calloc<VkRenderPassBeginInfo>();
@@ -548,19 +563,21 @@ void createCommandBuffers() {
       ..renderArea_offset_y = 0
       ..renderArea_extent_width = swapChainExtent.width
       ..renderArea_extent_height = swapChainExtent.height;
-    
+
     final clearColor = calloc<VkClearColorValueFloat32>();
     clearColor.ref.float32[0] = 0.0;
     clearColor.ref.float32[1] = 0.0;
     clearColor.ref.float32[2] = 0.0;
     clearColor.ref.float32[3] = 1.0;
-  
+
     renderPassInfo.ref
       ..clearValueCount = 1
       ..pClearValues = clearColor.cast();
-  
-    vkCmdBeginRenderPass(commandBuffers.elementAt(i).value, renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
-    vkCmdBindPipeline(commandBuffers.elementAt(i).value, VK_PIPELINE_BIND_POINT_GRAPHICS, graphicsPipeline);
+
+    vkCmdBeginRenderPass(commandBuffers.elementAt(i).value, renderPassInfo,
+        VK_SUBPASS_CONTENTS_INLINE);
+    vkCmdBindPipeline(commandBuffers.elementAt(i).value,
+        VK_PIPELINE_BIND_POINT_GRAPHICS, graphicsPipeline);
     vkCmdDraw(commandBuffers.elementAt(i).value, 3, 1, 0, 0);
     vkCmdEndRenderPass(commandBuffers.elementAt(i).value);
 
@@ -572,8 +589,9 @@ void createSyncObjects() {
   imageAvailableSemaphores = calloc<Pointer<VkSemaphore>>(maxFrames);
   renderFinishedSemaphores = calloc<Pointer<VkSemaphore>>(maxFrames);
   inFlightFences = List<Pointer<Pointer<VkFence>>>.filled(maxFrames, nullptr);
-  imagesInFlight = List<Pointer<Pointer<VkFence>>>.filled(swapChainImagesCount, nullptr);
-  
+  imagesInFlight =
+      List<Pointer<Pointer<VkFence>>>.filled(swapChainImagesCount, nullptr);
+
   final semaphoreInfo = calloc<VkSemaphoreCreateInfo>();
   semaphoreInfo.ref.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
 
@@ -583,8 +601,10 @@ void createSyncObjects() {
     ..flags = VK_FENCE_CREATE_SIGNALED_BIT;
 
   for (var i = 0; i < maxFrames; i++) {
-    vkCreateSemaphore(device, semaphoreInfo, nullptr, imageAvailableSemaphores.elementAt(i));
-    vkCreateSemaphore(device, semaphoreInfo, nullptr, renderFinishedSemaphores.elementAt(i));
+    vkCreateSemaphore(
+        device, semaphoreInfo, nullptr, imageAvailableSemaphores.elementAt(i));
+    vkCreateSemaphore(
+        device, semaphoreInfo, nullptr, renderFinishedSemaphores.elementAt(i));
 
     final pfence = calloc<Pointer<VkFence>>();
     vkCreateFence(device, fenceInfo, nullptr, pfence);
@@ -596,12 +616,18 @@ void draw() {
   vkWaitForFences(device, 1, inFlightFences[currentFrame], VK_TRUE, uint64Max);
 
   final imageIndex = calloc<Int32>();
-  vkAcquireNextImageKHR(device, swapChain.value,
-    uint64Max, imageAvailableSemaphores.elementAt(currentFrame).value, nullptr, imageIndex);
+  vkAcquireNextImageKHR(
+      device,
+      swapChain.value,
+      uint64Max,
+      imageAvailableSemaphores.elementAt(currentFrame).value,
+      nullptr,
+      imageIndex);
 
   if (imagesInFlight[imageIndex.value] != nullptr) {
-    vkWaitForFences(device, 1, imagesInFlight[imageIndex.value], VK_TRUE, uint64Max);
-  }  
+    vkWaitForFences(
+        device, 1, imagesInFlight[imageIndex.value], VK_TRUE, uint64Max);
+  }
   imagesInFlight[imageIndex.value] = inFlightFences[currentFrame];
 
   final submitInfo = calloc<VkSubmitInfo>();
@@ -622,7 +648,8 @@ void draw() {
 
   vkResetFences(device, 1, inFlightFences[currentFrame]);
 
-  vkQueueSubmit(graphicsQueue, 1, submitInfo, inFlightFences[currentFrame].value);
+  vkQueueSubmit(
+      graphicsQueue, 1, submitInfo, inFlightFences[currentFrame].value);
 
   final presentInfo = calloc<VkPresentInfoKHR>();
   presentInfo.ref
@@ -646,38 +673,45 @@ class SwapChainSupportDetails {
   late int presentModeCount;
 }
 
-SwapChainSupportDetails querySwapChainSupport(Pointer<VkPhysicalDevice> physicalDevice) {
+SwapChainSupportDetails querySwapChainSupport(
+    Pointer<VkPhysicalDevice> physicalDevice) {
   final details = SwapChainSupportDetails();
   details.capabilities = calloc<VkSurfaceCapabilitiesKHR>();
-  
-  vkGetPhysicalDeviceSurfaceCapabilitiesKHR(physicalDevice, surface, details.capabilities);
+
+  vkGetPhysicalDeviceSurfaceCapabilitiesKHR(
+      physicalDevice, surface, details.capabilities);
 
   final formatCount = calloc<Uint32>();
-  vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, formatCount, nullptr);
-  details.formatCount = formatCount.value;  
-  
+  vkGetPhysicalDeviceSurfaceFormatsKHR(
+      physicalDevice, surface, formatCount, nullptr);
+  details.formatCount = formatCount.value;
+
   if (formatCount.value != 0) {
     details.formats = calloc<VkSurfaceFormatKHR>(formatCount.value);
-    vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface ,formatCount, details.formats);
+    vkGetPhysicalDeviceSurfaceFormatsKHR(
+        physicalDevice, surface, formatCount, details.formats);
   }
 
   final presentModeCount = calloc<Uint32>();
-  vkGetPhysicalDeviceSurfacePresentModesKHR(physicalDevice, surface, presentModeCount, nullptr);
-  details.presentModeCount = presentModeCount.value;  
-  
+  vkGetPhysicalDeviceSurfacePresentModesKHR(
+      physicalDevice, surface, presentModeCount, nullptr);
+  details.presentModeCount = presentModeCount.value;
+
   if (presentModeCount.value != 0) {
     details.presentModes = calloc<Int32>(presentModeCount.value);
-    vkGetPhysicalDeviceSurfacePresentModesKHR(physicalDevice, surface, presentModeCount, details.presentModes);
+    vkGetPhysicalDeviceSurfacePresentModesKHR(
+        physicalDevice, surface, presentModeCount, details.presentModes);
   }
 
   return details;
 }
 
-VkSurfaceFormatKHR chooseSwapSurfaceFormat(Pointer<VkSurfaceFormatKHR> availableFormats, int count) {
+VkSurfaceFormatKHR chooseSwapSurfaceFormat(
+    Pointer<VkSurfaceFormatKHR> availableFormats, int count) {
   for (var i = 0; i < count; i++) {
     final availableFormat = availableFormats.elementAt(i).ref;
-    if (availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB && 
-      availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
+    if (availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB &&
+        availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
       return availableFormat;
     }
   }
@@ -689,7 +723,7 @@ int chooseSwapPresentMode(Pointer<Int32> availablePresentModes, int count) {
   for (var i = 0; i < count; i++) {
     final availablePresentMode = availablePresentModes.elementAt(i).value;
     if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
-        return availablePresentMode;
+      return availablePresentMode;
     }
   }
 
@@ -697,7 +731,7 @@ int chooseSwapPresentMode(Pointer<Int32> availablePresentModes, int count) {
 }
 
 VkExtent2D chooseSwapExtent(VkSurfaceCapabilitiesKHR capabilities) {
-  if (capabilities.currentExtent_width != 2^32) {
+  if (capabilities.currentExtent_width != 2 ^ 32) {
     final currentExtent = calloc<VkExtent2D>().ref;
     currentExtent.width = capabilities.currentExtent_width;
     currentExtent.height = capabilities.currentExtent_height;
@@ -707,14 +741,17 @@ VkExtent2D chooseSwapExtent(VkSurfaceCapabilitiesKHR capabilities) {
     actualExtent.width = windowWidth;
     actualExtent.height = windowHeight;
 
-    actualExtent.width = max(capabilities.minImageExtent_width, min(capabilities.maxImageExtent_width, actualExtent.width));
-    actualExtent.height = max(capabilities.minImageExtent_height, min(capabilities.maxImageExtent_height, actualExtent.height));
+    actualExtent.width = max(capabilities.minImageExtent_width,
+        min(capabilities.maxImageExtent_width, actualExtent.width));
+    actualExtent.height = max(capabilities.minImageExtent_height,
+        min(capabilities.maxImageExtent_height, actualExtent.height));
 
     return actualExtent;
   }
 }
 
-void createShaderModule(Pointer<Pointer<VkShaderModule>> shaderModule, List<int> code) {
+void createShaderModule(
+    Pointer<Pointer<VkShaderModule>> shaderModule, List<int> code) {
   final createInfo = calloc<VkShaderModuleCreateInfo>();
   createInfo.ref
     ..sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO
@@ -733,17 +770,22 @@ int makeVersion(int major, int minor, int patch) {
   return (((major) << 22) | ((minor) << 12) | (patch));
 }
 
-String versionString(int version){
+String versionString(int version) {
   return '${version >> 22}.${(version >> 12) & 0x3ff}.${version & 0xfff}';
 }
 
 String deviceTypeString(int deviceType) {
   switch (deviceType) {
-    case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU : return 'INTEGRATED_GPU';
-    case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU : return 'DISCRETE_GPU';
-    case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU : return 'VIRTUAL_GPU';
-    case VK_PHYSICAL_DEVICE_TYPE_CPU : return 'CPU';
-    default: return 'OTHER';
+    case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU:
+      return 'INTEGRATED_GPU';
+    case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU:
+      return 'DISCRETE_GPU';
+    case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU:
+      return 'VIRTUAL_GPU';
+    case VK_PHYSICAL_DEVICE_TYPE_CPU:
+      return 'CPU';
+    default:
+      return 'OTHER';
   }
 }
 
