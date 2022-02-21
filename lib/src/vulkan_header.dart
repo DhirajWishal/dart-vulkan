@@ -16728,11 +16728,11 @@ typedef VkCmdResolveImage2KHR = void Function(
 typedef VkCmdSetFragmentShadingRateKHRNative = Void Function(
     Pointer<VkCommandBuffer> commandBuffer,
     Pointer<VkExtent2D> pFragmentSize,
-    Int32 combinerOps);
+    Pointer<Int32> combinerOps);
 typedef VkCmdSetFragmentShadingRateKHR = void Function(
     Pointer<VkCommandBuffer> commandBuffer,
     Pointer<VkExtent2D> pFragmentSize,
-    int combinerOps);
+    Pointer<Int32> combinerOps);
 
 typedef VkGetPhysicalDeviceFragmentShadingRatesKHRNative = Int32 Function(
     Pointer<VkPhysicalDevice> physicalDevice,
@@ -16746,9 +16746,11 @@ typedef VkGetPhysicalDeviceFragmentShadingRatesKHR = int Function(
 typedef VkCmdSetFragmentShadingRateEnumNVNative = Void Function(
     Pointer<VkCommandBuffer> commandBuffer,
     Int32 shadingRate,
-    Int32 combinerOps);
+    Pointer<Int32> combinerOps);
 typedef VkCmdSetFragmentShadingRateEnumNV = void Function(
-    Pointer<VkCommandBuffer> commandBuffer, int shadingRate, int combinerOps);
+    Pointer<VkCommandBuffer> commandBuffer,
+    int shadingRate,
+    Pointer<Int32> combinerOps);
 
 typedef VkGetAccelerationStructureBuildSizesKHRNative = Void Function(
     Pointer<VkDevice> device,
