@@ -1,6 +1,6 @@
 name: vulkan
 description: Vulkan 1.2 FFI bindings for Dart. Supports Linux and Windows.
-version: 0.5.0+3
+version: 0.5.1
 homepage: https://gitlab.com/ext/dart-vulkan
 
 environment:
