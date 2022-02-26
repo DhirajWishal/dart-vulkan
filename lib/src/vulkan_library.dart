@@ -32,6 +32,8 @@ String libraryName() {
     name = 'libvulkan.so.1';
   } else if (Platform.isMacOS) {
     name = 'libvulkan.1.dylib';
+  } else if (Platform.isAndroid) {
+    name = 'libvulkan.so';
   } else {
     throw UnsupportedError('unsupported platform ${Platform.operatingSystem}');
   }
